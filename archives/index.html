@@ -271,7 +271,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>To reset CoreAudio on Mac OS X without rebooting the machine, use the following command:</p>
-<p><code># sudo kill -9</code>ps ax|grep ‘coreaudio[a-z]’ |awk ‘{print $1}’``</p>
+<p><code># sudo kill -9 $(ps ax|grep &#39;coreaudio[a-z]&#39; |awk &#39;{print $1}&#39;}</code></p>
 <p>Alternatively, open up activity monitor, and manually search for CoreAudio</p>
 
       
