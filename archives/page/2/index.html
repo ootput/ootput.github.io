@@ -82,6 +82,69 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-partition-osx-mounted-user-directory-as-root-using-ipartition" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/07/31/partition-osx-mounted-user-directory-as-root-using-ipartition/" class="article-date">
+  <time datetime="2013-07-31T02:37:49.000Z" itemprop="datePublished">Jul 31 2013</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Software/">Software</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/07/31/partition-osx-mounted-user-directory-as-root-using-ipartition/">Partition OSX Mounted User Directory As Root Using iPartition</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/dccf8cbffafc447d734c71338fd9a479a5a264f5.png" alt="iPartition"></p>
+<p>Following an Apple support article entitled: <a href="http://support.apple.com/kb/ht1528" target="_blank" rel="external">Enabling and using the “root” user in Mac OS X</a>, and with the aid of <a href="http://www.coriolis-systems.com/iPartition.php" target="_blank" rel="external">iPartition</a>, I was able to re-partition my <code>User</code> partition (located on x220’s internal 300GB drive). The use of <code>diskutil</code> was out of the question as I had chosen an MBR scheme during Lion’s installation.</p>
+<p>My original partition layout (MBR) was as follows:</p>
+<pre>
+root# diskutil list
+/dev/disk0
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:     FDisk_partition_scheme                        *30.0 GB    disk0
+   1:                  Apple_HFS Mac OSX Lion            30.0 GB    disk0s1
+/dev/disk1
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:     FDisk_partition_scheme                        *320.1 GB   disk1
+   1:                  Apple_HFS User                    260.0 GB   disk1s1
+   2:                  Apple_HFS Backup                   30.0 GB   disk1s2
+</pre>
+
+<p>As you can see, <code>disk1</code> has available unused space amounting to 30GB. I had planned to expand my <code>User</code> partition (/User is a symlink to /Volumes/User) to 290GB using iPartition as an administrative user, but was unable to do so as <code>disk1</code> was still in use and couldn’t be mounted. Booting the system in single-user mode was not an option for me as I wanted to use iPartition’s support of non-destructive resize of HFS+.</p>
+<p>Fortunately, I was able to enable the root account, whereby I would then kill all processes owned by my user or that had open files on <code>disk1</code> - using <code># lsof +D /Volumes/User</code> for the latter. iPartition would then be able to operate unimpeded.</p>
+<p>Moving data (upon resizing) takes a while - particularly on a 300GB drive, so it is imperative to use an external power source and to disable any power saving features such as suspend.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ootput.github.io/2013/07/31/partition-osx-mounted-user-directory-as-root-using-ipartition/" data-id="db2n9aot66adq7u9" class="article-share-link">Share</a>
+      
+        <a href="http://ootput.github.io/2013/07/31/partition-osx-mounted-user-directory-as-root-using-ipartition/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/osx/">osx</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-osx-lion-on-thinkpad-x220" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2013/07/20/osx-lion-on-thinkpad-x220/" class="article-date">
@@ -118,7 +181,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2013/07/20/osx-lion-on-thinkpad-x220/" data-id="dr57daznj619ha1v" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2013/07/20/osx-lion-on-thinkpad-x220/" data-id="k2mgzdxa9yqe4n1c" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2013/07/20/osx-lion-on-thinkpad-x220/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -163,7 +226,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2013/05/24/sydney-opera-house/" data-id="ywxwbkxtbigazpvt" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2013/05/24/sydney-opera-house/" data-id="be1kja9zvwipe8zd" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2013/05/24/sydney-opera-house/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -208,7 +271,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2013/05/24/taronga-zoo/" data-id="ae1fq4w45xlnzgli" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2013/05/24/taronga-zoo/" data-id="5o22z7khlar0xl0z" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2013/05/24/taronga-zoo/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -253,7 +316,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2013/05/24/royal-botanical-gardens-sydney/" data-id="0d7ou4x7uvhe3bge" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2013/05/24/royal-botanical-gardens-sydney/" data-id="z3569qzjzfckskgm" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2013/05/24/royal-botanical-gardens-sydney/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -316,7 +379,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2013/04/01/crunchbang-on-thinkpad-x220/" data-id="yuqidsrjw3ufm98o" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2013/04/01/crunchbang-on-thinkpad-x220/" data-id="v9g840l2fvrvrd0g" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2013/04/01/crunchbang-on-thinkpad-x220/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -374,7 +437,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2013/03/26/address-merged-ports/" data-id="rdpif6okxeorh0ys" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2013/03/26/address-merged-ports/" data-id="zpov8vqp2s7rbalj" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2013/03/26/address-merged-ports/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -424,7 +487,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2012/12/11/relocate-ios-backups/" data-id="x5pgc5m8atiyrm4f" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2012/12/11/relocate-ios-backups/" data-id="8jsh8e9sor3vnhk7" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2012/12/11/relocate-ios-backups/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -478,7 +541,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2012/07/23/nes-nostalgia/" data-id="qno7w5rc7aik3pk4" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2012/07/23/nes-nostalgia/" data-id="c67b17emfuu8ia2y" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2012/07/23/nes-nostalgia/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -531,68 +594,12 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2012/06/25/couchpotato-on-freebsd/" data-id="ghpvjam2ifv4syjk" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2012/06/25/couchpotato-on-freebsd/" data-id="e5oskrzvoenax95d" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2012/06/25/couchpotato-on-freebsd/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/couchpotato/">couchpotato</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/freebsd/">freebsd</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-ntfs-write-in-freebsd" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2012/06/18/ntfs-write-in-freebsd/" class="article-date">
-  <time datetime="2012-06-17T16:47:30.000Z" itemprop="datePublished">Jun 18 2012</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Software/">Software</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/06/18/ntfs-write-in-freebsd/">NTFS-Write in FreeBSD</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/images/0d779279ebe9c460233e8631e19a185f6fb942e2.png?w=150" alt="" title="ntfs"></p>
-<p>NTFS-write in FreeBSD is possible with <code>NTFS-3G</code> from ports. From <a href="http://www.tuxera.com/community/ntfs-3g-download" target="_blank" rel="external"><code>tuxera.com</code></a>:</p>
-<blockquote>
-<p>NTFS-3G is a stable, full-featured, read-write NTFS driver for Linux, Android, Mac OS X, FreeBSD, NetBSD, OpenSolaris, QNX, Haiku, and other operating systems. It provides safe handling of the Windows XP, Windows Server 2003, Windows 2000, Windows Vista, Windows Server 2008 and Windows 7 NTFS file systems.</p>
-</blockquote>
-<p>To install NTFS-3G, do:</p>
-<p><code># portmaster sysutils/fusefs-ntfs</code></p>
-
-        
-          <p class="article-more-link">
-            <a href="/2012/06/18/ntfs-write-in-freebsd/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2012/06/18/ntfs-write-in-freebsd/" data-id="a4yfpstw2ruc2tqk" class="article-share-link">Share</a>
-      
-        <a href="http://ootput.github.io/2012/06/18/ntfs-write-in-freebsd/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/freebsd/">freebsd</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ntfs/">ntfs</a></li></ul>
 
     </footer>
   </div>
@@ -632,7 +639,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">May 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">April 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">December 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">June 2012</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">May 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10/">October 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/09/">September 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06/">June 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07/">July 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06/">June 2010</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/04/">April 2010</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03/">March 2010</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02/">February 2010</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11/">November 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03/">March 2007</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02/">February 2007</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">May 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">April 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">December 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">June 2012</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">May 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10/">October 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/09/">September 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06/">June 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07/">July 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06/">June 2010</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/04/">April 2010</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03/">March 2010</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02/">February 2010</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11/">November 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03/">March 2007</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02/">February 2007</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -642,6 +649,10 @@ ga('send', 'pageview');
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2014/11/23/Hello-Hexo-md-2014-11-24T10-18-02-112Z/">Hello Hexo</a>
+          </li>
         
           <li>
             <a href="/2014/11/18/focus-follows-mouse-and-scroll-any-window/">Focus-follows-mouse and Scroll-any-window</a>
@@ -657,10 +668,6 @@ ga('send', 'pageview');
         
           <li>
             <a href="/2013/10/04/update-to-latest-freebsd-release-9-2/">Update to Latest FreeBSD Release (9.2)</a>
-          </li>
-        
-          <li>
-            <a href="/2013/08/23/root-and-flash-samsung-galaxy-s2-from-within-osx/">Root and Flash Samsung Galaxy S2 From Within OSX</a>
           </li>
         
       </ul>
