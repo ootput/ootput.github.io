@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://ootput.github.io/author/index.html</loc>
+    <lastmod>2014-11-24T12:10:30.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://ootput.github.io/2007/03/09/ion3-look-ootput/</loc>
     <lastmod>2014-11-24T11:59:20.000Z</lastmod>
   </url>
@@ -202,42 +207,7 @@
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2013/04/01/crunchbang-on-thinkpad-x220/</loc>
-    <lastmod>2014-11-24T10:34:16.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://ootput.github.io/2012/06/01/future-of-ootput-burst-in-doubt/</loc>
-    <lastmod>2014-11-24T10:34:16.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://ootput.github.io/2011/12/27/custom-kernel-config-for-freebsd-8-stable/</loc>
-    <lastmod>2014-11-24T10:34:16.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://ootput.github.io/2013/08/02/share-osx-clipboard-with-emacs/</loc>
-    <lastmod>2014-11-24T10:34:16.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://ootput.github.io/2013/07/20/osx-lion-on-thinkpad-x220/</loc>
-    <lastmod>2014-11-24T10:34:16.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://ootput.github.io/2010/07/01/non-free-and-contrib-packages-in-debian/</loc>
-    <lastmod>2014-11-24T10:34:16.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://ootput.github.io/2012/07/23/nes-nostalgia/</loc>
-    <lastmod>2014-11-24T10:34:16.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://ootput.github.io/2011/12/26/sabnzbd-and-sickbeard-on-freebsd/</loc>
     <lastmod>2014-11-24T10:34:16.000Z</lastmod>
   </url>
   
@@ -247,17 +217,52 @@
   </url>
   
   <url>
+    <loc>http://ootput.github.io/2013/04/01/crunchbang-on-thinkpad-x220/</loc>
+    <lastmod>2014-11-24T10:34:16.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ootput.github.io/2013/07/20/osx-lion-on-thinkpad-x220/</loc>
+    <lastmod>2014-11-24T10:34:16.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ootput.github.io/2012/07/23/nes-nostalgia/</loc>
+    <lastmod>2014-11-24T10:34:16.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ootput.github.io/2012/06/01/future-of-ootput-burst-in-doubt/</loc>
+    <lastmod>2014-11-24T10:34:16.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ootput.github.io/2013/08/02/share-osx-clipboard-with-emacs/</loc>
+    <lastmod>2014-11-24T10:34:16.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ootput.github.io/2011/12/26/sabnzbd-and-sickbeard-on-freebsd/</loc>
+    <lastmod>2014-11-24T10:34:16.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ootput.github.io/2011/12/27/custom-kernel-config-for-freebsd-8-stable/</loc>
+    <lastmod>2014-11-24T10:34:16.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ootput.github.io/2010/04/04/backup-of-chyrp/</loc>
+    <lastmod>2014-11-24T10:34:15.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://ootput.github.io/2010/06/26/print-to-clipboard-in-putty/</loc>
     <lastmod>2014-11-24T10:34:15.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://ootput.github.io/2010/06/08/new-dslr-camera-canon-eos-400d/</loc>
-    <lastmod>2014-11-24T10:34:15.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://ootput.github.io/2010/04/04/backup-of-chyrp/</loc>
     <lastmod>2014-11-24T10:34:15.000Z</lastmod>
   </url>
   
@@ -272,12 +277,7 @@
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2011/06/06/block-wine-applications-from-the-internet/</loc>
-    <lastmod>2014-11-24T10:32:09.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://ootput.github.io/2009/11/15/dual-card-alsa-configuration/</loc>
+    <loc>http://ootput.github.io/2011/10/10/nvidia-in-freebsd-8/</loc>
     <lastmod>2014-11-24T10:32:09.000Z</lastmod>
   </url>
   
@@ -287,23 +287,23 @@
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2011/10/10/nvidia-in-freebsd-8/</loc>
+    <loc>http://ootput.github.io/2010/02/04/erc-with-ssl/</loc>
     <lastmod>2014-11-24T10:32:09.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2010/02/04/erc-with-ssl/</loc>
+    <loc>http://ootput.github.io/2009/11/15/dual-card-alsa-configuration/</loc>
+    <lastmod>2014-11-24T10:32:09.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ootput.github.io/2011/06/06/block-wine-applications-from-the-internet/</loc>
     <lastmod>2014-11-24T10:32:09.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://ootput.github.io/2013/10/04/update-to-latest-freebsd-release-9-2/</loc>
     <lastmod>2014-11-24T10:23:02.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://ootput.github.io/2010/06/04/qos-in-tomato-firmware/</loc>
-    <lastmod>2014-11-24T10:18:02.000Z</lastmod>
   </url>
   
   <url>
@@ -517,7 +517,7 @@
   </url>
   
   <url>
-    <loc>http://ootput.github.io/author/index.html</loc>
+    <loc>http://ootput.github.io/2010/06/04/qos-in-tomato-firmware/</loc>
     <lastmod>2014-11-24T10:18:02.000Z</lastmod>
   </url>
   
