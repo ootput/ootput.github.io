@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://ootput.github.io/2014/11/24/test/</loc>
+    <lastmod>2014-11-24T12:31:31.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://ootput.github.io/2014/11/23/Hello-Hexo-md-2014-11-24T10-18-02-112Z/</loc>
     <lastmod>2014-11-24T12:12:42.181Z</lastmod>
   </url>
@@ -212,22 +217,17 @@
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2012/06/01/future-of-ootput-burst-in-doubt/</loc>
-    <lastmod>2014-11-24T10:34:16.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://ootput.github.io/2013/08/23/root-and-flash-samsung-galaxy-s2-from-within-osx/</loc>
     <lastmod>2014-11-24T10:34:16.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2010/07/01/non-free-and-contrib-packages-in-debian/</loc>
+    <loc>http://ootput.github.io/2012/06/01/future-of-ootput-burst-in-doubt/</loc>
     <lastmod>2014-11-24T10:34:16.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2013/08/02/share-osx-clipboard-with-emacs/</loc>
+    <loc>http://ootput.github.io/2011/12/27/custom-kernel-config-for-freebsd-8-stable/</loc>
     <lastmod>2014-11-24T10:34:16.000Z</lastmod>
   </url>
   
@@ -237,12 +237,17 @@
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2012/07/23/nes-nostalgia/</loc>
+    <loc>http://ootput.github.io/2013/08/02/share-osx-clipboard-with-emacs/</loc>
     <lastmod>2014-11-24T10:34:16.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2011/12/27/custom-kernel-config-for-freebsd-8-stable/</loc>
+    <loc>http://ootput.github.io/2010/07/01/non-free-and-contrib-packages-in-debian/</loc>
+    <lastmod>2014-11-24T10:34:16.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ootput.github.io/2012/07/23/nes-nostalgia/</loc>
     <lastmod>2014-11-24T10:34:16.000Z</lastmod>
   </url>
   
@@ -257,7 +262,7 @@
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2010/06/26/print-to-clipboard-in-putty/</loc>
+    <loc>http://ootput.github.io/2010/06/08/new-dslr-camera-canon-eos-400d/</loc>
     <lastmod>2014-11-24T10:34:15.000Z</lastmod>
   </url>
   
@@ -267,13 +272,8 @@
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2010/06/08/new-dslr-camera-canon-eos-400d/</loc>
+    <loc>http://ootput.github.io/2010/06/26/print-to-clipboard-in-putty/</loc>
     <lastmod>2014-11-24T10:34:15.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://ootput.github.io/2013/08/02/control-itunes-with-shell-script-at-command-line/</loc>
-    <lastmod>2014-11-24T10:32:10.000Z</lastmod>
   </url>
   
   <url>
@@ -282,7 +282,12 @@
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2010/02/04/erc-with-ssl/</loc>
+    <loc>http://ootput.github.io/2013/08/02/control-itunes-with-shell-script-at-command-line/</loc>
+    <lastmod>2014-11-24T10:32:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ootput.github.io/2011/10/10/nvidia-in-freebsd-8/</loc>
     <lastmod>2014-11-24T10:32:09.000Z</lastmod>
   </url>
   
@@ -292,7 +297,7 @@
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2011/10/10/nvidia-in-freebsd-8/</loc>
+    <loc>http://ootput.github.io/2009/11/15/dual-card-alsa-configuration/</loc>
     <lastmod>2014-11-24T10:32:09.000Z</lastmod>
   </url>
   
@@ -302,7 +307,7 @@
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2009/11/15/dual-card-alsa-configuration/</loc>
+    <loc>http://ootput.github.io/2010/02/04/erc-with-ssl/</loc>
     <lastmod>2014-11-24T10:32:09.000Z</lastmod>
   </url>
   
@@ -313,11 +318,6 @@
   
   <url>
     <loc>http://ootput.github.io/2011/01/10/pxe-boot-menu/</loc>
-    <lastmod>2014-11-24T10:18:02.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://ootput.github.io/2010/03/18/dumprestore-data-between-partitions/</loc>
     <lastmod>2014-11-24T10:18:02.000Z</lastmod>
   </url>
   
@@ -513,6 +513,11 @@
   
   <url>
     <loc>http://ootput.github.io/2010/04/04/themes-in-chyrp/</loc>
+    <lastmod>2014-11-24T10:18:02.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ootput.github.io/2010/03/18/dumprestore-data-between-partitions/</loc>
     <lastmod>2014-11-24T10:18:02.000Z</lastmod>
   </url>
   
