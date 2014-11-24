@@ -78,55 +78,6 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
-    <article id="post-sasl-for-weechat" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2011/09/27/sasl-for-weechat/" class="article-date">
-  <time datetime="2011-09-27T08:40:25.000Z" itemprop="datePublished">Sep 27 2011</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Software/">Software</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2011/09/27/sasl-for-weechat/">SASL for WeeChat</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>You can encrypt your password for NickServ authentication using blowfish and SASL.</p>
-<p>To set “dh-blowfish” by default for all servers:<code>/set irc.server_default.sasl_mechanism dh-blowfish</code></p>
-<p><em>(Note that this will only work if your WeeChat was built with libgcrypt support - otherwise, use the “plain” mechanism.)</em></p>
-<p>Additionally, per-server username and password settings can be applied - for instance, with Freenode:<code>/set irc.server.freenode.sasl_username &quot;_username_&quot;
-/set irc.server.freenode.sasl_password &quot;_password_&quot;</code></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/09/27/sasl-for-weechat/" data-id="74ksblooniu40cm5" class="article-share-link">Share</a>
-      
-        <a href="http://ootput.github.io/2011/09/27/sasl-for-weechat/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/freebsd/">freebsd</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sasl/">sasl</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/weechat/">weechat</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-update-freebsd-via-binary-patches" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2011/09/25/update-freebsd-via-binary-patches/" class="article-date">
@@ -601,6 +552,56 @@ ga('send', 'pageview');
 
 
   
+    <article id="post-block-wine-applications-from-the-internet" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2011/06/06/block-wine-applications-from-the-internet/" class="article-date">
+  <time datetime="2011-06-06T12:29:49.000Z" itemprop="datePublished">Jun 6 2011</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Software/">Software</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2011/06/06/block-wine-applications-from-the-internet/">Block WINE Applications From The Internet</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>I have created an importable Windows Registry key that will essentially block internet access for apps run by Wine. I found the usual method of creating IPTables (for Linux) rules per process and/or per user (think: <code># useradd wine</code>) extremely tedious when administering several boxen.</p>
+<p>Import the following key using Wines Regedit:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">REGEDIT4</div><div class="line"></div><div class="line"><span class="special">[</span>HKEY_CURRENT_USER<span class="command">\Software</span><span class="command">\Microsoft</span><span class="command">\Windows</span><span class="command">\CurrentVersion</span><span class="command">\Internet</span> Settings<span class="special">]</span></div><div class="line"><span class="special">&amp;</span>quot;MigrateProxy<span class="special">&amp;</span>quot;=dword:00000001</div><div class="line"><span class="special">&amp;</span>quot;ProxyEnable<span class="special">&amp;</span>quot;=dword:00000001</div><div class="line"><span class="special">&amp;</span>quot;ProxyHttp.1.1<span class="special">&amp;</span>quot;=dword:00000000</div><div class="line"><span class="special">&amp;</span>quot;ProxyOverride<span class="special">&amp;</span>quot;=<span class="special">&amp;</span>quot;<span class="special">&amp;</span>lt;local<span class="special">&amp;</span>gt;<span class="special">&amp;</span>quot;</div><div class="line"><span class="special">&amp;</span>quot;ProxyServer<span class="special">&amp;</span>quot;=<span class="special">&amp;</span>quot;http://NonExistantProxyAddress:80<span class="special">&amp;</span>quot;</div><div class="line"><span class="special">&amp;</span>quot;User Agent<span class="special">&amp;</span>quot;=<span class="special">&amp;</span>quot;Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1<span class="special">&amp;</span>quot;</div></pre></td></tr></table></figure>
+
+
+<p>.. and restart the app for the changes to take effect.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ootput.github.io/2011/06/06/block-wine-applications-from-the-internet/" data-id="jzhj35vrl5dwoqse" class="article-share-link">Share</a>
+      
+        <a href="http://ootput.github.io/2011/06/06/block-wine-applications-from-the-internet/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wine/">wine</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/archives/page/4/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/archives/page/6/">6</a><a class="page-number" href="/archives/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/11/">11</a><a class="extend next" rel="next" href="/archives/page/6/">Next &raquo;</a>
@@ -632,7 +633,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">May 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">April 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">December 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">June 2012</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">May 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10/">October 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/09/">September 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06/">June 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07/">July 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06/">June 2010</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/04/">April 2010</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03/">March 2010</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02/">February 2010</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11/">November 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03/">March 2007</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02/">February 2007</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">May 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">April 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">December 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">June 2012</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">May 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10/">October 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/09/">September 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06/">June 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07/">July 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06/">June 2010</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/04/">April 2010</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03/">March 2010</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02/">February 2010</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11/">November 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03/">March 2007</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02/">February 2007</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -642,10 +643,6 @@ ga('send', 'pageview');
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
-        
-          <li>
-            <a href="/2014/11/24/hello-world/">Hello World</a>
-          </li>
         
           <li>
             <a href="/2014/11/23/Hello-Hexo-md-2014-11-24T10-18-02-112Z/">Hello Hexo</a>
@@ -661,6 +658,10 @@ ga('send', 'pageview');
         
           <li>
             <a href="/2014/06/14/qos-on-vpn-client-tunnel-in-tomato/">QOS on VPN Client Tunnel in Tomato</a>
+          </li>
+        
+          <li>
+            <a href="/2013/10/20/reset-audio-on-osx/">Reset Audio on OSX</a>
           </li>
         
       </ul>

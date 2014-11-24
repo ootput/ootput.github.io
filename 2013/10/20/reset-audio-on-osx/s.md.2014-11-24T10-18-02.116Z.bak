@@ -1,34 +1,0 @@
-title: Address Merged Ports
-tags:
-  - freebsd
-  - ports
-id: 1560
-categories:
-  - Software
-date: 2013-03-26 10:44:32
----
-
-My most recent `# portmaster -Da` revealed a package conflict: py-setuptools was merged with py-distribute.
-
-From FreshPorts:
-
-{% blockquote %}
-
-> 2013-03-05>
->
-> Affects: users of devel/py-setuptools (i.e you)>
->
-> Author: rm@FreeBSD.org>
->
-> Reason: >
->   devel/py-setuptools was replaced with devel/py-distribute. py-setuptools port will be removed shortly.
-{% endblockquote %}
-
-To fix this:
-`# portmaster -o devel/py-distribute devel/py-setuptools`
-
-From `man 8 portmaster`:
-{% blockquote %}
-> -o &lt;new port dir in /usr/ports&gt; &lt;installed port&gt; >
->            replace the installed port with a port from a different origin
-{% endblockquote %}

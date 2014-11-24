@@ -81,7 +81,7 @@ ga('send', 'pageview');
     <article id="post-update-to-latest-freebsd-release-9-2" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2013/10/04/update-to-latest-freebsd-release-9-2/" class="article-date">
-  <time datetime="2013-10-04T10:00:43.000Z" itemprop="datePublished">Oct 4 2013</time>
+  <time datetime="2013-10-04T10:00:00.000Z" itemprop="datePublished">Oct 4 2013</time>
 </a>
     
   <div class="article-category">
@@ -104,27 +104,22 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>For my records, here is an outline of the steps I took to upgrade FreeBSD from 9.1 to 9.2.<br>`</p>
-<h1 id="freebsd-update_fetch">freebsd-update fetch</h1>
-<h1 id="freebsd-update_install">freebsd-update install</h1>
-<p>`<br>(and reboot if any changes were made)</p>
-<p>Now, fetch the upgrades that are included in the 9.2-RELEASE. The differences in configuration files will need to be merged manually.<br>`</p>
-<h1 id="freebsd-update_upgrade_-r_9-2-RELEASE">freebsd-update upgrade -r 9.2-RELEASE</h1>
-<h1 id="freebsd-update_install-1">freebsd-update install</h1>
-<p>`</p>
-<p>Reboot with the new kernel before the non-kernel components receive updates:<br>`</p>
-<h1 id="shutdown_-r_now">shutdown -r now</h1>
-<p>`</p>
-<p>After rebooting, install the new user-land components, and upgrade 3rd party packages:<br>`</p>
-<h1 id="freebsd-update_install-1">freebsd-update install</h1>
-<h1 id="pkg_upgrade">pkg upgrade</h1>
-<p>`</p>
-<p>To delete the old (no longer used) system libraries:<br>`</p>
-<h1 id="freebsd-update_install-1">freebsd-update install</h1>
-<p>`</p>
-<p>Finally, reboot into 9.2-RELEASE<br>`</p>
-<h1 id="shutdown_-r_now-1">shutdown -r now</h1>
-<p>`</p>
+        <p>For my records, here is an outline of the steps I took to upgrade FreeBSD from 9.1 to 9.2.</p>
+<p><code># freebsd-update fetch</code></p>
+<p><code># freebsd-update install</code></p>
+<p>(and reboot if any changes were made)</p>
+<p>Now, fetch the upgrades that are included in the 9.2-RELEASE. The differences in configuration files will need to be merged manually.</p>
+<p><code># freebsd-update upgrade -r 9.2-RELEASE</code></p>
+<p><code># freebsd-update install</code></p>
+<p>Reboot with the new kernel before the non-kernel components receive updates:</p>
+<p><code># shutdown -r now</code></p>
+<p>After rebooting, install the new user-land components, and upgrade 3rd party packages:</p>
+<p><code># freebsd-update install</code></p>
+<p><code># pkg upgrade</code></p>
+<p>To delete the old (no longer used) system libraries:</p>
+<p><code># freebsd-update install</code></p>
+<p>Finally, reboot into 9.2-RELEASE</p>
+<p><code># shutdown -r now</code></p>
 
       
     </div>
@@ -658,7 +653,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">May 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">April 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">December 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">June 2012</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">May 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10/">October 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/09/">September 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06/">June 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07/">July 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06/">June 2010</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/04/">April 2010</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03/">March 2010</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02/">February 2010</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11/">November 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03/">March 2007</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02/">February 2007</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">May 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">April 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">December 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">June 2012</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">May 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10/">October 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/09/">September 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06/">June 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07/">July 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06/">June 2010</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/04/">April 2010</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03/">March 2010</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02/">February 2010</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11/">November 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03/">March 2007</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02/">February 2007</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -668,10 +663,6 @@ ga('send', 'pageview');
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
-        
-          <li>
-            <a href="/2014/11/24/hello-world/">Hello World</a>
-          </li>
         
           <li>
             <a href="/2014/11/23/Hello-Hexo-md-2014-11-24T10-18-02-112Z/">Hello Hexo</a>
@@ -687,6 +678,10 @@ ga('send', 'pageview');
         
           <li>
             <a href="/2014/06/14/qos-on-vpn-client-tunnel-in-tomato/">QOS on VPN Client Tunnel in Tomato</a>
+          </li>
+        
+          <li>
+            <a href="/2013/10/20/reset-audio-on-osx/">Reset Audio on OSX</a>
           </li>
         
       </ul>

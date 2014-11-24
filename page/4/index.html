@@ -78,58 +78,6 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
-    <article id="post-rebuild-freebsd-ports" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2011/12/30/rebuild-freebsd-ports/" class="article-date">
-  <time datetime="2011-12-30T08:35:35.000Z" itemprop="datePublished">Dec 30 2011</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Software/">Software</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2011/12/30/rebuild-freebsd-ports/">Rebuild FreeBSD Ports</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/images/ab5e348a39a3eca691b0bea218ecb9a4a973d3c3.png?w=150" alt="" title="Freebsd-logo"></p>
-<p>To rebuild a specific FreeBSD port and the ports that it depends on, for example, with <code>pydf</code>, do: `</p>
-<h1 id="portmaster_-fR_sysutils/pydf`">portmaster -fR sysutils/pydf`</h1>
-<p>To rebuild all install FreeBSD ports, it’s important to firstly read <code>/usr/ports/UPDATING</code> for any update advisories.<br>
-        
-          <p class="article-more-link">
-            <a href="/2011/12/30/rebuild-freebsd-ports/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/12/30/rebuild-freebsd-ports/" data-id="05jdv0kk5a3cw5he" class="article-share-link">Share</a>
-      
-        <a href="http://ootput.github.io/2011/12/30/rebuild-freebsd-ports/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/freebsd/">freebsd</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ports/">ports</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-import-freebsd-root-zpool-to-other-environments" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2011/12/30/import-freebsd-root-zpool-to-other-environments/" class="article-date">
@@ -594,6 +542,55 @@ ga('send', 'pageview');
 
 
   
+    <article id="post-sasl-for-weechat" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2011/09/27/sasl-for-weechat/" class="article-date">
+  <time datetime="2011-09-27T08:40:25.000Z" itemprop="datePublished">Sep 27 2011</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Software/">Software</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2011/09/27/sasl-for-weechat/">SASL for WeeChat</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>You can encrypt your password for NickServ authentication using blowfish and SASL.</p>
+<p>To set “dh-blowfish” by default for all servers:<code>/set irc.server_default.sasl_mechanism dh-blowfish</code></p>
+<p><em>(Note that this will only work if your WeeChat was built with libgcrypt support - otherwise, use the “plain” mechanism.)</em></p>
+<p>Additionally, per-server username and password settings can be applied - for instance, with Freenode:<code>/set irc.server.freenode.sasl_username &quot;_username_&quot;
+/set irc.server.freenode.sasl_password &quot;_password_&quot;</code></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ootput.github.io/2011/09/27/sasl-for-weechat/" data-id="74ksblooniu40cm5" class="article-share-link">Share</a>
+      
+        <a href="http://ootput.github.io/2011/09/27/sasl-for-weechat/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/freebsd/">freebsd</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sasl/">sasl</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/weechat/">weechat</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
@@ -625,7 +622,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">May 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">April 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">December 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">June 2012</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">May 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10/">October 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/09/">September 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06/">June 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07/">July 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06/">June 2010</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/04/">April 2010</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03/">March 2010</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02/">February 2010</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11/">November 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03/">March 2007</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02/">February 2007</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">May 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">April 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">December 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">June 2012</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">May 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10/">October 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/09/">September 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06/">June 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07/">July 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06/">June 2010</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/04/">April 2010</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03/">March 2010</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02/">February 2010</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11/">November 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03/">March 2007</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02/">February 2007</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -635,10 +632,6 @@ ga('send', 'pageview');
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
-        
-          <li>
-            <a href="/2014/11/24/hello-world/">Hello World</a>
-          </li>
         
           <li>
             <a href="/2014/11/23/Hello-Hexo-md-2014-11-24T10-18-02-112Z/">Hello Hexo</a>
@@ -654,6 +647,10 @@ ga('send', 'pageview');
         
           <li>
             <a href="/2014/06/14/qos-on-vpn-client-tunnel-in-tomato/">QOS on VPN Client Tunnel in Tomato</a>
+          </li>
+        
+          <li>
+            <a href="/2013/10/20/reset-audio-on-osx/">Reset Audio on OSX</a>
           </li>
         
       </ul>

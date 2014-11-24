@@ -1,26 +1,0 @@
-title: Apply Security Patches to FreeBSD
-tags:
-  - freebsd
-id: 19
-categories:
-  - Software
-date: 2011-09-25 19:50:34
----
-
-From FreeBSD Handbook - Ch 26 Updating FreeBSD:
-
-> Security patches are stored on a remote machine and may be downloaded and installed using the following command:`> 
-> # freebsd-update fetch> 
-> # freebsd-update install`
-An entry in `/etc/crontab` allows `freebsd-update` to be run as a nightly cron job:`
-@daily root freebsd-update cron
-`
-<!--more-->
-
-Here, `freebsd-update` will only check if updates exist. If patches exist, they will automatically be downloaded to the local disk but not applied; the root user will be sent an email so they may install them manually.
-
-If anything goes wrong, `freebsd-update` has the ability to roll back the last set of changes with the following command:`
-# freebsd-update rollback
-`
-
-Once complete, the system should be restarted if the kernel or any kernel modules were modified. This will allow FreeBSD to load the new binaries into memory.

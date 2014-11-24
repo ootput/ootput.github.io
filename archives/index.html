@@ -78,62 +78,6 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/11/24/hello-world/" class="article-date">
-  <time datetime="2014-11-24T10:18:02.000Z" itemprop="datePublished">Nov 24 2014</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/24/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">trobuleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2>
-<h3 id="Create_a_new_post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2014/11/24/hello-world/" data-id="n3ddnpxxh2xx2g3j" class="article-share-link">Share</a>
-      
-        <a href="http://ootput.github.io/2014/11/24/hello-world/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-Hello-Hexo-md-2014-11-24T10-18-02-112Z" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/11/23/Hello-Hexo-md-2014-11-24T10-18-02-112Z/" class="article-date">
@@ -356,7 +300,7 @@ ga('send', 'pageview');
     <article id="post-update-to-latest-freebsd-release-9-2" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2013/10/04/update-to-latest-freebsd-release-9-2/" class="article-date">
-  <time datetime="2013-10-04T10:00:43.000Z" itemprop="datePublished">Oct 4 2013</time>
+  <time datetime="2013-10-04T10:00:00.000Z" itemprop="datePublished">Oct 4 2013</time>
 </a>
     
   <div class="article-category">
@@ -379,27 +323,22 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>For my records, here is an outline of the steps I took to upgrade FreeBSD from 9.1 to 9.2.<br>`</p>
-<h1 id="freebsd-update_fetch">freebsd-update fetch</h1>
-<h1 id="freebsd-update_install">freebsd-update install</h1>
-<p>`<br>(and reboot if any changes were made)</p>
-<p>Now, fetch the upgrades that are included in the 9.2-RELEASE. The differences in configuration files will need to be merged manually.<br>`</p>
-<h1 id="freebsd-update_upgrade_-r_9-2-RELEASE">freebsd-update upgrade -r 9.2-RELEASE</h1>
-<h1 id="freebsd-update_install-1">freebsd-update install</h1>
-<p>`</p>
-<p>Reboot with the new kernel before the non-kernel components receive updates:<br>`</p>
-<h1 id="shutdown_-r_now">shutdown -r now</h1>
-<p>`</p>
-<p>After rebooting, install the new user-land components, and upgrade 3rd party packages:<br>`</p>
-<h1 id="freebsd-update_install-1">freebsd-update install</h1>
-<h1 id="pkg_upgrade">pkg upgrade</h1>
-<p>`</p>
-<p>To delete the old (no longer used) system libraries:<br>`</p>
-<h1 id="freebsd-update_install-1">freebsd-update install</h1>
-<p>`</p>
-<p>Finally, reboot into 9.2-RELEASE<br>`</p>
-<h1 id="shutdown_-r_now-1">shutdown -r now</h1>
-<p>`</p>
+        <p>For my records, here is an outline of the steps I took to upgrade FreeBSD from 9.1 to 9.2.</p>
+<p><code># freebsd-update fetch</code></p>
+<p><code># freebsd-update install</code></p>
+<p>(and reboot if any changes were made)</p>
+<p>Now, fetch the upgrades that are included in the 9.2-RELEASE. The differences in configuration files will need to be merged manually.</p>
+<p><code># freebsd-update upgrade -r 9.2-RELEASE</code></p>
+<p><code># freebsd-update install</code></p>
+<p>Reboot with the new kernel before the non-kernel components receive updates:</p>
+<p><code># shutdown -r now</code></p>
+<p>After rebooting, install the new user-land components, and upgrade 3rd party packages:</p>
+<p><code># freebsd-update install</code></p>
+<p><code># pkg upgrade</code></p>
+<p>To delete the old (no longer used) system libraries:</p>
+<p><code># freebsd-update install</code></p>
+<p>Finally, reboot into 9.2-RELEASE</p>
+<p><code># shutdown -r now</code></p>
 
       
     </div>
@@ -577,6 +516,52 @@ ga('send', 'pageview');
 
 
   
+    <article id="post-control-itunes-with-shell-script-at-command-line" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/08/02/control-itunes-with-shell-script-at-command-line/" class="article-date">
+  <time datetime="2013-08-02T02:42:25.000Z" itemprop="datePublished">Aug 2 2013</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Software/">Software</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/08/02/control-itunes-with-shell-script-at-command-line/">Control iTunes with Shell Script at Command-line</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Use the following script to control iTunes from the shell:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="shebang">#!/bin/sh</span></div><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment">#######################################</span></div><div class="line"><span class="comment"># iTunes Command Line Control v1.0.0.1</span></div><div class="line"><span class="comment"># written by David Schlosnagle</span></div><div class="line"><span class="comment"># created 2001.11.08</span></div><div class="line"><span class="comment"># modified 2007.01.28 by David West</span></div><div class="line"><span class="comment"># modified 2013.08.02 by ootput</span></div><div class="line"><span class="comment"># filename=itunes</span></div><div class="line"><span class="comment">#######################################</span></div><div class="line"></div><div class="line"><span class="function"><span class="title">showHelp</span></span> () {</div><div class="line">    <span class="built_in">echo</span> &amp;quot;-----------------------------&amp;quot;;</div><div class="line">    <span class="built_in">echo</span> &amp;quot;iTunes Command Line Interface&amp;quot;;</div><div class="line">    <span class="built_in">echo</span> &amp;quot;-----------------------------&amp;quot;;</div><div class="line">    <span class="built_in">echo</span> &amp;quot;Usage: `basename <span class="variable">$0</span>` &amp;quot;;</div><div class="line">    <span class="built_in">echo</span>;</div><div class="line">    <span class="built_in">echo</span> &amp;quot;Options:&amp;quot;;</div><div class="line">    <span class="built_in">echo</span> &amp;quot; status = Shows iTunes<span class="string">' status, current artist and track.&amp;quot;;</span></div><div class="line">    echo &amp;quot; play = Start playing iTunes.&amp;quot;;</div><div class="line">    echo &amp;quot; pause = Pause iTunes.&amp;quot;;</div><div class="line">    echo &amp;quot; next = Go to the next track.&amp;quot;;</div><div class="line">    echo &amp;quot; prev = Go to the previous track.&amp;quot;;</div><div class="line">    echo &amp;quot; mute = Mute iTunes' volume.&amp;quot;;</div><div class="line">    <span class="built_in">echo</span> &amp;quot; unmute = Unmute iTunes<span class="string">' volume.&amp;quot;;</span></div><div class="line">    echo &amp;quot; vol up = Increase iTunes' volume by <span class="number">10</span>%&amp;quot;;</div><div class="line">    <span class="built_in">echo</span> &amp;quot; vol down = Increase iTunes<span class="string">' volume by 10%&amp;quot;;</span></div><div class="line">    echo &amp;quot; vol # = Set iTunes' volume to <span class="comment"># [0-100]&amp;quot;;</span></div><div class="line">    <span class="built_in">echo</span> &amp;quot; stop = Stop iTunes.&amp;quot;;</div><div class="line">    <span class="built_in">echo</span> &amp;quot; search = Run query, populate playlist named foo and play. &amp;quot;</div><div class="line">    <span class="built_in">echo</span> &amp;quot; playlist = Show playlists saved <span class="keyword">in</span> iTunes.&amp;quot;;</div><div class="line">    <span class="built_in">echo</span> &amp;quot; clear = clear playlist foo. &amp;quot;;</div><div class="line">    <span class="built_in">echo</span> &amp;quot; quit = Quit iTunes.&amp;quot;;</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keyword">if</span> [ <span class="variable">$#</span> = <span class="number">0</span> ]; <span class="keyword">then</span></div><div class="line">    showHelp;</div><div class="line"><span class="keyword">fi</span></div><div class="line"></div><div class="line"><span class="keyword">while</span> [ <span class="variable">$#</span> <span class="operator">-gt</span> <span class="number">0</span> ]; <span class="keyword">do</span></div><div class="line">    arg=<span class="variable">$1</span>;</div><div class="line">    songname=<span class="variable">$2</span>;</div><div class="line">    <span class="built_in">echo</span> <span class="variable">$songname</span>;</div><div class="line">    <span class="keyword">case</span> <span class="variable">$arg</span> <span class="keyword">in</span></div><div class="line">        &amp;quot;status&amp;quot; ) state=`osascript <span class="operator">-e</span> <span class="string">'tell application &amp;quot;iTunes&amp;quot; to player state as string'</span>`;</div><div class="line">            <span class="built_in">echo</span> &amp;quot;iTunes is currently <span class="variable">$state</span>.&amp;quot;;</div><div class="line">            <span class="keyword">if</span> [ <span class="variable">$state</span> = &amp;quot;playing&amp;quot; ]; <span class="keyword">then</span></div><div class="line">                artist=`osascript <span class="operator">-e</span> <span class="string">'tell application &amp;quot;iTunes&amp;quot; to artist of current track as string'</span>`;</div><div class="line">                track=`osascript <span class="operator">-e</span> <span class="string">'tell application &amp;quot;iTunes&amp;quot; to name of current track as string'</span>`;</div><div class="line">                <span class="built_in">echo</span> &amp;quot;Current track <span class="variable">$artist</span>: <span class="variable">$track</span>&amp;quot;;</div><div class="line">            <span class="keyword">fi</span></div><div class="line">            <span class="keyword">break</span> ;;</div><div class="line"></div><div class="line">        &amp;quot;play&amp;quot; ) <span class="built_in">echo</span> &amp;quot;Playing iTunes.&amp;quot;;</div><div class="line">            osascript <span class="operator">-e</span> <span class="string">'tell application &amp;quot;iTunes&amp;quot; to play'</span>;</div><div class="line">            <span class="keyword">break</span> ;;</div><div class="line"></div><div class="line">        &amp;quot;pause&amp;quot; ) <span class="built_in">echo</span> &amp;quot;Pausing iTunes.&amp;quot;;</div><div class="line">            osascript <span class="operator">-e</span> <span class="string">'tell application &amp;quot;iTunes&amp;quot; to pause'</span>;</div><div class="line">            <span class="keyword">break</span> ;;</div><div class="line"></div><div class="line">        &amp;quot;next&amp;quot; ) <span class="built_in">echo</span> &amp;quot;Going to next track.&amp;quot; ;</div><div class="line">            osascript <span class="operator">-e</span> <span class="string">'tell application &amp;quot;iTunes&amp;quot; to next track'</span>;</div><div class="line">            <span class="keyword">break</span> ;;</div><div class="line"></div><div class="line">        &amp;quot;prev&amp;quot; ) <span class="built_in">echo</span> &amp;quot;Going to previous track.&amp;quot;;</div><div class="line">            osascript <span class="operator">-e</span> <span class="string">'tell application &amp;quot;iTunes&amp;quot; to previous track'</span>;</div><div class="line">            <span class="keyword">break</span> ;;</div><div class="line"></div><div class="line">        &amp;quot;mute&amp;quot; ) <span class="built_in">echo</span> &amp;quot;Muting iTunes volume level.&amp;quot;;</div><div class="line">            osascript <span class="operator">-e</span> <span class="string">'tell application &amp;quot;iTunes&amp;quot; to set mute to true'</span>;</div><div class="line">            <span class="keyword">break</span> ;;</div><div class="line"></div><div class="line">        &amp;quot;unmute&amp;quot; ) <span class="built_in">echo</span> &amp;quot;Unmuting iTunes volume level.&amp;quot;;</div><div class="line">            osascript <span class="operator">-e</span> <span class="string">'tell application &amp;quot;iTunes&amp;quot; to set mute to false'</span>;</div><div class="line">            <span class="keyword">break</span> ;;</div><div class="line"></div><div class="line">        &amp;quot;vol&amp;quot; ) <span class="built_in">echo</span> &amp;quot;Changing iTunes volume level.&amp;quot;;</div><div class="line">            vol=`osascript <span class="operator">-e</span> <span class="string">'tell application &amp;quot;iTunes&amp;quot; to sound volume as integer'</span>`;</div><div class="line">            <span class="keyword">if</span> [ <span class="variable">$2</span> = &amp;quot;up&amp;quot; ]; <span class="keyword">then</span></div><div class="line">                newvol=$(( vol+<span class="number">10</span> ));</div><div class="line">            <span class="keyword">fi</span></div><div class="line"></div><div class="line">            <span class="keyword">if</span> [ <span class="variable">$2</span> = &amp;quot;down&amp;quot; ]; <span class="keyword">then</span></div><div class="line">                newvol=$(( vol-<span class="number">10</span> ));</div><div class="line">            <span class="keyword">fi</span></div><div class="line"></div><div class="line">            <span class="keyword">if</span> [ <span class="variable">$2</span> <span class="operator">-gt</span> <span class="number">0</span> ]; <span class="keyword">then</span></div><div class="line">                newvol=<span class="variable">$2</span>;</div><div class="line">            <span class="keyword">fi</span></div><div class="line">            osascript <span class="operator">-e</span> &amp;quot;tell application &amp;quot;iTunes&amp;quot; to <span class="keyword">set</span> sound volume to <span class="variable">$newvol</span>&amp;quot;;</div><div class="line">            <span class="keyword">break</span> ;;</div><div class="line"></div><div class="line">        &amp;quot;stop&amp;quot; ) <span class="built_in">echo</span> &amp;quot;Stopping iTunes.&amp;quot;;</div><div class="line">            osascript <span class="operator">-e</span> <span class="string">'tell application &amp;quot;iTunes&amp;quot; to stop'</span>;</div><div class="line">            <span class="keyword">break</span> ;;</div><div class="line"></div><div class="line">        &amp;quot;quit&amp;quot; ) <span class="built_in">echo</span> &amp;quot;Quitting iTunes.&amp;quot;;</div><div class="line">            osascript <span class="operator">-e</span> <span class="string">'tell application &amp;quot;iTunes&amp;quot; to quit'</span>;</div><div class="line">            <span class="keyword">exit</span> <span class="number">1</span> ;;</div><div class="line"></div><div class="line">        &amp;quot;search&amp;quot; ) <span class="built_in">echo</span> &amp;quot;Searching Library.&amp;quot;;</div><div class="line">            songname=<span class="variable">$2</span>;</div><div class="line">            osascript <span class="operator">-e</span> &amp;quot;tell application &amp;quot;iTunes&amp;quot;&amp;quot; <span class="operator">-e</span> &amp;quot;<span class="keyword">set</span> searchResults to search playlist &amp;quot;Library&amp;quot; <span class="keyword">for</span> &amp;quot;<span class="variable">$songname</span>&amp;quot;&amp;quot; <span class="operator">-e</span> &amp;quot;repeat with aTrack <span class="keyword">in</span> searchResults&amp;quot; <span class="operator">-e</span> &amp;quot;copy aTrack to playlist &amp;quot;foo&amp;quot;&amp;quot; <span class="operator">-e</span> &amp;quot;end repeat&amp;quot; <span class="operator">-e</span> &amp;quot;play playlist &amp;quot;foo&amp;quot;&amp;quot; <span class="operator">-e</span> &amp;quot;end tell&amp;quot;;</div><div class="line">            <span class="keyword">break</span> ;;</div><div class="line"></div><div class="line">        &amp;quot;playlist&amp;quot; )</div><div class="line">            <span class="keyword">if</span> [ -n &amp;quot;<span class="variable">$2</span>&amp;quot; ]; <span class="keyword">then</span></div><div class="line">                <span class="built_in">echo</span> &amp;quot;Changing iTunes playlists to <span class="string">'$2'</span>.&amp;quot;;</div><div class="line">                osascript <span class="operator">-e</span> <span class="string">'tell application &amp;quot;iTunes&amp;quot;'</span> <span class="operator">-e</span> &amp;quot;<span class="keyword">set</span> new_playlist to \&amp;quot;<span class="variable">$2</span>\&amp;quot; as string&amp;quot; <span class="operator">-e</span> &amp;quot;play playlist new_playlist&amp;quot; <span class="operator">-e</span> &amp;quot;end tell&amp;quot;;</div><div class="line">                <span class="keyword">break</span> ;</div><div class="line">            <span class="keyword">else</span></div><div class="line">                <span class="comment"># Show available iTunes playlists.</span></div><div class="line">                <span class="built_in">echo</span> &amp;quot;Playlists:&amp;quot;;</div><div class="line">                osascript <span class="operator">-e</span> <span class="string">'tell application &amp;quot;iTunes&amp;quot;'</span> <span class="operator">-e</span> &amp;quot;<span class="keyword">set</span> allPlaylists to (get name of every playlist)&amp;quot; <span class="operator">-e</span> &amp;quot;end tell&amp;quot;;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">fi</span></div><div class="line">            <span class="keyword">break</span>;;</div><div class="line"></div><div class="line">        &amp;quot;clear&amp;quot; ) <span class="built_in">echo</span> &amp;quot;Clearing Query.&amp;quot;;</div><div class="line">            osascript <span class="operator">-e</span> &amp;quot;tell application &amp;quot;iTunes&amp;quot; to delete tracks of playlist &amp;quot;foo&amp;quot;&amp;quot;;</div><div class="line">            <span class="keyword">break</span> ;;</div><div class="line"></div><div class="line">        &amp;quot;<span class="built_in">help</span>&amp;quot; | * ) <span class="built_in">echo</span> &amp;quot;<span class="built_in">help</span>:&amp;quot;;</div><div class="line">            showHelp;</div><div class="line">            <span class="keyword">break</span> ;;</div><div class="line">    <span class="keyword">esac</span></div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ootput.github.io/2013/08/02/control-itunes-with-shell-script-at-command-line/" data-id="01fwl6341xltn7yy" class="article-share-link">Share</a>
+      
+        <a href="http://ootput.github.io/2013/08/02/control-itunes-with-shell-script-at-command-line/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/itunes/">itunes</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/osx/">osx</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/11/">11</a><a class="extend next" rel="next" href="/archives/page/2/">Next &raquo;</a>
@@ -608,7 +593,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">May 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">April 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">December 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">June 2012</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">May 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10/">October 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/09/">September 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06/">June 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07/">July 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06/">June 2010</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/04/">April 2010</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03/">March 2010</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02/">February 2010</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11/">November 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03/">March 2007</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02/">February 2007</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">May 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">April 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">December 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">June 2012</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">May 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10/">October 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/09/">September 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06/">June 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07/">July 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06/">June 2010</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/04/">April 2010</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03/">March 2010</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02/">February 2010</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11/">November 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03/">March 2007</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02/">February 2007</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -618,10 +603,6 @@ ga('send', 'pageview');
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
-        
-          <li>
-            <a href="/2014/11/24/hello-world/">Hello World</a>
-          </li>
         
           <li>
             <a href="/2014/11/23/Hello-Hexo-md-2014-11-24T10-18-02-112Z/">Hello Hexo</a>
@@ -637,6 +618,10 @@ ga('send', 'pageview');
         
           <li>
             <a href="/2014/06/14/qos-on-vpn-client-tunnel-in-tomato/">QOS on VPN Client Tunnel in Tomato</a>
+          </li>
+        
+          <li>
+            <a href="/2013/10/20/reset-audio-on-osx/">Reset Audio on OSX</a>
           </li>
         
       </ul>
