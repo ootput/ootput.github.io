@@ -1,0 +1,21 @@
+title: OSX Lion on Thinkpad X220
+tags:
+  - osx
+  - x220
+id: 1675
+categories:
+  - Software
+date: 2013-07-20 23:28:11
+---
+
+![Lion-300x300](http://ootput.files.wordpress.com/2013/07/lion-300x300.png?w=150)
+
+In all my years of computing, I'd never imagined the day where I would find myself working with an Apple OS. I'd always assumed - wrongly - that Mac systems were specifically targeted to cashed-up yuppies who didn't know any better. I assumed that Windows was the only platform of choice to get things done, and that accumulating quality software designed for Windows was the primary goal of my technosexual existence. Of course, back then, in the days of raging hormones and teenage angst, I had made many incorrect assumptions.
+
+As I eventually found out, both Linux and BSD proved to be rock solid workhorses and viable alternatives to the Windows that I had so admired - and now, it seems I have also taken a strong liking to Apple's OSX. Of course, any Apple evangelism on my part will be premature, as I have yet to grasp the inner workings of OSX. For now, let's just say that I have OSX Lion successfully running on my Lenovo X220 (alongside CrunchBang Linux) courtesy of my wife's Snow Leopard Disk, and [this guide](http://forum.thinkpads.com/viewtopic.php?f=32&amp;t=102098&amp;start=0 "X220 Hackintosh (lion) on MBR partition dual boot Windows 7"), and that I enjoy every minute of using it. It is a very capable system, and a most welcome addition to my heterogeneous network. There were a few hiccups along the way (to be discussed later), but for the most part, the installation ran smoothly.
+
+Thus far, I've made many changes to the system to arrive at a more familiar desktop (again, to be discussed later). This is not to say that I have been spending most of my time tinkering with the defaults - in fact, like Crunchbang, OSX proves to be quite operational OOTB. I suppose that I have been spoiled somewhat with Crunchbang's easy maintenance, that proceeding to use an even simpler system seemed to be a most natural step.
+
+My workflow has not been altered considerably, owing to the many ported software from Unix systems, and for this I am thankful. Running OSX - as opposed to any Linux distribution - does also have its perks: I am able to access a wider pool of quality commercial software for my media creation/management. As much as I admire the tenets of the Free Software movement, I'm not bound to it - nor am I vehemently opposed to commercial offerings. I have not compromised my integrity, and I like to think that I choose software on the basis of what's right for the proverbial job.
+
+I will try to make as many posts regarding the transition as I can - both for X220 owners considering running a Hackintosh, or for other geeks who have risen above the stigma of Macintosh use and are willing to try.

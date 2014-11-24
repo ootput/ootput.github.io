@@ -1,0 +1,16 @@
+title: CA Certificates in FreeBSD
+tags:
+  - freebsd
+  - ssl
+id: 22
+categories:
+  - Software
+date: 2011-09-25 18:22:42
+---
+
+![](http://ootput.files.wordpress.com/2011/09/cacert300x120.png?w=150 "cacert300x120")
+
+From CAcert Wiki - Inclusion Status:
+> The old ca-roots port (which included the CAcert certificate) was removed with the comment "Not supported by FreeBSD Security Officer anymore". The current certificate package (ca_root_nss) is a copy of the Mozilla certificate package and FreeBSD is therefore dependent on Mozilla inclusion.
+
+Hence: `# pkg_add -rv ca_root_nss`

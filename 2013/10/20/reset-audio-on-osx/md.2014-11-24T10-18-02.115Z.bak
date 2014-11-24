@@ -1,0 +1,32 @@
+title: GnuTLS for WeeChat
+tags:
+  - freebsd
+  - ssl
+  - weechat
+id: 21
+categories:
+  - Software
+date: 2011-09-25 18:33:28
+---
+
+![](http://ootput.files.wordpress.com/2011/09/weechat_logo.png?w=150 "weechat_logo")
+
+WeeChat supports encrypted IRC connections using GnuTLS. For FreeBSD's port of WeeChat, as root:`
+# cd /usr/ports/irc/weechat
+# make
+[select GnuTLS]
+# make install
+`
+
+<!--more-->
+
+In WeeChat:`
+/set weechat.network.gnutls_ca_file "/usr/local/share/certs/ca-root-nss.crt"
+/set irc.server.freenode.addresses "chat.freenode.net/7000"
+/set irc.server.freenode.ssl on
+/set irc.server.freenode.ssl_dhkey_size 1024
+/connect freenode
+`
+
+_NB:_ WeeChat's support for GnuTLS is rather flaky, with numerous bug reports recently surfacing on the net ([one such example](http://securityvulns.com/Zdocument866.html)). WeeChat's [FAQ](http://www.weechat.org/files/doc/weechat_faq.en.html#irc_ssl_connection) suggests disabling verification of secure connections with:`
+/set irc.server.freenode.ssl_verify off`

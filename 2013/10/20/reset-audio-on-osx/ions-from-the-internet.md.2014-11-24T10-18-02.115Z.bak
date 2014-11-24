@@ -1,0 +1,26 @@
+title: Block WINE Applications From The Internet
+tags:
+  - wine
+id: 1586
+categories:
+  - Software
+date: 2011-06-06 22:29:49
+---
+
+I have created an importable Windows Registry key that will essentially block internet access for apps run by Wine. I found the usual method of creating IPTables (for Linux) rules per process and/or per user (think: `# useradd wine`) extremely tedious when administering several boxen.
+
+Import the following key using Wines Regedit:
+{% codeblock %}
+
+REGEDIT4
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]
+&quot;MigrateProxy&quot;=dword:00000001
+&quot;ProxyEnable&quot;=dword:00000001
+&quot;ProxyHttp.1.1&quot;=dword:00000000
+&quot;ProxyOverride&quot;=&quot;&lt;local&gt;&quot;
+&quot;ProxyServer&quot;=&quot;http://NonExistantProxyAddress:80&quot;
+&quot;User Agent&quot;=&quot;Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1&quot;{% endcodeblock %}
+
+
+.. and restart the app for the changes to take effect.

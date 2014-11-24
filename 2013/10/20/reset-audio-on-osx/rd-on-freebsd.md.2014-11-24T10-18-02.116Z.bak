@@ -1,0 +1,77 @@
+title: SABnzbd and SICKbeard on FreeBSD
+tags:
+  - freebsd
+  - sabnzbd
+  - sickbeard
+id: 514
+categories:
+  - Software
+date: 2011-12-26 23:00:20
+---
+
+![](http://ootput.files.wordpress.com/2011/12/sabnzbd_and_sickbeard.png?w=150 "sabnzbd_and_sickbeard")
+
+For my own archives, I have reproduced installation instructions for SABnzbd and Sickbeard on FreeBSD from _Syah_ of the FreeBSD forums (titled: FreeBSD +Sabnzbd/Sickbeard/CouchPotato):
+
+<!--more-->
+
+> 1\. install sabnzbd+ from ports.> 
+> 
+> `# cd /usr/ports/news/sabnzbdplus; make install clean`> 
+> 
+> 2) install some dependencies if they are not already present on your system. Needed to run &amp; acquire python scripts (Sick Beard, Couch Potato, Headphones)> 
+> 
+> Python> 
+> `# cd /usr/ports/lang/python; make install clean`> 
+> 
+> Cheetah> 
+> `# cd /usr/ports/devel/py-cheetah; make install clean`> 
+> 
+> Git> 
+> `# cd /usr/ports/devel/git; make install clean`> 
+> 
+> 3\. Fetch most recent builds of the three tools> 
+> 
+> Sick Beard> 
+> `# cd /usr/local ; git clone git://github.com/midgetspy/Sick-Beard.git sickbeard`> 
+> 
+> 4\. Configure auto-start for python scripts and sabnzbd+> 
+> 
+> Sick Beard> 
+> `# cp /usr/local/sickbeard/init.freebsd /usr/local/etc/rc.d/sickbeard`> 
+> 
+> Add the following to /etc/rc.conf:> 
+> 
+> `> 
+> sabnzbd_enable="YES"> 
+> sickbeard_enable="YES"> 
+> `> 
+> 
+> 5\. configure all the tools to play nice together.> 
+> 
+> Totally beyond the scope of a quick &amp; dirty update. You should read the installation instructions and refer to the individual websites for each of these projects to fully leverage this tool set.> 
+> 
+> Hopefully this gets you a bit further towards your goal.
+To keep track of upstream changes to SickBeard:
+`# cd /usr/local/sickbeard &amp;&amp; git pull`
+
+A few notes:
+
+*   <del datetime="2012-12-01T08:39:24+00:00">Step 4\. will fail as SickBeard currently only comes with an Ubuntu startup script. Hatchling, from the SickBeard Forums (A FreeBSD rc.d script), kindly published a working copy of a FreeBSD rc script that is available [here](http://dl.dropbox.com/u/5830692/sickbeard.txt) (and duplicated [here](https://gist.github.com/1610595).)</del>
+It appears that an init script for FreeBSD is now provided with the latest git pull - unfortunately, it's not perfect, and needs to be modified for SickBeard to shut down properly.
+{% codeblock lang:diff %}
+
+diff --git a/init.freebsd b/init.freebsd
+index 8d9ba4b..3f65b31 100755
+--- a/init.freebsd
++++ b/init.freebsd
+@@ -69,7 +69,7 @@ verify_sickbeard_pid() {
+ sickbeard_stop() {
+     echo &quot;Stopping $name&quot;
+     verify_sickbeard_pid
+-    ${WGET} -O - -q --user=${SBUSR} --password=${SBPWD} &quot;http://${HOST}:${PORT}/home/shutdown/&quot; &gt;/dev/null
++    ${WGET} -O - -q --user=${SBUSR} --password=${SBPWD} &quot;http://${HOST}:${PORT}/home/shutdown/?pid=${pid}&quot; &gt;/dev/null
+     if [ -n &quot;${pid}&quot; ]; then
+       wait_for_pids ${pid}
+       echo &quot;Stopped&quot;
+{% endcodeblock %}

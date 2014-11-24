@@ -1,0 +1,44 @@
+title: Filter Habari Pages by Tags
+tags:
+  - blog
+  - habari
+id: 36
+categories:
+  - Software
+date: 2010-06-24 22:42:08
+---
+
+Habari's pages, while taggable, aren't filtered; Habari's content filters only apply to entries. This can be easily addressed by modifying the theme - for example, with K2, make the following changes to `themes/k2/theme.php`:
+{% codeblock lang:diff %}
+
+*** system/themes/k2/theme.php 2010-06-21 22:15:10.587118909 +0800
+--- user/themes/k2/theme.php 2010-06-23 20:00:35.488368879 +0800
+***************
+*** 46,51 ****
+--- 46,70 ----
+   * template. So the values here, unless checked, will overwrite any existing
+   * values.
+   */
++
++ /**
++ * Filter the parameters being passed to Posts::get()
++ *
++ * @param array $filters The parameters to be passed to Posts::get()
++ *
++ * @return array The updated parameters
++ */
++ public function filter_template_where_filters( $filters )
++ {
++
++ if( isset( $filters['content_type'] ) ) {
++ $types = Utils::single_array( $filters-&gt;offsetGet( 'content_type' ) );
++ $types[] = Post::type( 'page' );
++ $filters-&gt;offsetSet( 'content_type', $types );
++ }
++ return $filters;
++ }
++
+   public function add_template_vars()
+   {
+   //Theme Options
+{% endcodeblock %}

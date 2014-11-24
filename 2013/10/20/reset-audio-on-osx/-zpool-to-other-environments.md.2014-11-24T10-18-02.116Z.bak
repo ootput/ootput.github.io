@@ -1,0 +1,50 @@
+title: Import FreeBSD Root ZPool to Other Environments
+tags:
+  - freebsd
+  - zfs
+id: 524
+categories:
+  - Software
+date: 2011-12-30 17:53:18
+---
+
+![](http://ootput.files.wordpress.com/2011/12/zfs-linux.png?w=150 "zfs-linux")
+
+While testing various memory disk filesystems in FreeBSD, I intelligently made changes to `/etc/fstab` that pointed to non-existent mountpoints (`zroot/usr/home` did not exist until later in the boot process - and the system refused to boot into FreeBSD due to mounting errors.)
+
+To remedy this, I booted into my Ubuntu Oneiric installation, which fortunately supported native ZFS (follow [this](https://wiki.ubuntu.com/ZFS/) guide). Using the following commands, I was able to mount my root partition zpool - `zroot` - to make the necessary adjustments to `/etc/fstab`.
+
+<!--more-->
+
+In Ubuntu, as root, list the available zpool imports with:
+`# zpool import`
+
+This will reveal all existing zpools found on all disk drives. Check to see if the zpool can be properly imported by reading the `state`, `status`, and `action` descriptions of the zpool.
+
+Continuing on, create a temporary mountpoint for the zpool:
+`# mkdir -p /mnt/zpool_temp`
+
+Then import the zpool:
+`# zpool import -N -R /mnt/zpool_temp zroot`
+
+To confirm this worked, do:
+`# zfs list`
+
+Also, note the dataset's original mountpoint value with:
+`# zfs get mountpoint zroot`
+
+Then:
+`# zfs set mountpoint=/mnt/zpool_temp zroot`
+`# zfs mount zroot`
+
+This will temporarily mount the root zpool `R/W` at `/mnt/zpool_temp`, allowing you to make the necessary changes.
+
+After you are done making changes to the mounted dataset, while making sure that it is no longer in use:
+`# zfs unmount zroot`
+
+Then, reset the mountpoint to it's original value:
+`# zfs set mountpoint=/ zroot`
+
+Now reboot the machine _without_ exporting the zpool - this is very important.
+
+Your FreeBSD should now boot properly.

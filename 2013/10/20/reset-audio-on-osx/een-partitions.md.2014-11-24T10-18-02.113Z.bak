@@ -1,0 +1,26 @@
+title: Find/Cpio Data Between Partitions
+tags:
+  - clone
+  - freebsd
+id: 1416
+categories:
+  - Software
+date: 2010-03-18 12:29:51
+---
+
+Besides the Dump/Restore method mentioned [here](http://ootput.wordpress.com/2010/03/18/dumprestore-data-between-partitions/), I've found the commands `find` and `cpio` an equally effective combo when used to obtain true clones of data directories.
+
+In the below example, the source partition is mounted at `/srcDir`, and the destination partition device is `/dev/targetPart`. We will create two scratch directories at `/var/tmp`: `srcDir`, and `targetDir`; and mount both source and target partitions here.
+
+We will use the `mount_nullfs` file system as opposed to the traditional loopback file system. From `man 8 mount_nullfs`:
+> The mount_nullfs file system differs from a traditional loopback file system in two respects: it is implemented using a stackable layers techniques, and its “null-node”s stack above all lower-layer vnodes, not just over directory vnodes.
+
+`
+# mkdir /var/tmp/srcDir &amp;&amp; mount_nullfs /srcDir /var/tmp/srcDir
+# mkdir /var/tmp/targetDir &amp;&amp; mount /dev/targetPart /var/tmp/targetDir
+# cd /var/tmp/srcDir
+``
+# find . | cpio -pdum /var/tmp/targetDir
+``
+# cd - &amp;&amp; umount /var/tmp/targetDir &amp;&amp; umount /var/tmp/srcDir
+# rmdir /var/tmp/{srcDir,targetDir}`

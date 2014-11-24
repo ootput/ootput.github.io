@@ -1,0 +1,16 @@
+title: PHP/MySQL-based Solution for Blog
+tags:
+  - blog
+  - nanoblogger
+id: 505
+categories:
+  - Software
+date: 2010-03-28 07:14:22
+---
+
+While I've found NanoBlogger to be extremely intuitive and easy to deploy, I've come to the realization that bash and co. simply don't scale well with lots of entries, and that they aren't nearly as effective as other database-querying solutions.
+
+On one of my sites in particular, `$ nb update all` took all of 10 minutes to complete - this was with a 'quick' 2-line hack of the display template. Pitiful performance for something I once thought was lean and mean - though I should have known that from the start.
+
+I'm also entertaining the idea of using a perl-based CMS called BlazeBlogger. It's reportedly very fast at serving static files, and as it is based on Perl, does not require a database. From [BlazeBlogger's About page](http://blaze.blackened.cz/about/):
+> BlazeBlogger is a simple to use but capable CMS for the command line. Being written in Perl as a cross-platform application, and producing static content without the need of database servers or server-side scripting, it is literally a CMS without boundaries suitable for a wide variety of web presentations, from a personal weblog to a project page, or even a company website.

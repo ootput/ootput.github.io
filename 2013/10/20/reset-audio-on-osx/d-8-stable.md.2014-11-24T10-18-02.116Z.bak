@@ -1,0 +1,94 @@
+title: Upgrading to FreeBSD 8-Stable
+tags:
+  - freebsd
+id: 526
+categories:
+  - Software
+date: 2011-12-27 22:45:40
+---
+
+As a reminder to myself:`
+# pkg_add -r fastest_cvsup`
+`# fastest_cvsup -c all`
+
+In `/root/stable-supfile`, have:
+
+{% codeblock %}
+
+*default host=cvsup.au.freebsd.org
+*default base=/var/db
+*default prefix=/usr
+*default release=cvs tag=RELENG_8
+*default delete use-rel-suffix
+*default compress
+src-all
+{% endcodeblock %}
+
+<!--more-->
+
+`# csup /root/stable-supfile`
+
+`# cd /usr/src`
+`# rm -r -f /usr/obj`
+
+Customize `/etc/make.conf` (read _notes_). Mine contains:
+
+{% codeblock %}
+
+CPUTYPE?= core2
+
+NO_LPR= YES
+NO_NIS= YES
+CUPS_OVERWRITE_BASE= YES
+NO_INET6= YES
+
+WITH_NVIDIA_GL= YES
+WITH_NVIDIA= YES
+WITHOUT_NOUVEAU= YES
+{% endcodeblock %}
+
+
+`# script /var/tmp/buildworld-$(date "+%Y%m%d%H%M.%S")`
+
+`# make -jX buildworld`
+<font>_( where X == number of CPUs + 1 )_</font>
+
+`# exit`
+`# script /var/tmp/buildkernel-$(date "+%Y%m%d%H%M.%S")`
+
+`# make buildkernel KODIR=/boot/testing KERNCONF=CUSTOM64`
+<font>_( where CUSTOM64 is documented [here](http://ootput.wordpress.com/2011/12/27/custom-kernel-config-for-freebsd-8-stable/) )_</font>
+
+`# make installkernel KODIR=/boot/testing KERNCONF=CUSTOM64`
+`# exit`
+`# nextboot -k testing`
+`# shutdown -r now`
+
+`# cd /boot`
+`# rm -r -f OLD`
+`# mv kernel OLD`
+`# mv testing kernel`
+
+`# adjkerntz -i`
+`# rm -rf /etc.old &amp;&amp; cp -Rp /etc /etc.old`
+`# mergemaster -p`
+`# cd /usr/src`
+`# make installworld`
+`# mergemaster -iU`
+`# make delete-old`
+`# shutdown -r now`
+
+_NB:_ `NO_NIS` in `/etc/make.conf` requires the following changes in `/etc/nsswitch.conf`:
+
+{% codeblock %}
+
+group: files
+passwd: files
+{% endcodeblock %}
+
+
+If you're feeling game, you can try the following commands to save yourself some keystrokes and delays:
+
+    # csup /root/stable-supfile &amp;&amp; rm -r -f /usr/obj &amp;&amp; cd /usr/src &amp;&amp; make -j5 buildworld &amp;&amp; make buildkernel KODIR=/boot/testing KERNCONF=CUSTOM64 &amp;&amp; make installkernel KODIR=/boot/testing KERNCONF=CUSTOM64 &amp;&amp; cd /boot &amp;&amp; rm -r -f OLD &amp;&amp; mv kernel OLD &amp;&amp; mv testing kernel &amp;&amp; reboot`</pre>
+    Here, you can revert back to the old kernel if you experience boot up problems. Otherwise, continue with:
+    <pre>`# adjkerntz -i &amp;&amp; rm -rf /etc.old &amp;&amp; cp -Rp /etc /etc.old &amp;&amp; mergemaster -p &amp;&amp; cd /usr/src &amp;&amp; make installworld &amp;&amp; mergemaster -iU &amp;&amp; make delete-old &amp;&amp; reboot

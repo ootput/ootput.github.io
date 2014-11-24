@@ -78,6 +78,66 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-flash-in-fedora-13" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2010/06/05/flash-in-fedora-13/" class="article-date">
+  <time datetime="2010-06-05T03:28:29.000Z" itemprop="datePublished">Jun 5 2010</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Software/">Software</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2010/06/05/flash-in-fedora-13/">Flash in Fedora 13</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/f00f7a391330d094668c3e466010831407bdb793.png?w=150" alt="" title="flash"></p>
+<p>To get flash working in F13 (i386), visit <a href="http://get.adobe.com/flashplayer/" target="_blank" rel="external">the Adobe Flash site</a>, select <code>YUM for Linux</code>, and accept the download.</p>
+<p>Then, as root:<br>`</p>
+<h1 id="rpm_-ivh_adobe-release-i386-1-0-1-noarch-rpm">rpm -ivh adobe-release-i386-1.0-1.noarch.rpm</h1>
+<p>`</p>
+<p>.. and then import the provided GPG key:<br>`</p>
+<h1 id="rpm_—import_/etc/pki/rpm-gpg/RPM-GPG-KEY-adobe-linux">rpm —import /etc/pki/rpm-gpg/RPM-GPG-KEY-adobe-linux</h1>
+<p>`</p>
+<p>To confirm that <code>yum</code> can now access Adobe RPM packages, check to see if <code>/etc/yum.repos.d/adobe-linux-i386.repo</code> exists, and that it contains:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">[adobe-linux-i386]</div><div class="line">name=Adobe Systems Incorporated</div><div class="line">baseurl=http://linuxdownload.adobe.com/linux/i386/</div><div class="line">enabled=<span class="number">1</span></div><div class="line">gpgcheck=<span class="number">1</span></div><div class="line">gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-adobe-linux</div></pre></td></tr></table></figure>
+
+
+<p>Then, it’s simply a matter of installing the required packages:<br>`</p>
+<h1 id="yum_install_flash-plugin_alsa-plugins-pulseaudio_libcurl_nspluginwrapper`">yum install flash-plugin alsa-plugins-pulseaudio libcurl nspluginwrapper`</h1>
+<p>During <code>yum</code> operation, you’ll notice the error <code>Warning: RPMDB altered outside of yum</code>. This cannot be avoided as we are dealing with third-party packages. To read more about the error, visit James Antill’s blog entry.</p>
+<p><em>NB</em>: Flash in Fedora 13 is still a CPU-hog, though I’ve now found that this applies to Flash in Linux in general. Where Flash in Windows Vista on the same box would use roughly 10-15% CPU time, Fedora would see 50-60% CPU usage. The problem is compounded by multiple flash sources on a single page - such pages employ flash-based advertisements that, without fail, degrade system performance.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ootput.github.io/2010/06/05/flash-in-fedora-13/" data-id="bb7l8lyblk35dw7p" class="article-share-link">Share</a>
+      
+        <a href="http://ootput.github.io/2010/06/05/flash-in-fedora-13/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/fedora/">fedora</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-grub-config-in-fedora-13" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2010/06/05/grub-config-in-fedora-13/" class="article-date">
@@ -290,7 +350,7 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="http://ootput.files.wordpress.com/2010/06/habari.png?w=76" alt="" title="habari"></p>
+        <p><img src="/images/9bfc5f7ddabc927d090d62f5ee934b270b63d8fa.png?w=76" alt="" title="habari"></p>
 <p>With Chyrp development dead in the water, I had to find a worthwhile alternative. <a href="http://wordpress.org/" target="_blank" rel="external">Wordpress</a>, while no doubt a popular and proven platform, seemed a bit too complex for my needs. Still, as my experience with blogging platforms was virtually nil, I had no choice but to make it a major consideration.</p>
 <p>Upon searching for Wordpress themes, I chanced upon some Habari themes, oddly enough. After browsing Habari’s wiki pages, I soon realized that it was not so different from Chyrp - besides a much more active Habari community. A trial run of Habari on this host showed that it was probably the closest thing to Chyrp that I could ever find, and it has remained on this host since.</p>
 <blockquote>
@@ -520,61 +580,6 @@ ga('send', 'pageview');
 
 
   
-    <article id="post-upload-github-gists" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2010/04/08/upload-github-gists/" class="article-date">
-  <time datetime="2010-04-07T21:15:29.000Z" itemprop="datePublished">Apr 8 2010</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Software/">Software</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2010/04/08/upload-github-gists/">Upload Github Gists</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p></p><p>To upload gists from the command-line, follow <a href="http://github.com/defunkt/gist/blob/master/README.markdown" target="_blank" rel="external">these instructions</a>. The given usage example shows:</p>
-<pre>
-$ gist &lt; file.txt
-$ echo secret | gist --private # or -p
-$ echo &quot;puts :hi&quot; | gist -t rb
-$ gist script.py
-$ gist script.js notes.txt
-$ pbpaste | gist -p # Copy from clipboard - OSX Only
-$ gist -
-the quick brown fox jumps over the lazy dog
-^D
-</pre>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/04/08/upload-github-gists/" data-id="xn71h8wyw0rtxk83" class="article-share-link">Share</a>
-      
-        <a href="http://ootput.github.io/2010/04/08/upload-github-gists/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/7/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/9/">Next &raquo;</a>
@@ -606,7 +611,7 @@ the quick brown fox jumps over the lazy dog
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">May 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">April 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">December 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">June 2012</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">May 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10/">October 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/09/">September 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06/">June 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07/">July 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06/">June 2010</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/04/">April 2010</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03/">March 2010</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02/">February 2010</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11/">November 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03/">March 2007</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02/">February 2007</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">May 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">April 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">December 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">June 2012</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">May 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10/">October 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/09/">September 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06/">June 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07/">July 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06/">June 2010</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/04/">April 2010</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03/">March 2010</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02/">February 2010</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11/">November 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03/">March 2007</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02/">February 2007</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -622,6 +627,10 @@ the quick brown fox jumps over the lazy dog
           </li>
         
           <li>
+            <a href="/2014/11/23/Hello-Hexo-md-2014-11-24T10-18-02-112Z/">Hello Hexo</a>
+          </li>
+        
+          <li>
             <a href="/2014/11/23/Hello-Hexo/">Hello Hexo</a>
           </li>
         
@@ -631,10 +640,6 @@ the quick brown fox jumps over the lazy dog
         
           <li>
             <a href="/2014/06/14/qos-on-vpn-client-tunnel-in-tomato/">QOS on VPN Client Tunnel in Tomato</a>
-          </li>
-        
-          <li>
-            <a href="/2013/10/20/reset-audio-on-osx/">Reset Audio on OSX</a>
           </li>
         
       </ul>

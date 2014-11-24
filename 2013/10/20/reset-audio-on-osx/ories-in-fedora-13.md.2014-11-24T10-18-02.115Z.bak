@@ -1,0 +1,27 @@
+title: Third-Party Repositories in Fedora 13
+tags:
+  - fedora
+id: 42
+categories:
+  - Software
+date: 2010-06-05 17:35:02
+---
+
+From  Fedora Wiki - Other repositories:
+> There are a number of third-party software repositories for Fedora. They typically have more liberal licensing policies and provide software packages that Fedora excludes for various reasons. These software repositories are not officially affiliated or endorsed by the Fedora Project. Use them at your own discretion.
+
+For the RPMFusion repository (a merger of Dribble, FreshRPMs, and rpm.livna.org), as root:`
+# rpm -Uvh http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-stable.noarch.rpm`
+
+For the Adobe repository, which provides both Flash player and Adobe Reader:`
+# rpm -Uvh http://linuxdownload.adobe.com/adobe-release/adobe-release-i386-1.0-1.noarch.rpm`
+
+Finally, for the Skype repository, manually create `/etc/yum.repos.d/skype.repo` containing:
+{% codeblock lang:bash %}
+
+[skype]
+name=Skype Repository
+baseurl=http://download.skype.com/linux/repos/fedora/updates/i586/
+gpgkey=http://www.skype.com/products/skype/linux/rpm-public-key.asc
+enabled=1
+gpgcheck=0{% endcodeblock %}

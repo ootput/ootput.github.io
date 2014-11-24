@@ -1,0 +1,44 @@
+title: NTFS-Write in FreeBSD
+tags:
+  - freebsd
+  - ntfs
+id: 1079
+categories:
+  - Software
+date: 2012-06-18 02:47:30
+---
+
+![](http://ootput.files.wordpress.com/2012/06/ntfs.png?w=150 "ntfs")
+
+NTFS-write in FreeBSD is possible with `NTFS-3G` from ports. From [`tuxera.com`](http://www.tuxera.com/community/ntfs-3g-download):> NTFS-3G is a stable, full-featured, read-write NTFS driver for Linux, Android, Mac OS X, FreeBSD, NetBSD, OpenSolaris, QNX, Haiku, and other operating systems. It provides safe handling of the Windows XP, Windows Server 2003, Windows 2000, Windows Vista, Windows Server 2008 and Windows 7 NTFS file systems.
+
+To install NTFS-3G, do:`
+# portmaster sysutils/fusefs-ntfs`
+<!--more-->
+
+Next, create a symbolic link from the newly-installed `/usr/local/bin/ntfs-3g` into `/usr/sbin/`:`
+# ln -s $(which ntfs-3g) /usr/sbin/mount_ntfs-3g`
+
+Modify your `/etc/rc.conf` to contain:`
+fusefs_enable="YES"`
+
+Provided you know on which hard-disk (based on make/model/capacity of the device) your NTFS partition resides, you can figure out it's exact device node in FreeBSD:`
+# egrep 'ad[0-9]|cd[0-9]|da[0-9]' /var/run/dmesg.boot`
+<pre>
+ad0: 35303MB &lt;WDC WD360GD-00FNA0 35.06K35&gt; at ata0-master
+ad2: 57240MB &lt;Mushkin MKNSSDCL60GB-DX 310A13F0&gt; at ata1-master
+ad4: 286168MB &lt;WDC WD3000HLFS-01G6U4 04.04V06&gt; at ata2-master
+</pre>
+
+My NTFS partition resides on a 300GB WD Velociraptor drive, `ad4`. To confirm that `/dev/ad4` does indeed contain the NTFS partition, do:
+`# gpart show -p ad4`
+<pre>
+=&gt;        34  586072064    ad4 GPT  (286G)
+          34  586072064  ad4p1 ntfs (286G)
+</pre>
+
+To mount the partition manually, do:
+`# ntfs-3g /dev/ad4s1 /mnt/windows7`
+
+Finally, add the appropriate line to `/etc/fstab` to have the NTFS partition mounted at the next system boot. For instance, my `/etc/fstab` contains:
+`/dev/ad4s1              /mnt/windows7            ntfs-3g rw,late         0       0`

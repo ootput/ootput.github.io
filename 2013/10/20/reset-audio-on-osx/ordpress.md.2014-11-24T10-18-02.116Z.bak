@@ -1,0 +1,50 @@
+title: Code and Gists in Wordpress
+tags:
+  - blog
+  - wordpress
+id: 852
+categories:
+  - Software
+date: 2012-06-08 00:47:37
+---
+
+![](http://ootput.files.wordpress.com/2012/06/logo_gist.png?w=150 "logo_gist")
+
+While `WordPress.com` doesn’t allow you to use potentially harmful code on your blog, it does allow you to post source code for general viewing. Provided that you enclose the source code within a `&#091;sourcecode&#093; &#091;/sourcecode&#093;` [`shortcode`](http://en.support.rdpress.com/shortcodes/) wrapper, you will be able to preserve the code's formatting; enable syntax highlighting for the programming language used; and highlight specific lines in the code. For example, for a CSS snippet, do:
+<!--more-->
+
+{% codeblock lang:css %}
+&#091;sourcecode language=&quot;css&quot; highlight=&quot;3,4,5,6,7&quot;&#093;
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+&#091;&#047;sourcecode&#093;
+{% endcodeblock %}
+
+
+Alternatively, `wordpress.com` permits embedding `github.com` gists by using the `&#091;gist&#093;` shortcode. With `&#091;gist&#093;2927943&#091;/gist&#093;`, you'll achieve:
+[gist]2927943[/gist]
+
+... which certainly isn't as pretty as `wordpress.com`'s solution. You can make a gist more presentable by way of CSS customizations, but this isn't possible on `wordpress.com`. It is also impossible to tell gists to highlight specific lines of code.

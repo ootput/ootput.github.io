@@ -1,0 +1,24 @@
+title: Fuse Mounts in Fedora 12
+tags:
+  - fedora
+id: 513
+categories:
+  - Software
+date: 2010-04-12 01:08:13
+---
+
+Read [this](https://bugzilla.redhat.com/show_bug.cgi?id=493565#c44) bug report.
+
+What's wrong with that picture?
+
+We're dealing with a bug that prevents display of `$HOME` contents via Nautilus browsing and simple shell commands such as `$ ls -al `. Awesome, huh?
+
+For a Linux distribution that promotes the use of the Gnome desktop environment, it sure does seem that Fedora, and it's #fedora@[freenode legion of bigoted IRC veterans](http://splash-of-open-sauce.blogspot.com/2011/06/freenode-and-trends-for-litteman-power.html), are dismissive of the bug; a [casual mention](https://fedoraproject.org/wiki/Common_F12_bugs#FUSE_mounts_may_hang) for the wary does not count.
+
+What this means is that whenever the bug rears it's ugly head i.e. _always_, the user's desktop experience is ruined - personal configurations for applications can't be accessed.
+
+Since `2009-04-02 05:39:58 EDT`, this bug has remained officially unresolved.
+
+A temporary solution for the casual home user that does not involve patching files is to `# touch /forcefsck `as root, for the next system boot to (hopefully) fix the problem for the duration of the computer's uptime. Even then, successive reboots (expect to reboot often) requires the user to repeatedly issue the same command.
+
+My non-geek of a girlfriend was not particularly pleased.

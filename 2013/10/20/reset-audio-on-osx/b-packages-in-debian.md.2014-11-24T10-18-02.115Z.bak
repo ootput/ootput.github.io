@@ -1,0 +1,42 @@
+title: Non-Free and Contrib Packages in Debian
+tags:
+  - debian
+id: 29
+categories:
+  - Software
+date: 2010-07-01 12:12:14
+---
+
+I installed Debian's [vrms](http://packages.debian.org/squeeze/vrms) package a few weeks back, and completely forgot about it until I received an email earlier today:
+<pre>
+Subject: Cron  test -x /usr/sbin/anacron || 
+( cd / &amp;&amp; run-parts --report /etc/cron.monthly )
+
+/etc/cron.monthly/vrms:
+              Non-free packages installed on tolstoi
+
+acroread Adobe Acrobat Reader: Portable Document Format file vi
+acroread-data data files for acroread
+acroread-dictionary-en English dictionary for for acroread
+acroread-l10n-en English language package for acroread
+dvdrtools DVD writing program
+firmware-linux Binary firmware for various drivers in the Linux kernel
+firmware-linux-nonfree Binary firmware for various drivers in the Linux 
+                       kernel
+firmware-ralink Binary firmware for Ralink wireless cards
+p7zip-rar non-free rar module for p7zip
+rar Archiver for .rar files
+sun-java6-bin Sun Java(TM) Runtime Environment (JRE) 6 (architecture
+sun-java6-fonts Lucida TrueType fonts (from the Sun JRE)
+sun-java6-jre Sun Java(TM) Runtime Environment (JRE) 6 (architecture
+sun-java6-plugin The Java(TM) Plug-in, Java SE 6
+ttf-xfree86-nonfree non-free TrueType fonts from XFree86
+w64codecs win64 binary codecs
+
+               Contrib packages installed on localhost
+
+flashplugin-nonfree Adobe Flash Player - browser plugin
+ttf-mscorefonts-installer Installer for Microsoft TrueType core fonts
+</pre>
+
+I don't have many non-free packages installed, and I have yet to find better - or more open - alternatives to rid my system completely of such packages: Adobe and Sun Java are required for work; and the codec package is simply too comprehensive to ignore.

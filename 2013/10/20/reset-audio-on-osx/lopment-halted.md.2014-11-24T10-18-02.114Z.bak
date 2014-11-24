@@ -1,0 +1,20 @@
+title: Official Chyrp Development Halted
+tags:
+  - blog
+  - chyrp
+id: 512
+categories:
+  - Software
+date: 2010-06-02 15:09:58
+---
+
+I was saddened to recently hear that work on Chryp had officially ended. It's really a shame, as Chyrp provided everything I needed at a fraction of the resources required by functionally-similar blog engines. It was the most aesthetically pleasing blogging engine I had come across, and it offered unparalleled simplicity.
+
+As much as I would love to stay with Chyrp's frozen state of code, I can't dismiss the number of outstanding bugs on the platform. Also, as the code is relatively new, and the community relatively quiet in terms of feedback (moreso now after current events), it won't be a security-conscious move for me to stay on board. l'll have to find a blog engine with a similarly low footprint and a more active community.
+
+Salvaged from the author's site were these final words:
+> <p>As you may have noticed, progress on Chyrp has grinded to a halt, and has been in that state for a long while now. It is no longer maintained. A few people have volunteered to step in, which I appreciate, but no progress has been made. Throughout this project’s timeline I can count the repeated contributors on one hand (whom I am eternally grateful for; Twig, a lot of internal refactoring, and many fixes are the result of their hard work). It’s unhealthy for a project to rely too much on one maintainer; when they lose interest the whole thing crumbles down. This is essentially what’s happened. People keep switching to, finding, or using Chyrp, which just isn’t a good idea for me to encourage given Chyrp’s current state. So now I’m announcing it’s death.
+> 
+> Chyrp will always be available at GitHub. Any contributors can feel free to fork my repository; I’d be more than happy to accept patches and security fixes, or add you as a committer if you seem trustworthy and active enough. But I will no longer be working on this project, I probably won’t be in the IRC channel anymore, and I can no longer guarantee that this site will stick around through server moves and such. Unless a miracle happens and Chyrp development springs from the grave (which will be judged by actions, not words).
+> 
+> Chyrp has been a part of my life since I first learned to program. It grew out of what is now a “hello world”: writing a blog engine. It has spanned a decent chunk of my critically-thinking life. Thanks for being a part of this project, whether you were a user or a contributor. Chyrp author's blog</p>

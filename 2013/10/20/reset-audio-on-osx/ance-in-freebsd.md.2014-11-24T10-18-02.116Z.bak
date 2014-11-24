@@ -1,0 +1,82 @@
+title: Tweak Samba Performance in FreeBSD
+tags:
+  - freebsd
+  - samba
+id: 24
+categories:
+  - Software
+date: 2011-09-25 13:03:26
+---
+
+![](http://ootput.files.wordpress.com/2011/09/samba.png?w=150 "samba")
+
+For improved Read/Write speeds in Samba, build the ports package as follows:`
+# cd /usr/ports/net/samba35
+# make
+[select AIO_SUPPORT]
+# make install clean
+`
+
+<!--more-->
+
+In `/boot/loader.conf`:{% codeblock %}
+
+aio_load=&quot;YES&quot;
+{% endcodeblock %}
+
+
+In `/etc/sysctl.conf`:
+{% codeblock lang:bash %}
+
+## Tweaks for Samba
+kern.ipc.maxsockbuf=16777216
+kern.ipc.nmbclusters=32768
+kern.ipc.somaxconn=32768
+kern.maxfiles=65536
+kern.maxfilesperproc=32768
+kern.maxvnodes=800000
+net.inet.tcp.delayed_ack=0
+net.inet.tcp.inflight.enable=0
+net.inet.tcp.path_mtu_discovery=0
+net.inet.tcp.recvbuf_auto=1
+net.inet.tcp.recvbuf_inc=524288
+net.inet.tcp.recvbuf_max=16777216
+net.inet.tcp.recvspace=65536
+net.inet.tcp.rfc1323=1
+net.inet.tcp.sendbuf_auto=1
+net.inet.tcp.sendbuf_inc=524288
+net.inet.tcp.sendspace=65536
+net.inet.udp.maxdgram=57344
+net.inet.udp.recvspace=65536
+net.local.stream.recvspace=65536
+net.inet.tcp.sendbuf_max=16777216
+net.inet.tcp.mssdflt=1460
+{% endcodeblock %}
+
+
+In `/usr/local/etc/smb.conf`:
+{% codeblock lang:bash %}
+[global]
+        workgroup = MASTER.LIT
+        netbios name = SMB_PDC
+        server string = Descartes
+        interfaces = re0
+        log file = /var/log/samba/log.%m
+        max log size = 50
+        domain logons = Yes
+        os level = 65
+        preferred master = Yes
+        domain master = Yes
+        dns proxy = No
+        wins support = Yes
+        hosts allow = 10.254.0.
+        use sendfile = yes
+        strict locking = no
+        min receivefile size = 131072
+        aio read size = 1
+        aio write size = 1
+        socket options = SO_KEEPALIVE TCP_NODELAY IPTOS_LOWDELAY IPTOS_THROUGHPUT
+{% endcodeblock %}
+
+
+... and reboot for the changes to take effect.

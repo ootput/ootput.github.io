@@ -1,0 +1,15 @@
+title: Themes in Chyrp
+tags:
+  - blog
+  - chyrp
+id: 501
+categories:
+  - Software
+date: 2010-04-04 04:37:59
+---
+
+[This page](http://chyrp.net/extend/index/) provides the links to modules/themes/feathers.
+
+Installation involves downloading the zip archive, and extracting its contents to a similarly-named directory under `themes/`. You'd then need to activate it via the admin panel.
+
+By the by, I was rather disappointed that the archives were only available as .zip archives. I'd much rather these archives be available in .tar.gz, or some other commonly used *nix format. To add insult to injury, several of the themes - gull and grackle - had .zip archives that produced errors when uncompressed with 7zip in Windows. These exact same archives extracted fine under OpenBSD.

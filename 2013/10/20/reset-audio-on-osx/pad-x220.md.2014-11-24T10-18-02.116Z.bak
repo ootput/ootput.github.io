@@ -1,0 +1,57 @@
+title: CrunchBang on Thinkpad X220
+tags:
+  - crunchbang
+  - debian
+  - kvm
+  - pulseaudio
+  - x220
+id: 1572
+categories:
+  - Software
+date: 2013-04-01 20:12:56
+---
+
+[![crunchbang-logo](http://ootput.files.wordpress.com/2013/04/crunchbang-logo300.png?w=150)](http://ootput.files.wordpress.com/2013/04/crunchbang-logo300.png)
+
+_[Desktop Replacement](#purchase)_
+_ [Hardware Modifications](#hardware)_
+_ [Upgrade BIOS From USB](#bios)_
+_ [About CrunchBang](#crunchbang)_
+_ [System Modifications](#system)_
+
+<a id="purchase"></a><span style="color:#0000ff;">Desktop Replacement:</span>
+
+It has been over two and a half years since my last Debian-related post so I thought it necessary to provide an update. I have since donated my desktop machine to a worthy cause in favour of the more-mobile Thinkpad platform. My semi-retired Debian desktop is now providing headache-free internet access at the local library, where one of the librarians had long been toying with the idea of using open source. The successful implementation of my machine prompted their acquisition of a further two Ubuntu machines.
+
+My new Thinkpad, on the other hand, has been running CrunchBang Linux (#!) for over a year and a half, and I could not be happier. Although not a pure Debian system, #! is still a lean derivative.
+
+<a id="hardware"></a><span style="color:#0000ff;">Hardware Modifications:</span>
+
+Hardware changes I've made so far include: installing an Intel 30GB 525s MLC mSATA SSD drive to act as my system drive; and running 2 x 4 GB Corsair PC3-10600 DDR3-1333 RAM in dual channel mode.
+
+<a id="bios"></a><span style="color:#0000ff;">Upgrade BIOS From USB:</span>
+
+After grabbing the latest BIOS-update bootable iso from the Lenovo support site, it is necessary to extract its [otherwise hidden] contents via a perl script called [`geteltorito.pl`](http://freecode.com/projects/geteltorito).
+
+To fetch the script:
+`$ wget 'http://userpages.uni-koblenz.de/~krienke/ftp/noarch/geteltorito/geteltorito.pl'`
+
+Then, extract the contents of the downloaded *.iso file to any new target file:
+`$ perl ./geteltorito.pl /path/to/_bios_update_cd.iso &gt; /path/to/_target_image_.img`
+
+To write the image to your USB (located at /dev/sdX):
+`$ sudo dd if=/path/to/_target_image_.img of=/dev/sdX bs=512K`
+
+Then hit F12 at bootup to choose the bootable medium.
+
+<a id="crunchbang"></a><span style="color:#0000ff;">About CrunchBang:</span>
+
+Out-of-the-box, #! does everything I need it to do on a laptop (wifi management; power-saving; keyboard accessibility-support,) at a fraction of the resources required were I to customize a larger/slimmer distribution to suit my needs. Were I to install Debian, I would have arrived at my ideal setup at a much later date.
+
+Crunchbang provides a superb arsenal of open-source productivity applications, and I found myself bored witless during post-install. It defaults to using Openbox - which is not exactly a tiling WM that I'm accustomed to using - but I have made peace with that by implementing split-panes in tmux which, considering the smaller LCD screen real-estate, works reasonably well.
+
+For work-purposes, I have implemented KVM + Qemu to manage a guest Windows XP OS - the guide I used can be found [here](http://crunchbang.org/forums/viewtopic.php?id=21311) - and I have been able to leverage the power of this fantastic little unit to conduct business.
+
+<a id="system"></a><span style="color:#0000ff;">System Modifications:</span>
+
+System changes I've made so far include: switching from grub2 to syslinux (see [here](http://crunchbang.org/forums/viewtopic.php?id=25399)); colourizing init feedback (see [here](http://crunchbang.org/forums/viewtopic.php?id=19453)); mounting system paths on the SSD drive with TRIM support (with [`fstab: -o discard`](http://crunchbang.org/forums/viewtopic.php?id=13129)); enabling Thinkpad-specific battery savings (with [`tlp`](http://linrunner.de/en/tlp/docs/tlp-linux-advanced-power-management.html) and [`thinkpad-smapi`](http://www.thinkwiki.org/wiki/Tp_smapi)); relocating /var paths and browser profiles to tmpfs (with [`profile-sync-daemon`](http://forums.debian.net/viewtopic.php?f=6&amp;t=96425)).

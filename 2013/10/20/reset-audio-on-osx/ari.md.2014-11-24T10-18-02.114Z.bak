@@ -1,0 +1,32 @@
+title: Github Gists in Habari
+tags:
+  - blog
+  - github
+  - habari
+id: 49
+categories:
+  - Software
+date: 2010-06-03 14:33:51
+---
+
+<p>To avoid having wasted space in embedded gists, make the following changes to `user/themes/k2/style.css`:
+{% codeblock lang:diff %}
+
+*** system/themes/k2/style.css 2010-06-21 22:15:10.587118909 +0800
+--- user/themes/k2/style.css 2010-06-27 21:22:38.248366535 +0800
+***************
+*** 891,895 ****
+--- 891,902 ----
+        border: 1px solid #999;
+  }
+
++ /*-
++ Github Gists
++ */
++
++ .gist { text-indent:0 !important; }
++ .gist-highlight { line-height: 1.2em !important;}
++
+  /* Peace and forgiveness */
+  /* Learn more about the other K2: http://en.wikipedia.org/wiki/K2 */
+{% endcodeblock %}

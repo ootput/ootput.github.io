@@ -1,0 +1,13 @@
+title: Copy and Paste in Tmux with Mouse
+tags:
+  - osx
+  - tmux
+id: 1718
+categories:
+  - Software
+date: 2013-08-02 13:25:39
+---
+
+I have my iTerm2 emulate xterm-256colors, and found that it was possible to use the mouse to copy a selection in tmux.
+
+You'd need to hold down the `option` key whilst left-clicking and dragging across the target text selection. If you want to now paste the selected text back in to the terminal (in say, another window), you must also hold down the `option` key and middle-click to paste.

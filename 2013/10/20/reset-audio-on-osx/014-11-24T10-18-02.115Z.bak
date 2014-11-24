@@ -1,0 +1,14 @@
+title: FreeBSD as NAS
+tags:
+  - freebsd
+id: 27
+categories:
+  - Software
+date: 2011-09-25 12:13:01
+---
+
+![](http://ootput.files.wordpress.com/2011/09/freenas.png?w=76 "freenas")
+
+Upon searching for a local file-serving solution, I chanced upon [FreeNAS](http://www.freenas.org/features) (which was based on FreeBSD.) While FreeNAS offered a very flexible GUI to enable network services, it was essentially a stripped-down version of FreeBSD that lacked tools that were normally present in a vanilla FreeBSD installation. Additionally, FreeNAS's installation menu did not provide a 'fixit shell' that I could use to create a custom ZFS root layout. As I was already using a barebones FreeBSD system for web hosting, I decided to alter it slightly to make room for indefinite data storage ([ZFS](http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/filesystems-zfs.html)).
+
+I re-installed FreeBSD (8.2) on a ZFS root with GPT following [this guide](http://wiki.freebsd.org/RootOnZFS/GPTZFSBoot). I had to additionally run `/stand/sysinstall` as `root` to configure my network settings, and to install the Samba package as well as other miscellaneous packages.

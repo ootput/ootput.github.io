@@ -1,0 +1,10 @@
+title: Offline Apt Upgrade in Debian
+tags:
+  - debian
+id: 38
+categories:
+  - Software
+date: 2010-06-21 11:51:25
+---
+
+To fetch package updates for an off-line machine:

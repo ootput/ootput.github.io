@@ -1,0 +1,89 @@
+title: "Move Chromium's Cache to MFS Memory Disk on FreeBSD"
+tags:
+  - chromium
+  - freebsd
+id: 525
+categories:
+  - Software
+date: 2011-12-30 14:04:13
+---
+
+![](http://ootput.files.wordpress.com/2011/12/chromium.png?w=76 "chromium")
+
+It is possible to use FreeBSD's MFS Memory Disk to speed up access times of cached web objects.
+<!--more-->
+
+From `md(4)`:
+> The md driver provides support for four kinds of memory backed virtual disks:> 
+> ...> 
+> <u>swap:</u>> 
+>        Backing store is allocated from buffer memory.  Pages get pushed out to the swap > 
+>        when the system is under memory pressure, otherwise they stay in the operating> 
+>        memory. Using swap backing is generally preferable over malloc backing.
+
+Chromium's cache is at `$HOME/.cache/chromium`, and so, my `/etc/fstab` contains:
+{% codeblock %}
+
+# 256M mfs for google chrome
+/dev/md0 /home/ootput/.cache/chromium mfs rw,-s256m,-wootput:ootput,noauto 2 0
+{% endcodeblock %}
+
+From `mount_mfs(8)`:
+`-s256m` specifies a memory reservation of 256 M;
+`-wootput:ootput` hands ownership of the mountpoint from root to the user; and
+`noauto` prevents the system from failing to boot properly if the mountpoint does not (yet) exist.
+
+The following additions to `/etc/rc.conf` were also made:
+{% codeblock %}
+
+mdconfig_md0=&quot;-t swap -s 256m&quot;
+mdconfig_md0_owner=&quot;ootput:ootput&quot;
+mdconfig_md0_perms=&quot;1777&quot;
+{% endcodeblock %}
+
+which lists arguments to `mdconfig(8)` for device `md0`.
+
+At mininum the `-t type` must be specified and either a `-s size` for _malloc_ or _swap_ backed `md(4)` devices or a `-f file` for _vnode_ backed `md(4)` devices.
+
+The redundancies found in `fstab` and `rc.conf` allows automatic mounting at boot, or manual mounting after boot.
+
+To test the changes made, as root:
+`# /etc/rc.d/mdconfig restart`
+
+On to the `$USER/bin/pack_chrome` executable script that will both mount the `md` device, and/or sync contents from the cache at RAM to a backup cache on the HDD:
+{% codeblock lang:bash %}
+
+#!/usr/local/bin/bash
+
+CACHE=&quot;$HOME/.cache/chromium&quot;
+BACKUP=&quot;$CACHE.bak&quot;
+
+for DIR in $CACHE $BACKUP; do
+   if [ ! -d &quot;${DIR}&quot; ]; then
+      mkdir -p ${DIR}
+   fi
+done
+
+if test -z &quot;$(/sbin/mount | grep -F &quot;$CACHE&quot; )&quot;; then
+    sudo /sbin/mount &quot;$CACHE&quot;
+fi
+
+if test -f &quot;$CACHE/.synced&quot;; then
+    rsync --exclude '.synced' --exclude '.snap' --delete -avrPx 
+        &quot;$CACHE/&quot; &quot;$BACKUP&quot;
+else
+    rsync --delete -avrPx &quot;$BACKUP/&quot; &quot;$CACHE&quot;
+    touch &quot;$CACHE/.synced&quot;
+fi
+{% endcodeblock %}
+
+
+The script requires that the `$USER` is in `sudoers(5)`, and is able to use the `/sbin/mount` command.
+
+Finally, after `$ crontab -e`:
+{% codeblock %}
+
+*/30 * * * * $HOME/bin/pack_chrome &gt;/dev/null 2&gt;&amp;1
+{% endcodeblock %}
+
+.. and the script gets called every half-hour by `cron` to automate the syncing process. This also requires that `$USER` is specifically allowed in `/var/cron/allow`.

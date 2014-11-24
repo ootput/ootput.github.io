@@ -1,0 +1,25 @@
+title: Embedding IFrames in Wordpress.com
+tags:
+  - blog
+  - chess
+  - wordpress
+id: 1691
+categories:
+  - Random Musings
+date: 2013-08-01 22:17:30
+---
+
+I recently came across a workaround for embedding iframes in Wordpress.com blogs. According to [Wordpress.com's support page on the matter](http://en.support.wordpress.com/code/):
+> Flash and all other embeds are not allowed in WordPress.com posts, pages, or text widgets. For security reasons, we remove the tags needed for these to work. Your intentions may be innocent, but someone somewhere might try to use such embeds to damage the site, affecting all of our users.
+
+As [this](http://shongjog.wordpress.com/2011/01/25/how-to-embed-iframe-widgets-in-a-wordpress-com-blog-%C2%A9-netty-gritty/) guide suggests, the workaround made use of a perfectly legitimate and supported shortcode API. In essence, the workaround involved converting an iframe to Flash, which in turn was sourced by `&#091;gigya&#093;`.
+
+I was able to illustrate the concept below:
+
+_For my dearest nephew, and any other chess enthusiasts that are perusing this blog, I have embedded a chess game that I recently played. Click the link below, and try to figure out the positional/tactical errors that my opponent (and close friend) committed, and any variations that may have redeemed his play._
+
+<table style="border:none;height:32px;width:32px;">
+[gigya src="http://cdn.tagul.com/cloud.swf" flashvars="autoplay=1" allowfullscreen="true" type="application/x-shockwave-flash" allowscriptaccess="always" width="542" height="300" flashvars="id=180853@2"]
+</table>
+
+If, for some reason, the embed doesn't show, [here's](http://mekk.waw.pl/mk/watchbot/game/4318991) a link to how it _should_ look.

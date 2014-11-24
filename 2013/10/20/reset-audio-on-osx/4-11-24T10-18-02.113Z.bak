@@ -1,0 +1,71 @@
+title: SSL for ERC
+tags:
+  - emacs
+  - erc
+  - ssl
+id: 511
+categories:
+  - Software
+date: 2010-02-04 14:12:01
+---
+
+![](http://ootput.files.wordpress.com/2010/02/emacs.png?w=150 "emacs")
+
+ERC is fully equipped to connect to SSL/TLS-enabled servers (e.g. OFTC and Freenode) however, Certificate Authentication support is rather untested.
+
+For the purposes of this guide, head on over to the following [OFTC page](http://www.oftc.net/oftc/NickServ/CertFP#AddCertFPtoNS/) to get an idea on how to create the necessary certificates
+
+To get started, ensure that SSL/TLS support is enabled in your emacs init file:{% codeblock lang:erlang %}
+
+(require 'tls)
+(require 'erc){% endcodeblock %}
+
+
+This allows us to set the tls-program variable that calls external tools `openssl` or `gnutls-cli` to perform the actual connection.
+
+To see how the variable is initally defined:
+`
+[F1] V tls-program`
+
+You’ll notice that there are several options for `tls-program`. `tls-program` will cycle through the commands until a connection is established with the fallback.
+
+Note that while you can add CA-chain and accompanying keys to `gnutls-cli`, ERC may fail to recognise them, and will proceed to create the secure connection using gnutls without certificate authentication.
+
+I personally use OpenSSL:
+{% codeblock lang:erlang %}
+
+  (setq tls-program '(&quot;openssl s_client -connect %h:%p -no_ssl2 -ign_eof
+                                       -CAfile /home/ootput/.private/certs/CAs.pem 
+                                       -cert /home/ootput/.private/certs/nick.pem&quot; 
+                     &quot;gnutls-cli --priority secure256 
+                                 --x509cafile /home/ootput/.private/certs/CAs.pem 
+                                 --x509certfile /home/ootput/.private/certs/nick.pem -p %p %h&quot; 
+                     &quot;gnutls-cli --priority secure256 -p %p %h&quot;)){% endcodeblock %}
+
+
+Please note that your distro’s implementation of libgnutls may also be unsuitable for CA-chaining.
+
+Use of `gnutls-cli` is recommended for the future as most linux projects have sought to replace openssl dependencies with gnutls.
+
+Now, assuming you've already enabled 'erc, we can continue to work with the supplied erc-tls command:
+{% codeblock lang:erlang %}
+
+  (defun start-irc ()
+   &quot;Connect to IRC.&quot;
+   (interactive)
+   (erc-tls :server &quot;irc.oftc.net&quot; :port 6697
+        :nick &quot;ootput&quot; :full-name &quot;ootput&quot;)
+   (erc :server &quot;irc.freenode.net&quot; :port 6667
+        :nick &quot;ootput&quot; :full-name &quot;ootput&quot;)
+   (setq erc-autojoin-channels-alist '((&quot;freenode.net&quot; &quot;#emacs&quot; &quot;#screen&quot; &quot;#ion&quot;)
+                                       (&quot;oftc.net&quot; &quot;#debian&quot;))))
+{% endcodeblock %}
+
+
+This will establish connection to OFTC on port 6697 (SSL), but more importantly, it will allow us to use certificates for transparent Nickserv auth.
+
+`
+ ; M-x start-irc
+`
+
+Enjoy your SSL-encrypted IRC session!

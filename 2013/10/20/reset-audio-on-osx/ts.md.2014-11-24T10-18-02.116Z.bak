@@ -1,0 +1,33 @@
+title: Rebuild FreeBSD Ports
+tags:
+  - freebsd
+  - ports
+id: 523
+categories:
+  - Software
+date: 2011-12-30 19:35:35
+---
+
+![](http://ootput.files.wordpress.com/2011/12/freebsd-logo.png?w=150 "Freebsd-logo")
+
+To rebuild a specific FreeBSD port and the ports that it depends on, for example, with `pydf`, do: `
+# portmaster -fR sysutils/pydf`
+
+To rebuild all install FreeBSD ports, it's important to firstly read `/usr/ports/UPDATING` for any update advisories.
+<!--more-->
+
+Then, to list ports with issued warnings, do:
+`# portaudit -a`
+
+Once you are confident that the advisories for installed packages are negligible, issue:
+`# DISABLE_VULNERABILITIES=yes portmaster -R -a -f -B -C -d`
+
+From `portmaster(8)`:
+`-R` skips ports updated on the previous run
+`-a` checks all ports and updates when needed
+`-f` forces build
+`-B` prevents portmaster from creating a backup package
+`-C` prevents `# make clean` from being executed before the build
+`-d` always clean distfiles
+
+`DISABLE_VULNERABILITIES=yes` prevents portmaster from aborting when an 'unsafe' port is encountered.

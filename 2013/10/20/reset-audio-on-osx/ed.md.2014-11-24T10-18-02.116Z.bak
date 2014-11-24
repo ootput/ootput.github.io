@@ -1,0 +1,41 @@
+title: New Blog Host Adopted
+tags:
+  - blog
+  - habari
+  - wordpress
+id: 814
+categories:
+  - Software
+date: 2012-06-07 03:47:12
+---
+
+![](http://ootput.files.wordpress.com/2012/06/wordpress-com-logo.png?w=150 "wordpress-com-logo")
+
+As the [future of `ootput.bur.st`](http://ootput.wordpress.com/2012/06/01/future-of-ootput-burst-in-doubt/) remains bleak, I have been forced to seek alternative hosting locations. `wordpress.com` provides free hosting for blogs powered by [WordPress](http://wordpress.org/about/), and I have chosen to use it as a temporary host while I wait for the outcome of `bur.st`'s acquisition.
+<!--more-->
+
+`wordpress.com` provides a decent service to the occasional blogger who has no intention of hosting their own site. I personally felt very much at home after successfully importing posts from the Habari-based `ootput.bur.st`. Of course, as `wordpress.com` wasn't a self-hosted solution to the `bur.st` issue, I was limited to whatever functionality the blog was permitted to exhibit by the WordPress team. (read: no additional plugins allowed)
+
+The transition from Habari to WordPress was not a straightforward process, however. In order to export all of Habari's posts to a format recognised by `wordpress.com`, I had to host a WordPress blog on `bur.st` where I could create the appropriate MySQL tables for WordPress. `wordpress.com` does not provide direct MySQL access for its members, and this effectively prevents the [Habari-&gt;Wordpress script](http://chrismeller.com/2009/08/migrating-habari-to-wordpress) from working. 
+
+Regardless, once I had exported data to the `bur.st`-hosted WordPress, I was then able to produce a [WordPress-&gt;WordPress export file](http://en.blog.wordpress.com/2006/06/12/xml-import-export/) to be imported into `wordpress.com`
+
+It was a tedious process, but it saved me a lot of time in transferring content onto the new blog.
+
+In order to redirect users to my new `wordpress.com` blog, and to properly block search bots from accessing the domain (e.g. Google), I created the following two files in `ootput.bur.st`'s root directory:
+`.htaccess`:
+{% codeblock %}
+
+Options +FollowSymLinks
+RewriteEngine on
+RewriteRule (.*) http://ootput.wordpress.com/$1 [R=301,L]
+{% endcodeblock %}
+`robots.txt`:
+{% codeblock %}
+
+User-agent: *
+Disallow: /
+{% endcodeblock %}
+ Of course, these two files will be obliterated once the `bur.st` merger is officially complete.
+
+_NB:_ Interestingly, my final login to `shell.bur.st` showed new mail in my mailbox - where I had never received e-mail in the past. There was a total of 10 e-mails, and all of them were **spam**. I suppose it was someone's last ditched effort to generate some income from `bur.st` members - which was kind of lame. As the account effectively expires on the 1st July, this desperate attempt seemed rather stupid.

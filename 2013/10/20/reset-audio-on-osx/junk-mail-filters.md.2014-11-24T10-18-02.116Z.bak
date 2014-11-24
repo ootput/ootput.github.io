@@ -1,0 +1,21 @@
+title: Disable MS Outlook Junk Mail Filters
+tags:
+  - gmail
+  - outlook
+id: 520
+categories:
+  - Software
+date: 2012-05-30 20:23:19
+---
+
+![](http://ootput.files.wordpress.com/2012/05/outlooklogo.png?w=76 "OutlookLogo")
+
+Outlook 2010 adds an unwanted "Junk E-Mail" entry to my Gmail's list of labels. This can't be avoided as the automatic _folder-list-sync_ generates the label whenever you launch Outlook. As Gmail adequately deals with my spam emails, I've decided to disable Outlook's anti-spam filters.
+<!--more-->
+
+To disable the filter, you must create the following registry key and set the `DisableAntiSpam` value to 1\. This will grey out the folder name and prevent access to its settings. Create the path to the key if it does not yet exist.
+
+For Outlook 2010, the key is:
+`HKEY_CURRENT_USER/Software/Policies/Microsoft/office/14.0/outlook`
+`DWord: DisableAntiSpam`
+`Value: 1 (Hex)`

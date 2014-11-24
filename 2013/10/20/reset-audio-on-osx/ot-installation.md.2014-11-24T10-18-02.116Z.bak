@@ -1,0 +1,18 @@
+title: Ubuntu Oneiric Ocelot Installation
+tags:
+  - ubuntu
+id: 26
+categories:
+  - Software
+date: 2011-09-25 12:31:25
+---
+
+![](http://ootput.files.wordpress.com/2011/09/ubuntu.png?w=145 "Ubuntu")
+
+With a freshly installed FreeBSD 8.2-Release on my system, I knew that I had a lot of tinkering to do on the extremely bare bones system. With that in mind, I also chose to install a meta-distribution of Linux that had everything set up from the get go, so as to have a working environment while I slowly tweaked FreeBSD.
+
+Enter Ubuntu Linux 11.10 "Oneiric Ocelot"
+<!--more-->
+![7365437102_b129fb882f](http://ootput.files.wordpress.com/2011/09/7365437102_b129fb882f.jpg)
+
+Negative reviews of the product from other users did not affect my decision to use Oneiric one bit. Never having frequently used the old Gnome 2 GUI, I hardly found Gnome 3's GUI to be offensive - in fact, I found it quite easy to use. With Oneiric, all of my devices were detected, 3D graphics acceleration was working splendidly, and web-browsing was smooth as could be. Additionally, with the help of [this site](https://launchpad.net/~zfs-native/+archive/stable), my Oneiric installation was also able to fully [utilize my FreeBSD's zpools](http://ootput.wordpress.com/2011/12/30/import-freebsd-root-zpool-to-other-environments/).

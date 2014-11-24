@@ -1,0 +1,12 @@
+title: Firmware  for pgt(4) and bwi(4) in OpenBSD
+tags:
+  - openbsd
+id: 508
+categories:
+  - Software
+date: 2010-03-23 03:18:27
+---
+
+[OpenBSD](http://www.openbsd.org) does not provide closed firmware in their installation sets; You must manually install the required firmware packages. As root:`
+# pkg_add -ivvv http://www.nazgul.ch/bwi/bwi-firmware-1.4.tgz
+# pkg_add -ivvv http://www.nazgul.ch/pgt/pgt-firmware-1.2.tgz`

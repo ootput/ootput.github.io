@@ -1,0 +1,113 @@
+title: Binary Patches for OpenBSD 4.6
+tags:
+  - openbsd
+id: 503
+categories:
+  - Software
+date: 2010-04-02 05:17:13
+---
+
+To track stable, you don't necessarily need to work with cvs snapshots. Ideally, you'd fetch all relevant patches for your architecture and OpenBSD version from [here](http://openbsd.org/errata46.html) and cobble together those patches with [binpatch](http://openbsdbinpatch.sourceforge.net/)
+
+This also requires that you fetch architecture-independant `src.tar.gz` and `sys.tar.gz` from [here](ftp://ftp.openbsd.org/pub/OpenBSD/4.6/), and all installation-set tarballs from [here](ftp://ftp.openbsd.org/pub/OpenBSD/4.6/i386/).
+
+From the project description file, the tree structure is then:
+
+*   binpatch-1.1.0/
+
+*   Makefile
+*   bsd.binpatch.mk
+*   distfiles/
+
+        *   i386/
+    *   src.tar.gz
+    *   sys.tar.gz
+*   packages/
+*   patches/
+
+        *   common/
+    *   i386/
+*   pkg/
+
+        *   _(e.g. PLIST-i386-001)_
+*   work-binpatch-4.6/
+
+        *   fake/
+    *   obj/
+    *   src/
+
+The following changes to `Makefile` were made to suit patches for OpenBSD 4.6:
+{% codeblock lang:bash %}
+
+### Last Updated: June 3rd 2010
+
+# List of patches for all architectures
+PATCH_COMMON=001_bind 003_getsockopt 004_openssl 005_ptrace 006_openssl 007_ftpd 008_kerberos 009_mpi 010_openssl 011_pfsync 012_trunklacp
+# List of patches for i386 only
+PATCH_I386=002_xmm
+#...
+002_xmm: _kernel
+003_getsockopt: _kernel
+005_ptrace: _kernel
+009_mpi: _kernel
+011_pfsync: _kernel
+012_trunklacp: _kernel
+
+001_bind:
+        cd ${WRKSRC}/usr.sbin/bind &amp;&amp; \
+        (${_obj_wrp}; ${_depend_wrp}; ${_build_wrp})
+
+004_openssl:
+        cd ${WRKSRC}/lib/libssl &amp;&amp; \
+        (${_obj}; ${_depend}; ${_includes}; ${_build}) &amp;&amp; \
+        cd ${WRKSRC}/sbin &amp;&amp; \
+        (${_obj}; ${_depend}; ${_build})
+
+006_openssl:
+        cd ${WRKSRC}/lib/libssl &amp;&amp; \
+        (${_obj}; ${_depend}; ${_includes}; ${_build}) &amp;&amp; \
+        cd ${WRKSRC}/sbin &amp;&amp; \
+        (${_obj}; ${_depend}; ${_build})
+
+007_ftpd:
+        cd ${WRKSRC}/libexec/ftpd &amp;&amp; \
+        (${_depend}; ${_build})
+
+008_kerberos:
+        cd ${WRKSRC}/lib/libkrb5 &amp;&amp; \
+        (${_obj}; ${_depend}; ${_build}) &amp;&amp; \
+        cd ${WRKSRC}/kerberosV/libexec/kdc &amp;&amp; \
+        (${_obj}; ${_depend}; ${_build})
+
+010_openssl:
+        cd ${WRKSRC}/lib/libssl &amp;&amp; \
+        (${_obj}; ${_depend}; ${_includes}; ${_build}) &amp;&amp; \
+        cd ${WRKSRC}/sbin &amp;&amp; \
+        (${_obj}; ${_depend}; ${_build})
+{% endcodeblock %}
+
+
+You'll need to modify the above to include more recent patches i.e. patches dated later than June 3rd 2010.
+
+To patch the relevant files on your OpenBSD install, and to prepare packages (in `packages/`) for installation, as root:
+`
+# make PATCH="001" build
+# make PATCH="001" plist
+# make PATCH="001" package
+`
+
+To install the packages, do:
+`
+# make PATCH="001" install`
+
+I prefer to use the following script (documented [here](http://openbsdbinpatch.sourceforge.net/#installation)) to install packages:
+{% codeblock lang:bash %}
+
+#!/bin/sh
+tar xzpf &quot;$1&quot; -C /
+mkdir -p /var/db/patches/$(basename &quot;$1&quot; .tgz)
+{% endcodeblock %}
+
+
+.. or to query previously installed packages:`
+# ls /var/db/patches/`
