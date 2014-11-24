@@ -133,7 +133,7 @@ ga('send', 'pageview');
 
 <p>The script requires that the <code>$USER</code> is in <code>sudoers(5)</code>, and is able to use the <code>/sbin/mount</code> command.</p>
 <p>Finally, after <code>$ crontab -e</code>:</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">*</span>/30 <span class="keyword">*</span> <span class="keyword">*</span> <span class="keyword">*</span> <span class="keyword">*</span> $HOME/bin/pack_chrome &amp;gt;/dev/null 2&amp;gt;&amp;amp;1</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">*</span>/30 <span class="keyword">*</span> <span class="keyword">*</span> <span class="keyword">*</span> <span class="keyword">*</span> $HOME/bin/pack_chrome &amp;gt;/dev/null 2&amp;gt;&amp;1</div></pre></td></tr></table></figure>
 
 <p>.. and the script gets called every half-hour by <code>cron</code> to automate the syncing process. This also requires that <code>$USER</code> is specifically allowed in <code>/var/cron/allow</code>.</p>
 

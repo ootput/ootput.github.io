@@ -109,7 +109,7 @@ ga('send', 'pageview');
 <p>In the below example, the source partition is mounted at <code>/srcDir</code>, and the destination partition device is <code>/dev/targetPart</code>. We will create two scratch directories at <code>/var/tmp</code>: <code>srcDir</code>, and <code>targetDir</code>; and mount both source and target partitions here.</p>
 <p>We will use the <code>mount_nullfs</code> file system as opposed to the traditional loopback file system. From <code>man 8 mount_nullfs</code>:</p>
 <blockquote>
-<p>The mount_nullfs file system differs from a traditional loopback file system in two respects: it is implemented using a stackable layers techniques, and its “null-node”s stack above all lower-layer vnodes, not just over directory vnodes.</p>
+<p>The mount_nullfs file system differs from a traditional loopback file system in two respects: it is implemented using a stackable layers techniques, and its “null-node��?s stack above all lower-layer vnodes, not just over directory vnodes.</p>
 </blockquote>
 <p>`</p>
 <h1 id="mkdir_/var/tmp/srcDir_&amp;&amp;_mount_nullfs_/srcDir_/var/tmp/srcDir">mkdir /var/tmp/srcDir &amp;&amp; mount_nullfs /srcDir /var/tmp/srcDir</h1>

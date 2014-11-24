@@ -7,37 +7,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="My most recent # portmaster -Da revealed a package conflict: py-setuptools was merged with py-distribute.
 From FreshPorts:
-
-
-
-
 2013-03-05
+
 Affects: users of devel/py-setuptools (i.e you)
-Author: rm@Fre">
+
+Author: rm@FreeB">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Address Merged Ports">
 <meta property="og:url" content="http://ootput.github.io/2013/03/26/address-merged-ports/">
 <meta property="og:site_name" content="ootput burst!">
 <meta property="og:description" content="My most recent # portmaster -Da revealed a package conflict: py-setuptools was merged with py-distribute.
 From FreshPorts:
-
-
-
-
 2013-03-05
+
 Affects: users of devel/py-setuptools (i.e you)
-Author: rm@Fre">
+
+Author: rm@FreeB">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Address Merged Ports">
 <meta name="twitter:description" content="My most recent # portmaster -Da revealed a package conflict: py-setuptools was merged with py-distribute.
 From FreshPorts:
-
-
-
-
 2013-03-05
+
 Affects: users of devel/py-setuptools (i.e you)
-Author: rm@Fre">
+
+Author: rm@FreeB">
 <meta name="twitter:creator" content="@513256254">
 <link rel="publisher" href="110511550415133050000">
 
@@ -128,28 +122,20 @@ ga('send', 'pageview');
       
         <p>My most recent <code># portmaster -Da</code> revealed a package conflict: py-setuptools was merged with py-distribute.</p>
 <p>From FreshPorts:</p>
-<blockquote>
+2013-03-05
 
+Affects: users of devel/py-setuptools (i.e you)
 
-<blockquote>
-<p>2013-03-05</p>
-<p>Affects: users of devel/py-setuptools (i.e you)</p>
-<p>Author: rm@FreeBSD.org</p>
-<p>Reason: </p>
-<p>  devel/py-setuptools was replaced with devel/py-distribute. py-setuptools port will be removed shortly.</p>
-</blockquote>
-</blockquote>
+Author: rm@FreeBSD.org
+
+Reason: 
+	devel/py-setuptools was replaced with devel/py-distribute. py-setuptools port will be removed shortly.
 
 
 <p>To fix this:<br><code># portmaster -o devel/py-distribute devel/py-setuptools</code></p>
 <p>From <code>man 8 portmaster</code>:</p>
-<blockquote>
 
-<blockquote>
-<p>-o &lt;new port dir in /usr/ports&gt; &lt;installed port&gt; </p>
-<pre><code>       <span class="built_in">replace</span> <span class="operator">the</span> installed port <span class="operator">with</span> <span class="operator">a</span> port <span class="built_in">from</span> <span class="operator">a</span> different origin
-</code></pre></blockquote>
-</blockquote>
+-o &lt;new port dir in /usr/ports&gt; &lt;installed port&gt;           replace the installed port with a port from a different origin
 
 
       

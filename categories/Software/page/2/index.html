@@ -169,28 +169,20 @@ ga('send', 'pageview');
       
         <p>My most recent <code># portmaster -Da</code> revealed a package conflict: py-setuptools was merged with py-distribute.</p>
 <p>From FreshPorts:</p>
-<blockquote>
+2013-03-05
 
+Affects: users of devel/py-setuptools (i.e you)
 
-<blockquote>
-<p>2013-03-05</p>
-<p>Affects: users of devel/py-setuptools (i.e you)</p>
-<p>Author: rm@FreeBSD.org</p>
-<p>Reason: </p>
-<p>  devel/py-setuptools was replaced with devel/py-distribute. py-setuptools port will be removed shortly.</p>
-</blockquote>
-</blockquote>
+Author: rm@FreeBSD.org
+
+Reason: 
+	devel/py-setuptools was replaced with devel/py-distribute. py-setuptools port will be removed shortly.
 
 
 <p>To fix this:<br><code># portmaster -o devel/py-distribute devel/py-setuptools</code></p>
 <p>From <code>man 8 portmaster</code>:</p>
-<blockquote>
 
-<blockquote>
-<p>-o &lt;new port dir in /usr/ports&gt; &lt;installed port&gt; </p>
-<pre><code>       <span class="built_in">replace</span> <span class="operator">the</span> installed port <span class="operator">with</span> <span class="operator">a</span> port <span class="built_in">from</span> <span class="operator">a</span> different origin
-</code></pre></blockquote>
-</blockquote>
+-o &lt;new port dir in /usr/ports&gt; &lt;installed port&gt;           replace the installed port with a port from a different origin
 
 
       
@@ -393,7 +385,7 @@ ga('send', 'pageview');
     <div class="article-entry" itemprop="articleBody">
       
         <p><img src="/images/77d2c78cfa90d0eb329afe898067cde00dafad48.png?w=150" alt="" title="logo_gist"></p>
-<p>While <code>WordPress.com</code> doesn’t allow you to use potentially harmful code on your blog, it does allow you to post source code for general viewing. Provided that you enclose the source code within a <code>&amp;#091;sourcecode&amp;#093; &amp;#091;/sourcecode&amp;#093;</code> <a href="http://en.support.rdpress.com/shortcodes/" target="_blank" rel="external"><code>shortcode</code></a> wrapper, you will be able to preserve the code’s formatting; enable syntax highlighting for the programming language used; and highlight specific lines in the code. For example, for a CSS snippet, do:<br>
+<p>While <code>WordPress.com</code> doesn’t allow you to use potentially harmful code on your blog, it does allow you to post source code for general viewing. Provided that you enclose the source code within a <code>[sourcecode] [/sourcecode]</code> <a href="http://en.support.rdpress.com/shortcodes/" target="_blank" rel="external"><code>shortcode</code></a> wrapper, you will be able to preserve the code’s formatting; enable syntax highlighting for the programming language used; and highlight specific lines in the code. For example, for a CSS snippet, do:<br>
         
           <p class="article-more-link">
             <a href="/2012/06/08/code-and-gists-in-wordpress/#more">Read More</a>

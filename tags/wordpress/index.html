@@ -108,7 +108,7 @@ ga('send', 'pageview');
 <blockquote>
 <p>Flash and all other embeds are not allowed in WordPress.com posts, pages, or text widgets. For security reasons, we remove the tags needed for these to work. Your intentions may be innocent, but someone somewhere might try to use such embeds to damage the site, affecting all of our users.</p>
 </blockquote>
-<p>As <a href="http://shongjog.wordpress.com/2011/01/25/how-to-embed-iframe-widgets-in-a-wordpress-com-blog-%C2%A9-netty-gritty/" target="_blank" rel="external">this</a> guide suggests, the workaround made use of a perfectly legitimate and supported shortcode API. In essence, the workaround involved converting an iframe to Flash, which in turn was sourced by <code>&amp;#091;gigya&amp;#093;</code>.</p>
+<p>As <a href="http://shongjog.wordpress.com/2011/01/25/how-to-embed-iframe-widgets-in-a-wordpress-com-blog-%C2%A9-netty-gritty/" target="_blank" rel="external">this</a> guide suggests, the workaround made use of a perfectly legitimate and supported shortcode API. In essence, the workaround involved converting an iframe to Flash, which in turn was sourced by <code>[gigya]</code>.</p>
 <p>I was able to illustrate the concept below:</p>
 <p><em>For my dearest nephew, and any other chess enthusiasts that are perusing this blog, I have embedded a chess game that I recently played. Click the link below, and try to figure out the positional/tactical errors that my opponent (and close friend) committed, and any variations that may have redeemed his play.</em></p>
 <table style="border:none;height:32px;width:32px;"><br>[gigya src=”<a href="http://cdn.tagul.com/cloud.swf" target="_blank" rel="external">http://cdn.tagul.com/cloud.swf</a>“ flashvars=”autoplay=1” allowfullscreen=”true” type=”application/x-shockwave-flash” allowscriptaccess=”always” width=”542” height=”300” flashvars=”id=180853@2”]<br></table>
@@ -207,7 +207,7 @@ ga('send', 'pageview');
     <div class="article-entry" itemprop="articleBody">
       
         <p><img src="/images/77d2c78cfa90d0eb329afe898067cde00dafad48.png?w=150" alt="" title="logo_gist"></p>
-<p>While <code>WordPress.com</code> doesn’t allow you to use potentially harmful code on your blog, it does allow you to post source code for general viewing. Provided that you enclose the source code within a <code>&amp;#091;sourcecode&amp;#093; &amp;#091;/sourcecode&amp;#093;</code> <a href="http://en.support.rdpress.com/shortcodes/" target="_blank" rel="external"><code>shortcode</code></a> wrapper, you will be able to preserve the code’s formatting; enable syntax highlighting for the programming language used; and highlight specific lines in the code. For example, for a CSS snippet, do:<br>
+<p>While <code>WordPress.com</code> doesn’t allow you to use potentially harmful code on your blog, it does allow you to post source code for general viewing. Provided that you enclose the source code within a <code>[sourcecode] [/sourcecode]</code> <a href="http://en.support.rdpress.com/shortcodes/" target="_blank" rel="external"><code>shortcode</code></a> wrapper, you will be able to preserve the code’s formatting; enable syntax highlighting for the programming language used; and highlight specific lines in the code. For example, for a CSS snippet, do:<br>
         
           <p class="article-more-link">
             <a href="/2012/06/08/code-and-gists-in-wordpress/#more">Read More</a>

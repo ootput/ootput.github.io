@@ -108,7 +108,7 @@ ga('send', 'pageview');
 <blockquote>
 <p>Flash and all other embeds are not allowed in WordPress.com posts, pages, or text widgets. For security reasons, we remove the tags needed for these to work. Your intentions may be innocent, but someone somewhere might try to use such embeds to damage the site, affecting all of our users.</p>
 </blockquote>
-<p>As <a href="http://shongjog.wordpress.com/2011/01/25/how-to-embed-iframe-widgets-in-a-wordpress-com-blog-%C2%A9-netty-gritty/" target="_blank" rel="external">this</a> guide suggests, the workaround made use of a perfectly legitimate and supported shortcode API. In essence, the workaround involved converting an iframe to Flash, which in turn was sourced by <code>&amp;#091;gigya&amp;#093;</code>.</p>
+<p>As <a href="http://shongjog.wordpress.com/2011/01/25/how-to-embed-iframe-widgets-in-a-wordpress-com-blog-%C2%A9-netty-gritty/" target="_blank" rel="external">this</a> guide suggests, the workaround made use of a perfectly legitimate and supported shortcode API. In essence, the workaround involved converting an iframe to Flash, which in turn was sourced by <code>[gigya]</code>.</p>
 <p>I was able to illustrate the concept below:</p>
 <p><em>For my dearest nephew, and any other chess enthusiasts that are perusing this blog, I have embedded a chess game that I recently played. Click the link below, and try to figure out the positional/tactical errors that my opponent (and close friend) committed, and any variations that may have redeemed his play.</em></p>
 <table style="border:none;height:32px;width:32px;"><br>[gigya src=”<a href="http://cdn.tagul.com/cloud.swf" target="_blank" rel="external">http://cdn.tagul.com/cloud.swf</a>“ flashvars=”autoplay=1” allowfullscreen=”true” type=”application/x-shockwave-flash” allowscriptaccess=”always” width=”542” height=”300” flashvars=”id=180853@2”]<br></table>
@@ -471,28 +471,20 @@ root# diskutil list
       
         <p>My most recent <code># portmaster -Da</code> revealed a package conflict: py-setuptools was merged with py-distribute.</p>
 <p>From FreshPorts:</p>
-<blockquote>
+2013-03-05
 
+Affects: users of devel/py-setuptools (i.e you)
 
-<blockquote>
-<p>2013-03-05</p>
-<p>Affects: users of devel/py-setuptools (i.e you)</p>
-<p>Author: rm@FreeBSD.org</p>
-<p>Reason: </p>
-<p>  devel/py-setuptools was replaced with devel/py-distribute. py-setuptools port will be removed shortly.</p>
-</blockquote>
-</blockquote>
+Author: rm@FreeBSD.org
+
+Reason: 
+	devel/py-setuptools was replaced with devel/py-distribute. py-setuptools port will be removed shortly.
 
 
 <p>To fix this:<br><code># portmaster -o devel/py-distribute devel/py-setuptools</code></p>
 <p>From <code>man 8 portmaster</code>:</p>
-<blockquote>
 
-<blockquote>
-<p>-o &lt;new port dir in /usr/ports&gt; &lt;installed port&gt; </p>
-<pre><code>       <span class="built_in">replace</span> <span class="operator">the</span> installed port <span class="operator">with</span> <span class="operator">a</span> port <span class="built_in">from</span> <span class="operator">a</span> different origin
-</code></pre></blockquote>
-</blockquote>
+-o &lt;new port dir in /usr/ports&gt; &lt;installed port&gt;           replace the installed port with a port from a different origin
 
 
       

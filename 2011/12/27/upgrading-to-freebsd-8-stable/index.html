@@ -138,15 +138,15 @@ ga('send', 'pageview');
 
 <p><code># make installkernel KODIR=/boot/testing KERNCONF=CUSTOM64</code><br><code># exit</code><br><code># nextboot -k testing</code><br><code># shutdown -r now</code></p>
 <p><code># cd /boot</code><br><code># rm -r -f OLD</code><br><code># mv kernel OLD</code><br><code># mv testing kernel</code></p>
-<p><code># adjkerntz -i</code><br><code># rm -rf /etc.old &amp;amp;&amp;amp; cp -Rp /etc /etc.old</code><br><code># mergemaster -p</code><br><code># cd /usr/src</code><br><code># make installworld</code><br><code># mergemaster -iU</code><br><code># make delete-old</code><br><code># shutdown -r now</code></p>
+<p><code># adjkerntz -i</code><br><code># rm -rf /etc.old &amp;&amp; cp -Rp /etc /etc.old</code><br><code># mergemaster -p</code><br><code># cd /usr/src</code><br><code># make installworld</code><br><code># mergemaster -iU</code><br><code># make delete-old</code><br><code># shutdown -r now</code></p>
 <p><em>NB:</em> <code>NO_NIS</code> in <code>/etc/make.conf</code> requires the following changes in <code>/etc/nsswitch.conf</code>:</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="attribute">group</span>: <span class="string">files</span></div><div class="line"><span class="attribute">passwd</span>: <span class="string">files</span></div></pre></td></tr></table></figure>
 
 
 <p>If you’re feeling game, you can try the following commands to save yourself some keystrokes and delays:</p>
-<pre><code># csup <span class="regexp">/root/</span>stable-supfile &amp;amp;&amp;amp; rm -r -f <span class="regexp">/usr/</span>obj &amp;amp;&amp;amp; cd <span class="regexp">/usr/</span>src &amp;amp;&amp;amp; make -j5 buildworld &amp;amp;&amp;amp; make buildkernel KODIR=<span class="regexp">/boot/</span>testing KERNCONF=CUSTOM64 &amp;amp;&amp;amp; make installkernel KODIR=<span class="regexp">/boot/</span>testing KERNCONF=CUSTOM64 &amp;amp;&amp;amp; cd <span class="regexp">/boot &amp;amp;&amp;amp; rm -r -f OLD &amp;amp;&amp;amp; mv kernel OLD &amp;amp;&amp;amp; mv testing kernel &amp;amp;&amp;amp; reboot`&lt;/</span>pre&gt;
+<pre><code># csup <span class="regexp">/root/</span>stable-supfile &amp;&amp; rm -r -f <span class="regexp">/usr/</span>obj &amp;&amp; cd <span class="regexp">/usr/</span>src &amp;&amp; make -j5 buildworld &amp;&amp; make buildkernel KODIR=<span class="regexp">/boot/</span>testing KERNCONF=CUSTOM64 &amp;&amp; make installkernel KODIR=<span class="regexp">/boot/</span>testing KERNCONF=CUSTOM64 &amp;&amp; cd <span class="regexp">/boot &amp;&amp; rm -r -f OLD &amp;&amp; mv kernel OLD &amp;&amp; mv testing kernel &amp;&amp; reboot`&lt;/</span>pre&gt;
 Here, you can revert back to the old kernel <span class="keyword">if</span> you experience boot up problems. Otherwise, <span class="keyword">continue</span> with:
-&lt;pre&gt;`# adjkerntz -i &amp;amp;&amp;amp; rm -rf <span class="regexp">/etc.old &amp;amp;&amp;amp; cp -Rp /</span>etc <span class="regexp">/etc.old &amp;amp;&amp;amp; mergemaster -p &amp;amp;&amp;amp; cd /</span>usr<span class="regexp">/src &amp;amp;&amp;amp; make installworld &amp;amp;&amp;amp; mergemaster -iU &amp;amp;&amp;amp; make delete-old &amp;amp;&amp;amp; reboot</span>
+&lt;pre&gt;`# adjkerntz -i &amp;&amp; rm -rf <span class="regexp">/etc.old &amp;&amp; cp -Rp /</span>etc <span class="regexp">/etc.old &amp;&amp; mergemaster -p &amp;&amp; cd /</span>usr<span class="regexp">/src &amp;&amp; make installworld &amp;&amp; mergemaster -iU &amp;&amp; make delete-old &amp;&amp; reboot</span>
 </code></pre>
       
     </div>
