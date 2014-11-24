@@ -167,22 +167,17 @@ ga('send', 'pageview');
         <p>My most recent <code># portmaster -Da</code> revealed a package conflict: py-setuptools was merged with py-distribute.</p>
 <p>From FreshPorts:</p>
 <blockquote>
-
 <p>2013-03-05</p>
 <p>Affects: users of devel/py-setuptools (i.e you)</p>
 <p>Author: rm@FreeBSD.org</p>
 <p>Reason:<br>    devel/py-setuptools was replaced with devel/py-distribute. py-setuptools port will be removed shortly.</p>
 </blockquote>
-
-
 <p>To fix this:<br><code># portmaster -o devel/py-distribute devel/py-setuptools</code></p>
 <p>From <code>man 8 portmaster</code>:</p>
 <blockquote>
-
-
-<p>-o &lt;new port dir in /usr/ports&gt; &lt;installed port&gt;           replace the installed port with a port from a different origin</p>
+<p>-o &lt;new port dir in /usr/ports&gt; &lt;installed port&gt;</p>
+<p>replace the installed port with a port from a different origin</p>
 </blockquote>
-
 
       
     </div>
@@ -229,8 +224,8 @@ ga('send', 'pageview');
       
         <p><img src="/images/541ad08b9521a01c437fea6ad11c2eb271c3f298.png?w=150" alt="" title="couchpotato"></p>
 <p>For <code>CouchPotato</code> in FreeBSD, firstly acquaint yourself with my previous <a href="http://ootput.wordpress.com/2011/12/26/sabnzbd-and-sickbeard-on-freebsd/" target="_blank" rel="external">blog entry on Sabnzbd+Sickbeard on FreeBSD</a>, and then perform the following additional steps:</p>
-<p>At <strong>Step 3</strong>, fetch CouchPotato’s source code:`</p>
-<h1 id="cd_/usr/local_&amp;&amp;_git_clone_git://github-com/RuudBurger/CouchPotato-git_couchpotato`">cd /usr/local &amp;&amp; git clone git://github.com/RuudBurger/CouchPotato.git couchpotato`</h1>
+<p>At <strong>Step 3</strong>, fetch CouchPotato’s source code:</p>
+<p><code># cd /usr/local &amp;&amp; git clone git://github.com/RuudBurger/CouchPotato.git couchpotato</code></p>
 
         
           <p class="article-more-link">
@@ -282,8 +277,8 @@ ga('send', 'pageview');
       
         <p><img src="/images/0d779279ebe9c460233e8631e19a185f6fb942e2.png?w=150" alt="" title="ntfs"></p>
 <p>NTFS-write in FreeBSD is possible with <code>NTFS-3G</code> from ports. From <a href="http://www.tuxera.com/community/ntfs-3g-download" target="_blank" rel="external"><code>tuxera.com</code></a>:&gt; NTFS-3G is a stable, full-featured, read-write NTFS driver for Linux, Android, Mac OS X, FreeBSD, NetBSD, OpenSolaris, QNX, Haiku, and other operating systems. It provides safe handling of the Windows XP, Windows Server 2003, Windows 2000, Windows Vista, Windows Server 2008 and Windows 7 NTFS file systems.</p>
-<p>To install NTFS-3G, do:`</p>
-<h1 id="portmaster_sysutils/fusefs-ntfs`">portmaster sysutils/fusefs-ntfs`</h1>
+<p>To install NTFS-3G, do:</p>
+<p><code># portmaster sysutils/fusefs-ntfs</code></p>
 
         
           <p class="article-more-link">
@@ -336,10 +331,8 @@ ga('send', 'pageview');
         <p>Tired of sifting through <code>/usr/ports/UPDATING</code> for notes that affect only those packages installed on your system?</p>
 <p>Tired of grepping for issues that may have arisen from/to certain dates?</p>
 <p><code>pkg_updating(1)</code> analyses <code>/usr/ports/UPDATING</code> and does the heavy lifting for you.</p>
-<p>To obtain the relevant entries from, say, two weeks ago, do:`</p>
-<h1 id="/usr/sbin/pkg_updating_-d_$(/bin/date_-v-2w_+%Y%m%d)">/usr/sbin/pkg_updating -d $(/bin/date -v-2w +%Y%m%d)</h1>
-<p>`</p>
-<p>Use:</p>
+<p>To obtain the relevant entries from, say, two weeks ago, do:</p>
+<p><code># /usr/sbin/pkg_updating -d $(/bin/date -v-2w +%Y%m%d)</code></p>
 
       
     </div>
@@ -385,8 +378,8 @@ ga('send', 'pageview');
     <div class="article-entry" itemprop="articleBody">
       
         <p><img src="/images/ab5e348a39a3eca691b0bea218ecb9a4a973d3c3.png?w=150" alt="" title="Freebsd-logo"></p>
-<p>To rebuild a specific FreeBSD port and the ports that it depends on, for example, with <code>pydf</code>, do: `</p>
-<h1 id="portmaster_-fR_sysutils/pydf`">portmaster -fR sysutils/pydf`</h1>
+<p>To rebuild a specific FreeBSD port and the ports that it depends on, for example, with <code>pydf</code>, do: </p>
+<p><code># portmaster -fR sysutils/pydf</code></p>
 <p>To rebuild all install FreeBSD ports, it’s important to firstly read <code>/usr/ports/UPDATING</code> for any update advisories.<br>
         
           <p class="article-more-link">

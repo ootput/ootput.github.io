@@ -107,22 +107,17 @@ ga('send', 'pageview');
         <p>My most recent <code># portmaster -Da</code> revealed a package conflict: py-setuptools was merged with py-distribute.</p>
 <p>From FreshPorts:</p>
 <blockquote>
-
 <p>2013-03-05</p>
 <p>Affects: users of devel/py-setuptools (i.e you)</p>
 <p>Author: rm@FreeBSD.org</p>
 <p>Reason:<br>    devel/py-setuptools was replaced with devel/py-distribute. py-setuptools port will be removed shortly.</p>
 </blockquote>
-
-
 <p>To fix this:<br><code># portmaster -o devel/py-distribute devel/py-setuptools</code></p>
 <p>From <code>man 8 portmaster</code>:</p>
 <blockquote>
-
-
-<p>-o &lt;new port dir in /usr/ports&gt; &lt;installed port&gt;           replace the installed port with a port from a different origin</p>
+<p>-o &lt;new port dir in /usr/ports&gt; &lt;installed port&gt;</p>
+<p>replace the installed port with a port from a different origin</p>
 </blockquote>
-
 
       
     </div>
@@ -170,10 +165,8 @@ ga('send', 'pageview');
         <p>Tired of sifting through <code>/usr/ports/UPDATING</code> for notes that affect only those packages installed on your system?</p>
 <p>Tired of grepping for issues that may have arisen from/to certain dates?</p>
 <p><code>pkg_updating(1)</code> analyses <code>/usr/ports/UPDATING</code> and does the heavy lifting for you.</p>
-<p>To obtain the relevant entries from, say, two weeks ago, do:`</p>
-<h1 id="/usr/sbin/pkg_updating_-d_$(/bin/date_-v-2w_+%Y%m%d)">/usr/sbin/pkg_updating -d $(/bin/date -v-2w +%Y%m%d)</h1>
-<p>`</p>
-<p>Use:</p>
+<p>To obtain the relevant entries from, say, two weeks ago, do:</p>
+<p><code># /usr/sbin/pkg_updating -d $(/bin/date -v-2w +%Y%m%d)</code></p>
 
       
     </div>
@@ -219,8 +212,8 @@ ga('send', 'pageview');
     <div class="article-entry" itemprop="articleBody">
       
         <p><img src="/images/ab5e348a39a3eca691b0bea218ecb9a4a973d3c3.png?w=150" alt="" title="Freebsd-logo"></p>
-<p>To rebuild a specific FreeBSD port and the ports that it depends on, for example, with <code>pydf</code>, do: `</p>
-<h1 id="portmaster_-fR_sysutils/pydf`">portmaster -fR sysutils/pydf`</h1>
+<p>To rebuild a specific FreeBSD port and the ports that it depends on, for example, with <code>pydf</code>, do: </p>
+<p><code># portmaster -fR sysutils/pydf</code></p>
 <p>To rebuild all install FreeBSD ports, it’s important to firstly read <code>/usr/ports/UPDATING</code> for any update advisories.<br>
         
           <p class="article-more-link">

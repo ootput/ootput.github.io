@@ -107,10 +107,8 @@ ga('send', 'pageview');
         <p>Tired of sifting through <code>/usr/ports/UPDATING</code> for notes that affect only those packages installed on your system?</p>
 <p>Tired of grepping for issues that may have arisen from/to certain dates?</p>
 <p><code>pkg_updating(1)</code> analyses <code>/usr/ports/UPDATING</code> and does the heavy lifting for you.</p>
-<p>To obtain the relevant entries from, say, two weeks ago, do:`</p>
-<h1 id="/usr/sbin/pkg_updating_-d_$(/bin/date_-v-2w_+%Y%m%d)">/usr/sbin/pkg_updating -d $(/bin/date -v-2w +%Y%m%d)</h1>
-<p>`</p>
-<p>Use:</p>
+<p>To obtain the relevant entries from, say, two weeks ago, do:</p>
+<p><code># /usr/sbin/pkg_updating -d $(/bin/date -v-2w +%Y%m%d)</code></p>
 
       
     </div>

@@ -106,8 +106,8 @@ ga('send', 'pageview');
         <p><img src="/images/ab0d819a56e75e708cc9e58a3790660fefc7ff13.png?w=76" alt="" title="OutlookLogo"></p>
 <p>Outlook 2010 adds an unwanted “Junk E-Mail” entry to my Gmail’s list of labels. This can’t be avoided as the automatic <em>folder-list-sync</em> generates the label whenever you launch Outlook. As Gmail adequately deals with my spam emails, I’ve decided to disable Outlook’s anti-spam filters.<br><a id="more"></a></p>
 <p>To disable the filter, you must create the following registry key and set the <code>DisableAntiSpam</code> value to 1. This will grey out the folder name and prevent access to its settings. Create the path to the key if it does not yet exist.</p>
-<p>For Outlook 2010, the key is:<br><code>HKEY_CURRENT_USER/Software/Policies/Microsoft/office/14.0/outlook</code><br><code>DWord: DisableAntiSpam</code><br><code>Value: 1 (Hex)</code></p>
-
+<p>For Outlook 2010, the key is:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">HKEY_CURRENT_USER<span class="regexp">/Software/</span>Policies<span class="regexp">/Microsoft/</span>office<span class="regexp">/14.0/</span>outlook</div><div class="line">DWord: DisableAntiSpam</div><div class="line">Value: <span class="number">1</span> (Hex)</div></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">

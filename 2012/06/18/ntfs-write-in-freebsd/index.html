@@ -105,30 +105,36 @@ ga('send', 'pageview');
       
         <p><img src="/images/0d779279ebe9c460233e8631e19a185f6fb942e2.png?w=150" alt="" title="ntfs"></p>
 <p>NTFS-write in FreeBSD is possible with <code>NTFS-3G</code> from ports. From <a href="http://www.tuxera.com/community/ntfs-3g-download" target="_blank" rel="external"><code>tuxera.com</code></a>:&gt; NTFS-3G is a stable, full-featured, read-write NTFS driver for Linux, Android, Mac OS X, FreeBSD, NetBSD, OpenSolaris, QNX, Haiku, and other operating systems. It provides safe handling of the Windows XP, Windows Server 2003, Windows 2000, Windows Vista, Windows Server 2008 and Windows 7 NTFS file systems.</p>
-<p>To install NTFS-3G, do:`</p>
-<h1 id="portmaster_sysutils/fusefs-ntfs`">portmaster sysutils/fusefs-ntfs`</h1>
+<p>To install NTFS-3G, do:</p>
+<p><code># portmaster sysutils/fusefs-ntfs</code></p>
 <a id="more"></a>
 
-<p>Next, create a symbolic link from the newly-installed <code>/usr/local/bin/ntfs-3g</code> into <code>/usr/sbin/</code>:`</p>
-<h1 id="ln_-s_$(which_ntfs-3g)_/usr/sbin/mount_ntfs-3g`">ln -s $(which ntfs-3g) /usr/sbin/mount_ntfs-3g`</h1>
-<p>Modify your <code>/etc/rc.conf</code> to contain:<code>fusefs_enable=&quot;YES&quot;</code></p>
-<p>Provided you know on which hard-disk (based on make/model/capacity of the device) your NTFS partition resides, you can figure out it’s exact device node in FreeBSD:`</p>
-<h1 id="egrep_‘ad[0-9]|cd[0-9]|da[0-9]’_/var/run/dmesg-boot`">egrep ‘ad[0-9]|cd[0-9]|da[0-9]’ /var/run/dmesg.boot`</h1>
+<p>Next, create a symbolic link from the newly-installed <code>/usr/local/bin/ntfs-3g</code> into <code>/usr/sbin/</code>:</p>
+<p><code># ln -s $(which ntfs-3g) /usr/sbin/mount_ntfs-3g</code></p>
+<p>Modify your <code>/etc/rc.conf</code> to contain:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">`<span class="variable">fusefs_enable=</span><span class="string">"YES"</span>`</div></pre></td></tr></table></figure>
+
+<p>Provided you know on which hard-disk (based on make/model/capacity of the device) your NTFS partition resides, you can figure out it’s exact device node in FreeBSD:</p>
+<p><code># egrep &#39;ad[0-9]|cd[0-9]|da[0-9]&#39; /var/run/dmesg.boot</code></p>
 <pre>
 ad0: 35303MB &lt;WDC WD360GD-00FNA0 35.06K35&gt; at ata0-master
 ad2: 57240MB &lt;Mushkin MKNSSDCL60GB-DX 310A13F0&gt; at ata1-master
 ad4: 286168MB &lt;WDC WD3000HLFS-01G6U4 04.04V06&gt; at ata2-master
 </pre>
 
-<p>My NTFS partition resides on a 300GB WD Velociraptor drive, <code>ad4</code>. To confirm that <code>/dev/ad4</code> does indeed contain the NTFS partition, do:<br><code># gpart show -p ad4</code></p>
+<p>My NTFS partition resides on a 300GB WD Velociraptor drive, <code>ad4</code>. To confirm that <code>/dev/ad4</code> does indeed contain the NTFS partition, do:</p>
+<p><code># gpart show -p ad4</code></p>
 <pre>
 =&gt;        34  586072064    ad4 GPT  (286G)
           34  586072064  ad4p1 ntfs (286G)
 </pre>
 
-<p>To mount the partition manually, do:<br><code># ntfs-3g /dev/ad4s1 /mnt/windows7</code></p>
-<p>Finally, add the appropriate line to <code>/etc/fstab</code> to have the NTFS partition mounted at the next system boot. For instance, my <code>/etc/fstab</code> contains:<br><code>/dev/ad4s1              /mnt/windows7            ntfs-3g rw,late         0       0</code></p>
-
+<p>To mount the partition manually, do:</p>
+<p><code># ntfs-3g /dev/ad4s1 /mnt/windows7</code></p>
+<p>Finally, add the appropriate line to <code>/etc/fstab</code> to have the NTFS partition mounted at the next system boot. For instance, my <code>/etc/fstab</code> contains:</p>
+<pre>
+/dev/ad4s1              /mnt/windows7            ntfs-3g rw,late         0       0
+</pre>
       
     </div>
     <footer class="article-footer">
