@@ -78,51 +78,6 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
-    <article id="post-offline-apt-upgrade-in-debian" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2010/06/21/offline-apt-upgrade-in-debian/" class="article-date">
-  <time datetime="2010-06-21T01:51:25.000Z" itemprop="datePublished">Jun 21 2010</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Software/">Software</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2010/06/21/offline-apt-upgrade-in-debian/">Offline Apt Upgrade in Debian</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>To fetch package updates for an off-line machine:</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/06/21/offline-apt-upgrade-in-debian/" data-id="aknym00x9126cicw" class="article-share-link">Share</a>
-      
-        <a href="http://ootput.github.io/2010/06/21/offline-apt-upgrade-in-debian/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/debian/">debian</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-smoother-fonts-in-debian" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2010/06/15/smoother-fonts-in-debian/" class="article-date">
@@ -199,10 +154,10 @@ ga('send', 'pageview');
       
         <p><img src="/images/315f30e424a666ab6232b46e3d98a28ca96f0ba9.png?w=150" alt="" title="gravatar"></p>
 <blockquote>
-<p><a href="http://en.gravatar.com/" target="_blank" rel="external">Gravatar</a> adds a comment author’s Gravatar  by adding <code>&amp;lt;img src=&quot;gravatar ?&amp;gt;&quot;&amp;gt;</code> to the relevant file(s) in your theme.</p>
+<p><a href="http://en.gravatar.com/" target="_blank" rel="external">Gravatar</a> adds a comment author’s Gravatar  by adding <code>&lt;img src=&quot;gravatar ?&gt;&quot;&gt;</code> to the relevant file(s) in your theme.</p>
 </blockquote>
 <p></p><p>For the K2 theme, make the following changes to <code>themes/k2/comments.php</code>:</p>
-<figure class="highlight diff"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="header">*** system/themes/k2/comments.php 2010-06-21 22:15:10.587118909 +0800</span></div><div class="line"><span class="header">--- user/themes/k2/comments.php 2010-06-21 23:20:23.068368014 +0800</span></div><div class="line"><span class="header">***************</span></div><div class="line"><span class="chunk">*** 22,27 ****</span></div><div class="line"><span class="chunk">--- 22,28 ----</span></div><div class="line">  ?&amp;gt;</div><div class="line">   &amp;lt;li id="comment-&amp;lt;?php echo $comment-&amp;gt;id; ?&amp;gt;" &amp;lt;?php echo $theme-&amp;gt;k2_comment_class( $comment, $post ); ?&amp;gt;&amp;gt;</div><div class="line">   &amp;lt;a href="#comment-&amp;lt;?php echo $comment-&amp;gt;id; ?&amp;gt;" class="counter" title="&amp;lt;?php _e('Permanent Link to this Comment'); ?&amp;gt;"&amp;gt;&amp;lt;?php echo $comment-&amp;gt;id; ?&amp;gt;&amp;lt;/a&amp;gt;</div><div class="line"><span class="addition">+ &amp;lt;img src="&amp;lt;? echo $comment-&amp;gt;gravatar ?&amp;gt;"&amp;gt;</span></div><div class="line">   &amp;lt;span class="commentauthor"&amp;gt;&amp;lt;?php echo $comment_url; ?&amp;gt;&amp;lt;/span&amp;gt;</div><div class="line">   &amp;lt;small class="comment-meta"&amp;gt;&amp;lt;a href="#comment-&amp;lt;?php echo $comment-&amp;gt;id; ?&amp;gt;" title="&amp;lt;?php _e('Time of this Comment'); ?&amp;gt;"&amp;gt;&amp;lt;?php $comment-&amp;gt;date-&amp;gt;out(); ?&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;?php if ( $comment-&amp;gt;status == Comment::STATUS_UNAPPROVED ) : ?&amp;gt; &amp;lt;em&amp;gt;&amp;lt;?php _e('In moderation'); ?&amp;gt;&amp;lt;/em&amp;gt;&amp;lt;?php endif; ?&amp;gt;&amp;lt;/small&amp;gt;</div></pre></td></tr></table></figure>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="header">*** system/themes/k2/comments.php 2010-06-21 22:15:10.587118909 +0800</span></div><div class="line"><span class="header">--- user/themes/k2/comments.php 2010-06-21 23:20:23.068368014 +0800</span></div><div class="line"><span class="header">***************</span></div><div class="line"><span class="chunk">*** 22,27 ****</span></div><div class="line"><span class="chunk">--- 22,28 ----</span></div><div class="line">  ?&gt;</div><div class="line">   &lt;li id="comment-&lt;?php echo $comment-&gt;id; ?&gt;" &lt;?php echo $theme-&gt;k2_comment_class( $comment, $post ); ?&gt;&gt;</div><div class="line">   &lt;a href="#comment-&lt;?php echo $comment-&gt;id; ?&gt;" class="counter" title="&lt;?php _e('Permanent Link to this Comment'); ?&gt;"&gt;&lt;?php echo $comment-&gt;id; ?&gt;&lt;/a&gt;</div><div class="line"><span class="addition">+ &lt;img src="&lt;? echo $comment-&gt;gravatar ?&gt;"&gt;</span></div><div class="line">   &lt;span class="commentauthor"&gt;&lt;?php echo $comment_url; ?&gt;&lt;/span&gt;</div><div class="line">   &lt;small class="comment-meta"&gt;&lt;a href="#comment-&lt;?php echo $comment-&gt;id; ?&gt;" title="&lt;?php _e('Time of this Comment'); ?&gt;"&gt;&lt;?php $comment-&gt;date-&gt;out(); ?&gt;&lt;/a&gt;&lt;?php if ( $comment-&gt;status == Comment::STATUS_UNAPPROVED ) : ?&gt; &lt;em&gt;&lt;?php _e('In moderation'); ?&gt;&lt;/em&gt;&lt;?php endif; ?&gt;&lt;/small&gt;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -399,13 +354,12 @@ ga('send', 'pageview');
 <blockquote>
 <p>There are a number of third-party software repositories for Fedora. They typically have more liberal licensing policies and provide software packages that Fedora excludes for various reasons. These software repositories are not officially affiliated or endorsed by the Fedora Project. Use them at your own discretion.</p>
 </blockquote>
-<p>For the RPMFusion repository (a merger of Dribble, FreshRPMs, and rpm.livna.org), as root:`</p>
-<h1 id="rpm_-Uvh_http://download1-rpmfusion-org/free/fedora/rpmfusion-free-release-stable-noarch-rpm_http://download1-rpmfusion-org/nonfree/fedora/rpmfusion-nonfree-release-stable-noarch-rpm`">rpm -Uvh <a href="http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm" target="_blank" rel="external">http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm</a> <a href="http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-stable.noarch.rpm`" target="_blank" rel="external">http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-stable.noarch.rpm`</a></h1>
-<p>For the Adobe repository, which provides both Flash player and Adobe Reader:`</p>
-<h1 id="rpm_-Uvh_http://linuxdownload-adobe-com/adobe-release/adobe-release-i386-1-0-1-noarch-rpm`">rpm -Uvh <a href="http://linuxdownload.adobe.com/adobe-release/adobe-release-i386-1.0-1.noarch.rpm`" target="_blank" rel="external">http://linuxdownload.adobe.com/adobe-release/adobe-release-i386-1.0-1.noarch.rpm`</a></h1>
+<p>For the RPMFusion repository (a merger of Dribble, FreshRPMs, and rpm.livna.org), as root:</p>
+<p><code># rpm -Uvh http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-stable.noarch.rpm</code></p>
+<p>For the Adobe repository, which provides both Flash player and Adobe Reader:</p>
+<p><code># rpm -Uvh http://linuxdownload.adobe.com/adobe-release/adobe-release-i386-1.0-1.noarch.rpm</code></p>
 <p>Finally, for the Skype repository, manually create <code>/etc/yum.repos.d/skype.repo</code> containing:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">[skype]</div><div class="line">name=Skype Repository</div><div class="line">baseurl=http://download.skype.com/linux/repos/fedora/updates/i586/</div><div class="line">gpgkey=http://www.skype.com/products/skype/linux/rpm-public-key.asc</div><div class="line">enabled=<span class="number">1</span></div><div class="line">gpgcheck=<span class="number">0</span></div></pre></td></tr></table></figure>
-
       
     </div>
     <footer class="article-footer">
@@ -453,13 +407,11 @@ ga('send', 'pageview');
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">[atrpms]</div><div class="line">name=Fedora Core <span class="variable">$releasever</span> - <span class="variable">$basearch</span> - ATrpms</div><div class="line">baseurl=http://dl.atrpms.net/f<span class="variable">$releasever</span>-<span class="variable">$basearch</span>/atrpms/stable</div><div class="line">gpgkey=http://ATrpms.net/RPM-GPG-KEY.atrpms</div><div class="line">gpgcheck=<span class="number">1</span></div><div class="line">enabled = <span class="number">0</span></div></pre></td></tr></table></figure>
 
 
-<p>Then, import the repo’s GPG key:`</p>
-<h1 id="rpm_—import_http://atrpms-net/RPM-GPG-KEY-atrpms">rpm —import <a href="http://atrpms.net/RPM-GPG-KEY.atrpms" target="_blank" rel="external">http://atrpms.net/RPM-GPG-KEY.atrpms</a></h1>
-<p>`</p>
-<p>Finally:`</p>
-<h1 id="yum_update">yum update</h1>
-<h1 id="yum_—enablerepo=atrpms_install_unrar">yum —enablerepo=atrpms install unrar</h1>
-<p>`</p>
+<p>Then, import the repo’s GPG key:</p>
+<p><code># rpm --import http://atrpms.net/RPM-GPG-KEY.atrpms</code></p>
+<p>Finally:</p>
+<p><code># yum update</code></p>
+<p><code># yum --enablerepo=atrpms install unrar</code></p>
 
       
     </div>
@@ -504,10 +456,9 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>To get the codec packages required for mp3 (and other media formats not natively supported by F13,) as root:`</p>
-<h1 id="rpm_-ivh_http://download1-rpmfusion-org/free/fedora/rpmfusion-free-release-stable-noarch-rpm">rpm -ivh <a href="http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm" target="_blank" rel="external">http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm</a></h1>
-<h1 id="yum_install_gstreamer-plugins-bad_gstreamer-ffmpeg_gstreamer-plugins-ugly_-y">yum install gstreamer-plugins-bad gstreamer-ffmpeg gstreamer-plugins-ugly -y</h1>
-<p>`</p>
+        <p>To get the codec packages required for mp3 (and other media formats not natively supported by F13,) as root:</p>
+<p><code># rpm -ivh http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm</code></p>
+<p><code># yum install gstreamer-plugins-bad gstreamer-ffmpeg gstreamer-plugins-ugly -y</code></p>
 
       
     </div>
@@ -554,18 +505,16 @@ ga('send', 'pageview');
       
         <p><img src="/images/f00f7a391330d094668c3e466010831407bdb793.png?w=150" alt="" title="flash"></p>
 <p>To get flash working in F13 (i386), visit <a href="http://get.adobe.com/flashplayer/" target="_blank" rel="external">the Adobe Flash site</a>, select <code>YUM for Linux</code>, and accept the download.</p>
-<p>Then, as root:<br>`</p>
-<h1 id="rpm_-ivh_adobe-release-i386-1-0-1-noarch-rpm">rpm -ivh adobe-release-i386-1.0-1.noarch.rpm</h1>
-<p>`</p>
-<p>.. and then import the provided GPG key:<br>`</p>
-<h1 id="rpm_—import_/etc/pki/rpm-gpg/RPM-GPG-KEY-adobe-linux">rpm —import /etc/pki/rpm-gpg/RPM-GPG-KEY-adobe-linux</h1>
-<p>`</p>
+<p>Then, as root:</p>
+<p><code># rpm -ivh adobe-release-i386-1.0-1.noarch.rpm</code></p>
+<p>.. and then import the provided GPG key:</p>
+<p><code># rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-adobe-linux</code></p>
 <p>To confirm that <code>yum</code> can now access Adobe RPM packages, check to see if <code>/etc/yum.repos.d/adobe-linux-i386.repo</code> exists, and that it contains:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">[adobe-linux-i386]</div><div class="line">name=Adobe Systems Incorporated</div><div class="line">baseurl=http://linuxdownload.adobe.com/linux/i386/</div><div class="line">enabled=<span class="number">1</span></div><div class="line">gpgcheck=<span class="number">1</span></div><div class="line">gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-adobe-linux</div></pre></td></tr></table></figure>
 
 
-<p>Then, it’s simply a matter of installing the required packages:<br>`</p>
-<h1 id="yum_install_flash-plugin_alsa-plugins-pulseaudio_libcurl_nspluginwrapper`">yum install flash-plugin alsa-plugins-pulseaudio libcurl nspluginwrapper`</h1>
+<p>Then, it’s simply a matter of installing the required packages:</p>
+<p><code># yum install flash-plugin alsa-plugins-pulseaudio libcurl nspluginwrapper</code></p>
 <p>During <code>yum</code> operation, you’ll notice the error <code>Warning: RPMDB altered outside of yum</code>. This cannot be avoided as we are dealing with third-party packages. To read more about the error, visit James Antill’s blog entry.</p>
 <p><em>NB</em>: Flash in Fedora 13 is still a CPU-hog, though I’ve now found that this applies to Flash in Linux in general. Where Flash in Windows Vista on the same box would use roughly 10-15% CPU time, Fedora would see 50-60% CPU usage. The problem is compounded by multiple flash sources on a single page - such pages employ flash-based advertisements that, without fail, degrade system performance.</p>
 
@@ -575,6 +524,53 @@ ga('send', 'pageview');
       <a data-url="http://ootput.github.io/2010/06/05/flash-in-fedora-13/" data-id="bb7l8lyblk35dw7p" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/06/05/flash-in-fedora-13/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/fedora/">fedora</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-grub-config-in-fedora-13" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2010/06/05/grub-config-in-fedora-13/" class="article-date">
+  <time datetime="2010-06-05T03:19:00.000Z" itemprop="datePublished">Jun 5 2010</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Software/">Software</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2010/06/05/grub-config-in-fedora-13/">Grub Config in Fedora 13</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>If the Grub boot-loader resides on the MBR of any disk other than the first (per BIOS’ detection,) you may encounter a issue where Grub does not refer to the first BIOS-bootable disk as <code>(hd0)</code>.</p>
+<p>I had to trick Grub into mapping my first SATA drive (detected as <code>(hd1)</code> by Grub) as the first boot device, in order for Windows to boot properly:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment"># grub.conf generated by anaconda</span></div><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment"># Note that you do not have to rerun grub after making changes to this file</span></div><div class="line"><span class="comment"># NOTICE: You have a /boot partition. This means that</span></div><div class="line"><span class="comment"># all kernel and initrd paths are relative to /boot/, eg.</span></div><div class="line"><span class="comment"># root (hd0,1)</span></div><div class="line"><span class="comment"># kernel /vmlinuz-version ro root=/dev/sdc4</span></div><div class="line"><span class="comment"># initrd /initrd-[generic-]version.img</span></div><div class="line"><span class="comment">#boot=/dev/sdc</span></div><div class="line">default=<span class="number">1</span></div><div class="line">timeout=<span class="number">5</span></div><div class="line">splashimage=(hd0,<span class="number">1</span>)/grub/splash.xpm.gz</div><div class="line"><span class="comment">#hiddenmenu</span></div><div class="line">title Windows XP</div><div class="line">rootnoverify (hd1,<span class="number">0</span>)</div><div class="line">map (hd1) (hd0)</div><div class="line">map (hd0) (hd1)</div><div class="line">chainloader +<span class="number">1</span></div><div class="line">title Fedora (<span class="number">2.6</span>.<span class="number">33.5</span>-<span class="number">112</span>.fc13.i686.PAE)</div><div class="line">root (hd0,<span class="number">1</span>)</div><div class="line">kernel /vmlinuz-<span class="number">2.6</span>.<span class="number">33.5</span>-<span class="number">112</span>.fc13.i686.PAE ro root=UUID=<span class="number">0</span>d416a7b-cce0-<span class="number">4</span>cbe<span class="operator">-a</span>17e-<span class="number">53398</span>af6b943 rd_NO_LUKS rd_NO_LVM rd_NO_MD rd_NO_DM LANG=en_US.UTF-<span class="number">8</span> SYSFONT=latarcyrheb-sun16 KEYTABLE=us rhgb quiet</div><div class="line">initrd /initramfs-<span class="number">2.6</span>.<span class="number">33.5</span>-<span class="number">112</span>.fc13.i686.PAE.img</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ootput.github.io/2010/06/05/grub-config-in-fedora-13/" data-id="u5fw4d8e8mz9627k" class="article-share-link">Share</a>
+      
+        <a href="http://ootput.github.io/2010/06/05/grub-config-in-fedora-13/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/fedora/">fedora</a></li></ul>
@@ -599,7 +595,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Photography/">Photography</a><span class="category-list-count">6</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Photography/Software/">Software</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Random-Musings/">Random Musings</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Software/">Software</a><span class="category-list-count">93</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Photography/">Photography</a><span class="category-list-count">6</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Photography/Software/">Software</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Random-Musings/">Random Musings</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Software/">Software</a><span class="category-list-count">92</span></li></ul>
     </div>
   </div>
 
@@ -608,7 +604,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Windows/" style="font-size: 10.00px;">Windows</a><a href="/tags/alsa/" style="font-size: 10.00px;">alsa</a><a href="/tags/android/" style="font-size: 10.00px;">android</a><a href="/tags/apple/" style="font-size: 10.00px;">apple</a><a href="/tags/blog/" style="font-size: 18.75px;">blog</a><a href="/tags/canon/" style="font-size: 10.00px;">canon</a><a href="/tags/chess/" style="font-size: 10.00px;">chess</a><a href="/tags/chromium/" style="font-size: 11.25px;">chromium</a><a href="/tags/chyrp/" style="font-size: 15.00px;">chyrp</a><a href="/tags/clone/" style="font-size: 11.25px;">clone</a><a href="/tags/couchpotato/" style="font-size: 10.00px;">couchpotato</a><a href="/tags/crunchbang/" style="font-size: 10.00px;">crunchbang</a><a href="/tags/ddwrt/" style="font-size: 10.00px;">ddwrt</a><a href="/tags/debian/" style="font-size: 15.00px;">debian</a><a href="/tags/dslr/" style="font-size: 10.00px;">dslr</a><a href="/tags/emacs/" style="font-size: 11.25px;">emacs</a><a href="/tags/erc/" style="font-size: 10.00px;">erc</a><a href="/tags/fedora/" style="font-size: 16.25px;">fedora</a><a href="/tags/flash/" style="font-size: 10.00px;">flash</a><a href="/tags/flickr/" style="font-size: 10.00px;">flickr</a><a href="/tags/freebsd/" style="font-size: 20.00px;">freebsd</a><a href="/tags/github/" style="font-size: 12.50px;">github</a><a href="/tags/gmail/" style="font-size: 10.00px;">gmail</a><a href="/tags/habari/" style="font-size: 17.50px;">habari</a><a href="/tags/ion3/" style="font-size: 10.00px;">ion3</a><a href="/tags/ios/" style="font-size: 10.00px;">ios</a><a href="/tags/irssi/" style="font-size: 10.00px;">irssi</a><a href="/tags/itunes/" style="font-size: 10.00px;">itunes</a><a href="/tags/java/" style="font-size: 10.00px;">java</a><a href="/tags/kvm/" style="font-size: 10.00px;">kvm</a><a href="/tags/lens/" style="font-size: 10.00px;">lens</a><a href="/tags/linux/" style="font-size: 10.00px;">linux</a><a href="/tags/metaseo/" style="font-size: 10.00px;">metaseo</a><a href="/tags/mysql/" style="font-size: 10.00px;">mysql</a><a href="/tags/nanoblogger/" style="font-size: 11.25px;">nanoblogger</a><a href="/tags/ntfs/" style="font-size: 10.00px;">ntfs</a><a href="/tags/nvidia/" style="font-size: 10.00px;">nvidia</a><a href="/tags/openbsd/" style="font-size: 13.75px;">openbsd</a><a href="/tags/openvpn/" style="font-size: 10.00px;">openvpn</a><a href="/tags/osx/" style="font-size: 15.00px;">osx</a>
+      <a href="/tags/Windows/" style="font-size: 10.00px;">Windows</a><a href="/tags/alsa/" style="font-size: 10.00px;">alsa</a><a href="/tags/android/" style="font-size: 10.00px;">android</a><a href="/tags/apple/" style="font-size: 10.00px;">apple</a><a href="/tags/blog/" style="font-size: 18.75px;">blog</a><a href="/tags/canon/" style="font-size: 10.00px;">canon</a><a href="/tags/chess/" style="font-size: 10.00px;">chess</a><a href="/tags/chromium/" style="font-size: 11.25px;">chromium</a><a href="/tags/chyrp/" style="font-size: 15.00px;">chyrp</a><a href="/tags/clone/" style="font-size: 11.25px;">clone</a><a href="/tags/couchpotato/" style="font-size: 10.00px;">couchpotato</a><a href="/tags/crunchbang/" style="font-size: 10.00px;">crunchbang</a><a href="/tags/ddwrt/" style="font-size: 10.00px;">ddwrt</a><a href="/tags/debian/" style="font-size: 13.75px;">debian</a><a href="/tags/dslr/" style="font-size: 10.00px;">dslr</a><a href="/tags/emacs/" style="font-size: 11.25px;">emacs</a><a href="/tags/erc/" style="font-size: 10.00px;">erc</a><a href="/tags/fedora/" style="font-size: 16.25px;">fedora</a><a href="/tags/flash/" style="font-size: 10.00px;">flash</a><a href="/tags/flickr/" style="font-size: 10.00px;">flickr</a><a href="/tags/freebsd/" style="font-size: 20.00px;">freebsd</a><a href="/tags/github/" style="font-size: 12.50px;">github</a><a href="/tags/gmail/" style="font-size: 10.00px;">gmail</a><a href="/tags/habari/" style="font-size: 17.50px;">habari</a><a href="/tags/ion3/" style="font-size: 10.00px;">ion3</a><a href="/tags/ios/" style="font-size: 10.00px;">ios</a><a href="/tags/irssi/" style="font-size: 10.00px;">irssi</a><a href="/tags/itunes/" style="font-size: 10.00px;">itunes</a><a href="/tags/java/" style="font-size: 10.00px;">java</a><a href="/tags/kvm/" style="font-size: 10.00px;">kvm</a><a href="/tags/lens/" style="font-size: 10.00px;">lens</a><a href="/tags/linux/" style="font-size: 10.00px;">linux</a><a href="/tags/metaseo/" style="font-size: 10.00px;">metaseo</a><a href="/tags/mysql/" style="font-size: 10.00px;">mysql</a><a href="/tags/nanoblogger/" style="font-size: 11.25px;">nanoblogger</a><a href="/tags/ntfs/" style="font-size: 10.00px;">ntfs</a><a href="/tags/nvidia/" style="font-size: 10.00px;">nvidia</a><a href="/tags/openbsd/" style="font-size: 13.75px;">openbsd</a><a href="/tags/openvpn/" style="font-size: 10.00px;">openvpn</a><a href="/tags/osx/" style="font-size: 15.00px;">osx</a>
     </div>
   </div>
 
@@ -617,7 +613,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">May 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">April 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">December 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">June 2012</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">May 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10/">October 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/09/">September 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06/">June 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07/">July 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06/">June 2010</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/04/">April 2010</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03/">March 2010</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02/">February 2010</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11/">November 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03/">March 2007</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02/">February 2007</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">May 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">April 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">December 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">June 2012</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">May 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10/">October 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/09/">September 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06/">June 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07/">July 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06/">June 2010</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/04/">April 2010</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03/">March 2010</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02/">February 2010</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11/">November 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03/">March 2007</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02/">February 2007</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
