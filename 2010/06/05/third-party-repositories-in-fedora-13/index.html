@@ -101,7 +101,8 @@ There are a number of third-party software repositories for Fedora. They typical
 <h1 id="rpm_-Uvh_http://download1-rpmfusion-org/free/fedora/rpmfusion-free-release-stable-noarch-rpm_http://download1-rpmfusion-org/nonfree/fedora/rpmfusion-nonfree-release-stable-noarch-rpm`">rpm -Uvh <a href="http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm" target="_blank" rel="external">http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm</a> <a href="http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-stable.noarch.rpm`" target="_blank" rel="external">http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-stable.noarch.rpm`</a></h1>
 <p>For the Adobe repository, which provides both Flash player and Adobe Reader:`</p>
 <h1 id="rpm_-Uvh_http://linuxdownload-adobe-com/adobe-release/adobe-release-i386-1-0-1-noarch-rpm`">rpm -Uvh <a href="http://linuxdownload.adobe.com/adobe-release/adobe-release-i386-1.0-1.noarch.rpm`" target="_blank" rel="external">http://linuxdownload.adobe.com/adobe-release/adobe-release-i386-1.0-1.noarch.rpm`</a></h1>
-<p>Finally, for the Skype repository, manually create <code>/etc/yum.repos.d/skype.repo</code> containing:<br>[sourcecode language=”bash”]<br>[skype]<br>name=Skype Repository<br>baseurl=<a href="http://download.skype.com/linux/repos/fedora/updates/i586/" target="_blank" rel="external">http://download.skype.com/linux/repos/fedora/updates/i586/</a><br>gpgkey=<a href="http://www.skype.com/products/skype/linux/rpm-public-key.asc" target="_blank" rel="external">http://www.skype.com/products/skype/linux/rpm-public-key.asc</a><br>enabled=1<br>gpgcheck=0[/sourcecode]</p>
+<p>Finally, for the Skype repository, manually create <code>/etc/yum.repos.d/skype.repo</code> containing:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">[skype]</div><div class="line">name=Skype Repository</div><div class="line">baseurl=http://download.skype.com/linux/repos/fedora/updates/i586/</div><div class="line">gpgkey=http://www.skype.com/products/skype/linux/rpm-public-key.asc</div><div class="line">enabled=<span class="number">1</span></div><div class="line">gpgcheck=<span class="number">0</span></div></pre></td></tr></table></figure>
 
       
     </div>
@@ -192,11 +193,11 @@ There are a number of third-party software repositories for Fedora. They typical
       <ul>
         
           <li>
-            <a href="/2014/11/23/Hello-Hexo/">Hello Hexo</a>
+            <a href="/2014/11/24/hello-world/">Hello World</a>
           </li>
         
           <li>
-            <a href="/2014/11/23/hello-world/">Hello World</a>
+            <a href="/2014/11/23/Hello-Hexo/">Hello Hexo</a>
           </li>
         
           <li>

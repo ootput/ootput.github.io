@@ -125,31 +125,8 @@ int main ()
 </blockquote>
 <p>Whilst in <code>user/plugins</code>, fetch both plug-ins from their subversion repositories:<code>$ svn checkout http://svn.habariproject.org/habari-extras/plugins/google-code-prettify/trunk google-code-prettify
 $ svn checkout http://svn.habariproject.org/habari-extras/plugins/code_escape/trunk code_escape</code></p>
-<p>Make the following changes to <code>plugins/code_escape/code_escape.plugin.php</code>:<br>[sourcecode language=”diff”]</p>
-<h1 id="Index:_code_escape-plugin-php">Index: code_escape.plugin.php</h1>
-<p>—- code_escape.plugin.php (revision 3226)<br>+++ code_escape.plugin.php (working copy)<br>@@ -4,7 +4,7 @@</p>
-<p>  public function filter_post_content_out ( $content, $post ) {</p>
-<ul>
-<li>$content = preg_replace_callback(‘/&lt;code&gt;(.*?)&lt;\/code&gt;/s’, array( ‘self’, ‘escape_code’ ), $content);</li>
-</ul>
-<ul>
-<li><p>$content = preg_replace_callback(‘/&lt;code class=&quot;prettyprint&quot;&gt;(.*?)&amp;lt;\/code&amp;gt;/s’, array( ‘self’, ‘escape_code’ ), $content);</p>
-<p>return $content;</p>
-</li>
-</ul>
-<p>@@ -16,7 +16,7 @@</p>
-<p>  $string = htmlspecialchars( $string );</p>
-<ul>
-<li>$string = ‘&amp;lt;code&amp;gt;’ . $string . ‘&lt;/code&gt;’;</li>
-</ul>
-<ul>
-<li><p>$string = ‘&lt;code class=&quot;prettyprint&quot;&gt;’ . $string . ‘&lt;/code&gt;’;</p>
-<p>return $string;</p>
-</li>
-</ul>
-<p>@@ -30,4 +30,4 @@</p>
-<p>  }</p>
-<p>-?&gt;<br>\ No newline at end of file<br>+?&gt;<br>[/sourcecode]</p>
+<p>Make the following changes to <code>plugins/code_escape/code_escape.plugin.php</code>:</p>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="header">Index: code_escape.plugin.php</span></div><div class="line"><span class="header">===================================================================</span></div><div class="line"><span class="header">--- code_escape.plugin.php (revision 3226)</span></div><div class="line"><span class="header">+++ code_escape.plugin.php (working copy)</span></div><div class="line"><span class="chunk">@@ -4,7 +4,7 @@</span></div><div class="line"></div><div class="line">  public function filter_post_content_out ( $content, $post ) {</div><div class="line"></div><div class="line"><span class="deletion">- $content = preg_replace_callback('/&amp;lt;code&amp;gt;(.*?)&amp;lt;\/code&amp;gt;/s', array( 'self', 'escape_code' ), $content);</span></div><div class="line"><span class="addition">+ $content = preg_replace_callback('/&amp;lt;code class=&amp;quot;prettyprint&amp;quot;&amp;gt;(.*?)&amp;amp;lt;\/code&amp;amp;gt;/s', array( 'self', 'escape_code' ), $content);</span></div><div class="line"></div><div class="line">  return $content;</div><div class="line"></div><div class="line"><span class="chunk">@@ -16,7 +16,7 @@</span></div><div class="line"></div><div class="line">  $string = htmlspecialchars( $string );</div><div class="line"></div><div class="line"><span class="deletion">- $string = '&amp;amp;lt;code&amp;amp;gt;' . $string . '&amp;lt;/code&amp;gt;';</span></div><div class="line"><span class="addition">+ $string = '&amp;lt;code class=&amp;quot;prettyprint&amp;quot;&amp;gt;' . $string . '&amp;lt;/code&amp;gt;';</span></div><div class="line"></div><div class="line">  return $string;</div><div class="line"></div><div class="line"><span class="chunk">@@ -30,4 +30,4 @@</span></div><div class="line"></div><div class="line">  }</div><div class="line"></div><div class="line"><span class="deletion">-?&amp;gt;</span></div><div class="line">\ No newline at end of file</div><div class="line"><span class="addition">+?&amp;gt;</span></div></pre></td></tr></table></figure>
 
       
     </div>
@@ -240,11 +217,11 @@ $ svn checkout http://svn.habariproject.org/habari-extras/plugins/code_escape/tr
       <ul>
         
           <li>
-            <a href="/2014/11/23/Hello-Hexo/">Hello Hexo</a>
+            <a href="/2014/11/24/hello-world/">Hello World</a>
           </li>
         
           <li>
-            <a href="/2014/11/23/hello-world/">Hello World</a>
+            <a href="/2014/11/23/Hello-Hexo/">Hello Hexo</a>
           </li>
         
           <li>

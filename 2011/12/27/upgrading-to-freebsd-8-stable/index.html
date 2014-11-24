@@ -9,9 +9,7 @@
 pkg_add -r fastest_cvsup`
 # fastest_cvsup -c all
 In /root/stable-supfile, have:
-[sourcecode]default host=cvsup.au.freebsd.org
-default base=/var/dbdefault prefix=/usr
-default">
+12345678*default host=cvsup.au.freebsd.org*default base=/var/db*default prefix=/usr*default re">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Upgrading to FreeBSD 8-Stable">
 <meta property="og:url" content="http://ootput.github.io/2011/12/27/upgrading-to-freebsd-8-stable/">
@@ -20,18 +18,14 @@ default">
 pkg_add -r fastest_cvsup`
 # fastest_cvsup -c all
 In /root/stable-supfile, have:
-[sourcecode]default host=cvsup.au.freebsd.org
-default base=/var/dbdefault prefix=/usr
-default">
+12345678*default host=cvsup.au.freebsd.org*default base=/var/db*default prefix=/usr*default re">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Upgrading to FreeBSD 8-Stable">
 <meta name="twitter:description" content="As a reminder to myself:`
 pkg_add -r fastest_cvsup`
 # fastest_cvsup -c all
 In /root/stable-supfile, have:
-[sourcecode]default host=cvsup.au.freebsd.org
-default base=/var/dbdefault prefix=/usr
-default">
+12345678*default host=cvsup.au.freebsd.org*default base=/var/db*default prefix=/usr*default re">
 
   
     <link rel="alternative" href="/atom.xml" title="ootput burst!" type="application/atom+xml">
@@ -109,16 +103,16 @@ default">
 <h1 id="pkg_add_-r_fastest_cvsup`">pkg_add -r fastest_cvsup`</h1>
 <p><code># fastest_cvsup -c all</code></p>
 <p>In <code>/root/stable-supfile</code>, have:</p>
-<p>[sourcecode]<br><em>default host=cvsup.au.freebsd.org
-</em>default base=/var/db<br><em>default prefix=/usr
-</em>default release=cvs tag=RELENG_8<br><em>default delete use-rel-suffix
-</em>default compress<br>src-all<br>[/sourcecode]<br><a id="more"></a></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">*<span class="default"><span class="keyword">default</span> host=cvsup.au.freebsd.org</span></div><div class="line">*<span class="default"><span class="keyword">default</span> base=/var/db</span></div><div class="line">*<span class="default"><span class="keyword">default</span> prefix=/usr</span></div><div class="line">*<span class="default"><span class="keyword">default</span> release=cvs tag=<span class="type">RELENG_8</span></span></div><div class="line">*<span class="default"><span class="keyword">default</span> delete use-rel-suffix</span></div><div class="line">*<span class="default"><span class="keyword">default</span> compress</span></div><div class="line"><span class="title">src</span>-all</div></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
 <p><code># csup /root/stable-supfile</code></p>
 <p><code># cd /usr/src</code><br><code># rm -r -f /usr/obj</code></p>
 <p>Customize <code>/etc/make.conf</code> (read <em>notes</em>). Mine contains:</p>
-<p>[sourcecode]<br>CPUTYPE?= core2</p>
-<p>NO_LPR= YES<br>NO_NIS= YES<br>CUPS_OVERWRITE_BASE= YES<br>NO_INET6= YES</p>
-<p>WITH_NVIDIA_GL= YES<br>WITH_NVIDIA= YES<br>WITHOUT_NOUVEAU= YES<br>[/sourcecode]</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="constant"></span></div><div class="line">CPUTYPE?= core2</div><div class="line"><span class="constant"></span></div><div class="line">NO_LPR= YES</div><div class="line"><span class="constant">NO_NIS</span>= YES</div><div class="line"><span class="constant">CUPS_OVERWRITE_BASE</span>= YES</div><div class="line"><span class="constant">NO_INET6</span>= YES</div><div class="line"><span class="constant"></span></div><div class="line">WITH_NVIDIA_GL= YES</div><div class="line"><span class="constant">WITH_NVIDIA</span>= YES</div><div class="line"><span class="constant">WITHOUT_NOUVEAU</span>= YES</div></pre></td></tr></table></figure>
+
+
 <p><code># script /var/tmp/buildworld-$(date &quot;+%Y%m%d%H%M.%S&quot;)</code></p>
 <p><code># make -jX buildworld</code></p>
 <font><em>( where X == number of CPUs + 1 )</em></font>
@@ -131,7 +125,9 @@ default">
 <p><code># cd /boot</code><br><code># rm -r -f OLD</code><br><code># mv kernel OLD</code><br><code># mv testing kernel</code></p>
 <p><code># adjkerntz -i</code><br><code># rm -rf /etc.old &amp;amp;&amp;amp; cp -Rp /etc /etc.old</code><br><code># mergemaster -p</code><br><code># cd /usr/src</code><br><code># make installworld</code><br><code># mergemaster -iU</code><br><code># make delete-old</code><br><code># shutdown -r now</code></p>
 <p><em>NB:</em> <code>NO_NIS</code> in <code>/etc/make.conf</code> requires the following changes in <code>/etc/nsswitch.conf</code>:</p>
-<p>[sourcecode]<br>group: files<br>passwd: files<br>[/sourcecode]</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="attribute">group</span>: <span class="string">files</span></div><div class="line"><span class="attribute">passwd</span>: <span class="string">files</span></div></pre></td></tr></table></figure>
+
+
 <p>If you’re feeling game, you can try the following commands to save yourself some keystrokes and delays:</p>
 <pre><code># csup <span class="regexp">/root/</span>stable-supfile &amp;amp;&amp;amp; rm -r -f <span class="regexp">/usr/</span>obj &amp;amp;&amp;amp; cd <span class="regexp">/usr/</span>src &amp;amp;&amp;amp; make -j5 buildworld &amp;amp;&amp;amp; make buildkernel KODIR=<span class="regexp">/boot/</span>testing KERNCONF=CUSTOM64 &amp;amp;&amp;amp; make installkernel KODIR=<span class="regexp">/boot/</span>testing KERNCONF=CUSTOM64 &amp;amp;&amp;amp; cd <span class="regexp">/boot &amp;amp;&amp;amp; rm -r -f OLD &amp;amp;&amp;amp; mv kernel OLD &amp;amp;&amp;amp; mv testing kernel &amp;amp;&amp;amp; reboot`&lt;/</span>pre&gt;
 Here, you can revert back to the old kernel <span class="keyword">if</span> you experience boot up problems. Otherwise, <span class="keyword">continue</span> with:
@@ -226,11 +222,11 @@ Here, you can revert back to the old kernel <span class="keyword">if</span> you 
       <ul>
         
           <li>
-            <a href="/2014/11/23/Hello-Hexo/">Hello Hexo</a>
+            <a href="/2014/11/24/hello-world/">Hello World</a>
           </li>
         
           <li>
-            <a href="/2014/11/23/hello-world/">Hello World</a>
+            <a href="/2014/11/23/Hello-Hexo/">Hello Hexo</a>
           </li>
         
           <li>

@@ -245,11 +245,14 @@
 <p>Readernaut is the easiest way to share what you’re reading with friends.</p>
 </blockquote>
 <p>Chyrp’s <a href="http://chyrp.net/extend/view/readernaut/" target="_blank" rel="external">Readernaut module</a> provides a sample twig:&gt; Twig, a language specifically created for Chyrp, that is put through a compiler to produce PHP.<br>… that is unnecessarily complicated - it essentially tries to fit both the book title and book cover into a table column. I’d much rather allocate space for the book’s cover than it’s details given the  small area to work with.</p>
-<p>Ultimately, my modified twig became, in <code>themes/$theme/content/sidebar.twig:</code><br>[sourcecode language=”php”]</p>
-<p>[/sourcecode]</p>
-<p>To restrict the book listing to only show books that are currently being read, in <code>modules/readernaut/readernaut.php</code>:<br>[sourcecode language=”php” highlight=”4”]</p>
-<h2 id="The_actual_data">The actual data</h2>
-<p>public function books($limit=10) {<br>   $config = Config::current();<br>   $xml = simplexml_load_string(get_remote(‘<a href="http://readernaut.com/api/v1/xml/&#39;.$config-&gt;readernaut_user.&#39;/books/reading/?limit=&#39;.$limit" target="_blank" rel="external">http://readernaut.com/api/v1/xml/&#39;.$config-&gt;readernaut_user.&#39;/books/reading/?limit=&#39;.$limit</a>));<br>   return $xml-&gt;reader_book;<br>}<br>[/sourcecode]</p>
+<p>Ultimately, my modified twig became, in <code>themes/$theme/content/sidebar.twig:</code></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">￿<span class="number">1</span>￿</div></pre></td></tr></table></figure>
+
+
+<p>To restrict the book listing to only show books that are currently being read, in <code>modules/readernaut/readernaut.php</code>:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">## The actual data</span></div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">books</span><span class="params">(<span class="variable">$limit</span>=<span class="number">10</span>)</span> </span>{</div><div class="line">   <span class="variable">$config</span> = Config::current();</div><div class="line">   <span class="variable">$xml</span> = simplexml_load_string(get_remote(<span class="string">'http://readernaut.com/api/v1/xml/'</span>.<span class="variable">$config</span>-&amp;gt;readernaut_user.<span class="string">'/books/reading/?limit='</span>.<span class="variable">$limit</span>));</div><div class="line">   <span class="keyword">return</span> <span class="variable">$xml</span>-&amp;gt;reader_book;</div><div class="line">}</div></pre></td></tr></table></figure>
+
+
 <p>.. essentially changing the path to the reading list from <code>books/</code> to <code>books/reading/</code>.</p>
 
       
@@ -297,9 +300,10 @@
       
         <p>With NB, off-line backup was rather easy - essentially I was dealing with textual content from two sources that could be easily synchronized with basic shell tools.</p>
 <p>Chyrp, on the other hand, required that I duplicate both the MySQL database and the static content, and that I had a web browser handy to access the graphical markup tools provided.</p>
-<p>I had to dump the contents of the remote MySQL database to a local file, which could then be used to recreate the on-line database if ever the need arose. I created the following script for that purpose:<br>[sourcecode language=”bash”]</p>
-<h1 id="!/bin/sh">!/bin/sh</h1>
-<p>MYSQLBACKUP=/home/$USER/.mysql_backup<br>DB_NAME=dump.sql<br>[ -f $MYSQLBACKUP/$DB_NAME.1 ] &amp;&amp; mv -f $MYSQLBACKUP/$DB_NAME.1 $MYSQLBACKUP/$DB_NAME.2<br>[ -f $MYSQLBACKUP/$DB_NAME.0 ] &amp;&amp; mv -f $MYSQLBACKUP/$DB_NAME.0 $MYSQLBACKUP/$DB_NAME.1<br>[ -f $MYSQLBACKUP/$DB_NAME ] &amp;&amp; mv -f $MYSQLBACKUP/$DB_NAME $MYSQLBACKUP/$DB_NAME.0<br>ssh USER@host mysqldump -h MYSQL.HOST -u USER -pPASSWORD DBNAME &gt; $MYSQLBACKUP/$DB_NAME<br>[/sourcecode]</p>
+<p>I had to dump the contents of the remote MySQL database to a local file, which could then be used to recreate the on-line database if ever the need arose. I created the following script for that purpose:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="shebang">#!/bin/sh</span></div><div class="line">MYSQLBACKUP=/home/<span class="variable">$USER</span>/.mysql_backup</div><div class="line">DB_NAME=dump.sql</div><div class="line">[ <span class="operator">-f</span> <span class="variable">$MYSQLBACKUP</span>/<span class="variable">$DB_NAME</span>.<span class="number">1</span> ] &amp;amp;&amp;amp; mv <span class="operator">-f</span> <span class="variable">$MYSQLBACKUP</span>/<span class="variable">$DB_NAME</span>.<span class="number">1</span> <span class="variable">$MYSQLBACKUP</span>/<span class="variable">$DB_NAME</span>.<span class="number">2</span></div><div class="line">[ <span class="operator">-f</span> <span class="variable">$MYSQLBACKUP</span>/<span class="variable">$DB_NAME</span>.<span class="number">0</span> ] &amp;amp;&amp;amp; mv <span class="operator">-f</span> <span class="variable">$MYSQLBACKUP</span>/<span class="variable">$DB_NAME</span>.<span class="number">0</span> <span class="variable">$MYSQLBACKUP</span>/<span class="variable">$DB_NAME</span>.<span class="number">1</span></div><div class="line">[ <span class="operator">-f</span> <span class="variable">$MYSQLBACKUP</span>/<span class="variable">$DB_NAME</span> ] &amp;amp;&amp;amp; mv <span class="operator">-f</span> <span class="variable">$MYSQLBACKUP</span>/<span class="variable">$DB_NAME</span> <span class="variable">$MYSQLBACKUP</span>/<span class="variable">$DB_NAME</span>.<span class="number">0</span></div><div class="line">ssh USER@host mysqldump -h MYSQL.HOST -u USER -pPASSWORD DBNAME &amp;gt; <span class="variable">$MYSQLBACKUP</span>/<span class="variable">$DB_NAME</span></div></pre></td></tr></table></figure>
+
+
 <p>With a rudimentary backup method in place, I could now completely migrate away from NanoBlogger.</p>
 
       
@@ -465,11 +469,11 @@
       <ul>
         
           <li>
-            <a href="/2014/11/23/Hello-Hexo/">Hello Hexo</a>
+            <a href="/2014/11/24/hello-world/">Hello World</a>
           </li>
         
           <li>
-            <a href="/2014/11/23/hello-world/">Hello World</a>
+            <a href="/2014/11/23/Hello-Hexo/">Hello Hexo</a>
           </li>
         
           <li>

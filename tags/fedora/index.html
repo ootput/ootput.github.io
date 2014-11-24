@@ -97,7 +97,8 @@
 <h1 id="rpm_-Uvh_http://download1-rpmfusion-org/free/fedora/rpmfusion-free-release-stable-noarch-rpm_http://download1-rpmfusion-org/nonfree/fedora/rpmfusion-nonfree-release-stable-noarch-rpm`">rpm -Uvh <a href="http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm" target="_blank" rel="external">http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm</a> <a href="http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-stable.noarch.rpm`" target="_blank" rel="external">http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-stable.noarch.rpm`</a></h1>
 <p>For the Adobe repository, which provides both Flash player and Adobe Reader:`</p>
 <h1 id="rpm_-Uvh_http://linuxdownload-adobe-com/adobe-release/adobe-release-i386-1-0-1-noarch-rpm`">rpm -Uvh <a href="http://linuxdownload.adobe.com/adobe-release/adobe-release-i386-1.0-1.noarch.rpm`" target="_blank" rel="external">http://linuxdownload.adobe.com/adobe-release/adobe-release-i386-1.0-1.noarch.rpm`</a></h1>
-<p>Finally, for the Skype repository, manually create <code>/etc/yum.repos.d/skype.repo</code> containing:<br>[sourcecode language=”bash”]<br>[skype]<br>name=Skype Repository<br>baseurl=<a href="http://download.skype.com/linux/repos/fedora/updates/i586/" target="_blank" rel="external">http://download.skype.com/linux/repos/fedora/updates/i586/</a><br>gpgkey=<a href="http://www.skype.com/products/skype/linux/rpm-public-key.asc" target="_blank" rel="external">http://www.skype.com/products/skype/linux/rpm-public-key.asc</a><br>enabled=1<br>gpgcheck=0[/sourcecode]</p>
+<p>Finally, for the Skype repository, manually create <code>/etc/yum.repos.d/skype.repo</code> containing:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">[skype]</div><div class="line">name=Skype Repository</div><div class="line">baseurl=http://download.skype.com/linux/repos/fedora/updates/i586/</div><div class="line">gpgkey=http://www.skype.com/products/skype/linux/rpm-public-key.asc</div><div class="line">enabled=<span class="number">1</span></div><div class="line">gpgcheck=<span class="number">0</span></div></pre></td></tr></table></figure>
 
       
     </div>
@@ -142,7 +143,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>To obtain unrar for F13: as root, create <code>/etc/yum.repos.d/atrpms.repo</code> with contents:<br>[sourcecode language=”bash”]<br>[atrpms]<br>name=Fedora Core $releasever - $basearch - ATrpms<br>baseurl=<a href="http://dl.atrpms.net/f$releasever-$basearch/atrpms/stable" target="_blank" rel="external">http://dl.atrpms.net/f$releasever-$basearch/atrpms/stable</a><br>gpgkey=<a href="http://ATrpms.net/RPM-GPG-KEY.atrpms" target="_blank" rel="external">http://ATrpms.net/RPM-GPG-KEY.atrpms</a><br>gpgcheck=1<br>enabled = 0<br>[/sourcecode]</p>
+        <p>To obtain unrar for F13: as root, create <code>/etc/yum.repos.d/atrpms.repo</code> with contents:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">[atrpms]</div><div class="line">name=Fedora Core <span class="variable">$releasever</span> - <span class="variable">$basearch</span> - ATrpms</div><div class="line">baseurl=http://dl.atrpms.net/f<span class="variable">$releasever</span>-<span class="variable">$basearch</span>/atrpms/stable</div><div class="line">gpgkey=http://ATrpms.net/RPM-GPG-KEY.atrpms</div><div class="line">gpgcheck=<span class="number">1</span></div><div class="line">enabled = <span class="number">0</span></div></pre></td></tr></table></figure>
+
+
 <p>Then, import the repo’s GPG key:`</p>
 <h1 id="rpm_—import_http://atrpms-net/RPM-GPG-KEY-atrpms">rpm —import <a href="http://atrpms.net/RPM-GPG-KEY.atrpms" target="_blank" rel="external">http://atrpms.net/RPM-GPG-KEY.atrpms</a></h1>
 <p>`</p>
@@ -250,7 +254,10 @@
 <p>.. and then import the provided GPG key:<br>`</p>
 <h1 id="rpm_—import_/etc/pki/rpm-gpg/RPM-GPG-KEY-adobe-linux">rpm —import /etc/pki/rpm-gpg/RPM-GPG-KEY-adobe-linux</h1>
 <p>`</p>
-<p>To confirm that <code>yum</code> can now access Adobe RPM packages, check to see if <code>/etc/yum.repos.d/adobe-linux-i386.repo</code> exists, and that it contains:<br>[sourcecode language=”bash”]<br>[adobe-linux-i386]<br>name=Adobe Systems Incorporated<br>baseurl=<a href="http://linuxdownload.adobe.com/linux/i386/" target="_blank" rel="external">http://linuxdownload.adobe.com/linux/i386/</a><br>enabled=1<br>gpgcheck=1<br>gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-adobe-linux<br>[/sourcecode]</p>
+<p>To confirm that <code>yum</code> can now access Adobe RPM packages, check to see if <code>/etc/yum.repos.d/adobe-linux-i386.repo</code> exists, and that it contains:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">[adobe-linux-i386]</div><div class="line">name=Adobe Systems Incorporated</div><div class="line">baseurl=http://linuxdownload.adobe.com/linux/i386/</div><div class="line">enabled=<span class="number">1</span></div><div class="line">gpgcheck=<span class="number">1</span></div><div class="line">gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-adobe-linux</div></pre></td></tr></table></figure>
+
+
 <p>Then, it’s simply a matter of installing the required packages:<br>`</p>
 <h1 id="yum_install_flash-plugin_alsa-plugins-pulseaudio_libcurl_nspluginwrapper`">yum install flash-plugin alsa-plugins-pulseaudio libcurl nspluginwrapper`</h1>
 <p>During <code>yum</code> operation, you’ll notice the error <code>Warning: RPMDB altered outside of yum</code>. This cannot be avoided as we are dealing with third-party packages. To read more about the error, visit James Antill’s blog entry.</p>
@@ -300,19 +307,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>If the Grub boot-loader resides on the MBR of any disk other than the first (per BIOS’ detection,) you may encounter a issue where Grub does not refer to the first BIOS-bootable disk as <code>(hd0)</code>.</p>
-<p>I had to trick Grub into mapping my first SATA drive (detected as <code>(hd1)</code> by Grub) as the first boot device, in order for Windows to boot properly:<br>[sourcecode language=”bash”]</p>
-<h1 id="grub-conf_generated_by_anaconda">grub.conf generated by anaconda</h1>
-<p>#</p>
-<h1 id="Note_that_you_do_not_have_to_rerun_grub_after_making_changes_to_this_file">Note that you do not have to rerun grub after making changes to this file</h1>
-<h1 id="NOTICE:_You_have_a_/boot_partition-_This_means_that">NOTICE: You have a /boot partition. This means that</h1>
-<h1 id="all_kernel_and_initrd_paths_are_relative_to_/boot/,_eg-">all kernel and initrd paths are relative to /boot/, eg.</h1>
-<h1 id="root_(hd0,1)">root (hd0,1)</h1>
-<h1 id="kernel_/vmlinuz-version_ro_root=/dev/sdc4">kernel /vmlinuz-version ro root=/dev/sdc4</h1>
-<h1 id="initrd_/initrd-[generic-]version-img">initrd /initrd-[generic-]version.img</h1>
-<h1 id="boot=/dev/sdc">boot=/dev/sdc</h1>
-<p>default=1<br>timeout=5<br>splashimage=(hd0,1)/grub/splash.xpm.gz</p>
-<h1 id="hiddenmenu">hiddenmenu</h1>
-<p>title Windows XP<br>rootnoverify (hd1,0)<br>map (hd1) (hd0)<br>map (hd0) (hd1)<br>chainloader +1<br>title Fedora (2.6.33.5-112.fc13.i686.PAE)<br>root (hd0,1)<br>kernel /vmlinuz-2.6.33.5-112.fc13.i686.PAE ro root=UUID=0d416a7b-cce0-4cbe-a17e-53398af6b943 rd_NO_LUKS rd_NO_LVM rd_NO_MD rd_NO_DM LANG=en_US.UTF-8 SYSFONT=latarcyrheb-sun16 KEYTABLE=us rhgb quiet<br>initrd /initramfs-2.6.33.5-112.fc13.i686.PAE.img<br>[/sourcecode]</p>
+<p>I had to trick Grub into mapping my first SATA drive (detected as <code>(hd1)</code> by Grub) as the first boot device, in order for Windows to boot properly:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment"># grub.conf generated by anaconda</span></div><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment"># Note that you do not have to rerun grub after making changes to this file</span></div><div class="line"><span class="comment"># NOTICE: You have a /boot partition. This means that</span></div><div class="line"><span class="comment"># all kernel and initrd paths are relative to /boot/, eg.</span></div><div class="line"><span class="comment"># root (hd0,1)</span></div><div class="line"><span class="comment"># kernel /vmlinuz-version ro root=/dev/sdc4</span></div><div class="line"><span class="comment"># initrd /initrd-[generic-]version.img</span></div><div class="line"><span class="comment">#boot=/dev/sdc</span></div><div class="line">default=<span class="number">1</span></div><div class="line">timeout=<span class="number">5</span></div><div class="line">splashimage=(hd0,<span class="number">1</span>)/grub/splash.xpm.gz</div><div class="line"><span class="comment">#hiddenmenu</span></div><div class="line">title Windows XP</div><div class="line">rootnoverify (hd1,<span class="number">0</span>)</div><div class="line">map (hd1) (hd0)</div><div class="line">map (hd0) (hd1)</div><div class="line">chainloader +<span class="number">1</span></div><div class="line">title Fedora (<span class="number">2.6</span>.<span class="number">33.5</span>-<span class="number">112</span>.fc13.i686.PAE)</div><div class="line">root (hd0,<span class="number">1</span>)</div><div class="line">kernel /vmlinuz-<span class="number">2.6</span>.<span class="number">33.5</span>-<span class="number">112</span>.fc13.i686.PAE ro root=UUID=<span class="number">0</span>d416a7b-cce0-<span class="number">4</span>cbe<span class="operator">-a</span>17e-<span class="number">53398</span>af6b943 rd_NO_LUKS rd_NO_LVM rd_NO_MD rd_NO_DM LANG=en_US.UTF-<span class="number">8</span> SYSFONT=latarcyrheb-sun16 KEYTABLE=us rhgb quiet</div><div class="line">initrd /initramfs-<span class="number">2.6</span>.<span class="number">33.5</span>-<span class="number">112</span>.fc13.i686.PAE.img</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -456,19 +452,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>In order to get the G5’s side buttons and 3rd button’s left/right tilt functional in both Firefox and Nautilus, in <code>/etc/X11/xorg.conf</code>:<br>[sourcecode language=”bash”]<br>Section &quot;ServerLayout&quot;</p>
-<h1 id="…">…</h1>
-<p>   InputDevice &quot;Configured Mouse&quot; &quot;Pointer&quot;<br>EndSection</p>
-<p>Section &quot;InputDevice&quot;<br>   Identifier &quot;Configured Mouse&quot;<br>   Driver &quot;evdev&quot;<br>   Option &quot;CorePointer&quot;<br>   Option &quot;Name&quot; &quot;Logitech USB Gaming Mouse&quot;<br>   Option &quot;ZAxisMapping&quot; &quot;4 5 6 7&quot;<br>   Option &quot;Emulate3Buttons&quot; &quot;false&quot;<br>EndSection<br>[/sourcecode]</p>
+        <p>In order to get the G5’s side buttons and 3rd button’s left/right tilt functional in both Firefox and Nautilus, in <code>/etc/X11/xorg.conf</code>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">Section &amp;quot;ServerLayout&amp;quot;</div><div class="line">   <span class="comment">#...</span></div><div class="line">   InputDevice &amp;quot;Configured Mouse&amp;quot; &amp;quot;Pointer&amp;quot;</div><div class="line">EndSection</div><div class="line"></div><div class="line">Section &amp;quot;InputDevice&amp;quot;</div><div class="line">   Identifier &amp;quot;Configured Mouse&amp;quot;</div><div class="line">   Driver &amp;quot;evdev&amp;quot;</div><div class="line">   Option &amp;quot;CorePointer&amp;quot;</div><div class="line">   Option &amp;quot;Name&amp;quot; &amp;quot;Logitech USB Gaming Mouse&amp;quot;</div><div class="line">   Option &amp;quot;ZAxisMapping&amp;quot; &amp;quot;<span class="number">4</span> <span class="number">5</span> <span class="number">6</span> <span class="number">7</span>&amp;quot;</div><div class="line">   Option &amp;quot;Emulate3Buttons&amp;quot; &amp;quot;<span class="literal">false</span>&amp;quot;</div><div class="line">EndSection</div></pre></td></tr></table></figure>
+
+
 <p><em>NB</em>: F12 does not ship with a <code>/etc/X11/xorg.conf</code> file by default; see <a href="https://fedoraproject.org/wiki/How_to_create_xorg.conf" target="_blank" rel="external">Fedora’s guide</a> on how to create one.</p>
-<p>Additionally, you need to modify <code>$HOME/.Xmodmap</code> to show:<br>[sourcecode]<br>pointer = 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20[/sourcecode]</p>
+<p>Additionally, you need to modify <code>$HOME/.Xmodmap</code> to show:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="attribute"></span></div><div class="line">pointer =<span class="string"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20</span></div></pre></td></tr></table></figure>
+
+
 <p>Also, after:<br>`</p>
 <h1 id="yum_install_xbindkeys_xdotool`">yum install xbindkeys xdotool`</h1>
-<p>.. in <code>$HOME/.xbindkeysrc</code>, have:<br>[sourcecode]</p>
-<h1 id="Nautilus:Back">Nautilus:Back</h1>
-<p>&quot;xdotool key alt+Left&quot;<br>  b:8</p>
-<h1 id="Nautilus:Forward">Nautilus:Forward</h1>
-<p>&quot;xdotool key alt+Right&quot;<br>  b:9<br>[/sourcecode]</p>
+<p>.. in <code>$HOME/.xbindkeysrc</code>, have:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"># Nautilu<span class="variable">s:Back</span></div><div class="line">&amp;quot;xdotool key alt+Left&amp;quot;</div><div class="line">  <span class="variable">b:8</span></div><div class="line"></div><div class="line"># Nautilu<span class="variable">s:Forward</span></div><div class="line">&amp;quot;xdotool key alt+Right&amp;quot;</div><div class="line">  <span class="variable">b:9</span></div></pre></td></tr></table></figure>
 
       
     </div>
@@ -582,11 +578,11 @@
       <ul>
         
           <li>
-            <a href="/2014/11/23/Hello-Hexo/">Hello Hexo</a>
+            <a href="/2014/11/24/hello-world/">Hello World</a>
           </li>
         
           <li>
-            <a href="/2014/11/23/hello-world/">Hello World</a>
+            <a href="/2014/11/23/Hello-Hexo/">Hello Hexo</a>
           </li>
         
           <li>

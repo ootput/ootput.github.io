@@ -5,18 +5,18 @@
   
   <title>Logitech G5 in Fedora 12 | ootput burst!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="In order to get the G5’s side buttons and 3rd button’s left/right tilt functional in both Firefox and Nautilus, in /etc/X11/xorg.conf:[sourcecode language=”bash”]Section &quot;ServerLayout&quot;
-…">
+  <meta name="description" content="In order to get the G5’s side buttons and 3rd button’s left/right tilt functional in both Firefox and Nautilus, in /etc/X11/xorg.conf:
+1234567891011121314Section &amp;quot;ServerLayout&amp;quot;   #..">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Logitech G5 in Fedora 12">
 <meta property="og:url" content="http://ootput.github.io/2010/04/11/logitech-g5-in-fedora-12/">
 <meta property="og:site_name" content="ootput burst!">
-<meta property="og:description" content="In order to get the G5’s side buttons and 3rd button’s left/right tilt functional in both Firefox and Nautilus, in /etc/X11/xorg.conf:[sourcecode language=”bash”]Section &quot;ServerLayout&quot;
-…">
+<meta property="og:description" content="In order to get the G5’s side buttons and 3rd button’s left/right tilt functional in both Firefox and Nautilus, in /etc/X11/xorg.conf:
+1234567891011121314Section &amp;quot;ServerLayout&amp;quot;   #..">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Logitech G5 in Fedora 12">
-<meta name="twitter:description" content="In order to get the G5’s side buttons and 3rd button’s left/right tilt functional in both Firefox and Nautilus, in /etc/X11/xorg.conf:[sourcecode language=”bash”]Section &quot;ServerLayout&quot;
-…">
+<meta name="twitter:description" content="In order to get the G5’s side buttons and 3rd button’s left/right tilt functional in both Firefox and Nautilus, in /etc/X11/xorg.conf:
+1234567891011121314Section &amp;quot;ServerLayout&amp;quot;   #..">
 
   
     <link rel="alternative" href="/atom.xml" title="ootput burst!" type="application/atom+xml">
@@ -90,19 +90,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>In order to get the G5’s side buttons and 3rd button’s left/right tilt functional in both Firefox and Nautilus, in <code>/etc/X11/xorg.conf</code>:<br>[sourcecode language=”bash”]<br>Section &quot;ServerLayout&quot;</p>
-<h1 id="…">…</h1>
-<p>   InputDevice &quot;Configured Mouse&quot; &quot;Pointer&quot;<br>EndSection</p>
-<p>Section &quot;InputDevice&quot;<br>   Identifier &quot;Configured Mouse&quot;<br>   Driver &quot;evdev&quot;<br>   Option &quot;CorePointer&quot;<br>   Option &quot;Name&quot; &quot;Logitech USB Gaming Mouse&quot;<br>   Option &quot;ZAxisMapping&quot; &quot;4 5 6 7&quot;<br>   Option &quot;Emulate3Buttons&quot; &quot;false&quot;<br>EndSection<br>[/sourcecode]</p>
+        <p>In order to get the G5’s side buttons and 3rd button’s left/right tilt functional in both Firefox and Nautilus, in <code>/etc/X11/xorg.conf</code>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">Section &amp;quot;ServerLayout&amp;quot;</div><div class="line">   <span class="comment">#...</span></div><div class="line">   InputDevice &amp;quot;Configured Mouse&amp;quot; &amp;quot;Pointer&amp;quot;</div><div class="line">EndSection</div><div class="line"></div><div class="line">Section &amp;quot;InputDevice&amp;quot;</div><div class="line">   Identifier &amp;quot;Configured Mouse&amp;quot;</div><div class="line">   Driver &amp;quot;evdev&amp;quot;</div><div class="line">   Option &amp;quot;CorePointer&amp;quot;</div><div class="line">   Option &amp;quot;Name&amp;quot; &amp;quot;Logitech USB Gaming Mouse&amp;quot;</div><div class="line">   Option &amp;quot;ZAxisMapping&amp;quot; &amp;quot;<span class="number">4</span> <span class="number">5</span> <span class="number">6</span> <span class="number">7</span>&amp;quot;</div><div class="line">   Option &amp;quot;Emulate3Buttons&amp;quot; &amp;quot;<span class="literal">false</span>&amp;quot;</div><div class="line">EndSection</div></pre></td></tr></table></figure>
+
+
 <p><em>NB</em>: F12 does not ship with a <code>/etc/X11/xorg.conf</code> file by default; see <a href="https://fedoraproject.org/wiki/How_to_create_xorg.conf" target="_blank" rel="external">Fedora’s guide</a> on how to create one.</p>
-<p>Additionally, you need to modify <code>$HOME/.Xmodmap</code> to show:<br>[sourcecode]<br>pointer = 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20[/sourcecode]</p>
+<p>Additionally, you need to modify <code>$HOME/.Xmodmap</code> to show:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="attribute"></span></div><div class="line">pointer =<span class="string"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20</span></div></pre></td></tr></table></figure>
+
+
 <p>Also, after:<br>`</p>
 <h1 id="yum_install_xbindkeys_xdotool`">yum install xbindkeys xdotool`</h1>
-<p>.. in <code>$HOME/.xbindkeysrc</code>, have:<br>[sourcecode]</p>
-<h1 id="Nautilus:Back">Nautilus:Back</h1>
-<p>&quot;xdotool key alt+Left&quot;<br>  b:8</p>
-<h1 id="Nautilus:Forward">Nautilus:Forward</h1>
-<p>&quot;xdotool key alt+Right&quot;<br>  b:9<br>[/sourcecode]</p>
+<p>.. in <code>$HOME/.xbindkeysrc</code>, have:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"># Nautilu<span class="variable">s:Back</span></div><div class="line">&amp;quot;xdotool key alt+Left&amp;quot;</div><div class="line">  <span class="variable">b:8</span></div><div class="line"></div><div class="line"># Nautilu<span class="variable">s:Forward</span></div><div class="line">&amp;quot;xdotool key alt+Right&amp;quot;</div><div class="line">  <span class="variable">b:9</span></div></pre></td></tr></table></figure>
 
       
     </div>
@@ -193,11 +193,11 @@
       <ul>
         
           <li>
-            <a href="/2014/11/23/Hello-Hexo/">Hello Hexo</a>
+            <a href="/2014/11/24/hello-world/">Hello World</a>
           </li>
         
           <li>
-            <a href="/2014/11/23/hello-world/">Hello World</a>
+            <a href="/2014/11/23/Hello-Hexo/">Hello Hexo</a>
           </li>
         
           <li>

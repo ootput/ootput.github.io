@@ -5,24 +5,18 @@
   
   <title>Dump/Restore Data Between Partitions | ootput burst!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Here’s a script I created to backup and restore data between partitions on OpenBSD:[sourcecode language=”bash”]
-!/bin/sh
-newfs /dev/ad1s1anewfs /dev/ad1s1enewfs /dev/ad1s1f
-mount /dev/ad1s1a /backup/r">
+  <meta name="description" content="Here’s a script I created to backup and restore data between partitions on OpenBSD:
+123456789101112131415161718192021#!/bin/shnewfs /dev/ad1s1anewfs /dev/ad1s1enewfs /dev/ad1s1fmount /dev/ad1s1a /back">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Dump/Restore Data Between Partitions">
 <meta property="og:url" content="http://ootput.github.io/2010/03/18/dumprestore-data-between-partitions/">
 <meta property="og:site_name" content="ootput burst!">
-<meta property="og:description" content="Here’s a script I created to backup and restore data between partitions on OpenBSD:[sourcecode language=”bash”]
-!/bin/sh
-newfs /dev/ad1s1anewfs /dev/ad1s1enewfs /dev/ad1s1f
-mount /dev/ad1s1a /backup/r">
+<meta property="og:description" content="Here’s a script I created to backup and restore data between partitions on OpenBSD:
+123456789101112131415161718192021#!/bin/shnewfs /dev/ad1s1anewfs /dev/ad1s1enewfs /dev/ad1s1fmount /dev/ad1s1a /back">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Dump/Restore Data Between Partitions">
-<meta name="twitter:description" content="Here’s a script I created to backup and restore data between partitions on OpenBSD:[sourcecode language=”bash”]
-!/bin/sh
-newfs /dev/ad1s1anewfs /dev/ad1s1enewfs /dev/ad1s1f
-mount /dev/ad1s1a /backup/r">
+<meta name="twitter:description" content="Here’s a script I created to backup and restore data between partitions on OpenBSD:
+123456789101112131415161718192021#!/bin/shnewfs /dev/ad1s1anewfs /dev/ad1s1enewfs /dev/ad1s1fmount /dev/ad1s1a /back">
 
   
     <link rel="alternative" href="/atom.xml" title="ootput burst!" type="application/atom+xml">
@@ -96,13 +90,8 @@ mount /dev/ad1s1a /backup/r">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Here’s a script I created to backup and restore data between partitions on OpenBSD:<br>[sourcecode language=”bash”]</p>
-<h1 id="!/bin/sh">!/bin/sh</h1>
-<p>newfs /dev/ad1s1a<br>newfs /dev/ad1s1e<br>newfs /dev/ad1s1f</p>
-<p>mount /dev/ad1s1a /backup/root<br>mount /dev/ad1s1e /backup/var<br>mount /dev/ad1s1f /backup/usr</p>
-<p>( dump -0f - / ) | ( cd /backup/root ; restore -rf - )<br>( dump -0f - /var ) | ( cd /backup/var ; restore -rf - )<br>( dump -0f - /usr ) | ( cd /backup/usr ; restore -rf - )</p>
-<p>umount /backup/root<br>umount /backup/var<br>umount /backup/usr</p>
-<p>tunefs -n enable /dev/ad1s1a<br>tunefs -n enable /dev/ad1s1e<br>tunefs -n enable /dev/ad1s1f<br>[/sourcecode]</p>
+        <p>Here’s a script I created to backup and restore data between partitions on OpenBSD:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="shebang">#!/bin/sh</span></div><div class="line">newfs /dev/ad1s1a</div><div class="line">newfs /dev/ad1s1e</div><div class="line">newfs /dev/ad1s1f</div><div class="line"></div><div class="line">mount /dev/ad1s1a /backup/root</div><div class="line">mount /dev/ad1s1e /backup/var</div><div class="line">mount /dev/ad1s1f /backup/usr</div><div class="line"></div><div class="line">( dump -<span class="number">0</span>f - / ) | ( <span class="built_in">cd</span> /backup/root ; restore -rf - )</div><div class="line">( dump -<span class="number">0</span>f - /var ) | ( <span class="built_in">cd</span> /backup/var ; restore -rf - )</div><div class="line">( dump -<span class="number">0</span>f - /usr ) | ( <span class="built_in">cd</span> /backup/usr ; restore -rf - )</div><div class="line"></div><div class="line">umount /backup/root</div><div class="line">umount /backup/var</div><div class="line">umount /backup/usr</div><div class="line"></div><div class="line">tunefs -n enable /dev/ad1s1a</div><div class="line">tunefs -n enable /dev/ad1s1e</div><div class="line">tunefs -n enable /dev/ad1s1f</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -193,11 +182,11 @@ mount /dev/ad1s1a /backup/r">
       <ul>
         
           <li>
-            <a href="/2014/11/23/Hello-Hexo/">Hello Hexo</a>
+            <a href="/2014/11/24/hello-world/">Hello World</a>
           </li>
         
           <li>
-            <a href="/2014/11/23/hello-world/">Hello World</a>
+            <a href="/2014/11/23/Hello-Hexo/">Hello Hexo</a>
           </li>
         
           <li>

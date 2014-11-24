@@ -5,15 +5,18 @@
   
   <title>Unrar in Fedora 13 | ootput burst!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="To obtain unrar for F13: as root, create /etc/yum.repos.d/atrpms.repo with contents:[sourcecode language=”bash”][atrpms]name=Fedora Core $releasever - $basearch - ATrpmsbaseurl=http://dl.atrpms.net/f$">
+  <meta name="description" content="To obtain unrar for F13: as root, create /etc/yum.repos.d/atrpms.repo with contents:
+1234567[atrpms]name=Fedora Core $releasever - $basearch - ATrpmsbaseurl=http://dl.atrpms.net/f$releasever-$basearch">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Unrar in Fedora 13">
 <meta property="og:url" content="http://ootput.github.io/2010/06/05/unrar-in-fedora-13/">
 <meta property="og:site_name" content="ootput burst!">
-<meta property="og:description" content="To obtain unrar for F13: as root, create /etc/yum.repos.d/atrpms.repo with contents:[sourcecode language=”bash”][atrpms]name=Fedora Core $releasever - $basearch - ATrpmsbaseurl=http://dl.atrpms.net/f$">
+<meta property="og:description" content="To obtain unrar for F13: as root, create /etc/yum.repos.d/atrpms.repo with contents:
+1234567[atrpms]name=Fedora Core $releasever - $basearch - ATrpmsbaseurl=http://dl.atrpms.net/f$releasever-$basearch">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Unrar in Fedora 13">
-<meta name="twitter:description" content="To obtain unrar for F13: as root, create /etc/yum.repos.d/atrpms.repo with contents:[sourcecode language=”bash”][atrpms]name=Fedora Core $releasever - $basearch - ATrpmsbaseurl=http://dl.atrpms.net/f$">
+<meta name="twitter:description" content="To obtain unrar for F13: as root, create /etc/yum.repos.d/atrpms.repo with contents:
+1234567[atrpms]name=Fedora Core $releasever - $basearch - ATrpmsbaseurl=http://dl.atrpms.net/f$releasever-$basearch">
 
   
     <link rel="alternative" href="/atom.xml" title="ootput burst!" type="application/atom+xml">
@@ -87,7 +90,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>To obtain unrar for F13: as root, create <code>/etc/yum.repos.d/atrpms.repo</code> with contents:<br>[sourcecode language=”bash”]<br>[atrpms]<br>name=Fedora Core $releasever - $basearch - ATrpms<br>baseurl=<a href="http://dl.atrpms.net/f$releasever-$basearch/atrpms/stable" target="_blank" rel="external">http://dl.atrpms.net/f$releasever-$basearch/atrpms/stable</a><br>gpgkey=<a href="http://ATrpms.net/RPM-GPG-KEY.atrpms" target="_blank" rel="external">http://ATrpms.net/RPM-GPG-KEY.atrpms</a><br>gpgcheck=1<br>enabled = 0<br>[/sourcecode]</p>
+        <p>To obtain unrar for F13: as root, create <code>/etc/yum.repos.d/atrpms.repo</code> with contents:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">[atrpms]</div><div class="line">name=Fedora Core <span class="variable">$releasever</span> - <span class="variable">$basearch</span> - ATrpms</div><div class="line">baseurl=http://dl.atrpms.net/f<span class="variable">$releasever</span>-<span class="variable">$basearch</span>/atrpms/stable</div><div class="line">gpgkey=http://ATrpms.net/RPM-GPG-KEY.atrpms</div><div class="line">gpgcheck=<span class="number">1</span></div><div class="line">enabled = <span class="number">0</span></div></pre></td></tr></table></figure>
+
+
 <p>Then, import the repo’s GPG key:`</p>
 <h1 id="rpm_—import_http://atrpms-net/RPM-GPG-KEY-atrpms">rpm —import <a href="http://atrpms.net/RPM-GPG-KEY.atrpms" target="_blank" rel="external">http://atrpms.net/RPM-GPG-KEY.atrpms</a></h1>
 <p>`</p>
@@ -185,11 +191,11 @@
       <ul>
         
           <li>
-            <a href="/2014/11/23/Hello-Hexo/">Hello Hexo</a>
+            <a href="/2014/11/24/hello-world/">Hello World</a>
           </li>
         
           <li>
-            <a href="/2014/11/23/hello-world/">Hello World</a>
+            <a href="/2014/11/23/Hello-Hexo/">Hello Hexo</a>
           </li>
         
           <li>

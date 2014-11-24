@@ -129,9 +129,7 @@ Device 'Logitech USB Gaming Mouse':
 <p><code>$ xinput set-prop 10 252 -1</code></p>
 <p>After confirming that the above command works, you can create a shell script to be executed at boot. You may choose to replace the index numbers, eg. <code>10</code> and <code>252</code> with the more meaningful property names <code>&quot;Logitech USB Gaming Mouse&quot;</code> and <code>&quot;Device Accel Profile&quot;</code> respectively.</p>
 <p>My <code>$HOME/bin/macceloff.sh</code> script contains:</p>
-<p>[sourcecode]</p>
-<h1 id="!/bin/bash">!/bin/bash</h1>
-<p>sleep 05<br>xinput set-prop &quot;Logitech USB Gaming Mouse&quot; &quot;Device Accel Profile&quot; -1<br>exit 0<br>[/sourcecode]</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="shebang">#!/bin/bash</span></div><div class="line"></div><div class="line">sleep <span class="number">05</span></div><div class="line">xinput <span class="keyword">set</span>-prop &amp;quot;Logitech USB Gaming Mouse&amp;quot; &amp;quot;Device Accel Profile&amp;quot; -<span class="number">1</span></div><div class="line"><span class="keyword">exit</span> <span class="number">0</span></div></pre></td></tr></table></figure>
 
       
     </div>
@@ -222,11 +220,11 @@ Device 'Logitech USB Gaming Mouse':
       <ul>
         
           <li>
-            <a href="/2014/11/23/Hello-Hexo/">Hello Hexo</a>
+            <a href="/2014/11/24/hello-world/">Hello World</a>
           </li>
         
           <li>
-            <a href="/2014/11/23/hello-world/">Hello World</a>
+            <a href="/2014/11/23/Hello-Hexo/">Hello Hexo</a>
           </li>
         
           <li>

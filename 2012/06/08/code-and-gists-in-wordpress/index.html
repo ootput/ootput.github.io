@@ -90,9 +90,9 @@
       
         <p><img src="http://ootput.files.wordpress.com/2012/06/logo_gist.png?w=150" alt="" title="logo_gist"></p>
 <p>While <code>WordPress.com</code> doesn’t allow you to use potentially harmful code on your blog, it does allow you to post source code for general viewing. Provided that you enclose the source code within a <code>&amp;#091;sourcecode&amp;#093; &amp;#091;/sourcecode&amp;#093;</code> <a href="http://en.support.rdpress.com/shortcodes/" target="_blank" rel="external"><code>shortcode</code></a> wrapper, you will be able to preserve the code’s formatting; enable syntax highlighting for the programming language used; and highlight specific lines in the code. For example, for a CSS snippet, do:<br><a id="more"></a></p>
-<p>[sourcecode highlight=”3,4,5,6,7” language=”css”]<br>&#091;sourcecode language=&quot;css&quot; highlight=&quot;3,4,5,6,7&quot;&#093;</p>
-<p>/<em> HTML5 display-role reset for older browsers </em>/<br>article, aside, details, figcaption, figure,<br>footer, header, hgroup, menu, nav, section {<br>    display: block;<br>}<br>body {<br>    line-height: 1;<br>}<br>ol, ul {<br>    list-style: none;<br>}<br>blockquote, q {<br>    quotes: none;<br>}<br>blockquote:before, blockquote:after,<br>q:before, q:after {<br>    content: ‘’;<br>    content: none;<br>}<br>table {<br>    border-collapse: collapse;<br>    border-spacing: 0;<br>}</p>
-<p>&#091;&#047;sourcecode&#093;<br>[/sourcecode]</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">&amp;#091;sourcecode language=&amp;quot;css&amp;quot; highlight=&amp;quot;3,4,5,6,7&amp;quot;&amp;#093;</div><div class="line"></div><div class="line">/* HTML5 display-role reset for older browsers */</div><div class="line">article, aside, details, figcaption, figure,</div><div class="line">footer, header, hgroup, menu, nav, section {</div><div class="line">	display: block;</div><div class="line">}</div><div class="line">body {</div><div class="line">	line-height: 1;</div><div class="line">}</div><div class="line">ol, ul {</div><div class="line">	list-style: none;</div><div class="line">}</div><div class="line">blockquote, q {</div><div class="line">	quotes: none;</div><div class="line">}</div><div class="line">blockquote:before, blockquote:after,</div><div class="line">q:before, q:after {</div><div class="line">	content: '';</div><div class="line">	content: none;</div><div class="line">}</div><div class="line">table {</div><div class="line">	border-collapse: collapse;</div><div class="line">	border-spacing: 0;</div><div class="line">}</div><div class="line"></div><div class="line">&amp;#091;&amp;#047;sourcecode&amp;#093;</div></pre></td></tr></table></figure>
+
+
 <p>Alternatively, <code>wordpress.com</code> permits embedding <code>github.com</code> gists by using the <code>&amp;#091;gist&amp;#093;</code> shortcode. With <code>&amp;#091;gist&amp;#093;2927943&amp;#091;/gist&amp;#093;</code>, you’ll achieve:<br>[gist]2927943[/gist]</p>
 <p>… which certainly isn’t as pretty as <code>wordpress.com</code>‘s solution. You can make a gist more presentable by way of CSS customizations, but this isn’t possible on <code>wordpress.com</code>. It is also impossible to tell gists to highlight specific lines of code.</p>
 
@@ -185,11 +185,11 @@
       <ul>
         
           <li>
-            <a href="/2014/11/23/Hello-Hexo/">Hello Hexo</a>
+            <a href="/2014/11/24/hello-world/">Hello World</a>
           </li>
         
           <li>
-            <a href="/2014/11/23/hello-world/">Hello World</a>
+            <a href="/2014/11/23/Hello-Hexo/">Hello Hexo</a>
           </li>
         
           <li>

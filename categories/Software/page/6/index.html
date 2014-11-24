@@ -89,40 +89,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Habari’s pages, while taggable, aren’t filtered; Habari’s content filters only apply to entries. This can be easily addressed by modifying the theme - for example, with K2, make the following changes to <code>themes/k2/theme.php</code>:<br>[sourcecode language=”diff”]<br><em>*</em> system/themes/k2/theme.php 2010-06-21 22:15:10.587118909 +0800<br>—- user/themes/k2/theme.php 2010-06-23 20:00:35.488368879 +0800</p>
-<hr>
-<p><strong><em> 46,51 *</em></strong><br>—- 46,70 ——</p>
-<ul>
-<li>template. So the values here, unless checked, will overwrite any existing</li>
-<li>values.<br>*/<br>+<ul>
-<li>/**</li>
-<li><ul>
-<li>Filter the parameters being passed to Posts::get()</li>
-</ul>
-</li>
-<li>*</li>
-<li><ul>
-<li>@param array $filters The parameters to be passed to Posts::get()</li>
-</ul>
-</li>
-<li>*</li>
-<li><ul>
-<li>@return array The updated parameters</li>
-</ul>
-</li>
-<li>*/</li>
-<li>public function filter_template_where_filters( $filters )</li>
-<li>{<br>+</li>
-<li>if( isset( $filters[‘content_type’] ) ) {</li>
-<li>$types = Utils::single_array( $filters-&gt;offsetGet( ‘content_type’ ) );</li>
-<li>$types[] = Post::type( ‘page’ );</li>
-<li>$filters-&gt;offsetSet( ‘content_type’, $types );</li>
-<li>}</li>
-<li>return $filters;</li>
-<li>}<br>+<br>public function add_template_vars()<br>{<br>//Theme Options<br>[/sourcecode]</li>
-</ul>
-</li>
-</ul>
+        <p>Habari’s pages, while taggable, aren’t filtered; Habari’s content filters only apply to entries. This can be easily addressed by modifying the theme - for example, with K2, make the following changes to <code>themes/k2/theme.php</code>:</p>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="header">*** system/themes/k2/theme.php 2010-06-21 22:15:10.587118909 +0800</span></div><div class="line"><span class="header">--- user/themes/k2/theme.php 2010-06-23 20:00:35.488368879 +0800</span></div><div class="line"><span class="header">***************</span></div><div class="line"><span class="chunk">*** 46,51 ****</span></div><div class="line"><span class="chunk">--- 46,70 ----</span></div><div class="line">   * template. So the values here, unless checked, will overwrite any existing</div><div class="line">   * values.</div><div class="line">   */</div><div class="line"><span class="addition">+</span></div><div class="line"><span class="addition">+ /**</span></div><div class="line"><span class="addition">+ * Filter the parameters being passed to Posts::get()</span></div><div class="line"><span class="addition">+ *</span></div><div class="line"><span class="addition">+ * @param array $filters The parameters to be passed to Posts::get()</span></div><div class="line"><span class="addition">+ *</span></div><div class="line"><span class="addition">+ * @return array The updated parameters</span></div><div class="line"><span class="addition">+ */</span></div><div class="line"><span class="addition">+ public function filter_template_where_filters( $filters )</span></div><div class="line"><span class="addition">+ {</span></div><div class="line"><span class="addition">+</span></div><div class="line"><span class="addition">+ if( isset( $filters['content_type'] ) ) {</span></div><div class="line"><span class="addition">+ $types = Utils::single_array( $filters-&amp;gt;offsetGet( 'content_type' ) );</span></div><div class="line"><span class="addition">+ $types[] = Post::type( 'page' );</span></div><div class="line"><span class="addition">+ $filters-&amp;gt;offsetSet( 'content_type', $types );</span></div><div class="line"><span class="addition">+ }</span></div><div class="line"><span class="addition">+ return $filters;</span></div><div class="line"><span class="addition">+ }</span></div><div class="line"><span class="addition">+</span></div><div class="line">   public function add_template_vars()</div><div class="line">   {</div><div class="line">   //Theme Options</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -262,7 +230,8 @@
       
         <p>To display smoother fonts on an LCD in Debian, as root:`</p>
 <h1 id="dpkg-reconfigure_fontconfig-config`">dpkg-reconfigure fontconfig-config`</h1>
-<p>In the dialog windows that follow, have:<br>[sourcecode]<br>Font tuning method for screen:        Autohinter<br>Enable subpixel rendering for screen: Automatic<br>Enable bitmapped fonts by default?    No<br>[/sourcecode]</p>
+<p>In the dialog windows that follow, have:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">Font tuning <span class="function"><span class="keyword">method</span> <span class="title">for</span> <span class="title">screen</span>:</span>        Autohinter</div><div class="line">Enable subpixel rendering <span class="keyword">for</span> screen: Automatic</div><div class="line">Enable bitmapped fonts <span class="keyword">by</span> <span class="keyword">default</span>?    No</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -311,12 +280,8 @@
 <blockquote>
 <p><a href="http://en.gravatar.com/" target="_blank" rel="external">Gravatar</a> adds a comment author’s Gravatar  by adding <code>&amp;lt;img src=&amp;quot;gravatar ?&amp;gt;&quot;&amp;gt;</code> to the relevant file(s) in your theme.</p>
 </blockquote>
-<p></p><p>For the K2 theme, make the following changes to <code>themes/k2/comments.php</code>:<br>[sourcecode language=”diff” highlight=”9”]<br><em>*</em> system/themes/k2/comments.php 2010-06-21 22:15:10.587118909 +0800<br>—- user/themes/k2/comments.php 2010-06-21 23:20:23.068368014 +0800</p>
-<hr>
-<p><strong><em> 22,27 *</em></strong><br>—- 22,28 ——<br>  ?&gt;<br>   &lt;li id=&quot;comment-&lt;?php echo $comment-&gt;id; ?&gt;&quot; &lt;?php echo $theme-&gt;k2_comment_class( $comment, $post ); ?&gt;&gt;<br>   &lt;a href=&quot;#comment-&lt;?php echo $comment-&gt;id; ?&gt;&quot; class=&quot;counter&quot; title=&quot;&lt;?php _e(‘Permanent Link to this Comment’); ?&gt;&quot;&gt;&lt;?php echo $comment-&gt;id; ?&gt;&lt;/a&gt;</p>
-<ul>
-<li>&lt;img src=&quot;&lt;? echo $comment-&gt;gravatar ?&gt;&quot;&gt;<br> &lt;span class=&quot;commentauthor&quot;&gt;&lt;?php echo $comment_url; ?&gt;&lt;/span&gt;<br> &lt;small class=&quot;comment-meta&quot;&gt;&lt;a href=&quot;#comment-&lt;?php echo $comment-&gt;id; ?&gt;&quot; title=&quot;&lt;?php _e(‘Time of this Comment’); ?&gt;&quot;&gt;&lt;?php $comment-&gt;date-&gt;out(); ?&gt;&lt;/a&gt;&lt;?php if ( $comment-&gt;status == Comment::STATUS_UNAPPROVED ) : ?&gt; &lt;em&gt;&lt;?php _e(‘In moderation’); ?&gt;&lt;/em&gt;&lt;?php endif; ?&gt;&lt;/small&gt;[/sourcecode]</li>
-</ul>
+<p></p><p>For the K2 theme, make the following changes to <code>themes/k2/comments.php</code>:</p>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="header">*** system/themes/k2/comments.php 2010-06-21 22:15:10.587118909 +0800</span></div><div class="line"><span class="header">--- user/themes/k2/comments.php 2010-06-21 23:20:23.068368014 +0800</span></div><div class="line"><span class="header">***************</span></div><div class="line"><span class="chunk">*** 22,27 ****</span></div><div class="line"><span class="chunk">--- 22,28 ----</span></div><div class="line">  ?&amp;gt;</div><div class="line">   &amp;lt;li id=&amp;quot;comment-&amp;lt;?php echo $comment-&amp;gt;id; ?&amp;gt;&amp;quot; &amp;lt;?php echo $theme-&amp;gt;k2_comment_class( $comment, $post ); ?&amp;gt;&amp;gt;</div><div class="line">   &amp;lt;a href=&amp;quot;#comment-&amp;lt;?php echo $comment-&amp;gt;id; ?&amp;gt;&amp;quot; class=&amp;quot;counter&amp;quot; title=&amp;quot;&amp;lt;?php _e('Permanent Link to this Comment'); ?&amp;gt;&amp;quot;&amp;gt;&amp;lt;?php echo $comment-&amp;gt;id; ?&amp;gt;&amp;lt;/a&amp;gt;</div><div class="line"><span class="addition">+ &amp;lt;img src=&amp;quot;&amp;lt;? echo $comment-&amp;gt;gravatar ?&amp;gt;&amp;quot;&amp;gt;</span></div><div class="line">   &amp;lt;span class=&amp;quot;commentauthor&amp;quot;&amp;gt;&amp;lt;?php echo $comment_url; ?&amp;gt;&amp;lt;/span&amp;gt;</div><div class="line">   &amp;lt;small class=&amp;quot;comment-meta&amp;quot;&amp;gt;&amp;lt;a href=&amp;quot;#comment-&amp;lt;?php echo $comment-&amp;gt;id; ?&amp;gt;&amp;quot; title=&amp;quot;&amp;lt;?php _e('Time of this Comment'); ?&amp;gt;&amp;quot;&amp;gt;&amp;lt;?php $comment-&amp;gt;date-&amp;gt;out(); ?&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;?php if ( $comment-&amp;gt;status == Comment::STATUS_UNAPPROVED ) : ?&amp;gt; &amp;lt;em&amp;gt;&amp;lt;?php _e('In moderation'); ?&amp;gt;&amp;lt;/em&amp;gt;&amp;lt;?php endif; ?&amp;gt;&amp;lt;/small&amp;gt;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -420,7 +385,8 @@
 <h1 id="rpm_-Uvh_http://download1-rpmfusion-org/free/fedora/rpmfusion-free-release-stable-noarch-rpm_http://download1-rpmfusion-org/nonfree/fedora/rpmfusion-nonfree-release-stable-noarch-rpm`">rpm -Uvh <a href="http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm" target="_blank" rel="external">http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm</a> <a href="http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-stable.noarch.rpm`" target="_blank" rel="external">http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-stable.noarch.rpm`</a></h1>
 <p>For the Adobe repository, which provides both Flash player and Adobe Reader:`</p>
 <h1 id="rpm_-Uvh_http://linuxdownload-adobe-com/adobe-release/adobe-release-i386-1-0-1-noarch-rpm`">rpm -Uvh <a href="http://linuxdownload.adobe.com/adobe-release/adobe-release-i386-1.0-1.noarch.rpm`" target="_blank" rel="external">http://linuxdownload.adobe.com/adobe-release/adobe-release-i386-1.0-1.noarch.rpm`</a></h1>
-<p>Finally, for the Skype repository, manually create <code>/etc/yum.repos.d/skype.repo</code> containing:<br>[sourcecode language=”bash”]<br>[skype]<br>name=Skype Repository<br>baseurl=<a href="http://download.skype.com/linux/repos/fedora/updates/i586/" target="_blank" rel="external">http://download.skype.com/linux/repos/fedora/updates/i586/</a><br>gpgkey=<a href="http://www.skype.com/products/skype/linux/rpm-public-key.asc" target="_blank" rel="external">http://www.skype.com/products/skype/linux/rpm-public-key.asc</a><br>enabled=1<br>gpgcheck=0[/sourcecode]</p>
+<p>Finally, for the Skype repository, manually create <code>/etc/yum.repos.d/skype.repo</code> containing:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">[skype]</div><div class="line">name=Skype Repository</div><div class="line">baseurl=http://download.skype.com/linux/repos/fedora/updates/i586/</div><div class="line">gpgkey=http://www.skype.com/products/skype/linux/rpm-public-key.asc</div><div class="line">enabled=<span class="number">1</span></div><div class="line">gpgcheck=<span class="number">0</span></div></pre></td></tr></table></figure>
 
       
     </div>
@@ -465,7 +431,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>To obtain unrar for F13: as root, create <code>/etc/yum.repos.d/atrpms.repo</code> with contents:<br>[sourcecode language=”bash”]<br>[atrpms]<br>name=Fedora Core $releasever - $basearch - ATrpms<br>baseurl=<a href="http://dl.atrpms.net/f$releasever-$basearch/atrpms/stable" target="_blank" rel="external">http://dl.atrpms.net/f$releasever-$basearch/atrpms/stable</a><br>gpgkey=<a href="http://ATrpms.net/RPM-GPG-KEY.atrpms" target="_blank" rel="external">http://ATrpms.net/RPM-GPG-KEY.atrpms</a><br>gpgcheck=1<br>enabled = 0<br>[/sourcecode]</p>
+        <p>To obtain unrar for F13: as root, create <code>/etc/yum.repos.d/atrpms.repo</code> with contents:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">[atrpms]</div><div class="line">name=Fedora Core <span class="variable">$releasever</span> - <span class="variable">$basearch</span> - ATrpms</div><div class="line">baseurl=http://dl.atrpms.net/f<span class="variable">$releasever</span>-<span class="variable">$basearch</span>/atrpms/stable</div><div class="line">gpgkey=http://ATrpms.net/RPM-GPG-KEY.atrpms</div><div class="line">gpgcheck=<span class="number">1</span></div><div class="line">enabled = <span class="number">0</span></div></pre></td></tr></table></figure>
+
+
 <p>Then, import the repo’s GPG key:`</p>
 <h1 id="rpm_—import_http://atrpms-net/RPM-GPG-KEY-atrpms">rpm —import <a href="http://atrpms.net/RPM-GPG-KEY.atrpms" target="_blank" rel="external">http://atrpms.net/RPM-GPG-KEY.atrpms</a></h1>
 <p>`</p>
@@ -573,7 +542,10 @@
 <p>.. and then import the provided GPG key:<br>`</p>
 <h1 id="rpm_—import_/etc/pki/rpm-gpg/RPM-GPG-KEY-adobe-linux">rpm —import /etc/pki/rpm-gpg/RPM-GPG-KEY-adobe-linux</h1>
 <p>`</p>
-<p>To confirm that <code>yum</code> can now access Adobe RPM packages, check to see if <code>/etc/yum.repos.d/adobe-linux-i386.repo</code> exists, and that it contains:<br>[sourcecode language=”bash”]<br>[adobe-linux-i386]<br>name=Adobe Systems Incorporated<br>baseurl=<a href="http://linuxdownload.adobe.com/linux/i386/" target="_blank" rel="external">http://linuxdownload.adobe.com/linux/i386/</a><br>enabled=1<br>gpgcheck=1<br>gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-adobe-linux<br>[/sourcecode]</p>
+<p>To confirm that <code>yum</code> can now access Adobe RPM packages, check to see if <code>/etc/yum.repos.d/adobe-linux-i386.repo</code> exists, and that it contains:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">[adobe-linux-i386]</div><div class="line">name=Adobe Systems Incorporated</div><div class="line">baseurl=http://linuxdownload.adobe.com/linux/i386/</div><div class="line">enabled=<span class="number">1</span></div><div class="line">gpgcheck=<span class="number">1</span></div><div class="line">gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-adobe-linux</div></pre></td></tr></table></figure>
+
+
 <p>Then, it’s simply a matter of installing the required packages:<br>`</p>
 <h1 id="yum_install_flash-plugin_alsa-plugins-pulseaudio_libcurl_nspluginwrapper`">yum install flash-plugin alsa-plugins-pulseaudio libcurl nspluginwrapper`</h1>
 <p>During <code>yum</code> operation, you’ll notice the error <code>Warning: RPMDB altered outside of yum</code>. This cannot be avoided as we are dealing with third-party packages. To read more about the error, visit James Antill’s blog entry.</p>
@@ -648,11 +620,11 @@
       <ul>
         
           <li>
-            <a href="/2014/11/23/Hello-Hexo/">Hello Hexo</a>
+            <a href="/2014/11/24/hello-world/">Hello World</a>
           </li>
         
           <li>
-            <a href="/2014/11/23/hello-world/">Hello World</a>
+            <a href="/2014/11/23/Hello-Hexo/">Hello Hexo</a>
           </li>
         
           <li>

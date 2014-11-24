@@ -92,9 +92,10 @@ Chyrp, on the other hand, required">
       
         <p>With NB, off-line backup was rather easy - essentially I was dealing with textual content from two sources that could be easily synchronized with basic shell tools.</p>
 <p>Chyrp, on the other hand, required that I duplicate both the MySQL database and the static content, and that I had a web browser handy to access the graphical markup tools provided.</p>
-<p>I had to dump the contents of the remote MySQL database to a local file, which could then be used to recreate the on-line database if ever the need arose. I created the following script for that purpose:<br>[sourcecode language=”bash”]</p>
-<h1 id="!/bin/sh">!/bin/sh</h1>
-<p>MYSQLBACKUP=/home/$USER/.mysql_backup<br>DB_NAME=dump.sql<br>[ -f $MYSQLBACKUP/$DB_NAME.1 ] &amp;&amp; mv -f $MYSQLBACKUP/$DB_NAME.1 $MYSQLBACKUP/$DB_NAME.2<br>[ -f $MYSQLBACKUP/$DB_NAME.0 ] &amp;&amp; mv -f $MYSQLBACKUP/$DB_NAME.0 $MYSQLBACKUP/$DB_NAME.1<br>[ -f $MYSQLBACKUP/$DB_NAME ] &amp;&amp; mv -f $MYSQLBACKUP/$DB_NAME $MYSQLBACKUP/$DB_NAME.0<br>ssh USER@host mysqldump -h MYSQL.HOST -u USER -pPASSWORD DBNAME &gt; $MYSQLBACKUP/$DB_NAME<br>[/sourcecode]</p>
+<p>I had to dump the contents of the remote MySQL database to a local file, which could then be used to recreate the on-line database if ever the need arose. I created the following script for that purpose:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="shebang">#!/bin/sh</span></div><div class="line">MYSQLBACKUP=/home/<span class="variable">$USER</span>/.mysql_backup</div><div class="line">DB_NAME=dump.sql</div><div class="line">[ <span class="operator">-f</span> <span class="variable">$MYSQLBACKUP</span>/<span class="variable">$DB_NAME</span>.<span class="number">1</span> ] &amp;amp;&amp;amp; mv <span class="operator">-f</span> <span class="variable">$MYSQLBACKUP</span>/<span class="variable">$DB_NAME</span>.<span class="number">1</span> <span class="variable">$MYSQLBACKUP</span>/<span class="variable">$DB_NAME</span>.<span class="number">2</span></div><div class="line">[ <span class="operator">-f</span> <span class="variable">$MYSQLBACKUP</span>/<span class="variable">$DB_NAME</span>.<span class="number">0</span> ] &amp;amp;&amp;amp; mv <span class="operator">-f</span> <span class="variable">$MYSQLBACKUP</span>/<span class="variable">$DB_NAME</span>.<span class="number">0</span> <span class="variable">$MYSQLBACKUP</span>/<span class="variable">$DB_NAME</span>.<span class="number">1</span></div><div class="line">[ <span class="operator">-f</span> <span class="variable">$MYSQLBACKUP</span>/<span class="variable">$DB_NAME</span> ] &amp;amp;&amp;amp; mv <span class="operator">-f</span> <span class="variable">$MYSQLBACKUP</span>/<span class="variable">$DB_NAME</span> <span class="variable">$MYSQLBACKUP</span>/<span class="variable">$DB_NAME</span>.<span class="number">0</span></div><div class="line">ssh USER@host mysqldump -h MYSQL.HOST -u USER -pPASSWORD DBNAME &amp;gt; <span class="variable">$MYSQLBACKUP</span>/<span class="variable">$DB_NAME</span></div></pre></td></tr></table></figure>
+
+
 <p>With a rudimentary backup method in place, I could now completely migrate away from NanoBlogger.</p>
 
       
@@ -186,11 +187,11 @@ Chyrp, on the other hand, required">
       <ul>
         
           <li>
-            <a href="/2014/11/23/Hello-Hexo/">Hello Hexo</a>
+            <a href="/2014/11/24/hello-world/">Hello World</a>
           </li>
         
           <li>
-            <a href="/2014/11/23/hello-world/">Hello World</a>
+            <a href="/2014/11/23/Hello-Hexo/">Hello Hexo</a>
           </li>
         
           <li>

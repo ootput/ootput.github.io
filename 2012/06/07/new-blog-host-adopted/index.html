@@ -94,7 +94,9 @@
 <p>The transition from Habari to WordPress was not a straightforward process, however. In order to export all of Habari’s posts to a format recognised by <code>wordpress.com</code>, I had to host a WordPress blog on <code>bur.st</code> where I could create the appropriate MySQL tables for WordPress. <code>wordpress.com</code> does not provide direct MySQL access for its members, and this effectively prevents the <a href="http://chrismeller.com/2009/08/migrating-habari-to-wordpress" target="_blank" rel="external">Habari-&gt;Wordpress script</a> from working. </p>
 <p>Regardless, once I had exported data to the <code>bur.st</code>-hosted WordPress, I was then able to produce a <a href="http://en.blog.wordpress.com/2006/06/12/xml-import-export/" target="_blank" rel="external">WordPress-&gt;WordPress export file</a> to be imported into <code>wordpress.com</code></p>
 <p>It was a tedious process, but it saved me a lot of time in transferring content onto the new blog.</p>
-<p>In order to redirect users to my new <code>wordpress.com</code> blog, and to properly block search bots from accessing the domain (e.g. Google), I created the following two files in <code>ootput.bur.st</code>‘s root directory:<br><code>.htaccess</code>:<br>[sourcecode]<br>Options +FollowSymLinks<br>RewriteEngine on<br>RewriteRule (.<em>) <a href="http://ootput.wordpress.com/$1" target="_blank" rel="external">http://ootput.wordpress.com/$1</a> [R=301,L]<br>[/sourcecode]<code>robots.txt</code>:<br>[sourcecode]<br>User-agent: </em><br>Disallow: /<br>[/sourcecode] Of course, these two files will be obliterated once the <code>bur.st</code> merger is officially complete.</p>
+<p>In order to redirect users to my new <code>wordpress.com</code> blog, and to properly block search bots from accessing the domain (e.g. Google), I created the following two files in <code>ootput.bur.st</code>‘s root directory:<br><code>.htaccess</code>:</p>
+<p><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword"><span class="common">Options</span></span> +FollowSymLinks</div><div class="line"><span class="keyword"><span class="common">RewriteEngine</span></span> <span class="literal">on</span></div><div class="line"><span class="keyword"><span class="common">RewriteRule</span></span> (.*) http://ootput.wordpress.com/<span class="number">$1</span><span class="sqbracket"> [R=301,L]</span></div></pre></td></tr></table></figure><br><code>robots.txt</code>:</p>
+<p><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="attribute">User-agent</span>: <span class="string">*</span></div><div class="line"><span class="attribute">Disallow</span>: <span class="string">/</span></div></pre></td></tr></table></figure><br> Of course, these two files will be obliterated once the <code>bur.st</code> merger is officially complete.</p>
 <p><em>NB:</em> Interestingly, my final login to <code>shell.bur.st</code> showed new mail in my mailbox - where I had never received e-mail in the past. There was a total of 10 e-mails, and all of them were <strong>spam</strong>. I suppose it was someone’s last ditched effort to generate some income from <code>bur.st</code> members - which was kind of lame. As the account effectively expires on the 1st July, this desperate attempt seemed rather stupid.</p>
 
       
@@ -186,11 +188,11 @@
       <ul>
         
           <li>
-            <a href="/2014/11/23/Hello-Hexo/">Hello Hexo</a>
+            <a href="/2014/11/24/hello-world/">Hello World</a>
           </li>
         
           <li>
-            <a href="/2014/11/23/hello-world/">Hello World</a>
+            <a href="/2014/11/23/Hello-Hexo/">Hello Hexo</a>
           </li>
         
           <li>

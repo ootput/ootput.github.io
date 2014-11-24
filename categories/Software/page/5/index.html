@@ -137,8 +137,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>I have created an importable Windows Registry key that will essentially block internet access for apps run by Wine. I found the usual method of creating IPTables (for Linux) rules per process and/or per user (think: <code># useradd wine</code>) extremely tedious when administering several boxen.</p>
-<p>Import the following key using Wines Regedit:<br>[sourcecode]<br>REGEDIT4</p>
-<p>[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]<br>&quot;MigrateProxy&quot;=dword:00000001<br>&quot;ProxyEnable&quot;=dword:00000001<br>&quot;ProxyHttp.1.1&quot;=dword:00000000<br>&quot;ProxyOverride&quot;=&quot;&lt;local&gt;&quot;<br>&quot;ProxyServer&quot;=&quot;<a href="http://NonExistantProxyAddress:80&amp;quot" target="_blank" rel="external">http://NonExistantProxyAddress:80&amp;quot</a>;<br>&quot;User Agent&quot;=&quot;Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1&quot;[/sourcecode]</p>
+<p>Import the following key using Wines Regedit:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">REGEDIT4</div><div class="line"></div><div class="line"><span class="special">[</span>HKEY_CURRENT_USER<span class="command">\Software</span><span class="command">\Microsoft</span><span class="command">\Windows</span><span class="command">\CurrentVersion</span><span class="command">\Internet</span> Settings<span class="special">]</span></div><div class="line"><span class="special">&amp;</span>quot;MigrateProxy<span class="special">&amp;</span>quot;=dword:00000001</div><div class="line"><span class="special">&amp;</span>quot;ProxyEnable<span class="special">&amp;</span>quot;=dword:00000001</div><div class="line"><span class="special">&amp;</span>quot;ProxyHttp.1.1<span class="special">&amp;</span>quot;=dword:00000000</div><div class="line"><span class="special">&amp;</span>quot;ProxyOverride<span class="special">&amp;</span>quot;=<span class="special">&amp;</span>quot;<span class="special">&amp;</span>lt;local<span class="special">&amp;</span>gt;<span class="special">&amp;</span>quot;</div><div class="line"><span class="special">&amp;</span>quot;ProxyServer<span class="special">&amp;</span>quot;=<span class="special">&amp;</span>quot;http://NonExistantProxyAddress:80<span class="special">&amp;</span>quot;</div><div class="line"><span class="special">&amp;</span>quot;User Agent<span class="special">&amp;</span>quot;=<span class="special">&amp;</span>quot;Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1<span class="special">&amp;</span>quot;</div></pre></td></tr></table></figure>
+
+
 <p>.. and restart the app for the changes to take effect.</p>
 
       
@@ -362,7 +364,7 @@ ttf-mscorefonts-installer Installer for Microsoft TrueType core fonts
     <div class="article-entry" itemprop="articleBody">
       
         <p><img src="http://ootput.files.wordpress.com/2010/06/zsh.png?w=76" alt="" title="zsh"></p>
-<p>ZSH has a built-in function called <code>edit-command-line</code> which allows you to edit the current command with an external editor (defined by the environment variable <code>$EDITOR</code>). To enable this feature, add the following to your ZSH startup scripts:[sourcecode]<br>autoload edit-command-line<br>zle -N edit-command-line<br>bindkey ‘^Xe’ edit-command-line<br>[/sourcecode]</p>
+<p>ZSH has a built-in function called <code>edit-command-line</code> which allows you to edit the current command with an external editor (defined by the environment variable <code>$EDITOR</code>). To enable this feature, add the following to your ZSH startup scripts:<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">autoload <span class="keyword">edit</span>-<span class="keyword">command</span>-<span class="built_in">line</span></div><div class="line">zle -<span class="keyword">N</span> <span class="keyword">edit</span>-<span class="keyword">command</span>-<span class="built_in">line</span></div><div class="line">bindkey <span class="string">'^Xe'</span> <span class="keyword">edit</span>-<span class="keyword">command</span>-<span class="built_in">line</span></div></pre></td></tr></table></figure></p>
 <p>For the interested, <a href="http://www.techrepublic.com/article/keyboard-shortcuts-in-bash-and-zsh/6178505" target="_blank" rel="external">this</a> article lists some useful keyboard shortcuts in ZSH.</p>
 
       
@@ -517,41 +519,12 @@ ttf-mscorefonts-installer Installer for Microsoft TrueType core fonts
 <blockquote>
 <p><a href="http://habariproject.org/dist/plugins/monthly_archives/" target="_blank" rel="external">monthly_archives</a> shows archives grouped by month.</p>
 </blockquote>
-<p>To display output from both plug-ins, make the following changes to <code>sidebar.php</code>:<br>[sourcecode language=”diff”]<br><em>*</em> system/themes/k2/sidebar.php 2010-06-21 22:15:10.587118909 +0800<br>—- user/themes/k2/sidebar.php 2010-06-26 14:52:35.928366633 +0800</p>
-<hr>
-<p><strong><em> 13,18 *</em></strong><br>—- 13,28 ——</p>
-<p>  &lt;?php $theme-&gt;area( ‘sidebar’ ); ?&gt;</p>
-<ul>
-<li>&lt;div class=&quot;sb-archives&quot;&gt;</li>
-<li>&lt;h2&gt;&lt;?php _e(‘Archives’); ?&gt;&lt;/h2&gt;</li>
-<li>&lt;?php $theme-&gt;monthly_archives ( ‘0’,’N’ ); ?&gt;</li>
-<li>&lt;/div&gt;<br>+</li>
-<li>&lt;div class=&quot;sb-tags&quot;&gt;</li>
-<li>&lt;h2&gt;&lt;?php _e(‘Tags’); ?&gt;&lt;/h2&gt;</li>
-<li>&lt;?php $theme-&gt;fluffytag(); ?&gt;</li>
-<li>&lt;/div&gt;<br>+<br> &lt;div class=&quot;sb-user&quot;&gt;<br> &lt;h2&gt;&lt;?php _e(‘User’); ?&gt;&lt;/h2&gt;<br>&lt;?php $theme-&gt;display ( ‘loginform’ ); ?&gt;<br>[/sourcecode]</li>
-</ul>
-<p>Fluffytag’s appearance was slightly modified with the following changes:<br>[sourcecode language=”diff”]</p>
-<h1 id="Index:_fluffytag-css">Index: fluffytag.css</h1>
-<p>—- fluffytag.css (revision 3226)<br>+++ fluffytag.css (working copy)<br>@@ -7,11 +7,10 @@</p>
-<h1 id="fluffytag_li_a_{">fluffytag li a {</h1>
-<p>  margin: 0px;<br>  line-height: 34px;</p>
-<ul>
-<li>color: #000;</li>
-</ul>
-<ul>
-<li>color: #CCCCCC;<br>}<h1 id="fluffytag_li_a:hover_{">fluffytag li a:hover {</h1>
-</li>
-</ul>
-<ul>
-<li>background: #000;</li>
-<li>color: #fff;</li>
-</ul>
-<ul>
-<li>color: #444444;<br>}<h1 id="fluffytag_-step-1_a_{">fluffytag .step-1 a {</h1>
-font-size: 1.0em;<br>@@ -42,4 +41,4 @@<br>}<h1 id="fluffytag_-step-10_a_{">fluffytag .step-10 a {</h1>
-font-size: 2.8em;<br>-}<br>\ No newline at end of file<br>+}<br>[/sourcecode]</li>
-</ul>
+<p>To display output from both plug-ins, make the following changes to <code>sidebar.php</code>:</p>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="header">*** system/themes/k2/sidebar.php 2010-06-21 22:15:10.587118909 +0800</span></div><div class="line"><span class="header">--- user/themes/k2/sidebar.php 2010-06-26 14:52:35.928366633 +0800</span></div><div class="line"><span class="header">***************</span></div><div class="line"><span class="chunk">*** 13,18 ****</span></div><div class="line"><span class="chunk">--- 13,28 ----</span></div><div class="line"></div><div class="line">  &amp;lt;?php $theme-&amp;gt;area( 'sidebar' ); ?&amp;gt;</div><div class="line"></div><div class="line"><span class="addition">+ &amp;lt;div class=&amp;quot;sb-archives&amp;quot;&amp;gt;</span></div><div class="line"><span class="addition">+ &amp;lt;h2&amp;gt;&amp;lt;?php _e('Archives'); ?&amp;gt;&amp;lt;/h2&amp;gt;</span></div><div class="line"><span class="addition">+ &amp;lt;?php $theme-&amp;gt;monthly_archives ( '0','N' ); ?&amp;gt;</span></div><div class="line"><span class="addition">+ &amp;lt;/div&amp;gt;</span></div><div class="line"><span class="addition">+</span></div><div class="line"><span class="addition">+ &amp;lt;div class=&amp;quot;sb-tags&amp;quot;&amp;gt;</span></div><div class="line"><span class="addition">+ &amp;lt;h2&amp;gt;&amp;lt;?php _e('Tags'); ?&amp;gt;&amp;lt;/h2&amp;gt;</span></div><div class="line"><span class="addition">+ &amp;lt;?php $theme-&amp;gt;fluffytag(); ?&amp;gt;</span></div><div class="line"><span class="addition">+ &amp;lt;/div&amp;gt;</span></div><div class="line"><span class="addition">+</span></div><div class="line">   &amp;lt;div class=&amp;quot;sb-user&amp;quot;&amp;gt;</div><div class="line">   &amp;lt;h2&amp;gt;&amp;lt;?php _e('User'); ?&amp;gt;&amp;lt;/h2&amp;gt;</div><div class="line">  &amp;lt;?php $theme-&amp;gt;display ( 'loginform' ); ?&amp;gt;</div></pre></td></tr></table></figure>
+
+
+<p>Fluffytag’s appearance was slightly modified with the following changes:</p>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="header">Index: fluffytag.css</span></div><div class="line"><span class="header">===================================================================</span></div><div class="line"><span class="header">--- fluffytag.css (revision 3226)</span></div><div class="line"><span class="header">+++ fluffytag.css (working copy)</span></div><div class="line"><span class="chunk">@@ -7,11 +7,10 @@</span></div><div class="line"> #fluffytag li a {</div><div class="line">  margin: 0px;</div><div class="line">  line-height: 34px;</div><div class="line"><span class="deletion">- color: #000;</span></div><div class="line"><span class="addition">+ color: #CCCCCC;</span></div><div class="line"> }</div><div class="line"> #fluffytag li a:hover {</div><div class="line"><span class="deletion">- background: #000;</span></div><div class="line"><span class="deletion">- color: #fff;</span></div><div class="line"><span class="addition">+ color: #444444;</span></div><div class="line"> }</div><div class="line"> #fluffytag .step-1 a {</div><div class="line">  font-size: 1.0em;</div><div class="line"><span class="chunk">@@ -42,4 +41,4 @@</span></div><div class="line"> }</div><div class="line"> #fluffytag .step-10 a {</div><div class="line">  font-size: 2.8em;</div><div class="line"><span class="deletion">-}</span></div><div class="line">\ No newline at end of file</div><div class="line"><span class="addition">+}</span></div></pre></td></tr></table></figure>
 
       
     </div>
@@ -613,31 +586,8 @@ int main ()
 </blockquote>
 <p>Whilst in <code>user/plugins</code>, fetch both plug-ins from their subversion repositories:<code>$ svn checkout http://svn.habariproject.org/habari-extras/plugins/google-code-prettify/trunk google-code-prettify
 $ svn checkout http://svn.habariproject.org/habari-extras/plugins/code_escape/trunk code_escape</code></p>
-<p>Make the following changes to <code>plugins/code_escape/code_escape.plugin.php</code>:<br>[sourcecode language=”diff”]</p>
-<h1 id="Index:_code_escape-plugin-php">Index: code_escape.plugin.php</h1>
-<p>—- code_escape.plugin.php (revision 3226)<br>+++ code_escape.plugin.php (working copy)<br>@@ -4,7 +4,7 @@</p>
-<p>  public function filter_post_content_out ( $content, $post ) {</p>
-<ul>
-<li>$content = preg_replace_callback(‘/&lt;code&gt;(.*?)&lt;\/code&gt;/s’, array( ‘self’, ‘escape_code’ ), $content);</li>
-</ul>
-<ul>
-<li><p>$content = preg_replace_callback(‘/&lt;code class=&quot;prettyprint&quot;&gt;(.*?)&amp;lt;\/code&amp;gt;/s’, array( ‘self’, ‘escape_code’ ), $content);</p>
-<p>return $content;</p>
-</li>
-</ul>
-<p>@@ -16,7 +16,7 @@</p>
-<p>  $string = htmlspecialchars( $string );</p>
-<ul>
-<li>$string = ‘&amp;lt;code&amp;gt;’ . $string . ‘&lt;/code&gt;’;</li>
-</ul>
-<ul>
-<li><p>$string = ‘&lt;code class=&quot;prettyprint&quot;&gt;’ . $string . ‘&lt;/code&gt;’;</p>
-<p>return $string;</p>
-</li>
-</ul>
-<p>@@ -30,4 +30,4 @@</p>
-<p>  }</p>
-<p>-?&gt;<br>\ No newline at end of file<br>+?&gt;<br>[/sourcecode]</p>
+<p>Make the following changes to <code>plugins/code_escape/code_escape.plugin.php</code>:</p>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="header">Index: code_escape.plugin.php</span></div><div class="line"><span class="header">===================================================================</span></div><div class="line"><span class="header">--- code_escape.plugin.php (revision 3226)</span></div><div class="line"><span class="header">+++ code_escape.plugin.php (working copy)</span></div><div class="line"><span class="chunk">@@ -4,7 +4,7 @@</span></div><div class="line"></div><div class="line">  public function filter_post_content_out ( $content, $post ) {</div><div class="line"></div><div class="line"><span class="deletion">- $content = preg_replace_callback('/&amp;lt;code&amp;gt;(.*?)&amp;lt;\/code&amp;gt;/s', array( 'self', 'escape_code' ), $content);</span></div><div class="line"><span class="addition">+ $content = preg_replace_callback('/&amp;lt;code class=&amp;quot;prettyprint&amp;quot;&amp;gt;(.*?)&amp;amp;lt;\/code&amp;amp;gt;/s', array( 'self', 'escape_code' ), $content);</span></div><div class="line"></div><div class="line">  return $content;</div><div class="line"></div><div class="line"><span class="chunk">@@ -16,7 +16,7 @@</span></div><div class="line"></div><div class="line">  $string = htmlspecialchars( $string );</div><div class="line"></div><div class="line"><span class="deletion">- $string = '&amp;amp;lt;code&amp;amp;gt;' . $string . '&amp;lt;/code&amp;gt;';</span></div><div class="line"><span class="addition">+ $string = '&amp;lt;code class=&amp;quot;prettyprint&amp;quot;&amp;gt;' . $string . '&amp;lt;/code&amp;gt;';</span></div><div class="line"></div><div class="line">  return $string;</div><div class="line"></div><div class="line"><span class="chunk">@@ -30,4 +30,4 @@</span></div><div class="line"></div><div class="line">  }</div><div class="line"></div><div class="line"><span class="deletion">-?&amp;gt;</span></div><div class="line">\ No newline at end of file</div><div class="line"><span class="addition">+?&amp;gt;</span></div></pre></td></tr></table></figure>
 
       
     </div>
@@ -708,11 +658,11 @@ $ svn checkout http://svn.habariproject.org/habari-extras/plugins/code_escape/tr
       <ul>
         
           <li>
-            <a href="/2014/11/23/Hello-Hexo/">Hello Hexo</a>
+            <a href="/2014/11/24/hello-world/">Hello World</a>
           </li>
         
           <li>
-            <a href="/2014/11/23/hello-world/">Hello World</a>
+            <a href="/2014/11/23/Hello-Hexo/">Hello Hexo</a>
           </li>
         
           <li>

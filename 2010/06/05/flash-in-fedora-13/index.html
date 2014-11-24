@@ -108,7 +108,10 @@ rpm -ivh adobe-release-i386-1.0-1.noarch.rpm
 <p>.. and then import the provided GPG key:<br>`</p>
 <h1 id="rpm_—import_/etc/pki/rpm-gpg/RPM-GPG-KEY-adobe-linux">rpm —import /etc/pki/rpm-gpg/RPM-GPG-KEY-adobe-linux</h1>
 <p>`</p>
-<p>To confirm that <code>yum</code> can now access Adobe RPM packages, check to see if <code>/etc/yum.repos.d/adobe-linux-i386.repo</code> exists, and that it contains:<br>[sourcecode language=”bash”]<br>[adobe-linux-i386]<br>name=Adobe Systems Incorporated<br>baseurl=<a href="http://linuxdownload.adobe.com/linux/i386/" target="_blank" rel="external">http://linuxdownload.adobe.com/linux/i386/</a><br>enabled=1<br>gpgcheck=1<br>gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-adobe-linux<br>[/sourcecode]</p>
+<p>To confirm that <code>yum</code> can now access Adobe RPM packages, check to see if <code>/etc/yum.repos.d/adobe-linux-i386.repo</code> exists, and that it contains:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">[adobe-linux-i386]</div><div class="line">name=Adobe Systems Incorporated</div><div class="line">baseurl=http://linuxdownload.adobe.com/linux/i386/</div><div class="line">enabled=<span class="number">1</span></div><div class="line">gpgcheck=<span class="number">1</span></div><div class="line">gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-adobe-linux</div></pre></td></tr></table></figure>
+
+
 <p>Then, it’s simply a matter of installing the required packages:<br>`</p>
 <h1 id="yum_install_flash-plugin_alsa-plugins-pulseaudio_libcurl_nspluginwrapper`">yum install flash-plugin alsa-plugins-pulseaudio libcurl nspluginwrapper`</h1>
 <p>During <code>yum</code> operation, you’ll notice the error <code>Warning: RPMDB altered outside of yum</code>. This cannot be avoided as we are dealing with third-party packages. To read more about the error, visit James Antill’s blog entry.</p>
@@ -203,11 +206,11 @@ rpm -ivh adobe-release-i386-1.0-1.noarch.rpm
       <ul>
         
           <li>
-            <a href="/2014/11/23/Hello-Hexo/">Hello Hexo</a>
+            <a href="/2014/11/24/hello-world/">Hello World</a>
           </li>
         
           <li>
-            <a href="/2014/11/23/hello-world/">Hello World</a>
+            <a href="/2014/11/23/Hello-Hexo/">Hello Hexo</a>
           </li>
         
           <li>

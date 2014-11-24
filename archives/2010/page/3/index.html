@@ -135,16 +135,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p></p><p>To avoid having wasted space in embedded gists, make the following changes to <code>user/themes/k2/style.css</code>:<br>[sourcecode language=”diff”]<br><em>*</em> system/themes/k2/style.css 2010-06-21 22:15:10.587118909 +0800<br>—- user/themes/k2/style.css 2010-06-27 21:22:38.248366535 +0800</p>
-<hr>
-<p><strong><em> 891,895 *</em></strong><br>—- 891,902 ——<br>        border: 1px solid #999;<br>  }</p>
-<ul>
-<li>/*-</li>
-<li>Github Gists</li>
-<li>*/<br>+</li>
-<li>.gist { text-indent:0 !important; }</li>
-<li>.gist-highlight { line-height: 1.2em !important;}<br>+<br>/<em> Peace and forgiveness </em>/<br>/<em> Learn more about the other K2: <a href="http://en.wikipedia.org/wiki/K2" target="_blank" rel="external">http://en.wikipedia.org/wiki/K2</a> </em>/<br>[/sourcecode]</li>
-</ul>
+        <p></p><p>To avoid having wasted space in embedded gists, make the following changes to <code>user/themes/k2/style.css</code>:</p>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="header">*** system/themes/k2/style.css 2010-06-21 22:15:10.587118909 +0800</span></div><div class="line"><span class="header">--- user/themes/k2/style.css 2010-06-27 21:22:38.248366535 +0800</span></div><div class="line"><span class="header">***************</span></div><div class="line"><span class="chunk">*** 891,895 ****</span></div><div class="line"><span class="chunk">--- 891,902 ----</span></div><div class="line">        border: 1px solid #999;</div><div class="line">  }</div><div class="line"></div><div class="line"><span class="addition">+ /*-</span></div><div class="line"><span class="addition">+ Github Gists</span></div><div class="line"><span class="addition">+ */</span></div><div class="line"><span class="addition">+</span></div><div class="line"><span class="addition">+ .gist { text-indent:0 !important; }</span></div><div class="line"><span class="addition">+ .gist-highlight { line-height: 1.2em !important;}</span></div><div class="line"><span class="addition">+</span></div><div class="line">  /* Peace and forgiveness */</div><div class="line">  /* Learn more about the other K2: http://en.wikipedia.org/wiki/K2 */</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -190,11 +182,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>The default themes in Habari are placed in <code>system/themes/</code>. To make any customizations to a theme, it is often better to create a duplicate copy in <code>user/themes/</code>, and to work from there.</p>
-<p>To be able to distinguish between the two versions of a theme in Habari’s theme selector, you need to modify the  tag in <code>theme.xml</code>, e.g. with the following changes to <code>themes/k2/theme.xml</code>:<br>[sourcecode language=”diff”]<br><em>*</em> system/themes/k2/theme.xml 2010-06-21 22:15:10.587118909 +0800<br>—- user/themes/k2/theme.xml 2010-06-21 23:06:11.018366092 +0800</p>
-<hr>
-<p><strong><em> 1,6 *</em></strong><br>  &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;<br>  &lt;pluggable type=&quot;theme&quot;&gt;<br>! &lt;name&gt;K2&lt;/name&gt;<br>   &lt;license url=&quot;<a href="http://www.apache.org/licenses/LICENSE-2.0.html&quot;&gt;Apache" target="_blank" rel="external">http://www.apache.org/licenses/LICENSE-2.0.html&quot;&gt;Apache</a> Software License 2.0&lt;/license&gt;</p>
-<p>   &lt;author url=&quot;<a href="http://getk2.com/&quot;&gt;K2" target="_blank" rel="external">http://getk2.com/&quot;&gt;K2</a> Team&lt;/author&gt;<br>—- 1,6 ——<br>  &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;<br>  &lt;pluggable type=&quot;theme&quot;&gt;<br>! &lt;name&gt;K2_custom&lt;/name&gt;<br>   &lt;license url=&quot;<a href="http://www.apache.org/licenses/LICENSE-2.0.html&quot;&gt;Apache" target="_blank" rel="external">http://www.apache.org/licenses/LICENSE-2.0.html&quot;&gt;Apache</a> Software License 2.0&lt;/license&gt;</p>
-<p>   &lt;author url=&quot;<a href="http://getk2.com/&quot;&gt;K2" target="_blank" rel="external">http://getk2.com/&quot;&gt;K2</a> Team&lt;/author&gt;<br>[/sourcecode]</p>
+<p>To be able to distinguish between the two versions of a theme in Habari’s theme selector, you need to modify the  tag in <code>theme.xml</code>, e.g. with the following changes to <code>themes/k2/theme.xml</code>:</p>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="header">*** system/themes/k2/theme.xml 2010-06-21 22:15:10.587118909 +0800</span></div><div class="line"><span class="header">--- user/themes/k2/theme.xml 2010-06-21 23:06:11.018366092 +0800</span></div><div class="line"><span class="header">***************</span></div><div class="line"><span class="chunk">*** 1,6 ****</span></div><div class="line">  &amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot; ?&amp;gt;</div><div class="line">  &amp;lt;pluggable type=&amp;quot;theme&amp;quot;&amp;gt;</div><div class="line"><span class="change">! &amp;lt;name&amp;gt;K2&amp;lt;/name&amp;gt;</span></div><div class="line">   &amp;lt;license url=&amp;quot;http://www.apache.org/licenses/LICENSE-2.0.html&amp;quot;&amp;gt;Apache Software License 2.0&amp;lt;/license&amp;gt;</div><div class="line"></div><div class="line">   &amp;lt;author url=&amp;quot;http://getk2.com/&amp;quot;&amp;gt;K2 Team&amp;lt;/author&amp;gt;</div><div class="line"><span class="chunk">--- 1,6 ----</span></div><div class="line">  &amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot; ?&amp;gt;</div><div class="line">  &amp;lt;pluggable type=&amp;quot;theme&amp;quot;&amp;gt;</div><div class="line"><span class="change">! &amp;lt;name&amp;gt;K2_custom&amp;lt;/name&amp;gt;</span></div><div class="line">   &amp;lt;license url=&amp;quot;http://www.apache.org/licenses/LICENSE-2.0.html&amp;quot;&amp;gt;Apache Software License 2.0&amp;lt;/license&amp;gt;</div><div class="line"></div><div class="line">   &amp;lt;author url=&amp;quot;http://getk2.com/&amp;quot;&amp;gt;K2 Team&amp;lt;/author&amp;gt;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -438,19 +427,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>In order to get the G5’s side buttons and 3rd button’s left/right tilt functional in both Firefox and Nautilus, in <code>/etc/X11/xorg.conf</code>:<br>[sourcecode language=”bash”]<br>Section &quot;ServerLayout&quot;</p>
-<h1 id="…">…</h1>
-<p>   InputDevice &quot;Configured Mouse&quot; &quot;Pointer&quot;<br>EndSection</p>
-<p>Section &quot;InputDevice&quot;<br>   Identifier &quot;Configured Mouse&quot;<br>   Driver &quot;evdev&quot;<br>   Option &quot;CorePointer&quot;<br>   Option &quot;Name&quot; &quot;Logitech USB Gaming Mouse&quot;<br>   Option &quot;ZAxisMapping&quot; &quot;4 5 6 7&quot;<br>   Option &quot;Emulate3Buttons&quot; &quot;false&quot;<br>EndSection<br>[/sourcecode]</p>
+        <p>In order to get the G5’s side buttons and 3rd button’s left/right tilt functional in both Firefox and Nautilus, in <code>/etc/X11/xorg.conf</code>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">Section &amp;quot;ServerLayout&amp;quot;</div><div class="line">   <span class="comment">#...</span></div><div class="line">   InputDevice &amp;quot;Configured Mouse&amp;quot; &amp;quot;Pointer&amp;quot;</div><div class="line">EndSection</div><div class="line"></div><div class="line">Section &amp;quot;InputDevice&amp;quot;</div><div class="line">   Identifier &amp;quot;Configured Mouse&amp;quot;</div><div class="line">   Driver &amp;quot;evdev&amp;quot;</div><div class="line">   Option &amp;quot;CorePointer&amp;quot;</div><div class="line">   Option &amp;quot;Name&amp;quot; &amp;quot;Logitech USB Gaming Mouse&amp;quot;</div><div class="line">   Option &amp;quot;ZAxisMapping&amp;quot; &amp;quot;<span class="number">4</span> <span class="number">5</span> <span class="number">6</span> <span class="number">7</span>&amp;quot;</div><div class="line">   Option &amp;quot;Emulate3Buttons&amp;quot; &amp;quot;<span class="literal">false</span>&amp;quot;</div><div class="line">EndSection</div></pre></td></tr></table></figure>
+
+
 <p><em>NB</em>: F12 does not ship with a <code>/etc/X11/xorg.conf</code> file by default; see <a href="https://fedoraproject.org/wiki/How_to_create_xorg.conf" target="_blank" rel="external">Fedora’s guide</a> on how to create one.</p>
-<p>Additionally, you need to modify <code>$HOME/.Xmodmap</code> to show:<br>[sourcecode]<br>pointer = 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20[/sourcecode]</p>
+<p>Additionally, you need to modify <code>$HOME/.Xmodmap</code> to show:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="attribute"></span></div><div class="line">pointer =<span class="string"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20</span></div></pre></td></tr></table></figure>
+
+
 <p>Also, after:<br>`</p>
 <h1 id="yum_install_xbindkeys_xdotool`">yum install xbindkeys xdotool`</h1>
-<p>.. in <code>$HOME/.xbindkeysrc</code>, have:<br>[sourcecode]</p>
-<h1 id="Nautilus:Back">Nautilus:Back</h1>
-<p>&quot;xdotool key alt+Left&quot;<br>  b:8</p>
-<h1 id="Nautilus:Forward">Nautilus:Forward</h1>
-<p>&quot;xdotool key alt+Right&quot;<br>  b:9<br>[/sourcecode]</p>
+<p>.. in <code>$HOME/.xbindkeysrc</code>, have:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"># Nautilu<span class="variable">s:Back</span></div><div class="line">&amp;quot;xdotool key alt+Left&amp;quot;</div><div class="line">  <span class="variable">b:8</span></div><div class="line"></div><div class="line"># Nautilu<span class="variable">s:Forward</span></div><div class="line">&amp;quot;xdotool key alt+Right&amp;quot;</div><div class="line">  <span class="variable">b:9</span></div></pre></td></tr></table></figure>
 
       
     </div>
@@ -626,11 +615,11 @@ the quick brown fox jumps over the lazy dog
       <ul>
         
           <li>
-            <a href="/2014/11/23/Hello-Hexo/">Hello Hexo</a>
+            <a href="/2014/11/24/hello-world/">Hello World</a>
           </li>
         
           <li>
-            <a href="/2014/11/23/hello-world/">Hello World</a>
+            <a href="/2014/11/23/Hello-Hexo/">Hello Hexo</a>
           </li>
         
           <li>

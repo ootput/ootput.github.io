@@ -123,20 +123,10 @@
 </ul>
 </li>
 </ul>
-<p>The following changes to <code>Makefile</code> were made to suit patches for OpenBSD 4.6:<br>[sourcecode language=”bash”]</p>
-<h3 id="Last_Updated:_June_3rd_2010">Last Updated: June 3rd 2010</h3>
-<h1 id="List_of_patches_for_all_architectures">List of patches for all architectures</h1>
-<p>PATCH_COMMON=001_bind 003_getsockopt 004_openssl 005_ptrace 006_openssl 007_ftpd 008_kerberos 009_mpi 010_openssl 011_pfsync 012_trunklacp</p>
-<h1 id="List_of_patches_for_i386_only">List of patches for i386 only</h1>
-<p>PATCH_I386=002_xmm</p>
-<h1 id="…">…</h1>
-<p>002_xmm: _kernel<br>003_getsockopt: _kernel<br>005_ptrace: _kernel<br>009_mpi: _kernel<br>011_pfsync: _kernel<br>012_trunklacp: _kernel</p>
-<p>001_bind:<br>        cd ${WRKSRC}/usr.sbin/bind &amp;&amp; \<br>        (${_obj_wrp}; ${_depend_wrp}; ${_build_wrp})</p>
-<p>004_openssl:<br>        cd ${WRKSRC}/lib/libssl &amp;&amp; \<br>        (${_obj}; ${_depend}; ${_includes}; ${_build}) &amp;&amp; \<br>        cd ${WRKSRC}/sbin &amp;&amp; \<br>        (${_obj}; ${_depend}; ${_build})</p>
-<p>006_openssl:<br>        cd ${WRKSRC}/lib/libssl &amp;&amp; \<br>        (${_obj}; ${_depend}; ${_includes}; ${_build}) &amp;&amp; \<br>        cd ${WRKSRC}/sbin &amp;&amp; \<br>        (${_obj}; ${_depend}; ${_build})</p>
-<p>007_ftpd:<br>        cd ${WRKSRC}/libexec/ftpd &amp;&amp; \<br>        (${_depend}; ${_build})</p>
-<p>008_kerberos:<br>        cd ${WRKSRC}/lib/libkrb5 &amp;&amp; \<br>        (${_obj}; ${_depend}; ${_build}) &amp;&amp; \<br>        cd ${WRKSRC}/kerberosV/libexec/kdc &amp;&amp; \<br>        (${_obj}; ${_depend}; ${_build})</p>
-<p>010_openssl:<br>        cd ${WRKSRC}/lib/libssl &amp;&amp; \<br>        (${_obj}; ${_depend}; ${_includes}; ${_build}) &amp;&amp; \<br>        cd ${WRKSRC}/sbin &amp;&amp; \<br>        (${_obj}; ${_depend}; ${_build})<br>[/sourcecode]</p>
+<p>The following changes to <code>Makefile</code> were made to suit patches for OpenBSD 4.6:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">### Last Updated: June 3rd 2010</span></div><div class="line"></div><div class="line"><span class="comment"># List of patches for all architectures</span></div><div class="line">PATCH_COMMON=<span class="number">001</span>_<span class="built_in">bind</span> <span class="number">003</span>_getsockopt <span class="number">004</span>_openssl <span class="number">005</span>_ptrace <span class="number">006</span>_openssl <span class="number">007</span>_ftpd <span class="number">008</span>_kerberos <span class="number">009</span>_mpi <span class="number">010</span>_openssl <span class="number">011</span>_pfsync <span class="number">012</span>_trunklacp</div><div class="line"><span class="comment"># List of patches for i386 only</span></div><div class="line">PATCH_I386=<span class="number">002</span>_xmm</div><div class="line"><span class="comment">#...</span></div><div class="line"><span class="number">002</span>_xmm: _kernel</div><div class="line"><span class="number">003</span>_getsockopt: _kernel</div><div class="line"><span class="number">005</span>_ptrace: _kernel</div><div class="line"><span class="number">009</span>_mpi: _kernel</div><div class="line"><span class="number">011</span>_pfsync: _kernel</div><div class="line"><span class="number">012</span>_trunklacp: _kernel</div><div class="line"></div><div class="line"><span class="number">001</span>_<span class="built_in">bind</span>:</div><div class="line">        <span class="built_in">cd</span> <span class="variable">${WRKSRC}</span>/usr.sbin/<span class="built_in">bind</span> &amp;amp;&amp;amp; \</div><div class="line">        (<span class="variable">${_obj_wrp}</span>; <span class="variable">${_depend_wrp}</span>; <span class="variable">${_build_wrp}</span>)</div><div class="line"></div><div class="line"><span class="number">004</span>_openssl:</div><div class="line">        <span class="built_in">cd</span> <span class="variable">${WRKSRC}</span>/lib/libssl &amp;amp;&amp;amp; \</div><div class="line">        (<span class="variable">${_obj}</span>; <span class="variable">${_depend}</span>; <span class="variable">${_includes}</span>; <span class="variable">${_build}</span>) &amp;amp;&amp;amp; \</div><div class="line">        <span class="built_in">cd</span> <span class="variable">${WRKSRC}</span>/sbin &amp;amp;&amp;amp; \</div><div class="line">        (<span class="variable">${_obj}</span>; <span class="variable">${_depend}</span>; <span class="variable">${_build}</span>)</div><div class="line"></div><div class="line"><span class="number">006</span>_openssl:</div><div class="line">        <span class="built_in">cd</span> <span class="variable">${WRKSRC}</span>/lib/libssl &amp;amp;&amp;amp; \</div><div class="line">        (<span class="variable">${_obj}</span>; <span class="variable">${_depend}</span>; <span class="variable">${_includes}</span>; <span class="variable">${_build}</span>) &amp;amp;&amp;amp; \</div><div class="line">        <span class="built_in">cd</span> <span class="variable">${WRKSRC}</span>/sbin &amp;amp;&amp;amp; \</div><div class="line">        (<span class="variable">${_obj}</span>; <span class="variable">${_depend}</span>; <span class="variable">${_build}</span>)</div><div class="line"></div><div class="line"><span class="number">007</span>_ftpd:</div><div class="line">        <span class="built_in">cd</span> <span class="variable">${WRKSRC}</span>/libexec/ftpd &amp;amp;&amp;amp; \</div><div class="line">        (<span class="variable">${_depend}</span>; <span class="variable">${_build}</span>)</div><div class="line"></div><div class="line"><span class="number">008</span>_kerberos:</div><div class="line">        <span class="built_in">cd</span> <span class="variable">${WRKSRC}</span>/lib/libkrb5 &amp;amp;&amp;amp; \</div><div class="line">        (<span class="variable">${_obj}</span>; <span class="variable">${_depend}</span>; <span class="variable">${_build}</span>) &amp;amp;&amp;amp; \</div><div class="line">        <span class="built_in">cd</span> <span class="variable">${WRKSRC}</span>/kerberosV/libexec/kdc &amp;amp;&amp;amp; \</div><div class="line">        (<span class="variable">${_obj}</span>; <span class="variable">${_depend}</span>; <span class="variable">${_build}</span>)</div><div class="line"></div><div class="line"><span class="number">010</span>_openssl:</div><div class="line">        <span class="built_in">cd</span> <span class="variable">${WRKSRC}</span>/lib/libssl &amp;amp;&amp;amp; \</div><div class="line">        (<span class="variable">${_obj}</span>; <span class="variable">${_depend}</span>; <span class="variable">${_includes}</span>; <span class="variable">${_build}</span>) &amp;amp;&amp;amp; \</div><div class="line">        <span class="built_in">cd</span> <span class="variable">${WRKSRC}</span>/sbin &amp;amp;&amp;amp; \</div><div class="line">        (<span class="variable">${_obj}</span>; <span class="variable">${_depend}</span>; <span class="variable">${_build}</span>)</div></pre></td></tr></table></figure>
+
+
 <p>You’ll need to modify the above to include more recent patches i.e. patches dated later than June 3rd 2010.</p>
 <p>To patch the relevant files on your OpenBSD install, and to prepare packages (in <code>packages/</code>) for installation, as root:<br>`</p>
 <h1 id="make_PATCH=”001”_build">make PATCH=”001” build</h1>
@@ -145,9 +135,10 @@
 <p>`</p>
 <p>To install the packages, do:<br>`</p>
 <h1 id="make_PATCH=”001”_install`">make PATCH=”001” install`</h1>
-<p>I prefer to use the following script (documented <a href="http://openbsdbinpatch.sourceforge.net/#installation" target="_blank" rel="external">here</a>) to install packages:<br>[sourcecode language=”bash”]</p>
-<h1 id="!/bin/sh">!/bin/sh</h1>
-<p>tar xzpf &quot;$1&quot; -C /<br>mkdir -p /var/db/patches/$(basename &quot;$1&quot; .tgz)<br>[/sourcecode]</p>
+<p>I prefer to use the following script (documented <a href="http://openbsdbinpatch.sourceforge.net/#installation" target="_blank" rel="external">here</a>) to install packages:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="shebang">#!/bin/sh</span></div><div class="line">tar xzpf &amp;quot;<span class="variable">$1</span>&amp;quot; -C /</div><div class="line">mkdir -p /var/db/patches/$(basename &amp;quot;<span class="variable">$1</span>&amp;quot; .tgz)</div></pre></td></tr></table></figure>
+
+
 <p>.. or to query previously installed packages:`</p>
 <h1 id="ls_/var/db/patches/`">ls /var/db/patches/`</h1>
 
@@ -194,7 +185,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>After <code># pkg_add -iv fileutils</code> , in <code>$HOME/.profile</code>, include:<br>[sourcecode language=”bash” light=”true”]<br>eval $(/usr/local/bin/gdircolors -b)<br>alias ls=’/usr/local/bin/gls —color=always’<br>[/sourcecode]</p>
+        <p>After <code># pkg_add -iv fileutils</code> , in <code>$HOME/.profile</code>, include:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">eval</span> $(/usr/local/bin/gdircolors -b)</div><div class="line">alias ls=<span class="string">'/usr/local/bin/gls --color=always'</span></div></pre></td></tr></table></figure>
+
+
 <p><img src="http://ootput.files.wordpress.com/2010/03/7189012683_8bc11b04b1.jpg" alt="7189012683_8bc11b04b1"></p>
 
       
@@ -287,13 +281,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Here’s a script I created to backup and restore data between partitions on OpenBSD:<br>[sourcecode language=”bash”]</p>
-<h1 id="!/bin/sh">!/bin/sh</h1>
-<p>newfs /dev/ad1s1a<br>newfs /dev/ad1s1e<br>newfs /dev/ad1s1f</p>
-<p>mount /dev/ad1s1a /backup/root<br>mount /dev/ad1s1e /backup/var<br>mount /dev/ad1s1f /backup/usr</p>
-<p>( dump -0f - / ) | ( cd /backup/root ; restore -rf - )<br>( dump -0f - /var ) | ( cd /backup/var ; restore -rf - )<br>( dump -0f - /usr ) | ( cd /backup/usr ; restore -rf - )</p>
-<p>umount /backup/root<br>umount /backup/var<br>umount /backup/usr</p>
-<p>tunefs -n enable /dev/ad1s1a<br>tunefs -n enable /dev/ad1s1e<br>tunefs -n enable /dev/ad1s1f<br>[/sourcecode]</p>
+        <p>Here’s a script I created to backup and restore data between partitions on OpenBSD:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="shebang">#!/bin/sh</span></div><div class="line">newfs /dev/ad1s1a</div><div class="line">newfs /dev/ad1s1e</div><div class="line">newfs /dev/ad1s1f</div><div class="line"></div><div class="line">mount /dev/ad1s1a /backup/root</div><div class="line">mount /dev/ad1s1e /backup/var</div><div class="line">mount /dev/ad1s1f /backup/usr</div><div class="line"></div><div class="line">( dump -<span class="number">0</span>f - / ) | ( <span class="built_in">cd</span> /backup/root ; restore -rf - )</div><div class="line">( dump -<span class="number">0</span>f - /var ) | ( <span class="built_in">cd</span> /backup/var ; restore -rf - )</div><div class="line">( dump -<span class="number">0</span>f - /usr ) | ( <span class="built_in">cd</span> /backup/usr ; restore -rf - )</div><div class="line"></div><div class="line">umount /backup/root</div><div class="line">umount /backup/var</div><div class="line">umount /backup/usr</div><div class="line"></div><div class="line">tunefs -n enable /dev/ad1s1a</div><div class="line">tunefs -n enable /dev/ad1s1e</div><div class="line">tunefs -n enable /dev/ad1s1f</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -455,11 +444,11 @@
       <ul>
         
           <li>
-            <a href="/2014/11/23/Hello-Hexo/">Hello Hexo</a>
+            <a href="/2014/11/24/hello-world/">Hello World</a>
           </li>
         
           <li>
-            <a href="/2014/11/23/hello-world/">Hello World</a>
+            <a href="/2014/11/23/Hello-Hexo/">Hello Hexo</a>
           </li>
         
           <li>

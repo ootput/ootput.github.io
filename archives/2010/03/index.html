@@ -139,7 +139,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>After <code># pkg_add -iv fileutils</code> , in <code>$HOME/.profile</code>, include:<br>[sourcecode language=”bash” light=”true”]<br>eval $(/usr/local/bin/gdircolors -b)<br>alias ls=’/usr/local/bin/gls —color=always’<br>[/sourcecode]</p>
+        <p>After <code># pkg_add -iv fileutils</code> , in <code>$HOME/.profile</code>, include:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">eval</span> $(/usr/local/bin/gdircolors -b)</div><div class="line">alias ls=<span class="string">'/usr/local/bin/gls --color=always'</span></div></pre></td></tr></table></figure>
+
+
 <p><img src="http://ootput.files.wordpress.com/2010/03/7189012683_8bc11b04b1.jpg" alt="7189012683_8bc11b04b1"></p>
 
       
@@ -186,7 +189,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><img src="http://ootput.files.wordpress.com/2010/03/images.jpg?w=150" alt="" title="images"></p>
-<p>DD-WRT uses <a href="http://www.inatech.eu/inadyn/" target="_blank" rel="external">inadyn</a>, and the settings for <a href="http://www.dnsomatic.com" target="_blank" rel="external">DNS-o-matic</a> are:[sourcecode]<br>DDNS Service: Custom<br>DYNDNS Server: updates.dnsomatic.com<br>Username:<br>Password:<br>Hostname: all.dnsomatic.com<br>URL: /nic/update?[/sourcecode]</p>
+<p>DD-WRT uses <a href="http://www.inatech.eu/inadyn/" target="_blank" rel="external">inadyn</a>, and the settings for <a href="http://www.dnsomatic.com" target="_blank" rel="external">DNS-o-matic</a> are:<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">DDNS Service: Custom</div><div class="line">DYNDNS Server: updates.dnsomatic.com</div><div class="line"><span class="label">Username:</span></div><div class="line"><span class="label">Password:</span></div><div class="line"><span class="label">Hostname:</span> all.dnsomatic.com</div><div class="line"><span class="label">URL:</span> /nic/update?</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -385,13 +388,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Here’s a script I created to backup and restore data between partitions on OpenBSD:<br>[sourcecode language=”bash”]</p>
-<h1 id="!/bin/sh">!/bin/sh</h1>
-<p>newfs /dev/ad1s1a<br>newfs /dev/ad1s1e<br>newfs /dev/ad1s1f</p>
-<p>mount /dev/ad1s1a /backup/root<br>mount /dev/ad1s1e /backup/var<br>mount /dev/ad1s1f /backup/usr</p>
-<p>( dump -0f - / ) | ( cd /backup/root ; restore -rf - )<br>( dump -0f - /var ) | ( cd /backup/var ; restore -rf - )<br>( dump -0f - /usr ) | ( cd /backup/usr ; restore -rf - )</p>
-<p>umount /backup/root<br>umount /backup/var<br>umount /backup/usr</p>
-<p>tunefs -n enable /dev/ad1s1a<br>tunefs -n enable /dev/ad1s1e<br>tunefs -n enable /dev/ad1s1f<br>[/sourcecode]</p>
+        <p>Here’s a script I created to backup and restore data between partitions on OpenBSD:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="shebang">#!/bin/sh</span></div><div class="line">newfs /dev/ad1s1a</div><div class="line">newfs /dev/ad1s1e</div><div class="line">newfs /dev/ad1s1f</div><div class="line"></div><div class="line">mount /dev/ad1s1a /backup/root</div><div class="line">mount /dev/ad1s1e /backup/var</div><div class="line">mount /dev/ad1s1f /backup/usr</div><div class="line"></div><div class="line">( dump -<span class="number">0</span>f - / ) | ( <span class="built_in">cd</span> /backup/root ; restore -rf - )</div><div class="line">( dump -<span class="number">0</span>f - /var ) | ( <span class="built_in">cd</span> /backup/var ; restore -rf - )</div><div class="line">( dump -<span class="number">0</span>f - /usr ) | ( <span class="built_in">cd</span> /backup/usr ; restore -rf - )</div><div class="line"></div><div class="line">umount /backup/root</div><div class="line">umount /backup/var</div><div class="line">umount /backup/usr</div><div class="line"></div><div class="line">tunefs -n enable /dev/ad1s1a</div><div class="line">tunefs -n enable /dev/ad1s1e</div><div class="line">tunefs -n enable /dev/ad1s1f</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -458,11 +456,11 @@
       <ul>
         
           <li>
-            <a href="/2014/11/23/Hello-Hexo/">Hello Hexo</a>
+            <a href="/2014/11/24/hello-world/">Hello World</a>
           </li>
         
           <li>
-            <a href="/2014/11/23/hello-world/">Hello World</a>
+            <a href="/2014/11/23/Hello-Hexo/">Hello Hexo</a>
           </li>
         
           <li>

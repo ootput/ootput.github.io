@@ -91,11 +91,8 @@ To be able to d">
     <div class="article-entry" itemprop="articleBody">
       
         <p>The default themes in Habari are placed in <code>system/themes/</code>. To make any customizations to a theme, it is often better to create a duplicate copy in <code>user/themes/</code>, and to work from there.</p>
-<p>To be able to distinguish between the two versions of a theme in Habari’s theme selector, you need to modify the  tag in <code>theme.xml</code>, e.g. with the following changes to <code>themes/k2/theme.xml</code>:<br>[sourcecode language=”diff”]<br><em>*</em> system/themes/k2/theme.xml 2010-06-21 22:15:10.587118909 +0800<br>—- user/themes/k2/theme.xml 2010-06-21 23:06:11.018366092 +0800</p>
-<hr>
-<p><strong><em> 1,6 *</em></strong><br>  &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;<br>  &lt;pluggable type=&quot;theme&quot;&gt;<br>! &lt;name&gt;K2&lt;/name&gt;<br>   &lt;license url=&quot;<a href="http://www.apache.org/licenses/LICENSE-2.0.html&quot;&gt;Apache" target="_blank" rel="external">http://www.apache.org/licenses/LICENSE-2.0.html&quot;&gt;Apache</a> Software License 2.0&lt;/license&gt;</p>
-<p>   &lt;author url=&quot;<a href="http://getk2.com/&quot;&gt;K2" target="_blank" rel="external">http://getk2.com/&quot;&gt;K2</a> Team&lt;/author&gt;<br>—- 1,6 ——<br>  &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;<br>  &lt;pluggable type=&quot;theme&quot;&gt;<br>! &lt;name&gt;K2_custom&lt;/name&gt;<br>   &lt;license url=&quot;<a href="http://www.apache.org/licenses/LICENSE-2.0.html&quot;&gt;Apache" target="_blank" rel="external">http://www.apache.org/licenses/LICENSE-2.0.html&quot;&gt;Apache</a> Software License 2.0&lt;/license&gt;</p>
-<p>   &lt;author url=&quot;<a href="http://getk2.com/&quot;&gt;K2" target="_blank" rel="external">http://getk2.com/&quot;&gt;K2</a> Team&lt;/author&gt;<br>[/sourcecode]</p>
+<p>To be able to distinguish between the two versions of a theme in Habari’s theme selector, you need to modify the  tag in <code>theme.xml</code>, e.g. with the following changes to <code>themes/k2/theme.xml</code>:</p>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="header">*** system/themes/k2/theme.xml 2010-06-21 22:15:10.587118909 +0800</span></div><div class="line"><span class="header">--- user/themes/k2/theme.xml 2010-06-21 23:06:11.018366092 +0800</span></div><div class="line"><span class="header">***************</span></div><div class="line"><span class="chunk">*** 1,6 ****</span></div><div class="line">  &amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot; ?&amp;gt;</div><div class="line">  &amp;lt;pluggable type=&amp;quot;theme&amp;quot;&amp;gt;</div><div class="line"><span class="change">! &amp;lt;name&amp;gt;K2&amp;lt;/name&amp;gt;</span></div><div class="line">   &amp;lt;license url=&amp;quot;http://www.apache.org/licenses/LICENSE-2.0.html&amp;quot;&amp;gt;Apache Software License 2.0&amp;lt;/license&amp;gt;</div><div class="line"></div><div class="line">   &amp;lt;author url=&amp;quot;http://getk2.com/&amp;quot;&amp;gt;K2 Team&amp;lt;/author&amp;gt;</div><div class="line"><span class="chunk">--- 1,6 ----</span></div><div class="line">  &amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot; ?&amp;gt;</div><div class="line">  &amp;lt;pluggable type=&amp;quot;theme&amp;quot;&amp;gt;</div><div class="line"><span class="change">! &amp;lt;name&amp;gt;K2_custom&amp;lt;/name&amp;gt;</span></div><div class="line">   &amp;lt;license url=&amp;quot;http://www.apache.org/licenses/LICENSE-2.0.html&amp;quot;&amp;gt;Apache Software License 2.0&amp;lt;/license&amp;gt;</div><div class="line"></div><div class="line">   &amp;lt;author url=&amp;quot;http://getk2.com/&amp;quot;&amp;gt;K2 Team&amp;lt;/author&amp;gt;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -186,11 +183,11 @@ To be able to d">
       <ul>
         
           <li>
-            <a href="/2014/11/23/Hello-Hexo/">Hello Hexo</a>
+            <a href="/2014/11/24/hello-world/">Hello World</a>
           </li>
         
           <li>
-            <a href="/2014/11/23/hello-world/">Hello World</a>
+            <a href="/2014/11/23/Hello-Hexo/">Hello Hexo</a>
           </li>
         
           <li>

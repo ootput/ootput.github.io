@@ -90,8 +90,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>I have created an importable Windows Registry key that will essentially block internet access for apps run by Wine. I found the usual method of creating IPTables (for Linux) rules per process and/or per user (think: <code># useradd wine</code>) extremely tedious when administering several boxen.</p>
-<p>Import the following key using Wines Regedit:<br>[sourcecode]<br>REGEDIT4</p>
-<p>[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]<br>&quot;MigrateProxy&quot;=dword:00000001<br>&quot;ProxyEnable&quot;=dword:00000001<br>&quot;ProxyHttp.1.1&quot;=dword:00000000<br>&quot;ProxyOverride&quot;=&quot;&lt;local&gt;&quot;<br>&quot;ProxyServer&quot;=&quot;<a href="http://NonExistantProxyAddress:80&amp;quot" target="_blank" rel="external">http://NonExistantProxyAddress:80&amp;quot</a>;<br>&quot;User Agent&quot;=&quot;Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1&quot;[/sourcecode]</p>
+<p>Import the following key using Wines Regedit:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">REGEDIT4</div><div class="line"></div><div class="line"><span class="special">[</span>HKEY_CURRENT_USER<span class="command">\Software</span><span class="command">\Microsoft</span><span class="command">\Windows</span><span class="command">\CurrentVersion</span><span class="command">\Internet</span> Settings<span class="special">]</span></div><div class="line"><span class="special">&amp;</span>quot;MigrateProxy<span class="special">&amp;</span>quot;=dword:00000001</div><div class="line"><span class="special">&amp;</span>quot;ProxyEnable<span class="special">&amp;</span>quot;=dword:00000001</div><div class="line"><span class="special">&amp;</span>quot;ProxyHttp.1.1<span class="special">&amp;</span>quot;=dword:00000000</div><div class="line"><span class="special">&amp;</span>quot;ProxyOverride<span class="special">&amp;</span>quot;=<span class="special">&amp;</span>quot;<span class="special">&amp;</span>lt;local<span class="special">&amp;</span>gt;<span class="special">&amp;</span>quot;</div><div class="line"><span class="special">&amp;</span>quot;ProxyServer<span class="special">&amp;</span>quot;=<span class="special">&amp;</span>quot;http://NonExistantProxyAddress:80<span class="special">&amp;</span>quot;</div><div class="line"><span class="special">&amp;</span>quot;User Agent<span class="special">&amp;</span>quot;=<span class="special">&amp;</span>quot;Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1<span class="special">&amp;</span>quot;</div></pre></td></tr></table></figure>
+
+
 <p>.. and restart the app for the changes to take effect.</p>
 
       
@@ -214,11 +216,11 @@
       <ul>
         
           <li>
-            <a href="/2014/11/23/Hello-Hexo/">Hello Hexo</a>
+            <a href="/2014/11/24/hello-world/">Hello World</a>
           </li>
         
           <li>
-            <a href="/2014/11/23/hello-world/">Hello World</a>
+            <a href="/2014/11/23/Hello-Hexo/">Hello Hexo</a>
           </li>
         
           <li>

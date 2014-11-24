@@ -99,11 +99,14 @@ Chyrp’s Readernaut module provides a sample twig:&gt; Twig, a language specifi
 <p>Readernaut is the easiest way to share what you’re reading with friends.</p>
 </blockquote>
 <p>Chyrp’s <a href="http://chyrp.net/extend/view/readernaut/" target="_blank" rel="external">Readernaut module</a> provides a sample twig:&gt; Twig, a language specifically created for Chyrp, that is put through a compiler to produce PHP.<br>… that is unnecessarily complicated - it essentially tries to fit both the book title and book cover into a table column. I’d much rather allocate space for the book’s cover than it’s details given the  small area to work with.</p>
-<p>Ultimately, my modified twig became, in <code>themes/$theme/content/sidebar.twig:</code><br>[sourcecode language=”php”]</p>
-<p>[/sourcecode]</p>
-<p>To restrict the book listing to only show books that are currently being read, in <code>modules/readernaut/readernaut.php</code>:<br>[sourcecode language=”php” highlight=”4”]</p>
-<h2 id="The_actual_data">The actual data</h2>
-<p>public function books($limit=10) {<br>   $config = Config::current();<br>   $xml = simplexml_load_string(get_remote(‘<a href="http://readernaut.com/api/v1/xml/&#39;.$config-&gt;readernaut_user.&#39;/books/reading/?limit=&#39;.$limit" target="_blank" rel="external">http://readernaut.com/api/v1/xml/&#39;.$config-&gt;readernaut_user.&#39;/books/reading/?limit=&#39;.$limit</a>));<br>   return $xml-&gt;reader_book;<br>}<br>[/sourcecode]</p>
+<p>Ultimately, my modified twig became, in <code>themes/$theme/content/sidebar.twig:</code></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">￿<span class="number">1</span>￿</div></pre></td></tr></table></figure>
+
+
+<p>To restrict the book listing to only show books that are currently being read, in <code>modules/readernaut/readernaut.php</code>:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">## The actual data</span></div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">books</span><span class="params">(<span class="variable">$limit</span>=<span class="number">10</span>)</span> </span>{</div><div class="line">   <span class="variable">$config</span> = Config::current();</div><div class="line">   <span class="variable">$xml</span> = simplexml_load_string(get_remote(<span class="string">'http://readernaut.com/api/v1/xml/'</span>.<span class="variable">$config</span>-&amp;gt;readernaut_user.<span class="string">'/books/reading/?limit='</span>.<span class="variable">$limit</span>));</div><div class="line">   <span class="keyword">return</span> <span class="variable">$xml</span>-&amp;gt;reader_book;</div><div class="line">}</div></pre></td></tr></table></figure>
+
+
 <p>.. essentially changing the path to the reading list from <code>books/</code> to <code>books/reading/</code>.</p>
 
       
@@ -195,11 +198,11 @@ Chyrp’s Readernaut module provides a sample twig:&gt; Twig, a language specifi
       <ul>
         
           <li>
-            <a href="/2014/11/23/Hello-Hexo/">Hello Hexo</a>
+            <a href="/2014/11/24/hello-world/">Hello World</a>
           </li>
         
           <li>
-            <a href="/2014/11/23/hello-world/">Hello World</a>
+            <a href="/2014/11/23/Hello-Hexo/">Hello Hexo</a>
           </li>
         
           <li>
