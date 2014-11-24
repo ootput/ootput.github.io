@@ -107,16 +107,45 @@ ga('send', 'pageview');
     <div class="article-entry" itemprop="articleBody">
       
         <p><img src="/images/385151d889f7774ba8d254cb485335a9e22139bb.png?w=76" alt="" title="chromium"></p>
-<p>It is possible to use FreeBSD’s MFS Memory Disk to speed up access times of cached web objects.<br>
-        
-          <p class="article-more-link">
-            <a href="/2011/12/30/move-chromium-cache-to-mfs-memory-disk-on-freebsd/#more">Read More</a>
-          </p>
-        
+<p>It is possible to use FreeBSD’s MFS Memory Disk to speed up access times of cached web objects.</p>
+<p>From <code>md(4)</code>:</p>
+<blockquote>
+<p>The md driver provides support for four kinds of memory backed virtual disks:</p>
+<p>…</p>
+<p>swap:</p>
+<p>   Backing store is allocated from buffer memory.  Pages get pushed out to the swap when the system is under memory pressure, otherwise they stay in the operating memory. Using swap backing is generally preferable over malloc backing.</p>
+</blockquote>
+<p>Chromium’s cache is at <code>$HOME/.cache/chromium</code>, and so, my <code>/etc/fstab</code> contains:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"># <span class="number">256</span>M mfs <span class="keyword">for</span> google chrome</div><div class="line"><span class="regexp">/dev/m</span>d0 <span class="regexp">/home/</span>ootput<span class="regexp">/.cache/</span>chromium mfs rw,-s256m,-wootput:ootput,noauto <span class="number">2</span> <span class="number">0</span></div></pre></td></tr></table></figure>
+
+<p>From <code>mount_mfs(8)</code>:</p>
+<blockquote>
+<p><code>-s256m</code> specifies a memory reservation of 256 M;</p>
+<p><code>-wootput:ootput</code> hands ownership of the mountpoint from root to the user; and</p>
+<p><code>noauto</code> prevents the system from failing to boot properly if the mountpoint does not (yet) exist.</p>
+</blockquote>
+<p>The following additions to <code>/etc/rc.conf</code> were also made:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="variable">mdconfig_md0=</span>&amp;quot;-t swap -s <span class="number">256</span>m&amp;quot;</div><div class="line"><span class="variable">mdconfig_md0_owner=</span>&amp;quot;ootput:ootput&amp;quot;</div><div class="line"><span class="variable">mdconfig_md0_perms=</span>&amp;quot;<span class="number">1777</span>&amp;quot;</div></pre></td></tr></table></figure>
+
+<p>which lists arguments to <code>mdconfig(8)</code> for device <code>md0</code>.</p>
+<p>At mininum the <code>-t type</code> must be specified and either a <code>-s size</code> for <em>malloc</em> or <em>swap</em> backed <code>md(4)</code> devices or a <code>-f file</code> for <em>vnode</em> backed <code>md(4)</code> devices.</p>
+<p>The redundancies found in <code>fstab</code> and <code>rc.conf</code> allows automatic mounting at boot, or manual mounting after boot.</p>
+<p>To test the changes made, as root:</p>
+<p><code># /etc/rc.d/mdconfig restart</code></p>
+<p>On to the <code>$USER/bin/pack_chrome</code> executable script that will both mount the <code>md</code> device, and/or sync contents from the cache at RAM to a backup cache on the HDD:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="shebang">#!/usr/local/bin/bash</span></div><div class="line"></div><div class="line">CACHE=&amp;quot;<span class="variable">$HOME</span>/.cache/chromium&amp;quot;</div><div class="line">BACKUP=&amp;quot;<span class="variable">$CACHE</span>.bak&amp;quot;</div><div class="line"></div><div class="line"><span class="keyword">for</span> DIR <span class="keyword">in</span> <span class="variable">$CACHE</span> <span class="variable">$BACKUP</span>; <span class="keyword">do</span></div><div class="line">   <span class="keyword">if</span> [ ! <span class="operator">-d</span> &amp;quot;<span class="variable">${DIR}</span>&amp;quot; ]; <span class="keyword">then</span></div><div class="line">      mkdir -p <span class="variable">${DIR}</span></div><div class="line">   <span class="keyword">fi</span></div><div class="line"><span class="keyword">done</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> test -z &amp;quot;$(/sbin/mount | grep -F &amp;quot;<span class="variable">$CACHE</span>&amp;quot; )&amp;quot;; <span class="keyword">then</span></div><div class="line">    <span class="built_in">sudo</span> /sbin/mount &amp;quot;<span class="variable">$CACHE</span>&amp;quot;</div><div class="line"><span class="keyword">fi</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> test <span class="operator">-f</span> &amp;quot;<span class="variable">$CACHE</span>/.synced&amp;quot;; <span class="keyword">then</span></div><div class="line">    rsync --exclude <span class="string">'.synced'</span> --exclude <span class="string">'.snap'</span> --delete -avrPx</div><div class="line">        &amp;quot;<span class="variable">$CACHE</span>/&amp;quot; &amp;quot;<span class="variable">$BACKUP</span>&amp;quot;</div><div class="line"><span class="keyword">else</span></div><div class="line">    rsync --delete -avrPx &amp;quot;<span class="variable">$BACKUP</span>/&amp;quot; &amp;quot;<span class="variable">$CACHE</span>&amp;quot;</div><div class="line">    touch &amp;quot;<span class="variable">$CACHE</span>/.synced&amp;quot;</div><div class="line"><span class="keyword">fi</span></div></pre></td></tr></table></figure>
+
+
+<p>The script requires that the <code>$USER</code> is in <code>sudoers(5)</code>, and is able to use the <code>/sbin/mount</code> command.</p>
+<p>Finally, after <code>$ crontab -e</code>:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">*</span>/30 <span class="keyword">*</span> <span class="keyword">*</span> <span class="keyword">*</span> <span class="keyword">*</span> $HOME/bin/pack_chrome &amp;gt;/dev/null 2&amp;gt;&amp;amp;1</div></pre></td></tr></table></figure>
+
+<p>.. and the script gets called every half-hour by <code>cron</code> to automate the syncing process. This also requires that <code>$USER</code> is specifically allowed in <code>/var/cron/allow</code>.</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/12/30/move-chromium-cache-to-mfs-memory-disk-on-freebsd/" data-id="w70cvoh4a4cl6gum" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/12/30/move-chromium-cache-to-mfs-memory-disk-on-freebsd/" data-id="7eafdcp07k9imikq" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/12/30/move-chromium-cache-to-mfs-memory-disk-on-freebsd/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -162,16 +191,25 @@ ga('send', 'pageview');
             java/openjdk6 \
             java/icedtea-web \
             www/nspluginwrapper \
-            www/linux-f10-flashplugin10</code><br>
-        
-          <p class="article-more-link">
-            <a href="/2011/12/25/flash-and-java-for-google-chromium-in-freebsd-8/#more">Read More</a>
-          </p>
-        
+            www/linux-f10-flashplugin10</code></p>
+<p>Then:</p>
+<p><code># mkdir -p /usr/local/share/chromium/plugins</code></p>
+<p><code># ln -s /usr/local/lib/IcedTeaPlugin.so /usr/local/share/chromium/plugins/</code></p>
+<p><code># ln -s /usr/local/lib/npapi/linux-f10-flashplugin/libflashplayer.so \
+        /usr/local/lib/browser_plugins/</code></p>
+<p>The Linux process file system, <code>linprocfs(5)</code> has to be mounted on <code>/compat/linux/proc</code>:</p>
+<p><code># mount -t linprocfs linproc /compat/linux/proc</code></p>
+<p>To mount the proc fs at each system boot, in <code>/etc/fstab</code>, have:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">linproc    /compat/linux/<span class="keyword">proc</span>  linprocfs   rw  <span class="number">0</span>   <span class="number">0</span></div></pre></td></tr></table></figure>
+
+
+<p>As a user:</p>
+<p><code>% nspluginwrapper -v -a -i</code></p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/12/25/flash-and-java-for-google-chromium-in-freebsd-8/" data-id="6afr9siarwc4skdo" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/12/25/flash-and-java-for-google-chromium-in-freebsd-8/" data-id="q9g330zdrrt00oao" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/12/25/flash-and-java-for-google-chromium-in-freebsd-8/#disqus_thread" class="article-comment-link">Comments</a>
       

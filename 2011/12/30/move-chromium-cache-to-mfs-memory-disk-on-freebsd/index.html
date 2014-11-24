@@ -5,16 +5,34 @@
   
   <title>Move Chromium&#39;s Cache to MFS Memory Disk on FreeBSD | ootput burst!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="It is possible to use FreeBSD’s MFS Memory Disk to speed up access times of cached web objects.">
+  <meta name="description" content="It is possible to use FreeBSD’s MFS Memory Disk to speed up access times of cached web objects.
+From md(4):
+
+The md driver provides support for four kinds of memory backed virtual disks:
+…
+swap:
+   B">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Move Chromium's Cache to MFS Memory Disk on FreeBSD">
 <meta property="og:url" content="http://ootput.github.io/2011/12/30/move-chromium-cache-to-mfs-memory-disk-on-freebsd/">
 <meta property="og:site_name" content="ootput burst!">
-<meta property="og:description" content="It is possible to use FreeBSD’s MFS Memory Disk to speed up access times of cached web objects.">
+<meta property="og:description" content="It is possible to use FreeBSD’s MFS Memory Disk to speed up access times of cached web objects.
+From md(4):
+
+The md driver provides support for four kinds of memory backed virtual disks:
+…
+swap:
+   B">
 <meta property="og:image" content="/images/385151d889f7774ba8d254cb485335a9e22139bb.png?w=76">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Move Chromium's Cache to MFS Memory Disk on FreeBSD">
-<meta name="twitter:description" content="It is possible to use FreeBSD’s MFS Memory Disk to speed up access times of cached web objects.">
+<meta name="twitter:description" content="It is possible to use FreeBSD’s MFS Memory Disk to speed up access times of cached web objects.
+From md(4):
+
+The md driver provides support for four kinds of memory backed virtual disks:
+…
+swap:
+   B">
 <meta name="twitter:creator" content="@513256254">
 <link rel="publisher" href="110511550415133050000">
 
@@ -106,7 +124,7 @@ ga('send', 'pageview');
     <div class="article-entry" itemprop="articleBody">
       
         <p><img src="/images/385151d889f7774ba8d254cb485335a9e22139bb.png?w=76" alt="" title="chromium"></p>
-<p>It is possible to use FreeBSD’s MFS Memory Disk to speed up access times of cached web objects.<br><a id="more"></a></p>
+<p>It is possible to use FreeBSD’s MFS Memory Disk to speed up access times of cached web objects.</p>
 <p>From <code>md(4)</code>:</p>
 <blockquote>
 <p>The md driver provides support for four kinds of memory backed virtual disks:</p>
@@ -132,7 +150,7 @@ ga('send', 'pageview');
 <p>To test the changes made, as root:</p>
 <p><code># /etc/rc.d/mdconfig restart</code></p>
 <p>On to the <code>$USER/bin/pack_chrome</code> executable script that will both mount the <code>md</code> device, and/or sync contents from the cache at RAM to a backup cache on the HDD:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="shebang">#!/usr/local/bin/bash</span></div><div class="line"></div><div class="line">CACHE=&amp;quot;<span class="variable">$HOME</span>/.cache/chromium&amp;quot;</div><div class="line">BACKUP=&amp;quot;<span class="variable">$CACHE</span>.bak&amp;quot;</div><div class="line"></div><div class="line"><span class="keyword">for</span> DIR <span class="keyword">in</span> <span class="variable">$CACHE</span> <span class="variable">$BACKUP</span>; <span class="keyword">do</span></div><div class="line">   <span class="keyword">if</span> [ ! <span class="operator">-d</span> &amp;quot;<span class="variable">${DIR}</span>&amp;quot; ]; <span class="keyword">then</span></div><div class="line">      mkdir -p <span class="variable">${DIR}</span></div><div class="line">   <span class="keyword">fi</span></div><div class="line"><span class="keyword">done</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> test -z &amp;quot;$(/sbin/mount | grep -F &amp;quot;<span class="variable">$CACHE</span>&amp;quot; )&amp;quot;; <span class="keyword">then</span></div><div class="line">    <span class="built_in">sudo</span> /sbin/mount &amp;quot;<span class="variable">$CACHE</span>&amp;quot;</div><div class="line"><span class="keyword">fi</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> test <span class="operator">-f</span> &amp;quot;<span class="variable">$CACHE</span>/.synced&amp;quot;; <span class="keyword">then</span></div><div class="line">    rsync --exclude <span class="string">'.synced'</span> --exclude <span class="string">'.snap'</span> --delete -avrPx </div><div class="line">        &amp;quot;<span class="variable">$CACHE</span>/&amp;quot; &amp;quot;<span class="variable">$BACKUP</span>&amp;quot;</div><div class="line"><span class="keyword">else</span></div><div class="line">    rsync --delete -avrPx &amp;quot;<span class="variable">$BACKUP</span>/&amp;quot; &amp;quot;<span class="variable">$CACHE</span>&amp;quot;</div><div class="line">    touch &amp;quot;<span class="variable">$CACHE</span>/.synced&amp;quot;</div><div class="line"><span class="keyword">fi</span></div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="shebang">#!/usr/local/bin/bash</span></div><div class="line"></div><div class="line">CACHE=&amp;quot;<span class="variable">$HOME</span>/.cache/chromium&amp;quot;</div><div class="line">BACKUP=&amp;quot;<span class="variable">$CACHE</span>.bak&amp;quot;</div><div class="line"></div><div class="line"><span class="keyword">for</span> DIR <span class="keyword">in</span> <span class="variable">$CACHE</span> <span class="variable">$BACKUP</span>; <span class="keyword">do</span></div><div class="line">   <span class="keyword">if</span> [ ! <span class="operator">-d</span> &amp;quot;<span class="variable">${DIR}</span>&amp;quot; ]; <span class="keyword">then</span></div><div class="line">      mkdir -p <span class="variable">${DIR}</span></div><div class="line">   <span class="keyword">fi</span></div><div class="line"><span class="keyword">done</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> test -z &amp;quot;$(/sbin/mount | grep -F &amp;quot;<span class="variable">$CACHE</span>&amp;quot; )&amp;quot;; <span class="keyword">then</span></div><div class="line">    <span class="built_in">sudo</span> /sbin/mount &amp;quot;<span class="variable">$CACHE</span>&amp;quot;</div><div class="line"><span class="keyword">fi</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> test <span class="operator">-f</span> &amp;quot;<span class="variable">$CACHE</span>/.synced&amp;quot;; <span class="keyword">then</span></div><div class="line">    rsync --exclude <span class="string">'.synced'</span> --exclude <span class="string">'.snap'</span> --delete -avrPx</div><div class="line">        &amp;quot;<span class="variable">$CACHE</span>/&amp;quot; &amp;quot;<span class="variable">$BACKUP</span>&amp;quot;</div><div class="line"><span class="keyword">else</span></div><div class="line">    rsync --delete -avrPx &amp;quot;<span class="variable">$BACKUP</span>/&amp;quot; &amp;quot;<span class="variable">$CACHE</span>&amp;quot;</div><div class="line">    touch &amp;quot;<span class="variable">$CACHE</span>/.synced&amp;quot;</div><div class="line"><span class="keyword">fi</span></div></pre></td></tr></table></figure>
 
 
 <p>The script requires that the <code>$USER</code> is in <code>sudoers(5)</code>, and is able to use the <code>/sbin/mount</code> command.</p>
@@ -144,7 +162,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/12/30/move-chromium-cache-to-mfs-memory-disk-on-freebsd/" data-id="w70cvoh4a4cl6gum" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/12/30/move-chromium-cache-to-mfs-memory-disk-on-freebsd/" data-id="7eafdcp07k9imikq" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/12/30/move-chromium-cache-to-mfs-memory-disk-on-freebsd/#disqus_thread" class="article-comment-link">Comments</a>
       

@@ -108,16 +108,41 @@ ga('send', 'pageview');
       
         <p><img src="/images/11394d99807586de0dd5fff417137b8b4f170dd6.png?w=150" alt="" title="sabnzbd_and_sickbeard"></p>
 <p>For my own archives, I have reproduced installation instructions for SABnzbd and Sickbeard on FreeBSD from <em>Syah</em> of the FreeBSD forums (titled: FreeBSD +Sabnzbd/Sickbeard/CouchPotato):</p>
+<blockquote>
+<p>1. install sabnzbd+ from ports.</p>
+<p><code># cd /usr/ports/news/sabnzbdplus; make install clean</code></p>
+<p>2) install some dependencies if they are not already present on your system. Needed to run &amp; acquire python scripts (Sick Beard, Couch Potato, Headphones)</p>
+<p>Python</p>
+<p><code># cd /usr/ports/lang/python; make install clean</code></p>
+<p>Cheetah</p>
+<p><code># cd /usr/ports/devel/py-cheetah; make install clean</code></p>
+<p>Git</p>
+<p><code># cd /usr/ports/devel/git; make install clean</code></p>
+<p>3. Fetch most recent builds of the three tools</p>
+<p>Sick Beard</p>
+<p><code># cd /usr/local ; git clone git://github.com/midgetspy/Sick-Beard.git sickbeard</code></p>
+<p>4. Configure auto-start for python scripts and sabnzbd+</p>
+<p>Sick Beard</p>
+<p><code># cp /usr/local/sickbeard/init.freebsd /usr/local/etc/rc.d/sickbeard</code></p>
+<p>Add the following to /etc/rc.conf:</p>
+<p>`</p>
+<p>sabnzbd_enable=”YES”</p>
+<p>sickbeard_enable=”YES”</p>
+<p>`</p>
+<p>5. configure all the tools to play nice together.</p>
+<p>Totally beyond the scope of a quick &amp; dirty update. You should read the installation instructions and refer to the individual websites for each of these projects to fully leverage this tool set.</p>
+<p>Hopefully this gets you a bit further towards your goal.<br>To keep track of upstream changes to SickBeard:<br><code># cd /usr/local/sickbeard &amp;&amp; git pull</code></p>
+</blockquote>
+<p>A few notes:</p>
+<ul>
+<li><del datetime="2012-12-01T08:39:24+00:00">Step 4. will fail as SickBeard currently only comes with an Ubuntu startup script. Hatchling, from the SickBeard Forums (A FreeBSD rc.d script), kindly published a working copy of a FreeBSD rc script that is available <a href="http://dl.dropbox.com/u/5830692/sickbeard.txt" target="_blank" rel="external">here</a> (and duplicated <a href="https://gist.github.com/1610595" target="_blank" rel="external">here</a>.)</del><br>It appears that an init script for FreeBSD is now provided with the latest git pull - unfortunately, it’s not perfect, and needs to be modified for SickBeard to shut down properly.<figure class="highlight diff"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">diff --git a/init.freebsd b/init.freebsd</div><div class="line">index 8d9ba4b..3f65b31 100755</div><div class="line"><span class="header">--- a/init.freebsd</span></div><div class="line"><span class="header">+++ b/init.freebsd</span></div><div class="line">@@ -69,7 +69,7 @@ verify_sickbeard_pid() {</div><div class="line"> sickbeard_stop() {</div><div class="line">     echo "Stopping $name"</div><div class="line">     verify_sickbeard_pid</div><div class="line"><span class="deletion">-    ${WGET} -O - -q --user=${SBUSR} --password=${SBPWD} "http://${HOST}:${PORT}/home/shutdown/" &amp;gt;/dev/null</span></div><div class="line"><span class="addition">+    ${WGET} -O - -q --user=${SBUSR} --password=${SBPWD} "http://${HOST}:${PORT}/home/shutdown/?pid=${pid}" &amp;gt;/dev/null</span></div><div class="line">     if [ -n "${pid}" ]; then</div><div class="line">       wait_for_pids ${pid}</div><div class="line">       echo "Stopped"</div></pre></td></tr></table></figure>
+</li>
+</ul>
 
-        
-          <p class="article-more-link">
-            <a href="/2011/12/26/sabnzbd-and-sickbeard-on-freebsd/#more">Read More</a>
-          </p>
-        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/12/26/sabnzbd-and-sickbeard-on-freebsd/" data-id="suikzdg16hcnj4ob" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/12/26/sabnzbd-and-sickbeard-on-freebsd/" data-id="htt105yhjdt9cc76" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/12/26/sabnzbd-and-sickbeard-on-freebsd/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -163,16 +188,25 @@ ga('send', 'pageview');
             java/openjdk6 \
             java/icedtea-web \
             www/nspluginwrapper \
-            www/linux-f10-flashplugin10</code><br>
-        
-          <p class="article-more-link">
-            <a href="/2011/12/25/flash-and-java-for-google-chromium-in-freebsd-8/#more">Read More</a>
-          </p>
-        
+            www/linux-f10-flashplugin10</code></p>
+<p>Then:</p>
+<p><code># mkdir -p /usr/local/share/chromium/plugins</code></p>
+<p><code># ln -s /usr/local/lib/IcedTeaPlugin.so /usr/local/share/chromium/plugins/</code></p>
+<p><code># ln -s /usr/local/lib/npapi/linux-f10-flashplugin/libflashplayer.so \
+        /usr/local/lib/browser_plugins/</code></p>
+<p>The Linux process file system, <code>linprocfs(5)</code> has to be mounted on <code>/compat/linux/proc</code>:</p>
+<p><code># mount -t linprocfs linproc /compat/linux/proc</code></p>
+<p>To mount the proc fs at each system boot, in <code>/etc/fstab</code>, have:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">linproc    /compat/linux/<span class="keyword">proc</span>  linprocfs   rw  <span class="number">0</span>   <span class="number">0</span></div></pre></td></tr></table></figure>
+
+
+<p>As a user:</p>
+<p><code>% nspluginwrapper -v -a -i</code></p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/12/25/flash-and-java-for-google-chromium-in-freebsd-8/" data-id="6afr9siarwc4skdo" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/12/25/flash-and-java-for-google-chromium-in-freebsd-8/" data-id="q9g330zdrrt00oao" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/12/25/flash-and-java-for-google-chromium-in-freebsd-8/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -214,16 +248,13 @@ ga('send', 'pageview');
       
         <p><img src="/images/a0202c90723a9efb7dfdac06cd7f40bf8fde4c0b.png?w=150" alt="" title="nvidia logo"></p>
 <p>Follow the official FreeBSD documents on how to install the latest nvidia drivers (Installing and using Compiz Fusion - Ch 2 Setting up the FreeBSD nVidia driver).</p>
-<p>My <code>/etc/X11/xorg.conf</code> contains:<br>
-        
-          <p class="article-more-link">
-            <a href="/2011/10/10/nvidia-in-freebsd-8/#more">Read More</a>
-          </p>
-        
+<p>My <code>/etc/X11/xorg.conf</code> contains:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"># nvidia-settings: X configuration file generated by nvidia-settings</div><div class="line"># nvidia-settings:  version <span class="number">285.05</span><span class="string">.09</span>  (root@localhost)  Fri Oct <span class="number">10</span> <span class="number">23</span>:<span class="number">03</span>:<span class="number">46</span> EST <span class="number">2011</span></div><div class="line"></div><div class="line"><span class="built_in">Section</span> <span class="string">"ServerLayout"</span></div><div class="line">    Identifier     <span class="string">"X.org Configured"</span></div><div class="line">    Screen      <span class="number">0</span>  <span class="string">"Screen0"</span> <span class="number">0</span> <span class="number">0</span></div><div class="line">    InputDevice    <span class="string">"Mouse0"</span> <span class="string">"CorePointer"</span></div><div class="line">    InputDevice    <span class="string">"Keyboard0"</span> <span class="string">"CoreKeyboard"</span></div><div class="line">    <span class="preprocessor">Option</span>         <span class="string">"Xinerama"</span> <span class="string">"0"</span></div><div class="line">EndSection</div><div class="line"></div><div class="line"><span class="built_in">Section</span> <span class="string">"Files"</span></div><div class="line">    ModulePath      <span class="string">"/usr/local/lib/xorg/modules"</span></div><div class="line">    FontPath        <span class="string">"/usr/local/lib/X11/fonts/misc/"</span></div><div class="line">    FontPath        <span class="string">"/usr/local/lib/X11/fonts/TTF/"</span></div><div class="line">    FontPath        <span class="string">"/usr/local/lib/X11/fonts/OTF"</span></div><div class="line">    FontPath        <span class="string">"/usr/local/lib/X11/fonts/Type1/"</span></div><div class="line">    FontPath        <span class="string">"/usr/local/lib/X11/fonts/bitstream-vera/"</span></div><div class="line">    FontPath        <span class="string">"/usr/local/lib/X11/fonts/terminus-font/"</span></div><div class="line">    FontPath        <span class="string">"/usr/local/lib/X11/fonts/75dpi/"</span></div><div class="line">    FontPath        <span class="string">"/usr/local/lib/X11/fonts/100dpi/"</span></div><div class="line">    FontPath        <span class="string">"/usr/local/lib/X11/fonts/artwiz-fonts/"</span></div><div class="line">    FontPath        <span class="string">"/usr/local/lib/X11/fonts/dejavu/"</span></div><div class="line">    FontPath        <span class="string">"/usr/local/lib/X11/fonts/webfonts/"</span></div><div class="line">    FontPath        <span class="string">"/home/ootput/.fonts/ubuntu/"</span></div><div class="line">EndSection</div><div class="line"></div><div class="line"><span class="built_in">Section</span> <span class="string">"Module"</span></div><div class="line">    Load           <span class="string">"extmod"</span></div><div class="line">    Load           <span class="string">"glx"</span></div><div class="line">    Load           <span class="string">"dbe"</span></div><div class="line">    Load           <span class="string">"dri"</span></div><div class="line">    Load           <span class="string">"dri2"</span></div><div class="line">    Load           <span class="string">"record"</span></div><div class="line">EndSection</div><div class="line"></div><div class="line"><span class="built_in">Section</span> <span class="string">"InputDevice"</span></div><div class="line">    Identifier     <span class="string">"Keyboard0"</span></div><div class="line">    Driver         <span class="string">"kbd"</span></div><div class="line">EndSection</div><div class="line"></div><div class="line"><span class="built_in">Section</span> <span class="string">"InputDevice"</span></div><div class="line">    Identifier     <span class="string">"Mouse0"</span></div><div class="line">    Driver         <span class="string">"mouse"</span></div><div class="line">    <span class="preprocessor">Option</span>         <span class="string">"Protocol"</span> <span class="string">"auto"</span></div><div class="line">    <span class="preprocessor">Option</span>         <span class="string">"Device"</span> <span class="string">"/dev/sysmouse"</span></div><div class="line">    <span class="preprocessor">Option</span>         <span class="string">"ZAxisMapping"</span> <span class="string">"4 5 6 7"</span></div><div class="line">EndSection</div><div class="line"></div><div class="line"><span class="built_in">Section</span> <span class="string">"Monitor"</span></div><div class="line">    Identifier     <span class="string">"Monitor0"</span></div><div class="line">    VendorName     <span class="string">"Unknown"</span></div><div class="line">    ModelName      <span class="string">"Acer GN245HQ"</span></div><div class="line">    HorizSync       <span class="number">30.0</span> - <span class="number">83.0</span></div><div class="line">    VertRefresh     <span class="number">56.0</span> - <span class="number">75.0</span></div><div class="line">EndSection</div><div class="line"></div><div class="line"><span class="built_in">Section</span> <span class="string">"Device"</span></div><div class="line">    Identifier     <span class="string">"Card0"</span></div><div class="line">    Driver         <span class="string">"nvidia"</span></div><div class="line">    VendorName     <span class="string">"nVidia Corporation"</span></div><div class="line">    BoardName      <span class="string">"GT218 [GeForce 8400 GS]"</span></div><div class="line">    BusID          <span class="string">"PCI:1:0:0"</span></div><div class="line">EndSection</div><div class="line"></div><div class="line"><span class="built_in">Section</span> <span class="string">"Device"</span></div><div class="line">    Identifier     <span class="string">"Device0"</span></div><div class="line">    Driver         <span class="string">"nvidia"</span></div><div class="line">    VendorName     <span class="string">"NVIDIA Corporation"</span></div><div class="line">    BoardName      <span class="string">"GeForce 8400GS"</span></div><div class="line">EndSection</div><div class="line"></div><div class="line"><span class="built_in">Section</span> <span class="string">"Screen"</span></div><div class="line">    Identifier     <span class="string">"Screen0"</span></div><div class="line">    Device         <span class="string">"Device0"</span></div><div class="line">    <span class="keyword">Monitor</span>        <span class="string">"Monitor0"</span></div><div class="line">    DefaultDepth    <span class="number">24</span></div><div class="line">    <span class="preprocessor">Option</span>         <span class="string">"TwinView"</span> <span class="string">"0"</span></div><div class="line">    <span class="preprocessor">Option</span>         <span class="string">"metamodes"</span> <span class="string">"nvidia-auto-select +0+0; 1920x1080 +0+0"</span></div><div class="line">    SubSection     <span class="string">"Display"</span></div><div class="line">        Depth       <span class="number">24</span></div><div class="line">    EndSubSection</div><div class="line">EndSection</div></pre></td></tr></table></figure>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/10/10/nvidia-in-freebsd-8/" data-id="7sz3jq5vqh78fiz7" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/10/10/nvidia-in-freebsd-8/" data-id="2vqkjxq3hm4eaiaw" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/10/10/nvidia-in-freebsd-8/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -274,7 +305,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/09/27/sasl-for-weechat/" data-id="46z21ox9iou5md65" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/09/27/sasl-for-weechat/" data-id="hd7cksu5hbvyhien" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/09/27/sasl-for-weechat/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -321,16 +352,16 @@ ga('send', 'pageview');
 <p><code># freebsd-update install</code></p>
 </blockquote>
 <p>An entry in <code>/etc/crontab</code> allows <code>freebsd-update</code> to be run as a nightly cron job:</p>
-<p><code>@daily root freebsd-update cron</code><br>
-        
-          <p class="article-more-link">
-            <a href="/2011/09/25/update-freebsd-via-binary-patches/#more">Read More</a>
-          </p>
-        
+<p><code>@daily root freebsd-update cron</code></p>
+<p>Here, <code>freebsd-update</code> will only check if updates exist. If patches exist, they will automatically be downloaded to the local disk but not applied; the root user will be sent an email so they may install them manually.</p>
+<p>If anything goes wrong, <code>freebsd-update</code> has the ability to roll back the last set of changes with the following command:</p>
+<p><code># freebsd-update rollback</code></p>
+<p>Once complete, the system should be restarted if the kernel or any kernel modules were modified. This will allow FreeBSD to load the new binaries into memory.</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/09/25/update-freebsd-via-binary-patches/" data-id="ctcgpdpawfaq75fs" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/09/25/update-freebsd-via-binary-patches/" data-id="d1yp0gvhlrdwrl3a" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/09/25/update-freebsd-via-binary-patches/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -378,16 +409,30 @@ ga('send', 'pageview');
 <p>Install portmaster to manage your ports without external databases or languages:</p>
 <p><code># cd /usr/ports/ports-mgmt/portmaster</code></p>
 <p><code># make install clean</code></p>
+<p>To list all outdated and installed packages from the FreeBSD Ports tree:</p>
+<p><code># pkg_version -l &#39;&gt;&#39;</code></p>
+<p>(Packages that appear on the left of the <code>&gt;</code> sign are outdated, and may be updated from the sources provided online.)</p>
+<p> <code>/usr/ports/UPDATING</code> describes various issues and additional steps users may encounter and need to perform when updating a port, including such things as file format changes, changes in locations of configuration files, or other such incompatibilities with previous versions.</p>
+<p> <code># less /usr/ports/UPDATING</code></p>
+<p>Then, to upgrade all packages/ports:</p>
+<p><code># portmaster -Da</code></p>
+<p>To update your packages in the future:</p>
+<p><code># portsnap fetch update</code></p>
+<p><code># pkg_version -l &#39;&gt;&#39;</code></p>
+<p><code># less /usr/ports/UPDATING</code></p>
+<p><code># portmaster -Da</code></p>
+<p><code>portmaster</code> can also remove stale distfiles with the <code>--clean-distfiles</code> option. To clear old distfiles for <em>all</em> ports and automatically confirm their deletion, use the <code>-t</code> and <code>-y</code> flags respectively, i.e.,:</p>
+<p><code># portmaster -t -y --clean-distfiles</code></p>
+<p></p><p>I perform the following set of commands when a significant error gets introduced into the ports tree:</p>
+<p><code># portmaster -dys --clean-distfiles</code></p>
+<p><code># portmaster -vy --check-depends</code></p>
+<p>Also, if I need to rebuild a specific port and all of its dependencies, I use:</p>
+<p><code>#  portmaster -fR www/firefox</code></p>
 
-        
-          <p class="article-more-link">
-            <a href="/2011/09/25/manage-freebsd-ports/#more">Read More</a>
-          </p>
-        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/09/25/manage-freebsd-ports/" data-id="2subrolea132z12i" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/09/25/manage-freebsd-ports/" data-id="0ck46v1i0pbpixqj" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/09/25/manage-freebsd-ports/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -433,16 +478,19 @@ ga('send', 'pageview');
 <p><code># make</code></p>
 <pre><code>[select GnuTLS]
 </code></pre><p><code># make install</code></p>
+<p>In WeeChat:</p>
+<p><code>/set weechat.network.gnutls_ca_file &quot;/usr/local/share/certs/ca-root-nss.crt&quot;
+/set irc.server.freenode.addresses &quot;chat.freenode.net/7000&quot;
+/set irc.server.freenode.ssl on
+/set irc.server.freenode.ssl_dhkey_size 1024
+/connect freenode</code></p>
+<p><em>NB:</em> WeeChat’s support for GnuTLS is rather flaky, with numerous bug reports recently surfacing on the net (<a href="http://securityvulns.com/Zdocument866.html" target="_blank" rel="external">one such example</a>). WeeChat’s <a href="http://www.weechat.org/files/doc/weechat_faq.en.html#irc_ssl_connection" target="_blank" rel="external">FAQ</a> suggests disabling verification of secure connections with:</p>
+<p><code>/set irc.server.freenode.ssl_verify off</code></p>
 
-        
-          <p class="article-more-link">
-            <a href="/2011/09/25/gnutls-for-weechat/#more">Read More</a>
-          </p>
-        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/09/25/gnutls-for-weechat/" data-id="gyl7dtze5h8wye7b" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/09/25/gnutls-for-weechat/" data-id="7tn3tk73641y1rvr" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/09/25/gnutls-for-weechat/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -492,7 +540,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/09/25/ca-certificates-in-freebsd/" data-id="2x2au99r3ot09dhr" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/09/25/ca-certificates-in-freebsd/" data-id="ahjqhyxag9qlcodz" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/09/25/ca-certificates-in-freebsd/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -534,16 +582,14 @@ ga('send', 'pageview');
       
         <p>After building and installing software from the ports collection, you should always remember to clean up the temporary work directories. You can sweep the whole ports tree with the following command:</p>
 <p><code># portsclean -C</code></p>
-<p>The <code>portsclean</code> utility is part of the <strong>portupgrade</strong> suite.<br>
-        
-          <p class="article-more-link">
-            <a href="/2011/09/25/clean-freebsd-ports/#more">Read More</a>
-          </p>
-        
+<p>The <code>portsclean</code> utility is part of the <strong>portupgrade</strong> suite.</p>
+<p>Alternatively, here’s a shell script:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="shebang">#!/bin/sh</span></div><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment"># Search for ports that contain a &amp;quot;work&amp;quot; subdirectory,</span></div><div class="line"><span class="comment"># then go into that port directory and perform a</span></div><div class="line"><span class="comment"># make clean</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> `find /usr/ports -name work -type d`</div><div class="line"><span class="keyword">do</span></div><div class="line"><span class="built_in">cd</span> `<span class="built_in">echo</span> &amp;quot;<span class="variable">$i</span>&amp;quot; | sed <span class="string">'s//[^/]*$///'</span>`</div><div class="line">   make clean</div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/09/25/clean-freebsd-ports/" data-id="cc2qwwqyepyv6noo" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/09/25/clean-freebsd-ports/" data-id="1hw50ftfp6f5klre" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/09/25/clean-freebsd-ports/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -589,16 +635,21 @@ ga('send', 'pageview');
 <p><code># make</code></p>
 <pre><code>[select AIO_SUPPORT]
 </code></pre><p><code># make install clean</code></p>
+<p>In <code>/boot/loader.conf</code>:<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="setting">aio_load=<span class="value">&amp;quot;<span class="keyword">YES</span>&amp;quot;</span></span></div></pre></td></tr></table></figure></p>
+<p>In <code>/etc/sysctl.conf</code>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">## Tweaks for Samba</span></div><div class="line">kern.ipc.maxsockbuf=<span class="number">16777216</span></div><div class="line">kern.ipc.nmbclusters=<span class="number">32768</span></div><div class="line">kern.ipc.somaxconn=<span class="number">32768</span></div><div class="line">kern.maxfiles=<span class="number">65536</span></div><div class="line">kern.maxfilesperproc=<span class="number">32768</span></div><div class="line">kern.maxvnodes=<span class="number">800000</span></div><div class="line">net.inet.tcp.delayed_ack=<span class="number">0</span></div><div class="line">net.inet.tcp.inflight.enable=<span class="number">0</span></div><div class="line">net.inet.tcp.path_mtu_discovery=<span class="number">0</span></div><div class="line">net.inet.tcp.recvbuf_auto=<span class="number">1</span></div><div class="line">net.inet.tcp.recvbuf_inc=<span class="number">524288</span></div><div class="line">net.inet.tcp.recvbuf_max=<span class="number">16777216</span></div><div class="line">net.inet.tcp.recvspace=<span class="number">65536</span></div><div class="line">net.inet.tcp.rfc1323=<span class="number">1</span></div><div class="line">net.inet.tcp.sendbuf_auto=<span class="number">1</span></div><div class="line">net.inet.tcp.sendbuf_inc=<span class="number">524288</span></div><div class="line">net.inet.tcp.sendspace=<span class="number">65536</span></div><div class="line">net.inet.udp.maxdgram=<span class="number">57344</span></div><div class="line">net.inet.udp.recvspace=<span class="number">65536</span></div><div class="line">net.local.stream.recvspace=<span class="number">65536</span></div><div class="line">net.inet.tcp.sendbuf_max=<span class="number">16777216</span></div><div class="line">net.inet.tcp.mssdflt=<span class="number">1460</span></div></pre></td></tr></table></figure>
 
-        
-          <p class="article-more-link">
-            <a href="/2011/09/25/tweak-samba-performance-in-freebsd/#more">Read More</a>
-          </p>
-        
+
+<p>In <code>/usr/local/etc/smb.conf</code>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">[global]</div><div class="line">        workgroup = MASTER.LIT</div><div class="line">        netbios name = SMB_PDC</div><div class="line">        server string = Descartes</div><div class="line">        interfaces = re0</div><div class="line">        log file = /var/log/samba/log.%m</div><div class="line">        max log size = <span class="number">50</span></div><div class="line">        domain logons = Yes</div><div class="line">        os level = <span class="number">65</span></div><div class="line">        preferred master = Yes</div><div class="line">        domain master = Yes</div><div class="line">        dns proxy = No</div><div class="line">        wins support = Yes</div><div class="line">        hosts allow = <span class="number">10.254</span>.<span class="number">0</span>.</div><div class="line">        use sendfile = yes</div><div class="line">        strict locking = no</div><div class="line">        min receivefile size = <span class="number">131072</span></div><div class="line">        aio <span class="built_in">read</span> size = <span class="number">1</span></div><div class="line">        aio write size = <span class="number">1</span></div><div class="line">        socket options = SO_KEEPALIVE TCP_NODELAY IPTOS_LOWDELAY IPTOS_THROUGHPUT</div></pre></td></tr></table></figure>
+
+
+<p>… and reboot for the changes to take effect.</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/09/25/tweak-samba-performance-in-freebsd/" data-id="owlokwv2bqhv9grl" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/09/25/tweak-samba-performance-in-freebsd/" data-id="gr7stgu19mr0btp5" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/09/25/tweak-samba-performance-in-freebsd/#disqus_thread" class="article-comment-link">Comments</a>
       

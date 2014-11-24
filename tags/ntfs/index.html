@@ -113,16 +113,37 @@ ga('send', 'pageview');
 </blockquote>
 <p>To install NTFS-3G, do:</p>
 <p><code># portmaster sysutils/fusefs-ntfs</code></p>
+<p>Next, create a symbolic link from the newly-installed <code>/usr/local/bin/ntfs-3g</code> into <code>/usr/sbin/</code>:</p>
+<p><code># ln -s $(which ntfs-3g) /usr/sbin/mount_ntfs-3g</code></p>
+<p>Modify your <code>/etc/rc.conf</code> to contain:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="variable">fusefs_enable=</span><span class="string">"YES"</span></div></pre></td></tr></table></figure>
 
-        
-          <p class="article-more-link">
-            <a href="/2012/06/18/ntfs-write-in-freebsd/#more">Read More</a>
-          </p>
-        
+<p>Provided you know on which hard-disk (based on make/model/capacity of the device) your NTFS partition resides, you can figure out it’s exact device node in FreeBSD:</p>
+<p><code># egrep &#39;ad[0-9]|cd[0-9]|da[0-9]&#39; /var/run/dmesg.boot</code></p>
+<pre>
+ad0: 35303MB &lt;WDC WD360GD-00FNA0 35.06K35&gt; at ata0-master
+ad2: 57240MB &lt;Mushkin MKNSSDCL60GB-DX 310A13F0&gt; at ata1-master
+ad4: 286168MB &lt;WDC WD3000HLFS-01G6U4 04.04V06&gt; at ata2-master
+</pre>
+
+<p>My NTFS partition resides on a 300GB WD Velociraptor drive, <code>ad4</code>. To confirm that <code>/dev/ad4</code> does indeed contain the NTFS partition, do:</p>
+<p><code># gpart show -p ad4</code></p>
+<pre>
+=&gt;        34  586072064    ad4 GPT  (286G)
+          34  586072064  ad4p1 ntfs (286G)
+</pre>
+
+<p>To mount the partition manually, do:</p>
+<p><code># ntfs-3g /dev/ad4s1 /mnt/windows7</code></p>
+<p>Finally, add the appropriate line to <code>/etc/fstab</code> to have the NTFS partition mounted at the next system boot. For instance, my <code>/etc/fstab</code> contains:</p>
+<pre>
+/dev/ad4s1              /mnt/windows7            ntfs-3g rw,late         0       0
+</pre>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2012/06/18/ntfs-write-in-freebsd/" data-id="y22hbra1cwm1k5fa" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2012/06/18/ntfs-write-in-freebsd/" data-id="awzkx6ipj14jmyf5" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2012/06/18/ntfs-write-in-freebsd/#disqus_thread" class="article-comment-link">Comments</a>
       

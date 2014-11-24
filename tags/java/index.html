@@ -112,16 +112,25 @@ ga('send', 'pageview');
             java/openjdk6 \
             java/icedtea-web \
             www/nspluginwrapper \
-            www/linux-f10-flashplugin10</code><br>
-        
-          <p class="article-more-link">
-            <a href="/2011/12/25/flash-and-java-for-google-chromium-in-freebsd-8/#more">Read More</a>
-          </p>
-        
+            www/linux-f10-flashplugin10</code></p>
+<p>Then:</p>
+<p><code># mkdir -p /usr/local/share/chromium/plugins</code></p>
+<p><code># ln -s /usr/local/lib/IcedTeaPlugin.so /usr/local/share/chromium/plugins/</code></p>
+<p><code># ln -s /usr/local/lib/npapi/linux-f10-flashplugin/libflashplayer.so \
+        /usr/local/lib/browser_plugins/</code></p>
+<p>The Linux process file system, <code>linprocfs(5)</code> has to be mounted on <code>/compat/linux/proc</code>:</p>
+<p><code># mount -t linprocfs linproc /compat/linux/proc</code></p>
+<p>To mount the proc fs at each system boot, in <code>/etc/fstab</code>, have:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">linproc    /compat/linux/<span class="keyword">proc</span>  linprocfs   rw  <span class="number">0</span>   <span class="number">0</span></div></pre></td></tr></table></figure>
+
+
+<p>As a user:</p>
+<p><code>% nspluginwrapper -v -a -i</code></p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/12/25/flash-and-java-for-google-chromium-in-freebsd-8/" data-id="6afr9siarwc4skdo" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/12/25/flash-and-java-for-google-chromium-in-freebsd-8/" data-id="q9g330zdrrt00oao" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/12/25/flash-and-java-for-google-chromium-in-freebsd-8/#disqus_thread" class="article-comment-link">Comments</a>
       

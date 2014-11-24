@@ -113,15 +113,46 @@ ga('send', 'pageview');
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">*<span class="default"><span class="keyword">default</span> host=cvsup.au.freebsd.org</span></div><div class="line">*<span class="default"><span class="keyword">default</span> base=/var/db</span></div><div class="line">*<span class="default"><span class="keyword">default</span> prefix=/usr</span></div><div class="line">*<span class="default"><span class="keyword">default</span> release=cvs tag=<span class="type">RELENG_8</span></span></div><div class="line">*<span class="default"><span class="keyword">default</span> delete use-rel-suffix</span></div><div class="line">*<span class="default"><span class="keyword">default</span> compress</span></div><div class="line"><span class="title">src</span>-all</div></pre></td></tr></table></figure>
 
 
-        
-          <p class="article-more-link">
-            <a href="/2011/12/27/upgrading-to-freebsd-8-stable/#more">Read More</a>
-          </p>
-        
+<p><code># csup /root/stable-supfile</code></p>
+<p><code># cd /usr/src</code><br><code># rm -r -f /usr/obj</code></p>
+<p>Customize <code>/etc/make.conf</code> (read <em>notes</em>). Mine contains:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="constant"></span></div><div class="line">CPUTYPE?= core2</div><div class="line"><span class="constant"></span></div><div class="line">NO_LPR= YES</div><div class="line"><span class="constant">NO_NIS</span>= YES</div><div class="line"><span class="constant">CUPS_OVERWRITE_BASE</span>= YES</div><div class="line"><span class="constant">NO_INET6</span>= YES</div><div class="line"><span class="constant"></span></div><div class="line">WITH_NVIDIA_GL= YES</div><div class="line"><span class="constant">WITH_NVIDIA</span>= YES</div><div class="line"><span class="constant">WITHOUT_NOUVEAU</span>= YES</div></pre></td></tr></table></figure>
+
+
+<p><code># script /var/tmp/buildworld-$(date &quot;+%Y%m%d%H%M.%S&quot;)</code></p>
+<p><code># make -jX buildworld</code></p>
+<font><em>( where X == number of CPUs + 1 )</em></font>
+
+<p><code># exit</code><br><code># script /var/tmp/buildkernel-$(date &quot;+%Y%m%d%H%M.%S&quot;)</code></p>
+<p><code># make buildkernel KODIR=/boot/testing KERNCONF=CUSTOM64</code></p>
+<font><em>( where CUSTOM64 is documented <a href="http://ootput.wordpress.com/2011/12/27/custom-kernel-config-for-freebsd-8-stable/" target="_blank" rel="external">here</a> )</em></font>
+
+<p><code># make installkernel KODIR=/boot/testing KERNCONF=CUSTOM64</code><br><code># exit</code><br><code># nextboot -k testing</code><br><code># shutdown -r now</code></p>
+<p><code># cd /boot</code><br><code># rm -r -f OLD</code><br><code># mv kernel OLD</code><br><code># mv testing kernel</code></p>
+<p><code># adjkerntz -i</code><br><code># rm -rf /etc.old &amp;amp;&amp;amp; cp -Rp /etc /etc.old</code><br><code># mergemaster -p</code><br><code># cd /usr/src</code><br><code># make installworld</code><br><code># mergemaster -iU</code><br><code># make delete-old</code><br><code># shutdown -r now</code></p>
+<p><em>NB:</em> <code>NO_NIS</code> in <code>/etc/make.conf</code> requires the following changes in <code>/etc/nsswitch.conf</code>:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="attribute">group</span>: <span class="string">files</span></div><div class="line"><span class="attribute">passwd</span>: <span class="string">files</span></div></pre></td></tr></table></figure>
+
+
+<p>If you’re feeling game, you can try the following commands to save yourself some keystrokes and delays:</p>
+<p><code># csup /root/stable-supfile &amp;amp;&amp;amp;
+rm -r -f /usr/obj &amp;amp;&amp;amp;
+cd /usr/src &amp;amp;&amp;amp;
+make -j5 buildworld &amp;amp;&amp;amp;
+make buildkernel KODIR=/boot/testing KERNCONF=CUSTOM64 &amp;amp;&amp;amp;
+make installkernel KODIR=/boot/testing KERNCONF=CUSTOM64 &amp;amp;&amp;amp;
+cd /boot &amp;amp;&amp;amp;
+rm -r -f OLD &amp;amp;&amp;amp;
+mv kernel OLD &amp;amp;&amp;amp;
+mv testing kernel &amp;amp;&amp;amp;
+reboot</code></p>
+<p>Here, you can revert back to the old kernel if you experience boot up problems. Otherwise, continue with:</p>
+<p><code># adjkerntz -i &amp;amp;&amp;amp; rm -rf /etc.old &amp;amp;&amp;amp; cp -Rp /etc /etc.old &amp;amp;&amp;amp; mergemaster -p &amp;amp;&amp;amp; cd /usr/src &amp;amp;&amp;amp; make installworld &amp;amp;&amp;amp; mergemaster -iU &amp;amp;&amp;amp; make delete-old &amp;amp;&amp;amp; reboot</code></p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/12/27/upgrading-to-freebsd-8-stable/" data-id="vtib1phdcwk9kd0u" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/12/27/upgrading-to-freebsd-8-stable/" data-id="u0srcrsubh1q10fh" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/12/27/upgrading-to-freebsd-8-stable/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -161,16 +192,13 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>For FreeBSD system upgrades, my <code># make buildkernel</code> is instructed to use a custom kernel config at <code>/usr/src/sys/amd64/conf/CUSTOM64</code>. It includes:<br>
-        
-          <p class="article-more-link">
-            <a href="/2011/12/27/custom-kernel-config-for-freebsd-8-stable/#more">Read More</a>
-          </p>
-        
+        <p>For FreeBSD system upgrades, my <code># make buildkernel</code> is instructed to use a custom kernel config at <code>/usr/src/sys/amd64/conf/CUSTOM64</code>. It includes:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">include</span> <span class="constant">GENERIC</span></div><div class="line">machine amd64</div><div class="line">cpu     <span class="constant">HAMMER</span>                  <span class="comment"># aka K8, aka Opteron &amp; Athlon64</span></div><div class="line">nocpu   i486_CPU</div><div class="line">ident   <span class="constant">CUSTOM64</span></div><div class="line">nomakeoption <span class="constant">DEBUG</span></div><div class="line"></div><div class="line"><span class="comment">## No IPv6</span></div><div class="line">nooptions       <span class="constant">INET6</span></div><div class="line">nooptions       <span class="constant">SCTP</span>            <span class="comment"># Stream Control Transmission Protocol</span></div><div class="line"></div><div class="line"><span class="comment">## No Debugging stuff</span></div><div class="line">nooptions <span class="constant">INVARIANTS</span></div><div class="line">nooptions <span class="constant">INVARIANT_SUPPORT</span></div><div class="line">nooptions <span class="constant">WITNESS</span></div><div class="line">nooptions <span class="constant">WITNESS_SKIPSPIN</span></div><div class="line"></div><div class="line">nodevice        eisa</div><div class="line"></div><div class="line">nodevice        fdc</div><div class="line"></div><div class="line"><span class="comment">## Disable various ATA systems we will never have</span></div><div class="line">nodevice        atapicd         <span class="comment"># ATAPI CDROM drives</span></div><div class="line">nodevice        atapifd         <span class="comment"># ATAPI floppy drives</span></div><div class="line">nodevice        atapist         <span class="comment"># ATAPI tape drives</span></div><div class="line"></div><div class="line">nooptions       <span class="constant">MSDOSFS</span>         <span class="comment"># MSDOS Filesystem</span></div><div class="line">nooptions       <span class="constant">CD9660</span>          <span class="comment"># ISO 9660 Filesystem</span></div><div class="line"></div><div class="line">device          ahci</div><div class="line"></div><div class="line">nodevice        urio</div><div class="line">nodevice        uscanner</div><div class="line">nodevice        aue</div><div class="line">nodevice        axe</div><div class="line">nodevice        cdce</div><div class="line">nodevice        cue</div><div class="line">nodevice        kue</div><div class="line">nodevice        rue</div><div class="line"></div><div class="line"><span class="comment"># PCMCIA and cardbus bridge support</span></div><div class="line">nodevice        cbb             <span class="comment"># cardbus (yenta) bridge</span></div><div class="line">nodevice        pccard          <span class="comment"># PC Card (16-bit) bus</span></div><div class="line">nodevice        cardbus         <span class="comment"># CardBus (32-bit) bus</span></div><div class="line"></div><div class="line"><span class="comment"># Parallel port</span></div><div class="line">nodevice        ppc</div><div class="line">nodevice        ppbus           <span class="comment"># Parallel port bus (required)</span></div><div class="line">nodevice        lpt             <span class="comment"># Printer</span></div><div class="line">nodevice        plip            <span class="comment"># TCP/IP over parallel</span></div><div class="line">nodevice        ppi             <span class="comment"># Parallel port interface device</span></div><div class="line"></div><div class="line"><span class="comment"># FireWire support</span></div><div class="line">nodevice        firewire        <span class="comment"># FireWire bus code</span></div><div class="line">nodevice        sbp             <span class="comment"># SCSI over FireWire (Requires scbus and da)</span></div><div class="line">nodevice        fwe             <span class="comment"># Ethernet over FireWire (non-standard!)</span></div><div class="line">nodevice        fwip            <span class="comment"># IP over FireWire (RFC 2734,3146)</span></div><div class="line">nodevice        dcons           <span class="comment"># Dumb console driver</span></div><div class="line">nodevice        dcons_crom      <span class="comment"># Configuration ROM for dcons</span></div></pre></td></tr></table></figure>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/12/27/custom-kernel-config-for-freebsd-8-stable/" data-id="edkdjf8yclmt09j6" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/12/27/custom-kernel-config-for-freebsd-8-stable/" data-id="s3yindk0apuwgnbs" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/12/27/custom-kernel-config-for-freebsd-8-stable/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -212,16 +240,41 @@ ga('send', 'pageview');
       
         <p><img src="/images/11394d99807586de0dd5fff417137b8b4f170dd6.png?w=150" alt="" title="sabnzbd_and_sickbeard"></p>
 <p>For my own archives, I have reproduced installation instructions for SABnzbd and Sickbeard on FreeBSD from <em>Syah</em> of the FreeBSD forums (titled: FreeBSD +Sabnzbd/Sickbeard/CouchPotato):</p>
+<blockquote>
+<p>1. install sabnzbd+ from ports.</p>
+<p><code># cd /usr/ports/news/sabnzbdplus; make install clean</code></p>
+<p>2) install some dependencies if they are not already present on your system. Needed to run &amp; acquire python scripts (Sick Beard, Couch Potato, Headphones)</p>
+<p>Python</p>
+<p><code># cd /usr/ports/lang/python; make install clean</code></p>
+<p>Cheetah</p>
+<p><code># cd /usr/ports/devel/py-cheetah; make install clean</code></p>
+<p>Git</p>
+<p><code># cd /usr/ports/devel/git; make install clean</code></p>
+<p>3. Fetch most recent builds of the three tools</p>
+<p>Sick Beard</p>
+<p><code># cd /usr/local ; git clone git://github.com/midgetspy/Sick-Beard.git sickbeard</code></p>
+<p>4. Configure auto-start for python scripts and sabnzbd+</p>
+<p>Sick Beard</p>
+<p><code># cp /usr/local/sickbeard/init.freebsd /usr/local/etc/rc.d/sickbeard</code></p>
+<p>Add the following to /etc/rc.conf:</p>
+<p>`</p>
+<p>sabnzbd_enable=”YES”</p>
+<p>sickbeard_enable=”YES”</p>
+<p>`</p>
+<p>5. configure all the tools to play nice together.</p>
+<p>Totally beyond the scope of a quick &amp; dirty update. You should read the installation instructions and refer to the individual websites for each of these projects to fully leverage this tool set.</p>
+<p>Hopefully this gets you a bit further towards your goal.<br>To keep track of upstream changes to SickBeard:<br><code># cd /usr/local/sickbeard &amp;&amp; git pull</code></p>
+</blockquote>
+<p>A few notes:</p>
+<ul>
+<li><del datetime="2012-12-01T08:39:24+00:00">Step 4. will fail as SickBeard currently only comes with an Ubuntu startup script. Hatchling, from the SickBeard Forums (A FreeBSD rc.d script), kindly published a working copy of a FreeBSD rc script that is available <a href="http://dl.dropbox.com/u/5830692/sickbeard.txt" target="_blank" rel="external">here</a> (and duplicated <a href="https://gist.github.com/1610595" target="_blank" rel="external">here</a>.)</del><br>It appears that an init script for FreeBSD is now provided with the latest git pull - unfortunately, it’s not perfect, and needs to be modified for SickBeard to shut down properly.<figure class="highlight diff"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">diff --git a/init.freebsd b/init.freebsd</div><div class="line">index 8d9ba4b..3f65b31 100755</div><div class="line"><span class="header">--- a/init.freebsd</span></div><div class="line"><span class="header">+++ b/init.freebsd</span></div><div class="line">@@ -69,7 +69,7 @@ verify_sickbeard_pid() {</div><div class="line"> sickbeard_stop() {</div><div class="line">     echo "Stopping $name"</div><div class="line">     verify_sickbeard_pid</div><div class="line"><span class="deletion">-    ${WGET} -O - -q --user=${SBUSR} --password=${SBPWD} "http://${HOST}:${PORT}/home/shutdown/" &amp;gt;/dev/null</span></div><div class="line"><span class="addition">+    ${WGET} -O - -q --user=${SBUSR} --password=${SBPWD} "http://${HOST}:${PORT}/home/shutdown/?pid=${pid}" &amp;gt;/dev/null</span></div><div class="line">     if [ -n "${pid}" ]; then</div><div class="line">       wait_for_pids ${pid}</div><div class="line">       echo "Stopped"</div></pre></td></tr></table></figure>
+</li>
+</ul>
 
-        
-          <p class="article-more-link">
-            <a href="/2011/12/26/sabnzbd-and-sickbeard-on-freebsd/#more">Read More</a>
-          </p>
-        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/12/26/sabnzbd-and-sickbeard-on-freebsd/" data-id="suikzdg16hcnj4ob" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/12/26/sabnzbd-and-sickbeard-on-freebsd/" data-id="htt105yhjdt9cc76" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/12/26/sabnzbd-and-sickbeard-on-freebsd/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -267,16 +320,25 @@ ga('send', 'pageview');
             java/openjdk6 \
             java/icedtea-web \
             www/nspluginwrapper \
-            www/linux-f10-flashplugin10</code><br>
-        
-          <p class="article-more-link">
-            <a href="/2011/12/25/flash-and-java-for-google-chromium-in-freebsd-8/#more">Read More</a>
-          </p>
-        
+            www/linux-f10-flashplugin10</code></p>
+<p>Then:</p>
+<p><code># mkdir -p /usr/local/share/chromium/plugins</code></p>
+<p><code># ln -s /usr/local/lib/IcedTeaPlugin.so /usr/local/share/chromium/plugins/</code></p>
+<p><code># ln -s /usr/local/lib/npapi/linux-f10-flashplugin/libflashplayer.so \
+        /usr/local/lib/browser_plugins/</code></p>
+<p>The Linux process file system, <code>linprocfs(5)</code> has to be mounted on <code>/compat/linux/proc</code>:</p>
+<p><code># mount -t linprocfs linproc /compat/linux/proc</code></p>
+<p>To mount the proc fs at each system boot, in <code>/etc/fstab</code>, have:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">linproc    /compat/linux/<span class="keyword">proc</span>  linprocfs   rw  <span class="number">0</span>   <span class="number">0</span></div></pre></td></tr></table></figure>
+
+
+<p>As a user:</p>
+<p><code>% nspluginwrapper -v -a -i</code></p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/12/25/flash-and-java-for-google-chromium-in-freebsd-8/" data-id="6afr9siarwc4skdo" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/12/25/flash-and-java-for-google-chromium-in-freebsd-8/" data-id="q9g330zdrrt00oao" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/12/25/flash-and-java-for-google-chromium-in-freebsd-8/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -318,16 +380,13 @@ ga('send', 'pageview');
       
         <p><img src="/images/a0202c90723a9efb7dfdac06cd7f40bf8fde4c0b.png?w=150" alt="" title="nvidia logo"></p>
 <p>Follow the official FreeBSD documents on how to install the latest nvidia drivers (Installing and using Compiz Fusion - Ch 2 Setting up the FreeBSD nVidia driver).</p>
-<p>My <code>/etc/X11/xorg.conf</code> contains:<br>
-        
-          <p class="article-more-link">
-            <a href="/2011/10/10/nvidia-in-freebsd-8/#more">Read More</a>
-          </p>
-        
+<p>My <code>/etc/X11/xorg.conf</code> contains:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"># nvidia-settings: X configuration file generated by nvidia-settings</div><div class="line"># nvidia-settings:  version <span class="number">285.05</span><span class="string">.09</span>  (root@localhost)  Fri Oct <span class="number">10</span> <span class="number">23</span>:<span class="number">03</span>:<span class="number">46</span> EST <span class="number">2011</span></div><div class="line"></div><div class="line"><span class="built_in">Section</span> <span class="string">"ServerLayout"</span></div><div class="line">    Identifier     <span class="string">"X.org Configured"</span></div><div class="line">    Screen      <span class="number">0</span>  <span class="string">"Screen0"</span> <span class="number">0</span> <span class="number">0</span></div><div class="line">    InputDevice    <span class="string">"Mouse0"</span> <span class="string">"CorePointer"</span></div><div class="line">    InputDevice    <span class="string">"Keyboard0"</span> <span class="string">"CoreKeyboard"</span></div><div class="line">    <span class="preprocessor">Option</span>         <span class="string">"Xinerama"</span> <span class="string">"0"</span></div><div class="line">EndSection</div><div class="line"></div><div class="line"><span class="built_in">Section</span> <span class="string">"Files"</span></div><div class="line">    ModulePath      <span class="string">"/usr/local/lib/xorg/modules"</span></div><div class="line">    FontPath        <span class="string">"/usr/local/lib/X11/fonts/misc/"</span></div><div class="line">    FontPath        <span class="string">"/usr/local/lib/X11/fonts/TTF/"</span></div><div class="line">    FontPath        <span class="string">"/usr/local/lib/X11/fonts/OTF"</span></div><div class="line">    FontPath        <span class="string">"/usr/local/lib/X11/fonts/Type1/"</span></div><div class="line">    FontPath        <span class="string">"/usr/local/lib/X11/fonts/bitstream-vera/"</span></div><div class="line">    FontPath        <span class="string">"/usr/local/lib/X11/fonts/terminus-font/"</span></div><div class="line">    FontPath        <span class="string">"/usr/local/lib/X11/fonts/75dpi/"</span></div><div class="line">    FontPath        <span class="string">"/usr/local/lib/X11/fonts/100dpi/"</span></div><div class="line">    FontPath        <span class="string">"/usr/local/lib/X11/fonts/artwiz-fonts/"</span></div><div class="line">    FontPath        <span class="string">"/usr/local/lib/X11/fonts/dejavu/"</span></div><div class="line">    FontPath        <span class="string">"/usr/local/lib/X11/fonts/webfonts/"</span></div><div class="line">    FontPath        <span class="string">"/home/ootput/.fonts/ubuntu/"</span></div><div class="line">EndSection</div><div class="line"></div><div class="line"><span class="built_in">Section</span> <span class="string">"Module"</span></div><div class="line">    Load           <span class="string">"extmod"</span></div><div class="line">    Load           <span class="string">"glx"</span></div><div class="line">    Load           <span class="string">"dbe"</span></div><div class="line">    Load           <span class="string">"dri"</span></div><div class="line">    Load           <span class="string">"dri2"</span></div><div class="line">    Load           <span class="string">"record"</span></div><div class="line">EndSection</div><div class="line"></div><div class="line"><span class="built_in">Section</span> <span class="string">"InputDevice"</span></div><div class="line">    Identifier     <span class="string">"Keyboard0"</span></div><div class="line">    Driver         <span class="string">"kbd"</span></div><div class="line">EndSection</div><div class="line"></div><div class="line"><span class="built_in">Section</span> <span class="string">"InputDevice"</span></div><div class="line">    Identifier     <span class="string">"Mouse0"</span></div><div class="line">    Driver         <span class="string">"mouse"</span></div><div class="line">    <span class="preprocessor">Option</span>         <span class="string">"Protocol"</span> <span class="string">"auto"</span></div><div class="line">    <span class="preprocessor">Option</span>         <span class="string">"Device"</span> <span class="string">"/dev/sysmouse"</span></div><div class="line">    <span class="preprocessor">Option</span>         <span class="string">"ZAxisMapping"</span> <span class="string">"4 5 6 7"</span></div><div class="line">EndSection</div><div class="line"></div><div class="line"><span class="built_in">Section</span> <span class="string">"Monitor"</span></div><div class="line">    Identifier     <span class="string">"Monitor0"</span></div><div class="line">    VendorName     <span class="string">"Unknown"</span></div><div class="line">    ModelName      <span class="string">"Acer GN245HQ"</span></div><div class="line">    HorizSync       <span class="number">30.0</span> - <span class="number">83.0</span></div><div class="line">    VertRefresh     <span class="number">56.0</span> - <span class="number">75.0</span></div><div class="line">EndSection</div><div class="line"></div><div class="line"><span class="built_in">Section</span> <span class="string">"Device"</span></div><div class="line">    Identifier     <span class="string">"Card0"</span></div><div class="line">    Driver         <span class="string">"nvidia"</span></div><div class="line">    VendorName     <span class="string">"nVidia Corporation"</span></div><div class="line">    BoardName      <span class="string">"GT218 [GeForce 8400 GS]"</span></div><div class="line">    BusID          <span class="string">"PCI:1:0:0"</span></div><div class="line">EndSection</div><div class="line"></div><div class="line"><span class="built_in">Section</span> <span class="string">"Device"</span></div><div class="line">    Identifier     <span class="string">"Device0"</span></div><div class="line">    Driver         <span class="string">"nvidia"</span></div><div class="line">    VendorName     <span class="string">"NVIDIA Corporation"</span></div><div class="line">    BoardName      <span class="string">"GeForce 8400GS"</span></div><div class="line">EndSection</div><div class="line"></div><div class="line"><span class="built_in">Section</span> <span class="string">"Screen"</span></div><div class="line">    Identifier     <span class="string">"Screen0"</span></div><div class="line">    Device         <span class="string">"Device0"</span></div><div class="line">    <span class="keyword">Monitor</span>        <span class="string">"Monitor0"</span></div><div class="line">    DefaultDepth    <span class="number">24</span></div><div class="line">    <span class="preprocessor">Option</span>         <span class="string">"TwinView"</span> <span class="string">"0"</span></div><div class="line">    <span class="preprocessor">Option</span>         <span class="string">"metamodes"</span> <span class="string">"nvidia-auto-select +0+0; 1920x1080 +0+0"</span></div><div class="line">    SubSection     <span class="string">"Display"</span></div><div class="line">        Depth       <span class="number">24</span></div><div class="line">    EndSubSection</div><div class="line">EndSection</div></pre></td></tr></table></figure>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/10/10/nvidia-in-freebsd-8/" data-id="7sz3jq5vqh78fiz7" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/10/10/nvidia-in-freebsd-8/" data-id="2vqkjxq3hm4eaiaw" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/10/10/nvidia-in-freebsd-8/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -369,16 +428,13 @@ ga('send', 'pageview');
       
         <p>I completely missed the boat on this one, but apparently, ten months ago, <a href="http://chyrp.net/2010/12/06/chyrp-is-back/" target="_blank" rel="external">Chyrp came back</a>.</p>
 <p>Provided the project persists and progresses, I might consider taking another look at the platform that I had once loved. In the meantime, I’ll stick with Habari - which I have grown accustomed to. I know that Chyrp is a very young product, but it’s sudden termination was simply <a href="http://ootput.wordpress.com/2010/06/02/official-chyrp-development-halted/" target="_blank" rel="external">too much to bear</a> - I honestly can’t get my hopes up again.</p>
+<p>Truth be told, I’m actually very pleased to hear that the product was restarted - it would have been a shame to have let such a promising piece of software go to waste. Even Chyrps website’s design was delicious:<br><img src="/images/73cc94a01d85099bbd8c2354c3fe85270785ea75.jpg" alt="7180191615_fd16650d0b"></p>
+<p>I wish the team the best of luck with all of <a href="http://chyrp.net/2011/08/12/open-source-awards-2011-nominations-the-release-of-chyrp-211/" target="_blank" rel="external">their endeavours</a>.</p>
 
-        
-          <p class="article-more-link">
-            <a href="/2011/10/08/on-chyrps-revival/#more">Read More</a>
-          </p>
-        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/10/08/on-chyrps-revival/" data-id="jyu3noi088y7eudt" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/10/08/on-chyrps-revival/" data-id="8g9tu42c1s6ilfxa" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/10/08/on-chyrps-revival/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -422,16 +478,12 @@ ga('send', 'pageview');
 <p>(<a href="http://sagrising.cockrumpublishing.com/meta-seo" target="_blank" rel="external">MetaSEO</a>) adds search engine optimizations to the page head.</p>
 </blockquote>
 <p>Habari’s plug-in doesn’t provide an option to configure web-robot caching. I created the following patch to address this:</p>
-<p>
-        
-          <p class="article-more-link">
-            <a href="/2011/10/06/patch-metaseo-in-habari/#more">Read More</a>
-          </p>
-        
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="header">--- metaseo.plugin.php  2011-10-06 18:54:14.326378049 +0800</span></div><div class="line"><span class="header">+++ metaseo.plugin.php-nocache   2011-10-06 18:53:37.566385150 +0800</span></div><div class="line"><span class="chunk">@@ -69,10 +69,13 @@</span></div><div class="line">         'home_keywords' =&amp;gt; $home_keys,</div><div class="line">         'home_index' =&amp;gt; true,</div><div class="line">         'home_follow' =&amp;gt; true,</div><div class="line"><span class="addition">+        'home_cache' =&amp;gt; false,</span></div><div class="line">         'posts_index' =&amp;gt; true,</div><div class="line">         'posts_follow' =&amp;gt; true,</div><div class="line"><span class="addition">+        'posts_cache' =&amp;gt; true,</span></div><div class="line">         'archives_index' =&amp;gt; false,</div><div class="line">         'archives_follow' =&amp;gt; true,</div><div class="line"><span class="addition">+        'archives_cache' =&amp;gt; false,</span></div><div class="line">      );</div><div class="line">   }</div><div class="line"></div><div class="line"><span class="chunk">@@ -133,10 +136,13 @@</span></div><div class="line">      $ui-&amp;gt;append( 'fieldset', 'Robots', _t( 'Robots', 'metaseo' ) );</div><div class="line">      $ui-&amp;gt;Robots-&amp;gt;append( 'checkbox', 'home_index', 'option:MetaSEO__home_index', _t( 'Index Home Page', 'metaseo' ) );</div><div class="line">      $ui-&amp;gt;Robots-&amp;gt;append( 'checkbox', 'home_follow', 'option:MetaSEO__home_follow', _t( 'Follow Home Page Links', 'metaseo' )  );</div><div class="line"><span class="addition">+     $ui-&amp;gt;Robots-&amp;gt;append( 'checkbox', 'home_cache', 'option:MetaSEO__home_cache', _t( 'Cache Home Page', 'metaseo' )  );</span></div><div class="line">      $ui-&amp;gt;Robots-&amp;gt;append( 'checkbox', 'posts_index', 'option:MetaSEO__posts_index', _t( 'Index Posts', 'metaseo' ) );</div><div class="line">      $ui-&amp;gt;Robots-&amp;gt;append( 'checkbox', 'posts_follow', 'option:MetaSEO__posts_follow', _t( 'Follow Post Links', 'metaseo' ) );</div><div class="line"><span class="addition">+     $ui-&amp;gt;Robots-&amp;gt;append( 'checkbox', 'posts_cache', 'option:MetaSEO__posts_cache', _t( 'Cache Posts', 'metaseo' ) );</span></div><div class="line">      $ui-&amp;gt;Robots-&amp;gt;append( 'checkbox', 'archives_index', 'option:MetaSEO__archives_index', _t( 'Index Archives', 'metaseo' ) );</div><div class="line">      $ui-&amp;gt;Robots-&amp;gt;append( 'checkbox', 'archives_follow', 'option:MetaSEO__archives_follow', _t( 'Follow Archive Links', 'metaseo' ) );</div><div class="line"><span class="addition">+     $ui-&amp;gt;Robots-&amp;gt;append( 'checkbox', 'archives_cache', 'option:MetaSEO__archives_cache', _t( 'Cache Archives', 'metaseo' ) );</span></div><div class="line"></div><div class="line">      $ui-&amp;gt;append( 'submit', 'save', _t( 'Save', 'metaseo' ) );</div><div class="line">      $ui-&amp;gt;out();</div><div class="line"><span class="chunk">@@ -381,6 +387,12 @@</span></div><div class="line">               else {</div><div class="line">                  $robots .= ', nofollow';</div><div class="line">               }</div><div class="line"><span class="addition">+              if ( !Options::get( 'MetaSEO__posts_cache' ) ) {</span></div><div class="line"><span class="addition">+                 $robots .= ', noarchive';</span></div><div class="line"><span class="addition">+              }</span></div><div class="line">               break;</div><div class="line">            case 'display_home':</div><div class="line">               if ( Options::get( 'MetaSEO__home_index' ) ) {</div><div class="line"><span class="chunk">@@ -395,6 +407,12 @@</span></div><div class="line">               else {</div><div class="line">                  $robots .= ', nofollow';</div><div class="line">               }</div><div class="line"><span class="addition">+              if ( !Options::get( 'MetaSEO__home_cache' ) ) {</span></div><div class="line"><span class="addition">+                 $robots .= ', noarchive';</span></div><div class="line"><span class="addition">+              }</span></div><div class="line">               break;</div><div class="line">            case 'display_entries_by_tag':</div><div class="line">            case 'display_entries_by_date':</div><div class="line"><span class="chunk">@@ -411,6 +429,12 @@</span></div><div class="line">               else {</div><div class="line">                  $robots .= ', nofollow';</div><div class="line">               }</div><div class="line"><span class="addition">+              if ( !Options::get( 'MetaSEO__archives_cache' ) ) {</span></div><div class="line"><span class="addition">+                 $robots .= ', noarchive';</span></div><div class="line"><span class="addition">+              }</span></div><div class="line">               break;</div><div class="line">            default:</div><div class="line">               $robots = 'noindex, follow';</div></pre></td></tr></table></figure>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/10/06/patch-metaseo-in-habari/" data-id="bnjudqm4ugpus97i" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/10/06/patch-metaseo-in-habari/" data-id="jnktdg8pv1sl2jof" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/10/06/patch-metaseo-in-habari/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -482,7 +534,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/09/27/sasl-for-weechat/" data-id="46z21ox9iou5md65" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/09/27/sasl-for-weechat/" data-id="hd7cksu5hbvyhien" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/09/27/sasl-for-weechat/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -529,16 +581,16 @@ ga('send', 'pageview');
 <p><code># freebsd-update install</code></p>
 </blockquote>
 <p>An entry in <code>/etc/crontab</code> allows <code>freebsd-update</code> to be run as a nightly cron job:</p>
-<p><code>@daily root freebsd-update cron</code><br>
-        
-          <p class="article-more-link">
-            <a href="/2011/09/25/update-freebsd-via-binary-patches/#more">Read More</a>
-          </p>
-        
+<p><code>@daily root freebsd-update cron</code></p>
+<p>Here, <code>freebsd-update</code> will only check if updates exist. If patches exist, they will automatically be downloaded to the local disk but not applied; the root user will be sent an email so they may install them manually.</p>
+<p>If anything goes wrong, <code>freebsd-update</code> has the ability to roll back the last set of changes with the following command:</p>
+<p><code># freebsd-update rollback</code></p>
+<p>Once complete, the system should be restarted if the kernel or any kernel modules were modified. This will allow FreeBSD to load the new binaries into memory.</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/09/25/update-freebsd-via-binary-patches/" data-id="ctcgpdpawfaq75fs" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/09/25/update-freebsd-via-binary-patches/" data-id="d1yp0gvhlrdwrl3a" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/09/25/update-freebsd-via-binary-patches/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -586,16 +638,30 @@ ga('send', 'pageview');
 <p>Install portmaster to manage your ports without external databases or languages:</p>
 <p><code># cd /usr/ports/ports-mgmt/portmaster</code></p>
 <p><code># make install clean</code></p>
+<p>To list all outdated and installed packages from the FreeBSD Ports tree:</p>
+<p><code># pkg_version -l &#39;&gt;&#39;</code></p>
+<p>(Packages that appear on the left of the <code>&gt;</code> sign are outdated, and may be updated from the sources provided online.)</p>
+<p> <code>/usr/ports/UPDATING</code> describes various issues and additional steps users may encounter and need to perform when updating a port, including such things as file format changes, changes in locations of configuration files, or other such incompatibilities with previous versions.</p>
+<p> <code># less /usr/ports/UPDATING</code></p>
+<p>Then, to upgrade all packages/ports:</p>
+<p><code># portmaster -Da</code></p>
+<p>To update your packages in the future:</p>
+<p><code># portsnap fetch update</code></p>
+<p><code># pkg_version -l &#39;&gt;&#39;</code></p>
+<p><code># less /usr/ports/UPDATING</code></p>
+<p><code># portmaster -Da</code></p>
+<p><code>portmaster</code> can also remove stale distfiles with the <code>--clean-distfiles</code> option. To clear old distfiles for <em>all</em> ports and automatically confirm their deletion, use the <code>-t</code> and <code>-y</code> flags respectively, i.e.,:</p>
+<p><code># portmaster -t -y --clean-distfiles</code></p>
+<p></p><p>I perform the following set of commands when a significant error gets introduced into the ports tree:</p>
+<p><code># portmaster -dys --clean-distfiles</code></p>
+<p><code># portmaster -vy --check-depends</code></p>
+<p>Also, if I need to rebuild a specific port and all of its dependencies, I use:</p>
+<p><code>#  portmaster -fR www/firefox</code></p>
 
-        
-          <p class="article-more-link">
-            <a href="/2011/09/25/manage-freebsd-ports/#more">Read More</a>
-          </p>
-        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/09/25/manage-freebsd-ports/" data-id="2subrolea132z12i" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/09/25/manage-freebsd-ports/" data-id="0ck46v1i0pbpixqj" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/09/25/manage-freebsd-ports/#disqus_thread" class="article-comment-link">Comments</a>
       

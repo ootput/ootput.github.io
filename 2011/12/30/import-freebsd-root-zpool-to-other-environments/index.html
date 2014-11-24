@@ -108,8 +108,6 @@ ga('send', 'pageview');
         <p><img src="/images/52e65052e0456f5c1dfa0b942418dcd32ba51cad.png?w=150" alt="" title="zfs-linux"></p>
 <p>While testing various memory disk filesystems in FreeBSD, I intelligently made changes to <code>/etc/fstab</code> that pointed to non-existent mountpoints (<code>zroot/usr/home</code> did not exist until later in the boot process - and the system refused to boot into FreeBSD due to mounting errors.)</p>
 <p>To remedy this, I booted into my Ubuntu Oneiric installation, which fortunately supported native ZFS (follow <a href="https://wiki.ubuntu.com/ZFS/" target="_blank" rel="external">this</a> guide). Using the following commands, I was able to mount my root partition zpool - <code>zroot</code> - to make the necessary adjustments to <code>/etc/fstab</code>.</p>
-<a id="more"></a>
-
 <p>In Ubuntu, as root, list the available zpool imports with:<br><code># zpool import</code></p>
 <p>This will reveal all existing zpools found on all disk drives. Check to see if the zpool can be properly imported by reading the <code>state</code>, <code>status</code>, and <code>action</code> descriptions of the zpool.</p>
 <p>Continuing on, create a temporary mountpoint for the zpool:<br><code># mkdir -p /mnt/zpool_temp</code></p>
@@ -126,7 +124,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/12/30/import-freebsd-root-zpool-to-other-environments/" data-id="lyshpc8vctsynlb2" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/12/30/import-freebsd-root-zpool-to-other-environments/" data-id="45iwsudjo3yvx5ng" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/12/30/import-freebsd-root-zpool-to-other-environments/#disqus_thread" class="article-comment-link">Comments</a>
       

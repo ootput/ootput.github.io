@@ -108,16 +108,41 @@ ga('send', 'pageview');
       
         <p><img src="/images/11394d99807586de0dd5fff417137b8b4f170dd6.png?w=150" alt="" title="sabnzbd_and_sickbeard"></p>
 <p>For my own archives, I have reproduced installation instructions for SABnzbd and Sickbeard on FreeBSD from <em>Syah</em> of the FreeBSD forums (titled: FreeBSD +Sabnzbd/Sickbeard/CouchPotato):</p>
+<blockquote>
+<p>1. install sabnzbd+ from ports.</p>
+<p><code># cd /usr/ports/news/sabnzbdplus; make install clean</code></p>
+<p>2) install some dependencies if they are not already present on your system. Needed to run &amp; acquire python scripts (Sick Beard, Couch Potato, Headphones)</p>
+<p>Python</p>
+<p><code># cd /usr/ports/lang/python; make install clean</code></p>
+<p>Cheetah</p>
+<p><code># cd /usr/ports/devel/py-cheetah; make install clean</code></p>
+<p>Git</p>
+<p><code># cd /usr/ports/devel/git; make install clean</code></p>
+<p>3. Fetch most recent builds of the three tools</p>
+<p>Sick Beard</p>
+<p><code># cd /usr/local ; git clone git://github.com/midgetspy/Sick-Beard.git sickbeard</code></p>
+<p>4. Configure auto-start for python scripts and sabnzbd+</p>
+<p>Sick Beard</p>
+<p><code># cp /usr/local/sickbeard/init.freebsd /usr/local/etc/rc.d/sickbeard</code></p>
+<p>Add the following to /etc/rc.conf:</p>
+<p>`</p>
+<p>sabnzbd_enable=”YES”</p>
+<p>sickbeard_enable=”YES”</p>
+<p>`</p>
+<p>5. configure all the tools to play nice together.</p>
+<p>Totally beyond the scope of a quick &amp; dirty update. You should read the installation instructions and refer to the individual websites for each of these projects to fully leverage this tool set.</p>
+<p>Hopefully this gets you a bit further towards your goal.<br>To keep track of upstream changes to SickBeard:<br><code># cd /usr/local/sickbeard &amp;&amp; git pull</code></p>
+</blockquote>
+<p>A few notes:</p>
+<ul>
+<li><del datetime="2012-12-01T08:39:24+00:00">Step 4. will fail as SickBeard currently only comes with an Ubuntu startup script. Hatchling, from the SickBeard Forums (A FreeBSD rc.d script), kindly published a working copy of a FreeBSD rc script that is available <a href="http://dl.dropbox.com/u/5830692/sickbeard.txt" target="_blank" rel="external">here</a> (and duplicated <a href="https://gist.github.com/1610595" target="_blank" rel="external">here</a>.)</del><br>It appears that an init script for FreeBSD is now provided with the latest git pull - unfortunately, it’s not perfect, and needs to be modified for SickBeard to shut down properly.<figure class="highlight diff"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">diff --git a/init.freebsd b/init.freebsd</div><div class="line">index 8d9ba4b..3f65b31 100755</div><div class="line"><span class="header">--- a/init.freebsd</span></div><div class="line"><span class="header">+++ b/init.freebsd</span></div><div class="line">@@ -69,7 +69,7 @@ verify_sickbeard_pid() {</div><div class="line"> sickbeard_stop() {</div><div class="line">     echo "Stopping $name"</div><div class="line">     verify_sickbeard_pid</div><div class="line"><span class="deletion">-    ${WGET} -O - -q --user=${SBUSR} --password=${SBPWD} "http://${HOST}:${PORT}/home/shutdown/" &amp;gt;/dev/null</span></div><div class="line"><span class="addition">+    ${WGET} -O - -q --user=${SBUSR} --password=${SBPWD} "http://${HOST}:${PORT}/home/shutdown/?pid=${pid}" &amp;gt;/dev/null</span></div><div class="line">     if [ -n "${pid}" ]; then</div><div class="line">       wait_for_pids ${pid}</div><div class="line">       echo "Stopped"</div></pre></td></tr></table></figure>
+</li>
+</ul>
 
-        
-          <p class="article-more-link">
-            <a href="/2011/12/26/sabnzbd-and-sickbeard-on-freebsd/#more">Read More</a>
-          </p>
-        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/12/26/sabnzbd-and-sickbeard-on-freebsd/" data-id="suikzdg16hcnj4ob" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/12/26/sabnzbd-and-sickbeard-on-freebsd/" data-id="htt105yhjdt9cc76" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/12/26/sabnzbd-and-sickbeard-on-freebsd/#disqus_thread" class="article-comment-link">Comments</a>
       
