@@ -559,7 +559,7 @@ ga('send', 'pageview');
 <p>To install the packages, do:<br>`</p>
 <h1 id="make_PATCH=”001”_install`">make PATCH=”001” install`</h1>
 <p>I prefer to use the following script (documented <a href="http://openbsdbinpatch.sourceforge.net/#installation" target="_blank" rel="external">here</a>) to install packages:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="shebang">#!/bin/sh</span></div><div class="line">tar xzpf &amp;quot;<span class="variable">$1</span>&amp;quot; -C /</div><div class="line">mkdir -p /var/db/patches/$(basename &amp;quot;<span class="variable">$1</span>&amp;quot; .tgz)</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="shebang">#!/bin/sh</span></div><div class="line">tar xzpf <span class="string">"<span class="variable">$1</span>"</span> -C /</div><div class="line">mkdir -p /var/db/patches/$(basename <span class="string">"<span class="variable">$1</span>"</span> .tgz)</div></pre></td></tr></table></figure>
 
 
 <p>.. or to query previously installed packages:`</p>
