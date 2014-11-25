@@ -106,7 +106,7 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/images/52e65052e0456f5c1dfa0b942418dcd32ba51cad.png?w=150" alt="" title="zfs-linux"></p>
+        <p><img src="/images/52e65052e0456f5c1dfa0b942418dcd32ba51cad.png" class="img-thumbnail"></p>
 <p>While testing various memory disk filesystems in FreeBSD, I intelligently made changes to <code>/etc/fstab</code> that pointed to non-existent mountpoints (<code>zroot/usr/home</code> did not exist until later in the boot process - and the system refused to boot into FreeBSD due to mounting errors.)</p>
 <p>To remedy this, I booted into my Ubuntu Oneiric installation, which fortunately supported native ZFS (follow <a href="https://wiki.ubuntu.com/ZFS/" target="_blank" rel="external">this</a> guide). Using the following commands, I was able to mount my root partition zpool - <code>zroot</code> - to make the necessary adjustments to <code>/etc/fstab</code>.</p>
 <p>In Ubuntu, as root, list the available zpool imports with:<br><code># zpool import</code></p>

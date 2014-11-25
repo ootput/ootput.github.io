@@ -2,6 +2,56 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://ootput.github.io/2011/10/10/nvidia-in-freebsd-8/</loc>
+    <lastmod>2014-11-25T20:37:26.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ootput.github.io/2011/12/26/sabnzbd-and-sickbeard-on-freebsd/</loc>
+    <lastmod>2014-11-25T20:36:43.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ootput.github.io/2011/12/30/move-chromium-cache-to-mfs-memory-disk-on-freebsd/</loc>
+    <lastmod>2014-11-25T20:35:59.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ootput.github.io/2011/12/30/import-freebsd-root-zpool-to-other-environments/</loc>
+    <lastmod>2014-11-25T20:35:11.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ootput.github.io/2011/12/30/rebuild-freebsd-ports/</loc>
+    <lastmod>2014-11-25T20:34:26.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ootput.github.io/2012/03/03/disable-mouse-acceleration-in-xorg/</loc>
+    <lastmod>2014-11-25T20:33:41.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ootput.github.io/2012/05/30/disable-ms-outlook-junk-mail-filters/</loc>
+    <lastmod>2014-11-25T20:32:52.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ootput.github.io/2012/06/01/future-of-ootput-burst-in-doubt/</loc>
+    <lastmod>2014-11-25T20:31:59.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ootput.github.io/2012/06/07/new-blog-host-adopted/</loc>
+    <lastmod>2014-11-25T20:31:21.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ootput.github.io/2012/06/08/code-and-gists-in-wordpress/</loc>
+    <lastmod>2014-11-25T20:30:25.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://ootput.github.io/2012/06/18/ntfs-write-in-freebsd/</loc>
     <lastmod>2014-11-25T20:11:40.000Z</lastmod>
   </url>
@@ -52,12 +102,7 @@
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2012/06/08/code-and-gists-in-wordpress/</loc>
-    <lastmod>2014-11-25T05:31:54.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://ootput.github.io/2010/04/06/farewell-nanoblogger/</loc>
+    <loc>http://ootput.github.io/2010/04/04/thoughts-on-chyrp/</loc>
     <lastmod>2014-11-25T05:31:13.000Z</lastmod>
   </url>
   
@@ -67,17 +112,12 @@
   </url>
   
   <url>
+    <loc>http://ootput.github.io/2010/04/06/farewell-nanoblogger/</loc>
+    <lastmod>2014-11-25T05:31:13.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://ootput.github.io/2011/10/08/on-chyrps-revival/</loc>
-    <lastmod>2014-11-25T05:31:13.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://ootput.github.io/2012/06/07/new-blog-host-adopted/</loc>
-    <lastmod>2014-11-25T05:31:13.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://ootput.github.io/2010/04/04/thoughts-on-chyrp/</loc>
     <lastmod>2014-11-25T05:31:13.000Z</lastmod>
   </url>
   
@@ -92,22 +132,22 @@
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2010/06/24/code-in-habari/</loc>
-    <lastmod>2014-11-25T03:11:11.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://ootput.github.io/2010/04/02/binary-patches-for-openbsd-46/</loc>
     <lastmod>2014-11-25T03:11:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2011/09/25/clean-freebsd-ports/</loc>
-    <lastmod>2014-11-25T03:10:55.000Z</lastmod>
+    <loc>http://ootput.github.io/2010/06/24/code-in-habari/</loc>
+    <lastmod>2014-11-25T03:11:11.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://ootput.github.io/2011/09/25/tweak-samba-performance-in-freebsd/</loc>
+    <lastmod>2014-11-25T03:10:55.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ootput.github.io/2011/09/25/clean-freebsd-ports/</loc>
     <lastmod>2014-11-25T03:10:55.000Z</lastmod>
   </url>
   
@@ -152,43 +192,8 @@
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2011/12/26/sabnzbd-and-sickbeard-on-freebsd/</loc>
-    <lastmod>2014-11-25T03:06:41.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://ootput.github.io/2011/12/30/move-chromium-cache-to-mfs-memory-disk-on-freebsd/</loc>
-    <lastmod>2014-11-25T03:05:39.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://ootput.github.io/2012/07/23/nes-nostalgia/</loc>
     <lastmod>2014-11-24T23:18:35.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://ootput.github.io/2012/06/01/future-of-ootput-burst-in-doubt/</loc>
-    <lastmod>2014-11-24T23:17:53.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://ootput.github.io/2012/05/30/disable-ms-outlook-junk-mail-filters/</loc>
-    <lastmod>2014-11-24T23:17:39.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://ootput.github.io/2012/03/03/disable-mouse-acceleration-in-xorg/</loc>
-    <lastmod>2014-11-24T23:17:29.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://ootput.github.io/2011/12/30/rebuild-freebsd-ports/</loc>
-    <lastmod>2014-11-24T23:17:14.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://ootput.github.io/2011/12/30/import-freebsd-root-zpool-to-other-environments/</loc>
-    <lastmod>2014-11-24T23:15:27.000Z</lastmod>
   </url>
   
   <url>
@@ -199,11 +204,6 @@
   <url>
     <loc>http://ootput.github.io/2011/12/25/flash-and-java-for-google-chromium-in-freebsd-8/</loc>
     <lastmod>2014-11-24T23:14:41.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://ootput.github.io/2011/10/10/nvidia-in-freebsd-8/</loc>
-    <lastmod>2014-11-24T23:14:28.000Z</lastmod>
   </url>
   
   <url>

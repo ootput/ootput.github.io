@@ -402,7 +402,7 @@ ad4: 286168MB <wdc wd3000hlfs-01g6u4="" 04.04v06=""> at ata2-master
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/images/ab5e348a39a3eca691b0bea218ecb9a4a973d3c3.png?w=150" alt="" title="Freebsd-logo"></p>
+        <p><img src="/images/ab5e348a39a3eca691b0bea218ecb9a4a973d3c3.png" class="img-thumbnail"></p>
 <p>To rebuild a specific FreeBSD port and the ports that it depends on, for example, with <code>pydf</code>, do:</p>
 <p><code># portmaster -fR sysutils/pydf</code></p>
 <p>To rebuild all install FreeBSD ports, it’s important to firstly read <code>/usr/ports/UPDATING</code> for any update advisories.</p>
@@ -469,7 +469,7 @@ ad4: 286168MB <wdc wd3000hlfs-01g6u4="" 04.04v06=""> at ata2-master
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/images/52e65052e0456f5c1dfa0b942418dcd32ba51cad.png?w=150" alt="" title="zfs-linux"></p>
+        <p><img src="/images/52e65052e0456f5c1dfa0b942418dcd32ba51cad.png" class="img-thumbnail"></p>
 <p>While testing various memory disk filesystems in FreeBSD, I intelligently made changes to <code>/etc/fstab</code> that pointed to non-existent mountpoints (<code>zroot/usr/home</code> did not exist until later in the boot process - and the system refused to boot into FreeBSD due to mounting errors.)</p>
 <p>To remedy this, I booted into my Ubuntu Oneiric installation, which fortunately supported native ZFS (follow <a href="https://wiki.ubuntu.com/ZFS/" target="_blank" rel="external">this</a> guide). Using the following commands, I was able to mount my root partition zpool - <code>zroot</code> - to make the necessary adjustments to <code>/etc/fstab</code>.</p>
 <p>In Ubuntu, as root, list the available zpool imports with:<br><code># zpool import</code></p>
@@ -528,7 +528,7 @@ ad4: 286168MB <wdc wd3000hlfs-01g6u4="" 04.04v06=""> at ata2-master
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/images/385151d889f7774ba8d254cb485335a9e22139bb.png?w=76" alt="" title="chromium"></p>
+        <p><img src="/images/385151d889f7774ba8d254cb485335a9e22139bb.png" class="img-thumbnail"></p>
 <p>It is possible to use FreeBSD’s MFS Memory Disk to speed up access times of cached web objects.</p>
 <p>From <code>md(4)</code>:</p>
 <blockquote>
