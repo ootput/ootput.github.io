@@ -955,7 +955,9 @@ a.article-title:hover {
   margin-right: 20px;
   margin-top: 12px;
   float: left;
-  clear: left;
+}
+.img-thumbnail clear: left {
+  padding-right: 8px;
 }
 .img-code {
   max-width: 640px;
