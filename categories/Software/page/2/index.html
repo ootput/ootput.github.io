@@ -223,7 +223,7 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/images/e16b2fc9fe80c58e1da9441a5ad675bcb2953fcf.png?w=103" alt="apple"></p>
+        <p><img src="/images/e16b2fc9fe80c58e1da9441a5ad675bcb2953fcf.png" class="img-thumbnail"></p>
 <p>There are currently 3 different iPhones and 2 different iPads in my household that need updating - from iOS versions 3.x, 4.x, and 5.x. In order to make the transition to iOS version 6.0.1 (current), I first have to back up each device via iTunes. Unfortunately, my meagre 60GB SSD system drive will not suffice. I have decided to use <a href="http://support.microsoft.com/kb/205524" target="_blank" rel="external">NTFS’ <code>junction</code> function</a> to link directories on separate hard drives. I had to move <code>%APPDATA%\Apple Computer</code> from my system drive to a separate <code>D:\</code>, using cmd.exe:</p>
 <p><code>move &quot;%APPDATA%\Apple Computer&quot; D:\</code></p>
 <p>then issue the following command in cmd.exe (as admin):</p>
