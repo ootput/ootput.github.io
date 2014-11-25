@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://ootput.github.io/2013/03/26/address-merged-ports/</loc>
+    <lastmod>2014-11-25T20:05:54.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://ootput.github.io/2013/10/20/reset-audio-on-osx/</loc>
     <lastmod>2014-11-25T20:03:12.000Z</lastmod>
   </url>
@@ -37,12 +42,12 @@
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2011/10/08/on-chyrps-revival/</loc>
+    <loc>http://ootput.github.io/2012/06/07/new-blog-host-adopted/</loc>
     <lastmod>2014-11-25T05:31:13.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2011/09/25/ubuntu-oneiric-ocelot-installation/</loc>
+    <loc>http://ootput.github.io/2011/10/08/on-chyrps-revival/</loc>
     <lastmod>2014-11-25T05:31:13.000Z</lastmod>
   </url>
   
@@ -52,12 +57,12 @@
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2010/04/06/farewell-nanoblogger/</loc>
+    <loc>http://ootput.github.io/2011/09/25/ubuntu-oneiric-ocelot-installation/</loc>
     <lastmod>2014-11-25T05:31:13.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2012/06/07/new-blog-host-adopted/</loc>
+    <loc>http://ootput.github.io/2010/04/06/farewell-nanoblogger/</loc>
     <lastmod>2014-11-25T05:31:13.000Z</lastmod>
   </url>
   
@@ -77,18 +82,13 @@
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2010/06/24/code-in-habari/</loc>
-    <lastmod>2014-11-25T03:11:11.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://ootput.github.io/2010/04/02/binary-patches-for-openbsd-46/</loc>
     <lastmod>2014-11-25T03:11:11.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2011/09/25/tweak-samba-performance-in-freebsd/</loc>
-    <lastmod>2014-11-25T03:10:55.000Z</lastmod>
+    <loc>http://ootput.github.io/2010/06/24/code-in-habari/</loc>
+    <lastmod>2014-11-25T03:11:11.000Z</lastmod>
   </url>
   
   <url>
@@ -97,8 +97,8 @@
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2010/04/11/logitech-g5-in-fedora-12/</loc>
-    <lastmod>2014-11-25T03:10:54.000Z</lastmod>
+    <loc>http://ootput.github.io/2011/09/25/tweak-samba-performance-in-freebsd/</loc>
+    <lastmod>2014-11-25T03:10:55.000Z</lastmod>
   </url>
   
   <url>
@@ -107,7 +107,12 @@
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2010/04/08/upload-github-gists/</loc>
+    <loc>http://ootput.github.io/2010/04/11/logitech-g5-in-fedora-12/</loc>
+    <lastmod>2014-11-25T03:10:54.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ootput.github.io/2012/06/18/ntfs-write-in-freebsd/</loc>
     <lastmod>2014-11-25T03:10:41.000Z</lastmod>
   </url>
   
@@ -117,22 +122,17 @@
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2013/03/26/address-merged-ports/</loc>
+    <loc>http://ootput.github.io/2010/04/08/upload-github-gists/</loc>
     <lastmod>2014-11-25T03:10:41.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://ootput.github.io/2012/06/18/ntfs-write-in-freebsd/</loc>
-    <lastmod>2014-11-25T03:10:41.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://ootput.github.io/2010/04/04/backup-of-chyrp/</loc>
-    <lastmod>2014-11-25T03:10:23.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://ootput.github.io/2014/06/14/qos-on-vpn-client-tunnel-in-tomato/</loc>
+    <lastmod>2014-11-25T03:10:23.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ootput.github.io/2010/04/04/backup-of-chyrp/</loc>
     <lastmod>2014-11-25T03:10:23.000Z</lastmod>
   </url>
   
@@ -357,12 +357,12 @@
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2009/11/15/dual-card-alsa-configuration/</loc>
+    <loc>http://ootput.github.io/2010/02/04/erc-with-ssl/</loc>
     <lastmod>2014-11-24T10:32:09.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2010/02/04/erc-with-ssl/</loc>
+    <loc>http://ootput.github.io/2009/11/15/dual-card-alsa-configuration/</loc>
     <lastmod>2014-11-24T10:32:09.000Z</lastmod>
   </url>
   
@@ -377,22 +377,7 @@
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2010/03/18/dumprestore-data-between-partitions/</loc>
-    <lastmod>2014-11-24T10:18:02.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://ootput.github.io/2011/09/25/freebsd-as-nas/</loc>
-    <lastmod>2014-11-24T10:18:02.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://ootput.github.io/2007/02/11/hello-digital-world/</loc>
-    <lastmod>2014-11-24T10:18:02.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://ootput.github.io/2010/04/06/code-in-chyrp/</loc>
     <lastmod>2014-11-24T10:18:02.000Z</lastmod>
   </url>
   
@@ -402,12 +387,27 @@
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2009/11/25/freebsd-8-0-on-serve/</loc>
+    <loc>http://ootput.github.io/2010/04/06/code-in-chyrp/</loc>
+    <lastmod>2014-11-24T10:18:02.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ootput.github.io/2009/11/30/on-openbsd/</loc>
     <lastmod>2014-11-24T10:18:02.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://ootput.github.io/2010/03/26/dns-o-matic-server-config-for-dd-wrt/</loc>
+    <lastmod>2014-11-24T10:18:02.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ootput.github.io/2010/06/10/lovely-flower/</loc>
+    <lastmod>2014-11-24T10:18:02.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ootput.github.io/2010/03/28/colored-ls-output-in-openbsd/</loc>
     <lastmod>2014-11-24T10:18:02.000Z</lastmod>
   </url>
   
@@ -422,12 +422,7 @@
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2010/03/28/colored-ls-output-in-openbsd/</loc>
-    <lastmod>2014-11-24T10:18:02.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://ootput.github.io/2013/05/24/sydney-opera-house/</loc>
+    <loc>http://ootput.github.io/2010/03/28/phpmysql-based-solution-for-blog/</loc>
     <lastmod>2014-11-24T10:18:02.000Z</lastmod>
   </url>
   
@@ -437,12 +432,12 @@
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2013/05/24/taronga-zoo/</loc>
+    <loc>http://ootput.github.io/2013/05/24/sydney-opera-house/</loc>
     <lastmod>2014-11-24T10:18:02.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2010/03/28/phpmysql-based-solution-for-blog/</loc>
+    <loc>http://ootput.github.io/2013/05/24/taronga-zoo/</loc>
     <lastmod>2014-11-24T10:18:02.000Z</lastmod>
   </url>
   
@@ -457,12 +452,7 @@
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2009/11/30/on-openbsd/</loc>
-    <lastmod>2014-11-24T10:18:02.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://ootput.github.io/2013/08/02/copy-and-paste-in-tmux-with-mouse/</loc>
+    <loc>http://ootput.github.io/2009/11/01/debian-5-on-desktop/</loc>
     <lastmod>2014-11-24T10:18:02.000Z</lastmod>
   </url>
   
@@ -472,7 +462,7 @@
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2010/06/05/grub-config-in-fedora-13/</loc>
+    <loc>http://ootput.github.io/2013/08/02/copy-and-paste-in-tmux-with-mouse/</loc>
     <lastmod>2014-11-24T10:18:02.000Z</lastmod>
   </url>
   
@@ -487,17 +477,7 @@
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2014/11/18/focus-follows-mouse-and-scroll-any-window/</loc>
-    <lastmod>2014-11-24T10:18:02.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://ootput.github.io/2009/11/01/debian-5-on-desktop/</loc>
-    <lastmod>2014-11-24T10:18:02.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://ootput.github.io/2010/06/10/lovely-flower/</loc>
+    <loc>http://ootput.github.io/2010/03/18/dumprestore-data-between-partitions/</loc>
     <lastmod>2014-11-24T10:18:02.000Z</lastmod>
   </url>
   
@@ -512,7 +492,27 @@
   </url>
   
   <url>
+    <loc>http://ootput.github.io/2014/11/18/focus-follows-mouse-and-scroll-any-window/</loc>
+    <lastmod>2014-11-24T10:18:02.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://ootput.github.io/2010/04/04/themes-in-chyrp/</loc>
+    <lastmod>2014-11-24T10:18:02.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ootput.github.io/2007/02/11/hello-digital-world/</loc>
+    <lastmod>2014-11-24T10:18:02.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ootput.github.io/2010/06/05/grub-config-in-fedora-13/</loc>
+    <lastmod>2014-11-24T10:18:02.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ootput.github.io/2009/11/25/freebsd-8-0-on-serve/</loc>
     <lastmod>2014-11-24T10:18:02.000Z</lastmod>
   </url>
   
