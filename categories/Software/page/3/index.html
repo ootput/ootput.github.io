@@ -494,23 +494,14 @@ reboot</code></p>
 <p>1. install sabnzbd+ from ports.</p>
 <p><code># cd /usr/ports/news/sabnzbdplus; make install clean</code></p>
 <p>2) install some dependencies if they are not already present on your system. Needed to run &amp; acquire python scripts (Sick Beard, Couch Potato, Headphones)</p>
-<p>Python</p>
-<p><code># cd /usr/ports/lang/python; make install clean</code></p>
-<p>Cheetah</p>
-<p><code># cd /usr/ports/devel/py-cheetah; make install clean</code></p>
-<p>Git</p>
-<p><code># cd /usr/ports/devel/git; make install clean</code></p>
+<p>Python <code># cd /usr/ports/lang/python; make install clean</code></p>
+<p>Cheetah <code># cd /usr/ports/devel/py-cheetah; make install clean</code></p>
+<p>Git <code># cd /usr/ports/devel/git; make install clean</code></p>
 <p>3. Fetch most recent builds of the three tools</p>
-<p>Sick Beard</p>
-<p><code># cd /usr/local ; git clone git://github.com/midgetspy/Sick-Beard.git sickbeard</code></p>
+<p>Sick Beard <code># cd /usr/local ; git clone git://github.com/midgetspy/Sick-Beard.git sickbeard</code></p>
 <p>4. Configure auto-start for python scripts and sabnzbd+</p>
-<p>Sick Beard</p>
-<p><code># cp /usr/local/sickbeard/init.freebsd /usr/local/etc/rc.d/sickbeard</code></p>
-<p>Add the following to /etc/rc.conf:</p>
-<p>`</p>
-<p>sabnzbd_enable=”YES”</p>
-<p>sickbeard_enable=”YES”</p>
-<p>`</p>
+<p>Sick Beard <code># cp /usr/local/sickbeard/init.freebsd /usr/local/etc/rc.d/sickbeard</code></p>
+<p>Add the following to /etc/rc.conf:<br><code>sabnzbd_enable=&quot;YES&quot;</code><br><code>sickbeard_enable=&quot;YES&quot;</code></p>
 <p>5. configure all the tools to play nice together.</p>
 <p>Totally beyond the scope of a quick &amp; dirty update. You should read the installation instructions and refer to the individual websites for each of these projects to fully leverage this tool set.</p>
 <p>Hopefully this gets you a bit further towards your goal.<br>To keep track of upstream changes to SickBeard:<br><code># cd /usr/local/sickbeard &amp;&amp; git pull</code></p>
