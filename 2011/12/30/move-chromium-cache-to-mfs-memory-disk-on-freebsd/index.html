@@ -8,10 +8,7 @@
   <meta name="description" content="It is possible to use FreeBSD’s MFS Memory Disk to speed up access times of cached web objects.
 From md(4):
 
-The md driver provides support for four kinds of memory backed virtual disks:
-…
-swap:
-   B">
+The md driver provides support for four kinds of memory backed virtual disks:…swap:   Back">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Move Chromium's Cache to MFS Memory Disk on FreeBSD">
 <meta property="og:url" content="http://ootput.github.io/2011/12/30/move-chromium-cache-to-mfs-memory-disk-on-freebsd/">
@@ -19,20 +16,14 @@ swap:
 <meta property="og:description" content="It is possible to use FreeBSD’s MFS Memory Disk to speed up access times of cached web objects.
 From md(4):
 
-The md driver provides support for four kinds of memory backed virtual disks:
-…
-swap:
-   B">
+The md driver provides support for four kinds of memory backed virtual disks:…swap:   Back">
 <meta property="og:image" content="/images/385151d889f7774ba8d254cb485335a9e22139bb.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Move Chromium's Cache to MFS Memory Disk on FreeBSD">
 <meta name="twitter:description" content="It is possible to use FreeBSD’s MFS Memory Disk to speed up access times of cached web objects.
 From md(4):
 
-The md driver provides support for four kinds of memory backed virtual disks:
-…
-swap:
-   B">
+The md driver provides support for four kinds of memory backed virtual disks:…swap:   Back">
 <meta name="twitter:creator" content="@513256254">
 <link rel="publisher" href="110511550415133050000">
 
@@ -127,10 +118,7 @@ ga('send', 'pageview');
 <p>It is possible to use FreeBSD’s MFS Memory Disk to speed up access times of cached web objects.</p>
 <p>From <code>md(4)</code>:</p>
 <blockquote>
-<p>The md driver provides support for four kinds of memory backed virtual disks:</p>
-<p>…</p>
-<p>swap:</p>
-<p>   Backing store is allocated from buffer memory.  Pages get pushed out to the swap when the system is under memory pressure, otherwise they stay in the operating memory. Using swap backing is generally preferable over malloc backing.</p>
+<p>The md driver provides support for four kinds of memory backed virtual disks:<br>…<br>swap:<br>   Backing store is allocated from buffer memory.  Pages get pushed out to the swap when the system is under memory pressure, otherwise they stay in the operating memory. Using swap backing is generally preferable over malloc backing.</p>
 </blockquote>
 <p>Chromium’s cache is at <code>$HOME/.cache/chromium</code>, and so, my <code>/etc/fstab</code> contains:</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"># <span class="number">256</span>M mfs <span class="keyword">for</span> google chrome</div><div class="line"><span class="regexp">/dev/m</span>d0 <span class="regexp">/home/</span>ootput<span class="regexp">/.cache/</span>chromium mfs rw,-s256m,-wootput:ootput,noauto <span class="number">2</span> <span class="number">0</span></div></pre></td></tr></table></figure>

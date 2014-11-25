@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://ootput.github.io/2011/12/30/move-chromium-cache-to-mfs-memory-disk-on-freebsd/</loc>
+    <lastmod>2014-11-25T20:39:36.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://ootput.github.io/2011/10/10/nvidia-in-freebsd-8/</loc>
     <lastmod>2014-11-25T20:37:26.000Z</lastmod>
   </url>
@@ -9,11 +14,6 @@
   <url>
     <loc>http://ootput.github.io/2011/12/26/sabnzbd-and-sickbeard-on-freebsd/</loc>
     <lastmod>2014-11-25T20:36:43.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://ootput.github.io/2011/12/30/move-chromium-cache-to-mfs-memory-disk-on-freebsd/</loc>
-    <lastmod>2014-11-25T20:35:59.000Z</lastmod>
   </url>
   
   <url>
