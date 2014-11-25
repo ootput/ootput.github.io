@@ -952,9 +952,8 @@ a.article-title:hover {
   max-width: 240px;
   max-height: 96px;
   display: block;
-  margin: 12 0 10px 10px;
-  border: 1px solid #666;
-  padding: 2px;
+  margin: 14 0 24px 24px;
+  padding: 24px;
   float: left;
   clear: left;
 }
