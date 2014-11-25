@@ -125,7 +125,7 @@ ga('send', 'pageview');
 
 
 <p>To restrict the book listing to only show books that are currently being read, in <code>modules/readernaut/readernaut.php</code>:</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">## The actual data</span></div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">books</span><span class="params">(<span class="variable">$limit</span>=<span class="number">10</span>)</span> </span>{</div><div class="line">   <span class="variable">$config</span> = Config::current();</div><div class="line">   <span class="variable">$xml</span> = simplexml_load_string(get_remote(<span class="string">'http://readernaut.com/api/v1/xml/'</span>.<span class="variable">$config</span>-&amp;gt;readernaut_user.<span class="string">'/books/reading/?limit='</span>.<span class="variable">$limit</span>));</div><div class="line">   <span class="keyword">return</span> <span class="variable">$xml</span>-&amp;gt;reader_book;</div><div class="line">}</div></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">## The actual data</span></div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">books</span><span class="params">(<span class="variable">$limit</span>=<span class="number">10</span>)</span> </span>{</div><div class="line">   <span class="variable">$config</span> = Config::current();</div><div class="line">   <span class="variable">$xml</span> = simplexml_load_string(get_remote(<span class="string">'http://readernaut.com/api/v1/xml/'</span>.<span class="variable">$config</span><span class="variable">-&gt;readernaut_user</span>.<span class="string">'/books/reading/?limit='</span>.<span class="variable">$limit</span>));</div><div class="line">   <span class="keyword">return</span> <span class="variable">$xml</span><span class="variable">-&gt;reader_book</span>;</div><div class="line">}</div></pre></td></tr></table></figure>
 
 
 <p>.. essentially changing the path to the reading list from <code>books/</code> to <code>books/reading/</code>.</p>
@@ -133,7 +133,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/04/06/readernaut-on-chyrp/" data-id="3m078nwvpk7fwa5n" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/04/06/readernaut-on-chyrp/" data-id="jbwbc8y25y1gwn84" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/04/06/readernaut-on-chyrp/#disqus_thread" class="article-comment-link">Comments</a>
       

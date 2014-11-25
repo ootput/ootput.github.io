@@ -117,7 +117,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/09/27/sasl-for-weechat/" data-id="umtwjq1ou9taugc4" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/09/27/sasl-for-weechat/" data-id="pnkyzb44wl99w0i7" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/09/27/sasl-for-weechat/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -173,7 +173,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/09/25/update-freebsd-via-binary-patches/" data-id="v4d70os0g2jukumv" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/09/25/update-freebsd-via-binary-patches/" data-id="h62yml980pz99dt9" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/09/25/update-freebsd-via-binary-patches/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -244,7 +244,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/09/25/manage-freebsd-ports/" data-id="uvx9431vl9moibx7" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/09/25/manage-freebsd-ports/" data-id="m0hif4i086k5psdn" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/09/25/manage-freebsd-ports/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -291,18 +291,18 @@ ga('send', 'pageview');
 <pre><code>[select GnuTLS]
 </code></pre><p><code># make install</code></p>
 <p>In WeeChat:</p>
-<p><code>/set weechat.network.gnutls_ca_file &quot;/usr/local/share/certs/ca-root-nss.crt&quot;
-/set irc.server.freenode.addresses &quot;chat.freenode.net/7000&quot;
-/set irc.server.freenode.ssl on
-/set irc.server.freenode.ssl_dhkey_size 1024
-/connect freenode</code></p>
+<p><code>/set weechat.network.gnutls_ca_file &quot;/usr/local/share/certs/ca-root-nss.crt&quot;</code></p>
+<p><code>/set irc.server.freenode.addresses &quot;chat.freenode.net/7000&quot;</code></p>
+<p><code>/set irc.server.freenode.ssl on</code></p>
+<p><code>/set irc.server.freenode.ssl_dhkey_size 1024</code></p>
+<p><code>/connect freenode</code></p>
 <p><em>NB:</em> WeeChat’s support for GnuTLS is rather flaky, with numerous bug reports recently surfacing on the net (<a href="http://securityvulns.com/Zdocument866.html" target="_blank" rel="external">one such example</a>). WeeChat’s <a href="http://www.weechat.org/files/doc/weechat_faq.en.html#irc_ssl_connection" target="_blank" rel="external">FAQ</a> suggests disabling verification of secure connections with:</p>
 <p><code>/set irc.server.freenode.ssl_verify off</code></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/09/25/gnutls-for-weechat/" data-id="rca0fgl4u0o7rmmv" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/09/25/gnutls-for-weechat/" data-id="atvjvnpobnwjrc6c" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/09/25/gnutls-for-weechat/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -352,7 +352,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/09/25/ca-certificates-in-freebsd/" data-id="ewba6rb0hh2ys86l" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/09/25/ca-certificates-in-freebsd/" data-id="04pl7jyqzlcueh9v" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/09/25/ca-certificates-in-freebsd/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -396,12 +396,12 @@ ga('send', 'pageview');
 <p><code># portsclean -C</code></p>
 <p>The <code>portsclean</code> utility is part of the <strong>portupgrade</strong> suite.</p>
 <p>Alternatively, here’s a shell script:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="shebang">#!/bin/sh</span></div><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment"># Search for ports that contain a &amp;quot;work&amp;quot; subdirectory,</span></div><div class="line"><span class="comment"># then go into that port directory and perform a</span></div><div class="line"><span class="comment"># make clean</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> `find /usr/ports -name work -type d`</div><div class="line"><span class="keyword">do</span></div><div class="line"><span class="built_in">cd</span> `<span class="built_in">echo</span> &amp;quot;<span class="variable">$i</span>&amp;quot; | sed <span class="string">'s//[^/]*$///'</span>`</div><div class="line">   make clean</div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="shebang">#!/bin/sh</span></div><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment"># Search for ports that contain a "work" subdirectory,</span></div><div class="line"><span class="comment"># then go into that port directory and perform a</span></div><div class="line"><span class="comment"># make clean</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> `find /usr/ports -name work -type d`</div><div class="line"><span class="keyword">do</span></div><div class="line"><span class="built_in">cd</span> `<span class="built_in">echo</span> <span class="string">"<span class="variable">$i</span>"</span> | sed <span class="string">'s//[^/]*$///'</span>`</div><div class="line">   make clean</div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/09/25/clean-freebsd-ports/" data-id="oxrcgirs7nfnl3o7" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/09/25/clean-freebsd-ports/" data-id="3or92bd7jj6w8s12" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/09/25/clean-freebsd-ports/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -447,7 +447,7 @@ ga('send', 'pageview');
 <p><code># make</code></p>
 <pre><code>[select AIO_SUPPORT]
 </code></pre><p><code># make install clean</code></p>
-<p>In <code>/boot/loader.conf</code>:<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="setting">aio_load=<span class="value">&amp;quot;<span class="keyword">YES</span>&amp;quot;</span></span></div></pre></td></tr></table></figure></p>
+<p>In <code>/boot/loader.conf</code>:<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="variable">aio_load=</span><span class="string">"YES"</span></div></pre></td></tr></table></figure></p>
 <p>In <code>/etc/sysctl.conf</code>:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">## Tweaks for Samba</span></div><div class="line">kern.ipc.maxsockbuf=<span class="number">16777216</span></div><div class="line">kern.ipc.nmbclusters=<span class="number">32768</span></div><div class="line">kern.ipc.somaxconn=<span class="number">32768</span></div><div class="line">kern.maxfiles=<span class="number">65536</span></div><div class="line">kern.maxfilesperproc=<span class="number">32768</span></div><div class="line">kern.maxvnodes=<span class="number">800000</span></div><div class="line">net.inet.tcp.delayed_ack=<span class="number">0</span></div><div class="line">net.inet.tcp.inflight.enable=<span class="number">0</span></div><div class="line">net.inet.tcp.path_mtu_discovery=<span class="number">0</span></div><div class="line">net.inet.tcp.recvbuf_auto=<span class="number">1</span></div><div class="line">net.inet.tcp.recvbuf_inc=<span class="number">524288</span></div><div class="line">net.inet.tcp.recvbuf_max=<span class="number">16777216</span></div><div class="line">net.inet.tcp.recvspace=<span class="number">65536</span></div><div class="line">net.inet.tcp.rfc1323=<span class="number">1</span></div><div class="line">net.inet.tcp.sendbuf_auto=<span class="number">1</span></div><div class="line">net.inet.tcp.sendbuf_inc=<span class="number">524288</span></div><div class="line">net.inet.tcp.sendspace=<span class="number">65536</span></div><div class="line">net.inet.udp.maxdgram=<span class="number">57344</span></div><div class="line">net.inet.udp.recvspace=<span class="number">65536</span></div><div class="line">net.local.stream.recvspace=<span class="number">65536</span></div><div class="line">net.inet.tcp.sendbuf_max=<span class="number">16777216</span></div><div class="line">net.inet.tcp.mssdflt=<span class="number">1460</span></div></pre></td></tr></table></figure>
 
@@ -461,7 +461,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/09/25/tweak-samba-performance-in-freebsd/" data-id="vt59f4uqaqkqs1ox" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/09/25/tweak-samba-performance-in-freebsd/" data-id="oipxtv2wxbebxx07" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/09/25/tweak-samba-performance-in-freebsd/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -934,7 +934,7 @@ WWW: http://www.zsh.org/
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/09/25/freebsd-packages-2/" data-id="gdedm4n5ypg59bk9" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/09/25/freebsd-packages-2/" data-id="fsea1v14reiuhya1" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/09/25/freebsd-packages-2/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -983,7 +983,7 @@ WWW: http://www.zsh.org/
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/09/25/ubuntu-oneiric-ocelot-installation/" data-id="to5bwbvaptze4x49" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/09/25/ubuntu-oneiric-ocelot-installation/" data-id="rodpp0i1whk4m709" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/09/25/ubuntu-oneiric-ocelot-installation/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -1030,7 +1030,7 @@ WWW: http://www.zsh.org/
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/09/25/freebsd-as-nas/" data-id="mq5o2tplcwdj5g8p" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/09/25/freebsd-as-nas/" data-id="j8ayews3t226nmxr" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/09/25/freebsd-as-nas/#disqus_thread" class="article-comment-link">Comments</a>
       

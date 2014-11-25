@@ -126,15 +126,15 @@ ga('send', 'pageview');
 <p>Provided you know on which hard-disk (based on make/model/capacity of the device) your NTFS partition resides, you can figure out it’s exact device node in FreeBSD:</p>
 <p><code># egrep &#39;ad[0-9]|cd[0-9]|da[0-9]&#39; /var/run/dmesg.boot</code></p>
 <pre>
-ad0: 35303MB &lt;WDC WD360GD-00FNA0 35.06K35&gt; at ata0-master
-ad2: 57240MB &lt;Mushkin MKNSSDCL60GB-DX 310A13F0&gt; at ata1-master
-ad4: 286168MB &lt;WDC WD3000HLFS-01G6U4 04.04V06&gt; at ata2-master
-</pre>
+ad0: 35303MB <wdc wd360gd-00fna0="" 35.06k35=""> at ata0-master
+ad2: 57240MB <mushkin mknssdcl60gb-dx="" 310a13f0=""> at ata1-master
+ad4: 286168MB <wdc wd3000hlfs-01g6u4="" 04.04v06=""> at ata2-master
+</wdc></mushkin></wdc></pre>
 
 <p>My NTFS partition resides on a 300GB WD Velociraptor drive, <code>ad4</code>. To confirm that <code>/dev/ad4</code> does indeed contain the NTFS partition, do:</p>
 <p><code># gpart show -p ad4</code></p>
 <pre>
-=&gt;        34  586072064    ad4 GPT  (286G)
+=>        34  586072064    ad4 GPT  (286G)
           34  586072064  ad4p1 ntfs (286G)
 </pre>
 
@@ -148,7 +148,7 @@ ad4: 286168MB &lt;WDC WD3000HLFS-01G6U4 04.04V06&gt; at ata2-master
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2012/06/18/ntfs-write-in-freebsd/" data-id="oejagy62scan0xwf" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2012/06/18/ntfs-write-in-freebsd/" data-id="hhbw3n91frz0j02m" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2012/06/18/ntfs-write-in-freebsd/#disqus_thread" class="article-comment-link">Comments</a>
       

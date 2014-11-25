@@ -133,7 +133,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/12/30/rebuild-freebsd-ports/" data-id="t476pwxcxzjblwmo" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/12/30/rebuild-freebsd-ports/" data-id="r4pt3yinq5hr6dwg" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/12/30/rebuild-freebsd-ports/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -192,7 +192,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/12/30/import-freebsd-root-zpool-to-other-environments/" data-id="zq41cnx0fg1bdcnm" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/12/30/import-freebsd-root-zpool-to-other-environments/" data-id="51inl0hyub3ve7oz" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/12/30/import-freebsd-root-zpool-to-other-environments/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -251,7 +251,7 @@ ga('send', 'pageview');
 <p><code>noauto</code> prevents the system from failing to boot properly if the mountpoint does not (yet) exist.</p>
 </blockquote>
 <p>The following additions to <code>/etc/rc.conf</code> were also made:</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="variable">mdconfig_md0=</span>&amp;quot;-t swap -s <span class="number">256</span>m&amp;quot;</div><div class="line"><span class="variable">mdconfig_md0_owner=</span>&amp;quot;ootput:ootput&amp;quot;</div><div class="line"><span class="variable">mdconfig_md0_perms=</span>&amp;quot;<span class="number">1777</span>&amp;quot;</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="variable">mdconfig_md0=</span><span class="string">"-t swap -s 256m"</span></div><div class="line"><span class="variable">mdconfig_md0_owner=</span><span class="string">"ootput:ootput"</span></div><div class="line"><span class="variable">mdconfig_md0_perms=</span><span class="string">"1777"</span></div></pre></td></tr></table></figure>
 
 <p>which lists arguments to <code>mdconfig(8)</code> for device <code>md0</code>.</p>
 <p>At mininum the <code>-t type</code> must be specified and either a <code>-s size</code> for <em>malloc</em> or <em>swap</em> backed <code>md(4)</code> devices or a <code>-f file</code> for <em>vnode</em> backed <code>md(4)</code> devices.</p>
@@ -259,19 +259,19 @@ ga('send', 'pageview');
 <p>To test the changes made, as root:</p>
 <p><code># /etc/rc.d/mdconfig restart</code></p>
 <p>On to the <code>$USER/bin/pack_chrome</code> executable script that will both mount the <code>md</code> device, and/or sync contents from the cache at RAM to a backup cache on the HDD:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="shebang">#!/usr/local/bin/bash</span></div><div class="line"></div><div class="line">CACHE=&amp;quot;<span class="variable">$HOME</span>/.cache/chromium&amp;quot;</div><div class="line">BACKUP=&amp;quot;<span class="variable">$CACHE</span>.bak&amp;quot;</div><div class="line"></div><div class="line"><span class="keyword">for</span> DIR <span class="keyword">in</span> <span class="variable">$CACHE</span> <span class="variable">$BACKUP</span>; <span class="keyword">do</span></div><div class="line">   <span class="keyword">if</span> [ ! <span class="operator">-d</span> &amp;quot;<span class="variable">${DIR}</span>&amp;quot; ]; <span class="keyword">then</span></div><div class="line">      mkdir -p <span class="variable">${DIR}</span></div><div class="line">   <span class="keyword">fi</span></div><div class="line"><span class="keyword">done</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> test -z &amp;quot;$(/sbin/mount | grep -F &amp;quot;<span class="variable">$CACHE</span>&amp;quot; )&amp;quot;; <span class="keyword">then</span></div><div class="line">    <span class="built_in">sudo</span> /sbin/mount &amp;quot;<span class="variable">$CACHE</span>&amp;quot;</div><div class="line"><span class="keyword">fi</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> test <span class="operator">-f</span> &amp;quot;<span class="variable">$CACHE</span>/.synced&amp;quot;; <span class="keyword">then</span></div><div class="line">    rsync --exclude <span class="string">'.synced'</span> --exclude <span class="string">'.snap'</span> --delete -avrPx</div><div class="line">        &amp;quot;<span class="variable">$CACHE</span>/&amp;quot; &amp;quot;<span class="variable">$BACKUP</span>&amp;quot;</div><div class="line"><span class="keyword">else</span></div><div class="line">    rsync --delete -avrPx &amp;quot;<span class="variable">$BACKUP</span>/&amp;quot; &amp;quot;<span class="variable">$CACHE</span>&amp;quot;</div><div class="line">    touch &amp;quot;<span class="variable">$CACHE</span>/.synced&amp;quot;</div><div class="line"><span class="keyword">fi</span></div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="shebang">#!/usr/local/bin/bash</span></div><div class="line"></div><div class="line">CACHE=<span class="string">"<span class="variable">$HOME</span>/.cache/chromium"</span></div><div class="line">BACKUP=<span class="string">"<span class="variable">$CACHE</span>.bak"</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> DIR <span class="keyword">in</span> <span class="variable">$CACHE</span> <span class="variable">$BACKUP</span>; <span class="keyword">do</span></div><div class="line">   <span class="keyword">if</span> [ ! <span class="operator">-d</span> <span class="string">"<span class="variable">${DIR}</span>"</span> ]; <span class="keyword">then</span></div><div class="line">      mkdir -p <span class="variable">${DIR}</span></div><div class="line">   <span class="keyword">fi</span></div><div class="line"><span class="keyword">done</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> test -z <span class="string">"<span class="variable">$(/sbin/mount | grep -F "$CACHE" )</span>"</span>; <span class="keyword">then</span></div><div class="line">    <span class="built_in">sudo</span> /sbin/mount <span class="string">"<span class="variable">$CACHE</span>"</span></div><div class="line"><span class="keyword">fi</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> test <span class="operator">-f</span> <span class="string">"<span class="variable">$CACHE</span>/.synced"</span>; <span class="keyword">then</span></div><div class="line">    rsync --exclude <span class="string">'.synced'</span> --exclude <span class="string">'.snap'</span> --delete -avrPx</div><div class="line">        <span class="string">"<span class="variable">$CACHE</span>/"</span> <span class="string">"<span class="variable">$BACKUP</span>"</span></div><div class="line"><span class="keyword">else</span></div><div class="line">    rsync --delete -avrPx <span class="string">"<span class="variable">$BACKUP</span>/"</span> <span class="string">"<span class="variable">$CACHE</span>"</span></div><div class="line">    touch <span class="string">"<span class="variable">$CACHE</span>/.synced"</span></div><div class="line"><span class="keyword">fi</span></div></pre></td></tr></table></figure>
 
 
 <p>The script requires that the <code>$USER</code> is in <code>sudoers(5)</code>, and is able to use the <code>/sbin/mount</code> command.</p>
 <p>Finally, after <code>$ crontab -e</code>:</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">*</span>/30 <span class="keyword">*</span> <span class="keyword">*</span> <span class="keyword">*</span> <span class="keyword">*</span> $HOME/bin/pack_chrome &amp;gt;/dev/null 2&amp;gt;&amp;amp;1</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">*</span>/30 <span class="keyword">*</span> <span class="keyword">*</span> <span class="keyword">*</span> <span class="keyword">*</span> $HOME/bin/pack_chrome &gt;/dev/null 2&gt;&amp;1</div></pre></td></tr></table></figure>
 
 <p>.. and the script gets called every half-hour by <code>cron</code> to automate the syncing process. This also requires that <code>$USER</code> is specifically allowed in <code>/var/cron/allow</code>.</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/12/30/move-chromium-cache-to-mfs-memory-disk-on-freebsd/" data-id="l52fr0youk65vg7x" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/12/30/move-chromium-cache-to-mfs-memory-disk-on-freebsd/" data-id="7lpq4346zv5de28p" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/12/30/move-chromium-cache-to-mfs-memory-disk-on-freebsd/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -334,30 +334,30 @@ ga('send', 'pageview');
 
 <p><code># make installkernel KODIR=/boot/testing KERNCONF=CUSTOM64</code><br><code># exit</code><br><code># nextboot -k testing</code><br><code># shutdown -r now</code></p>
 <p><code># cd /boot</code><br><code># rm -r -f OLD</code><br><code># mv kernel OLD</code><br><code># mv testing kernel</code></p>
-<p><code># adjkerntz -i</code><br><code># rm -rf /etc.old &amp;amp;&amp;amp; cp -Rp /etc /etc.old</code><br><code># mergemaster -p</code><br><code># cd /usr/src</code><br><code># make installworld</code><br><code># mergemaster -iU</code><br><code># make delete-old</code><br><code># shutdown -r now</code></p>
+<p><code># adjkerntz -i</code><br><code># rm -rf /etc.old &amp;&amp; cp -Rp /etc /etc.old</code><br><code># mergemaster -p</code><br><code># cd /usr/src</code><br><code># make installworld</code><br><code># mergemaster -iU</code><br><code># make delete-old</code><br><code># shutdown -r now</code></p>
 <p><em>NB:</em> <code>NO_NIS</code> in <code>/etc/make.conf</code> requires the following changes in <code>/etc/nsswitch.conf</code>:</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="attribute">group</span>: <span class="string">files</span></div><div class="line"><span class="attribute">passwd</span>: <span class="string">files</span></div></pre></td></tr></table></figure>
 
 
 <p>If you’re feeling game, you can try the following commands to save yourself some keystrokes and delays:</p>
-<p><code># csup /root/stable-supfile &amp;amp;&amp;amp;
-rm -r -f /usr/obj &amp;amp;&amp;amp;
-cd /usr/src &amp;amp;&amp;amp;
-make -j5 buildworld &amp;amp;&amp;amp;
-make buildkernel KODIR=/boot/testing KERNCONF=CUSTOM64 &amp;amp;&amp;amp;
-make installkernel KODIR=/boot/testing KERNCONF=CUSTOM64 &amp;amp;&amp;amp;
-cd /boot &amp;amp;&amp;amp;
-rm -r -f OLD &amp;amp;&amp;amp;
-mv kernel OLD &amp;amp;&amp;amp;
-mv testing kernel &amp;amp;&amp;amp;
+<p><code># csup /root/stable-supfile &amp;&amp;
+rm -r -f /usr/obj &amp;&amp;
+cd /usr/src &amp;&amp;
+make -j5 buildworld &amp;&amp;
+make buildkernel KODIR=/boot/testing KERNCONF=CUSTOM64 &amp;&amp;
+make installkernel KODIR=/boot/testing KERNCONF=CUSTOM64 &amp;&amp;
+cd /boot &amp;&amp;
+rm -r -f OLD &amp;&amp;
+mv kernel OLD &amp;&amp;
+mv testing kernel &amp;&amp;
 reboot</code></p>
 <p>Here, you can revert back to the old kernel if you experience boot up problems. Otherwise, continue with:</p>
-<p><code># adjkerntz -i &amp;amp;&amp;amp; rm -rf /etc.old &amp;amp;&amp;amp; cp -Rp /etc /etc.old &amp;amp;&amp;amp; mergemaster -p &amp;amp;&amp;amp; cd /usr/src &amp;amp;&amp;amp; make installworld &amp;amp;&amp;amp; mergemaster -iU &amp;amp;&amp;amp; make delete-old &amp;amp;&amp;amp; reboot</code></p>
+<p><code># adjkerntz -i &amp;&amp; rm -rf /etc.old &amp;&amp; cp -Rp /etc /etc.old &amp;&amp; mergemaster -p &amp;&amp; cd /usr/src &amp;&amp; make installworld &amp;&amp; mergemaster -iU &amp;&amp; make delete-old &amp;&amp; reboot</code></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/12/27/upgrading-to-freebsd-8-stable/" data-id="gz2dgjjbiih4eey2" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/12/27/upgrading-to-freebsd-8-stable/" data-id="s2izxh9wcfe2s325" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/12/27/upgrading-to-freebsd-8-stable/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -403,7 +403,7 @@ reboot</code></p>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/12/27/custom-kernel-config-for-freebsd-8-stable/" data-id="69cu6sav4pf5tk2b" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/12/27/custom-kernel-config-for-freebsd-8-stable/" data-id="u86ffwj0kpwir3vc" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/12/27/custom-kernel-config-for-freebsd-8-stable/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -472,14 +472,14 @@ reboot</code></p>
 </blockquote>
 <p>A few notes:</p>
 <ul>
-<li><del datetime="2012-12-01T08:39:24+00:00">Step 4. will fail as SickBeard currently only comes with an Ubuntu startup script. Hatchling, from the SickBeard Forums (A FreeBSD rc.d script), kindly published a working copy of a FreeBSD rc script that is available <a href="http://dl.dropbox.com/u/5830692/sickbeard.txt" target="_blank" rel="external">here</a> (and duplicated <a href="https://gist.github.com/1610595" target="_blank" rel="external">here</a>.)</del><br>It appears that an init script for FreeBSD is now provided with the latest git pull - unfortunately, it’s not perfect, and needs to be modified for SickBeard to shut down properly.<figure class="highlight diff"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">diff --git a/init.freebsd b/init.freebsd</div><div class="line">index 8d9ba4b..3f65b31 100755</div><div class="line"><span class="header">--- a/init.freebsd</span></div><div class="line"><span class="header">+++ b/init.freebsd</span></div><div class="line">@@ -69,7 +69,7 @@ verify_sickbeard_pid() {</div><div class="line"> sickbeard_stop() {</div><div class="line">     echo "Stopping $name"</div><div class="line">     verify_sickbeard_pid</div><div class="line"><span class="deletion">-    ${WGET} -O - -q --user=${SBUSR} --password=${SBPWD} "http://${HOST}:${PORT}/home/shutdown/" &amp;gt;/dev/null</span></div><div class="line"><span class="addition">+    ${WGET} -O - -q --user=${SBUSR} --password=${SBPWD} "http://${HOST}:${PORT}/home/shutdown/?pid=${pid}" &amp;gt;/dev/null</span></div><div class="line">     if [ -n "${pid}" ]; then</div><div class="line">       wait_for_pids ${pid}</div><div class="line">       echo "Stopped"</div></pre></td></tr></table></figure>
+<li><del datetime="2012-12-01T08:39:24+00:00">Step 4. will fail as SickBeard currently only comes with an Ubuntu startup script. Hatchling, from the SickBeard Forums (A FreeBSD rc.d script), kindly published a working copy of a FreeBSD rc script that is available <a href="http://dl.dropbox.com/u/5830692/sickbeard.txt" target="_blank" rel="external">here</a> (and duplicated <a href="https://gist.github.com/1610595" target="_blank" rel="external">here</a>.)</del><br>It appears that an init script for FreeBSD is now provided with the latest git pull - unfortunately, it’s not perfect, and needs to be modified for SickBeard to shut down properly.<figure class="highlight diff"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">diff --git a/init.freebsd b/init.freebsd</div><div class="line">index 8d9ba4b..3f65b31 100755</div><div class="line"><span class="header">--- a/init.freebsd</span></div><div class="line"><span class="header">+++ b/init.freebsd</span></div><div class="line">@@ -69,7 +69,7 @@ verify_sickbeard_pid() {</div><div class="line"> sickbeard_stop() {</div><div class="line">     echo "Stopping $name"</div><div class="line">     verify_sickbeard_pid</div><div class="line"><span class="deletion">-    ${WGET} -O - -q --user=${SBUSR} --password=${SBPWD} "http://${HOST}:${PORT}/home/shutdown/" &gt;/dev/null</span></div><div class="line"><span class="addition">+    ${WGET} -O - -q --user=${SBUSR} --password=${SBPWD} "http://${HOST}:${PORT}/home/shutdown/?pid=${pid}" &gt;/dev/null</span></div><div class="line">     if [ -n "${pid}" ]; then</div><div class="line">       wait_for_pids ${pid}</div><div class="line">       echo "Stopped"</div></pre></td></tr></table></figure>
 </li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/12/26/sabnzbd-and-sickbeard-on-freebsd/" data-id="490c4hq4wm7xv0ms" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/12/26/sabnzbd-and-sickbeard-on-freebsd/" data-id="u5x0fun9jva30br4" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/12/26/sabnzbd-and-sickbeard-on-freebsd/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -543,7 +543,7 @@ reboot</code></p>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/12/25/flash-and-java-for-google-chromium-in-freebsd-8/" data-id="tq8bidnd8wtx3orp" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/12/25/flash-and-java-for-google-chromium-in-freebsd-8/" data-id="vs3yleuyspufrtpa" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/12/25/flash-and-java-for-google-chromium-in-freebsd-8/#disqus_thread" class="article-comment-link">Comments</a>
       
