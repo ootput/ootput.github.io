@@ -2,13 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://ootput.github.io/2010/04/02/binary-patches-for-openbsd-46/</loc>
-    <lastmod>2014-11-26T07:59:03.000Z</lastmod>
+    <loc>http://ootput.github.io/2010/04/06/farewell-nanoblogger/</loc>
+    <lastmod>2014-11-26T08:48:23.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://ootput.github.io/2010/04/06/readernaut-on-chyrp/</loc>
-    <lastmod>2014-11-26T07:57:20.000Z</lastmod>
+    <lastmod>2014-11-26T08:47:50.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ootput.github.io/2010/04/02/binary-patches-for-openbsd-46/</loc>
+    <lastmod>2014-11-26T07:59:03.000Z</lastmod>
   </url>
   
   <url>
@@ -238,11 +243,6 @@
   
   <url>
     <loc>http://ootput.github.io/2011/10/08/on-chyrps-revival/</loc>
-    <lastmod>2014-11-25T05:31:13.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://ootput.github.io/2010/04/06/farewell-nanoblogger/</loc>
     <lastmod>2014-11-25T05:31:13.000Z</lastmod>
   </url>
   
