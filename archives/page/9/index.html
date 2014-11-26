@@ -167,14 +167,12 @@ ga('send', 'pageview');
 <p>Twig, a language specifically created for Chyrp, that is put through a compiler to produce PHP.<br>… that is unnecessarily complicated - it essentially tries to fit both the book title and book cover into a table column. I’d much rather allocate space for the book’s cover than it’s details given the  small area to work with.</p>
 </blockquote>
 <p>Ultimately, my modified twig became, in <code>themes/$theme/content/sidebar.twig</code>:</p>
-<p>{% if modules.readernaut %}</p>
-<p><h3><span>${ “Readernaut” }</span></h3></p>
-<p><table><tr><br>{% for book in modules.readernaut.books %}</tr></table></p>
-<p><td><br>   <a href="$book.book_edition.permalink"><br>   <img src="$book.book_edition.covers.cover_small" alt="$book.book_edition.title"><br>   </a><br></td><br>{% endfor %}<br><br>{% endif %}</p>
-<p>{% endraw %}</p>
-<p>To restrict the book listing to only show books that are currently being read, in <code>modules/readernaut/readernaut.php</code>:<br>{% codeblock lang:php %}</p>
-<h2 id="The_actual_data">The actual data</h2>
-<p>public function books($limit=10) {<br>   $config = Config::current();<br>   $xml = simplexml_load_string(get_remote(‘<a href="http://readernaut.com/api/v1/xml/&#39;.$config-&gt;readernaut_user.&#39;/books/reading/?limit=&#39;.$limit" target="_blank" rel="external">http://readernaut.com/api/v1/xml/&#39;.$config-&gt;readernaut_user.&#39;/books/reading/?limit=&#39;.$limit</a>));<br>   return $xml-&gt;reader_book;<br>}<br>{% endcodeblock %}</p>
+<script src="https://gist.github.com/368a9e05915d3f68fff5.js?file=sidebar.twig"></script>
+
+<p>To restrict the book listing to only show books that are currently being read, in <code>modules/readernaut/readernaut.php</code>:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">## The actual data</span></div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">books</span><span class="params">(<span class="variable">$limit</span>=<span class="number">10</span>)</span> </span>{</div><div class="line">   <span class="variable">$config</span> = Config::current();</div><div class="line">   <span class="variable">$xml</span> = simplexml_load_string(get_remote(<span class="string">'http://readernaut.com/api/v1/xml/'</span>.<span class="variable">$config</span><span class="variable">-&gt;readernaut_user</span>.<span class="string">'/books/reading/?limit='</span>.<span class="variable">$limit</span>));</div><div class="line">   <span class="keyword">return</span> <span class="variable">$xml</span><span class="variable">-&gt;reader_book</span>;</div><div class="line">}</div></pre></td></tr></table></figure>
+
+
 <p>.. essentially changing the path to the reading list from <code>books/</code> to <code>books/reading/</code>.</p>
 
       
