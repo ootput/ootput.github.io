@@ -114,7 +114,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/10/08/on-chyrps-revival/" data-id="duvxwqtlorag1cg9" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/10/08/on-chyrps-revival/" data-id="f2mzphspkagf3ora" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/10/08/on-chyrps-revival/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -163,7 +163,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/06/02/official-chyrp-development-halted/" data-id="00f0amc7xvesvkhr" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/06/02/official-chyrp-development-halted/" data-id="7hsjxo2wt681x70e" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/06/02/official-chyrp-development-halted/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -214,7 +214,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/04/06/code-in-chyrp/" data-id="o2qppx8adm0w5iv8" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/04/06/code-in-chyrp/" data-id="mj31bi9l9469uh71" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/04/06/code-in-chyrp/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -258,14 +258,12 @@ ga('send', 'pageview');
 <p>Readernaut is the easiest way to share what you’re reading with friends.</p>
 </blockquote>
 <p><img src="/images/da87f33189dd88bb9fb369651d46b418fba5519e.png" class="img-thumbnail"></p>
-<p>Chyrp’s <a href="http://chyrp.net/extend/view/readernaut/" target="_blank" rel="external">Readernaut module</a> provides a sample twig:&gt; Twig, a language specifically created for Chyrp, that is put through a compiler to produce PHP.<br>… that is unnecessarily complicated - it essentially tries to fit both the book title and book cover into a table column. I’d much rather allocate space for the book’s cover than it’s details given the  small area to work with.</p>
+<p>Chyrp’s <a href="http://chyrp.net/extend/view/readernaut/" target="_blank" rel="external">Readernaut module</a> provides a sample twig:</p>
+<blockquote>
+<p>Twig, a language specifically created for Chyrp, that is put through a compiler to produce PHP.<br>… that is unnecessarily complicated - it essentially tries to fit both the book title and book cover into a table column. I’d much rather allocate space for the book’s cover than it’s details given the  small area to work with.</p>
+</blockquote>
 <p>Ultimately, my modified twig became, in <code>themes/$theme/content/sidebar.twig</code>:</p>
-<pre>
-
-
-
-</pre>
-
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"></div></pre></td></tr></table></figure>
 
 <p>To restrict the book listing to only show books that are currently being read, in <code>modules/readernaut/readernaut.php</code>:</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">## The actual data</span></div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">books</span><span class="params">(<span class="variable">$limit</span>=<span class="number">10</span>)</span> </span>{</div><div class="line">   <span class="variable">$config</span> = Config::current();</div><div class="line">   <span class="variable">$xml</span> = simplexml_load_string(get_remote(<span class="string">'http://readernaut.com/api/v1/xml/'</span>.<span class="variable">$config</span><span class="variable">-&gt;readernaut_user</span>.<span class="string">'/books/reading/?limit='</span>.<span class="variable">$limit</span>));</div><div class="line">   <span class="keyword">return</span> <span class="variable">$xml</span><span class="variable">-&gt;reader_book</span>;</div><div class="line">}</div></pre></td></tr></table></figure>
@@ -276,7 +274,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/04/06/readernaut-on-chyrp/" data-id="4vd6nhgbv42mfdgc" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/04/06/readernaut-on-chyrp/" data-id="saykw1i07ousoi5q" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/04/06/readernaut-on-chyrp/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -327,7 +325,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/04/04/backup-of-chyrp/" data-id="tia1heo5x2bhq0rv" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/04/04/backup-of-chyrp/" data-id="0dubc4yarc5nja7c" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/04/04/backup-of-chyrp/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -374,7 +372,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/04/04/themes-in-chyrp/" data-id="1vxicdkeefecbbga" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/04/04/themes-in-chyrp/" data-id="mum3ux93ks026i5f" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/04/04/themes-in-chyrp/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -426,7 +424,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/04/04/thoughts-on-chyrp/" data-id="82u3wj1uf2efy0ti" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/04/04/thoughts-on-chyrp/" data-id="1cfthd94njklv3tb" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/04/04/thoughts-on-chyrp/#disqus_thread" class="article-comment-link">Comments</a>
       
