@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://ootput.github.io/2010/04/02/binary-patches-for-openbsd-46/</loc>
+    <lastmod>2014-11-26T07:59:03.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://ootput.github.io/2010/04/06/readernaut-on-chyrp/</loc>
     <lastmod>2014-11-26T07:57:20.000Z</lastmod>
   </url>
@@ -248,11 +253,6 @@
   
   <url>
     <loc>http://ootput.github.io/2010/06/24/code-in-habari/</loc>
-    <lastmod>2014-11-25T03:11:11.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://ootput.github.io/2010/04/02/binary-patches-for-openbsd-46/</loc>
     <lastmod>2014-11-25T03:11:11.000Z</lastmod>
   </url>
   
