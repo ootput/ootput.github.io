@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://ootput.github.io/2012/06/01/future-of-ootput-burst-in-doubt/</loc>
+    <lastmod>2014-11-26T09:38:36.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://ootput.github.io/2010/04/06/farewell-nanoblogger/</loc>
     <lastmod>2014-11-26T08:48:23.000Z</lastmod>
   </url>
@@ -177,11 +182,6 @@
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2012/06/01/future-of-ootput-burst-in-doubt/</loc>
-    <lastmod>2014-11-25T20:31:59.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://ootput.github.io/2012/06/07/new-blog-host-adopted/</loc>
     <lastmod>2014-11-25T20:31:21.000Z</lastmod>
   </url>
@@ -277,12 +277,12 @@
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2014/06/14/qos-on-vpn-client-tunnel-in-tomato/</loc>
+    <loc>http://ootput.github.io/2010/04/04/backup-of-chyrp/</loc>
     <lastmod>2014-11-25T03:10:23.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2010/04/04/backup-of-chyrp/</loc>
+    <loc>http://ootput.github.io/2014/06/14/qos-on-vpn-client-tunnel-in-tomato/</loc>
     <lastmod>2014-11-25T03:10:23.000Z</lastmod>
   </url>
   
@@ -417,12 +417,12 @@
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2010/07/01/non-free-and-contrib-packages-in-debian/</loc>
+    <loc>http://ootput.github.io/2013/08/02/share-osx-clipboard-with-emacs/</loc>
     <lastmod>2014-11-24T10:34:16.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2013/08/02/share-osx-clipboard-with-emacs/</loc>
+    <loc>http://ootput.github.io/2010/07/01/non-free-and-contrib-packages-in-debian/</loc>
     <lastmod>2014-11-24T10:34:16.000Z</lastmod>
   </url>
   
@@ -447,22 +447,7 @@
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2010/04/06/code-in-chyrp/</loc>
-    <lastmod>2014-11-24T10:18:02.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://ootput.github.io/2010/03/28/colored-ls-output-in-openbsd/</loc>
-    <lastmod>2014-11-24T10:18:02.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://ootput.github.io/2013/08/02/copy-and-paste-in-tmux-with-mouse/</loc>
-    <lastmod>2014-11-24T10:18:02.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://ootput.github.io/2010/06/03/github-gists-in-habari/</loc>
+    <loc>http://ootput.github.io/2010/06/10/lovely-flower/</loc>
     <lastmod>2014-11-24T10:18:02.000Z</lastmod>
   </url>
   
@@ -472,7 +457,7 @@
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2010/06/02/official-chyrp-development-halted/</loc>
+    <loc>http://ootput.github.io/2013/08/02/copy-and-paste-in-tmux-with-mouse/</loc>
     <lastmod>2014-11-24T10:18:02.000Z</lastmod>
   </url>
   
@@ -482,27 +467,27 @@
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2010/03/28/phpmysql-based-solution-for-blog/</loc>
-    <lastmod>2014-11-24T10:18:02.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://ootput.github.io/2013/05/24/royal-botanical-gardens-sydney/</loc>
     <lastmod>2014-11-24T10:18:02.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2010/03/18/dumprestore-data-between-partitions/</loc>
+    <loc>http://ootput.github.io/2010/06/02/official-chyrp-development-halted/</loc>
     <lastmod>2014-11-24T10:18:02.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2010/06/10/lovely-flower/</loc>
+    <loc>http://ootput.github.io/2010/06/03/github-gists-in-habari/</loc>
     <lastmod>2014-11-24T10:18:02.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2010/04/12/fuse-mounts-in-fedora-12/</loc>
+    <loc>http://ootput.github.io/2010/03/28/phpmysql-based-solution-for-blog/</loc>
+    <lastmod>2014-11-24T10:18:02.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ootput.github.io/2010/03/28/colored-ls-output-in-openbsd/</loc>
     <lastmod>2014-11-24T10:18:02.000Z</lastmod>
   </url>
   
@@ -512,12 +497,27 @@
   </url>
   
   <url>
-    <loc>http://ootput.github.io/desktop/index.html</loc>
+    <loc>http://ootput.github.io/2010/03/18/dumprestore-data-between-partitions/</loc>
     <lastmod>2014-11-24T10:18:02.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://ootput.github.io/2007/02/11/hello-digital-world/</loc>
+    <lastmod>2014-11-24T10:18:02.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ootput.github.io/2010/04/06/code-in-chyrp/</loc>
+    <lastmod>2014-11-24T10:18:02.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ootput.github.io/desktop/index.html</loc>
+    <lastmod>2014-11-24T10:18:02.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ootput.github.io/2010/04/12/fuse-mounts-in-fedora-12/</loc>
     <lastmod>2014-11-24T10:18:02.000Z</lastmod>
   </url>
   
