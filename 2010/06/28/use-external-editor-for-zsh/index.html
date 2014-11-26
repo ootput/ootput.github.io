@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://ootput.github.io/2010/06/28/use-external-editor-for-zsh/">
 <meta property="og:site_name" content="ootput burst!">
 <meta property="og:description" content="ZSH has a built-in function called edit-command-line which allows you to edit the current command with an external editor (defined by the environment variable $EDITOR). To enable this feature, add th">
-<meta property="og:image" content="/images/d0fb9d5645095f905559877a6eb5539545869d10.png?w=76">
+<meta property="og:image" content="/images/d0fb9d5645095f905559877a6eb5539545869d10.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Use External Editor for ZSH">
 <meta name="twitter:description" content="ZSH has a built-in function called edit-command-line which allows you to edit the current command with an external editor (defined by the environment variable $EDITOR). To enable this feature, add th">
@@ -105,7 +105,7 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/images/d0fb9d5645095f905559877a6eb5539545869d10.png?w=76" alt="" title="zsh"></p>
+        <p><img src="/images/d0fb9d5645095f905559877a6eb5539545869d10.png" class="img-thumbnail"></p>
 <p>ZSH has a built-in function called <code>edit-command-line</code> which allows you to edit the current command with an external editor (defined by the environment variable <code>$EDITOR</code>). To enable this feature, add the following to your ZSH startup scripts:<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">autoload <span class="keyword">edit</span>-<span class="keyword">command</span>-<span class="built_in">line</span></div><div class="line">zle -<span class="keyword">N</span> <span class="keyword">edit</span>-<span class="keyword">command</span>-<span class="built_in">line</span></div><div class="line">bindkey <span class="string">'^Xe'</span> <span class="keyword">edit</span>-<span class="keyword">command</span>-<span class="built_in">line</span></div></pre></td></tr></table></figure></p>
 <p>For the interested, <a href="http://www.techrepublic.com/article/keyboard-shortcuts-in-bash-and-zsh/6178505" target="_blank" rel="external">this</a> article lists some useful keyboard shortcuts in ZSH.</p>
 

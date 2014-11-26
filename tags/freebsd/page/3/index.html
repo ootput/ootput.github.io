@@ -579,7 +579,7 @@ WWW: http://www.zsh.org/
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/images/26bb3a9c5a4641a82de6f0ef385a48d46c575bb3.png?w=76" alt="" title="freenas"></p>
+        <p><img src="/images/26bb3a9c5a4641a82de6f0ef385a48d46c575bb3.png" class="img-thumbnail"></p>
 <p>Upon searching for a local file-serving solution, I chanced upon <a href="http://www.freenas.org/features" target="_blank" rel="external">FreeNAS</a> (which was based on FreeBSD.) While FreeNAS offered a very flexible GUI to enable network services, it was essentially a stripped-down version of FreeBSD that lacked tools that were normally present in a vanilla FreeBSD installation. Additionally, FreeNAS’s installation menu did not provide a ‘fixit shell’ that I could use to create a custom ZFS root layout. As I was already using a barebones FreeBSD system for web hosting, I decided to alter it slightly to make room for indefinite data storage (<a href="http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/filesystems-zfs.html" target="_blank" rel="external">ZFS</a>).</p>
 <p>I re-installed FreeBSD (8.2) on a ZFS root with GPT following <a href="http://wiki.freebsd.org/RootOnZFS/GPTZFSBoot" target="_blank" rel="external">this guide</a>. I had to additionally run <code>/stand/sysinstall</code> as <code>root</code> to configure my network settings, and to install the Samba package as well as other miscellaneous packages.</p>
 
@@ -682,7 +682,7 @@ WWW: http://www.zsh.org/
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/images/0d88740bd637066cd468b074d04dfaea061757d6.png?w=138" alt="" title="beastie"></p>
+        <p><img src="/images/0d88740bd637066cd468b074d04dfaea061757d6.png" class="img-thumbnail"></p>
 <p>Half a decade later, I have decided to use FreeBSD on my server machines (instead of Gentoo) - where, in 2003, I had a brief encounter with the highly unstable FreeBSD 5.0. Back then, I was more at home with Red Hat Linux (with the newly introduced RHCE program), and the ever-fussy FreeBSD 5.0 Release - which seemed more like a developer preview with its pronounced instability - had left a bad taste in my mouth.</p>
 <p>Now, the problems that plagued FreeBSD 5 are all but forgotten. Earlier today, FreeBSD 8.0 was formally released to the public (the announcement can be found <a href="http://www.freebsd.org/releases/8.0R/pressrelease.html" target="_blank" rel="external">here</a>,) and having installed it soon after, I can certainly say that all bodes well for the future of this Internet-serving superstar.</p>
 <p>As a side note, several OpenBSD-on-Soekris boxes still manage the IP routing in my household. FreeBSD has managed to incorporate a lot of the security features of OpenBSD, but for routing purposes, the much slimmer and more efficient OpenBSD still reigns supreme.</p>

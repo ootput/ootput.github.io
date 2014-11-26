@@ -5,27 +5,27 @@
   
   <title>Extending the Habari Sidebar | ootput burst!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Habari’s sidebar (in K2) is very minimal. The following plug-ins provide much needed site-navigation:&gt; Fluffytag shows a fluffy cloud of tags.
+  <meta name="description" content="Habari’s sidebar (in K2) is very minimal. The following plug-ins provide much needed site-navigation:
 
-monthly_archives shows archives grouped by month.
+Fluffytag shows a fluffy cloud of tags.monthly_archives shows archives grouped by month.
 
-To">
+To disp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Extending the Habari Sidebar">
 <meta property="og:url" content="http://ootput.github.io/2010/06/26/extending-the-habari-sidebar/">
 <meta property="og:site_name" content="ootput burst!">
-<meta property="og:description" content="Habari’s sidebar (in K2) is very minimal. The following plug-ins provide much needed site-navigation:&gt; Fluffytag shows a fluffy cloud of tags.
+<meta property="og:description" content="Habari’s sidebar (in K2) is very minimal. The following plug-ins provide much needed site-navigation:
 
-monthly_archives shows archives grouped by month.
+Fluffytag shows a fluffy cloud of tags.monthly_archives shows archives grouped by month.
 
-To">
+To disp">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Extending the Habari Sidebar">
-<meta name="twitter:description" content="Habari’s sidebar (in K2) is very minimal. The following plug-ins provide much needed site-navigation:&gt; Fluffytag shows a fluffy cloud of tags.
+<meta name="twitter:description" content="Habari’s sidebar (in K2) is very minimal. The following plug-ins provide much needed site-navigation:
 
-monthly_archives shows archives grouped by month.
+Fluffytag shows a fluffy cloud of tags.monthly_archives shows archives grouped by month.
 
-To">
+To disp">
 <meta name="twitter:creator" content="@513256254">
 <link rel="publisher" href="110511550415133050000">
 
@@ -116,9 +116,9 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Habari’s sidebar (in K2) is very minimal. The following plug-ins provide much needed site-navigation:&gt; <a href="http://habariproject.org/dist/plugins/fluffytag/" target="_blank" rel="external">Fluffytag</a> shows a fluffy cloud of tags.</p>
+        <p>Habari’s sidebar (in K2) is very minimal. The following plug-ins provide much needed site-navigation:</p>
 <blockquote>
-<p><a href="http://habariproject.org/dist/plugins/monthly_archives/" target="_blank" rel="external">monthly_archives</a> shows archives grouped by month.</p>
+<p><a href="http://habariproject.org/dist/plugins/fluffytag/" target="_blank" rel="external">Fluffytag</a> shows a fluffy cloud of tags.<br><a href="http://habariproject.org/dist/plugins/monthly_archives/" target="_blank" rel="external">monthly_archives</a> shows archives grouped by month.</p>
 </blockquote>
 <p>To display output from both plug-ins, make the following changes to <code>sidebar.php</code>:</p>
 <figure class="highlight diff"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="header">*** system/themes/k2/sidebar.php 2010-06-21 22:15:10.587118909 +0800</span></div><div class="line"><span class="header">--- user/themes/k2/sidebar.php 2010-06-26 14:52:35.928366633 +0800</span></div><div class="line"><span class="header">***************</span></div><div class="line"><span class="chunk">*** 13,18 ****</span></div><div class="line"><span class="chunk">--- 13,28 ----</span></div><div class="line"></div><div class="line">  &lt;?php $theme-&gt;area( 'sidebar' ); ?&gt;</div><div class="line"></div><div class="line"><span class="addition">+ &lt;div class="sb-archives"&gt;</span></div><div class="line"><span class="addition">+ &lt;h2&gt;&lt;?php _e('Archives'); ?&gt;&lt;/h2&gt;</span></div><div class="line"><span class="addition">+ &lt;?php $theme-&gt;monthly_archives ( '0','N' ); ?&gt;</span></div><div class="line"><span class="addition">+ &lt;/div&gt;</span></div><div class="line"><span class="addition">+</span></div><div class="line"><span class="addition">+ &lt;div class="sb-tags"&gt;</span></div><div class="line"><span class="addition">+ &lt;h2&gt;&lt;?php _e('Tags'); ?&gt;&lt;/h2&gt;</span></div><div class="line"><span class="addition">+ &lt;?php $theme-&gt;fluffytag(); ?&gt;</span></div><div class="line"><span class="addition">+ &lt;/div&gt;</span></div><div class="line"><span class="addition">+</span></div><div class="line">   &lt;div class="sb-user"&gt;</div><div class="line">   &lt;h2&gt;&lt;?php _e('User'); ?&gt;&lt;/h2&gt;</div><div class="line">  &lt;?php $theme-&gt;display ( 'loginform' ); ?&gt;</div></pre></td></tr></table></figure>
