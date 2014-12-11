@@ -80,6 +80,66 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-Crunchbang-Waldorf-Issues" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/12/11/Crunchbang-Waldorf-Issues/" class="article-date">
+  <time datetime="2014-12-11T11:42:36.000Z" itemprop="datePublished">Dec 11 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/12/11/Crunchbang-Waldorf-Issues/">Crunchbang Waldorf Issues</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>I’ve reproduced this reported bug - <a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=641894" target="_blank" rel="external">https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=641894</a> - on my Waldorf machine, and have arrived at the following solution:</p>
+<p>As root, open the existing /etc/fstab file and comment-out your existing CIFS mount(s)</p>
+<p>Unmount all existing cifs mounts:</p>
+<h1 id="sudo_umount_-a_-t_cifs">sudo umount -a -t cifs</h1>
+<p>Install autofs:</p>
+<h1 id="sudo_aptitude_install_autofs">sudo aptitude install autofs</h1>
+<p>Open (as root) new file /etc/auto.master:</p>
+<h1 id="sudo_vi_/etc/auto-master">sudo vi /etc/auto.master</h1>
+<p>If you want the mounted directories under /data, add the following line:</p>
+<p>/data    /etc/auto.misc  —timeout  60   —ghost</p>
+<p>The “ghost” option ensures that even unmounted directories are always visible.  Remove this if you prefer to only see the directory when you enter the path to the mounted directory.</p>
+<p>Open (as root) new file /etc/auto.misc:</p>
+<h1 id="sudo_vi_/etc/auto-misc">sudo vi /etc/auto.misc</h1>
+<p>Add line(s) at the end for your mount directories in a similar format to your /etc/fstab file:</p>
+<p>downloads1    -fstype=cifs,rw,username=ootput,password=<cifs_pass>,uid=1000,gid=1000   ://192.168.1.2/downloads2</cifs_pass></p>
+<ul>
+<li>where ‘downloads1’ refers to a local mountpoint under /data, and ‘downloads2’ to the remote cifs share, respectively.</li>
+</ul>
+<p>Start the autofs service:</p>
+<h1 id="sudo_service_autofs_restart">sudo service autofs restart</h1>
+<p>Additionally, I enabled all SysRq functions to address stalled shutdown procedures by adding to /etc/sysctl.conf:</p>
+<p>kernel.sysrq=1</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ootput.github.io/2014/12/11/Crunchbang-Waldorf-Issues/" data-id="u3i1qmu1y55rjnn1" class="article-share-link">Share</a>
+      
+        <a href="http://ootput.github.io/2014/12/11/Crunchbang-Waldorf-Issues/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-ootput-Burst-on-Github-via-Hexo" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/11/25/ootput-Burst-on-Github-via-Hexo/" class="article-date">
@@ -525,65 +585,6 @@ ga('send', 'pageview');
 
 
   
-    <article id="post-embedding-iframes-in-wordpress-com" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2013/08/01/embedding-iframes-in-wordpress-com/" class="article-date">
-  <time datetime="2013-08-01T12:17:30.000Z" itemprop="datePublished">Aug 1 2013</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Random-Musings/">Random Musings</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2013/08/01/embedding-iframes-in-wordpress-com/">Embedding IFrames in Wordpress.com</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>I recently came across a workaround for embedding iframes in Wordpress.com blogs:</p>
-<blockquote>
-
-<p>Flash and all other embeds are not allowed in WordPress.com posts, pages, or text widgets. For security reasons, we remove the tags needed for these to work. Your intentions may be innocent, but someone somewhere might try to use such embeds to damage the site, affecting all of our users.</p>
-<footer><strong>WordPress.com</strong><cite><a href="http://en.support.wordpress.com/code/" target="_blank" rel="external">Supported code</a></cite></footer></blockquote>
-
-
-<p>As <a href="http://shongjog.wordpress.com/2011/01/25/how-to-embed-iframe-widgets-in-a-wordpress-com-blog-%C2%A9-netty-gritty/" target="_blank" rel="external">this</a> guide suggests, the workaround made use of a perfectly legitimate and supported shortcode API. In essence, the workaround involved converting an iframe to Flash, which in turn was sourced by <code>[gigya]</code>.</p>
-<p>I was able to illustrate the concept below:</p>
-<p><em>For my dearest nephew, and any other chess enthusiasts that are perusing this blog, I have embedded a chess game that I recently played. Click the link below, and try to figure out the positional/tactical errors that my opponent (and close friend) committed, and any variations that may have redeemed his play.</em></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">table</span> <span class="attribute">style</span>=<span class="value">"border:none;height:32px;width:32px;"</span>&gt;</span></div><div class="line">[gigya src="http://cdn.tagul.com/cloud.swf" flashvars="autoplay=1" allowfullscreen="true" type="application/x-shockwave-flash" allowscriptaccess="always" width="542" height="300" flashvars="id=180853@2"]</div><div class="line"><span class="tag">&lt;/<span class="title">table</span>&gt;</span></div></pre></td></tr></table></figure>
-
-<iframe src="http://mekk.waw.pl/mk/watchbot/game_mini/4318991" width="540" height="300" frameborder="0" allowfullscreen></iframe>
-
-<p>If, for some reason, the embed doesn’t show, <a href="http://mekk.waw.pl/mk/watchbot/game/4318991" target="_blank" rel="external">here’s</a> a link to how it <em>should</em> look.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2013/08/01/embedding-iframes-in-wordpress-com/" data-id="903783vys6rhfugm" class="article-share-link">Share</a>
-      
-        <a href="http://ootput.github.io/2013/08/01/embedding-iframes-in-wordpress-com/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/">blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/chess/">chess</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wordpress/">wordpress</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/11/">11</a><a class="extend next" rel="next" href="/archives/page/2/">Next &raquo;</a>
@@ -609,6 +610,10 @@ ga('send', 'pageview');
       <ul>
         
           <li>
+            <a href="/2014/12/11/Crunchbang-Waldorf-Issues/">Crunchbang Waldorf Issues</a>
+          </li>
+        
+          <li>
             <a href="/2014/11/25/ootput-Burst-on-Github-via-Hexo/">ootput Burst on Github via Hexo</a>
           </li>
         
@@ -622,10 +627,6 @@ ga('send', 'pageview');
         
           <li>
             <a href="/2013/10/20/reset-audio-on-osx/">Reset Audio on OSX</a>
-          </li>
-        
-          <li>
-            <a href="/2013/10/04/update-to-latest-freebsd-release-9-2/">Update to Latest FreeBSD Release (9.2)</a>
           </li>
         
       </ul>
@@ -646,7 +647,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">May 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">April 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">December 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">June 2012</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">May 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10/">October 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/09/">September 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06/">June 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07/">July 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06/">June 2010</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/04/">April 2010</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03/">March 2010</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02/">February 2010</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11/">November 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03/">March 2007</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02/">February 2007</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">May 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">April 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">December 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">June 2012</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">May 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10/">October 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/09/">September 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06/">June 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07/">July 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06/">June 2010</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/04/">April 2010</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03/">March 2010</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02/">February 2010</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11/">November 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03/">March 2007</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02/">February 2007</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 

@@ -80,6 +80,65 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-import-freebsd-root-zpool-to-other-environments" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2011/12/30/import-freebsd-root-zpool-to-other-environments/" class="article-date">
+  <time datetime="2011-12-30T06:53:18.000Z" itemprop="datePublished">Dec 30 2011</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Software/">Software</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2011/12/30/import-freebsd-root-zpool-to-other-environments/">Import FreeBSD Root ZPool to Other Environments</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/52e65052e0456f5c1dfa0b942418dcd32ba51cad.png" class="img-thumbnail"></p>
+<p>While testing various memory disk filesystems in FreeBSD, I intelligently made changes to <code>/etc/fstab</code> that pointed to non-existent mountpoints (<code>zroot/usr/home</code> did not exist until later in the boot process - and the system refused to boot into FreeBSD due to mounting errors.)</p>
+<p>To remedy this, I booted into my Ubuntu Oneiric installation, which fortunately supported native ZFS (follow <a href="https://wiki.ubuntu.com/ZFS/" target="_blank" rel="external">this</a> guide). Using the following commands, I was able to mount my root partition zpool - <code>zroot</code> - to make the necessary adjustments to <code>/etc/fstab</code>.</p>
+<p>In Ubuntu, as root, list the available zpool imports with:<br><code># zpool import</code></p>
+<p>This will reveal all existing zpools found on all disk drives. Check to see if the zpool can be properly imported by reading the <code>state</code>, <code>status</code>, and <code>action</code> descriptions of the zpool.</p>
+<p>Continuing on, create a temporary mountpoint for the zpool:<br><code># mkdir -p /mnt/zpool_temp</code></p>
+<p>Then import the zpool:<br><code># zpool import -N -R /mnt/zpool_temp zroot</code></p>
+<p>To confirm this worked, do:<br><code># zfs list</code></p>
+<p>Also, note the dataset’s original mountpoint value with:<br><code># zfs get mountpoint zroot</code></p>
+<p>Then:<br><code># zfs set mountpoint=/mnt/zpool_temp zroot</code><br><code># zfs mount zroot</code></p>
+<p>This will temporarily mount the root zpool <code>R/W</code> at <code>/mnt/zpool_temp</code>, allowing you to make the necessary changes.</p>
+<p>After you are done making changes to the mounted dataset, while making sure that it is no longer in use:<br><code># zfs unmount zroot</code></p>
+<p>Then, reset the mountpoint to it’s original value:<br><code># zfs set mountpoint=/ zroot</code></p>
+<p>Now reboot the machine <em>without</em> exporting the zpool - this is very important.</p>
+<p>Your FreeBSD should now boot properly.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ootput.github.io/2011/12/30/import-freebsd-root-zpool-to-other-environments/" data-id="s5qn696g2ygn4ysh" class="article-share-link">Share</a>
+      
+        <a href="http://ootput.github.io/2011/12/30/import-freebsd-root-zpool-to-other-environments/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/freebsd/">freebsd</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/zfs/">zfs</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-move-chromium-cache-to-mfs-memory-disk-on-freebsd" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2011/12/30/move-chromium-cache-to-mfs-memory-disk-on-freebsd/" class="article-date">
@@ -614,62 +673,6 @@ reboot</code></p>
 
 
   
-    <article id="post-update-freebsd-via-binary-patches" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2011/09/25/update-freebsd-via-binary-patches/" class="article-date">
-  <time datetime="2011-09-25T09:50:34.000Z" itemprop="datePublished">Sep 25 2011</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Software/">Software</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2011/09/25/update-freebsd-via-binary-patches/">Apply Security Patches to FreeBSD</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>From FreeBSD Handbook - Ch 26 Updating FreeBSD:</p>
-<blockquote>
-<p>Security patches are stored on a remote machine and may be downloaded and installed using the following command:</p>
-<p><code># freebsd-update fetch</code></p>
-<p><code># freebsd-update install</code></p>
-</blockquote>
-<p>An entry in <code>/etc/crontab</code> allows <code>freebsd-update</code> to be run as a nightly cron job:</p>
-<p><code>@daily root freebsd-update cron</code></p>
-<p>Here, <code>freebsd-update</code> will only check if updates exist. If patches exist, they will automatically be downloaded to the local disk but not applied; the root user will be sent an email so they may install them manually.</p>
-<p>If anything goes wrong, <code>freebsd-update</code> has the ability to roll back the last set of changes with the following command:</p>
-<p><code># freebsd-update rollback</code></p>
-<p>Once complete, the system should be restarted if the kernel or any kernel modules were modified. This will allow FreeBSD to load the new binaries into memory.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/09/25/update-freebsd-via-binary-patches/" data-id="9ktbuitb96qnw6g2" class="article-share-link">Share</a>
-      
-        <a href="http://ootput.github.io/2011/09/25/update-freebsd-via-binary-patches/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/freebsd/">freebsd</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
@@ -695,6 +698,10 @@ reboot</code></p>
       <ul>
         
           <li>
+            <a href="/2014/12/11/Crunchbang-Waldorf-Issues/">Crunchbang Waldorf Issues</a>
+          </li>
+        
+          <li>
             <a href="/2014/11/25/ootput-Burst-on-Github-via-Hexo/">ootput Burst on Github via Hexo</a>
           </li>
         
@@ -708,10 +715,6 @@ reboot</code></p>
         
           <li>
             <a href="/2013/10/20/reset-audio-on-osx/">Reset Audio on OSX</a>
-          </li>
-        
-          <li>
-            <a href="/2013/10/04/update-to-latest-freebsd-release-9-2/">Update to Latest FreeBSD Release (9.2)</a>
           </li>
         
       </ul>
@@ -732,7 +735,7 @@ reboot</code></p>
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">May 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">April 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">December 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">June 2012</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">May 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10/">October 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/09/">September 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06/">June 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07/">July 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06/">June 2010</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/04/">April 2010</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03/">March 2010</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02/">February 2010</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11/">November 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03/">March 2007</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02/">February 2007</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">May 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">April 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">December 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">June 2012</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">May 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10/">October 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/09/">September 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06/">June 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07/">July 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06/">June 2010</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/04/">April 2010</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03/">March 2010</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02/">February 2010</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11/">November 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03/">March 2007</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02/">February 2007</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
