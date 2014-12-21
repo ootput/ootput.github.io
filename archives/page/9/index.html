@@ -80,58 +80,6 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
-    <article id="post-delete-github-repo-via-curl" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2010/04/08/delete-github-repo-via-curl/" class="article-date">
-  <time datetime="2010-04-07T19:39:24.000Z" itemprop="datePublished">Apr 8 2010</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Software/">Software</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2010/04/08/delete-github-repo-via-curl/">Delete Github Repo via Curl</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Github allows users to interact with their online profile (account details, repo details etc) via <a href="http://develop.github.com/" target="_blank" rel="external">several APIs</a> separate from the standard web-interface. This proves useful, if, say, you need to remove a problematic repo entirely from Github, and the web interface won’t let you access the repo page, citing <code>error: page not found</code>.</p>
-<p>From the <a href="http://develop.github.com/p/repo.html" target="_blank" rel="external">instructions</a> given:</p>
-<p><code>$ curl -F &#39;login=ootput&#39; -F &#39;token=_API_TOKEN_HERE_&#39; https://github.com/api/v2/json/repos/delete/_REPO_NAME_</code></p>
-<p>(The <em>API_TOKEN_HERE</em> can be found in Account Settings, under Administrative Information.)</p>
-<p>If the curl command succeeds, it will return something similar to <code>{&quot;delete_token&quot;:&quot;abcdefgh&quot;}</code>. Use this token in the following:</p>
-<p><code>$ curl -F &#39;login=ootput&#39; -F &#39;token=_API_TOKEN_HERE_&#39; -F &#39;delete_token=abcdefgh&#39; https://github.com/api/v2/json/repos/delete/_REPO_NAME_</code></p>
-<p>If all goes well, curl will return <code>{&quot;status&quot;:&quot;deleted&quot;}</code></p>
-<p>You can use the <code>-k</code> (or <code>--insecure</code>) option for curl to bypass certificate verification.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/04/08/delete-github-repo-via-curl/" data-id="kwgyqbx5a613u6hv" class="article-share-link">Share</a>
-      
-        <a href="http://ootput.github.io/2010/04/08/delete-github-repo-via-curl/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-code-in-chyrp" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2010/04/06/code-in-chyrp/" class="article-date">
@@ -169,7 +117,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/04/06/code-in-chyrp/" data-id="q3dqj076hgilb75z" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/04/06/code-in-chyrp/" data-id="vt8zcu77tfn7auax" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/04/06/code-in-chyrp/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -222,7 +170,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/04/06/farewell-nanoblogger/" data-id="mdne5fhrmttdfb5e" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/04/06/farewell-nanoblogger/" data-id="nlcz4f7j105g39f2" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/04/06/farewell-nanoblogger/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -283,7 +231,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/04/06/readernaut-on-chyrp/" data-id="90qnn01g172bybdn" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/04/06/readernaut-on-chyrp/" data-id="yz2cnq3tprzyh9w9" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/04/06/readernaut-on-chyrp/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -333,7 +281,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/04/06/backup-and-restore-mysql-database-s/" data-id="vcqrxhntofaaf2wm" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/04/06/backup-and-restore-mysql-database-s/" data-id="gcsw0xoryjzcatsc" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/04/06/backup-and-restore-mysql-database-s/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -384,7 +332,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/04/04/backup-of-chyrp/" data-id="wwwvk7fz4twi9g2j" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/04/04/backup-of-chyrp/" data-id="b7tsd53wrsf9t0kk" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/04/04/backup-of-chyrp/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -431,7 +379,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/04/04/themes-in-chyrp/" data-id="wdgpfbiosv9vdcjs" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/04/04/themes-in-chyrp/" data-id="t4c446e3p4q2rzih" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/04/04/themes-in-chyrp/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -483,7 +431,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/04/04/thoughts-on-chyrp/" data-id="kpcfe5qmvkjn07hq" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/04/04/thoughts-on-chyrp/" data-id="nfnpdry3671g071e" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/04/04/thoughts-on-chyrp/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -576,7 +524,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/04/02/binary-patches-for-openbsd-46/" data-id="r7ho3q5wkfyf2fkt" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/04/02/binary-patches-for-openbsd-46/" data-id="isqffmr5k9244phs" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/04/02/binary-patches-for-openbsd-46/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -623,12 +571,62 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/04/01/on-fedora-12/" data-id="2u9vkhjycke4cmka" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/04/01/on-fedora-12/" data-id="ksqitf8v90x3dgjp" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/04/01/on-fedora-12/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/fedora/">fedora</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-phpmysql-based-solution-for-blog" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2010/03/28/phpmysql-based-solution-for-blog/" class="article-date">
+  <time datetime="2010-03-27T20:14:22.000Z" itemprop="datePublished">Mar 28 2010</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Software/">Software</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2010/03/28/phpmysql-based-solution-for-blog/">PHP/MySQL-based Solution for Blog</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>While I’ve found NanoBlogger to be extremely intuitive and easy to deploy, I’ve come to the realization that bash and co. simply don’t scale well with lots of entries, and that they aren’t nearly as effective as other database-querying solutions.</p>
+<p>On one of my sites in particular, <code>$ nb update all</code> took all of 10 minutes to complete - this was with a ‘quick’ 2-line hack of the display template. Pitiful performance for something I once thought was lean and mean - though I should have known that from the start.</p>
+<p>I’m also entertaining the idea of using a perl-based CMS called BlazeBlogger. It’s reportedly very fast at serving static files, and as it is based on Perl, does not require a database. From <a href="http://blaze.blackened.cz/about/" target="_blank" rel="external">BlazeBlogger’s About page</a>:</p>
+<blockquote>
+<p>BlazeBlogger is a simple to use but capable CMS for the command line. Being written in Perl as a cross-platform application, and producing static content without the need of database servers or server-side scripting, it is literally a CMS without boundaries suitable for a wide variety of web presentations, from a personal weblog to a project page, or even a company website.</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ootput.github.io/2010/03/28/phpmysql-based-solution-for-blog/" data-id="3cbac0l0srg21cm4" class="article-share-link">Share</a>
+      
+        <a href="http://ootput.github.io/2010/03/28/phpmysql-based-solution-for-blog/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/">blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nanoblogger/">nanoblogger</a></li></ul>
 
     </footer>
   </div>
@@ -662,10 +660,6 @@ ga('send', 'pageview');
       <ul>
         
           <li>
-            <a href="/2014/12/18/forking-spf13-from-github/">forking-spf13-from-github</a>
-          </li>
-        
-          <li>
             <a href="/2014/12/11/Crunchbang-Waldorf-Issues/">Crunchbang Waldorf Issues</a>
           </li>
         
@@ -679,6 +673,10 @@ ga('send', 'pageview');
         
           <li>
             <a href="/2014/06/14/qos-on-vpn-client-tunnel-in-tomato/">QOS on VPN Client Tunnel in Tomato</a>
+          </li>
+        
+          <li>
+            <a href="/2013/10/20/reset-audio-on-osx/">Reset Audio on OSX</a>
           </li>
         
       </ul>
@@ -699,7 +697,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">May 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">April 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">December 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">June 2012</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">May 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10/">October 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/09/">September 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06/">June 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07/">July 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06/">June 2010</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/04/">April 2010</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03/">March 2010</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02/">February 2010</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11/">November 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03/">March 2007</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02/">February 2007</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">May 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">April 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">December 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">June 2012</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">May 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10/">October 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/09/">September 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06/">June 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07/">July 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06/">June 2010</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/04/">April 2010</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03/">March 2010</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02/">February 2010</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11/">November 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03/">March 2007</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02/">February 2007</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
