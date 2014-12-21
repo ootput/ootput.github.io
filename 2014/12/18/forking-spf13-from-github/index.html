@@ -3,20 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Find/Cpio Data Between Partitions | ootput burst!</title>
+  <title>forking-spf13-from-github | ootput burst!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Besides the Dump/Restore method mentioned here, I’ve found the commands find and cpio an equally effective combo when used to obtain true clones of data directories.
-In the below example, the source p">
+  <meta name="description" content="The Lively Meanderings of an Idle Mind">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Find/Cpio Data Between Partitions">
-<meta property="og:url" content="http://ootput.github.io/2010/03/18/find-cpio-data-between-partitions/">
+<meta property="og:title" content="forking-spf13-from-github">
+<meta property="og:url" content="http://ootput.github.io/2014/12/18/forking-spf13-from-github/">
 <meta property="og:site_name" content="ootput burst!">
-<meta property="og:description" content="Besides the Dump/Restore method mentioned here, I’ve found the commands find and cpio an equally effective combo when used to obtain true clones of data directories.
-In the below example, the source p">
+<meta property="og:description" content="The Lively Meanderings of an Idle Mind">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Find/Cpio Data Between Partitions">
-<meta name="twitter:description" content="Besides the Dump/Restore method mentioned here, I’ve found the commands find and cpio an equally effective combo when used to obtain true clones of data directories.
-In the below example, the source p">
+<meta name="twitter:title" content="forking-spf13-from-github">
+<meta name="twitter:description" content="The Lively Meanderings of an Idle Mind">
 <meta name="twitter:creator" content="@513256254">
 <link rel="publisher" href="110511550415133050000">
 
@@ -81,16 +78,12 @@ ga('send', 'pageview');
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-find-cpio-data-between-partitions" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-forking-spf13-from-github" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2010/03/18/find-cpio-data-between-partitions/" class="article-date">
-  <time datetime="2010-03-18T01:29:51.000Z" itemprop="datePublished">Mar 18 2010</time>
+    <a href="/2014/12/18/forking-spf13-from-github/" class="article-date">
+  <time datetime="2014-12-18T11:05:16.000Z" itemprop="datePublished">Dec 18 2014</time>
 </a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Software/">Software</a>
-  </div>
-
   </div>
   <div class="article-inner">
     
@@ -99,7 +92,7 @@ ga('send', 'pageview');
         
   
     <h1 class="article-title" itemprop="name">
-      Find/Cpio Data Between Partitions
+      forking-spf13-from-github
     </h1>
   
 
@@ -107,48 +100,25 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Besides the Dump/Restore method mentioned <a href="http://ootput.github.io/2010/03/18/dumprestore-data-between-partitions/" target="_blank" rel="external">here</a>, I’ve found the commands <code>find</code> and <code>cpio</code> an equally effective combo when used to obtain true clones of data directories.</p>
-<p>In the below example, the source partition is mounted at <code>/srcDir</code>, and the destination partition device is <code>/dev/targetPart</code>. We will create two scratch directories at <code>/var/tmp</code>: <code>srcDir</code>, and <code>targetDir</code>; and mount both source and target partitions here.</p>
-<p>We will use the <code>mount_nullfs</code> file system as opposed to the traditional loopback file system. From <code>man 8 mount_nullfs</code>:</p>
-<blockquote>
-<p>The mount_nullfs file system differs from a traditional loopback file system in two respects: it is implemented using a stackable layers techniques, and its “null-node��?s stack above all lower-layer vnodes, not just over directory vnodes.</p>
-</blockquote>
-<p><code># mkdir /var/tmp/srcDir &amp;&amp; mount_nullfs /srcDir /var/tmp/srcDir</code></p>
-<p><code># mkdir /var/tmp/targetDir &amp;&amp; mount /dev/targetPart /var/tmp/targetDir</code></p>
-<p><code># cd /var/tmp/srcDir</code></p>
-<p><code># find . | cpio -pdum /var/tmp/targetDir</code></p>
-<p><code># cd - &amp;&amp; umount /var/tmp/targetDir &amp;&amp; umount /var/tmp/srcDir</code></p>
-<p><code># rmdir /var/tmp/{srcDir,targetDir}</code></p>
-
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/03/18/find-cpio-data-between-partitions/" data-id="3tn5t2zm27s03ivz" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2014/12/18/forking-spf13-from-github/" data-id="5hvp0kjdiztc020p" class="article-share-link">Share</a>
       
-        <a href="http://ootput.github.io/2010/03/18/find-cpio-data-between-partitions/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://ootput.github.io/2014/12/18/forking-spf13-from-github/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/clone/">clone</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/freebsd/">freebsd</a></li></ul>
-
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/2010/03/23/dos-to-unix-file-encoding-with-vim/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          DOS to  Unix File Encoding with Vim
-        
-      </div>
-    </a>
   
-  
-    <a href="/2010/03/18/dumprestore-data-between-partitions/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2014/12/11/Crunchbang-Waldorf-Issues/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Dump/Restore Data Between Partitions</div>
+      <div class="article-nav-title">Crunchbang Waldorf Issues</div>
     </a>
   
 </nav>
@@ -250,7 +220,7 @@ ga('send', 'pageview');
 <script>
   var disqus_shortname = 'ootputburst';
   
-  var disqus_url = 'http://ootput.github.io/2010/03/18/find-cpio-data-between-partitions/';
+  var disqus_url = 'http://ootput.github.io/2014/12/18/forking-spf13-from-github/';
   
   (function(){
     var dsq = document.createElement('script');
