@@ -2,8 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://ootput.github.io/2014/11/25/ootput-Burst-on-Github-via-Hexo/</loc>
+    <lastmod>2014-12-29T11:42:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ootput.github.io/2014/12/11/Crunchbang-Waldorf-Issues/</loc>
+    <lastmod>2014-12-29T11:41:15.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://ootput.github.io/2014/12/29/Update-Flash-in-Debian-Wheezy/</loc>
-    <lastmod>2014-12-29T11:38:41.000Z</lastmod>
+    <lastmod>2014-12-29T11:40:54.000Z</lastmod>
   </url>
   
   <url>
@@ -14,11 +24,6 @@
   <url>
     <loc>http://ootput.github.io/desktop/index.html</loc>
     <lastmod>2014-12-21T22:58:19.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://ootput.github.io/2014/12/11/Crunchbang-Waldorf-Issues/</loc>
-    <lastmod>2014-12-21T21:31:41.000Z</lastmod>
   </url>
   
   <url>
@@ -254,11 +259,6 @@
   <url>
     <loc>http://ootput.github.io/2013/08/23/root-and-flash-samsung-galaxy-s2-from-within-osx/</loc>
     <lastmod>2014-11-25T10:48:38.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://ootput.github.io/2014/11/25/ootput-Burst-on-Github-via-Hexo/</loc>
-    <lastmod>2014-11-25T10:43:42.000Z</lastmod>
   </url>
   
   <url>
