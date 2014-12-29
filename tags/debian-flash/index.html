@@ -3,44 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Code in Habari | ootput burst!</title>
+  <title>Tag: debian, flash | ootput burst!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Using &lt;code&gt;, I can post short code snippets without relying on Github. e.g,
-
-// my first program in C++
-#include 
-using namespace std;
-int main ()
-{
-  cout 
-
-Habari has two plug-ins that cater">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Code in Habari">
-<meta property="og:url" content="http://ootput.github.io/2010/06/24/code-in-habari/">
+  <meta name="description" content="The Lively Meanderings of an Idle Mind">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ootput burst!">
+<meta property="og:url" content="http://ootput.github.io/tags/debian-flash/">
 <meta property="og:site_name" content="ootput burst!">
-<meta property="og:description" content="Using &lt;code&gt;, I can post short code snippets without relying on Github. e.g,
-
-// my first program in C++
-#include 
-using namespace std;
-int main ()
-{
-  cout 
-
-Habari has two plug-ins that cater">
+<meta property="og:description" content="The Lively Meanderings of an Idle Mind">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Code in Habari">
-<meta name="twitter:description" content="Using &lt;code&gt;, I can post short code snippets without relying on Github. e.g,
-
-// my first program in C++
-#include 
-using namespace std;
-int main ()
-{
-  cout 
-
-Habari has two plug-ins that cater">
+<meta name="twitter:title" content="ootput burst!">
+<meta name="twitter:description" content="The Lively Meanderings of an Idle Mind">
 <meta name="twitter:creator" content="@513256254">
 <link rel="publisher" href="110511550415133050000">
 
@@ -105,16 +78,14 @@ ga('send', 'pageview');
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-code-in-habari" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main">
+  
+    <article id="post-Update-Flash-in-Debian-Wheezy" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2010/06/24/code-in-habari/" class="article-date">
-  <time datetime="2010-06-24T13:34:55.000Z" itemprop="datePublished">Jun 24 2010</time>
+    <a href="/2014/12/29/Update-Flash-in-Debian-Wheezy/" class="article-date">
+  <time datetime="2014-12-29T11:33:36.000Z" itemprop="datePublished">Dec 29 2014</time>
 </a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Software/">Software</a>
-  </div>
-
   </div>
   <div class="article-inner">
     
@@ -122,8 +93,8 @@ ga('send', 'pageview');
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      Code in Habari
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/12/29/Update-Flash-in-Debian-Wheezy/">Update Flash in Debian Wheezy</a>
     </h1>
   
 
@@ -131,69 +102,29 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Using <code>&lt;code&gt;</code>, I can post short code snippets without relying on Github. e.g,</p>
-<pre class="prettyprint">
-// my first program in C++
-#include 
-using namespace std;
-int main ()
-{
-  cout << "Hello World!";
-  return 0;
-}</pre>
+        <p>Per Debian’s wiki, the command to update the plugin is simply</p>
+<p><code># su -c &#39;update-flashplugin-nonfree --install&#39;</code></p>
+<pre><code>If you wish to <span class="operator"><span class="keyword">check</span> the <span class="keyword">status</span> <span class="keyword">of</span> the <span class="keyword">plugin</span>, run</span>
+</code></pre><p><code># su -c &#39;update-flashplugin-nonfree --status&#39;</code> </p>
 
-<p>Habari has two plug-ins that cater especially to code snippets:</p>
-<blockquote>
-<p><a href="http://habariproject.org/dist/plugins/google-code-prettify/" target="_blank" rel="external">google-code-prettify</a> allows syntax highlighting of source code snippets.</p>
-<p><a href="http://habariproject.org/dist/plugins/code_escape/" target="_blank" rel="external">code_escape</a> runs <code>htmlspecialchars()</code> on any <code>code</code> blocks in your post.</p>
-</blockquote>
-<p>Whilst in <code>user/plugins</code>, fetch both plug-ins from their subversion repositories:</p>
-<p><code>$ svn checkout http://svn.habariproject.org/habari-extras/plugins/google-code-prettify/trunk google-code-prettify
-$ svn checkout http://svn.habariproject.org/habari-extras/plugins/code_escape/trunk code_escape</code></p>
-<p>Make the following changes to <code>plugins/code_escape/code_escape.plugin.php</code>:</p>
-<figure class="highlight diff"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="header">Index: code_escape.plugin.php</span></div><div class="line"><span class="header">===================================================================</span></div><div class="line"><span class="header">--- code_escape.plugin.php (revision 3226)</span></div><div class="line"><span class="header">+++ code_escape.plugin.php (working copy)</span></div><div class="line"><span class="chunk">@@ -4,7 +4,7 @@</span></div><div class="line"></div><div class="line">  public function filter_post_content_out ( $content, $post ) {</div><div class="line"></div><div class="line"><span class="deletion">- $content = preg_replace_callback('/&lt;code&gt;(.*?)&lt;\/code&gt;/s', array( 'self', 'escape_code' ), $content);</span></div><div class="line"><span class="addition">+ $content = preg_replace_callback('/&lt;code class="prettyprint"&gt;(.*?)&amp;lt;\/code&amp;gt;/s', array( 'self', 'escape_code' ), $content);</span></div><div class="line"></div><div class="line">  return $content;</div><div class="line"></div><div class="line"><span class="chunk">@@ -16,7 +16,7 @@</span></div><div class="line"></div><div class="line">  $string = htmlspecialchars( $string );</div><div class="line"></div><div class="line"><span class="deletion">- $string = '&amp;lt;code&amp;gt;' . $string . '&lt;/code&gt;';</span></div><div class="line"><span class="addition">+ $string = '&lt;code class="prettyprint"&gt;' . $string . '&lt;/code&gt;';</span></div><div class="line"></div><div class="line">  return $string;</div><div class="line"></div><div class="line"><span class="chunk">@@ -30,4 +30,4 @@</span></div><div class="line"></div><div class="line">  }</div><div class="line"></div><div class="line"><span class="deletion">-?&gt;</span></div><div class="line">\ No newline at end of file</div><div class="line"><span class="addition">+?&gt;</span></div></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/06/24/code-in-habari/" data-id="lj44bubokr2rvzwp" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2014/12/29/Update-Flash-in-Debian-Wheezy/" data-id="avxgwufs4a65w93s" class="article-share-link">Share</a>
       
-        <a href="http://ootput.github.io/2010/06/24/code-in-habari/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://ootput.github.io/2014/12/29/Update-Flash-in-Debian-Wheezy/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/">blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/habari/">habari</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/debian-flash/">debian, flash</a></li></ul>
 
     </footer>
   </div>
   
-    
-<nav id="article-nav">
-  
-    <a href="/2010/06/26/extending-the-habari-sidebar/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Extending the Habari Sidebar
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2010/06/24/filter-habari-pages-by-tags/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Filter Habari Pages by Tags</div>
-    </a>
-  
-</nav>
-
-  
 </article>
 
 
-<section id="comments">
-  <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  </div>
-</section>
+  
+  
 </section>
         
           <aside id="sidebar">
@@ -282,13 +213,11 @@ $ svn checkout http://svn.habariproject.org/habari-extras/plugins/code_escape/tr
 <script>
   var disqus_shortname = 'ootputburst';
   
-  var disqus_url = 'http://ootput.github.io/2010/06/24/code-in-habari/';
-  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
