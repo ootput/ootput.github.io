@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: gmail | ootput burst!</title>
+  <title>Tag: filebot | ootput burst!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="The Lively Meanderings of an Idle Mind">
 <meta property="og:type" content="website">
 <meta property="og:title" content="ootput burst!">
-<meta property="og:url" content="http://ootput.github.io/tags/gmail/">
+<meta property="og:url" content="http://ootput.github.io/tags/filebot/">
 <meta property="og:site_name" content="ootput burst!">
 <meta property="og:description" content="The Lively Meanderings of an Idle Mind">
 <meta name="twitter:card" content="summary">
@@ -80,16 +80,12 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
-    <article id="post-disable-ms-outlook-junk-mail-filters" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Filebot-on-Debian-Wheezy" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2012/05/30/disable-ms-outlook-junk-mail-filters/" class="article-date">
-  <time datetime="2012-05-30T10:23:19.000Z" itemprop="datePublished">May 30 2012</time>
+    <a href="/2014/12/30/Filebot-on-Debian-Wheezy/" class="article-date">
+  <time datetime="2014-12-30T10:39:07.000Z" itemprop="datePublished">Dec 30 2014</time>
 </a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Software/">Software</a>
-  </div>
-
   </div>
   <div class="article-inner">
     
@@ -98,7 +94,7 @@ ga('send', 'pageview');
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2012/05/30/disable-ms-outlook-junk-mail-filters/">Disable MS Outlook Junk Mail Filters</a>
+      <a class="article-title" href="/2014/12/30/Filebot-on-Debian-Wheezy/">Filebot on Debian Wheezy</a>
     </h1>
   
 
@@ -106,21 +102,23 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/images/ab0d819a56e75e708cc9e58a3790660fefc7ff13.png" class="img-thumbnail"></p>
-<p>Outlook 2010 adds an unwanted “Junk E-Mail” entry to my Gmail’s list of labels. This can’t be avoided as the automatic <em>folder-list-sync</em> generates the label whenever you launch Outlook. As Gmail adequately deals with my spam emails, I’ve decided to disable Outlook’s anti-spam filters.</p>
-<p>To disable the filter, you must create the following registry key and set the <code>DisableAntiSpam</code> value to 1. This will grey out the folder name and prevent access to its settings. Create the path to the key if it does not yet exist.</p>
-<p>For Outlook 2010, the key is:</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">HKEY_CURRENT_USER<span class="regexp">/Software/</span>Policies<span class="regexp">/Microsoft/</span>office<span class="regexp">/14.0/</span>outlook</div><div class="line">DWord: DisableAntiSpam</div><div class="line">Value: <span class="number">1</span> (Hex)</div></pre></td></tr></table></figure>
+        <p>In Debian Wheezy AMD64, the default version of Java is OpenJDK 6. In order to switch Oracle’s v8 Java, do the following:</p>
+<p><code># su -</code><br><code># echo &quot;deb http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main&quot; | tee /etc/apt/sources.list.d/webupd8team-java.list</code><br><code># echo &quot;deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main&quot; | tee -a /etc/apt/sources.list.d/webupd8team-java.list</code><br><code># apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys EEA14886</code><br><code># apt-get update</code><br><code># apt-get install oracle-java8-installer</code></p>
+<p>And confirm that you’re using the correct Java implementation:</p>
+<p><code>$ java -version</code><br><code>$ javac -version</code></p>
+<p>  java version “1.8.0_25”<br>  Java(TM) SE Runtime Environment (build 1.8.0_25-b17)<br>  Java HotSpot(TM) 64-Bit Server VM (build 25.25-b02, mixed mode)</p>
+<p>Next, download the <a href="http://downloads.sourceforge.net/project/filebot/filebot/FileBot_4.5.3/filebot_4.5.3_amd64.deb" target="_blank" rel="external">Filebot deb</a>, and install:</p>
+<p><code>sudo dpkg --force-depends -i filebot-*.deb</code></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2012/05/30/disable-ms-outlook-junk-mail-filters/" data-id="iyh0yc4woieyznn3" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2014/12/30/Filebot-on-Debian-Wheezy/" data-id="l0sp9vbojo8ga41n" class="article-share-link">Share</a>
       
-        <a href="http://ootput.github.io/2012/05/30/disable-ms-outlook-junk-mail-filters/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://ootput.github.io/2014/12/30/Filebot-on-Debian-Wheezy/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gmail/">gmail</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/outlook/">outlook</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/debian/">debian</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/filebot/">filebot</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
 
     </footer>
   </div>
