@@ -80,6 +80,58 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-thoughts-on-chyrp" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2010/04/04/thoughts-on-chyrp/" class="article-date">
+  <time datetime="2010-04-03T17:29:33.000Z" itemprop="datePublished">Apr 4 2010</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Software/">Software</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2010/04/04/thoughts-on-chyrp/">Thoughts on Chyrp</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/d71fed3db7806dd7c29cfc684fb538752659e5f7.png" class="img-thumbnail"></p>
+<p>I recently found out about Chyrp from a co-worker, who had been alpha-testing it for a while now. She took some time out of her busy work day to advocate its usage. </p>
+<p>From Chyrp’s Homepage</p>
+<blockquote>
+<p><a href="http://chyrp.net" target="_blank" rel="external">Chyrp</a> is a blogging engine designed to be very lightweight while retaining functionality. It is powered by PHP and has very powerful theme and extension engines, so you can personalize it however you want. The code is well-documented, and it has a very strong structure that’s loosely based on the MVC design pattern.</p>
+</blockquote>
+<p>Upon installing Chyrp onto the <code>bur.st</code> host, I found it to be scalable; quick to deploy; fast to navigate; functional; aesthetically appealing; and very quick - something that <a href="http://ootput.github.io/2010/03/28/phpmysql-based-solution-for-blog/" target="_blank" rel="external">couldn’t be said about NB</a>.</p>
+<p>One oversight made by developers of Chyrp was that, by default, noone was able to access any pages (!). As it turned out, the default <code>.htaccess</code> file that shipped with Chyrp-2.0, or even the git-version, did not have global-read permissions. This basically prevented the www-data system group from accessing the file, and in turn, this prevented all WWW users from viewing anything on the site. The issue was easily resolved by a <code>$ chmod +r .htacccess</code>.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ootput.github.io/2010/04/04/thoughts-on-chyrp/" data-id="faowdb5v7z7j7s66" class="article-share-link">Share</a>
+      
+        <a href="http://ootput.github.io/2010/04/04/thoughts-on-chyrp/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/">blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/chyrp/">chyrp</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-binary-patches-for-openbsd-46" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2010/04/02/binary-patches-for-openbsd-46/" class="article-date">
@@ -159,7 +211,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/04/02/binary-patches-for-openbsd-46/" data-id="u7o47nf6bb8r3ivs" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/04/02/binary-patches-for-openbsd-46/" data-id="link1v6tnkpi0to1" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/04/02/binary-patches-for-openbsd-46/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -206,7 +258,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/04/01/on-fedora-12/" data-id="hde267d9hmv4c78l" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/04/01/on-fedora-12/" data-id="orrc3dtbeokchws2" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/04/01/on-fedora-12/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -256,7 +308,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/03/28/phpmysql-based-solution-for-blog/" data-id="pyeh6vez6dml8u8g" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/03/28/phpmysql-based-solution-for-blog/" data-id="6na5myth3a3i5lp0" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/03/28/phpmysql-based-solution-for-blog/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -305,7 +357,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/03/28/colored-ls-output-in-openbsd/" data-id="mvp6tqmkxtd8638w" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/03/28/colored-ls-output-in-openbsd/" data-id="cdbiwz6o2o9vb10n" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/03/28/colored-ls-output-in-openbsd/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -351,7 +403,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/03/26/dns-o-matic-server-config-for-dd-wrt/" data-id="hw1v0bcrugma1aqg" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/03/26/dns-o-matic-server-config-for-dd-wrt/" data-id="fx4pa3zstdjuu605" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/03/26/dns-o-matic-server-config-for-dd-wrt/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -398,7 +450,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/03/23/firmware-for-pgt-4-and-bwi-4-in-openbsd/" data-id="7v2q21rqleey4ul6" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/03/23/firmware-for-pgt-4-and-bwi-4-in-openbsd/" data-id="gpd3ehqkmxd4ra0c" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/03/23/firmware-for-pgt-4-and-bwi-4-in-openbsd/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -446,7 +498,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/03/23/dos-to-unix-file-encoding-with-vim/" data-id="4wmwcslnx4ux0hxc" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/03/23/dos-to-unix-file-encoding-with-vim/" data-id="bzjtbhrvp4gj3uv4" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/03/23/dos-to-unix-file-encoding-with-vim/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -502,7 +554,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/03/18/find-cpio-data-between-partitions/" data-id="mjuahlamnv7k2nty" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/03/18/find-cpio-data-between-partitions/" data-id="bciw3hecy8hqvg1p" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/03/18/find-cpio-data-between-partitions/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -548,77 +600,12 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/03/18/dumprestore-data-between-partitions/" data-id="0z59c1oukifrb89z" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/03/18/dumprestore-data-between-partitions/" data-id="56g67596q9asuzs5" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/03/18/dumprestore-data-between-partitions/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/clone/">clone</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/openbsd/">openbsd</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-erc-with-ssl" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2010/02/04/erc-with-ssl/" class="article-date">
-  <time datetime="2010-02-04T03:12:01.000Z" itemprop="datePublished">Feb 4 2010</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Software/">Software</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2010/02/04/erc-with-ssl/">SSL for ERC</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/images/4612da0c7b960c3c729c1129a7f7fe5da81b2223.png" class="img-thumbnail"></p>
-<p>ERC is fully equipped to connect to SSL/TLS-enabled servers (e.g. OFTC and Freenode) however, Certificate Authentication support is rather untested.</p>
-<p>For the purposes of this guide, head on over to the following <a href="http://www.oftc.net/oftc/NickServ/CertFP#AddCertFPtoNS/" target="_blank" rel="external">OFTC page</a> to get an idea on how to create the necessary certificates</p>
-<p>To get started, ensure that SSL/TLS support is enabled in your emacs init file:<figure class="highlight erlang"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">(require 'tls)</div><div class="line">(require 'erc)</div></pre></td></tr></table></figure></p>
-<p>This allows us to set the tls-program variable that calls external tools <code>openssl</code> or <code>gnutls-cli</code> to perform the actual connection.</p>
-<p>To see how the variable is initally defined:<br><code>[F1] V tls-program</code></p>
-<p>You’ll notice that there are several options for <code>tls-program</code>. <code>tls-program</code> will cycle through the commands until a connection is established with the fallback.</p>
-<p>Note that while you can add CA-chain and accompanying keys to <code>gnutls-cli</code>, ERC may fail to recognise them, and will proceed to create the secure connection using gnutls without certificate authentication.</p>
-<p>I personally use OpenSSL:</p>
-<figure class="highlight erlang"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">(setq tls-program '("openssl s_client -connect %h:%p -no_ssl2 -ign_eof</div><div class="line">                                     -CAfile /home/ootput/.private/certs/CAs.pem </div><div class="line">                                     -cert /home/ootput/.private/certs/nick.pem" </div><div class="line">                   "gnutls-cli --priority secure256 </div><div class="line">                               --x509cafile /home/ootput/.private/certs/CAs.pem </div><div class="line">                               --x509certfile /home/ootput/.private/certs/nick.pem -p %p %h" </div><div class="line">                   "gnutls-cli --priority secure256 -p %p %h"))</div></pre></td></tr></table></figure>
-
-
-<p>Please note that your distro’s implementation of libgnutls may also be unsuitable for CA-chaining.</p>
-<p>Use of <code>gnutls-cli</code> is recommended for the future as most linux projects have sought to replace openssl dependencies with gnutls.</p>
-<p>Now, assuming you’ve already enabled ‘erc, we can continue to work with the supplied erc-tls command:</p>
-<figure class="highlight erlang"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">(defun start-irc ()</div><div class="line"> <span class="string">"Connect to IRC."</span></div><div class="line"> (interactive)</div><div class="line"> (erc-tls :server <span class="string">"irc.oftc.net"</span> :port <span class="number">6697</span></div><div class="line">      :nick <span class="string">"ootput"</span> :full-name <span class="string">"ootput"</span>)</div><div class="line"> (erc :server <span class="string">"irc.freenode.net"</span> :port <span class="number">6667</span></div><div class="line">      :nick <span class="string">"ootput"</span> :full-name <span class="string">"ootput"</span>)</div><div class="line"> (setq erc-autojoin-channels-alist '((<span class="string">"freenode.net"</span> <span class="string">"#emacs"</span> <span class="string">"#screen"</span> <span class="string">"#ion"</span>)</div><div class="line">                                     (<span class="string">"oftc.net"</span> <span class="string">"#debian"</span>))))</div></pre></td></tr></table></figure>
-
-
-<p>This will establish connection to OFTC on port 6697 (SSL), but more importantly, it will allow us to use certificates for transparent Nickserv auth.</p>
-<p><code>; M-x start-irc</code></p>
-<p>Enjoy your SSL-encrypted IRC session!</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/02/04/erc-with-ssl/" data-id="ydyucx44c3ajei9m" class="article-share-link">Share</a>
-      
-        <a href="http://ootput.github.io/2010/02/04/erc-with-ssl/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/emacs/">emacs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/erc/">erc</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ssl/">ssl</a></li></ul>
 
     </footer>
   </div>
@@ -640,7 +627,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Photography/">Photography</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Random-Musings/">Random Musings</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Software/">Software</a><span class="category-list-count">97</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Photography/">Photography</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Random-Musings/">Random Musings</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Software/">Software</a><span class="category-list-count">98</span></li></ul>
     </div>
   </div>
 
@@ -650,6 +637,10 @@ ga('send', 'pageview');
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2015/01/01/test/">test</a>
+          </li>
         
           <li>
             <a href="/2015/01/01/Configure-Filebot-for-Opensubtitles-org-in-Windows/">Configure Filebot for Opensubtitles.org in Windows</a>
@@ -665,10 +656,6 @@ ga('send', 'pageview');
         
           <li>
             <a href="/2014/12/11/CIFS-on-Wheezy/">CIFS on Debian Wheezy</a>
-          </li>
-        
-          <li>
-            <a href="/2014/11/25/ootput-Burst-on-Github-via-Hexo/">ootput Burst on Github via Hexo</a>
           </li>
         
       </ul>
@@ -689,7 +676,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">May 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">April 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">December 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">June 2012</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">May 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10/">October 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/09/">September 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06/">June 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07/">July 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06/">June 2010</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/04/">April 2010</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03/">March 2010</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02/">February 2010</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11/">November 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03/">March 2007</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02/">February 2007</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">May 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">April 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">December 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">June 2012</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">May 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10/">October 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/09/">September 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06/">June 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07/">July 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06/">June 2010</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/04/">April 2010</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03/">March 2010</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02/">February 2010</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11/">November 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03/">March 2007</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02/">February 2007</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 

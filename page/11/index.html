@@ -80,6 +80,71 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-erc-with-ssl" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2010/02/04/erc-with-ssl/" class="article-date">
+  <time datetime="2010-02-04T03:12:01.000Z" itemprop="datePublished">Feb 4 2010</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Software/">Software</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2010/02/04/erc-with-ssl/">SSL for ERC</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/4612da0c7b960c3c729c1129a7f7fe5da81b2223.png" class="img-thumbnail"></p>
+<p>ERC is fully equipped to connect to SSL/TLS-enabled servers (e.g. OFTC and Freenode) however, Certificate Authentication support is rather untested.</p>
+<p>For the purposes of this guide, head on over to the following <a href="http://www.oftc.net/oftc/NickServ/CertFP#AddCertFPtoNS/" target="_blank" rel="external">OFTC page</a> to get an idea on how to create the necessary certificates</p>
+<p>To get started, ensure that SSL/TLS support is enabled in your emacs init file:<figure class="highlight erlang"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">(require 'tls)</div><div class="line">(require 'erc)</div></pre></td></tr></table></figure></p>
+<p>This allows us to set the tls-program variable that calls external tools <code>openssl</code> or <code>gnutls-cli</code> to perform the actual connection.</p>
+<p>To see how the variable is initally defined:<br><code>[F1] V tls-program</code></p>
+<p>You’ll notice that there are several options for <code>tls-program</code>. <code>tls-program</code> will cycle through the commands until a connection is established with the fallback.</p>
+<p>Note that while you can add CA-chain and accompanying keys to <code>gnutls-cli</code>, ERC may fail to recognise them, and will proceed to create the secure connection using gnutls without certificate authentication.</p>
+<p>I personally use OpenSSL:</p>
+<figure class="highlight erlang"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">(setq tls-program '("openssl s_client -connect %h:%p -no_ssl2 -ign_eof</div><div class="line">                                     -CAfile /home/ootput/.private/certs/CAs.pem </div><div class="line">                                     -cert /home/ootput/.private/certs/nick.pem" </div><div class="line">                   "gnutls-cli --priority secure256 </div><div class="line">                               --x509cafile /home/ootput/.private/certs/CAs.pem </div><div class="line">                               --x509certfile /home/ootput/.private/certs/nick.pem -p %p %h" </div><div class="line">                   "gnutls-cli --priority secure256 -p %p %h"))</div></pre></td></tr></table></figure>
+
+
+<p>Please note that your distro’s implementation of libgnutls may also be unsuitable for CA-chaining.</p>
+<p>Use of <code>gnutls-cli</code> is recommended for the future as most linux projects have sought to replace openssl dependencies with gnutls.</p>
+<p>Now, assuming you’ve already enabled ‘erc, we can continue to work with the supplied erc-tls command:</p>
+<figure class="highlight erlang"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">(defun start-irc ()</div><div class="line"> <span class="string">"Connect to IRC."</span></div><div class="line"> (interactive)</div><div class="line"> (erc-tls :server <span class="string">"irc.oftc.net"</span> :port <span class="number">6697</span></div><div class="line">      :nick <span class="string">"ootput"</span> :full-name <span class="string">"ootput"</span>)</div><div class="line"> (erc :server <span class="string">"irc.freenode.net"</span> :port <span class="number">6667</span></div><div class="line">      :nick <span class="string">"ootput"</span> :full-name <span class="string">"ootput"</span>)</div><div class="line"> (setq erc-autojoin-channels-alist '((<span class="string">"freenode.net"</span> <span class="string">"#emacs"</span> <span class="string">"#screen"</span> <span class="string">"#ion"</span>)</div><div class="line">                                     (<span class="string">"oftc.net"</span> <span class="string">"#debian"</span>))))</div></pre></td></tr></table></figure>
+
+
+<p>This will establish connection to OFTC on port 6697 (SSL), but more importantly, it will allow us to use certificates for transparent Nickserv auth.</p>
+<p><code>; M-x start-irc</code></p>
+<p>Enjoy your SSL-encrypted IRC session!</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ootput.github.io/2010/02/04/erc-with-ssl/" data-id="6ope3bhxn4qqeflr" class="article-share-link">Share</a>
+      
+        <a href="http://ootput.github.io/2010/02/04/erc-with-ssl/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/emacs/">emacs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/erc/">erc</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ssl/">ssl</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-on-openbsd" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2009/11/30/on-openbsd/" class="article-date">
@@ -113,7 +178,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2009/11/30/on-openbsd/" data-id="6xmmcjnku4q8uz6u" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2009/11/30/on-openbsd/" data-id="nl5zkejb9l16vebz" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2009/11/30/on-openbsd/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -161,7 +226,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2009/11/25/freebsd-8-0-on-serve/" data-id="z9a76mkupclxvlfq" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2009/11/25/freebsd-8-0-on-serve/" data-id="rpfpjnw0v2p5adue" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2009/11/25/freebsd-8-0-on-serve/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -207,7 +272,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2009/11/15/dual-card-alsa-configuration/" data-id="wys7a4ifa3jbfhti" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2009/11/15/dual-card-alsa-configuration/" data-id="p203jto54ih89vyv" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2009/11/15/dual-card-alsa-configuration/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -254,7 +319,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2009/11/01/debian-5-on-desktop/" data-id="5vjf54766bz3uj5o" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2009/11/01/debian-5-on-desktop/" data-id="cutorekagspgpz3c" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2009/11/01/debian-5-on-desktop/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -301,7 +366,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2007/03/09/ion3-look-ootput/" data-id="ffikw3apwja834hn" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2007/03/09/ion3-look-ootput/" data-id="sg483idbdelb7hmf" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2007/03/09/ion3-look-ootput/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -348,7 +413,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2007/02/11/hello-digital-world/" data-id="zztq5bg0m1sn3ddo" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2007/02/11/hello-digital-world/" data-id="0cr20bjpqp78umdx" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2007/02/11/hello-digital-world/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -373,7 +438,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Photography/">Photography</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Random-Musings/">Random Musings</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Software/">Software</a><span class="category-list-count">97</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Photography/">Photography</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Random-Musings/">Random Musings</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Software/">Software</a><span class="category-list-count">98</span></li></ul>
     </div>
   </div>
 
@@ -383,6 +448,10 @@ ga('send', 'pageview');
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2015/01/01/test/">test</a>
+          </li>
         
           <li>
             <a href="/2015/01/01/Configure-Filebot-for-Opensubtitles-org-in-Windows/">Configure Filebot for Opensubtitles.org in Windows</a>
@@ -398,10 +467,6 @@ ga('send', 'pageview');
         
           <li>
             <a href="/2014/12/11/CIFS-on-Wheezy/">CIFS on Debian Wheezy</a>
-          </li>
-        
-          <li>
-            <a href="/2014/11/25/ootput-Burst-on-Github-via-Hexo/">ootput Burst on Github via Hexo</a>
           </li>
         
       </ul>
@@ -422,7 +487,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">May 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">April 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">December 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">June 2012</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">May 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10/">October 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/09/">September 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06/">June 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07/">July 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06/">June 2010</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/04/">April 2010</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03/">March 2010</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02/">February 2010</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11/">November 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03/">March 2007</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02/">February 2007</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">May 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">April 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">December 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">June 2012</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">May 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10/">October 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/09/">September 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06/">June 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07/">July 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06/">June 2010</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/04/">April 2010</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03/">March 2010</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02/">February 2010</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11/">November 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03/">March 2007</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02/">February 2007</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 

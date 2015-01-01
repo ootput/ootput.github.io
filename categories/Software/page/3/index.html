@@ -80,6 +80,83 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-ntfs-write-in-freebsd" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2012/06/18/ntfs-write-in-freebsd/" class="article-date">
+  <time datetime="2012-06-17T16:47:30.000Z" itemprop="datePublished">Jun 18 2012</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Software/">Software</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/06/18/ntfs-write-in-freebsd/">NTFS-Write in FreeBSD</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/0d779279ebe9c460233e8631e19a185f6fb942e2.png" class="img-thumbnail"></p>
+<p>NTFS-write in FreeBSD is possible with <code>NTFS-3G</code> from ports. From <a href="http://www.tuxera.com/community/ntfs-3g-download" target="_blank" rel="external"><code>tuxera.com</code></a>:</p>
+<blockquote>
+<p>NTFS-3G is a stable, full-featured, read-write NTFS driver for Linux, Android, Mac OS X, FreeBSD, NetBSD, OpenSolaris, QNX, Haiku, and other operating systems. It provides safe handling of the Windows XP, Windows Server 2003, Windows 2000, Windows Vista, Windows Server 2008 and Windows 7 NTFS file systems.</p>
+</blockquote>
+<p>To install NTFS-3G, do:</p>
+<p><code># portmaster sysutils/fusefs-ntfs</code></p>
+<p>Next, create a symbolic link from the newly-installed <code>/usr/local/bin/ntfs-3g</code> into <code>/usr/sbin/</code>:</p>
+<p><code># ln -s $(which ntfs-3g) /usr/sbin/mount_ntfs-3g</code></p>
+<p>Modify your <code>/etc/rc.conf</code> to contain:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="variable">fusefs_enable=</span><span class="string">"YES"</span></div></pre></td></tr></table></figure>
+
+<p>Provided you know on which hard-disk (based on make/model/capacity of the device) your NTFS partition resides, you can figure out it’s exact device node in FreeBSD:</p>
+<p><code># egrep &#39;ad[0-9]|cd[0-9]|da[0-9]&#39; /var/run/dmesg.boot</code></p>
+<pre>
+ad0: 35303MB <wdc wd360gd-00fna0="" 35.06k35=""> at ata0-master
+ad2: 57240MB <mushkin mknssdcl60gb-dx="" 310a13f0=""> at ata1-master
+ad4: 286168MB <wdc wd3000hlfs-01g6u4="" 04.04v06=""> at ata2-master
+</wdc></mushkin></wdc></pre>
+
+<p>My NTFS partition resides on a 300GB WD Velociraptor drive, <code>ad4</code>. To confirm that <code>/dev/ad4</code> does indeed contain the NTFS partition, do:</p>
+<p><code># gpart show -p ad4</code></p>
+<pre>
+=>        34  586072064    ad4 GPT  (286G)
+          34  586072064  ad4p1 ntfs (286G)
+</pre>
+
+<p>To mount the partition manually, do:</p>
+<p><code># ntfs-3g /dev/ad4s1 /mnt/windows7</code></p>
+<p>Finally, add the appropriate line to <code>/etc/fstab</code> to have the NTFS partition mounted at the next system boot. For instance, my <code>/etc/fstab</code> contains:</p>
+<pre>
+/dev/ad4s1              /mnt/windows7            ntfs-3g rw,late         0       0
+</pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ootput.github.io/2012/06/18/ntfs-write-in-freebsd/" data-id="x7abrccq3ovxut3y" class="article-share-link">Share</a>
+      
+        <a href="http://ootput.github.io/2012/06/18/ntfs-write-in-freebsd/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/freebsd/">freebsd</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ntfs/">ntfs</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-code-and-gists-in-wordpress" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2012/06/08/code-and-gists-in-wordpress/" class="article-date">
@@ -119,7 +196,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2012/06/08/code-and-gists-in-wordpress/" data-id="calxbyhm0d4l11hb" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2012/06/08/code-and-gists-in-wordpress/" data-id="3un5q6e5qaicqqmr" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2012/06/08/code-and-gists-in-wordpress/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -173,7 +250,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2012/06/07/new-blog-host-adopted/" data-id="itqxyfz4wr8jgneh" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2012/06/07/new-blog-host-adopted/" data-id="pfrbs535tykl8zep" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2012/06/07/new-blog-host-adopted/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -234,7 +311,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2012/06/01/future-of-ootput-burst-in-doubt/" data-id="ruxi6e4n8vlsspuz" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2012/06/01/future-of-ootput-burst-in-doubt/" data-id="i6a52mn0omln2u6q" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2012/06/01/future-of-ootput-burst-in-doubt/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -283,7 +360,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2012/05/30/disable-ms-outlook-junk-mail-filters/" data-id="op328nj7vgvojbvu" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2012/05/30/disable-ms-outlook-junk-mail-filters/" data-id="fs3bybwrsiulvuxj" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2012/05/30/disable-ms-outlook-junk-mail-filters/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -352,7 +429,7 @@ Device 'Logitech USB Gaming Mouse':
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2012/03/03/disable-mouse-acceleration-in-xorg/" data-id="pvom4ga4fmfwypcx" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2012/03/03/disable-mouse-acceleration-in-xorg/" data-id="c2iiny8kbjwnc5im" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2012/03/03/disable-mouse-acceleration-in-xorg/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -401,7 +478,7 @@ Device 'Logitech USB Gaming Mouse':
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2012/01/19/parse-usr-ports-updating-for-relevant-issues/" data-id="humakwiomoiufgzd" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2012/01/19/parse-usr-ports-updating-for-relevant-issues/" data-id="da0iaf1e2ngdvk8m" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2012/01/19/parse-usr-ports-updating-for-relevant-issues/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -461,7 +538,7 @@ Device 'Logitech USB Gaming Mouse':
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/12/30/rebuild-freebsd-ports/" data-id="vddb1jlm6jg4510e" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/12/30/rebuild-freebsd-ports/" data-id="0ai5lavaqsdowtju" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/12/30/rebuild-freebsd-ports/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -520,7 +597,7 @@ Device 'Logitech USB Gaming Mouse':
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/12/30/import-freebsd-root-zpool-to-other-environments/" data-id="y1yn7vfszvbezjiz" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/12/30/import-freebsd-root-zpool-to-other-environments/" data-id="ehwtpf9dmzl7fzq5" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/12/30/import-freebsd-root-zpool-to-other-environments/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -596,97 +673,12 @@ Device 'Logitech USB Gaming Mouse':
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/12/30/move-chromium-cache-to-mfs-memory-disk-on-freebsd/" data-id="252u0wnywno9lbmg" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/12/30/move-chromium-cache-to-mfs-memory-disk-on-freebsd/" data-id="ecnze7qsct5x4ug4" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/12/30/move-chromium-cache-to-mfs-memory-disk-on-freebsd/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/chromium/">chromium</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/freebsd/">freebsd</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-upgrading-to-freebsd-8-stable" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2011/12/27/upgrading-to-freebsd-8-stable/" class="article-date">
-  <time datetime="2011-12-27T11:45:40.000Z" itemprop="datePublished">Dec 27 2011</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Software/">Software</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2011/12/27/upgrading-to-freebsd-8-stable/">Upgrading to FreeBSD 8-Stable</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>As a reminder to myself:</p>
-<p><code># pkg_add -r fastest_cvsup</code><br><code># fastest_cvsup -c all</code></p>
-<p>In <code>/root/stable-supfile</code>, have:</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">*<span class="default"><span class="keyword">default</span> host=cvsup.au.freebsd.org</span></div><div class="line">*<span class="default"><span class="keyword">default</span> base=/var/db</span></div><div class="line">*<span class="default"><span class="keyword">default</span> prefix=/usr</span></div><div class="line">*<span class="default"><span class="keyword">default</span> release=cvs tag=<span class="type">RELENG_8</span></span></div><div class="line">*<span class="default"><span class="keyword">default</span> delete use-rel-suffix</span></div><div class="line">*<span class="default"><span class="keyword">default</span> compress</span></div><div class="line"><span class="title">src</span>-all</div></pre></td></tr></table></figure>
-
-
-<p><code># csup /root/stable-supfile</code></p>
-<p><code># cd /usr/src</code><br><code># rm -r -f /usr/obj</code></p>
-<p>Customize <code>/etc/make.conf</code> (read <em>notes</em>). Mine contains:</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="constant"></span></div><div class="line">CPUTYPE?= core2</div><div class="line"><span class="constant"></span></div><div class="line">NO_LPR= YES</div><div class="line"><span class="constant">NO_NIS</span>= YES</div><div class="line"><span class="constant">CUPS_OVERWRITE_BASE</span>= YES</div><div class="line"><span class="constant">NO_INET6</span>= YES</div><div class="line"><span class="constant"></span></div><div class="line">WITH_NVIDIA_GL= YES</div><div class="line"><span class="constant">WITH_NVIDIA</span>= YES</div><div class="line"><span class="constant">WITHOUT_NOUVEAU</span>= YES</div></pre></td></tr></table></figure>
-
-
-<p><code># script /var/tmp/buildworld-$(date &quot;+%Y%m%d%H%M.%S&quot;)</code></p>
-<p><code># make -jX buildworld</code></p>
-<font><em>( where X == number of CPUs + 1 )</em></font>
-
-<p><code># exit</code><br><code># script /var/tmp/buildkernel-$(date &quot;+%Y%m%d%H%M.%S&quot;)</code></p>
-<p><code># make buildkernel KODIR=/boot/testing KERNCONF=CUSTOM64</code></p>
-<font><em>( where CUSTOM64 is documented <a href="http://ootput.github.io/2011/12/27/custom-kernel-config-for-freebsd-8-stable/" target="_blank" rel="external">here</a> )</em></font>
-
-<p><code># make installkernel KODIR=/boot/testing KERNCONF=CUSTOM64</code><br><code># exit</code><br><code># nextboot -k testing</code><br><code># shutdown -r now</code></p>
-<p><code># cd /boot</code><br><code># rm -r -f OLD</code><br><code># mv kernel OLD</code><br><code># mv testing kernel</code></p>
-<p><code># adjkerntz -i</code><br><code># rm -rf /etc.old &amp;&amp; cp -Rp /etc /etc.old</code><br><code># mergemaster -p</code><br><code># cd /usr/src</code><br><code># make installworld</code><br><code># mergemaster -iU</code><br><code># make delete-old</code><br><code># shutdown -r now</code></p>
-<p><em>NB:</em> <code>NO_NIS</code> in <code>/etc/make.conf</code> requires the following changes in <code>/etc/nsswitch.conf</code>:</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="attribute">group</span>: <span class="string">files</span></div><div class="line"><span class="attribute">passwd</span>: <span class="string">files</span></div></pre></td></tr></table></figure>
-
-
-<p>If you’re feeling game, you can try the following commands to save yourself some keystrokes and delays:</p>
-<p><code># csup /root/stable-supfile &amp;&amp;
-rm -r -f /usr/obj &amp;&amp;
-cd /usr/src &amp;&amp;
-make -j5 buildworld &amp;&amp;
-make buildkernel KODIR=/boot/testing KERNCONF=CUSTOM64 &amp;&amp;
-make installkernel KODIR=/boot/testing KERNCONF=CUSTOM64 &amp;&amp;
-cd /boot &amp;&amp;
-rm -r -f OLD &amp;&amp;
-mv kernel OLD &amp;&amp;
-mv testing kernel &amp;&amp;
-reboot</code></p>
-<p>Here, you can revert back to the old kernel if you experience boot up problems. Otherwise, continue with:</p>
-<p><code># adjkerntz -i &amp;&amp; rm -rf /etc.old &amp;&amp; cp -Rp /etc /etc.old &amp;&amp; mergemaster -p &amp;&amp; cd /usr/src &amp;&amp; make installworld &amp;&amp; mergemaster -iU &amp;&amp; make delete-old &amp;&amp; reboot</code></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/12/27/upgrading-to-freebsd-8-stable/" data-id="j9jpemf4132wh16z" class="article-share-link">Share</a>
-      
-        <a href="http://ootput.github.io/2011/12/27/upgrading-to-freebsd-8-stable/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/freebsd/">freebsd</a></li></ul>
 
     </footer>
   </div>
@@ -708,7 +700,7 @@ reboot</code></p>
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Photography/">Photography</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Random-Musings/">Random Musings</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Software/">Software</a><span class="category-list-count">97</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Photography/">Photography</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Random-Musings/">Random Musings</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Software/">Software</a><span class="category-list-count">98</span></li></ul>
     </div>
   </div>
 
@@ -718,6 +710,10 @@ reboot</code></p>
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2015/01/01/test/">test</a>
+          </li>
         
           <li>
             <a href="/2015/01/01/Configure-Filebot-for-Opensubtitles-org-in-Windows/">Configure Filebot for Opensubtitles.org in Windows</a>
@@ -733,10 +729,6 @@ reboot</code></p>
         
           <li>
             <a href="/2014/12/11/CIFS-on-Wheezy/">CIFS on Debian Wheezy</a>
-          </li>
-        
-          <li>
-            <a href="/2014/11/25/ootput-Burst-on-Github-via-Hexo/">ootput Burst on Github via Hexo</a>
           </li>
         
       </ul>
@@ -757,7 +749,7 @@ reboot</code></p>
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">May 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">April 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">December 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">June 2012</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">May 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10/">October 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/09/">September 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06/">June 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07/">July 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06/">June 2010</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/04/">April 2010</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03/">March 2010</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02/">February 2010</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11/">November 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03/">March 2007</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02/">February 2007</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">May 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">April 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">December 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">June 2012</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">May 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10/">October 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/09/">September 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06/">June 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07/">July 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06/">June 2010</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/04/">April 2010</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03/">March 2010</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02/">February 2010</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11/">November 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03/">March 2007</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02/">February 2007</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
