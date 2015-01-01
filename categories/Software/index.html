@@ -80,6 +80,119 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-Configure-Filebot-for-Opensubtitles-org-in-Windows" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/01/01/Configure-Filebot-for-Opensubtitles-org-in-Windows/" class="article-date">
+  <time datetime="2015-01-01T00:00:38.000Z" itemprop="datePublished">Jan 1 2015</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Software/">Software</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/01/01/Configure-Filebot-for-Opensubtitles-org-in-Windows/">Configure Filebot for Opensubtitles.org in Windows</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>FileBot in Windows is a bit tricky to use when it comes to batch subtitle downloads.</p>
+<p>In particular, OpenSubtitles.org prevents leeching by requiring login details to be passed to Filebot. This isn’t so straightforward in Windows with no gui configuration available.</p>
+<p>We are required to use the console version of FileBot from the windows commandline</p>
+<p>Firstly, get into the commandline:</p>
+<p><code>&lt;win-R&gt; cmd</code></p>
+<p>Then do:</p>
+<p><code>cd C:\Program Files\FileBot</code></p>
+<p>Your prompt should now show:</p>
+<p><code>C:\Program Files\FileBot&gt;</code></p>
+<p>Then do:</p>
+<p><code>filebot.exe -script fn:configure</code></p>
+<pre><code>Enter OpenSubtitles username: <span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span>
+Enter OpenSubtitles password: <span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span>
+
+Testing OpenSubtitles... OK
+Done
+</code></pre><p>Finally, with all movies in a network-mounted Y:\, for example, do:</p>
+<p><code>filebot.exe -script fn:suball &quot;Y:/&quot; --lang en -non-strict</code></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ootput.github.io/2015/01/01/Configure-Filebot-for-Opensubtitles-org-in-Windows/" data-id="h0fcdq95wph8tyhl" class="article-share-link">Share</a>
+      
+        <a href="http://ootput.github.io/2015/01/01/Configure-Filebot-for-Opensubtitles-org-in-Windows/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/filebot/">filebot</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/subtitles/">subtitles</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/windows/">windows</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Filebot-on-Debian-Wheezy" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/12/30/Filebot-on-Debian-Wheezy/" class="article-date">
+  <time datetime="2014-12-30T10:39:07.000Z" itemprop="datePublished">Dec 30 2014</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Software/">Software</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/12/30/Filebot-on-Debian-Wheezy/">Filebot on Debian Wheezy</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>In Debian Wheezy AMD64, the default version of Java is OpenJDK 6. In order to switch Oracle’s v8 Java, do the following:</p>
+<p><code># su -</code><br><code># echo &quot;deb http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main&quot; | tee /etc/apt/sources.list.d/webupd8team-java.list</code><br><code># echo &quot;deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main&quot; | tee -a /etc/apt/sources.list.d/webupd8team-java.list</code><br><code># apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys EEA14886</code><br><code># apt-get update</code><br><code># apt-get install oracle-java8-installer</code></p>
+<p>And confirm that you’re using the correct Java implementation:</p>
+<p><code>$ java -version</code><br><code>$ javac -version</code></p>
+<p>  java version “1.8.0_25”<br>  Java(TM) SE Runtime Environment (build 1.8.0_25-b17)<br>  Java HotSpot(TM) 64-Bit Server VM (build 25.25-b02, mixed mode)</p>
+<p>Next, download the <a href="http://downloads.sourceforge.net/project/filebot/filebot/FileBot_4.5.3/filebot_4.5.3_amd64.deb" target="_blank" rel="external">Filebot deb</a>, and install:</p>
+<p><code>sudo dpkg --force-depends -i filebot-*.deb</code></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ootput.github.io/2014/12/30/Filebot-on-Debian-Wheezy/" data-id="5uri1knvoz9bdrjp" class="article-share-link">Share</a>
+      
+        <a href="http://ootput.github.io/2014/12/30/Filebot-on-Debian-Wheezy/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/debian/">debian</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/filebot/">filebot</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Update-Flash-in-Debian-Wheezy" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/12/29/Update-Flash-in-Debian-Wheezy/" class="article-date">
@@ -114,7 +227,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2014/12/29/Update-Flash-in-Debian-Wheezy/" data-id="grt12cx1wpfy5r2n" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2014/12/29/Update-Flash-in-Debian-Wheezy/" data-id="qryl99ijl25upp8v" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2014/12/29/Update-Flash-in-Debian-Wheezy/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -180,7 +293,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2014/12/11/CIFS-on-Wheezy/" data-id="22nrk6ma75ztqs5d" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2014/12/11/CIFS-on-Wheezy/" data-id="e887nc93swvtragl" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2014/12/11/CIFS-on-Wheezy/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -227,7 +340,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2014/11/25/ootput-Burst-on-Github-via-Hexo/" data-id="g48dsqmi0tegz5s8" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2014/11/25/ootput-Burst-on-Github-via-Hexo/" data-id="2qc4dg4yigruewyh" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2014/11/25/ootput-Burst-on-Github-via-Hexo/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -275,7 +388,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2014/11/18/focus-follows-mouse-and-scroll-any-window/" data-id="mf31xye08xni2h3z" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2014/11/18/focus-follows-mouse-and-scroll-any-window/" data-id="mcds0su9oknfm2rb" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2014/11/18/focus-follows-mouse-and-scroll-any-window/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -322,7 +435,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2014/06/14/qos-on-vpn-client-tunnel-in-tomato/" data-id="3sq5mr3xh1xxir6m" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2014/06/14/qos-on-vpn-client-tunnel-in-tomato/" data-id="2q5mj8643wwy8ezo" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2014/06/14/qos-on-vpn-client-tunnel-in-tomato/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -369,7 +482,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2013/10/20/reset-audio-on-osx/" data-id="axbieaulfw90cpck" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2013/10/20/reset-audio-on-osx/" data-id="vwlt3klhw86c2acn" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2013/10/20/reset-audio-on-osx/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -429,7 +542,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2013/10/04/update-to-latest-freebsd-release-9-2/" data-id="zeybgrvac5otnz2m" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2013/10/04/update-to-latest-freebsd-release-9-2/" data-id="iy65m1mxrj4bhx3b" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2013/10/04/update-to-latest-freebsd-release-9-2/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -493,104 +606,12 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2013/08/23/root-and-flash-samsung-galaxy-s2-from-within-osx/" data-id="jn29hw9e2yzq0qba" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2013/08/23/root-and-flash-samsung-galaxy-s2-from-within-osx/" data-id="fi23n68rwczuhhxw" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2013/08/23/root-and-flash-samsung-galaxy-s2-from-within-osx/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/osx/">osx</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-copy-and-paste-in-tmux-with-mouse" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2013/08/02/copy-and-paste-in-tmux-with-mouse/" class="article-date">
-  <time datetime="2013-08-02T03:25:39.000Z" itemprop="datePublished">Aug 2 2013</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Software/">Software</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2013/08/02/copy-and-paste-in-tmux-with-mouse/">Copy and Paste in Tmux with Mouse</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>I have my iTerm2 emulate xterm-256colors, and found that it was possible to use the mouse to copy a selection in tmux.</p>
-<p>You’d need to hold down the <code>option</code> key whilst left-clicking and dragging across the target text selection. If you want to now paste the selected text back in to the terminal (in say, another window), you must also hold down the <code>option</code> key and middle-click to paste.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2013/08/02/copy-and-paste-in-tmux-with-mouse/" data-id="karpla5z8jbl3b6q" class="article-share-link">Share</a>
-      
-        <a href="http://ootput.github.io/2013/08/02/copy-and-paste-in-tmux-with-mouse/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/osx/">osx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tmux/">tmux</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-share-osx-clipboard-with-emacs" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2013/08/02/share-osx-clipboard-with-emacs/" class="article-date">
-  <time datetime="2013-08-02T03:05:14.000Z" itemprop="datePublished">Aug 2 2013</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Software/">Software</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2013/08/02/share-osx-clipboard-with-emacs/">Share OSX Clipboard With Emacs</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Add the following to your <code>.el</code> init files:</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">;; <span class="type">Use</span> M-w to copy <span class="type">Emacs</span> buffer selection; <span class="keyword">and</span> <span class="type">Cmd</span>-V to paste outside <span class="keyword">of</span> <span class="type">Emacs</span>.</div><div class="line">;; <span class="type">Use</span> <span class="type">Cmd</span>-C to copy selection <span class="keyword">from</span> <span class="type">OSX</span>; <span class="keyword">and</span> C-y to paste <span class="keyword">in</span> <span class="type">Emacs</span></div><div class="line"></div><div class="line">(defun copy-<span class="keyword">from</span>-osx ()</div><div class="line">  (shell-command-to-<span class="type">string</span> <span class="string">"pbpaste"</span>))</div><div class="line"></div><div class="line">(defun paste-to-osx (text &amp;optional push)</div><div class="line">  (<span class="keyword">let</span> ((process-connection-<span class="keyword">type</span> <span class="keyword">nil</span>))</div><div class="line">    (<span class="keyword">let</span> ((<span class="keyword">proc</span> (start-process <span class="string">"pbcopy"</span> <span class="string">"*Messages*"</span> <span class="string">"pbcopy"</span>)))</div><div class="line">      (process-send-<span class="type">string</span> <span class="keyword">proc</span> text)</div><div class="line">      (process-send-eof <span class="keyword">proc</span>))))</div><div class="line"></div><div class="line">(setq interprogram-cut-function 'paste-to-osx)</div><div class="line">(setq interprogram-paste-function 'copy-<span class="keyword">from</span>-osx)</div></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2013/08/02/share-osx-clipboard-with-emacs/" data-id="zzj3fphfqrx99zwi" class="article-share-link">Share</a>
-      
-        <a href="http://ootput.github.io/2013/08/02/share-osx-clipboard-with-emacs/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/emacs/">emacs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/osx/">osx</a></li></ul>
 
     </footer>
   </div>
@@ -612,7 +633,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Photography/">Photography</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Random-Musings/">Random Musings</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Software/">Software</a><span class="category-list-count">95</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Photography/">Photography</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Random-Musings/">Random Musings</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Software/">Software</a><span class="category-list-count">97</span></li></ul>
     </div>
   </div>
 

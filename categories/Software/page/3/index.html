@@ -80,6 +80,113 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-code-and-gists-in-wordpress" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2012/06/08/code-and-gists-in-wordpress/" class="article-date">
+  <time datetime="2012-06-07T14:47:37.000Z" itemprop="datePublished">Jun 8 2012</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Software/">Software</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/06/08/code-and-gists-in-wordpress/">Code and Gists in Wordpress</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/77d2c78cfa90d0eb329afe898067cde00dafad48.png" class="img-thumbnail"></p>
+<p>While <code>WordPress.com</code> doesn’t allow you to use potentially harmful code on your blog, it does allow you to post source code for general viewing. Provided that you enclose the source code within a <code>[sourcecode] [/sourcecode]</code> <a href="http://en.support.rdpress.com/shortcodes/" target="_blank" rel="external"><code>shortcode</code></a> wrapper, you will be able to preserve the code’s formatting; enable syntax highlighting for the programming language used; and highlight specific lines in the code. For example, for a CSS snippet, do:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="attr_selector">[sourcecode language="css" highlight="3,4,5,6,7"]</span></div><div class="line"></div><div class="line"><span class="comment">/* HTML5 display-role reset for older browsers */</span></div><div class="line"><span class="tag">article</span>, <span class="tag">aside</span>, <span class="tag">details</span>, <span class="tag">figcaption</span>, <span class="tag">figure</span>,</div><div class="line"><span class="tag">footer</span>, <span class="tag">header</span>, <span class="tag">hgroup</span>, <span class="tag">menu</span>, <span class="tag">nav</span>, <span class="tag">section</span> <span class="rules">{</span></div><div class="line">	<span class="rule"><span class="attribute">display</span>:<span class="value"> block</span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line"><span class="tag">body</span> <span class="rules">{</span></div><div class="line">	<span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">1</span></span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line"><span class="tag">ol</span>, <span class="tag">ul</span> <span class="rules">{</span></div><div class="line">	<span class="rule"><span class="attribute">list-style</span>:<span class="value"> none</span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line"><span class="tag">blockquote</span>, <span class="tag">q</span> <span class="rules">{</span></div><div class="line">	<span class="rule"><span class="attribute">quotes</span>:<span class="value"> none</span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line"><span class="tag">blockquote</span><span class="pseudo">:before</span>, <span class="tag">blockquote</span><span class="pseudo">:after</span>,</div><div class="line"><span class="tag">q</span><span class="pseudo">:before</span>, <span class="tag">q</span><span class="pseudo">:after</span> <span class="rules">{</span></div><div class="line">	<span class="rule"><span class="attribute">content</span>:<span class="value"> <span class="string">''</span></span></span>;</div><div class="line">	<span class="rule"><span class="attribute">content</span>:<span class="value"> none</span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line"><span class="tag">table</span> <span class="rules">{</span></div><div class="line">	<span class="rule"><span class="attribute">border-collapse</span>:<span class="value"> collapse</span></span>;</div><div class="line">	<span class="rule"><span class="attribute">border-spacing</span>:<span class="value"> <span class="number">0</span></span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line"></div><div class="line"><span class="attr_selector">[/sourcecode]</span></div></pre></td></tr></table></figure>
+
+
+<p>Alternatively, <code>wordpress.com</code> permits embedding <code>github.com</code> gists by using the <code>[gist]</code> shortcode. With <code>[gist]2927943[/gist]</code>, you’ll achieve:</p>
+<script src="https://gist.github.com/2927943.js"></script>
+
+<p>… which certainly isn’t as pretty as <code>wordpress.com</code>‘s solution. You can make a gist more presentable by way of CSS customizations, but this isn’t possible on <code>wordpress.com</code>. It is also impossible to tell gists to highlight specific lines of code.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ootput.github.io/2012/06/08/code-and-gists-in-wordpress/" data-id="m2ygqe9ucyosw89x" class="article-share-link">Share</a>
+      
+        <a href="http://ootput.github.io/2012/06/08/code-and-gists-in-wordpress/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/">blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wordpress/">wordpress</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-new-blog-host-adopted" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2012/06/07/new-blog-host-adopted/" class="article-date">
+  <time datetime="2012-06-06T17:47:12.000Z" itemprop="datePublished">Jun 7 2012</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Software/">Software</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/06/07/new-blog-host-adopted/">New Blog Host Adopted</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/6ee04c45cfe29107a59454e5e0dc6b1105b4fd63.png" class="img-thumbnail"></p>
+<p>As the <a href="http://ootput.github.io/2012/06/01/future-of-ootput-burst-in-doubt/" target="_blank" rel="external">future of <code>ootput.bur.st</code></a> remains bleak, I have been forced to seek alternative hosting locations. <code>wordpress.com</code> provides free hosting for blogs powered by <a href="http://wordpress.org/about/" target="_blank" rel="external">WordPress</a>, and I have chosen to use it as a temporary host while I wait for the outcome of <code>bur.st</code>‘s acquisition.</p>
+<p><code>wordpress.com</code> provides a decent service to the occasional blogger who has no intention of hosting their own site. I personally felt very much at home after successfully importing posts from the Habari-based <code>ootput.bur.st</code>. Of course, as <code>wordpress.com</code> wasn’t a self-hosted solution to the <code>bur.st</code> issue, I was limited to whatever functionality the blog was permitted to exhibit by the WordPress team. (read: no additional plugins allowed)</p>
+<p>The transition from Habari to WordPress was not a straightforward process, however. In order to export all of Habari’s posts to a format recognised by <code>wordpress.com</code>, I had to host a WordPress blog on <code>bur.st</code> where I could create the appropriate MySQL tables for WordPress. <code>wordpress.com</code> does not provide direct MySQL access for its members, and this effectively prevents the <a href="http://chrismeller.com/2009/08/migrating-habari-to-wordpress" target="_blank" rel="external">Habari-&gt;Wordpress script</a> from working.</p>
+<p>Regardless, once I had exported data to the <code>bur.st</code>-hosted WordPress, I was then able to produce a <a href="http://en.blog.wordpress.com/2006/06/12/xml-import-export/" target="_blank" rel="external">WordPress-&gt;WordPress export file</a> to be imported into <code>wordpress.com</code></p>
+<p>It was a tedious process, but it saved me a lot of time in transferring content onto the new blog.</p>
+<p>In order to redirect users to my new <code>wordpress.com</code> blog, and to properly block search bots from accessing the domain (e.g. Google), I created the following two files in <code>ootput.bur.st</code>‘s root directory:<br><code>.htaccess</code>:</p>
+<p><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword"><span class="common">Options</span></span> +FollowSymLinks</div><div class="line"><span class="keyword"><span class="common">RewriteEngine</span></span> <span class="literal">on</span></div><div class="line"><span class="keyword"><span class="common">RewriteRule</span></span> (.*) http://ootput.github.io/<span class="number">$1</span><span class="sqbracket"> [R=301,L]</span></div></pre></td></tr></table></figure><br><code>robots.txt</code>:</p>
+<p><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="attribute">User-agent</span>: <span class="string">*</span></div><div class="line"><span class="attribute">Disallow</span>: <span class="string">/</span></div></pre></td></tr></table></figure><br> Of course, these two files will be obliterated once the <code>bur.st</code> merger is officially complete.</p>
+<p><em>NB:</em> Interestingly, my final login to <code>shell.bur.st</code> showed new mail in my mailbox - where I had never received e-mail in the past. There was a total of 10 e-mails, and all of them were <strong>spam</strong>. I suppose it was someone’s last ditched effort to generate some income from <code>bur.st</code> members - which was kind of lame. As the account effectively expires on the 1st July, this desperate attempt seemed rather stupid.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ootput.github.io/2012/06/07/new-blog-host-adopted/" data-id="rcl35f7va0xvpf6b" class="article-share-link">Share</a>
+      
+        <a href="http://ootput.github.io/2012/06/07/new-blog-host-adopted/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/">blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/habari/">habari</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wordpress/">wordpress</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-future-of-ootput-burst-in-doubt" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2012/06/01/future-of-ootput-burst-in-doubt/" class="article-date">
@@ -127,7 +234,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2012/06/01/future-of-ootput-burst-in-doubt/" data-id="y00k1jl7dde9cqwa" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2012/06/01/future-of-ootput-burst-in-doubt/" data-id="xiniga5qvejbsjnu" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2012/06/01/future-of-ootput-burst-in-doubt/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -176,7 +283,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2012/05/30/disable-ms-outlook-junk-mail-filters/" data-id="yg9oykk32lkdy1ja" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2012/05/30/disable-ms-outlook-junk-mail-filters/" data-id="g0zfghtlnuse9zn2" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2012/05/30/disable-ms-outlook-junk-mail-filters/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -245,7 +352,7 @@ Device 'Logitech USB Gaming Mouse':
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2012/03/03/disable-mouse-acceleration-in-xorg/" data-id="teqhdxuuq5oyx3mo" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2012/03/03/disable-mouse-acceleration-in-xorg/" data-id="hn5qxz6t2rq665y9" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2012/03/03/disable-mouse-acceleration-in-xorg/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -294,7 +401,7 @@ Device 'Logitech USB Gaming Mouse':
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2012/01/19/parse-usr-ports-updating-for-relevant-issues/" data-id="htnt4an4y45fct25" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2012/01/19/parse-usr-ports-updating-for-relevant-issues/" data-id="gao58wtvn2rcyk13" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2012/01/19/parse-usr-ports-updating-for-relevant-issues/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -354,7 +461,7 @@ Device 'Logitech USB Gaming Mouse':
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/12/30/rebuild-freebsd-ports/" data-id="ljnxrw8nc64xzkws" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/12/30/rebuild-freebsd-ports/" data-id="5sr2nys7jaw4wss8" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/12/30/rebuild-freebsd-ports/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -413,7 +520,7 @@ Device 'Logitech USB Gaming Mouse':
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/12/30/import-freebsd-root-zpool-to-other-environments/" data-id="71tdixhdgk61o16o" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/12/30/import-freebsd-root-zpool-to-other-environments/" data-id="wg8mozjo4ufnt77h" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/12/30/import-freebsd-root-zpool-to-other-environments/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -489,7 +596,7 @@ Device 'Logitech USB Gaming Mouse':
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/12/30/move-chromium-cache-to-mfs-memory-disk-on-freebsd/" data-id="byku0gzy0ux9lgmh" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/12/30/move-chromium-cache-to-mfs-memory-disk-on-freebsd/" data-id="bxwn6lrivf5czjpr" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/12/30/move-chromium-cache-to-mfs-memory-disk-on-freebsd/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -574,125 +681,12 @@ reboot</code></p>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/12/27/upgrading-to-freebsd-8-stable/" data-id="ym8zbrpum9gwnl7k" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/12/27/upgrading-to-freebsd-8-stable/" data-id="0tpuho3ojw50a2gs" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/12/27/upgrading-to-freebsd-8-stable/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/freebsd/">freebsd</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-custom-kernel-config-for-freebsd-8-stable" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2011/12/27/custom-kernel-config-for-freebsd-8-stable/" class="article-date">
-  <time datetime="2011-12-27T10:13:26.000Z" itemprop="datePublished">Dec 27 2011</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Software/">Software</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2011/12/27/custom-kernel-config-for-freebsd-8-stable/">Custom Kernel Config for FreeBSD 8-Stable</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>For FreeBSD system upgrades, my <code># make buildkernel</code> is instructed to use a custom kernel config at <code>/usr/src/sys/amd64/conf/CUSTOM64</code>. It includes:</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">include</span> <span class="constant">GENERIC</span></div><div class="line">machine amd64</div><div class="line">cpu     <span class="constant">HAMMER</span>                  <span class="comment"># aka K8, aka Opteron &amp; Athlon64</span></div><div class="line">nocpu   i486_CPU</div><div class="line">ident   <span class="constant">CUSTOM64</span></div><div class="line">nomakeoption <span class="constant">DEBUG</span></div><div class="line"></div><div class="line"><span class="comment">## No IPv6</span></div><div class="line">nooptions       <span class="constant">INET6</span></div><div class="line">nooptions       <span class="constant">SCTP</span>            <span class="comment"># Stream Control Transmission Protocol</span></div><div class="line"></div><div class="line"><span class="comment">## No Debugging stuff</span></div><div class="line">nooptions <span class="constant">INVARIANTS</span></div><div class="line">nooptions <span class="constant">INVARIANT_SUPPORT</span></div><div class="line">nooptions <span class="constant">WITNESS</span></div><div class="line">nooptions <span class="constant">WITNESS_SKIPSPIN</span></div><div class="line"></div><div class="line">nodevice        eisa</div><div class="line"></div><div class="line">nodevice        fdc</div><div class="line"></div><div class="line"><span class="comment">## Disable various ATA systems we will never have</span></div><div class="line">nodevice        atapicd         <span class="comment"># ATAPI CDROM drives</span></div><div class="line">nodevice        atapifd         <span class="comment"># ATAPI floppy drives</span></div><div class="line">nodevice        atapist         <span class="comment"># ATAPI tape drives</span></div><div class="line"></div><div class="line">nooptions       <span class="constant">MSDOSFS</span>         <span class="comment"># MSDOS Filesystem</span></div><div class="line">nooptions       <span class="constant">CD9660</span>          <span class="comment"># ISO 9660 Filesystem</span></div><div class="line"></div><div class="line">device          ahci</div><div class="line"></div><div class="line">nodevice        urio</div><div class="line">nodevice        uscanner</div><div class="line">nodevice        aue</div><div class="line">nodevice        axe</div><div class="line">nodevice        cdce</div><div class="line">nodevice        cue</div><div class="line">nodevice        kue</div><div class="line">nodevice        rue</div><div class="line"></div><div class="line"><span class="comment"># PCMCIA and cardbus bridge support</span></div><div class="line">nodevice        cbb             <span class="comment"># cardbus (yenta) bridge</span></div><div class="line">nodevice        pccard          <span class="comment"># PC Card (16-bit) bus</span></div><div class="line">nodevice        cardbus         <span class="comment"># CardBus (32-bit) bus</span></div><div class="line"></div><div class="line"><span class="comment"># Parallel port</span></div><div class="line">nodevice        ppc</div><div class="line">nodevice        ppbus           <span class="comment"># Parallel port bus (required)</span></div><div class="line">nodevice        lpt             <span class="comment"># Printer</span></div><div class="line">nodevice        plip            <span class="comment"># TCP/IP over parallel</span></div><div class="line">nodevice        ppi             <span class="comment"># Parallel port interface device</span></div><div class="line"></div><div class="line"><span class="comment"># FireWire support</span></div><div class="line">nodevice        firewire        <span class="comment"># FireWire bus code</span></div><div class="line">nodevice        sbp             <span class="comment"># SCSI over FireWire (Requires scbus and da)</span></div><div class="line">nodevice        fwe             <span class="comment"># Ethernet over FireWire (non-standard!)</span></div><div class="line">nodevice        fwip            <span class="comment"># IP over FireWire (RFC 2734,3146)</span></div><div class="line">nodevice        dcons           <span class="comment"># Dumb console driver</span></div><div class="line">nodevice        dcons_crom      <span class="comment"># Configuration ROM for dcons</span></div></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/12/27/custom-kernel-config-for-freebsd-8-stable/" data-id="fshb4rssvlvc42tu" class="article-share-link">Share</a>
-      
-        <a href="http://ootput.github.io/2011/12/27/custom-kernel-config-for-freebsd-8-stable/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/freebsd/">freebsd</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-sabnzbd-and-sickbeard-on-freebsd" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2011/12/26/sabnzbd-and-sickbeard-on-freebsd/" class="article-date">
-  <time datetime="2011-12-26T12:00:20.000Z" itemprop="datePublished">Dec 26 2011</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Software/">Software</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2011/12/26/sabnzbd-and-sickbeard-on-freebsd/">SABnzbd and SICKbeard on FreeBSD</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/images/11394d99807586de0dd5fff417137b8b4f170dd6.png" class="img-thumbnail"></p>
-<p>For my own archives, I have reproduced installation instructions for SABnzbd and Sickbeard on FreeBSD from <em>Syah</em> of the FreeBSD forums (titled: FreeBSD +Sabnzbd/Sickbeard/CouchPotato):</p>
-<blockquote>
-<p>1. install sabnzbd+ from ports.</p>
-<p><code># cd /usr/ports/news/sabnzbdplus; make install clean</code></p>
-<p>2) install some dependencies if they are not already present on your system. Needed to run &amp; acquire python scripts (Sick Beard, Couch Potato, Headphones)</p>
-<p>Python <code># cd /usr/ports/lang/python; make install clean</code></p>
-<p>Cheetah <code># cd /usr/ports/devel/py-cheetah; make install clean</code></p>
-<p>Git <code># cd /usr/ports/devel/git; make install clean</code></p>
-<p>3. Fetch most recent builds of the three tools</p>
-<p>Sick Beard <code># cd /usr/local ; git clone git://github.com/midgetspy/Sick-Beard.git sickbeard</code></p>
-<p>4. Configure auto-start for python scripts and sabnzbd+</p>
-<p>Sick Beard <code># cp /usr/local/sickbeard/init.freebsd /usr/local/etc/rc.d/sickbeard</code></p>
-<p>Add the following to /etc/rc.conf:<br><code>sabnzbd_enable=&quot;YES&quot;</code><br><code>sickbeard_enable=&quot;YES&quot;</code></p>
-<p>5. configure all the tools to play nice together.</p>
-<p>Totally beyond the scope of a quick &amp; dirty update. You should read the installation instructions and refer to the individual websites for each of these projects to fully leverage this tool set.</p>
-<p>Hopefully this gets you a bit further towards your goal.<br>To keep track of upstream changes to SickBeard:<br><code># cd /usr/local/sickbeard &amp;&amp; git pull</code></p>
-</blockquote>
-<p>A few notes:</p>
-<ul>
-<li><del datetime="2012-12-01T08:39:24+00:00">Step 4. will fail as SickBeard currently only comes with an Ubuntu startup script. Hatchling, from the SickBeard Forums (A FreeBSD rc.d script), kindly published a working copy of a FreeBSD rc script that is available <a href="http://dl.dropbox.com/u/5830692/sickbeard.txt" target="_blank" rel="external">here</a> (and duplicated <a href="https://gist.github.com/1610595" target="_blank" rel="external">here</a>.)</del><br>It appears that an init script for FreeBSD is now provided with the latest git pull - unfortunately, it’s not perfect, and needs to be modified for SickBeard to shut down properly.<figure class="highlight diff"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">diff --git a/init.freebsd b/init.freebsd</div><div class="line">index 8d9ba4b..3f65b31 100755</div><div class="line"><span class="header">--- a/init.freebsd</span></div><div class="line"><span class="header">+++ b/init.freebsd</span></div><div class="line">@@ -69,7 +69,7 @@ verify_sickbeard_pid() {</div><div class="line"> sickbeard_stop() {</div><div class="line">     echo "Stopping $name"</div><div class="line">     verify_sickbeard_pid</div><div class="line"><span class="deletion">-    ${WGET} -O - -q --user=${SBUSR} --password=${SBPWD} "http://${HOST}:${PORT}/home/shutdown/" &gt;/dev/null</span></div><div class="line"><span class="addition">+    ${WGET} -O - -q --user=${SBUSR} --password=${SBPWD} "http://${HOST}:${PORT}/home/shutdown/?pid=${pid}" &gt;/dev/null</span></div><div class="line">     if [ -n "${pid}" ]; then</div><div class="line">       wait_for_pids ${pid}</div><div class="line">       echo "Stopped"</div></pre></td></tr></table></figure>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/12/26/sabnzbd-and-sickbeard-on-freebsd/" data-id="kuve3bdisuqvxxm4" class="article-share-link">Share</a>
-      
-        <a href="http://ootput.github.io/2011/12/26/sabnzbd-and-sickbeard-on-freebsd/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/freebsd/">freebsd</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sabnzbd/">sabnzbd</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sickbeard/">sickbeard</a></li></ul>
 
     </footer>
   </div>
@@ -714,7 +708,7 @@ reboot</code></p>
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Photography/">Photography</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Random-Musings/">Random Musings</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Software/">Software</a><span class="category-list-count">95</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Photography/">Photography</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Random-Musings/">Random Musings</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Software/">Software</a><span class="category-list-count">97</span></li></ul>
     </div>
   </div>
 

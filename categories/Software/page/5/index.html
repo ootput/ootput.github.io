@@ -80,6 +80,105 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-ca-certificates-in-freebsd" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2011/09/25/ca-certificates-in-freebsd/" class="article-date">
+  <time datetime="2011-09-25T08:22:42.000Z" itemprop="datePublished">Sep 25 2011</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Software/">Software</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2011/09/25/ca-certificates-in-freebsd/">CA Certificates in FreeBSD</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/9074d13e1dab4de683ae74584e0cfb8e26bb13dc.png" class="img-thumbnail"></p>
+<p>From CAcert Wiki - Inclusion Status:</p>
+<blockquote>
+<p>The old ca-roots port (which included the CAcert certificate) was removed with the comment “Not supported by FreeBSD Security Officer anymore”. The current certificate package (ca_root_nss) is a copy of the Mozilla certificate package and FreeBSD is therefore dependent on Mozilla inclusion.</p>
+</blockquote>
+<p>Hence: <code># pkg_add -rv ca_root_nss</code></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ootput.github.io/2011/09/25/ca-certificates-in-freebsd/" data-id="0cbax6ggznxeolj9" class="article-share-link">Share</a>
+      
+        <a href="http://ootput.github.io/2011/09/25/ca-certificates-in-freebsd/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/freebsd/">freebsd</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ssl/">ssl</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-clean-freebsd-ports" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2011/09/25/clean-freebsd-ports/" class="article-date">
+  <time datetime="2011-09-25T03:31:56.000Z" itemprop="datePublished">Sep 25 2011</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Software/">Software</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2011/09/25/clean-freebsd-ports/">Clean FreeBSD Ports Directories</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>After building and installing software from the ports collection, you should always remember to clean up the temporary work directories. You can sweep the whole ports tree with the following command:</p>
+<p><code># portsclean -C</code></p>
+<p>The <code>portsclean</code> utility is part of the <strong>portupgrade</strong> suite.</p>
+<p>Alternatively, here’s a shell script:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="shebang">#!/bin/sh</span></div><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment"># Search for ports that contain a "work" subdirectory,</span></div><div class="line"><span class="comment"># then go into that port directory and perform a</span></div><div class="line"><span class="comment"># make clean</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> `find /usr/ports -name work -type d`</div><div class="line"><span class="keyword">do</span></div><div class="line"><span class="built_in">cd</span> `<span class="built_in">echo</span> <span class="string">"<span class="variable">$i</span>"</span> | sed <span class="string">'s//[^/]*$///'</span>`</div><div class="line">   make clean</div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ootput.github.io/2011/09/25/clean-freebsd-ports/" data-id="3wq1ys5euyw1pw5r" class="article-share-link">Share</a>
+      
+        <a href="http://ootput.github.io/2011/09/25/clean-freebsd-ports/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/freebsd/">freebsd</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-tweak-samba-performance-in-freebsd" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2011/09/25/tweak-samba-performance-in-freebsd/" class="article-date">
@@ -126,7 +225,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/09/25/tweak-samba-performance-in-freebsd/" data-id="4t5svucozp6j1dy3" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/09/25/tweak-samba-performance-in-freebsd/" data-id="53n5fmzukxkayoa0" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/09/25/tweak-samba-performance-in-freebsd/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -599,7 +698,7 @@ WWW: http://www.zsh.org/
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/09/25/freebsd-packages-2/" data-id="rn6cidx5d30bgh79" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/09/25/freebsd-packages-2/" data-id="os1mq9k6tlu18bn5" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/09/25/freebsd-packages-2/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -648,7 +747,7 @@ WWW: http://www.zsh.org/
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/09/25/ubuntu-oneiric-ocelot-installation/" data-id="bbgc9ximjij2e7t0" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/09/25/ubuntu-oneiric-ocelot-installation/" data-id="n23j82vgpxjv1j6f" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/09/25/ubuntu-oneiric-ocelot-installation/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -695,7 +794,7 @@ WWW: http://www.zsh.org/
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/09/25/freebsd-as-nas/" data-id="ariuckydagfleeft" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/09/25/freebsd-as-nas/" data-id="1fo24lcgb2ucc0ib" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/09/25/freebsd-as-nas/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -745,7 +844,7 @@ WWW: http://www.zsh.org/
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/06/06/block-wine-applications-from-the-internet/" data-id="rfzaxgnn1lv09fu2" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/06/06/block-wine-applications-from-the-internet/" data-id="ija3yfh53gotbc8g" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/06/06/block-wine-applications-from-the-internet/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -792,7 +891,7 @@ WWW: http://www.zsh.org/
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/01/10/pxe-boot-menu/" data-id="f7zlvc58jvlko7od" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/01/10/pxe-boot-menu/" data-id="xqvdum0nquxa7g6x" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/01/10/pxe-boot-menu/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -869,7 +968,7 @@ ttf-mscorefonts-installer Installer for Microsoft TrueType core fonts
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/07/01/non-free-and-contrib-packages-in-debian/" data-id="w37uq84tyhxty380" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/07/01/non-free-and-contrib-packages-in-debian/" data-id="415rmjxibgm4tzdw" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/07/01/non-free-and-contrib-packages-in-debian/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -922,111 +1021,12 @@ ttf-mscorefonts-installer Installer for Microsoft TrueType core fonts
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/07/01/extract-audio-from-flvs-on-hard-drive/" data-id="r4bkrbaocz211mxv" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/07/01/extract-audio-from-flvs-on-hard-drive/" data-id="htpvzjdzdc16cmw7" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/07/01/extract-audio-from-flvs-on-hard-drive/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/unix/">unix</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-use-external-editor-for-zsh" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2010/06/28/use-external-editor-for-zsh/" class="article-date">
-  <time datetime="2010-06-27T18:33:35.000Z" itemprop="datePublished">Jun 28 2010</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Software/">Software</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2010/06/28/use-external-editor-for-zsh/">Use External Editor for ZSH</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/images/d0fb9d5645095f905559877a6eb5539545869d10.png" class="img-thumbnail"></p>
-<p>ZSH has a built-in function called <code>edit-command-line</code> which allows you to edit the current command with an external editor (defined by the environment variable <code>$EDITOR</code>). To enable this feature, add the following to your ZSH startup scripts:<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">autoload <span class="keyword">edit</span>-<span class="keyword">command</span>-<span class="built_in">line</span></div><div class="line">zle -<span class="keyword">N</span> <span class="keyword">edit</span>-<span class="keyword">command</span>-<span class="built_in">line</span></div><div class="line">bindkey <span class="string">'^Xe'</span> <span class="keyword">edit</span>-<span class="keyword">command</span>-<span class="built_in">line</span></div></pre></td></tr></table></figure></p>
-<p>For the interested, <a href="http://www.techrepublic.com/article/keyboard-shortcuts-in-bash-and-zsh/6178505" target="_blank" rel="external">this</a> article lists some useful keyboard shortcuts in ZSH.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/06/28/use-external-editor-for-zsh/" data-id="lvw4i7jg4lszsrgd" class="article-share-link">Share</a>
-      
-        <a href="http://ootput.github.io/2010/06/28/use-external-editor-for-zsh/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/unix/">unix</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-gist-extras-in-habari" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2010/06/27/gist-extras-in-habari/" class="article-date">
-  <time datetime="2010-06-26T14:18:36.000Z" itemprop="datePublished">Jun 27 2010</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Software/">Software</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2010/06/27/gist-extras-in-habari/">Gist Extras in Habari</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p><a href="http://github.com/ahutchings/habari-gistextras" target="_blank" rel="external">Gist Extras</a> embeds gists in post content, and allows for the use of custom CSS.</p>
-</blockquote>
-<p>Unfortunately, the author has not updated the plug-in for Habari 0.7 - where plug-in information now resides in a separate XML file. To address this, make the following changes to <code>gistextras.plugin.php</code>:</p>
-<figure class="highlight diff"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="header">*** user/plugins/gistextras/gistextras.plugin.php.orig 2010-06-26 22:11:59.777117173 +0800</span></div><div class="line"><span class="header">--- user/plugins/gistextras/gistextras.plugin.php 2010-06-26 22:11:32.328366681 +0800</span></div><div class="line"><span class="header">***************</span></div><div class="line"><span class="chunk">*** 2,20 ****</span></div><div class="line"></div><div class="line">  class GistExtras extends Plugin</div><div class="line">  {</div><div class="line"><span class="deletion">- public function info()</span></div><div class="line"><span class="deletion">- {</span></div><div class="line"><span class="deletion">- return array(</span></div><div class="line"><span class="deletion">- 'url' =&gt; 'http://andrewhutchings.com',</span></div><div class="line"><span class="deletion">- 'name' =&gt; 'Gist Extras',</span></div><div class="line"><span class="deletion">- 'description' =&gt; 'Embeds gists in post content, and allows for the use of custom CSS.',</span></div><div class="line"><span class="deletion">- 'license' =&gt; 'Apache License 2.0',</span></div><div class="line"><span class="deletion">- 'author' =&gt; 'Andrew Hutchings',</span></div><div class="line"><span class="deletion">- 'authorurl' =&gt; 'http://andrewhutchings.com',</span></div><div class="line"><span class="deletion">- 'version' =&gt; '0.0.2'</span></div><div class="line"><span class="deletion">- );</span></div><div class="line"><span class="deletion">- }</span></div><div class="line"><span class="deletion">-</span></div><div class="line">      public function action_update_check()</div><div class="line">      {</div><div class="line">          Update::add( 'GistExtras', 'A6A9D42C-2F4F-11DE-BB63-026155D89593', $this-&gt;info-&gt;version );</div><div class="line"><span class="chunk">--- 2,7 ----</span></div></pre></td></tr></table></figure>
-
-<p>You’ll also need to create <code>gistextras.plugin.xml</code>:</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="pi">&lt;?xml version="1.0" encoding="utf-8" ?&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">pluggable</span> <span class="attribute">type</span>=<span class="value">"plugin"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">name</span>&gt;</span>Gist Extras<span class="tag">&lt;/<span class="title">name</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">license</span> <span class="attribute">url</span>=<span class="value">"http://www.apache.org/licenses/LICENSE-2.0.html"</span>&gt;</span>Apache Software License 2.0<span class="tag">&lt;/<span class="title">license</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">url</span>&gt;</span>http://andrewhutchings.com<span class="tag">&lt;/<span class="title">url</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">author</span> <span class="attribute">url</span>=<span class="value">"http://andrewhutchings.com"</span>&gt;</span>Andrew Hutchings<span class="tag">&lt;/<span class="title">author</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">version</span>&gt;</span>0.0.2<span class="tag">&lt;/<span class="title">version</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">description</span>&gt;</span><span class="cdata">&lt;![CDATA[Embeds gists in post content, and allows for the use of custom CSS.]]&gt;</span><span class="tag">&lt;/<span class="title">description</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">copyright</span>&gt;</span>2009<span class="tag">&lt;/<span class="title">copyright</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">pluggable</span>&gt;</span></div></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/06/27/gist-extras-in-habari/" data-id="mom5wzgzb9nt5g1c" class="article-share-link">Share</a>
-      
-        <a href="http://ootput.github.io/2010/06/27/gist-extras-in-habari/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/">blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/habari/">habari</a></li></ul>
 
     </footer>
   </div>
@@ -1048,7 +1048,7 @@ ttf-mscorefonts-installer Installer for Microsoft TrueType core fonts
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Photography/">Photography</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Random-Musings/">Random Musings</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Software/">Software</a><span class="category-list-count">95</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Photography/">Photography</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Random-Musings/">Random Musings</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Software/">Software</a><span class="category-list-count">97</span></li></ul>
     </div>
   </div>
 

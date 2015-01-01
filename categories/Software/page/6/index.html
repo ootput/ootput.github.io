@@ -80,6 +80,105 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-use-external-editor-for-zsh" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2010/06/28/use-external-editor-for-zsh/" class="article-date">
+  <time datetime="2010-06-27T18:33:35.000Z" itemprop="datePublished">Jun 28 2010</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Software/">Software</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2010/06/28/use-external-editor-for-zsh/">Use External Editor for ZSH</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/d0fb9d5645095f905559877a6eb5539545869d10.png" class="img-thumbnail"></p>
+<p>ZSH has a built-in function called <code>edit-command-line</code> which allows you to edit the current command with an external editor (defined by the environment variable <code>$EDITOR</code>). To enable this feature, add the following to your ZSH startup scripts:<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">autoload <span class="keyword">edit</span>-<span class="keyword">command</span>-<span class="built_in">line</span></div><div class="line">zle -<span class="keyword">N</span> <span class="keyword">edit</span>-<span class="keyword">command</span>-<span class="built_in">line</span></div><div class="line">bindkey <span class="string">'^Xe'</span> <span class="keyword">edit</span>-<span class="keyword">command</span>-<span class="built_in">line</span></div></pre></td></tr></table></figure></p>
+<p>For the interested, <a href="http://www.techrepublic.com/article/keyboard-shortcuts-in-bash-and-zsh/6178505" target="_blank" rel="external">this</a> article lists some useful keyboard shortcuts in ZSH.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ootput.github.io/2010/06/28/use-external-editor-for-zsh/" data-id="etzk8o6vqetsilq4" class="article-share-link">Share</a>
+      
+        <a href="http://ootput.github.io/2010/06/28/use-external-editor-for-zsh/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/unix/">unix</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-gist-extras-in-habari" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2010/06/27/gist-extras-in-habari/" class="article-date">
+  <time datetime="2010-06-26T14:18:36.000Z" itemprop="datePublished">Jun 27 2010</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Software/">Software</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2010/06/27/gist-extras-in-habari/">Gist Extras in Habari</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p><a href="http://github.com/ahutchings/habari-gistextras" target="_blank" rel="external">Gist Extras</a> embeds gists in post content, and allows for the use of custom CSS.</p>
+</blockquote>
+<p>Unfortunately, the author has not updated the plug-in for Habari 0.7 - where plug-in information now resides in a separate XML file. To address this, make the following changes to <code>gistextras.plugin.php</code>:</p>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="header">*** user/plugins/gistextras/gistextras.plugin.php.orig 2010-06-26 22:11:59.777117173 +0800</span></div><div class="line"><span class="header">--- user/plugins/gistextras/gistextras.plugin.php 2010-06-26 22:11:32.328366681 +0800</span></div><div class="line"><span class="header">***************</span></div><div class="line"><span class="chunk">*** 2,20 ****</span></div><div class="line"></div><div class="line">  class GistExtras extends Plugin</div><div class="line">  {</div><div class="line"><span class="deletion">- public function info()</span></div><div class="line"><span class="deletion">- {</span></div><div class="line"><span class="deletion">- return array(</span></div><div class="line"><span class="deletion">- 'url' =&gt; 'http://andrewhutchings.com',</span></div><div class="line"><span class="deletion">- 'name' =&gt; 'Gist Extras',</span></div><div class="line"><span class="deletion">- 'description' =&gt; 'Embeds gists in post content, and allows for the use of custom CSS.',</span></div><div class="line"><span class="deletion">- 'license' =&gt; 'Apache License 2.0',</span></div><div class="line"><span class="deletion">- 'author' =&gt; 'Andrew Hutchings',</span></div><div class="line"><span class="deletion">- 'authorurl' =&gt; 'http://andrewhutchings.com',</span></div><div class="line"><span class="deletion">- 'version' =&gt; '0.0.2'</span></div><div class="line"><span class="deletion">- );</span></div><div class="line"><span class="deletion">- }</span></div><div class="line"><span class="deletion">-</span></div><div class="line">      public function action_update_check()</div><div class="line">      {</div><div class="line">          Update::add( 'GistExtras', 'A6A9D42C-2F4F-11DE-BB63-026155D89593', $this-&gt;info-&gt;version );</div><div class="line"><span class="chunk">--- 2,7 ----</span></div></pre></td></tr></table></figure>
+
+<p>You’ll also need to create <code>gistextras.plugin.xml</code>:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="pi">&lt;?xml version="1.0" encoding="utf-8" ?&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">pluggable</span> <span class="attribute">type</span>=<span class="value">"plugin"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">name</span>&gt;</span>Gist Extras<span class="tag">&lt;/<span class="title">name</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">license</span> <span class="attribute">url</span>=<span class="value">"http://www.apache.org/licenses/LICENSE-2.0.html"</span>&gt;</span>Apache Software License 2.0<span class="tag">&lt;/<span class="title">license</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">url</span>&gt;</span>http://andrewhutchings.com<span class="tag">&lt;/<span class="title">url</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">author</span> <span class="attribute">url</span>=<span class="value">"http://andrewhutchings.com"</span>&gt;</span>Andrew Hutchings<span class="tag">&lt;/<span class="title">author</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">version</span>&gt;</span>0.0.2<span class="tag">&lt;/<span class="title">version</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">description</span>&gt;</span><span class="cdata">&lt;![CDATA[Embeds gists in post content, and allows for the use of custom CSS.]]&gt;</span><span class="tag">&lt;/<span class="title">description</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">copyright</span>&gt;</span>2009<span class="tag">&lt;/<span class="title">copyright</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">pluggable</span>&gt;</span></div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ootput.github.io/2010/06/27/gist-extras-in-habari/" data-id="euz4ldyoonaxlsn6" class="article-share-link">Share</a>
+      
+        <a href="http://ootput.github.io/2010/06/27/gist-extras-in-habari/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/">blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/habari/">habari</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-print-to-clipboard-in-putty" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2010/06/26/print-to-clipboard-in-putty/" class="article-date">
@@ -119,7 +218,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/06/26/print-to-clipboard-in-putty/" data-id="f84pqy0o8d1e1bj3" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/06/26/print-to-clipboard-in-putty/" data-id="hwbzbo6wrbpdandp" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/06/26/print-to-clipboard-in-putty/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -173,7 +272,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/06/26/extending-the-habari-sidebar/" data-id="voz02yuh5oj1jvnf" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/06/26/extending-the-habari-sidebar/" data-id="esc3s87bnvo99dci" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/06/26/extending-the-habari-sidebar/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -237,7 +336,7 @@ $ svn checkout http://svn.habariproject.org/habari-extras/plugins/code_escape/tr
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/06/24/code-in-habari/" data-id="g1umyejx8hsimuxn" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/06/24/code-in-habari/" data-id="f0go9as1epgds1hg" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/06/24/code-in-habari/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -283,7 +382,7 @@ $ svn checkout http://svn.habariproject.org/habari-extras/plugins/code_escape/tr
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/06/24/filter-habari-pages-by-tags/" data-id="h7a2y7hhydy13r47" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/06/24/filter-habari-pages-by-tags/" data-id="wlkldtnpp9krsu9w" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/06/24/filter-habari-pages-by-tags/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -332,7 +431,7 @@ $ svn checkout http://svn.habariproject.org/habari-extras/plugins/code_escape/tr
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/06/22/upgrade-to-habari-trunk/" data-id="um32453rcrzqv6ep" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/06/22/upgrade-to-habari-trunk/" data-id="xm2wo8vdrwzfl48u" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/06/22/upgrade-to-habari-trunk/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -380,7 +479,7 @@ $ svn checkout http://svn.habariproject.org/habari-extras/plugins/code_escape/tr
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/06/15/smoother-fonts-in-debian/" data-id="czjo20j2k06v1t9y" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/06/15/smoother-fonts-in-debian/" data-id="s6y7s8yl84oulpkh" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/06/15/smoother-fonts-in-debian/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -430,7 +529,7 @@ $ svn checkout http://svn.habariproject.org/habari-extras/plugins/code_escape/tr
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/06/12/gravatar-in-habari/" data-id="tnxieeaqvfdx14qd" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/06/12/gravatar-in-habari/" data-id="3vs7t1e20jn8xt05" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/06/12/gravatar-in-habari/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -481,118 +580,12 @@ $ svn checkout http://svn.habariproject.org/habari-extras/plugins/code_escape/tr
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/06/08/ssl-and-sasl-for-irssi/" data-id="c53otb9a0xv2k0sc" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/06/08/ssl-and-sasl-for-irssi/" data-id="1d2gmlu1n6bb4hrt" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/06/08/ssl-and-sasl-for-irssi/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/debian/">debian</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/irssi/">irssi</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sasl/">sasl</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ssl/">ssl</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-third-party-repositories-in-fedora-13" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2010/06/05/third-party-repositories-in-fedora-13/" class="article-date">
-  <time datetime="2010-06-05T07:35:02.000Z" itemprop="datePublished">Jun 5 2010</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Software/">Software</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2010/06/05/third-party-repositories-in-fedora-13/">Third-Party Repositories in Fedora 13</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>From  Fedora Wiki - Other repositories:</p>
-<blockquote>
-<p>There are a number of third-party software repositories for Fedora. They typically have more liberal licensing policies and provide software packages that Fedora excludes for various reasons. These software repositories are not officially affiliated or endorsed by the Fedora Project. Use them at your own discretion.</p>
-</blockquote>
-<p>For the RPMFusion repository (a merger of Dribble, FreshRPMs, and rpm.livna.org), as root:</p>
-<p><code># rpm -Uvh http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-stable.noarch.rpm</code></p>
-<p>For the Adobe repository, which provides both Flash player and Adobe Reader:</p>
-<p><code># rpm -Uvh http://linuxdownload.adobe.com/adobe-release/adobe-release-i386-1.0-1.noarch.rpm</code></p>
-<p>Finally, for the Skype repository, manually create <code>/etc/yum.repos.d/skype.repo</code> containing:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">[skype]</div><div class="line">name=Skype Repository</div><div class="line">baseurl=http://download.skype.com/linux/repos/fedora/updates/i586/</div><div class="line">gpgkey=http://www.skype.com/products/skype/linux/rpm-public-key.asc</div><div class="line">enabled=<span class="number">1</span></div><div class="line">gpgcheck=<span class="number">0</span></div></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/06/05/third-party-repositories-in-fedora-13/" data-id="49y2vcd1l97z2nnp" class="article-share-link">Share</a>
-      
-        <a href="http://ootput.github.io/2010/06/05/third-party-repositories-in-fedora-13/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/fedora/">fedora</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-unrar-in-fedora-13" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2010/06/05/unrar-in-fedora-13/" class="article-date">
-  <time datetime="2010-06-05T04:23:44.000Z" itemprop="datePublished">Jun 5 2010</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Software/">Software</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2010/06/05/unrar-in-fedora-13/">Unrar in Fedora 13</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>To obtain unrar for F13: as root, create <code>/etc/yum.repos.d/atrpms.repo</code> with contents:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">[atrpms]</div><div class="line">name=Fedora Core <span class="variable">$releasever</span> - <span class="variable">$basearch</span> - ATrpms</div><div class="line">baseurl=http://dl.atrpms.net/f<span class="variable">$releasever</span>-<span class="variable">$basearch</span>/atrpms/stable</div><div class="line">gpgkey=http://ATrpms.net/RPM-GPG-KEY.atrpms</div><div class="line">gpgcheck=<span class="number">1</span></div><div class="line">enabled = <span class="number">0</span></div></pre></td></tr></table></figure>
-
-
-<p>Then, import the repo’s GPG key:</p>
-<p><code># rpm --import http://atrpms.net/RPM-GPG-KEY.atrpms</code></p>
-<p>Finally:</p>
-<p><code># yum update</code></p>
-<p><code># yum --enablerepo=atrpms install unrar</code></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/06/05/unrar-in-fedora-13/" data-id="akj25oy61y78toel" class="article-share-link">Share</a>
-      
-        <a href="http://ootput.github.io/2010/06/05/unrar-in-fedora-13/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/fedora/">fedora</a></li></ul>
 
     </footer>
   </div>
@@ -614,7 +607,7 @@ $ svn checkout http://svn.habariproject.org/habari-extras/plugins/code_escape/tr
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Photography/">Photography</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Random-Musings/">Random Musings</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Software/">Software</a><span class="category-list-count">95</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Photography/">Photography</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Random-Musings/">Random Musings</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Software/">Software</a><span class="category-list-count">97</span></li></ul>
     </div>
   </div>
 

@@ -80,6 +80,98 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-copy-and-paste-in-tmux-with-mouse" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/08/02/copy-and-paste-in-tmux-with-mouse/" class="article-date">
+  <time datetime="2013-08-02T03:25:39.000Z" itemprop="datePublished">Aug 2 2013</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Software/">Software</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/08/02/copy-and-paste-in-tmux-with-mouse/">Copy and Paste in Tmux with Mouse</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>I have my iTerm2 emulate xterm-256colors, and found that it was possible to use the mouse to copy a selection in tmux.</p>
+<p>You’d need to hold down the <code>option</code> key whilst left-clicking and dragging across the target text selection. If you want to now paste the selected text back in to the terminal (in say, another window), you must also hold down the <code>option</code> key and middle-click to paste.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ootput.github.io/2013/08/02/copy-and-paste-in-tmux-with-mouse/" data-id="6g3ry9l8a1eazaa5" class="article-share-link">Share</a>
+      
+        <a href="http://ootput.github.io/2013/08/02/copy-and-paste-in-tmux-with-mouse/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/osx/">osx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tmux/">tmux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-share-osx-clipboard-with-emacs" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/08/02/share-osx-clipboard-with-emacs/" class="article-date">
+  <time datetime="2013-08-02T03:05:14.000Z" itemprop="datePublished">Aug 2 2013</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Software/">Software</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/08/02/share-osx-clipboard-with-emacs/">Share OSX Clipboard With Emacs</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Add the following to your <code>.el</code> init files:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">;; <span class="type">Use</span> M-w to copy <span class="type">Emacs</span> buffer selection; <span class="keyword">and</span> <span class="type">Cmd</span>-V to paste outside <span class="keyword">of</span> <span class="type">Emacs</span>.</div><div class="line">;; <span class="type">Use</span> <span class="type">Cmd</span>-C to copy selection <span class="keyword">from</span> <span class="type">OSX</span>; <span class="keyword">and</span> C-y to paste <span class="keyword">in</span> <span class="type">Emacs</span></div><div class="line"></div><div class="line">(defun copy-<span class="keyword">from</span>-osx ()</div><div class="line">  (shell-command-to-<span class="type">string</span> <span class="string">"pbpaste"</span>))</div><div class="line"></div><div class="line">(defun paste-to-osx (text &amp;optional push)</div><div class="line">  (<span class="keyword">let</span> ((process-connection-<span class="keyword">type</span> <span class="keyword">nil</span>))</div><div class="line">    (<span class="keyword">let</span> ((<span class="keyword">proc</span> (start-process <span class="string">"pbcopy"</span> <span class="string">"*Messages*"</span> <span class="string">"pbcopy"</span>)))</div><div class="line">      (process-send-<span class="type">string</span> <span class="keyword">proc</span> text)</div><div class="line">      (process-send-eof <span class="keyword">proc</span>))))</div><div class="line"></div><div class="line">(setq interprogram-cut-function 'paste-to-osx)</div><div class="line">(setq interprogram-paste-function 'copy-<span class="keyword">from</span>-osx)</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ootput.github.io/2013/08/02/share-osx-clipboard-with-emacs/" data-id="7rkghrjw8k4cg9au" class="article-share-link">Share</a>
+      
+        <a href="http://ootput.github.io/2013/08/02/share-osx-clipboard-with-emacs/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/emacs/">emacs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/osx/">osx</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-control-itunes-with-shell-script-at-command-line" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2013/08/02/control-itunes-with-shell-script-at-command-line/" class="article-date">
@@ -112,7 +204,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2013/08/02/control-itunes-with-shell-script-at-command-line/" data-id="yiwwjq0hvfg6llom" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2013/08/02/control-itunes-with-shell-script-at-command-line/" data-id="vbjhne3nsooqujiq" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2013/08/02/control-itunes-with-shell-script-at-command-line/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -175,7 +267,7 @@ root# diskutil list
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2013/07/31/partition-osx-mounted-user-directory-as-root-using-ipartition/" data-id="ssngnfnw9t5oucpk" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2013/07/31/partition-osx-mounted-user-directory-as-root-using-ipartition/" data-id="quotfbvv9jqd1vq8" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2013/07/31/partition-osx-mounted-user-directory-as-root-using-ipartition/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -225,7 +317,7 @@ root# diskutil list
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2013/07/20/osx-lion-on-thinkpad-x220/" data-id="gj5pz8erqhccb6na" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2013/07/20/osx-lion-on-thinkpad-x220/" data-id="leoig2ymr5g2gyf4" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2013/07/20/osx-lion-on-thinkpad-x220/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -291,7 +383,7 @@ root# diskutil list
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2013/04/01/crunchbang-on-thinkpad-x220/" data-id="m8znoki7qp9lzhfl" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2013/04/01/crunchbang-on-thinkpad-x220/" data-id="q54p8mh8p5ohjd4q" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2013/04/01/crunchbang-on-thinkpad-x220/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -345,7 +437,7 @@ root# diskutil list
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2013/03/26/address-merged-ports/" data-id="ree4vhsk49cvyyt6" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2013/03/26/address-merged-ports/" data-id="p3f0u0719d4qjcu2" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2013/03/26/address-merged-ports/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -395,7 +487,7 @@ root# diskutil list
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2012/12/11/relocate-ios-backups/" data-id="yyz1pv4a7hxkfp34" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2012/12/11/relocate-ios-backups/" data-id="kcjy9n4urrq9bdd9" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2012/12/11/relocate-ios-backups/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -451,7 +543,7 @@ root# diskutil list
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2012/06/25/couchpotato-on-freebsd/" data-id="n32ks8582x4a60wq" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2012/06/25/couchpotato-on-freebsd/" data-id="q9d7hbz39jm8u8oe" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2012/06/25/couchpotato-on-freebsd/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -528,119 +620,12 @@ ad4: 286168MB <wdc wd3000hlfs-01g6u4="" 04.04v06=""> at ata2-master
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2012/06/18/ntfs-write-in-freebsd/" data-id="pd8s07fqz2ti28v8" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2012/06/18/ntfs-write-in-freebsd/" data-id="qgij6sofahb1xaqn" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2012/06/18/ntfs-write-in-freebsd/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/freebsd/">freebsd</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ntfs/">ntfs</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-code-and-gists-in-wordpress" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2012/06/08/code-and-gists-in-wordpress/" class="article-date">
-  <time datetime="2012-06-07T14:47:37.000Z" itemprop="datePublished">Jun 8 2012</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Software/">Software</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/06/08/code-and-gists-in-wordpress/">Code and Gists in Wordpress</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/images/77d2c78cfa90d0eb329afe898067cde00dafad48.png" class="img-thumbnail"></p>
-<p>While <code>WordPress.com</code> doesn’t allow you to use potentially harmful code on your blog, it does allow you to post source code for general viewing. Provided that you enclose the source code within a <code>[sourcecode] [/sourcecode]</code> <a href="http://en.support.rdpress.com/shortcodes/" target="_blank" rel="external"><code>shortcode</code></a> wrapper, you will be able to preserve the code’s formatting; enable syntax highlighting for the programming language used; and highlight specific lines in the code. For example, for a CSS snippet, do:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="attr_selector">[sourcecode language="css" highlight="3,4,5,6,7"]</span></div><div class="line"></div><div class="line"><span class="comment">/* HTML5 display-role reset for older browsers */</span></div><div class="line"><span class="tag">article</span>, <span class="tag">aside</span>, <span class="tag">details</span>, <span class="tag">figcaption</span>, <span class="tag">figure</span>,</div><div class="line"><span class="tag">footer</span>, <span class="tag">header</span>, <span class="tag">hgroup</span>, <span class="tag">menu</span>, <span class="tag">nav</span>, <span class="tag">section</span> <span class="rules">{</span></div><div class="line">	<span class="rule"><span class="attribute">display</span>:<span class="value"> block</span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line"><span class="tag">body</span> <span class="rules">{</span></div><div class="line">	<span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">1</span></span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line"><span class="tag">ol</span>, <span class="tag">ul</span> <span class="rules">{</span></div><div class="line">	<span class="rule"><span class="attribute">list-style</span>:<span class="value"> none</span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line"><span class="tag">blockquote</span>, <span class="tag">q</span> <span class="rules">{</span></div><div class="line">	<span class="rule"><span class="attribute">quotes</span>:<span class="value"> none</span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line"><span class="tag">blockquote</span><span class="pseudo">:before</span>, <span class="tag">blockquote</span><span class="pseudo">:after</span>,</div><div class="line"><span class="tag">q</span><span class="pseudo">:before</span>, <span class="tag">q</span><span class="pseudo">:after</span> <span class="rules">{</span></div><div class="line">	<span class="rule"><span class="attribute">content</span>:<span class="value"> <span class="string">''</span></span></span>;</div><div class="line">	<span class="rule"><span class="attribute">content</span>:<span class="value"> none</span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line"><span class="tag">table</span> <span class="rules">{</span></div><div class="line">	<span class="rule"><span class="attribute">border-collapse</span>:<span class="value"> collapse</span></span>;</div><div class="line">	<span class="rule"><span class="attribute">border-spacing</span>:<span class="value"> <span class="number">0</span></span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line"></div><div class="line"><span class="attr_selector">[/sourcecode]</span></div></pre></td></tr></table></figure>
-
-
-<p>Alternatively, <code>wordpress.com</code> permits embedding <code>github.com</code> gists by using the <code>[gist]</code> shortcode. With <code>[gist]2927943[/gist]</code>, you’ll achieve:</p>
-<script src="https://gist.github.com/2927943.js"></script>
-
-<p>… which certainly isn’t as pretty as <code>wordpress.com</code>‘s solution. You can make a gist more presentable by way of CSS customizations, but this isn’t possible on <code>wordpress.com</code>. It is also impossible to tell gists to highlight specific lines of code.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2012/06/08/code-and-gists-in-wordpress/" data-id="yeizuveeuxfpi0ut" class="article-share-link">Share</a>
-      
-        <a href="http://ootput.github.io/2012/06/08/code-and-gists-in-wordpress/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/">blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wordpress/">wordpress</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-new-blog-host-adopted" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2012/06/07/new-blog-host-adopted/" class="article-date">
-  <time datetime="2012-06-06T17:47:12.000Z" itemprop="datePublished">Jun 7 2012</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Software/">Software</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/06/07/new-blog-host-adopted/">New Blog Host Adopted</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/images/6ee04c45cfe29107a59454e5e0dc6b1105b4fd63.png" class="img-thumbnail"></p>
-<p>As the <a href="http://ootput.github.io/2012/06/01/future-of-ootput-burst-in-doubt/" target="_blank" rel="external">future of <code>ootput.bur.st</code></a> remains bleak, I have been forced to seek alternative hosting locations. <code>wordpress.com</code> provides free hosting for blogs powered by <a href="http://wordpress.org/about/" target="_blank" rel="external">WordPress</a>, and I have chosen to use it as a temporary host while I wait for the outcome of <code>bur.st</code>‘s acquisition.</p>
-<p><code>wordpress.com</code> provides a decent service to the occasional blogger who has no intention of hosting their own site. I personally felt very much at home after successfully importing posts from the Habari-based <code>ootput.bur.st</code>. Of course, as <code>wordpress.com</code> wasn’t a self-hosted solution to the <code>bur.st</code> issue, I was limited to whatever functionality the blog was permitted to exhibit by the WordPress team. (read: no additional plugins allowed)</p>
-<p>The transition from Habari to WordPress was not a straightforward process, however. In order to export all of Habari’s posts to a format recognised by <code>wordpress.com</code>, I had to host a WordPress blog on <code>bur.st</code> where I could create the appropriate MySQL tables for WordPress. <code>wordpress.com</code> does not provide direct MySQL access for its members, and this effectively prevents the <a href="http://chrismeller.com/2009/08/migrating-habari-to-wordpress" target="_blank" rel="external">Habari-&gt;Wordpress script</a> from working.</p>
-<p>Regardless, once I had exported data to the <code>bur.st</code>-hosted WordPress, I was then able to produce a <a href="http://en.blog.wordpress.com/2006/06/12/xml-import-export/" target="_blank" rel="external">WordPress-&gt;WordPress export file</a> to be imported into <code>wordpress.com</code></p>
-<p>It was a tedious process, but it saved me a lot of time in transferring content onto the new blog.</p>
-<p>In order to redirect users to my new <code>wordpress.com</code> blog, and to properly block search bots from accessing the domain (e.g. Google), I created the following two files in <code>ootput.bur.st</code>‘s root directory:<br><code>.htaccess</code>:</p>
-<p><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword"><span class="common">Options</span></span> +FollowSymLinks</div><div class="line"><span class="keyword"><span class="common">RewriteEngine</span></span> <span class="literal">on</span></div><div class="line"><span class="keyword"><span class="common">RewriteRule</span></span> (.*) http://ootput.github.io/<span class="number">$1</span><span class="sqbracket"> [R=301,L]</span></div></pre></td></tr></table></figure><br><code>robots.txt</code>:</p>
-<p><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="attribute">User-agent</span>: <span class="string">*</span></div><div class="line"><span class="attribute">Disallow</span>: <span class="string">/</span></div></pre></td></tr></table></figure><br> Of course, these two files will be obliterated once the <code>bur.st</code> merger is officially complete.</p>
-<p><em>NB:</em> Interestingly, my final login to <code>shell.bur.st</code> showed new mail in my mailbox - where I had never received e-mail in the past. There was a total of 10 e-mails, and all of them were <strong>spam</strong>. I suppose it was someone’s last ditched effort to generate some income from <code>bur.st</code> members - which was kind of lame. As the account effectively expires on the 1st July, this desperate attempt seemed rather stupid.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2012/06/07/new-blog-host-adopted/" data-id="zd1xdz6b07cthqoq" class="article-share-link">Share</a>
-      
-        <a href="http://ootput.github.io/2012/06/07/new-blog-host-adopted/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/">blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/habari/">habari</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wordpress/">wordpress</a></li></ul>
 
     </footer>
   </div>
@@ -662,7 +647,7 @@ ad4: 286168MB <wdc wd3000hlfs-01g6u4="" 04.04v06=""> at ata2-master
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Photography/">Photography</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Random-Musings/">Random Musings</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Software/">Software</a><span class="category-list-count">95</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Photography/">Photography</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Random-Musings/">Random Musings</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Software/">Software</a><span class="category-list-count">97</span></li></ul>
     </div>
   </div>
 

@@ -80,6 +80,105 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-fuse-mounts-in-fedora-12" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2010/04/12/fuse-mounts-in-fedora-12/" class="article-date">
+  <time datetime="2010-04-11T15:08:13.000Z" itemprop="datePublished">Apr 12 2010</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Software/">Software</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2010/04/12/fuse-mounts-in-fedora-12/">Fuse Mounts in Fedora 12</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Read <a href="https://bugzilla.redhat.com/show_bug.cgi?id=493565#c44" target="_blank" rel="external">this</a> bug report.</p>
+<p>What’s wrong with that picture?</p>
+<p>We’re dealing with a bug that prevents display of <code>$HOME</code> contents via Nautilus browsing and simple shell commands such as <code>$ ls -al</code>. Awesome, huh?</p>
+<p>For a Linux distribution that promotes the use of the Gnome desktop environment, it sure does seem that Fedora, and it’s #fedora@<a href="http://splash-of-open-sauce.blogspot.com/2011/06/freenode-and-trends-for-litteman-power.html" target="_blank" rel="external">freenode legion of bigoted IRC veterans</a>, are dismissive of the bug; a <a href="https://fedoraproject.org/wiki/Common_F12_bugs#FUSE_mounts_may_hang" target="_blank" rel="external">casual mention</a> for the wary does not count.</p>
+<p>What this means is that whenever the bug rears it’s ugly head i.e. <em>always</em>, the user’s desktop experience is ruined - personal configurations for applications can’t be accessed.</p>
+<p>Since <code>2009-04-02 05:39:58 EDT</code>, this bug has remained officially unresolved.</p>
+<p>A temporary solution for the casual home user that does not involve patching files is to <code># touch /forcefsck</code>as root, for the next system boot to (hopefully) fix the problem for the duration of the computer’s uptime. Even then, successive reboots (expect to reboot often) requires the user to repeatedly issue the same command.</p>
+<p>My non-geek of a girlfriend was not particularly pleased.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ootput.github.io/2010/04/12/fuse-mounts-in-fedora-12/" data-id="81n08ufpsgvdg8eu" class="article-share-link">Share</a>
+      
+        <a href="http://ootput.github.io/2010/04/12/fuse-mounts-in-fedora-12/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/fedora/">fedora</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-plymouth-themes-in-fedora-12" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2010/04/12/plymouth-themes-in-fedora-12/" class="article-date">
+  <time datetime="2010-04-11T14:03:43.000Z" itemprop="datePublished">Apr 12 2010</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Software/">Software</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2010/04/12/plymouth-themes-in-fedora-12/">Plymouth Themes in Fedora 12</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>The plymouth-toolset does not come with documented command-line options, and I had to infer the following commands from the bash scripts provided with the package:</p>
+<p><code># plymouth-set-default-theme --list</code></p>
+<p><code># plymouth-set-default-theme  --rebuild-initrd</code></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ootput.github.io/2010/04/12/plymouth-themes-in-fedora-12/" data-id="77k5piehiangomr6" class="article-share-link">Share</a>
+      
+        <a href="http://ootput.github.io/2010/04/12/plymouth-themes-in-fedora-12/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/fedora/">fedora</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-logitech-g5-in-fedora-12" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2010/04/11/logitech-g5-in-fedora-12/" class="article-date">
@@ -122,7 +221,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/04/11/logitech-g5-in-fedora-12/" data-id="f4pmc8kvbj8zzzrn" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/04/11/logitech-g5-in-fedora-12/" data-id="u5u08igz9updhz60" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/04/11/logitech-g5-in-fedora-12/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -177,7 +276,7 @@ the quick brown fox jumps over the lazy dog
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/04/08/upload-github-gists/" data-id="vjyfs58hpen0h8bx" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/04/08/upload-github-gists/" data-id="qt36on67e2pshls5" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/04/08/upload-github-gists/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -229,7 +328,7 @@ the quick brown fox jumps over the lazy dog
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/04/08/delete-github-repo-via-curl/" data-id="q4rr9ljp77lglf02" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/04/08/delete-github-repo-via-curl/" data-id="mk9r0yzgmbdnlx7i" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/04/08/delete-github-repo-via-curl/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -280,7 +379,7 @@ the quick brown fox jumps over the lazy dog
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/04/06/code-in-chyrp/" data-id="09gx3j7cpu39y9lb" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/04/06/code-in-chyrp/" data-id="j3exmtgpkf7ixy99" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/04/06/code-in-chyrp/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -333,7 +432,7 @@ the quick brown fox jumps over the lazy dog
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/04/06/farewell-nanoblogger/" data-id="sa3zkaidgu2vhuni" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/04/06/farewell-nanoblogger/" data-id="7fhlc2zmxsrfdsoo" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/04/06/farewell-nanoblogger/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -394,7 +493,7 @@ the quick brown fox jumps over the lazy dog
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/04/06/readernaut-on-chyrp/" data-id="otcwqmawzci6kkmc" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/04/06/readernaut-on-chyrp/" data-id="dds1j0tquf2gcw7a" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/04/06/readernaut-on-chyrp/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -444,7 +543,7 @@ the quick brown fox jumps over the lazy dog
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/04/06/backup-and-restore-mysql-database-s/" data-id="sudsi76rbbvth2vp" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/04/06/backup-and-restore-mysql-database-s/" data-id="vfu9gbrzs7pmvxom" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/04/06/backup-and-restore-mysql-database-s/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -495,108 +594,9 @@ the quick brown fox jumps over the lazy dog
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/04/04/backup-of-chyrp/" data-id="6znjnbywlr1mof18" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/04/04/backup-of-chyrp/" data-id="8aymfdlmmyc617rm" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/04/04/backup-of-chyrp/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/">blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/chyrp/">chyrp</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-themes-in-chyrp" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2010/04/04/themes-in-chyrp/" class="article-date">
-  <time datetime="2010-04-03T18:37:59.000Z" itemprop="datePublished">Apr 4 2010</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Software/">Software</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2010/04/04/themes-in-chyrp/">Themes in Chyrp</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="http://chyrp.net/extend/index/" target="_blank" rel="external">This page</a> provides the links to modules/themes/feathers.</p>
-<p>Installation involves downloading the zip archive, and extracting its contents to a similarly-named directory under <code>themes/</code>. You’d then need to activate it via the admin panel.</p>
-<p>By the by, I was rather disappointed that the archives were only available as .zip archives. I’d much rather these archives be available in .tar.gz, or some other commonly used *nix format. To add insult to injury, several of the themes - gull and grackle - had .zip archives that produced errors when uncompressed with 7zip in Windows. These exact same archives extracted fine under OpenBSD.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/04/04/themes-in-chyrp/" data-id="5zwauvxe35qhedby" class="article-share-link">Share</a>
-      
-        <a href="http://ootput.github.io/2010/04/04/themes-in-chyrp/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/">blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/chyrp/">chyrp</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-thoughts-on-chyrp" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2010/04/04/thoughts-on-chyrp/" class="article-date">
-  <time datetime="2010-04-03T17:29:33.000Z" itemprop="datePublished">Apr 4 2010</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Software/">Software</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2010/04/04/thoughts-on-chyrp/">Thoughts on Chyrp</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/images/d71fed3db7806dd7c29cfc684fb538752659e5f7.png" class="img-thumbnail"></p>
-<p>I recently found out about Chyrp from a co-worker, who had been alpha-testing it for a while now. She took some time out of her busy work day to advocate its usage. </p>
-<p>From Chyrp’s Homepage</p>
-<blockquote>
-<p><a href="http://chyrp.net" target="_blank" rel="external">Chyrp</a> is a blogging engine designed to be very lightweight while retaining functionality. It is powered by PHP and has very powerful theme and extension engines, so you can personalize it however you want. The code is well-documented, and it has a very strong structure that’s loosely based on the MVC design pattern.</p>
-</blockquote>
-<p>Upon installing Chyrp onto the <code>bur.st</code> host, I found it to be scalable; quick to deploy; fast to navigate; functional; aesthetically appealing; and very quick - something that <a href="http://ootput.github.io/2010/03/28/phpmysql-based-solution-for-blog/" target="_blank" rel="external">couldn’t be said about NB</a>.</p>
-<p>One oversight made by developers of Chyrp was that, by default, noone was able to access any pages (!). As it turned out, the default <code>.htaccess</code> file that shipped with Chyrp-2.0, or even the git-version, did not have global-read permissions. This basically prevented the www-data system group from accessing the file, and in turn, this prevented all WWW users from viewing anything on the site. The issue was easily resolved by a <code>$ chmod +r .htacccess</code>.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/04/04/thoughts-on-chyrp/" data-id="k7acwrc4ot30mgr5" class="article-share-link">Share</a>
-      
-        <a href="http://ootput.github.io/2010/04/04/thoughts-on-chyrp/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/">blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/chyrp/">chyrp</a></li></ul>
@@ -621,7 +621,7 @@ the quick brown fox jumps over the lazy dog
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Photography/">Photography</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Random-Musings/">Random Musings</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Software/">Software</a><span class="category-list-count">95</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Photography/">Photography</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Random-Musings/">Random Musings</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Software/">Software</a><span class="category-list-count">97</span></li></ul>
     </div>
   </div>
 
