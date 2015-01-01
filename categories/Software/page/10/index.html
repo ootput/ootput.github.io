@@ -80,62 +80,6 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
-    <article id="post-find-cpio-data-between-partitions" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2010/03/18/find-cpio-data-between-partitions/" class="article-date">
-  <time datetime="2010-03-18T01:29:51.000Z" itemprop="datePublished">Mar 18 2010</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Software/">Software</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2010/03/18/find-cpio-data-between-partitions/">Find/Cpio Data Between Partitions</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Besides the Dump/Restore method mentioned <a href="http://ootput.github.io/2010/03/18/dumprestore-data-between-partitions/" target="_blank" rel="external">here</a>, I’ve found the commands <code>find</code> and <code>cpio</code> an equally effective combo when used to obtain true clones of data directories.</p>
-<p>In the below example, the source partition is mounted at <code>/srcDir</code>, and the destination partition device is <code>/dev/targetPart</code>. We will create two scratch directories at <code>/var/tmp</code>: <code>srcDir</code>, and <code>targetDir</code>; and mount both source and target partitions here.</p>
-<p>We will use the <code>mount_nullfs</code> file system as opposed to the traditional loopback file system. From <code>man 8 mount_nullfs</code>:</p>
-<blockquote>
-<p>The mount_nullfs file system differs from a traditional loopback file system in two respects: it is implemented using a stackable layers techniques, and its “null-node��?s stack above all lower-layer vnodes, not just over directory vnodes.</p>
-</blockquote>
-<p><code># mkdir /var/tmp/srcDir &amp;&amp; mount_nullfs /srcDir /var/tmp/srcDir</code></p>
-<p><code># mkdir /var/tmp/targetDir &amp;&amp; mount /dev/targetPart /var/tmp/targetDir</code></p>
-<p><code># cd /var/tmp/srcDir</code></p>
-<p><code># find . | cpio -pdum /var/tmp/targetDir</code></p>
-<p><code># cd - &amp;&amp; umount /var/tmp/targetDir &amp;&amp; umount /var/tmp/srcDir</code></p>
-<p><code># rmdir /var/tmp/{srcDir,targetDir}</code></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/03/18/find-cpio-data-between-partitions/" data-id="bciw3hecy8hqvg1p" class="article-share-link">Share</a>
-      
-        <a href="http://ootput.github.io/2010/03/18/find-cpio-data-between-partitions/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/clone/">clone</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/freebsd/">freebsd</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-dumprestore-data-between-partitions" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2010/03/18/dumprestore-data-between-partitions/" class="article-date">
@@ -168,7 +112,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/03/18/dumprestore-data-between-partitions/" data-id="56g67596q9asuzs5" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/03/18/dumprestore-data-between-partitions/" data-id="gw3uoo1pzgawvfxu" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/03/18/dumprestore-data-between-partitions/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -233,7 +177,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/02/04/erc-with-ssl/" data-id="6ope3bhxn4qqeflr" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/02/04/erc-with-ssl/" data-id="2v00jitk1g2r9aey" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/02/04/erc-with-ssl/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -280,7 +224,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2009/11/30/on-openbsd/" data-id="nl5zkejb9l16vebz" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2009/11/30/on-openbsd/" data-id="w0p08le4cqy29yoh" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2009/11/30/on-openbsd/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -328,7 +272,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2009/11/25/freebsd-8-0-on-serve/" data-id="rpfpjnw0v2p5adue" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2009/11/25/freebsd-8-0-on-serve/" data-id="7i2wh0g5ayltmkgx" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2009/11/25/freebsd-8-0-on-serve/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -374,7 +318,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2009/11/15/dual-card-alsa-configuration/" data-id="p203jto54ih89vyv" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2009/11/15/dual-card-alsa-configuration/" data-id="vjyww7dxczkumfiw" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2009/11/15/dual-card-alsa-configuration/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -421,7 +365,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2009/11/01/debian-5-on-desktop/" data-id="cutorekagspgpz3c" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2009/11/01/debian-5-on-desktop/" data-id="jexzkktl9ifqwgvp" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2009/11/01/debian-5-on-desktop/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -468,7 +412,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2007/03/09/ion3-look-ootput/" data-id="sg483idbdelb7hmf" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2007/03/09/ion3-look-ootput/" data-id="lw6t82ced2grlw1t" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2007/03/09/ion3-look-ootput/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -495,7 +439,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Photography/">Photography</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Random-Musings/">Random Musings</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Software/">Software</a><span class="category-list-count">98</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Photography/">Photography</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Random-Musings/">Random Musings</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Software/">Software</a><span class="category-list-count">97</span></li></ul>
     </div>
   </div>
 
@@ -505,10 +449,6 @@ ga('send', 'pageview');
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
-        
-          <li>
-            <a href="/2015/01/01/test/">test</a>
-          </li>
         
           <li>
             <a href="/2015/01/01/Configure-Filebot-for-Opensubtitles-org-in-Windows/">Configure Filebot for Opensubtitles.org in Windows</a>
@@ -524,6 +464,10 @@ ga('send', 'pageview');
         
           <li>
             <a href="/2014/12/11/CIFS-on-Wheezy/">CIFS on Debian Wheezy</a>
+          </li>
+        
+          <li>
+            <a href="/2014/11/25/ootput-Burst-on-Github-via-Hexo/">ootput Burst on Github via Hexo</a>
           </li>
         
       </ul>
@@ -544,7 +488,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">May 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">April 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">December 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">June 2012</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">May 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10/">October 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/09/">September 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06/">June 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07/">July 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06/">June 2010</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/04/">April 2010</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03/">March 2010</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02/">February 2010</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11/">November 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03/">March 2007</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02/">February 2007</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">May 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">April 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">December 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">June 2012</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">May 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10/">October 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/09/">September 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06/">June 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07/">July 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06/">June 2010</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/04/">April 2010</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03/">March 2010</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02/">February 2010</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11/">November 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03/">March 2007</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02/">February 2007</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
