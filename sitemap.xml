@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://ootput.github.io/2014/11/25/ootput-Burst-on-Github-via-Hexo/</loc>
+    <lastmod>2015-01-05T11:05:42.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://ootput.github.io/google84b2fc6ecf835cd5.html</loc>
     <lastmod>2015-01-04T23:14:42.000Z</lastmod>
   </url>
@@ -24,11 +29,6 @@
   <url>
     <loc>http://ootput.github.io/2014/12/11/CIFS-on-Wheezy/</loc>
     <lastmod>2014-12-30T11:13:35.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://ootput.github.io/2014/11/25/ootput-Burst-on-Github-via-Hexo/</loc>
-    <lastmod>2014-12-29T11:42:10.000Z</lastmod>
   </url>
   
   <url>
