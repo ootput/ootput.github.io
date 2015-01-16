@@ -129,12 +129,15 @@ Testing OpenSubtitles... OK
 Done
 </code></pre><p>Finally, with all movies in a network-mounted Y:\, for example, do:</p>
 <p><code>filebot.exe -script fn:suball &quot;Y:&quot; --lang en -non-strict</code></p>
-<p>My elaborate movie-format rename scheme:<br>    {n.space(‘<em>‘)}</em>({y})<em>[{af.lower()}</em>{ac.lower()}<em>{(int)video.framerate.toFloat()}fps</em>{(video.bitrate.toFloat()/1000).round()}kbps<em>{vc.lower()}</em>{vf}]<br>yields<br>    12<em>Years_a_Slave</em>(2013)_[6ch_dts_23fps_4324kbps_x264_720p].mkv</p>
+<p>My elaborate movie-format rename scheme follows:<br><code>{n.space(&#39;_&#39;)}_({y})_[{af.lower()}_{ac.lower()}_{(int)video.framerate.toFloat()}fps_{(video.bitrate.toFloat()/1000).round()}kbps_{vc.lower()}_{vf}]</code></p>
+<ul>
+<li>yielding something like:<br><code>12_Years_a_Slave_(2013)_[6ch_dts_23fps_4324kbps_x264_720p].mkv</code></li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2015/01/01/Configure-Filebot-for-Opensubtitles-org-in-Windows/" data-id="yemue9knx8qqjxa8" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2015/01/01/Configure-Filebot-for-Opensubtitles-org-in-Windows/" data-id="an38ytavtoa723i1" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2015/01/01/Configure-Filebot-for-Opensubtitles-org-in-Windows/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -185,7 +188,7 @@ Done
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2014/12/30/Filebot-on-Debian-Wheezy/" data-id="f09xyx7vbwpqw5zj" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2014/12/30/Filebot-on-Debian-Wheezy/" data-id="f2xe0l681f9ndcr1" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2014/12/30/Filebot-on-Debian-Wheezy/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -233,7 +236,7 @@ Done
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2014/12/29/Update-Flash-in-Debian-Wheezy/" data-id="pagd0swjo5dd8sw1" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2014/12/29/Update-Flash-in-Debian-Wheezy/" data-id="uby6t40kdtfobed7" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2014/12/29/Update-Flash-in-Debian-Wheezy/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -299,7 +302,7 @@ Done
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2014/12/11/CIFS-on-Wheezy/" data-id="eqqa9cbjq4mr4l3j" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2014/12/11/CIFS-on-Wheezy/" data-id="c0l2ipfglq2qn809" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2014/12/11/CIFS-on-Wheezy/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -347,7 +350,7 @@ Done
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2014/11/25/ootput-Burst-on-Github-via-Hexo/" data-id="vpp4qsnv6j3wz8q4" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2014/11/25/ootput-Burst-on-Github-via-Hexo/" data-id="cu4uuxw0usyp1tpv" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2014/11/25/ootput-Burst-on-Github-via-Hexo/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -395,7 +398,7 @@ Done
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2014/11/18/focus-follows-mouse-and-scroll-any-window/" data-id="qdriv10wmbominuq" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2014/11/18/focus-follows-mouse-and-scroll-any-window/" data-id="7dhb5j3yjbj8jj5r" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2014/11/18/focus-follows-mouse-and-scroll-any-window/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -442,7 +445,7 @@ Done
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2014/06/14/qos-on-vpn-client-tunnel-in-tomato/" data-id="b8wiro11gaysw792" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2014/06/14/qos-on-vpn-client-tunnel-in-tomato/" data-id="yya6twd1rxa9j4ic" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2014/06/14/qos-on-vpn-client-tunnel-in-tomato/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -489,7 +492,7 @@ Done
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2013/10/20/reset-audio-on-osx/" data-id="zsdddaz8j3wrvmjv" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2013/10/20/reset-audio-on-osx/" data-id="zvvu3nnkh32aqhar" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2013/10/20/reset-audio-on-osx/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -549,7 +552,7 @@ Done
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2013/10/04/update-to-latest-freebsd-release-9-2/" data-id="a2rp2uofhypmi81n" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2013/10/04/update-to-latest-freebsd-release-9-2/" data-id="epy0kgvyo0qnraht" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2013/10/04/update-to-latest-freebsd-release-9-2/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -613,7 +616,7 @@ Done
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2013/08/23/root-and-flash-samsung-galaxy-s2-from-within-osx/" data-id="8k7yld981dhv1rte" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2013/08/23/root-and-flash-samsung-galaxy-s2-from-within-osx/" data-id="zkhn5cfzrxmyw341" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2013/08/23/root-and-flash-samsung-galaxy-s2-from-within-osx/#disqus_thread" class="article-comment-link">Comments</a>
       

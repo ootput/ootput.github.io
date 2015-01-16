@@ -130,12 +130,15 @@ Testing OpenSubtitles... OK
 Done
 </code></pre><p>Finally, with all movies in a network-mounted Y:\, for example, do:</p>
 <p><code>filebot.exe -script fn:suball &quot;Y:&quot; --lang en -non-strict</code></p>
-<p>My elaborate movie-format rename scheme:<br>    {n.space(‘<em>‘)}</em>({y})<em>[{af.lower()}</em>{ac.lower()}<em>{(int)video.framerate.toFloat()}fps</em>{(video.bitrate.toFloat()/1000).round()}kbps<em>{vc.lower()}</em>{vf}]<br>yields<br>    12<em>Years_a_Slave</em>(2013)_[6ch_dts_23fps_4324kbps_x264_720p].mkv</p>
+<p>My elaborate movie-format rename scheme follows:<br><code>{n.space(&#39;_&#39;)}_({y})_[{af.lower()}_{ac.lower()}_{(int)video.framerate.toFloat()}fps_{(video.bitrate.toFloat()/1000).round()}kbps_{vc.lower()}_{vf}]</code></p>
+<ul>
+<li>yielding something like:<br><code>12_Years_a_Slave_(2013)_[6ch_dts_23fps_4324kbps_x264_720p].mkv</code></li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2015/01/01/Configure-Filebot-for-Opensubtitles-org-in-Windows/" data-id="yemue9knx8qqjxa8" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2015/01/01/Configure-Filebot-for-Opensubtitles-org-in-Windows/" data-id="an38ytavtoa723i1" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2015/01/01/Configure-Filebot-for-Opensubtitles-org-in-Windows/#disqus_thread" class="article-comment-link">Comments</a>
       
