@@ -112,17 +112,31 @@ ga('send', 'pageview');
     <div class="article-entry" itemprop="articleBody">
       
         <p>Plex Home Theatre on Wheezy requires packages from 2 additional repos, and a specific Ubuntu font package. The following instructions illustrate this:</p>
-<pre><code>* Add repo<span class="variable">s:</span>
-</code></pre><p><code>sudo apt-get install curl</code><br><code>sudo curl http://shell.ninthgate.se/packages/shell-ninthgate-se-keyring.key | sudo apt-key add -</code><br><code>echo &quot;deb http://www.deb-multimedia.org wheezy main non-free&quot; | sudo tee -a /etc/apt/sources.list.d/deb-multimedia.list</code><br><code>echo &quot;deb http://shell.ninthgate.se/packages/debian wheezy main&quot; | sudo tee -a /etc/apt/sources.list.d/plex.list</code><br><code>sudo apt-get update</code><br><code>sudo apt-get install deb-multimedia-keyring</code><br>(press Y to confirm)<br><code>sudo apt-get update</code><br><code>sudo apt-get dist-upgrade</code></p>
-<pre><code>* Obtain Ubuntu fonts <span class="built_in">from</span> closest mirror <span class="keyword">at</span> <span class="keyword">http</span>://packages.ubuntu.com/precise/all/ttf-ubuntu-font-family/download
-</code></pre><p><code>cd /tmp &amp;&amp; { curl -O http://mirrors.kernel.org/ubuntu/pool/main/u/ubuntu-font-family-sources/ttf-ubuntu-font-family_0.80-0ubuntu2_all.deb</code><br> ; cd -;  }<code>`sudo dpkg -i /tmp/ttf-ubuntu-font-family_0.80-0ubuntu2_all.deb</code></p>
-<pre><code><span class="bullet">* </span>Install Plex Home Theatre
-</code></pre><p><code>sudo apt-get install plexhometheater</code></p>
+<ul>
+<li>Add repos:</li>
+</ul>
+<p><code>sudo apt-get install curl</code></p>
+<p><code>sudo curl http://shell.ninthgate.se/packages/shell-ninthgate-se-keyring.key | sudo apt-key add -</code></p>
+<p><code>echo &quot;deb http://www.deb-multimedia.org wheezy main non-free&quot; | sudo tee -a /etc/apt/sources.list.d/deb-multimedia.list</code></p>
+<p><code>echo &quot;deb http://shell.ninthgate.se/packages/debian wheezy main&quot; | sudo tee -a /etc/apt/sources.list.d/plex.list</code></p>
+<p><code>sudo apt-get update</code></p>
+<p><code>sudo apt-get install deb-multimedia-keyring</code><br>(press Y to confirm)</p>
+<p><code>sudo apt-get update</code></p>
+<p><code>sudo apt-get dist-upgrade</code></p>
+<ul>
+<li>Obtain Ubuntu fonts from closest mirror at <a href="http://packages.ubuntu.com/precise/all/ttf-ubuntu-font-family/download" target="_blank" rel="external">http://packages.ubuntu.com/precise/all/ttf-ubuntu-font-family/download</a></li>
+</ul>
+<p><code>cd /tmp &amp;&amp; { curl -O http://mirrors.kernel.org/ubuntu/pool/main/u/ubuntu-font-family-sources/ttf-ubuntu-font-family_0.80-0ubuntu2_all.deb ; cd -;  }</code></p>
+<p><code>sudo dpkg -i /tmp/ttf-ubuntu-font-family_0.80-0ubuntu2_all.deb</code></p>
+<ul>
+<li>Install Plex Home Theatre</li>
+</ul>
+<p><code>sudo apt-get install plexhometheater</code></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2015/01/19/Plex-Home-Theatre-on-Debian-Wheezy/" data-id="33yk4ihqfafpm2mm" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2015/01/19/Plex-Home-Theatre-on-Debian-Wheezy/" data-id="zbtzz7m4bpkphz0g" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2015/01/19/Plex-Home-Theatre-on-Debian-Wheezy/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -183,7 +197,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2015/01/16/Quick-Git-Hints-WIP/" data-id="kwc3f0bnm7mtj24z" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2015/01/16/Quick-Git-Hints-WIP/" data-id="7fihzpr68fmzjcpf" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2015/01/16/Quick-Git-Hints-WIP/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -249,7 +263,7 @@ Done
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2015/01/01/Configure-Filebot-for-Opensubtitles-org-in-Windows/" data-id="qbf5zjhl78w986sk" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2015/01/01/Configure-Filebot-for-Opensubtitles-org-in-Windows/" data-id="576yz7o7hn0jhmqv" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2015/01/01/Configure-Filebot-for-Opensubtitles-org-in-Windows/#disqus_thread" class="article-comment-link">Comments</a>
       
