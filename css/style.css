@@ -1230,6 +1230,7 @@ table.lines {
 .gist pre,
 .gist code {
   font: inherit;
+  line-height: inherit;
   white-space: pre;
 }
 .gist div {
