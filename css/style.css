@@ -1227,6 +1227,11 @@ st {
 table.lines {
   width: 100%;
 }
+.gist pre,
+.gist code {
+  font: inherit;
+  white-space: pre;
+}
 .gist div {
   margin: 0;
   padding: 0;
