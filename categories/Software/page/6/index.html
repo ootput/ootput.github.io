@@ -85,6 +85,53 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-pxe-boot-menu" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2011/01/10/pxe-boot-menu/" class="article-date">
+  <time datetime="2011-01-10T04:49:18.000Z" itemprop="datePublished">Jan 10 2011</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Software/">Software</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2011/01/10/pxe-boot-menu/">PXE Boot Menu</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/59e91edde47c9e5cd4e7f9bf1fb9354e43afb781.png" class="img-thumbnail"></p>
+<p>For future reference, my pxelinux boot menu follows:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">DEFAULT</span> vesamenu.c32</div><div class="line">MENU TITLE PXEBOOT MENU</div><div class="line"></div><div class="line">#<span class="keyword">LABEL</span> menu</div><div class="line">#MENU HIDE</div><div class="line">#KERNEL menu.c32</div><div class="line"></div><div class="line"># Entries <span class="keyword">for</span> local boots</div><div class="line"><span class="keyword">LABEL</span> -</div><div class="line">MENU <span class="keyword">LABEL</span> Local:</div><div class="line">MENU DISABLE</div><div class="line"></div><div class="line"><span class="keyword">LABEL</span> nextdev</div><div class="line">MENU <span class="keyword">LABEL</span> Boot from the ^<span class="keyword">Next</span> boot drive</div><div class="line">MENU INDENT <span class="number">1</span></div><div class="line">localboot <span class="number">0</span></div><div class="line">MENU <span class="keyword">DEFAULT</span></div><div class="line">TEXT HELP</div><div class="line">Boot from the local hard drive.</div><div class="line">ENDTEXT</div><div class="line"></div><div class="line">MENU SEPARATOR</div><div class="line"></div><div class="line"><span class="keyword">LABEL</span> -</div><div class="line">MENU <span class="keyword">LABEL</span> Windows:</div><div class="line">MENU DISABLE</div><div class="line"></div><div class="line"># Acronis True Image</div><div class="line"><span class="keyword">LABEL</span> acronistrue</div><div class="line">MENU <span class="keyword">LABEL</span> ^Acronis True Image</div><div class="line">MENU INDENT <span class="number">1</span></div><div class="line">KERNEL acronis/kernel.dat</div><div class="line">APPEND initrd=acronis/ramdisk.dat vga=<span class="number">791</span> ramdisk_size=<span class="number">32768</span> acpi=off quiet noapic</div><div class="line">TEXT HELP</div><div class="line">Run Acronis True Image <span class="keyword">on</span> the client computer</div><div class="line">ENDTEXT</div><div class="line"></div><div class="line"><span class="keyword">LABEL</span> unattended_winxp</div><div class="line">MENU <span class="keyword">LABEL</span> Windows ^XP</div><div class="line">MENU INDENT <span class="number">1</span></div><div class="line">KERNEL winxp/boot/bzImage</div><div class="line"># Add options (z_user=..., z_path=..., etc.) <span class="keyword">to</span> this line.</div><div class="line">APPEND initrd=winxp/boot/initrd z_user=ootput z_password=*** z_path=//descartes/install</div><div class="line">TEXT HELP</div><div class="line">Install Windows XP <span class="keyword">on</span> client machine over network</div><div class="line">ENDTEXT</div><div class="line"></div><div class="line">MENU SEPARATOR</div><div class="line"></div><div class="line"><span class="keyword">LABEL</span> -</div><div class="line">MENU <span class="keyword">LABEL</span> Debian:</div><div class="line">MENU DISABLE</div><div class="line"></div><div class="line"><span class="keyword">LABEL</span> debian_current_i386_expert</div><div class="line">MENU <span class="keyword">LABEL</span> Debian Stable i386 Install</div><div class="line">MENU INDENT <span class="number">1</span></div><div class="line">KERNEL debian/current/i386/linux</div><div class="line">APPEND priority=low vga=normal initrd=debian/current/i386/initrd.gz <span class="comment">--</span></div><div class="line"></div><div class="line"><span class="keyword">LABEL</span> debian_current_i386</div><div class="line">MENU <span class="keyword">LABEL</span> Debian Stable i386 Rescue</div><div class="line">MENU INDENT <span class="number">1</span></div><div class="line">KERNEL debian/current/i386/linux</div><div class="line">APPEND vga=normal initrd=debian/current/i386/initrd.gz rescue/enable=true <span class="comment">--</span></div><div class="line"></div><div class="line"><span class="keyword">LABEL</span> debian_current_amd64_expert</div><div class="line">MENU <span class="keyword">LABEL</span> Debian Stable AMD64 Install</div><div class="line">MENU INDENT <span class="number">1</span></div><div class="line">KERNEL debian/current/amd64/linux</div><div class="line">APPEND priority=low vga=normal initrd=debian/current/amd64/initrd.gz <span class="comment">--</span></div><div class="line"></div><div class="line"><span class="keyword">LABEL</span> debian_current_amd64_rescue</div><div class="line">MENU <span class="keyword">LABEL</span> Debian Stable AMD64 Rescue</div><div class="line">MENU INDENT <span class="number">1</span></div><div class="line">KERNEL debian/current/amd64/linux</div><div class="line">APPEND vga=normal initrd=debian/current/amd64/initrd.gz rescue/enable=true <span class="comment">--</span></div><div class="line"></div><div class="line"><span class="keyword">LABEL</span> debian_testing_i386_expert</div><div class="line">MENU <span class="keyword">LABEL</span> Debian Testing i386 Install</div><div class="line">MENU INDENT <span class="number">1</span></div><div class="line">KERNEL debian/testing/i386/linux</div><div class="line">APPEND priority=low vga=normal initrd=debian/testing/i386/initrd.gz <span class="comment">--</span></div><div class="line"></div><div class="line"><span class="keyword">LABEL</span> debian_testing_i386_rescue</div><div class="line">MENU <span class="keyword">LABEL</span> Debian Testing i386 Rescue</div><div class="line">MENU INDENT <span class="number">1</span></div><div class="line">KERNEL debian/testing/i386/linux</div><div class="line">APPEND vga=normal initrd=debian/testing/i386/initrd.gz rescue/enable=true <span class="comment">--</span></div><div class="line"></div><div class="line"><span class="keyword">LABEL</span> debian_testing_amd64_expert</div><div class="line">MENU <span class="keyword">LABEL</span> Debian Testing AMD64 Install</div><div class="line">MENU INDENT <span class="number">1</span></div><div class="line">KERNEL debian/testing/amd64/linux</div><div class="line">APPEND priority=low vga=normal initrd=debian/testing/amd64/initrd.gz <span class="comment">--</span></div><div class="line"></div><div class="line"><span class="keyword">LABEL</span> debian_testing_amd64_rescue</div><div class="line">MENU <span class="keyword">LABEL</span> Debian Testing AMD64 Rescue</div><div class="line">MENU INDENT <span class="number">1</span></div><div class="line">KERNEL debian/testing/amd64/linux</div><div class="line">APPEND vga=normal initrd=debian/testing/amd64/initrd.gz rescue/enable=true <span class="comment">--</span></div><div class="line"></div><div class="line">MENU SEPARATOR</div><div class="line"></div><div class="line"><span class="keyword">LABEL</span> -</div><div class="line">MENU <span class="keyword">LABEL</span> OpenBSD:</div><div class="line">MENU DISABLE</div><div class="line"></div><div class="line"><span class="keyword">LABEL</span> openbsd_48_i386</div><div class="line">MENU <span class="keyword">LABEL</span> OpenBSD <span class="number">4.8</span> i386</div><div class="line">MENU INDENT <span class="number">1</span></div><div class="line">KERNEL openbsd/<span class="number">4.8</span>/i386/pxeboot<span class="number">.0</span></div><div class="line"></div><div class="line"><span class="keyword">LABEL</span> openbsd_48_amd64</div><div class="line">MENU <span class="keyword">LABEL</span> OpenBSD <span class="number">4.8</span> AMD64</div><div class="line">MENU INDENT <span class="number">1</span></div><div class="line">KERNEL openbsd/<span class="number">4.8</span>/amd64/pxeboot<span class="number">.0</span></div><div class="line"></div><div class="line">MENU SEPARATOR</div><div class="line"></div><div class="line"><span class="keyword">LABEL</span> -</div><div class="line">MENU <span class="keyword">LABEL</span> Archlinux:</div><div class="line">MENU DISABLE</div><div class="line"></div><div class="line"><span class="keyword">LABEL</span> archlinux</div><div class="line">MENU <span class="keyword">LABEL</span> Archlinux Desktop Install</div><div class="line">MENU INDENT <span class="number">1</span></div><div class="line">KERNEL archlinux/vmlinuz</div><div class="line">APPEND initrd=archlinux/initrd.img rootdelay=<span class="number">10</span> nomodeset</div><div class="line"></div><div class="line"><span class="keyword">LABEL</span> archlinux-laptop</div><div class="line">MENU <span class="keyword">LABEL</span> Archlinux Laptop Install</div><div class="line">MENU INDENT <span class="number">1</span></div><div class="line">KERNEL archlinux/vmlinuz</div><div class="line">APPEND initrd=archlinux/initrd.img rootdelay=<span class="number">10</span> nomodeset noapic acpi=off pci=routeirq nosmp nomsi</div><div class="line"></div><div class="line"><span class="keyword">LABEL</span> archlinux_64</div><div class="line">MENU <span class="keyword">LABEL</span> Archlinux AMD64 Install</div><div class="line">MENU INDENT <span class="number">1</span></div><div class="line">KERNEL archlinux/vm64</div><div class="line">APPEND initrd=archlinux/initrd64.img rootdelay=<span class="number">10</span></div><div class="line"></div><div class="line">MENU SEPARATOR</div><div class="line"></div><div class="line"><span class="keyword">LABEL</span> gparted_live</div><div class="line">MENU <span class="keyword">LABEL</span> GParted Live</div><div class="line">KERNEL gparted/vmlinuz</div><div class="line">APPEND initrd=gparted/initrd.img boot=live union=aufs noswap noprompt xforcevesa vga=<span class="number">791</span> fetch=http://descartes.master.lit/software/nix/tftp_on_TOLSTOI/gparted/filesystem.squashfs</div><div class="line"></div><div class="line">MENU SEPARATOR</div><div class="line"></div><div class="line"><span class="keyword">LABEL</span> openfiler_i386</div><div class="line">MENU <span class="keyword">LABEL</span> Openfiler <span class="number">2.3</span> x86</div><div class="line">KERNEL openfiler/vmlinuz</div><div class="line">APPEND vga=normal initrd=openfiler/initrd.img</div><div class="line"></div><div class="line">PROMPT <span class="number">0</span></div><div class="line"># timeout <span class="keyword">is</span> <span class="keyword">in</span> <span class="number">1</span>/<span class="number">10</span> <span class="keyword">of</span> seconds</div><div class="line">TIMEOUT <span class="number">300</span></div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ootput.github.io/2011/01/10/pxe-boot-menu/" data-id="bnjeo7a3uysmiu95" class="article-share-link">Share</a>
+      
+        <a href="http://ootput.github.io/2011/01/10/pxe-boot-menu/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pxe/">pxe</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-non-free-and-contrib-packages-in-debian" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2010/07/01/non-free-and-contrib-packages-in-debian/" class="article-date">
@@ -148,7 +195,7 @@ ttf-mscorefonts-installer Installer for Microsoft TrueType core fonts
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/07/01/non-free-and-contrib-packages-in-debian/" data-id="4grwfx6dbfyclf6m" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/07/01/non-free-and-contrib-packages-in-debian/" data-id="bo4gtnp089pdvnu5" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/07/01/non-free-and-contrib-packages-in-debian/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -201,7 +248,7 @@ ttf-mscorefonts-installer Installer for Microsoft TrueType core fonts
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/07/01/extract-audio-from-flvs-on-hard-drive/" data-id="cnz1qvvfdv74486f" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/07/01/extract-audio-from-flvs-on-hard-drive/" data-id="shk6rgcv2funy7j6" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/07/01/extract-audio-from-flvs-on-hard-drive/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -248,7 +295,7 @@ ttf-mscorefonts-installer Installer for Microsoft TrueType core fonts
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/06/28/use-external-editor-for-zsh/" data-id="qwkwuuprebivpivn" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/06/28/use-external-editor-for-zsh/" data-id="c74xjmq9ct68ia85" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/06/28/use-external-editor-for-zsh/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -300,7 +347,7 @@ ttf-mscorefonts-installer Installer for Microsoft TrueType core fonts
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/06/27/gist-extras-in-habari/" data-id="5qsp479c09rem49k" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/06/27/gist-extras-in-habari/" data-id="4we7bcgqpuytor8m" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/06/27/gist-extras-in-habari/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -353,7 +400,7 @@ ttf-mscorefonts-installer Installer for Microsoft TrueType core fonts
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/06/26/print-to-clipboard-in-putty/" data-id="w2g7qti6bg87w128" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/06/26/print-to-clipboard-in-putty/" data-id="s567x2irzmcp5kn6" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/06/26/print-to-clipboard-in-putty/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -407,7 +454,7 @@ ttf-mscorefonts-installer Installer for Microsoft TrueType core fonts
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/06/26/extending-the-habari-sidebar/" data-id="93d9mlxkgzlg9mrs" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/06/26/extending-the-habari-sidebar/" data-id="mubu4v99xj1shoam" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/06/26/extending-the-habari-sidebar/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -471,7 +518,7 @@ $ svn checkout http://svn.habariproject.org/habari-extras/plugins/code_escape/tr
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/06/24/code-in-habari/" data-id="pyfabg9oyn1iwu18" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/06/24/code-in-habari/" data-id="u0q11mr17afuxrd1" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/06/24/code-in-habari/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -517,7 +564,7 @@ $ svn checkout http://svn.habariproject.org/habari-extras/plugins/code_escape/tr
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/06/24/filter-habari-pages-by-tags/" data-id="02nf8uu8cg786ilu" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/06/24/filter-habari-pages-by-tags/" data-id="nty5ltis3cesq3vs" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/06/24/filter-habari-pages-by-tags/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -566,60 +613,12 @@ $ svn checkout http://svn.habariproject.org/habari-extras/plugins/code_escape/tr
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/06/22/upgrade-to-habari-trunk/" data-id="1krlhiwpok0nwwio" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/06/22/upgrade-to-habari-trunk/" data-id="c16ludcxrefx604r" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/06/22/upgrade-to-habari-trunk/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/">blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/habari/">habari</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-smoother-fonts-in-debian" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2010/06/15/smoother-fonts-in-debian/" class="article-date">
-  <time datetime="2010-06-15T08:21:40.000Z" itemprop="datePublished">Jun 15 2010</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Software/">Software</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2010/06/15/smoother-fonts-in-debian/">Smoother Fonts in Debian</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>To display smoother fonts on an LCD in Debian, as root:</p>
-<p><code># dpkg-reconfigure fontconfig-config</code></p>
-<p>In the dialog windows that follow, have:</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">Font tuning <span class="function"><span class="keyword">method</span> <span class="title">for</span> <span class="title">screen</span>:</span>        Autohinter</div><div class="line">Enable subpixel rendering <span class="keyword">for</span> screen: Automatic</div><div class="line">Enable bitmapped fonts <span class="keyword">by</span> <span class="keyword">default</span>?    No</div></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/06/15/smoother-fonts-in-debian/" data-id="nie7lzao49g6gukz" class="article-share-link">Share</a>
-      
-        <a href="http://ootput.github.io/2010/06/15/smoother-fonts-in-debian/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/debian/">debian</a></li></ul>
 
     </footer>
   </div>
@@ -641,7 +640,7 @@ $ svn checkout http://svn.habariproject.org/habari-extras/plugins/code_escape/tr
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Photography/">Photography</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Random-Musings/">Random Musings</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Software/">Software</a><span class="category-list-count">99</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Photography/">Photography</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Random-Musings/">Random Musings</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Software/">Software</a><span class="category-list-count">100</span></li></ul>
     </div>
   </div>
 
@@ -651,6 +650,10 @@ $ svn checkout http://svn.habariproject.org/habari-extras/plugins/code_escape/tr
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2015/01/23/Automatically-tweet-new-Hexo-entry-via-IFTTT/">Automatically tweet new Hexo entry via IFTTT</a>
+          </li>
         
           <li>
             <a href="/2015/01/19/Plex-Home-Theatre-on-Debian-Wheezy/">Plex Home Theatre on Debian Wheezy</a>
@@ -668,10 +671,6 @@ $ svn checkout http://svn.habariproject.org/habari-extras/plugins/code_escape/tr
             <a href="/2014/12/30/Filebot-on-Debian-Wheezy/">Filebot on Debian Wheezy</a>
           </li>
         
-          <li>
-            <a href="/2014/12/29/Update-Flash-in-Debian-Wheezy/">Update Flash in Debian Wheezy</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -681,7 +680,7 @@ $ svn checkout http://svn.habariproject.org/habari-extras/plugins/code_escape/tr
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Windows/" style="font-size: 10.00px;">Windows</a><a href="/tags/alsa/" style="font-size: 10.00px;">alsa</a><a href="/tags/android/" style="font-size: 10.00px;">android</a><a href="/tags/apple/" style="font-size: 10.00px;">apple</a><a href="/tags/blog/" style="font-size: 20.00px;">blog</a><a href="/tags/canon/" style="font-size: 10.00px;">canon</a><a href="/tags/chess/" style="font-size: 10.00px;">chess</a><a href="/tags/chromium/" style="font-size: 11.43px;">chromium</a><a href="/tags/chyrp/" style="font-size: 14.29px;">chyrp</a><a href="/tags/clone/" style="font-size: 11.43px;">clone</a><a href="/tags/couchpotato/" style="font-size: 10.00px;">couchpotato</a><a href="/tags/crunchbang/" style="font-size: 10.00px;">crunchbang</a><a href="/tags/ddwrt/" style="font-size: 10.00px;">ddwrt</a><a href="/tags/debian/" style="font-size: 17.14px;">debian</a><a href="/tags/dslr/" style="font-size: 10.00px;">dslr</a><a href="/tags/emacs/" style="font-size: 11.43px;">emacs</a><a href="/tags/erc/" style="font-size: 10.00px;">erc</a><a href="/tags/fedora/" style="font-size: 15.71px;">fedora</a><a href="/tags/filebot/" style="font-size: 11.43px;">filebot</a><a href="/tags/flash/" style="font-size: 11.43px;">flash</a><a href="/tags/flickr/" style="font-size: 10.00px;">flickr</a><a href="/tags/freebsd/" style="font-size: 20.00px;">freebsd</a><a href="/tags/git/" style="font-size: 10.00px;">git</a><a href="/tags/github/" style="font-size: 12.86px;">github</a><a href="/tags/gmail/" style="font-size: 10.00px;">gmail</a><a href="/tags/habari/" style="font-size: 18.57px;">habari</a><a href="/tags/hexo/" style="font-size: 10.00px;">hexo</a><a href="/tags/ion3/" style="font-size: 10.00px;">ion3</a><a href="/tags/ios/" style="font-size: 10.00px;">ios</a><a href="/tags/irssi/" style="font-size: 10.00px;">irssi</a><a href="/tags/itunes/" style="font-size: 10.00px;">itunes</a><a href="/tags/java/" style="font-size: 11.43px;">java</a><a href="/tags/kvm/" style="font-size: 10.00px;">kvm</a><a href="/tags/lens/" style="font-size: 10.00px;">lens</a><a href="/tags/linux/" style="font-size: 10.00px;">linux</a><a href="/tags/metaseo/" style="font-size: 10.00px;">metaseo</a><a href="/tags/mysql/" style="font-size: 10.00px;">mysql</a><a href="/tags/nanoblogger/" style="font-size: 11.43px;">nanoblogger</a><a href="/tags/ntfs/" style="font-size: 10.00px;">ntfs</a><a href="/tags/nvidia/" style="font-size: 10.00px;">nvidia</a>
+      <a href="/tags/Windows/" style="font-size: 10.00px;">Windows</a><a href="/tags/alsa/" style="font-size: 10.00px;">alsa</a><a href="/tags/android/" style="font-size: 10.00px;">android</a><a href="/tags/apple/" style="font-size: 10.00px;">apple</a><a href="/tags/blog/" style="font-size: 20.00px;">blog</a><a href="/tags/canon/" style="font-size: 10.00px;">canon</a><a href="/tags/chess/" style="font-size: 10.00px;">chess</a><a href="/tags/chromium/" style="font-size: 11.25px;">chromium</a><a href="/tags/chyrp/" style="font-size: 13.75px;">chyrp</a><a href="/tags/clone/" style="font-size: 11.25px;">clone</a><a href="/tags/couchpotato/" style="font-size: 10.00px;">couchpotato</a><a href="/tags/crunchbang/" style="font-size: 10.00px;">crunchbang</a><a href="/tags/ddwrt/" style="font-size: 10.00px;">ddwrt</a><a href="/tags/debian/" style="font-size: 16.25px;">debian</a><a href="/tags/dslr/" style="font-size: 10.00px;">dslr</a><a href="/tags/emacs/" style="font-size: 11.25px;">emacs</a><a href="/tags/erc/" style="font-size: 10.00px;">erc</a><a href="/tags/fedora/" style="font-size: 15.00px;">fedora</a><a href="/tags/filebot/" style="font-size: 11.25px;">filebot</a><a href="/tags/flash/" style="font-size: 11.25px;">flash</a><a href="/tags/flickr/" style="font-size: 10.00px;">flickr</a><a href="/tags/freebsd/" style="font-size: 18.75px;">freebsd</a><a href="/tags/git/" style="font-size: 10.00px;">git</a><a href="/tags/github/" style="font-size: 12.50px;">github</a><a href="/tags/gmail/" style="font-size: 10.00px;">gmail</a><a href="/tags/habari/" style="font-size: 17.50px;">habari</a><a href="/tags/hexo/" style="font-size: 11.25px;">hexo</a><a href="/tags/ifttt/" style="font-size: 10.00px;">ifttt</a><a href="/tags/ion3/" style="font-size: 10.00px;">ion3</a><a href="/tags/ios/" style="font-size: 10.00px;">ios</a><a href="/tags/irssi/" style="font-size: 10.00px;">irssi</a><a href="/tags/itunes/" style="font-size: 10.00px;">itunes</a><a href="/tags/java/" style="font-size: 11.25px;">java</a><a href="/tags/kvm/" style="font-size: 10.00px;">kvm</a><a href="/tags/lens/" style="font-size: 10.00px;">lens</a><a href="/tags/linux/" style="font-size: 10.00px;">linux</a><a href="/tags/metaseo/" style="font-size: 10.00px;">metaseo</a><a href="/tags/mysql/" style="font-size: 10.00px;">mysql</a><a href="/tags/nanoblogger/" style="font-size: 11.25px;">nanoblogger</a><a href="/tags/ntfs/" style="font-size: 10.00px;">ntfs</a>
     </div>
   </div>
 
@@ -690,7 +689,7 @@ $ svn checkout http://svn.habariproject.org/habari-extras/plugins/code_escape/tr
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">May 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">April 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">December 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">June 2012</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">May 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10/">October 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/09/">September 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06/">June 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07/">July 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06/">June 2010</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/04/">April 2010</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03/">March 2010</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02/">February 2010</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11/">November 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03/">March 2007</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02/">February 2007</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">May 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">April 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">December 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">June 2012</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">May 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10/">October 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/09/">September 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06/">June 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07/">July 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06/">June 2010</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/04/">April 2010</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03/">March 2010</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02/">February 2010</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11/">November 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03/">March 2007</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02/">February 2007</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 

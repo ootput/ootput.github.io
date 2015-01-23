@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://ootput.github.io/"/>
-  <updated>2015-01-23T09:04:23.644Z</updated>
+  <updated>2015-01-23T09:17:42.717Z</updated>
   <id>http://ootput.github.io/</id>
   
   <author>
@@ -13,6 +13,32 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Automatically tweet new Hexo entry via IFTTT]]></title>
+    <link href="http://ootput.github.io/2015/01/23/Automatically-tweet-new-Hexo-entry-via-IFTTT/"/>
+    <id>http://ootput.github.io/2015/01/23/Automatically-tweet-new-Hexo-entry-via-IFTTT/</id>
+    <published>2015-01-23T09:09:46.000Z</published>
+    <updated>2015-01-23T09:17:35.000Z</updated>
+    <content type="html"><![CDATA[<p>In the absence of <a href="http://en.support.wordpress.com/publicize/" target="_blank" rel="external">Wordpress’ Publicize</a>, I have decided to use <a href="https://ifttt.com/" target="_blank" rel="external">IFTTT</a> in conjunction with <a href="https://www.npmjs.com/package/hexo-generator-feed" target="_blank" rel="external">Hexo Feed Generator</a>, to automatically publicize my Hexo entries.</p>
+<p>IFTTT, which stands for If This Then That , is a tool that automates tasks using triggers and actions. IFTTT connects two services, and then triggers an action on one service when you perform an action on the other service. It works with all of the major social networks, including Facebook, Twitter, Instagram, LinkedIn, Tumblr, and YouTube.</p>
+<p>After connecting my twitter account, I have chosen a new rss feed entry as the ‘trigger’, and a new tweet as the ‘action’. My recipe can be found <a href="https://ifttt.com/recipes/247499-auto-tweet-from-hexo-rss-update" target="_blank" rel="external">here</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>In the absence of <a href="http://en.support.wordpress.com/publicize/" target="_blank" rel="external">Wordpress’ Publicize</a>, I have de]]>
+    </summary>
+    
+      <category term="twitter" scheme="http://ootput.github.io/tags/twitter/"/>
+    
+      <category term="blog" scheme="http://ootput.github.io/tags/blog/"/>
+    
+      <category term="hexo" scheme="http://ootput.github.io/tags/hexo/"/>
+    
+      <category term="ifttt" scheme="http://ootput.github.io/tags/ifttt/"/>
+    
+      <category term="Software" scheme="http://ootput.github.io/categories/Software/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Plex Home Theatre on Debian Wheezy]]></title>
@@ -572,24 +598,6 @@ root# diskutil list
 ]]></content>
     <summary type="html">
     <![CDATA[<p><a href="http://www.flickr.com/photos/ootput/8789887813/" title="Sydney Opera House 2013 by ootput, on Flickr" target="_blank" rel="exter]]>
-    </summary>
-    
-      <category term="photography" scheme="http://ootput.github.io/tags/photography/"/>
-    
-      <category term="Photography" scheme="http://ootput.github.io/categories/Photography/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Auburn Botanical Gardens - Fauna Reserve]]></title>
-    <link href="http://ootput.github.io/2013/05/24/auburn-botanical-gardens/"/>
-    <id>http://ootput.github.io/2013/05/24/auburn-botanical-gardens/</id>
-    <published>2013-05-24T13:39:09.000Z</published>
-    <updated>2014-11-26T04:06:14.000Z</updated>
-    <content type="html"><![CDATA[<p><a href="http://www.flickr.com/photos/ootput/8800464350/" title="Auburn Botanical Gardens by ootput, on Flickr" target="_blank" rel="external"><img src="/images/bdda5ac6bced570fc377b3f1164bf10aed15a964.jpg" alt="Auburn Botanical Gardens"></a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p><a href="http://www.flickr.com/photos/ootput/8800464350/" title="Auburn Botanical Gardens by ootput, on Flickr" target="_blank" rel="exte]]>
     </summary>
     
       <category term="photography" scheme="http://ootput.github.io/tags/photography/"/>
