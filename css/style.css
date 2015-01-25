@@ -933,11 +933,11 @@ a.article-title:hover {
   text-shadow: 0 1px #a21a1f;
 }
 .article-share-reddit:before {
-  content: "\f0d2";
+  content: "\f1a1";
 }
 .article-share-reddit:hover {
-  background: #cb2027;
-  text-shadow: 0 1px #a21a1f;
+  background: #ff1a00;
+  text-shadow: 0 1px #cc1500;
 }
 .article-share-google:before {
   content: "\f0d5";
