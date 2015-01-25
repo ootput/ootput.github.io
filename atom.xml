@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://ootput.github.io/"/>
-  <updated>2015-01-25T10:35:10.028Z</updated>
+  <updated>2015-01-25T10:53:25.830Z</updated>
   <id>http://ootput.github.io/</id>
   
   <author>
@@ -13,6 +13,29 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Add Reddit Share button to Hexo's Landscape theme]]></title>
+    <link href="http://ootput.github.io/2015/01/25/Add-Reddit-Share-button-to-Hexo-s-Landscape-theme/"/>
+    <id>http://ootput.github.io/2015/01/25/Add-Reddit-Share-button-to-Hexo-s-Landscape-theme/</id>
+    <published>2015-01-25T10:50:03.000Z</published>
+    <updated>2015-01-25T10:53:08.000Z</updated>
+    <content type="html"><![CDATA[<p>I have added a Reddit button to Hexo’s Landscape theme by re-using existing code for Pinterest’s share button (found by searching Landscape’s Github repo for references to Pinterest), with minor modifications specific to Reddit.</p>
+<p>The changes I made can be found in <a href="https://github.com/ootput/hexo-theme-landscape-ootput/commit/28b15c40a69171467d9febf4e20353af894e0ec9" target="_blank" rel="external">this Git commit</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>I have added a Reddit button to Hexo’s Landscape theme by re-using existing code for Pinterest’s share button (found by searching Landsca]]>
+    </summary>
+    
+      <category term="reddit" scheme="http://ootput.github.io/tags/reddit/"/>
+    
+      <category term="blog" scheme="http://ootput.github.io/tags/blog/"/>
+    
+      <category term="hexo" scheme="http://ootput.github.io/tags/hexo/"/>
+    
+      <category term="Software" scheme="http://ootput.github.io/categories/Software/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Automatically tweet new Hexo entry via IFTTT]]></title>
@@ -586,24 +609,6 @@ root# diskutil list
       <category term="x220" scheme="http://ootput.github.io/tags/x220/"/>
     
       <category term="Software" scheme="http://ootput.github.io/categories/Software/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Sydney Opera House]]></title>
-    <link href="http://ootput.github.io/2013/05/24/sydney-opera-house/"/>
-    <id>http://ootput.github.io/2013/05/24/sydney-opera-house/</id>
-    <published>2013-05-24T13:39:38.000Z</published>
-    <updated>2014-11-26T03:24:07.000Z</updated>
-    <content type="html"><![CDATA[<p><a href="http://www.flickr.com/photos/ootput/8789887813/" title="Sydney Opera House 2013 by ootput, on Flickr" target="_blank" rel="external"><img src="/images/52255cbed8c439cb232b1f84a8e84115e61983bb.jpg" alt="Sydney Opera House 2013"></a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p><a href="http://www.flickr.com/photos/ootput/8789887813/" title="Sydney Opera House 2013 by ootput, on Flickr" target="_blank" rel="exter]]>
-    </summary>
-    
-      <category term="photography" scheme="http://ootput.github.io/tags/photography/"/>
-    
-      <category term="Photography" scheme="http://ootput.github.io/categories/Photography/"/>
     
   </entry>
   
