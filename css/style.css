@@ -878,6 +878,7 @@ a.article-title:hover {
 .article-share-twitter,
 .article-share-facebook,
 .article-share-pinterest,
+.article-share-reddit,
 .article-share-google {
   width: 50px;
   height: 36px;
@@ -890,6 +891,7 @@ a.article-title:hover {
 .article-share-twitter:before,
 .article-share-facebook:before,
 .article-share-pinterest:before,
+.article-share-reddit:before,
 .article-share-google:before {
   font-size: 20px;
   font-family: FontAwesome;
@@ -905,6 +907,7 @@ a.article-title:hover {
 .article-share-twitter:hover,
 .article-share-facebook:hover,
 .article-share-pinterest:hover,
+.article-share-reddit:hover,
 .article-share-google:hover {
   color: #fff;
 }
@@ -926,6 +929,13 @@ a.article-title:hover {
   content: "\f0d2";
 }
 .article-share-pinterest:hover {
+  background: #cb2027;
+  text-shadow: 0 1px #a21a1f;
+}
+.article-share-reddit:before {
+  content: "\f0d2";
+}
+.article-share-reddit:hover {
   background: #cb2027;
   text-shadow: 0 1px #a21a1f;
 }
