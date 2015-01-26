@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://ootput.github.io/"/>
-  <updated>2015-01-26T03:26:20.858Z</updated>
+  <updated>2015-01-26T03:28:16.752Z</updated>
   <id>http://ootput.github.io/</id>
   
   <author>
@@ -19,9 +19,9 @@
     <link href="http://ootput.github.io/2015/01/25/Add-Reddit-Share-button-to-Hexo-s-Landscape-theme/"/>
     <id>http://ootput.github.io/2015/01/25/Add-Reddit-Share-button-to-Hexo-s-Landscape-theme/</id>
     <published>2015-01-25T10:50:03.000Z</published>
-    <updated>2015-01-25T10:53:08.000Z</updated>
+    <updated>2015-01-26T03:28:09.000Z</updated>
     <content type="html"><![CDATA[<p>I have added a Reddit button to Hexo’s Landscape theme by re-using existing code for Pinterest’s share button (found by searching Landscape’s Github repo for references to Pinterest), with minor modifications specific to Reddit.</p>
-<p>The changes I made can be found in <a href="https://github.com/ootput/hexo-theme-landscape-ootput/commit/28b15c40a69171467d9febf4e20353af894e0ec9" target="_blank" rel="external">this Git commit</a></p>
+<p>The changes I made can be found in <a href="https://github.com/ootput/hexo-theme-landscape-ootput/commit/61b2aabad55b4a7d832538ffcdb57f93484a3081" target="_blank" rel="external">this Git commit</a></p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>I have added a Reddit button to Hexo’s Landscape theme by re-using existing code for Pinterest’s share button (found by searching Landsca]]>
