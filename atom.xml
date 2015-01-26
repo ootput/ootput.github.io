@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://ootput.github.io/"/>
-  <updated>2015-01-25T10:53:25.830Z</updated>
+  <updated>2015-01-26T03:26:20.858Z</updated>
   <id>http://ootput.github.io/</id>
   
   <author>
@@ -111,8 +111,17 @@
     <link href="http://ootput.github.io/2015/01/16/Quick-Git-Hints-WIP/"/>
     <id>http://ootput.github.io/2015/01/16/Quick-Git-Hints-WIP/</id>
     <published>2015-01-16T09:42:20.000Z</published>
-    <updated>2015-01-19T23:08:09.000Z</updated>
+    <updated>2015-01-26T03:25:20.000Z</updated>
     <content type="html"><![CDATA[<p>A compilation of Git commands I have found useful so far:</p>
+<ul>
+<li><p>Merge multiple pushed commits, and push to remote</p>
+<p>For example, for 4 most recent commits:</p>
+<p><code>git rebase --interactive HEAD~4</code></p>
+<p>In interactive dialog, squash (merge) commits 2-4 - by replacing “pick” to “squash”</p>
+<p>Save session (e.g :wq in vi), and choose new commit message. Then:</p>
+<p><code>git push origin +master</code></p>
+</li>
+</ul>
 <ul>
 <li><p>Highlight word changes</p>
 <p>This only highlights the changed words, nicely inline. Try:</p>
@@ -123,16 +132,17 @@
 <li><p>To quickly discard unstaged changes:</p>
 <p><code>git stash save --keep-index</code><br><code>git stash drop</code></p>
 </li>
-<li><p>My ~/.gitconfig file - explanations can be found in individual commits to <a href="https://github.com/ootput/dotfiles/commits/master/home/.gitconfig" target="_blank" rel="external">my github repo.</a></p>
-<script src="https://gist.github.com/c21aca561f5627ac8b9b.js?file=gistfile1.ini"></script>
+</ul>
+<ul>
+<li>My ~/.gitconfig file - explanations can be found in individual commits to <a href="https://github.com/ootput/dotfiles/commits/master/home/.gitconfig" target="_blank" rel="external">my github repo.</a><script src="https://gist.github.com/c21aca561f5627ac8b9b.js?file=gistfile1.ini"></script>
 </li>
 </ul>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>A compilation of Git commands I have found useful so far:</p>
 <ul>
-<li><p>Highlight word changes</p>
-<p>This only highlights the changed ]]>
+<li><p>Merge multiple pushed commits, and push to remote</p>
+<p>For ex]]>
     </summary>
     
       <category term="git" scheme="http://ootput.github.io/tags/git/"/>

@@ -113,6 +113,15 @@ ga('send', 'pageview');
       
         <p>A compilation of Git commands I have found useful so far:</p>
 <ul>
+<li><p>Merge multiple pushed commits, and push to remote</p>
+<p>For example, for 4 most recent commits:</p>
+<p><code>git rebase --interactive HEAD~4</code></p>
+<p>In interactive dialog, squash (merge) commits 2-4 - by replacing “pick” to “squash”</p>
+<p>Save session (e.g :wq in vi), and choose new commit message. Then:</p>
+<p><code>git push origin +master</code></p>
+</li>
+</ul>
+<ul>
 <li><p>Highlight word changes</p>
 <p>This only highlights the changed words, nicely inline. Try:</p>
 <p><code>git diff --word-diff</code></p>
@@ -122,15 +131,16 @@ ga('send', 'pageview');
 <li><p>To quickly discard unstaged changes:</p>
 <p><code>git stash save --keep-index</code><br><code>git stash drop</code></p>
 </li>
-<li><p>My ~/.gitconfig file - explanations can be found in individual commits to <a href="https://github.com/ootput/dotfiles/commits/master/home/.gitconfig" target="_blank" rel="external">my github repo.</a></p>
-<script src="https://gist.github.com/c21aca561f5627ac8b9b.js?file=gistfile1.ini"></script>
+</ul>
+<ul>
+<li>My ~/.gitconfig file - explanations can be found in individual commits to <a href="https://github.com/ootput/dotfiles/commits/master/home/.gitconfig" target="_blank" rel="external">my github repo.</a><script src="https://gist.github.com/c21aca561f5627ac8b9b.js?file=gistfile1.ini"></script>
 </li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2015/01/16/Quick-Git-Hints-WIP/" data-id="vumjibs8i4mtbrev" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2015/01/16/Quick-Git-Hints-WIP/" data-id="m7awjb6acu6qciyg" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2015/01/16/Quick-Git-Hints-WIP/#disqus_thread" class="article-comment-link">Comments</a>
       
