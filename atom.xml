@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://ootput.github.io/"/>
-  <updated>2015-01-27T00:52:09.447Z</updated>
+  <updated>2015-01-27T04:21:25.747Z</updated>
   <id>http://ootput.github.io/</id>
   
   <author>
@@ -13,6 +13,47 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Day 1 of the Rest of my Life]]></title>
+    <link href="http://ootput.github.io/2015/01/27/Day-1-of-the-Rest-of-my-Life/"/>
+    <id>http://ootput.github.io/2015/01/27/Day-1-of-the-Rest-of-my-Life/</id>
+    <published>2015-01-27T00:53:00.000Z</published>
+    <updated>2015-01-27T04:21:09.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="*Tue_27_Jan_15:14:43_2015">*Tue 27 Jan 15:14:43 2015</h1>
+<p>My kettlebell complex for today:</p>
+<p>Right hand:</p>
+<ul>
+<li>Single-hand Swing</li>
+<li>Snatch</li>
+<li>Clean</li>
+<li>Squat</li>
+<li>Press</li>
+<li>Windmill</li>
+</ul>
+<ul>
+<li>then alternate to Left hand for one set</li>
+</ul>
+<p>1 min break between sets for 10 sets</p>
+<p>… and I’m thoroughly exhausted by the end of the session.</p>
+<p>My progression will involve an increase in reps per exercise, for a maximum of 5 reps - but only after successfully reducing rest times to 30 seconds. Once 5 reps per exercise can be performed with ease at 30 second rest, I will increase the weight per bell and reset rep count and break times.</p>
+<p>This should prove to be a fantastic way to get back into shape after years of lethargy.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="*Tue_27_Jan_15:14:43_2015">*Tue 27 Jan 15:14:43 2015</h1>
+<p>My kettlebell complex for today:</p>
+<p>Right hand:</p>
+<ul>
+<li>Single]]>
+    </summary>
+    
+      <category term="Exercise" scheme="http://ootput.github.io/tags/Exercise/"/>
+    
+      <category term="Kettlebells" scheme="http://ootput.github.io/tags/Kettlebells/"/>
+    
+      <category term="Health" scheme="http://ootput.github.io/categories/Health/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Add Reddit Share button to Hexo's Landscape theme]]></title>
@@ -592,32 +633,6 @@ root# diskutil list
     </summary>
     
       <category term="osx" scheme="http://ootput.github.io/tags/osx/"/>
-    
-      <category term="Software" scheme="http://ootput.github.io/categories/Software/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[OSX Lion on Thinkpad X220]]></title>
-    <link href="http://ootput.github.io/2013/07/20/osx-lion-on-thinkpad-x220/"/>
-    <id>http://ootput.github.io/2013/07/20/osx-lion-on-thinkpad-x220/</id>
-    <published>2013-07-20T13:28:11.000Z</published>
-    <updated>2014-11-25T10:51:19.000Z</updated>
-    <content type="html"><![CDATA[<p><img src="/images/8e5d2bcfdd1502d676cd34f000a8a3ac35bc4b2b.png" class="img-thumbnail"></p>
-<p>In all my years of computing, I’d never imagined the day where I would find myself working with an Apple OS. I’d always assumed - wrongly - that Mac systems were specifically targeted to cashed-up yuppies who didn’t know any better. I assumed that Windows was the only platform of choice to get things done, and that accumulating quality software designed for Windows was the primary goal of my technosexual existence. Of course, back then, in the days of raging hormones and teenage angst, I had made many incorrect assumptions.</p>
-<p>As I eventually found out, both Linux and BSD proved to be rock solid workhorses and viable alternatives to the Windows that I had so admired - and now, it seems I have also taken a strong liking to Apple’s OSX. Of course, any Apple evangelism on my part will be premature, as I have yet to grasp the inner workings of OSX. For now, let’s just say that I have OSX Lion successfully running on my Lenovo X220 (alongside CrunchBang Linux) courtesy of my wife’s Snow Leopard Disk, and <a href="http://forum.thinkpads.com/viewtopic.php?f=32&amp;t=102098&amp;start=0" title="X220 Hackintosh (lion) on MBR partition dual boot Windows 7" target="_blank" rel="external">this guide</a>, and that I enjoy every minute of using it. It is a very capable system, and a most welcome addition to my heterogeneous network. There were a few hiccups along the way (to be discussed later), but for the most part, the installation ran smoothly.</p>
-<p>Thus far, I’ve made many changes to the system to arrive at a more familiar desktop (again, to be discussed later). This is not to say that I have been spending most of my time tinkering with the defaults - in fact, like Crunchbang, OSX proves to be quite operational OOTB. I suppose that I have been spoiled somewhat with Crunchbang’s easy maintenance, that proceeding to use an even simpler system seemed to be a most natural step.</p>
-<p>My workflow has not been altered considerably, owing to the many ported software from Unix systems, and for this I am thankful. Running OSX - as opposed to any Linux distribution - does also have its perks: I am able to access a wider pool of quality commercial software for my media creation/management. As much as I admire the tenets of the Free Software movement, I’m not bound to it - nor am I vehemently opposed to commercial offerings. I have not compromised my integrity, and I like to think that I choose software on the basis of what’s right for the proverbial job.</p>
-<p>I will try to make as many posts regarding the transition as I can - both for X220 owners considering running a Hackintosh, or for other geeks who have risen above the stigma of Macintosh use and are willing to try.</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p><img src="/images/8e5d2bcfdd1502d676cd34f000a8a3ac35bc4b2b.png" class="img-thumbnail"></p>
-<p>In all my years of computing, I’d never ima]]>
-    </summary>
-    
-      <category term="osx" scheme="http://ootput.github.io/tags/osx/"/>
-    
-      <category term="x220" scheme="http://ootput.github.io/tags/x220/"/>
     
       <category term="Software" scheme="http://ootput.github.io/categories/Software/"/>
     
