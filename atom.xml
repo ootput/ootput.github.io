@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://ootput.github.io/"/>
-  <updated>2015-01-28T09:18:42.223Z</updated>
+  <updated>2015-01-28T09:20:27.715Z</updated>
   <id>http://ootput.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://ootput.github.io/2015/01/28/Soundcloud-on-Hexo/"/>
     <id>http://ootput.github.io/2015/01/28/Soundcloud-on-Hexo/</id>
     <published>2015-01-28T07:01:23.000Z</published>
-    <updated>2015-01-28T08:32:08.000Z</updated>
+    <updated>2015-01-28T09:20:18.000Z</updated>
     <content type="html"><![CDATA[<p>To embed Soundcloud audio tracks in Hexo, read <a href="https://github.com/andrewboni/hexo-soundcloud" target="_blank" rel="external">this</a></p>
 <p>The following code brings up the visual player:</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">hexoescape</span>&gt;</span>0<span class="tag">&lt;/<span class="title">hexoescape</span>&gt;</span></div></pre></td></tr></table></figure>
