@@ -1,18 +1,347 @@
-<%- partial('_partial/head') %>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Tag: chromium | ootput burst!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="The Lively Meanderings of an Idle Mind">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ootput burst!">
+<meta property="og:url" content="http://ootput.github.io/tags/chromium/">
+<meta property="og:site_name" content="ootput burst!">
+<meta property="og:description" content="The Lively Meanderings of an Idle Mind">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ootput burst!">
+<meta name="twitter:description" content="The Lively Meanderings of an Idle Mind">
+<meta name="twitter:creator" content="@513256254">
+<link rel="publisher" href="110511550415133050000">
+
+  
+    <link rel="alternative" href="/atom.xml" title="ootput burst!" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/favicon.png">
+  
+  <link href="http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700|Ubuntu:400,700,400italic" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-57044545-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+</head>
+
 <body>
   <div id="container">
     <div id="wrap">
-      <%- partial('_partial/header', null, {cache: !config.relative_link}) %>
-      <div class="outer">
-        <section id="main"><%- body %></section>
-        <% if (theme.sidebar && theme.sidebar !== 'bottom'){ %>
-          <%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %>
-        <% } %>
-      </div>
-      <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">ootput burst!</a>
+      </h1>
+      
     </div>
-    <%- partial('_partial/mobile-nav', null, {cache: !config.relative_link}) %>
-    <%- partial('_partial/after-footer') %>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/author">Author</a>
+        
+          <a class="main-nav-link" href="/desktop">Desktop</a>
+        
+          <a class="main-nav-link" href="/health">Health</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <a id="nav-github-link" class="nav-icon" href="https://github.com/ootput" target="_blank"></a>
+        <a id="nav-twitter-link" class="nav-icon" href="https://twitter.com/ootput" target="_blank"></a>
+        <a id="nav-googleplus-link" class="nav-icon" href="https://plus.google.com/110511550415133053098" target="_blank"></a>
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:http://ootput.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-move-chromium-cache-to-mfs-memory-disk-on-freebsd" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2011/12/30/move-chromium-cache-to-mfs-memory-disk-on-freebsd/" class="article-date">
+  <time datetime="2011-12-30T03:04:13.000Z" itemprop="datePublished">Dec 30 2011</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Software/">Software</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2011/12/30/move-chromium-cache-to-mfs-memory-disk-on-freebsd/">Move Chromium&#39;s Cache to MFS Memory Disk on FreeBSD</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/385151d889f7774ba8d254cb485335a9e22139bb.png" class="img-thumbnail"></p>
+<p>It is possible to use FreeBSD’s MFS Memory Disk to speed up access times of cached web objects.</p>
+<p>From <code>md(4)</code>:</p>
+<blockquote>
+<p>The md driver provides support for four kinds of memory backed virtual disks:<br>…<br>swap:<br>   Backing store is allocated from buffer memory.  Pages get pushed out to the swap when the system is under memory pressure, otherwise they stay in the operating memory. Using swap backing is generally preferable over malloc backing.</p>
+</blockquote>
+<p>Chromium’s cache is at <code>$HOME/.cache/chromium</code>, and so, my <code>/etc/fstab</code> contains:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"># <span class="number">256</span>M mfs <span class="keyword">for</span> google chrome</div><div class="line"><span class="regexp">/dev/m</span>d0 <span class="regexp">/home/</span>ootput<span class="regexp">/.cache/</span>chromium mfs rw,-s256m,-wootput:ootput,noauto <span class="number">2</span> <span class="number">0</span></div></pre></td></tr></table></figure>
+
+<p>From <code>mount_mfs(8)</code>:</p>
+<blockquote>
+<p><code>-s256m</code> specifies a memory reservation of 256 M;</p>
+<p><code>-wootput:ootput</code> hands ownership of the mountpoint from root to the user; and</p>
+<p><code>noauto</code> prevents the system from failing to boot properly if the mountpoint does not (yet) exist.</p>
+</blockquote>
+<p>The following additions to <code>/etc/rc.conf</code> were also made:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="variable">mdconfig_md0=</span><span class="string">"-t swap -s 256m"</span></div><div class="line"><span class="variable">mdconfig_md0_owner=</span><span class="string">"ootput:ootput"</span></div><div class="line"><span class="variable">mdconfig_md0_perms=</span><span class="string">"1777"</span></div></pre></td></tr></table></figure>
+
+<p>which lists arguments to <code>mdconfig(8)</code> for device <code>md0</code>.</p>
+<p>At mininum the <code>-t type</code> must be specified and either a <code>-s size</code> for <em>malloc</em> or <em>swap</em> backed <code>md(4)</code> devices or a <code>-f file</code> for <em>vnode</em> backed <code>md(4)</code> devices.</p>
+<p>The redundancies found in <code>fstab</code> and <code>rc.conf</code> allows automatic mounting at boot, or manual mounting after boot.</p>
+<p>To test the changes made, as root:</p>
+<p><code># /etc/rc.d/mdconfig restart</code></p>
+<p>On to the <code>$USER/bin/pack_chrome</code> executable script that will both mount the <code>md</code> device, and/or sync contents from the cache at RAM to a backup cache on the HDD:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="shebang">#!/usr/local/bin/bash</span></div><div class="line"></div><div class="line">CACHE=<span class="string">"<span class="variable">$HOME</span>/.cache/chromium"</span></div><div class="line">BACKUP=<span class="string">"<span class="variable">$CACHE</span>.bak"</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> DIR <span class="keyword">in</span> <span class="variable">$CACHE</span> <span class="variable">$BACKUP</span>; <span class="keyword">do</span></div><div class="line">   <span class="keyword">if</span> [ ! <span class="operator">-d</span> <span class="string">"<span class="variable">${DIR}</span>"</span> ]; <span class="keyword">then</span></div><div class="line">      mkdir -p <span class="variable">${DIR}</span></div><div class="line">   <span class="keyword">fi</span></div><div class="line"><span class="keyword">done</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> test -z <span class="string">"<span class="variable">$(/sbin/mount | grep -F "$CACHE" )</span>"</span>; <span class="keyword">then</span></div><div class="line">    <span class="built_in">sudo</span> /sbin/mount <span class="string">"<span class="variable">$CACHE</span>"</span></div><div class="line"><span class="keyword">fi</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> test <span class="operator">-f</span> <span class="string">"<span class="variable">$CACHE</span>/.synced"</span>; <span class="keyword">then</span></div><div class="line">    rsync --exclude <span class="string">'.synced'</span> --exclude <span class="string">'.snap'</span> --delete -avrPx</div><div class="line">        <span class="string">"<span class="variable">$CACHE</span>/"</span> <span class="string">"<span class="variable">$BACKUP</span>"</span></div><div class="line"><span class="keyword">else</span></div><div class="line">    rsync --delete -avrPx <span class="string">"<span class="variable">$BACKUP</span>/"</span> <span class="string">"<span class="variable">$CACHE</span>"</span></div><div class="line">    touch <span class="string">"<span class="variable">$CACHE</span>/.synced"</span></div><div class="line"><span class="keyword">fi</span></div></pre></td></tr></table></figure>
+
+
+<p>The script requires that the <code>$USER</code> is in <code>sudoers(5)</code>, and is able to use the <code>/sbin/mount</code> command.</p>
+<p>Finally, after <code>$ crontab -e</code>:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">*</span>/30 <span class="keyword">*</span> <span class="keyword">*</span> <span class="keyword">*</span> <span class="keyword">*</span> $HOME/bin/pack_chrome &gt;/dev/null 2&gt;&amp;1</div></pre></td></tr></table></figure>
+
+<p>.. and the script gets called every half-hour by <code>cron</code> to automate the syncing process. This also requires that <code>$USER</code> is specifically allowed in <code>/var/cron/allow</code>.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ootput.github.io/2011/12/30/move-chromium-cache-to-mfs-memory-disk-on-freebsd/" data-id="3p1o3j8bgb8a1w3l" class="article-share-link">Share</a>
+      
+        <a href="http://ootput.github.io/2011/12/30/move-chromium-cache-to-mfs-memory-disk-on-freebsd/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/chromium/">chromium</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/freebsd/">freebsd</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-flash-and-java-for-google-chromium-in-freebsd-8" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2011/12/25/flash-and-java-for-google-chromium-in-freebsd-8/" class="article-date">
+  <time datetime="2011-12-25T12:27:32.000Z" itemprop="datePublished">Dec 25 2011</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Software/">Software</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2011/12/25/flash-and-java-for-google-chromium-in-freebsd-8/">Flash and Java for Google Chromium in FreeBSD 8</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>According to the official FreeBSD handbook (Ch 7.2 Browsers), perform the following steps to have a Java and Flash capable Chromium browser for FreeBSD 8:</p>
+<p>As root:</p>
+<p><code># portmaster www/chromium \
+            java/openjdk6 \
+            java/icedtea-web \
+            www/nspluginwrapper \
+            www/linux-f10-flashplugin10</code></p>
+<p>Then:</p>
+<p><code># mkdir -p /usr/local/share/chromium/plugins</code></p>
+<p><code># ln -s /usr/local/lib/IcedTeaPlugin.so /usr/local/share/chromium/plugins/</code></p>
+<p><code># ln -s /usr/local/lib/npapi/linux-f10-flashplugin/libflashplayer.so \
+        /usr/local/lib/browser_plugins/</code></p>
+<p>The Linux process file system, <code>linprocfs(5)</code> has to be mounted on <code>/compat/linux/proc</code>:</p>
+<p><code># mount -t linprocfs linproc /compat/linux/proc</code></p>
+<p>To mount the proc fs at each system boot, in <code>/etc/fstab</code>, have:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">linproc    /compat/linux/<span class="keyword">proc</span>  linprocfs   rw  <span class="number">0</span>   <span class="number">0</span></div></pre></td></tr></table></figure>
+
+
+<p>As a user:</p>
+<p><code>% nspluginwrapper -v -a -i</code></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ootput.github.io/2011/12/25/flash-and-java-for-google-chromium-in-freebsd-8/" data-id="ljcigroqslcnkxks" class="article-share-link">Share</a>
+      
+        <a href="http://ootput.github.io/2011/12/25/flash-and-java-for-google-chromium-in-freebsd-8/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/chromium/">chromium</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flash/">flash</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/freebsd/">freebsd</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+  
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Health/">Health</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Photography/">Photography</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Random-Musings/">Random Musings</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Software/">Software</a><span class="category-list-count">102</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/01/28/Soundcloud-on-Hexo/">Soundcloud on Hexo</a>
+          </li>
+        
+          <li>
+            <a href="/2015/01/27/Day-1-of-the-Rest-of-my-Life/">Day 1 of the Rest of my Life</a>
+          </li>
+        
+          <li>
+            <a href="/2015/01/25/Add-Reddit-Share-button-to-Hexo-s-Landscape-theme/">Add Reddit Share button to Hexo&#39;s Landscape theme</a>
+          </li>
+        
+          <li>
+            <a href="/2015/01/23/Automatically-tweet-new-Hexo-entry-via-IFTTT/">Automatically tweet new Hexo entry via IFTTT</a>
+          </li>
+        
+          <li>
+            <a href="/2015/01/19/Plex-Home-Theatre-on-Debian-Wheezy/">Plex Home Theatre on Debian Wheezy</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Exercise/" style="font-size: 10.00px;">Exercise</a><a href="/tags/Kettlebells/" style="font-size: 10.00px;">Kettlebells</a><a href="/tags/Soundcloud/" style="font-size: 10.00px;">Soundcloud</a><a href="/tags/Windows/" style="font-size: 10.00px;">Windows</a><a href="/tags/alsa/" style="font-size: 10.00px;">alsa</a><a href="/tags/android/" style="font-size: 10.00px;">android</a><a href="/tags/apple/" style="font-size: 10.00px;">apple</a><a href="/tags/blog/" style="font-size: 20.00px;">blog</a><a href="/tags/canon/" style="font-size: 10.00px;">canon</a><a href="/tags/chess/" style="font-size: 10.00px;">chess</a><a href="/tags/chromium/" style="font-size: 11.11px;">chromium</a><a href="/tags/chyrp/" style="font-size: 14.44px;">chyrp</a><a href="/tags/clone/" style="font-size: 11.11px;">clone</a><a href="/tags/couchpotato/" style="font-size: 10.00px;">couchpotato</a><a href="/tags/crunchbang/" style="font-size: 10.00px;">crunchbang</a><a href="/tags/ddwrt/" style="font-size: 10.00px;">ddwrt</a><a href="/tags/debian/" style="font-size: 16.67px;">debian</a><a href="/tags/dslr/" style="font-size: 10.00px;">dslr</a><a href="/tags/emacs/" style="font-size: 11.11px;">emacs</a><a href="/tags/erc/" style="font-size: 10.00px;">erc</a><a href="/tags/fedora/" style="font-size: 15.56px;">fedora</a><a href="/tags/filebot/" style="font-size: 11.11px;">filebot</a><a href="/tags/flash/" style="font-size: 11.11px;">flash</a><a href="/tags/flickr/" style="font-size: 10.00px;">flickr</a><a href="/tags/freebsd/" style="font-size: 18.89px;">freebsd</a><a href="/tags/git/" style="font-size: 10.00px;">git</a><a href="/tags/github/" style="font-size: 13.33px;">github</a><a href="/tags/gmail/" style="font-size: 10.00px;">gmail</a><a href="/tags/habari/" style="font-size: 17.78px;">habari</a><a href="/tags/hexo/" style="font-size: 12.22px;">hexo</a><a href="/tags/ifttt/" style="font-size: 10.00px;">ifttt</a><a href="/tags/ion3/" style="font-size: 10.00px;">ion3</a><a href="/tags/ios/" style="font-size: 10.00px;">ios</a><a href="/tags/irssi/" style="font-size: 10.00px;">irssi</a><a href="/tags/itunes/" style="font-size: 10.00px;">itunes</a><a href="/tags/java/" style="font-size: 11.11px;">java</a><a href="/tags/kvm/" style="font-size: 10.00px;">kvm</a><a href="/tags/lens/" style="font-size: 10.00px;">lens</a><a href="/tags/linux/" style="font-size: 10.00px;">linux</a><a href="/tags/metaseo/" style="font-size: 10.00px;">metaseo</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">May 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">April 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">December 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">June 2012</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">May 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10/">October 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/09/">September 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06/">June 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07/">July 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06/">June 2010</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/04/">April 2010</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03/">March 2010</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02/">February 2010</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11/">November 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03/">March 2007</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02/">February 2007</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 Joseph LP<br>
+      <a target="_blank" href="http://twitter.com/ootput">@ootput</a><br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/author" class="mobile-nav-link">Author</a>
+  
+    <a href="/desktop" class="mobile-nav-link">Desktop</a>
+  
+    <a href="/health" class="mobile-nav-link">Health</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'ootputburst';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
   </div>
 </body>
 </html>
