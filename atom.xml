@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://ootput.github.io/"/>
-  <updated>2015-01-28T09:14:33.277Z</updated>
+  <updated>2015-01-28T09:16:08.717Z</updated>
   <id>http://ootput.github.io/</id>
   
   <author>
@@ -22,9 +22,10 @@
     <updated>2015-01-28T08:32:08.000Z</updated>
     <content type="html"><![CDATA[<p>To embed Soundcloud audio tracks in Hexo, read <a href="https://github.com/andrewboni/hexo-soundcloud" target="_blank" rel="external">this</a></p>
 <p>The following code brings up the visual player:</p>
-<p>&lt;hexoescape&gt;2&lt;/hexoescape&gt;</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">hexoescape</span>&gt;</span>0<span class="tag">&lt;/<span class="title">hexoescape</span>&gt;</span></div></pre></td></tr></table></figure>
+
 <p>A demo:</p>
-<p>&lt;hexoescape&gt;1&lt;/hexoescape&gt;</p>
+<iframe width="100%" height="160" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fferry-corsten%2Foceanlab-clear-blue-water-ferry-corsten-remix&auto_play=false&hide_related=true&show_comments=true&show_user=true&show_reposts=false&visual=true"></iframe>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>To embed Soundcloud audio tracks in Hexo, read <a href="https://github.com/andrewboni/hexo-soundcloud" target="_blank" rel="external">thi]]>
@@ -46,8 +47,8 @@
     <id>http://ootput.github.io/2015/01/27/Day-1-of-the-Rest-of-my-Life/</id>
     <published>2015-01-27T00:53:00.000Z</published>
     <updated>2015-01-27T09:39:05.000Z</updated>
-    <content type="html"><![CDATA[<h2>*Tue 27 Jan 15:14:43 2015</h2>
-<p>&lt;img src=&quot;/images/Kettlebells.png&quot; class=&quot;img-thumbnail&quot;/&gt;</p>
+    <content type="html"><![CDATA[<h2 id="*Tue_27_Jan_15:14:43_2015">*Tue 27 Jan 15:14:43 2015</h2>
+<p><img src="/images/Kettlebells.png" class="img-thumbnail"></p>
 <p>My kettlebell complex for today:</p>
 <p>Single-handedly:</p>
 <ul>
@@ -60,14 +61,14 @@
 </ul>
 <p>Use alternated hand for one set</p>
 <p>1 min break between sets for 10 sets</p>
-<p>... and I'm thoroughly exhausted by the end of the session.</p>
+<p>… and I’m thoroughly exhausted by the end of the session.</p>
 <p>My progression will involve an increase in reps per exercise, for a maximum of 5 reps - but only after successfully reducing rest times to 30 seconds. Once 5 reps per exercise can be performed with ease at 30 second rest, I will increase the weight per bell and reset rep count and break times.</p>
 <p>This should prove to be a fantastic way to get back into shape after years of lethargy.</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h2>*Tue 27 Jan 15:14:43 2015</h2>
-<p>&lt;img src=&quot;/images/Kettlebells.png&quot; class=&quot;img-thumbnail&quot;/&gt;</p>
-<p>My kettleb]]>
+    <![CDATA[<h2 id="*Tue_27_Jan_15:14:43_2015">*Tue 27 Jan 15:14:43 2015</h2>
+<p><img src="/images/Kettlebells.png" class="img-thumbnail"></p>
+<p>My ket]]>
     </summary>
     
       <category term="Exercise" scheme="http://ootput.github.io/tags/Exercise/"/>
@@ -84,12 +85,12 @@
     <id>http://ootput.github.io/2015/01/25/Add-Reddit-Share-button-to-Hexo-s-Landscape-theme/</id>
     <published>2015-01-25T10:50:03.000Z</published>
     <updated>2015-01-26T09:35:25.000Z</updated>
-    <content type="html"><![CDATA[<p>I have added a Reddit button to Hexo's Landscape theme by re-using existing code for Pinterest's share button (found by searching Landscape's Github repo for references to Pinterest), with minor modifications specific to Reddit.</p>
+    <content type="html"><![CDATA[<p>I have added a Reddit button to Hexo’s Landscape theme by re-using existing code for Pinterest’s share button (found by searching Landscape’s Github repo for references to Pinterest), with minor modifications specific to Reddit.</p>
 <p>Additionally, I had to update font-awesome to its latest git version as version 4.2 does not provide a reddit icon.</p>
 <p>The changes I made can be found in <a href="https://github.com/ootput/hexo-theme-landscape-ootput/commit/61b2aabad55b4a7d832538ffcdb57f93484a3081" target="_blank" rel="external">this Git commit</a></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>I have added a Reddit button to Hexo's Landscape theme by re-using existing code for Pinterest's share button (found by searching Landsca]]>
+    <![CDATA[<p>I have added a Reddit button to Hexo’s Landscape theme by re-using existing code for Pinterest’s share button (found by searching Landsca]]>
     </summary>
     
       <category term="reddit" scheme="http://ootput.github.io/tags/reddit/"/>
@@ -108,13 +109,13 @@
     <id>http://ootput.github.io/2015/01/23/Automatically-tweet-new-Hexo-entry-via-IFTTT/</id>
     <published>2015-01-23T09:09:46.000Z</published>
     <updated>2015-01-23T09:32:08.000Z</updated>
-    <content type="html"><![CDATA[<p>In the absence of <a href="http://en.support.wordpress.com/publicize/" target="_blank" rel="external">Wordpress' Publicize</a>, I have decided to use <a href="https://ifttt.com/" target="_blank" rel="external">IFTTT</a> in conjunction with <a href="https://www.npmjs.com/package/hexo-generator-feed" target="_blank" rel="external">Hexo Feed Generator</a>, to automatically publicize my Hexo entries.</p>
+    <content type="html"><![CDATA[<p>In the absence of <a href="http://en.support.wordpress.com/publicize/" target="_blank" rel="external">Wordpress’ Publicize</a>, I have decided to use <a href="https://ifttt.com/" target="_blank" rel="external">IFTTT</a> in conjunction with <a href="https://www.npmjs.com/package/hexo-generator-feed" target="_blank" rel="external">Hexo Feed Generator</a>, to automatically publicize my Hexo entries.</p>
 <p>IFTTT, which stands for If This Then That , is a tool that automates tasks using triggers and actions. IFTTT connects two services, and then triggers an action on one service when you perform an action on the other service. It works with all of the major social networks, including Facebook, Twitter, Instagram, LinkedIn, Tumblr, and YouTube.</p>
-<p>After connecting my twitter account, I chose to use a new rss feed entry as the 'trigger', and a new tweet as the 'action'. My recipe can be found <a href="https://ifttt.com/recipes/247499-auto-tweet-from-hexo-rss-update" target="_blank" rel="external">here</a>.</p>
+<p>After connecting my twitter account, I chose to use a new rss feed entry as the ‘trigger’, and a new tweet as the ‘action’. My recipe can be found <a href="https://ifttt.com/recipes/247499-auto-tweet-from-hexo-rss-update" target="_blank" rel="external">here</a>.</p>
 <p>Instructions for applications can be found by traversing the links provided.</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>In the absence of <a href="http://en.support.wordpress.com/publicize/" target="_blank" rel="external">Wordpress' Publicize</a>, I have de]]>
+    <![CDATA[<p>In the absence of <a href="http://en.support.wordpress.com/publicize/" target="_blank" rel="external">Wordpress’ Publicize</a>, I have de]]>
     </summary>
     
       <category term="twitter" scheme="http://ootput.github.io/tags/twitter/"/>
@@ -144,14 +145,13 @@
 <p><code>echo &quot;deb http://www.deb-multimedia.org wheezy main non-free&quot; | sudo tee -a /etc/apt/sources.list.d/deb-multimedia.list</code></p>
 <p><code>echo &quot;deb http://shell.ninthgate.se/packages/debian wheezy main&quot; | sudo tee -a /etc/apt/sources.list.d/plex.list</code></p>
 <p><code>sudo apt-get update</code></p>
-<p><code>sudo apt-get install deb-multimedia-keyring</code>
-(press Y to confirm)</p>
+<p><code>sudo apt-get install deb-multimedia-keyring</code><br>(press Y to confirm)</p>
 <p><code>sudo apt-get update</code></p>
 <p><code>sudo apt-get dist-upgrade</code></p>
 <ul>
-<li>Obtain Ubuntu fonts from closest mirror at http://packages.ubuntu.com/precise/all/ttf-ubuntu-font-family/download</li>
+<li>Obtain Ubuntu fonts from closest mirror at <a href="http://packages.ubuntu.com/precise/all/ttf-ubuntu-font-family/download" target="_blank" rel="external">http://packages.ubuntu.com/precise/all/ttf-ubuntu-font-family/download</a></li>
 </ul>
-<p><code>cd /tmp &amp;&amp; { curl -O http://mirrors.kernel.org/ubuntu/pool/main/u/ubuntu-font-family-sources/ttf-ubuntu-font-family_0.80-0ubuntu2_all.deb ; cd -; }</code></p>
+<p><code>cd /tmp &amp;&amp; { curl -O http://mirrors.kernel.org/ubuntu/pool/main/u/ubuntu-font-family-sources/ttf-ubuntu-font-family_0.80-0ubuntu2_all.deb ; cd -;  }</code></p>
 <p><code>sudo dpkg -i /tmp/ttf-ubuntu-font-family_0.80-0ubuntu2_all.deb</code></p>
 <ul>
 <li>Install Plex Home Theatre</li>
@@ -180,39 +180,35 @@
     <updated>2015-01-26T03:25:20.000Z</updated>
     <content type="html"><![CDATA[<p>A compilation of Git commands I have found useful so far:</p>
 <ul>
-<li>Merge multiple pushed commits, and push to remote</li>
-</ul>
+<li><p>Merge multiple pushed commits, and push to remote</p>
 <p>For example, for 4 most recent commits:</p>
-<pre><code>`git rebase --interactive HEAD~4`
-</code></pre>
-<p>In interactive dialog, squash (merge) commits 2-4 - by replacing &quot;pick&quot; to &quot;squash&quot;</p>
+<p><code>git rebase --interactive HEAD~4</code></p>
+<p>In interactive dialog, squash (merge) commits 2-4 - by replacing “pick” to “squash”</p>
 <p>Save session (e.g :wq in vi), and choose new commit message. Then:</p>
-<pre><code>`git push origin +master`
-</code></pre>
-<ul>
-<li>Highlight word changes</li>
-</ul>
-<p>This only highlights the changed words, nicely inline. Try:</p>
-<pre><code>`git diff --word-diff`
-</code></pre>
-<ul>
-<li>
-<p>To quickly discard unstaged changes:</p>
-<p><code>git stash save --keep-index</code>
-<code>git stash drop</code></p>
+<p><code>git push origin +master</code></p>
 </li>
 </ul>
 <ul>
-<li>My ~/.gitconfig file - explanations can be found in individual commits to <a href="https://github.com/ootput/dotfiles/commits/master/home/.gitconfig" target="_blank" rel="external">my github repo.</a>
-&lt;hexoescape&gt;0&lt;/hexoescape&gt;</li>
+<li><p>Highlight word changes</p>
+<p>This only highlights the changed words, nicely inline. Try:</p>
+<p><code>git diff --word-diff</code></p>
+</li>
+</ul>
+<ul>
+<li><p>To quickly discard unstaged changes:</p>
+<p><code>git stash save --keep-index</code><br><code>git stash drop</code></p>
+</li>
+</ul>
+<ul>
+<li>My ~/.gitconfig file - explanations can be found in individual commits to <a href="https://github.com/ootput/dotfiles/commits/master/home/.gitconfig" target="_blank" rel="external">my github repo.</a><script src="https://gist.github.com/c21aca561f5627ac8b9b.js?file=gistfile1.ini"></script>
+</li>
 </ul>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>A compilation of Git commands I have found useful so far:</p>
 <ul>
-<li>Merge multiple pushed commits, and push to remote</li>
-</ul>
-<p>Fo]]>
+<li><p>Merge multiple pushed commits, and push to remote</p>
+<p>For ex]]>
     </summary>
     
       <category term="git" scheme="http://ootput.github.io/tags/git/"/>
@@ -228,7 +224,7 @@
     <published>2015-01-01T00:00:38.000Z</published>
     <updated>2015-01-16T02:46:49.000Z</updated>
     <content type="html"><![CDATA[<p>FileBot in Windows is a bit tricky to use when it comes to batch subtitle downloads.</p>
-<p>In particular, OpenSubtitles.org prevents leeching by requiring login details to be passed to Filebot. This isn't so straightforward in Windows with no gui configuration available.</p>
+<p>In particular, OpenSubtitles.org prevents leeching by requiring login details to be passed to Filebot. This isn’t so straightforward in Windows with no gui configuration available.</p>
 <p>We are required to use the console version of FileBot from the windows commandline</p>
 <p>Firstly, get into the commandline:</p>
 <p><code>&lt;win-R&gt; cmd</code></p>
@@ -238,19 +234,16 @@
 <p><code>C:\Program Files\FileBot&gt;</code></p>
 <p>Then do:</p>
 <p><code>filebot.exe -script fn:configure</code></p>
-<pre><code>Enter OpenSubtitles username: ******
-Enter OpenSubtitles password: ******
+<pre><code>Enter OpenSubtitles username: <span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span>
+Enter OpenSubtitles password: <span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span>
 
 Testing OpenSubtitles... OK
 Done
-</code></pre>
-<p>Finally, with all movies in a network-mounted Y:, for example, do:</p>
+</code></pre><p>Finally, with all movies in a network-mounted Y:\, for example, do:</p>
 <p><code>filebot.exe -script fn:suball &quot;Y:&quot; --lang en -non-strict</code></p>
-<p>My elaborate movie-format rename scheme follows:
-<code>{n.space('_')}_({y})_[{af.lower()}_{ac.lower()}_{(int)video.framerate.toFloat()}fps_{(video.bitrate.toFloat()/1000).round()}kbps_{vc.lower()}_{vf}]</code></p>
+<p>My elaborate movie-format rename scheme follows:<br><code>{n.space(&#39;_&#39;)}_({y})_[{af.lower()}_{ac.lower()}_{(int)video.framerate.toFloat()}fps_{(video.bitrate.toFloat()/1000).round()}kbps_{vc.lower()}_{vf}]</code></p>
 <ul>
-<li>yielding something like:
-<code>12_Years_a_Slave_(2013)_[6ch_dts_23fps_4324kbps_x264_720p].mkv</code></li>
+<li>yielding something like:<br><code>12_Years_a_Slave_(2013)_[6ch_dts_23fps_4324kbps_x264_720p].mkv</code></li>
 </ul>
 ]]></content>
     <summary type="html">
@@ -274,24 +267,16 @@ Done
     <id>http://ootput.github.io/2014/12/30/Filebot-on-Debian-Wheezy/</id>
     <published>2014-12-30T10:39:07.000Z</published>
     <updated>2015-01-01T07:12:48.000Z</updated>
-    <content type="html"><![CDATA[<p>In Debian Wheezy AMD64, the default version of Java is OpenJDK 6. In order to switch Oracle's v8 Java, do the following:</p>
-<p><code># su -</code>
-<code># echo &quot;deb http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main&quot; | tee /etc/apt/sources.list.d/webupd8team-java.list</code>
-<code># echo &quot;deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main&quot; | tee -a /etc/apt/sources.list.d/webupd8team-java.list</code>
-<code># apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys EEA14886</code>
-<code># apt-get update</code>
-<code># apt-get install oracle-java8-installer</code></p>
-<p>And confirm that you're using the correct Java implementation:</p>
-<p><code>$ java -version</code>
-<code>$ javac -version</code></p>
-<p>java version &quot;1.8.0_25&quot;
-Java(TM) SE Runtime Environment (build 1.8.0_25-b17)
-Java HotSpot(TM) 64-Bit Server VM (build 25.25-b02, mixed mode)</p>
+    <content type="html"><![CDATA[<p>In Debian Wheezy AMD64, the default version of Java is OpenJDK 6. In order to switch Oracle’s v8 Java, do the following:</p>
+<p><code># su -</code><br><code># echo &quot;deb http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main&quot; | tee /etc/apt/sources.list.d/webupd8team-java.list</code><br><code># echo &quot;deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main&quot; | tee -a /etc/apt/sources.list.d/webupd8team-java.list</code><br><code># apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys EEA14886</code><br><code># apt-get update</code><br><code># apt-get install oracle-java8-installer</code></p>
+<p>And confirm that you’re using the correct Java implementation:</p>
+<p><code>$ java -version</code><br><code>$ javac -version</code></p>
+<p>  java version “1.8.0_25”<br>  Java(TM) SE Runtime Environment (build 1.8.0_25-b17)<br>  Java HotSpot(TM) 64-Bit Server VM (build 25.25-b02, mixed mode)</p>
 <p>Next, download the <a href="http://downloads.sourceforge.net/project/filebot/filebot/FileBot_4.5.3/filebot_4.5.3_amd64.deb" target="_blank" rel="external">Filebot deb</a>, and install:</p>
 <p><code>sudo dpkg --force-depends -i filebot-*.deb</code></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>In Debian Wheezy AMD64, the default version of Java is OpenJDK 6. In order to switch Oracle's v8 Java, do the following:</p>
+    <![CDATA[<p>In Debian Wheezy AMD64, the default version of Java is OpenJDK 6. In order to switch Oracle’s v8 Java, do the following:</p>
 <p><code># s]]>
     </summary>
     
@@ -311,15 +296,14 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.25-b02, mixed mode)</p>
     <id>http://ootput.github.io/2014/12/29/Update-Flash-in-Debian-Wheezy/</id>
     <published>2014-12-29T11:33:36.000Z</published>
     <updated>2014-12-29T11:40:54.000Z</updated>
-    <content type="html"><![CDATA[<p>Per Debian's wiki, the command to update the plugin is simply</p>
-<p><code># su -c 'update-flashplugin-nonfree --install'</code></p>
+    <content type="html"><![CDATA[<p>Per Debian’s wiki, the command to update the plugin is simply</p>
+<p><code># su -c &#39;update-flashplugin-nonfree --install&#39;</code></p>
 <p>If you wish to check the status of the plugin, run</p>
-<p><code># su -c 'update-flashplugin-nonfree --status'</code></p>
+<p><code># su -c &#39;update-flashplugin-nonfree --status&#39;</code> </p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>Per Debian's wiki, the command to update the plugin is simply</p>
-<p><code># su -c 'update-flashplugin-nonfree --install'</code></p>
-<p>I]]>
+    <![CDATA[<p>Per Debian’s wiki, the command to update the plugin is simply</p>
+<p><code># su -c &#39;update-flashplugin-nonfree --install&#39;</code><]]>
     </summary>
     
       <category term="debian" scheme="http://ootput.github.io/tags/debian/"/>
@@ -336,7 +320,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.25-b02, mixed mode)</p>
     <id>http://ootput.github.io/2014/12/11/CIFS-on-Wheezy/</id>
     <published>2014-12-11T11:42:36.000Z</published>
     <updated>2014-12-30T11:13:35.000Z</updated>
-    <content type="html"><![CDATA[<p>I've reproduced this reported bug - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=641894 - on my Waldorf machine, and have arrived at the following solution:</p>
+    <content type="html"><![CDATA[<p>I’ve reproduced this reported bug - <a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=641894" target="_blank" rel="external">https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=641894</a> - on my Waldorf machine, and have arrived at the following solution:</p>
 <p>As root, open the existing /etc/fstab file and comment-out your existing CIFS mount(s)</p>
 <p>Unmount all existing cifs mounts:</p>
 <p><code># sudo umount -a -t cifs</code></p>
@@ -345,14 +329,14 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.25-b02, mixed mode)</p>
 <p>Open (as root) new file /etc/auto.master:</p>
 <p><code># sudo vi /etc/auto.master</code></p>
 <p>If you want the mounted directories under /data, add the following line:</p>
-<p><code>/data /etc/auto.misc --timeout 60 --ghost</code></p>
-<p>The &quot;ghost&quot; option ensures that even unmounted directories are always visible.  Remove this if you prefer to only see the directory when you enter the path to the mounted directory.</p>
+<p><code>/data    /etc/auto.misc  --timeout  60   --ghost</code></p>
+<p>The “ghost” option ensures that even unmounted directories are always visible.  Remove this if you prefer to only see the directory when you enter the path to the mounted directory.</p>
 <p>Open (as root) new file /etc/auto.misc:</p>
 <p><code># sudo vi /etc/auto.misc</code></p>
 <p>Add line(s) at the end for your mount directories in a similar format to your /etc/fstab file:</p>
-<p><code>downloads1 -fstype=cifs,rw,username=ootput,password=&lt;cifs_pass&gt;,uid=1000,gid=1000 ://192.168.1.2/downloads2</code></p>
+<p><code>downloads1    -fstype=cifs,rw,username=ootput,password=&lt;cifs_pass&gt;,uid=1000,gid=1000   ://192.168.1.2/downloads2</code></p>
 <ul>
-<li>where 'downloads1' refers to a local mountpoint under /data, and 'downloads2' to the remote cifs share, respectively.</li>
+<li>where ‘downloads1’ refers to a local mountpoint under /data, and ‘downloads2’ to the remote cifs share, respectively.</li>
 </ul>
 <p>Start the autofs service:</p>
 <p><code># sudo service autofs restart</code></p>
@@ -360,7 +344,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.25-b02, mixed mode)</p>
 <p><code>kernel.sysrq=1</code></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>I've reproduced this reported bug - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=641894 - on my Waldorf machine, and have arrived at]]>
+    <![CDATA[<p>I’ve reproduced this reported bug - <a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=641894" target="_blank" rel="external">htt]]>
     </summary>
     
       <category term="debian" scheme="http://ootput.github.io/tags/debian/"/>
@@ -375,14 +359,14 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.25-b02, mixed mode)</p>
     <id>http://ootput.github.io/2014/11/25/ootput-Burst-on-Github-via-Hexo/</id>
     <published>2014-11-25T05:49:05.000Z</published>
     <updated>2015-01-05T11:13:36.000Z</updated>
-    <content type="html"><![CDATA[<p>&lt;img src=&quot;/images/hexo.jpg&quot; class=&quot;img-thumbnail&quot;/&gt;</p>
-<p>Thanks to &lt;a href=&quot;https://github.com/hexojs/hexo&quot;&gt;Hexo&lt;/a&gt;, I am slowly migrating my wordpress.com site towards Github. &lt;a href=&quot;https://pages.github.com/&quot;&gt;Github Pages&lt;/a&gt; reminds me of &lt;a&gt;&lt;/a&gt;Nanoblogger in many ways - sans the excruciating pace of deployment. I love Github's free-of-ads hosting, and the fact that I can tinker with the content framework in the comfort of my beloved Emacs editor. I also don't mind the fact that I work with a local repository of text-based version-controlled blog entries.</p>
-<p>Check out my work-in-progress at http://ootput.github.io</p>
-<p>Changes to vanilla Hexo are courtesy of fine Hexo documentation at http://jr0cket.co.uk/hexo/</p>
+    <content type="html"><![CDATA[<p><img src="/images/hexo.jpg" class="img-thumbnail"></p>
+<p>Thanks to <a href="https://github.com/hexojs/hexo" target="_blank" rel="external">Hexo</a>, I am slowly migrating my wordpress.com site towards Github. <a href="https://pages.github.com/" target="_blank" rel="external">Github Pages</a> reminds me of <a></a>Nanoblogger in many ways - sans the excruciating pace of deployment. I love Github’s free-of-ads hosting, and the fact that I can tinker with the content framework in the comfort of my beloved Emacs editor. I also don’t mind the fact that I work with a local repository of text-based version-controlled blog entries.</p>
+<p>Check out my work-in-progress at <a href="http://ootput.github.io" target="_blank" rel="external">http://ootput.github.io</a></p>
+<p>Changes to vanilla Hexo are courtesy of fine Hexo documentation at <a href="http://jr0cket.co.uk/hexo/" target="_blank" rel="external">http://jr0cket.co.uk/hexo/</a></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>&lt;img src=&quot;/images/hexo.jpg&quot; class=&quot;img-thumbnail&quot;/&gt;</p>
-<p>Thanks to &lt;a href=&quot;https://github.com/hexojs]]>
+    <![CDATA[<p><img src="/images/hexo.jpg" class="img-thumbnail"></p>
+<p>Thanks to <a href="https://github.com/hexojs/hexo" target="_blank" rel="externa]]>
     </summary>
     
       <category term="blog" scheme="http://ootput.github.io/tags/blog/"/>
@@ -403,8 +387,8 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.25-b02, mixed mode)</p>
     <updated>2014-11-26T03:20:46.000Z</updated>
     <content type="html"><![CDATA[<p>Quick Windows tip to keep me sane:</p>
 <p>For Windows XP, install TweakUI from Microsoft, and turn on X11-like focus-follows-mouse mode.</p>
-<p>&lt;img src=&quot;/images/8ead174d1265dd6dee43dd73f9549372f9bd839d.jpg&quot;/&gt;</p>
-<p>Install <a href="http://ehiti.de/katmouse/" target="_blank" rel="external">KatMouse</a> to allow mouse-wheel-scrolling for unfocused windows. This means that I don't need to focus a window by clicking on it in order to scroll its contents.</p>
+<p><img src="/images/8ead174d1265dd6dee43dd73f9549372f9bd839d.jpg"></p>
+<p>Install <a href="http://ehiti.de/katmouse/" target="_blank" rel="external">KatMouse</a> to allow mouse-wheel-scrolling for unfocused windows. This means that I don’t need to focus a window by clicking on it in order to scroll its contents.</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>Quick Windows tip to keep me sane:</p>
@@ -425,7 +409,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.25-b02, mixed mode)</p>
     <updated>2014-11-25T03:10:23.000Z</updated>
     <content type="html"><![CDATA[<p>From <a href="http://www.linksysinfo.org/index.php?threads/dev-requested-add-qos-for-openvpn-tunnels.69001/" target="_blank" rel="external">this page</a>, I was able to have QOS functioning on an OpenVPN tunnel in Tomato.</p>
 <p>Essentially, I had to add the following snippet to the ADMIN-&gt;SCRIPTS-&gt;FIREWALL field (note the different device names used):</p>
-<p>&lt;hexoescape&gt;0&lt;/hexoescape&gt;</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">cp /etc/qos /tmp/qos-tun11</div><div class="line">sed -i <span class="string">'s/vlan2/tun11/g'</span> /tmp/qos-tun11</div><div class="line">sed -i <span class="string">'s/imq0/imq1/g'</span> /tmp/qos-tun11</div><div class="line">chmod +x /tmp/qos-tun11</div><div class="line">/tmp/qos-tun11</div><div class="line">iptables -t mangle -A FORWARD -o tun11 -j QOSO</div><div class="line">iptables -t mangle -A OUTPUT -o tun11 -j QOSO</div><div class="line">iptables -t mangle -A PREROUTING -i tun11 -j CONNMARK --restore-mark --mask <span class="number">0</span>xff</div><div class="line">iptables -t mangle -A PREROUTING -i tun11 -j IMQ --todev <span class="number">1</span></div><div class="line">ifconfig imq1 up</div></pre></td></tr></table></figure>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>From <a href="http://www.linksysinfo.org/index.php?threads/dev-requested-add-qos-for-openvpn-tunnels.69001/" target="_blank" rel="externa]]>
@@ -448,12 +432,12 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.25-b02, mixed mode)</p>
     <published>2013-10-20T00:34:57.000Z</published>
     <updated>2014-11-25T20:03:12.000Z</updated>
     <content type="html"><![CDATA[<p>To reset CoreAudio on Mac OS X without rebooting the machine, use the following command:</p>
-<p><code># sudo kill -9 $(ps ax|grep 'coreaudio[a-z]' |awk '{print $1}'}</code></p>
+<p><code># sudo kill -9 $(ps ax|grep &#39;coreaudio[a-z]&#39; |awk &#39;{print $1}&#39;}</code></p>
 <p>Alternatively, open up activity monitor, and manually search for CoreAudio</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>To reset CoreAudio on Mac OS X without rebooting the machine, use the following command:</p>
-<p><code># sudo kill -9 $(ps ax|grep 'coreau]]>
+<p><code># sudo kill -9 $(ps ax|grep &#39;co]]>
     </summary>
     
       <category term="osx" scheme="http://ootput.github.io/tags/osx/"/>
@@ -502,14 +486,14 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.25-b02, mixed mode)</p>
     <id>http://ootput.github.io/2013/08/23/root-and-flash-samsung-galaxy-s2-from-within-osx/</id>
     <published>2013-08-23T04:35:06.000Z</published>
     <updated>2014-11-25T10:48:38.000Z</updated>
-    <content type="html"><![CDATA[<p>&lt;img src=&quot;/images/ffb224f1b05d1e6051138162488283c3fd2ab81b.png&quot; class=&quot;img-thumbnail&quot;/&gt;</p>
-<p><em>This post outlines the steps I'd taken to root and flash my Galaxy S2 (GT-i9100T) with a custom rom.</em></p>
-<p>I was running the latest SGS2 firmware from Vodafone,AU - DVLS3. I decided to obtain a backup of the modem's firmware found <a href="http://dl.xda-developers.com/attachdl/443a5227b02ca46985934290b0aef6b6/5216e607/1/8/7/6/7/1/1/modem_9100T_DVLS3_Vodafone_AU.zip" target="_blank" rel="external">here</a>. I extracted <code>modem.bin</code> to <code>~/Desktop</code></p>
+    <content type="html"><![CDATA[<p><img src="/images/ffb224f1b05d1e6051138162488283c3fd2ab81b.png" class="img-thumbnail"></p>
+<p><em>This post outlines the steps I’d taken to root and flash my Galaxy S2 (GT-i9100T) with a custom rom.</em></p>
+<p>I was running the latest SGS2 firmware from Vodafone,AU - DVLS3. I decided to obtain a backup of the modem’s firmware found <a href="http://dl.xda-developers.com/attachdl/443a5227b02ca46985934290b0aef6b6/5216e607/1/8/7/6/7/1/1/modem_9100T_DVLS3_Vodafone_AU.zip" target="_blank" rel="external">here</a>. I extracted <code>modem.bin</code> to <code>~/Desktop</code></p>
 <p>Rooting my GT-i9100T phone was a piece of cake thanks to <a href="http://forum.xda-developers.com/showthread.php?t=2130276" target="_blank" rel="external"><code>Framaroot</code></a>. Essentially, it is a one-click application to install Superuser and su binary on phone.</p>
-<p>You can manually download the <code>.apk</code> file to your phone's storage for installation from within any file manager. It is compatible with many phones, and in particular, Exynos devices (eg Samsung Galaxy S2 GT-i9100T) work with the Aragorn exploit. At the time of this writing, I used version 1.6.0 of <code>Framaroot</code> successfully. Read the FAQ on the linked page for further information.</p>
+<p>You can manually download the <code>.apk</code> file to your phone’s storage for installation from within any file manager. It is compatible with many phones, and in particular, Exynos devices (eg Samsung Galaxy S2 GT-i9100T) work with the Aragorn exploit. At the time of this writing, I used version 1.6.0 of <code>Framaroot</code> successfully. Read the FAQ on the linked page for further information.</p>
 <p><em>Optional</em>: Next, I installed BusyBox and DroidWall from within the PlayStore.</p>
-<p>Next, I downloaded codeworkx's ClockworkMod Recovery found <a href="http://cmw.cmfs.me/c1/recovery/GT-I9100_JB_ClockworkMod-Recovery_6.0.2.9.tar" target="_blank" rel="external">here</a>. I extracted its contents (zImage) to my Desktop.</p>
-<p>Next, I downloaded my preferred custom rom (<a href="http://omega-roms.net/blog/?page_id=959" target="_blank" rel="external">Omega Jelly Bean</a>) to the phone's storage at <code>/sdcard</code>.</p>
+<p>Next, I downloaded codeworkx’s ClockworkMod Recovery found <a href="http://cmw.cmfs.me/c1/recovery/GT-I9100_JB_ClockworkMod-Recovery_6.0.2.9.tar" target="_blank" rel="external">here</a>. I extracted its contents (zImage) to my Desktop.</p>
+<p>Next, I downloaded my preferred custom rom (<a href="http://omega-roms.net/blog/?page_id=959" target="_blank" rel="external">Omega Jelly Bean</a>) to the phone’s storage at <code>/sdcard</code>.</p>
 <p>Next, I visited <a href="https://github.com/Benjamin-Dobell/Heimdall/downloads" target="_blank" rel="external">this page</a> and downloaded <code>heimdall-suite-1.3.2-mac.dmg — **Heimdall Suite 1.3.2** - OS X binaries (universal)</code>. <strong>At the time of this writing, version 1.4.0 only works with OSX 10.8+ (Mountain Lion) in 64bit mode - 1.3.2 works fine with other OSX versions, though</strong>. After installation of the package, I had to reboot the machine.</p>
 <p>Finally, I followed the instructions found <a href="http://wiki.cyanogenmod.org/w/Install_CM_for_i9100#Installing_CyanogenMod_from_recovery" target="_blank" rel="external">here</a> to install CWM-recovery. Essentially I had to do the following:</p>
 <ul>
@@ -521,12 +505,11 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.25-b02, mixed mode)</p>
 <li>Boot the phone into ClockworkMod Recovery mode by holding Volume Up, Home, &amp; Power.</li>
 </ul>
 <p>I then proceeded with the rest of the guide to flash the custom rom.</p>
-<p>The end result is shown below:
-<a href="http://ootput.files.wordpress.com/2013/08/img_20130823_145923.jpg" target="_blank" rel="external"><img src="/images/3a7ddf8c74c8b3b19928bcdc044b544aeb08d381.jpg?w=112" alt="IMG_20130823_145923"></a></p>
+<p>The end result is shown below:<br><a href="http://ootput.files.wordpress.com/2013/08/img_20130823_145923.jpg" target="_blank" rel="external"><img src="/images/3a7ddf8c74c8b3b19928bcdc044b544aeb08d381.jpg?w=112" alt="IMG_20130823_145923"></a></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>&lt;img src=&quot;/images/ffb224f1b05d1e6051138162488283c3fd2ab81b.png&quot; class=&quot;img-thumbnail&quot;/&gt;</p>
-<p><em>This post ou]]>
+    <![CDATA[<p><img src="/images/ffb224f1b05d1e6051138162488283c3fd2ab81b.png" class="img-thumbnail"></p>
+<p><em>This post outlines the steps I’d taken ]]>
     </summary>
     
       <category term="android" scheme="http://ootput.github.io/tags/android/"/>
@@ -544,11 +527,11 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.25-b02, mixed mode)</p>
     <published>2013-08-02T03:25:39.000Z</published>
     <updated>2014-11-24T10:18:02.000Z</updated>
     <content type="html"><![CDATA[<p>I have my iTerm2 emulate xterm-256colors, and found that it was possible to use the mouse to copy a selection in tmux.</p>
-<p>You'd need to hold down the <code>option</code> key whilst left-clicking and dragging across the target text selection. If you want to now paste the selected text back in to the terminal (in say, another window), you must also hold down the <code>option</code> key and middle-click to paste.</p>
+<p>You’d need to hold down the <code>option</code> key whilst left-clicking and dragging across the target text selection. If you want to now paste the selected text back in to the terminal (in say, another window), you must also hold down the <code>option</code> key and middle-click to paste.</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>I have my iTerm2 emulate xterm-256colors, and found that it was possible to use the mouse to copy a selection in tmux.</p>
-<p>You'd need ]]>
+<p>You’d need ]]>
     </summary>
     
       <category term="osx" scheme="http://ootput.github.io/tags/osx/"/>
@@ -566,12 +549,11 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.25-b02, mixed mode)</p>
     <published>2013-08-02T03:05:14.000Z</published>
     <updated>2014-11-24T10:34:16.000Z</updated>
     <content type="html"><![CDATA[<p>Add the following to your <code>.el</code> init files:</p>
-<p>&lt;hexoescape&gt;0&lt;/hexoescape&gt;</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">;; <span class="type">Use</span> M-w to copy <span class="type">Emacs</span> buffer selection; <span class="keyword">and</span> <span class="type">Cmd</span>-V to paste outside <span class="keyword">of</span> <span class="type">Emacs</span>.</div><div class="line">;; <span class="type">Use</span> <span class="type">Cmd</span>-C to copy selection <span class="keyword">from</span> <span class="type">OSX</span>; <span class="keyword">and</span> C-y to paste <span class="keyword">in</span> <span class="type">Emacs</span></div><div class="line"></div><div class="line">(defun copy-<span class="keyword">from</span>-osx ()</div><div class="line">  (shell-command-to-<span class="type">string</span> <span class="string">"pbpaste"</span>))</div><div class="line"></div><div class="line">(defun paste-to-osx (text &amp;optional push)</div><div class="line">  (<span class="keyword">let</span> ((process-connection-<span class="keyword">type</span> <span class="keyword">nil</span>))</div><div class="line">    (<span class="keyword">let</span> ((<span class="keyword">proc</span> (start-process <span class="string">"pbcopy"</span> <span class="string">"*Messages*"</span> <span class="string">"pbcopy"</span>)))</div><div class="line">      (process-send-<span class="type">string</span> <span class="keyword">proc</span> text)</div><div class="line">      (process-send-eof <span class="keyword">proc</span>))))</div><div class="line"></div><div class="line">(setq interprogram-cut-function 'paste-to-osx)</div><div class="line">(setq interprogram-paste-function 'copy-<span class="keyword">from</span>-osx)</div></pre></td></tr></table></figure>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>Add the following to your <code>.el</code> init files:</p>
-<p>&lt;hexoescape&gt;0&lt;/hexoescape&gt;</p>
-]]>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line"]]>
     </summary>
     
       <category term="emacs" scheme="http://ootput.github.io/tags/emacs/"/>
@@ -589,12 +571,11 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.25-b02, mixed mode)</p>
     <published>2013-08-02T02:42:25.000Z</published>
     <updated>2014-11-24T10:32:10.000Z</updated>
     <content type="html"><![CDATA[<p>Use the following script to control iTunes from the shell:</p>
-<p>&lt;hexoescape&gt;0&lt;/hexoescape&gt;</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="shebang">#!/bin/sh</span></div><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment">#######################################</span></div><div class="line"><span class="comment"># iTunes Command Line Control v1.0.0.1</span></div><div class="line"><span class="comment"># written by David Schlosnagle</span></div><div class="line"><span class="comment"># created 2001.11.08</span></div><div class="line"><span class="comment"># modified 2007.01.28 by David West</span></div><div class="line"><span class="comment"># modified 2013.08.02 by ootput</span></div><div class="line"><span class="comment"># filename=itunes</span></div><div class="line"><span class="comment">#######################################</span></div><div class="line"></div><div class="line"><span class="function"><span class="title">showHelp</span></span> () {</div><div class="line">    <span class="built_in">echo</span> <span class="string">"-----------------------------"</span>;</div><div class="line">    <span class="built_in">echo</span> <span class="string">"iTunes Command Line Interface"</span>;</div><div class="line">    <span class="built_in">echo</span> <span class="string">"-----------------------------"</span>;</div><div class="line">    <span class="built_in">echo</span> <span class="string">"Usage: `basename <span class="variable">$0</span>` "</span>;</div><div class="line">    <span class="built_in">echo</span>;</div><div class="line">    <span class="built_in">echo</span> <span class="string">"Options:"</span>;</div><div class="line">    <span class="built_in">echo</span> <span class="string">" status = Shows iTunes' status, current artist and track."</span>;</div><div class="line">    <span class="built_in">echo</span> <span class="string">" play = Start playing iTunes."</span>;</div><div class="line">    <span class="built_in">echo</span> <span class="string">" pause = Pause iTunes."</span>;</div><div class="line">    <span class="built_in">echo</span> <span class="string">" next = Go to the next track."</span>;</div><div class="line">    <span class="built_in">echo</span> <span class="string">" prev = Go to the previous track."</span>;</div><div class="line">    <span class="built_in">echo</span> <span class="string">" mute = Mute iTunes' volume."</span>;</div><div class="line">    <span class="built_in">echo</span> <span class="string">" unmute = Unmute iTunes' volume."</span>;</div><div class="line">    <span class="built_in">echo</span> <span class="string">" vol up = Increase iTunes' volume by 10%"</span>;</div><div class="line">    <span class="built_in">echo</span> <span class="string">" vol down = Increase iTunes' volume by 10%"</span>;</div><div class="line">    <span class="built_in">echo</span> <span class="string">" vol # = Set iTunes' volume to # [0-100]"</span>;</div><div class="line">    <span class="built_in">echo</span> <span class="string">" stop = Stop iTunes."</span>;</div><div class="line">    <span class="built_in">echo</span> <span class="string">" search = Run query, populate playlist named foo and play. "</span></div><div class="line">    <span class="built_in">echo</span> <span class="string">" playlist = Show playlists saved in iTunes."</span>;</div><div class="line">    <span class="built_in">echo</span> <span class="string">" clear = clear playlist foo. "</span>;</div><div class="line">    <span class="built_in">echo</span> <span class="string">" quit = Quit iTunes."</span>;</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keyword">if</span> [ <span class="variable">$#</span> = <span class="number">0</span> ]; <span class="keyword">then</span></div><div class="line">    showHelp;</div><div class="line"><span class="keyword">fi</span></div><div class="line"></div><div class="line"><span class="keyword">while</span> [ <span class="variable">$#</span> <span class="operator">-gt</span> <span class="number">0</span> ]; <span class="keyword">do</span></div><div class="line">    arg=<span class="variable">$1</span>;</div><div class="line">    songname=<span class="variable">$2</span>;</div><div class="line">    <span class="built_in">echo</span> <span class="variable">$songname</span>;</div><div class="line">    <span class="keyword">case</span> <span class="variable">$arg</span> <span class="keyword">in</span></div><div class="line">        <span class="string">"status"</span> ) state=`osascript <span class="operator">-e</span> <span class="string">'tell application "iTunes" to player state as string'</span>`;</div><div class="line">            <span class="built_in">echo</span> <span class="string">"iTunes is currently <span class="variable">$state</span>."</span>;</div><div class="line">            <span class="keyword">if</span> [ <span class="variable">$state</span> = <span class="string">"playing"</span> ]; <span class="keyword">then</span></div><div class="line">                artist=`osascript <span class="operator">-e</span> <span class="string">'tell application "iTunes" to artist of current track as string'</span>`;</div><div class="line">                track=`osascript <span class="operator">-e</span> <span class="string">'tell application "iTunes" to name of current track as string'</span>`;</div><div class="line">                <span class="built_in">echo</span> <span class="string">"Current track <span class="variable">$artist</span>: <span class="variable">$track</span>"</span>;</div><div class="line">            <span class="keyword">fi</span></div><div class="line">            <span class="keyword">break</span> ;;</div><div class="line"></div><div class="line">        <span class="string">"play"</span> ) <span class="built_in">echo</span> <span class="string">"Playing iTunes."</span>;</div><div class="line">            osascript <span class="operator">-e</span> <span class="string">'tell application "iTunes" to play'</span>;</div><div class="line">            <span class="keyword">break</span> ;;</div><div class="line"></div><div class="line">        <span class="string">"pause"</span> ) <span class="built_in">echo</span> <span class="string">"Pausing iTunes."</span>;</div><div class="line">            osascript <span class="operator">-e</span> <span class="string">'tell application "iTunes" to pause'</span>;</div><div class="line">            <span class="keyword">break</span> ;;</div><div class="line"></div><div class="line">        <span class="string">"next"</span> ) <span class="built_in">echo</span> <span class="string">"Going to next track."</span> ;</div><div class="line">            osascript <span class="operator">-e</span> <span class="string">'tell application "iTunes" to next track'</span>;</div><div class="line">            <span class="keyword">break</span> ;;</div><div class="line"></div><div class="line">        <span class="string">"prev"</span> ) <span class="built_in">echo</span> <span class="string">"Going to previous track."</span>;</div><div class="line">            osascript <span class="operator">-e</span> <span class="string">'tell application "iTunes" to previous track'</span>;</div><div class="line">            <span class="keyword">break</span> ;;</div><div class="line"></div><div class="line">        <span class="string">"mute"</span> ) <span class="built_in">echo</span> <span class="string">"Muting iTunes volume level."</span>;</div><div class="line">            osascript <span class="operator">-e</span> <span class="string">'tell application "iTunes" to set mute to true'</span>;</div><div class="line">            <span class="keyword">break</span> ;;</div><div class="line"></div><div class="line">        <span class="string">"unmute"</span> ) <span class="built_in">echo</span> <span class="string">"Unmuting iTunes volume level."</span>;</div><div class="line">            osascript <span class="operator">-e</span> <span class="string">'tell application "iTunes" to set mute to false'</span>;</div><div class="line">            <span class="keyword">break</span> ;;</div><div class="line"></div><div class="line">        <span class="string">"vol"</span> ) <span class="built_in">echo</span> <span class="string">"Changing iTunes volume level."</span>;</div><div class="line">            vol=`osascript <span class="operator">-e</span> <span class="string">'tell application "iTunes" to sound volume as integer'</span>`;</div><div class="line">            <span class="keyword">if</span> [ <span class="variable">$2</span> = <span class="string">"up"</span> ]; <span class="keyword">then</span></div><div class="line">                newvol=$(( vol+<span class="number">10</span> ));</div><div class="line">            <span class="keyword">fi</span></div><div class="line"></div><div class="line">            <span class="keyword">if</span> [ <span class="variable">$2</span> = <span class="string">"down"</span> ]; <span class="keyword">then</span></div><div class="line">                newvol=$(( vol-<span class="number">10</span> ));</div><div class="line">            <span class="keyword">fi</span></div><div class="line"></div><div class="line">            <span class="keyword">if</span> [ <span class="variable">$2</span> <span class="operator">-gt</span> <span class="number">0</span> ]; <span class="keyword">then</span></div><div class="line">                newvol=<span class="variable">$2</span>;</div><div class="line">            <span class="keyword">fi</span></div><div class="line">            osascript <span class="operator">-e</span> <span class="string">"tell application "</span>iTunes<span class="string">" to set sound volume to <span class="variable">$newvol</span>"</span>;</div><div class="line">            <span class="keyword">break</span> ;;</div><div class="line"></div><div class="line">        <span class="string">"stop"</span> ) <span class="built_in">echo</span> <span class="string">"Stopping iTunes."</span>;</div><div class="line">            osascript <span class="operator">-e</span> <span class="string">'tell application "iTunes" to stop'</span>;</div><div class="line">            <span class="keyword">break</span> ;;</div><div class="line"></div><div class="line">        <span class="string">"quit"</span> ) <span class="built_in">echo</span> <span class="string">"Quitting iTunes."</span>;</div><div class="line">            osascript <span class="operator">-e</span> <span class="string">'tell application "iTunes" to quit'</span>;</div><div class="line">            <span class="keyword">exit</span> <span class="number">1</span> ;;</div><div class="line"></div><div class="line">        <span class="string">"search"</span> ) <span class="built_in">echo</span> <span class="string">"Searching Library."</span>;</div><div class="line">            songname=<span class="variable">$2</span>;</div><div class="line">            osascript <span class="operator">-e</span> <span class="string">"tell application "</span>iTunes<span class="string">""</span> <span class="operator">-e</span> <span class="string">"set searchResults to search playlist "</span>Library<span class="string">" for "</span><span class="variable">$songname</span><span class="string">""</span> <span class="operator">-e</span> <span class="string">"repeat with aTrack in searchResults"</span> <span class="operator">-e</span> <span class="string">"copy aTrack to playlist "</span>foo<span class="string">""</span> <span class="operator">-e</span> <span class="string">"end repeat"</span> <span class="operator">-e</span> <span class="string">"play playlist "</span>foo<span class="string">""</span> <span class="operator">-e</span> <span class="string">"end tell"</span>;</div><div class="line">            <span class="keyword">break</span> ;;</div><div class="line"></div><div class="line">        <span class="string">"playlist"</span> )</div><div class="line">            <span class="keyword">if</span> [ -n <span class="string">"<span class="variable">$2</span>"</span> ]; <span class="keyword">then</span></div><div class="line">                <span class="built_in">echo</span> <span class="string">"Changing iTunes playlists to '<span class="variable">$2</span>'."</span>;</div><div class="line">                osascript <span class="operator">-e</span> <span class="string">'tell application "iTunes"'</span> <span class="operator">-e</span> <span class="string">"set new_playlist to \"<span class="variable">$2</span>\" as string"</span> <span class="operator">-e</span> <span class="string">"play playlist new_playlist"</span> <span class="operator">-e</span> <span class="string">"end tell"</span>;</div><div class="line">                <span class="keyword">break</span> ;</div><div class="line">            <span class="keyword">else</span></div><div class="line">                <span class="comment"># Show available iTunes playlists.</span></div><div class="line">                <span class="built_in">echo</span> <span class="string">"Playlists:"</span>;</div><div class="line">                osascript <span class="operator">-e</span> <span class="string">'tell application "iTunes"'</span> <span class="operator">-e</span> <span class="string">"set allPlaylists to (get name of every playlist)"</span> <span class="operator">-e</span> <span class="string">"end tell"</span>;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">fi</span></div><div class="line">            <span class="keyword">break</span>;;</div><div class="line"></div><div class="line">        <span class="string">"clear"</span> ) <span class="built_in">echo</span> <span class="string">"Clearing Query."</span>;</div><div class="line">            osascript <span class="operator">-e</span> <span class="string">"tell application "</span>iTunes<span class="string">" to delete tracks of playlist "</span>foo<span class="string">""</span>;</div><div class="line">            <span class="keyword">break</span> ;;</div><div class="line"></div><div class="line">        <span class="string">"help"</span> | * ) <span class="built_in">echo</span> <span class="string">"help:"</span>;</div><div class="line">            showHelp;</div><div class="line">            <span class="keyword">break</span> ;;</div><div class="line">    <span class="keyword">esac</span></div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>Use the following script to control iTunes from the shell:</p>
-<p>&lt;hexoescape&gt;0&lt;/hexoescape&gt;</p>
-]]>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="l]]>
     </summary>
     
       <category term="itunes" scheme="http://ootput.github.io/tags/itunes/"/>
@@ -612,20 +593,26 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.25-b02, mixed mode)</p>
     <published>2013-08-01T12:17:30.000Z</published>
     <updated>2014-11-24T21:16:08.000Z</updated>
     <content type="html"><![CDATA[<p>I recently came across a workaround for embedding iframes in Wordpress.com blogs:</p>
-<p>&lt;hexoescape&gt;0&lt;/hexoescape&gt;</p>
+<blockquote>
+
 <p>Flash and all other embeds are not allowed in WordPress.com posts, pages, or text widgets. For security reasons, we remove the tags needed for these to work. Your intentions may be innocent, but someone somewhere might try to use such embeds to damage the site, affecting all of our users.</p>
-<p>&lt;hexoescape&gt;1&lt;/hexoescape&gt;</p>
+<footer><strong>WordPress.com</strong><cite><a href="http://en.support.wordpress.com/code/" target="_blank" rel="external">Supported code</a></cite></footer></blockquote>
+
+
 <p>As <a href="http://shongjog.wordpress.com/2011/01/25/how-to-embed-iframe-widgets-in-a-wordpress-com-blog-%C2%A9-netty-gritty/" target="_blank" rel="external">this</a> guide suggests, the workaround made use of a perfectly legitimate and supported shortcode API. In essence, the workaround involved converting an iframe to Flash, which in turn was sourced by <code>[gigya]</code>.</p>
 <p>I was able to illustrate the concept below:</p>
 <p><em>For my dearest nephew, and any other chess enthusiasts that are perusing this blog, I have embedded a chess game that I recently played. Click the link below, and try to figure out the positional/tactical errors that my opponent (and close friend) committed, and any variations that may have redeemed his play.</em></p>
-<p>&lt;hexoescape&gt;2&lt;/hexoescape&gt;</p>
-<p>&lt;hexoescape&gt;3&lt;/hexoescape&gt;</p>
-<p>If, for some reason, the embed doesn't show, <a href="http://mekk.waw.pl/mk/watchbot/game/4318991" target="_blank" rel="external">here's</a> a link to how it <em>should</em> look.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">table</span> <span class="attribute">style</span>=<span class="value">"border:none;height:32px;width:32px;"</span>&gt;</span></div><div class="line">[gigya src="http://cdn.tagul.com/cloud.swf" flashvars="autoplay=1" allowfullscreen="true" type="application/x-shockwave-flash" allowscriptaccess="always" width="542" height="300" flashvars="id=180853@2"]</div><div class="line"><span class="tag">&lt;/<span class="title">table</span>&gt;</span></div></pre></td></tr></table></figure>
+
+<iframe src="http://mekk.waw.pl/mk/watchbot/game_mini/4318991" width="540" height="300" frameborder="0" allowfullscreen></iframe>
+
+<p>If, for some reason, the embed doesn’t show, <a href="http://mekk.waw.pl/mk/watchbot/game/4318991" target="_blank" rel="external">here’s</a> a link to how it <em>should</em> look.</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>I recently came across a workaround for embedding iframes in Wordpress.com blogs:</p>
-<p>&lt;hexoescape&gt;0&lt;/hexoescape&gt;</p>
-<p>Fl]]>
+<blockquote>
+
+<p>Flash and all other embeds are not]]>
     </summary>
     
       <category term="blog" scheme="http://ootput.github.io/tags/blog/"/>
