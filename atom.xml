@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://ootput.github.io/"/>
-  <updated>2015-01-28T09:16:08.717Z</updated>
+  <updated>2015-01-28T09:18:42.223Z</updated>
   <id>http://ootput.github.io/</id>
   
   <author>
@@ -622,6 +622,283 @@ Done
       <category term="wordpress" scheme="http://ootput.github.io/tags/wordpress/"/>
     
       <category term="Random Musings" scheme="http://ootput.github.io/categories/Random-Musings/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Partition OSX Mounted User Directory As Root Using iPartition]]></title>
+    <link href="http://ootput.github.io/2013/07/31/partition-osx-mounted-user-directory-as-root-using-ipartition/"/>
+    <id>http://ootput.github.io/2013/07/31/partition-osx-mounted-user-directory-as-root-using-ipartition/</id>
+    <published>2013-07-31T02:37:49.000Z</published>
+    <updated>2014-11-25T10:50:26.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="/images/dccf8cbffafc447d734c71338fd9a479a5a264f5.png" class="img-thumbnail"></p>
+<p>Following an Apple support article entitled: <a href="http://support.apple.com/kb/ht1528" target="_blank" rel="external">Enabling and using the “root” user in Mac OS X</a>, and with the aid of <a href="http://www.coriolis-systems.com/iPartition.php" target="_blank" rel="external">iPartition</a>, I was able to re-partition my <code>User</code> partition (located on x220’s internal 300GB drive). The use of <code>diskutil</code> was out of the question as I had chosen an MBR scheme during Lion’s installation.</p>
+<p>My original partition layout (MBR) was as follows:</p>
+<pre>
+root# diskutil list
+/dev/disk0
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:     FDisk_partition_scheme                        *30.0 GB    disk0
+   1:                  Apple_HFS Mac OSX Lion            30.0 GB    disk0s1
+/dev/disk1
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:     FDisk_partition_scheme                        *320.1 GB   disk1
+   1:                  Apple_HFS User                    260.0 GB   disk1s1
+   2:                  Apple_HFS Backup                   30.0 GB   disk1s2
+</pre>
+
+<p>As you can see, <code>disk1</code> has available unused space amounting to 30GB. I had planned to expand my <code>User</code> partition (/User is a symlink to /Volumes/User) to 290GB using iPartition as an administrative user, but was unable to do so as <code>disk1</code> was still in use and couldn’t be mounted. Booting the system in single-user mode was not an option for me as I wanted to use iPartition’s support of non-destructive resize of HFS+.</p>
+<p>Fortunately, I was able to enable the root account, whereby I would then kill all processes owned by my user or that had open files on <code>disk1</code> - using <code># lsof +D /Volumes/User</code> for the latter. iPartition would then be able to operate unimpeded.</p>
+<p>Moving data (upon resizing) takes a while - particularly on a 300GB drive, so it is imperative to use an external power source and to disable any power saving features such as suspend.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="/images/dccf8cbffafc447d734c71338fd9a479a5a264f5.png" class="img-thumbnail"></p>
+<p>Following an Apple support article entitled]]>
+    </summary>
+    
+      <category term="osx" scheme="http://ootput.github.io/tags/osx/"/>
+    
+      <category term="Software" scheme="http://ootput.github.io/categories/Software/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[OSX Lion on Thinkpad X220]]></title>
+    <link href="http://ootput.github.io/2013/07/20/osx-lion-on-thinkpad-x220/"/>
+    <id>http://ootput.github.io/2013/07/20/osx-lion-on-thinkpad-x220/</id>
+    <published>2013-07-20T13:28:11.000Z</published>
+    <updated>2014-11-25T10:51:19.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="/images/8e5d2bcfdd1502d676cd34f000a8a3ac35bc4b2b.png" class="img-thumbnail"></p>
+<p>In all my years of computing, I’d never imagined the day where I would find myself working with an Apple OS. I’d always assumed - wrongly - that Mac systems were specifically targeted to cashed-up yuppies who didn’t know any better. I assumed that Windows was the only platform of choice to get things done, and that accumulating quality software designed for Windows was the primary goal of my technosexual existence. Of course, back then, in the days of raging hormones and teenage angst, I had made many incorrect assumptions.</p>
+<p>As I eventually found out, both Linux and BSD proved to be rock solid workhorses and viable alternatives to the Windows that I had so admired - and now, it seems I have also taken a strong liking to Apple’s OSX. Of course, any Apple evangelism on my part will be premature, as I have yet to grasp the inner workings of OSX. For now, let’s just say that I have OSX Lion successfully running on my Lenovo X220 (alongside CrunchBang Linux) courtesy of my wife’s Snow Leopard Disk, and <a href="http://forum.thinkpads.com/viewtopic.php?f=32&amp;t=102098&amp;start=0" title="X220 Hackintosh (lion) on MBR partition dual boot Windows 7" target="_blank" rel="external">this guide</a>, and that I enjoy every minute of using it. It is a very capable system, and a most welcome addition to my heterogeneous network. There were a few hiccups along the way (to be discussed later), but for the most part, the installation ran smoothly.</p>
+<p>Thus far, I’ve made many changes to the system to arrive at a more familiar desktop (again, to be discussed later). This is not to say that I have been spending most of my time tinkering with the defaults - in fact, like Crunchbang, OSX proves to be quite operational OOTB. I suppose that I have been spoiled somewhat with Crunchbang’s easy maintenance, that proceeding to use an even simpler system seemed to be a most natural step.</p>
+<p>My workflow has not been altered considerably, owing to the many ported software from Unix systems, and for this I am thankful. Running OSX - as opposed to any Linux distribution - does also have its perks: I am able to access a wider pool of quality commercial software for my media creation/management. As much as I admire the tenets of the Free Software movement, I’m not bound to it - nor am I vehemently opposed to commercial offerings. I have not compromised my integrity, and I like to think that I choose software on the basis of what’s right for the proverbial job.</p>
+<p>I will try to make as many posts regarding the transition as I can - both for X220 owners considering running a Hackintosh, or for other geeks who have risen above the stigma of Macintosh use and are willing to try.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="/images/8e5d2bcfdd1502d676cd34f000a8a3ac35bc4b2b.png" class="img-thumbnail"></p>
+<p>In all my years of computing, I’d never ima]]>
+    </summary>
+    
+      <category term="osx" scheme="http://ootput.github.io/tags/osx/"/>
+    
+      <category term="x220" scheme="http://ootput.github.io/tags/x220/"/>
+    
+      <category term="Software" scheme="http://ootput.github.io/categories/Software/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Sydney Opera House]]></title>
+    <link href="http://ootput.github.io/2013/05/24/sydney-opera-house/"/>
+    <id>http://ootput.github.io/2013/05/24/sydney-opera-house/</id>
+    <published>2013-05-24T13:39:38.000Z</published>
+    <updated>2014-11-26T03:24:07.000Z</updated>
+    <content type="html"><![CDATA[<p><a href="http://www.flickr.com/photos/ootput/8789887813/" title="Sydney Opera House 2013 by ootput, on Flickr" target="_blank" rel="external"><img src="/images/52255cbed8c439cb232b1f84a8e84115e61983bb.jpg" alt="Sydney Opera House 2013"></a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><a href="http://www.flickr.com/photos/ootput/8789887813/" title="Sydney Opera House 2013 by ootput, on Flickr" target="_blank" rel="exter]]>
+    </summary>
+    
+      <category term="photography" scheme="http://ootput.github.io/tags/photography/"/>
+    
+      <category term="Photography" scheme="http://ootput.github.io/categories/Photography/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Auburn Botanical Gardens - Fauna Reserve]]></title>
+    <link href="http://ootput.github.io/2013/05/24/auburn-botanical-gardens/"/>
+    <id>http://ootput.github.io/2013/05/24/auburn-botanical-gardens/</id>
+    <published>2013-05-24T13:39:09.000Z</published>
+    <updated>2014-11-26T04:06:14.000Z</updated>
+    <content type="html"><![CDATA[<p><a href="http://www.flickr.com/photos/ootput/8800464350/" title="Auburn Botanical Gardens by ootput, on Flickr" target="_blank" rel="external"><img src="/images/bdda5ac6bced570fc377b3f1164bf10aed15a964.jpg" alt="Auburn Botanical Gardens"></a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><a href="http://www.flickr.com/photos/ootput/8800464350/" title="Auburn Botanical Gardens by ootput, on Flickr" target="_blank" rel="exte]]>
+    </summary>
+    
+      <category term="photography" scheme="http://ootput.github.io/tags/photography/"/>
+    
+      <category term="Photography" scheme="http://ootput.github.io/categories/Photography/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Royal Botanical Gardens, Sydney]]></title>
+    <link href="http://ootput.github.io/2013/05/24/royal-botanical-gardens-sydney/"/>
+    <id>http://ootput.github.io/2013/05/24/royal-botanical-gardens-sydney/</id>
+    <published>2013-05-24T13:38:20.000Z</published>
+    <updated>2014-11-24T10:18:02.000Z</updated>
+    <content type="html"><![CDATA[<p><a href="http://www.flickr.com/photos/ootput/8890036166/" title="Royal Botanical Gardens by ootput, on Flickr" target="_blank" rel="external"><img src="/images/8f5e4369844fabf1df0a21dda65b2a5b2092ebb7.jpg" alt="Royal Botanical Gardens"></a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><a href="http://www.flickr.com/photos/ootput/8890036166/" title="Royal Botanical Gardens by ootput, on Flickr" target="_blank" rel="exter]]>
+    </summary>
+    
+      <category term="photography" scheme="http://ootput.github.io/tags/photography/"/>
+    
+      <category term="Photography" scheme="http://ootput.github.io/categories/Photography/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[CrunchBang on Thinkpad X220]]></title>
+    <link href="http://ootput.github.io/2013/04/01/crunchbang-on-thinkpad-x220/"/>
+    <id>http://ootput.github.io/2013/04/01/crunchbang-on-thinkpad-x220/</id>
+    <published>2013-04-01T09:12:56.000Z</published>
+    <updated>2014-12-30T11:17:11.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="/images/994b325fa9e398f2360e69ac598805f8e6fc1de3.png" class="img-thumbnail"></p>
+<p><em><a href="#purchase">Desktop Replacement</a></em><br><em> <a href="#hardware">Hardware Modifications</a></em><br><em> <a href="#bios">Upgrade BIOS From USB</a></em><br><em> <a href="#crunchbang">About CrunchBang</a></em><br><em> <a href="#system">System Modifications</a></em></p>
+<p><a id="purchase"></a><span style="color:#0000ff;">Desktop Replacement:</span></p>
+<p>It has been over two and a half years since my last Debian-related post so I thought it necessary to provide an update. I have since donated my desktop machine to a worthy cause in favour of the more-mobile Thinkpad platform. My semi-retired Debian desktop is now providing headache-free internet access at the local library, where one of the librarians had long been toying with the idea of using open source. The successful implementation of my machine prompted their acquisition of a further two Ubuntu machines.</p>
+<p>My new Thinkpad, on the other hand, has been running CrunchBang Linux (#!) for over a year and a half, and I could not be happier. Although not a pure Debian system, #! is still a lean derivative.</p>
+<p><a id="hardware"></a><span style="color:#0000ff;">Hardware Modifications:</span></p>
+<p>Hardware changes I’ve made so far include: installing an Intel 30GB 525s MLC mSATA SSD drive to act as my system drive; and running 2 x 4 GB Corsair PC3-10600 DDR3-1333 RAM in dual channel mode.</p>
+<p><a id="bios"></a><span style="color:#0000ff;">Upgrade BIOS From USB:</span></p>
+<p>After grabbing the latest BIOS-update bootable iso from the Lenovo support site, it is necessary to extract its [otherwise hidden] contents via a perl script called <a href="http://freecode.com/projects/geteltorito" target="_blank" rel="external"><code>geteltorito.pl</code></a>.</p>
+<p>To fetch the script:<br><code>$ wget &#39;http://userpages.uni-koblenz.de/~krienke/ftp/noarch/geteltorito/geteltorito.pl&#39;</code></p>
+<p>Then, extract the contents of the downloaded *.iso file to any new target file:<br><code>$ perl ./geteltorito.pl /path/to/_bios_update_cd.iso &gt; /path/to/_target_image_.img</code></p>
+<p>To write the image to your USB (located at /dev/sdX):<br><code>$ sudo dd if=/path/to/_target_image_.img of=/dev/sdX bs=512K</code></p>
+<p>Then hit F12 at bootup to choose the bootable medium.</p>
+<p><a id="crunchbang"></a><span style="color:#0000ff;">About CrunchBang:</span></p>
+<p>Out-of-the-box, #! does everything I need it to do on a laptop (wifi management; power-saving; keyboard accessibility-support,) at a fraction of the resources required were I to customize a larger/slimmer distribution to suit my needs. Were I to install Debian, I would have arrived at my ideal setup at a much later date.</p>
+<p>Crunchbang provides a superb arsenal of open-source productivity applications, and I found myself bored witless during post-install. It defaults to using Openbox - which is not exactly a tiling WM that I’m accustomed to using - but I have made peace with that by implementing split-panes in tmux which, considering the smaller LCD screen real-estate, works reasonably well.</p>
+<p>For work-purposes, I have implemented KVM + Qemu to manage a guest Windows XP OS - the guide I used can be found <a href="http://crunchbang.org/forums/viewtopic.php?id=21311" target="_blank" rel="external">here</a> - and I have been able to leverage the power of this fantastic little unit to conduct business.</p>
+<p><a id="system"></a><span style="color:#0000ff;">System Modifications:</span></p>
+<p>System changes I’ve made so far include: switching from grub2 to syslinux (see <a href="http://crunchbang.org/forums/viewtopic.php?id=25399" target="_blank" rel="external">here</a>); colourizing init feedback (see <a href="http://crunchbang.org/forums/viewtopic.php?id=19453" target="_blank" rel="external">here</a>); mounting system paths on the SSD drive with TRIM support (with <a href="http://crunchbang.org/forums/viewtopic.php?id=13129" target="_blank" rel="external"><code>fstab: -o discard</code></a>); enabling Thinkpad-specific battery savings (with <a href="http://linrunner.de/en/tlp/docs/tlp-linux-advanced-power-management.html" target="_blank" rel="external"><code>tlp</code></a> and <a href="http://www.thinkwiki.org/wiki/Tp_smapi" target="_blank" rel="external"><code>thinkpad-smapi</code></a>); relocating /var paths and browser profiles to tmpfs (with <a href="http://forums.debian.net/viewtopic.php?f=6&amp;t=96425" target="_blank" rel="external"><code>profile-sync-daemon</code></a>).</p>
+<p>Additionally, I had CrunchBang show verbose shutdown messages by modifying <code>/etc/slim.conf</code> to show:</p>
+<p><code>xserver_arguments         -nolisten tcp -novtswitch</code></p>
+<p>As my Crunchbang box is essentially a Debian Wheezy machine, I will henceforth address it as my debian box in all future blog entries.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="/images/994b325fa9e398f2360e69ac598805f8e6fc1de3.png" class="img-thumbnail"></p>
+<p><em><a href="#purchase">Desktop Replacement]]>
+    </summary>
+    
+      <category term="crunchbang" scheme="http://ootput.github.io/tags/crunchbang/"/>
+    
+      <category term="debian" scheme="http://ootput.github.io/tags/debian/"/>
+    
+      <category term="kvm" scheme="http://ootput.github.io/tags/kvm/"/>
+    
+      <category term="pulseaudio" scheme="http://ootput.github.io/tags/pulseaudio/"/>
+    
+      <category term="x220" scheme="http://ootput.github.io/tags/x220/"/>
+    
+      <category term="Software" scheme="http://ootput.github.io/categories/Software/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Address Merged Ports]]></title>
+    <link href="http://ootput.github.io/2013/03/26/address-merged-ports/"/>
+    <id>http://ootput.github.io/2013/03/26/address-merged-ports/</id>
+    <published>2013-03-25T23:44:32.000Z</published>
+    <updated>2014-11-25T20:07:59.000Z</updated>
+    <content type="html"><![CDATA[<p>My most recent <code># portmaster -Da</code> revealed a package conflict: py-setuptools was merged with py-distribute.</p>
+<p>From FreshPorts:</p>
+<blockquote>
+<p>2013-03-05<br>Affects: users of devel/py-setuptools (i.e you)<br>Author: rm@FreeBSD.org<br>Reason: devel/py-setuptools was replaced with devel/py-distribute. py-setuptools port will be removed shortly.</p>
+</blockquote>
+<p>To fix this:<br><code># portmaster -o devel/py-distribute devel/py-setuptools</code></p>
+<p>From <code>man 8 portmaster</code>:</p>
+<blockquote>
+<p>-o <em>new port dir in /usr/ports</em> <em>installed port</em>:replace the installed port with a port from a different origin</p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>My most recent <code># portmaster -Da</code> revealed a package conflict: py-setuptools was merged with py-distribute.</p>
+<p>From FreshP]]>
+    </summary>
+    
+      <category term="freebsd" scheme="http://ootput.github.io/tags/freebsd/"/>
+    
+      <category term="ports" scheme="http://ootput.github.io/tags/ports/"/>
+    
+      <category term="Software" scheme="http://ootput.github.io/categories/Software/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Relocate iOS Backups]]></title>
+    <link href="http://ootput.github.io/2012/12/11/relocate-ios-backups/"/>
+    <id>http://ootput.github.io/2012/12/11/relocate-ios-backups/</id>
+    <published>2012-12-10T14:08:58.000Z</published>
+    <updated>2014-11-25T20:09:30.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="/images/e16b2fc9fe80c58e1da9441a5ad675bcb2953fcf.png" class="img-thumbnail"></p>
+<p>There are currently 3 different iPhones and 2 different iPads in my household that need updating - from iOS versions 3.x, 4.x, and 5.x. In order to make the transition to iOS version 6.0.1 (current), I first have to back up each device via iTunes. Unfortunately, my meagre 60GB SSD system drive will not suffice. I have decided to use <a href="http://support.microsoft.com/kb/205524" target="_blank" rel="external">NTFS’ <code>junction</code> function</a> to link directories on separate hard drives. I had to move <code>%APPDATA%\Apple Computer</code> from my system drive to a separate <code>D:\</code>, using cmd.exe:</p>
+<p><code>move &quot;%APPDATA%\Apple Computer&quot; D:\</code></p>
+<p>then issue the following command in cmd.exe (as admin):</p>
+<p><code>mklink /J &quot;%APPDATA%\Apple Computer&quot; &quot;D:\Apple Computer&quot;</code></p>
+<p>For the curious, <code>%APPDATA%</code> contains the full path to the Application Data folder of the logged-in user, e.g., <code>C:\Users\ootput\AppData\Roaming</code></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="/images/e16b2fc9fe80c58e1da9441a5ad675bcb2953fcf.png" class="img-thumbnail"></p>
+<p>There are currently 3 different iPhones and]]>
+    </summary>
+    
+      <category term="apple" scheme="http://ootput.github.io/tags/apple/"/>
+    
+      <category term="ios" scheme="http://ootput.github.io/tags/ios/"/>
+    
+      <category term="Software" scheme="http://ootput.github.io/categories/Software/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[NES Nostalgia]]></title>
+    <link href="http://ootput.github.io/2012/07/23/nes-nostalgia/"/>
+    <id>http://ootput.github.io/2012/07/23/nes-nostalgia/</id>
+    <published>2012-07-23T02:53:47.000Z</published>
+    <updated>2014-11-24T23:18:35.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="/images/5cd1299343eb332066db11696f3710a460030757.png" alt="" title="NintendoLogo"></p>
+<p>A throwback to the NES days of old, this video has recently become a favourite of mine. It features <em>Anamanaguchi - Jetpack Blues, Sunset Hues</em>,</p>
+<blockquote>
+<p>Anamanaguchi is a chiptune indie rock band from New York City that “makes loud, fast music with a hacked NES from 1985.” Akin to other chiptune artists, Anamanaguchi creates music using synthesizers, albeit unconventional ones: namely a hacked NES and Game Boy.</p>
+</blockquote>
+<div class="video-container"><iframe src="//www.youtube.com/embed/m1l5Y1UQN4w" frameborder="0" allowfullscreen></iframe></div>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="/images/5cd1299343eb332066db11696f3710a460030757.png" alt="" title="NintendoLogo"></p>
+<p>A throwback to the NES days of old, t]]>
+    </summary>
+    
+      <category term="youtube" scheme="http://ootput.github.io/tags/youtube/"/>
+    
+      <category term="Random Musings" scheme="http://ootput.github.io/categories/Random-Musings/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[CouchPotato on FreeBSD]]></title>
+    <link href="http://ootput.github.io/2012/06/25/couchpotato-on-freebsd/"/>
+    <id>http://ootput.github.io/2012/06/25/couchpotato-on-freebsd/</id>
+    <published>2012-06-24T20:09:32.000Z</published>
+    <updated>2014-11-25T20:10:26.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="/images/541ad08b9521a01c437fea6ad11c2eb271c3f298.png" class="img-thumbnail"></p>
+<p>For <code>CouchPotato</code> in FreeBSD, firstly acquaint yourself with my previous <a href="http://ootput.github.io/2011/12/26/sabnzbd-and-sickbeard-on-freebsd/" target="_blank" rel="external">blog entry on Sabnzbd+Sickbeard on FreeBSD</a>, and then perform the following additional steps:</p>
+<p>At <strong>Step 3</strong>, fetch CouchPotato’s source code:</p>
+<p><code># cd /usr/local &amp;&amp; git clone git://github.com/RuudBurger/CouchPotato.git couchpotato</code></p>
+<p>Also, it is advisable to change the permission and ownership of the CouchPotato folder:</p>
+<p><code># chown root:_sabnzbd /usr/local/couchpotato</code></p>
+<p><code># chmod g+w /usr/local/couchpotato</code></p>
+<p>At <strong>Step 4</strong>, add the following to /etc/rc.conf:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="variable">couchpotato_enable=</span><span class="string">"YES"</span></div></pre></td></tr></table></figure>
+
+<p>.. and create <code>/usr/local/etc/rc.d/couchpotato</code> containing:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="shebang">#!/bin/sh</span></div><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment"># PROVIDE: couchpotato</span></div><div class="line"><span class="comment"># REQUIRE: DAEMON sabnzbd</span></div><div class="line"><span class="comment"># KEYWORD: shutdown</span></div><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment"># Add the following lines to /etc/rc.conf.local or /etc/rc.conf</span></div><div class="line"><span class="comment"># to enable this service:</span></div><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment"># couchpotato_enable (bool):	Set to NO by default.</span></div><div class="line"><span class="comment">#			Set it to YES to enable it.</span></div><div class="line"><span class="comment"># couchpotato_user:  The user account Couch Potato daemon runs as what</span></div><div class="line"><span class="comment">#			you want it to be. It uses '_sabnzbd' user by</span></div><div class="line"><span class="comment">#			default. Do not sets it as empty or it will run</span></div><div class="line"><span class="comment">#			as root.</span></div><div class="line"><span class="comment"># couchpotato_dir:	Directory where Couch Potato lives.</span></div><div class="line"><span class="comment">#			Default: /usr/local/couchpotato</span></div><div class="line"><span class="comment"># couchpotato_chdir:  Change to this directory before running Couch Potato.</span></div><div class="line"><span class="comment">#     Default is same as couchpotato_dir.</span></div><div class="line"><span class="comment"># couchpotato_pid:  The name of the pidfile to create.</span></div><div class="line"><span class="comment">#     Default is couchpotato.pid in couchpotato_dir.</span></div><div class="line">PATH=<span class="string">"/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin"</span></div><div class="line"></div><div class="line">. /etc/rc.subr</div><div class="line"></div><div class="line">name=<span class="string">"couchpotato"</span></div><div class="line">rcvar=<span class="variable">${name}</span>_enable</div><div class="line"></div><div class="line">load_rc_config <span class="variable">${name}</span></div><div class="line"></div><div class="line">: <span class="variable">${couchpotato_enable:="NO"}</span></div><div class="line">: <span class="variable">${couchpotato_user:="_sabnzbd"}</span></div><div class="line">: <span class="variable">${couchpotato_dir:="/usr/local/couchpotato"}</span></div><div class="line">: <span class="variable">${couchpotato_chdir:="${couchpotato_dir}</span><span class="string">"}</span></div><div class="line">: <span class="variable">${couchpotato_pid:="${couchpotato_dir}</span>/couchpotato.pid"}</div><div class="line"></div><div class="line">WGET=<span class="string">"/usr/local/bin/wget"</span> <span class="comment"># You need wget for this script to safely shutdown Couch Potato.</span></div><div class="line">HOST=<span class="string">"127.0.0.1"</span> <span class="comment"># Set Couch Potato address here.</span></div><div class="line">PORT=<span class="string">"5000"</span> <span class="comment"># Set Couch Potato port here.</span></div><div class="line">SBUSR=<span class="string">""</span> <span class="comment"># Set Couch Potato username (if you use one) here.</span></div><div class="line">SBPWD=<span class="string">""</span> <span class="comment"># Set Couch Potato password (if you use one) here.</span></div><div class="line"></div><div class="line">status_cmd=<span class="string">"<span class="variable">${name}</span>_status"</span></div><div class="line">stop_cmd=<span class="string">"<span class="variable">${name}</span>_stop"</span></div><div class="line"></div><div class="line">command=<span class="string">"/usr/sbin/daemon"</span></div><div class="line">command_args=<span class="string">"-f -p <span class="variable">${couchpotato_pid}</span> python <span class="variable">${couchpotato_dir}</span>/CouchPotato.py <span class="variable">${couchpotato_flags}</span> --quiet"</span></div><div class="line"></div><div class="line"><span class="comment"># Check for wget and refuse to start without it.</span></div><div class="line"><span class="keyword">if</span> [ ! -x <span class="string">"<span class="variable">${WGET}</span>"</span> ]; <span class="keyword">then</span></div><div class="line">  warn <span class="string">"Couchpotato not started: You need wget to safely shut down Couch Potato."</span></div><div class="line">  <span class="keyword">exit</span> <span class="number">1</span></div><div class="line"><span class="keyword">fi</span></div><div class="line"></div><div class="line"><span class="comment"># Ensure user is root when running this script.</span></div><div class="line"><span class="keyword">if</span> [ `id -u` != <span class="string">"0"</span> ]; <span class="keyword">then</span></div><div class="line">  <span class="built_in">echo</span> <span class="string">"Oops, you should be root before running this!"</span></div><div class="line">  <span class="keyword">exit</span> <span class="number">1</span></div><div class="line"><span class="keyword">fi</span></div><div class="line"></div><div class="line"><span class="function"><span class="title">verify_couchpotato_pid</span></span>() {</div><div class="line">    <span class="comment"># Make sure the pid corresponds to the Couch Potato process.</span></div><div class="line">    pid=`cat <span class="variable">${couchpotato_pid}</span> <span class="number">2</span>&gt;/dev/null`</div><div class="line">    ps -p <span class="variable">${pid}</span> | grep -q <span class="string">"python <span class="variable">${couchpotato_dir}</span>/CouchPotato.py"</span></div><div class="line">    <span class="keyword">return</span> $?</div><div class="line">}</div><div class="line"></div><div class="line"><span class="comment"># Try to stop Couch Potato cleanly by calling shutdown over http.</span></div><div class="line"><span class="function"><span class="title">couchpotato_stop</span></span>() {</div><div class="line">    <span class="built_in">echo</span> <span class="string">"Stopping <span class="variable">$name</span>"</span></div><div class="line">    verify_couchpotato_pid</div><div class="line">    <span class="variable">${WGET}</span> -O - -q --user=<span class="variable">${SBUSR}</span> --password=<span class="variable">${SBPWD}</span> <span class="string">"http://<span class="variable">${HOST}</span>:<span class="variable">${PORT}</span>/home/shutdown/?pid=<span class="variable">${pid}</span>"</span> &gt;/dev/null</div><div class="line">    <span class="keyword">if</span> [ -n <span class="string">"<span class="variable">${pid}</span>"</span> ]; <span class="keyword">then</span></div><div class="line">      wait_<span class="keyword">for</span>_pids <span class="variable">${pid}</span></div><div class="line">      <span class="built_in">echo</span> <span class="string">"Stopped"</span></div><div class="line">    <span class="keyword">fi</span></div><div class="line">}</div><div class="line"></div><div class="line"><span class="function"><span class="title">couchpotato_status</span></span>() {</div><div class="line">    verify_couchpotato_pid &amp;&amp; <span class="built_in">echo</span> <span class="string">"<span class="variable">$name</span> is running as <span class="variable">${pid}</span>"</span> || <span class="built_in">echo</span> <span class="string">"<span class="variable">$name</span> is not running"</span></div><div class="line">}</div><div class="line"></div><div class="line">run_rc_command <span class="string">"<span class="variable">$1</span>"</span></div></pre></td></tr></table></figure>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="/images/541ad08b9521a01c437fea6ad11c2eb271c3f298.png" class="img-thumbnail"></p>
+<p>For <code>CouchPotato</code> in FreeBSD, fi]]>
+    </summary>
+    
+      <category term="couchpotato" scheme="http://ootput.github.io/tags/couchpotato/"/>
+    
+      <category term="freebsd" scheme="http://ootput.github.io/tags/freebsd/"/>
+    
+      <category term="Software" scheme="http://ootput.github.io/categories/Software/"/>
     
   </entry>
   
