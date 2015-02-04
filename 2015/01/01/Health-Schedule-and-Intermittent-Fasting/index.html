@@ -3,24 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>SABnzbd and SICKbeard on FreeBSD | ootput burst!</title>
+  <title>Health Schedule and Intermittent Fasting | ootput burst!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="For my own archives, I have reproduced installation instructions for SABnzbd and Sickbeard on FreeBSD from Syah of the FreeBSD forums (titled: FreeBSD +Sabnzbd/Sickbeard/CouchPotato):
-
-1. install sab">
+  <meta name="description" content="This is an intro page to an exercise plan that I’ve put into effect. While others may reap some benefits in reading it, it was created entirely for selfish reasons.
+Follow-up posts can be found here.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SABnzbd and SICKbeard on FreeBSD">
-<meta property="og:url" content="http://ootput.github.io/2011/12/26/sabnzbd-and-sickbeard-on-freebsd/">
+<meta property="og:title" content="Health Schedule and Intermittent Fasting">
+<meta property="og:url" content="http://ootput.github.io/2015/01/01/Health-Schedule-and-Intermittent-Fasting/">
 <meta property="og:site_name" content="ootput burst!">
-<meta property="og:description" content="For my own archives, I have reproduced installation instructions for SABnzbd and Sickbeard on FreeBSD from Syah of the FreeBSD forums (titled: FreeBSD +Sabnzbd/Sickbeard/CouchPotato):
-
-1. install sab">
-<meta property="og:image" content="/images/11394d99807586de0dd5fff417137b8b4f170dd6.png">
+<meta property="og:description" content="This is an intro page to an exercise plan that I’ve put into effect. While others may reap some benefits in reading it, it was created entirely for selfish reasons.
+Follow-up posts can be found here.">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SABnzbd and SICKbeard on FreeBSD">
-<meta name="twitter:description" content="For my own archives, I have reproduced installation instructions for SABnzbd and Sickbeard on FreeBSD from Syah of the FreeBSD forums (titled: FreeBSD +Sabnzbd/Sickbeard/CouchPotato):
-
-1. install sab">
+<meta name="twitter:title" content="Health Schedule and Intermittent Fasting">
+<meta name="twitter:description" content="This is an intro page to an exercise plan that I’ve put into effect. While others may reap some benefits in reading it, it was created entirely for selfish reasons.
+Follow-up posts can be found here.">
 <meta name="twitter:creator" content="@513256254">
 <link rel="publisher" href="110511550415133050000">
 
@@ -92,14 +88,14 @@ ga('send', 'pageview');
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-sabnzbd-and-sickbeard-on-freebsd" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Health-Schedule-and-Intermittent-Fasting" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2011/12/26/sabnzbd-and-sickbeard-on-freebsd/" class="article-date">
-  <time datetime="2011-12-26T12:00:20.000Z" itemprop="datePublished">Dec 26 2011</time>
+    <a href="/2015/01/01/Health-Schedule-and-Intermittent-Fasting/" class="article-date">
+  <time datetime="2015-01-01T10:25:11.000Z" itemprop="datePublished">Jan 1 2015</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Software/">Software</a>
+    <a class="article-category-link" href="/categories/Health/">Health</a>
   </div>
 
   </div>
@@ -110,7 +106,7 @@ ga('send', 'pageview');
         
   
     <h1 class="article-title" itemprop="name">
-      SABnzbd and SICKbeard on FreeBSD
+      Health Schedule and Intermittent Fasting
     </h1>
   
 
@@ -118,39 +114,400 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/images/11394d99807586de0dd5fff417137b8b4f170dd6.png" class="img-thumbnail"></p>
-<p>For my own archives, I have reproduced installation instructions for SABnzbd and Sickbeard on FreeBSD from <em>Syah</em> of the FreeBSD forums (titled: FreeBSD +Sabnzbd/Sickbeard/CouchPotato):</p>
-<blockquote>
-<p>1. install sabnzbd+ from ports.</p>
-<p><code># cd /usr/ports/news/sabnzbdplus; make install clean</code></p>
-<p>2) install some dependencies if they are not already present on your system. Needed to run &amp; acquire python scripts (Sick Beard, Couch Potato, Headphones)</p>
-<p>Python <code># cd /usr/ports/lang/python; make install clean</code></p>
-<p>Cheetah <code># cd /usr/ports/devel/py-cheetah; make install clean</code></p>
-<p>Git <code># cd /usr/ports/devel/git; make install clean</code></p>
-<p>3. Fetch most recent builds of the three tools</p>
-<p>Sick Beard <code># cd /usr/local ; git clone git://github.com/midgetspy/Sick-Beard.git sickbeard</code></p>
-<p>4. Configure auto-start for python scripts and sabnzbd+</p>
-<p>Sick Beard <code># cp /usr/local/sickbeard/init.freebsd /usr/local/etc/rc.d/sickbeard</code></p>
-<p>Add the following to /etc/rc.conf:<br><code>sabnzbd_enable=&quot;YES&quot;</code><br><code>sickbeard_enable=&quot;YES&quot;</code></p>
-<p>5. configure all the tools to play nice together.</p>
-<p>Totally beyond the scope of a quick &amp; dirty update. You should read the installation instructions and refer to the individual websites for each of these projects to fully leverage this tool set.</p>
-<p>Hopefully this gets you a bit further towards your goal.<br>To keep track of upstream changes to SickBeard:<br><code># cd /usr/local/sickbeard &amp;&amp; git pull</code></p>
-</blockquote>
-<p>A few notes:</p>
-<ul>
-<li><del datetime="2012-12-01T08:39:24+00:00">Step 4. will fail as SickBeard currently only comes with an Ubuntu startup script. Hatchling, from the SickBeard Forums (A FreeBSD rc.d script), kindly published a working copy of a FreeBSD rc script that is available <a href="http://dl.dropbox.com/u/5830692/sickbeard.txt" target="_blank" rel="external">here</a> (and duplicated <a href="https://gist.github.com/1610595" target="_blank" rel="external">here</a>.)</del><br>It appears that an init script for FreeBSD is now provided with the latest git pull - unfortunately, it’s not perfect, and needs to be modified for SickBeard to shut down properly.<figure class="highlight diff"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">diff --git a/init.freebsd b/init.freebsd</div><div class="line">index 8d9ba4b..3f65b31 100755</div><div class="line"><span class="header">--- a/init.freebsd</span></div><div class="line"><span class="header">+++ b/init.freebsd</span></div><div class="line">@@ -69,7 +69,7 @@ verify_sickbeard_pid() {</div><div class="line"> sickbeard_stop() {</div><div class="line">     echo "Stopping $name"</div><div class="line">     verify_sickbeard_pid</div><div class="line"><span class="deletion">-    ${WGET} -O - -q --user=${SBUSR} --password=${SBPWD} "http://${HOST}:${PORT}/home/shutdown/" &gt;/dev/null</span></div><div class="line"><span class="addition">+    ${WGET} -O - -q --user=${SBUSR} --password=${SBPWD} "http://${HOST}:${PORT}/home/shutdown/?pid=${pid}" &gt;/dev/null</span></div><div class="line">     if [ -n "${pid}" ]; then</div><div class="line">       wait_for_pids ${pid}</div><div class="line">       echo "Stopped"</div></pre></td></tr></table></figure>
-</li>
-</ul>
+        <p>This is an intro page to an exercise plan that I’ve put into effect. While others may reap some benefits in reading it, it was created entirely for selfish reasons.</p>
+<p>Follow-up posts can be found <a href="/categories/Health/">here</a>.</p>
+<h2 id="Thur_01_Jan_21:27:06_2015">Thur 01 Jan 21:27:06 2015</h2>
+<p>Today I completed my first 24 hr fast - from 5:30pm last night without food, till the 5:30pm dinner I had tonight.</p>
+<p>I have taken the first step towards a diet plan that will allow me to lose 27 kilos (from a morbidly obese 92kg) to a healthy 65kg in the planned 5 months ahead. My birthday will arrive in late June, and I will treat myself to a huge helping of cake if I reach my goal.</p>
+<p>To aid in my 5-kilo-a-month-fat-loss plan, I have incorporated elements of both <a href="http://www.leangains.com/2010/04/leangains-guide.html" target="_blank" rel="external">LeanGains</a> and <a href="http://bradpilon.com/introduction-to-intermittent-fasting/" target="_blank" rel="external">Eat-Stop-Eat</a>, whereby I will follow LeanGains during the week while I workout, and perform Eat-Stop-Eat-style fasting between Thursday night and Saturday morning (for 40 consecutive hours). While Eat-Stop-Eat only recommends 1-2 sessions of 24hr fasts MAXIMUM, I have personally found the 40 hr fast to be more rewarding upon its completion. Also, Fridays are traditionally the worst days for me at work, so its easier to overlook food while buried deep in paperwork.</p>
+<p>My weekday training sessions will coincide with lunchtime at work, and the first meal of the day will be a post-workout protein shake. Dinner will be my 2nd and last meal of the day, and will provide most of my macros.</p>
+<p>My Yoga sessions are designed to help me mentally prepare for the 40 hour fast, as well as to aid in recuperation during the weekend.</p>
+<table>
+<thead>
+<tr>
+<th>Life Schedule</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Time</td>
+<td>Monday</td>
+<td>Tuesday</td>
+<td>Wednesday</td>
+<td>Thursday</td>
+<td>Friday</td>
+<td>Saturday</td>
+<td>Sunday</td>
+</tr>
+<tr>
+<td>05:00 am</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>(FAST)</td>
+<td>(FAST)</td>
+<td></td>
+</tr>
+<tr>
+<td>05:30 am</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>06:00 am</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>06:30 am</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Yoga</td>
+<td>Yoga</td>
+</tr>
+<tr>
+<td>07:00 am</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>07:30 am</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>(FAST)</td>
+<td></td>
+</tr>
+<tr>
+<td>08:00 am</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>08:30 am</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>09:00 am</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>09:30 am</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>10:00 am</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>10:30 am</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Eat</td>
+<td>Eat</td>
+</tr>
+<tr>
+<td>11:00 am</td>
+<td>Kettle Bells</td>
+<td>Body Weight</td>
+<td>Kettle Bells</td>
+<td>Body Weight</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>11:30 am</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>12:00 pm</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>12:30 pm</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>01:00 pm</td>
+<td>Eat</td>
+<td>Eat</td>
+<td>Eat</td>
+<td>Eat</td>
+<td></td>
+<td>Eat</td>
+<td>Eat</td>
+</tr>
+<tr>
+<td>01:30 pm</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>02:00 pm</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>02:30 pm</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>03:00 pm</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>03:30 pm</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>04:00 pm</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>04:30 pm</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>05:00 pm</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>05:30 pm</td>
+<td>Eat</td>
+<td>Eat</td>
+<td>Eat</td>
+<td>Eat</td>
+<td></td>
+<td>Eat</td>
+<td>Eat</td>
+</tr>
+<tr>
+<td>06:00 pm</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>06:30 pm</td>
+<td></td>
+<td></td>
+<td></td>
+<td>(FAST)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>07:00 pm</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>07:30 pm</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>08:00 pm</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Yoga</td>
+<td>Yoga</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>08:30 pm</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>09:00 pm</td>
+<td>SLEEP</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>09:30 pm</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Expect progress updates in the Health category.</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/12/26/sabnzbd-and-sickbeard-on-freebsd/" data-id="9ns881bx18gegolr" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2015/01/01/Health-Schedule-and-Intermittent-Fasting/" data-id="ws5l2y22bwe9csba" class="article-share-link">Share</a>
       
-        <a href="http://ootput.github.io/2011/12/26/sabnzbd-and-sickbeard-on-freebsd/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://ootput.github.io/2015/01/01/Health-Schedule-and-Intermittent-Fasting/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/freebsd/">freebsd</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sabnzbd/">sabnzbd</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sickbeard/">sickbeard</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Exercise/">Exercise</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Fasting/">Fasting</a></li></ul>
 
     </footer>
   </div>
@@ -158,19 +515,19 @@ ga('send', 'pageview');
     
 <nav id="article-nav">
   
-    <a href="/2011/12/27/custom-kernel-config-for-freebsd-8-stable/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2015/01/16/Quick-Git-Hints-WIP/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          Custom Kernel Config for FreeBSD 8-Stable
+          Quick Git Hints (Work-In-Progress)
         
       </div>
     </a>
   
   
-    <a href="/2011/12/25/flash-and-java-for-google-chromium-in-freebsd-8/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2015/01/01/Configure-Filebot-for-Opensubtitles-org-in-Windows/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Flash and Java for Google Chromium in FreeBSD 8</div>
+      <div class="article-nav-title">Configure Filebot for Opensubtitles.org in Windows</div>
     </a>
   
 </nav>
@@ -276,7 +633,7 @@ ga('send', 'pageview');
 <script>
   var disqus_shortname = 'ootputburst';
   
-  var disqus_url = 'http://ootput.github.io/2011/12/26/sabnzbd-and-sickbeard-on-freebsd/';
+  var disqus_url = 'http://ootput.github.io/2015/01/01/Health-Schedule-and-Intermittent-Fasting/';
   
   (function(){
     var dsq = document.createElement('script');
