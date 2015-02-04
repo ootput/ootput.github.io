@@ -138,7 +138,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2015/01/19/Plex-Home-Theatre-on-Debian-Wheezy/" data-id="cqicp6w6mbwnct8s" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2015/01/19/Plex-Home-Theatre-on-Debian-Wheezy/" data-id="bk7oe60att8g4w10" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2015/01/19/Plex-Home-Theatre-on-Debian-Wheezy/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -189,7 +189,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2014/12/30/Filebot-on-Debian-Wheezy/" data-id="1xolqg93vvtkhv96" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2014/12/30/Filebot-on-Debian-Wheezy/" data-id="9usyu8oi6un9j85p" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2014/12/30/Filebot-on-Debian-Wheezy/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -237,7 +237,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2014/12/29/Update-Flash-in-Debian-Wheezy/" data-id="8n2gl4gk36ppjvqv" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2014/12/29/Update-Flash-in-Debian-Wheezy/" data-id="eyyx76j1ukaq3235" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2014/12/29/Update-Flash-in-Debian-Wheezy/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -303,7 +303,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2014/12/11/CIFS-on-Wheezy/" data-id="2nrr2832xih2qcp9" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2014/12/11/CIFS-on-Wheezy/" data-id="t61ofl4a3top3pir" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2014/12/11/CIFS-on-Wheezy/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -362,6 +362,11 @@ ga('send', 'pageview');
 <p>For work-purposes, I have implemented KVM + Qemu to manage a guest Windows XP OS - the guide I used can be found <a href="http://crunchbang.org/forums/viewtopic.php?id=21311" target="_blank" rel="external">here</a> - and I have been able to leverage the power of this fantastic little unit to conduct business.</p>
 <p><a id="system"></a><span style="color:#0000ff;">System Modifications:</span></p>
 <p>System changes I’ve made so far include: switching from grub2 to syslinux (see <a href="http://crunchbang.org/forums/viewtopic.php?id=25399" target="_blank" rel="external">here</a>); colourizing init feedback (see <a href="http://crunchbang.org/forums/viewtopic.php?id=19453" target="_blank" rel="external">here</a>); mounting system paths on the SSD drive with TRIM support (with <a href="http://crunchbang.org/forums/viewtopic.php?id=13129" target="_blank" rel="external"><code>fstab: -o discard</code></a>); enabling Thinkpad-specific battery savings (with <a href="http://linrunner.de/en/tlp/docs/tlp-linux-advanced-power-management.html" target="_blank" rel="external"><code>tlp</code></a> and <a href="http://www.thinkwiki.org/wiki/Tp_smapi" target="_blank" rel="external"><code>thinkpad-smapi</code></a>); relocating /var paths and browser profiles to tmpfs (with <a href="http://forums.debian.net/viewtopic.php?f=6&amp;t=96425" target="_blank" rel="external"><code>profile-sync-daemon</code></a>).</p>
+<p>To get wifi working again after a system suspend-resume event, my executable <code>/etc/pm/sleep.d/20_fix_wifi</code> contains:<br><code>case &quot;${1}&quot; in
+resume|thaw)
+rmmod iwlwifi &amp;&amp; modprobe iwlwifi
+;;
+esac</code></p>
 <p>Additionally, I had CrunchBang show verbose shutdown messages by modifying <code>/etc/slim.conf</code> to show:</p>
 <p><code>xserver_arguments         -nolisten tcp -novtswitch</code></p>
 <p>As my Crunchbang box is essentially a Debian Wheezy machine, I will henceforth address it as my debian box in all future blog entries.</p>
@@ -369,7 +374,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2013/04/01/crunchbang-on-thinkpad-x220/" data-id="tdrgb3032z0cyumw" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2013/04/01/crunchbang-on-thinkpad-x220/" data-id="fpq5rr32ysi50om9" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2013/04/01/crunchbang-on-thinkpad-x220/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -446,7 +451,7 @@ ttf-mscorefonts-installer Installer for Microsoft TrueType core fonts
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/07/01/non-free-and-contrib-packages-in-debian/" data-id="sxnqevckvpxucjml" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/07/01/non-free-and-contrib-packages-in-debian/" data-id="43zz88t0hrinr3t0" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/07/01/non-free-and-contrib-packages-in-debian/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -494,7 +499,7 @@ ttf-mscorefonts-installer Installer for Microsoft TrueType core fonts
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/06/15/smoother-fonts-in-debian/" data-id="02ayb9yfzyxyszf9" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/06/15/smoother-fonts-in-debian/" data-id="gyapl9le85oy1zga" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/06/15/smoother-fonts-in-debian/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -545,7 +550,7 @@ ttf-mscorefonts-installer Installer for Microsoft TrueType core fonts
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/06/08/ssl-and-sasl-for-irssi/" data-id="0b1zhtd2pknpbxxv" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/06/08/ssl-and-sasl-for-irssi/" data-id="6xwhqznyuae9f8r7" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/06/08/ssl-and-sasl-for-irssi/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -591,7 +596,7 @@ ttf-mscorefonts-installer Installer for Microsoft TrueType core fonts
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2009/11/15/dual-card-alsa-configuration/" data-id="auydjug91ofgw20m" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2009/11/15/dual-card-alsa-configuration/" data-id="cgjnbzodaprexjc9" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2009/11/15/dual-card-alsa-configuration/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -638,7 +643,7 @@ ttf-mscorefonts-installer Installer for Microsoft TrueType core fonts
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2009/11/01/debian-5-on-desktop/" data-id="tknndf42vipk3sea" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2009/11/01/debian-5-on-desktop/" data-id="1oa4q48lz86fjrue" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2009/11/01/debian-5-on-desktop/#disqus_thread" class="article-comment-link">Comments</a>
       

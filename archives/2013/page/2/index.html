@@ -118,7 +118,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2013/05/24/auburn-botanical-gardens/" data-id="a9lr3o01ih2g0hu2" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2013/05/24/auburn-botanical-gardens/" data-id="18n2w4cs2vwojiyr" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2013/05/24/auburn-botanical-gardens/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -163,7 +163,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2013/05/24/royal-botanical-gardens-sydney/" data-id="ho5rdim4ay17lz9g" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2013/05/24/royal-botanical-gardens-sydney/" data-id="zc5xme8lsk759tmv" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2013/05/24/royal-botanical-gardens-sydney/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -222,6 +222,11 @@ ga('send', 'pageview');
 <p>For work-purposes, I have implemented KVM + Qemu to manage a guest Windows XP OS - the guide I used can be found <a href="http://crunchbang.org/forums/viewtopic.php?id=21311" target="_blank" rel="external">here</a> - and I have been able to leverage the power of this fantastic little unit to conduct business.</p>
 <p><a id="system"></a><span style="color:#0000ff;">System Modifications:</span></p>
 <p>System changes I’ve made so far include: switching from grub2 to syslinux (see <a href="http://crunchbang.org/forums/viewtopic.php?id=25399" target="_blank" rel="external">here</a>); colourizing init feedback (see <a href="http://crunchbang.org/forums/viewtopic.php?id=19453" target="_blank" rel="external">here</a>); mounting system paths on the SSD drive with TRIM support (with <a href="http://crunchbang.org/forums/viewtopic.php?id=13129" target="_blank" rel="external"><code>fstab: -o discard</code></a>); enabling Thinkpad-specific battery savings (with <a href="http://linrunner.de/en/tlp/docs/tlp-linux-advanced-power-management.html" target="_blank" rel="external"><code>tlp</code></a> and <a href="http://www.thinkwiki.org/wiki/Tp_smapi" target="_blank" rel="external"><code>thinkpad-smapi</code></a>); relocating /var paths and browser profiles to tmpfs (with <a href="http://forums.debian.net/viewtopic.php?f=6&amp;t=96425" target="_blank" rel="external"><code>profile-sync-daemon</code></a>).</p>
+<p>To get wifi working again after a system suspend-resume event, my executable <code>/etc/pm/sleep.d/20_fix_wifi</code> contains:<br><code>case &quot;${1}&quot; in
+resume|thaw)
+rmmod iwlwifi &amp;&amp; modprobe iwlwifi
+;;
+esac</code></p>
 <p>Additionally, I had CrunchBang show verbose shutdown messages by modifying <code>/etc/slim.conf</code> to show:</p>
 <p><code>xserver_arguments         -nolisten tcp -novtswitch</code></p>
 <p>As my Crunchbang box is essentially a Debian Wheezy machine, I will henceforth address it as my debian box in all future blog entries.</p>
@@ -229,7 +234,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2013/04/01/crunchbang-on-thinkpad-x220/" data-id="tdrgb3032z0cyumw" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2013/04/01/crunchbang-on-thinkpad-x220/" data-id="fpq5rr32ysi50om9" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2013/04/01/crunchbang-on-thinkpad-x220/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -283,7 +288,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2013/03/26/address-merged-ports/" data-id="iw51zlf7klufe9zm" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2013/03/26/address-merged-ports/" data-id="jln91v191mu814gj" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2013/03/26/address-merged-ports/#disqus_thread" class="article-comment-link">Comments</a>
       
