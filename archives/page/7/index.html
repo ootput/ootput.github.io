@@ -85,6 +85,56 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-block-wine-applications-from-the-internet" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2011/06/06/block-wine-applications-from-the-internet/" class="article-date">
+  <time datetime="2011-06-06T12:29:49.000Z" itemprop="datePublished">Jun 6 2011</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Software/">Software</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2011/06/06/block-wine-applications-from-the-internet/">Block WINE Applications From The Internet</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>I have created an importable Windows Registry key that will essentially block internet access for apps run by Wine. I found the usual method of creating IPTables (for Linux) rules per process and/or per user (think: <code># useradd wine</code>) extremely tedious when administering several boxen.</p>
+<p>Import the following key using Wines Regedit:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">REGEDIT4</div><div class="line"></div><div class="line">[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]</div><div class="line"><span class="string">"MigrateProxy"</span>=<span class="preprocessor">dword</span>:<span class="number">00000001</span></div><div class="line"><span class="string">"ProxyEnable"</span>=<span class="preprocessor">dword</span>:<span class="number">00000001</span></div><div class="line"><span class="string">"ProxyHttp.1.1"</span>=<span class="preprocessor">dword</span>:<span class="number">00000000</span></div><div class="line"><span class="string">"ProxyOverride"</span>=<span class="string">"&lt;local&gt;"</span></div><div class="line"><span class="string">"ProxyServer"</span>=<span class="string">"http://NonExistantProxyAddress:80"</span></div><div class="line"><span class="string">"User Agent"</span>=<span class="string">"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1"</span></div></pre></td></tr></table></figure>
+
+
+<p>.. and restart the app for the changes to take effect.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ootput.github.io/2011/06/06/block-wine-applications-from-the-internet/" data-id="qllwbgdvzc1a4evl" class="article-share-link">Share</a>
+      
+        <a href="http://ootput.github.io/2011/06/06/block-wine-applications-from-the-internet/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wine/">wine</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-pxe-boot-menu" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2011/01/10/pxe-boot-menu/" class="article-date">
@@ -118,7 +168,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/01/10/pxe-boot-menu/" data-id="f4mjxmnx8hi5vsv2" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2011/01/10/pxe-boot-menu/" data-id="8ybvhfu6oxkclng0" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2011/01/10/pxe-boot-menu/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -195,7 +245,7 @@ ttf-mscorefonts-installer Installer for Microsoft TrueType core fonts
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/07/01/non-free-and-contrib-packages-in-debian/" data-id="8dwx5gl9ww3a3e9y" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/07/01/non-free-and-contrib-packages-in-debian/" data-id="az8spe9oyoev6osa" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/07/01/non-free-and-contrib-packages-in-debian/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -248,7 +298,7 @@ ttf-mscorefonts-installer Installer for Microsoft TrueType core fonts
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/07/01/extract-audio-from-flvs-on-hard-drive/" data-id="rxz8zu3w778rfb2m" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/07/01/extract-audio-from-flvs-on-hard-drive/" data-id="w0hop4m8wdlfkhvg" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/07/01/extract-audio-from-flvs-on-hard-drive/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -295,7 +345,7 @@ ttf-mscorefonts-installer Installer for Microsoft TrueType core fonts
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/06/28/use-external-editor-for-zsh/" data-id="8y7ljc13hsf6iqhc" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/06/28/use-external-editor-for-zsh/" data-id="2awzyxkf57qbodq0" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/06/28/use-external-editor-for-zsh/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -347,7 +397,7 @@ ttf-mscorefonts-installer Installer for Microsoft TrueType core fonts
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/06/27/gist-extras-in-habari/" data-id="pzzfsq1wf6wx0lhs" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/06/27/gist-extras-in-habari/" data-id="rxgu385c7cyorfcz" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/06/27/gist-extras-in-habari/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -400,7 +450,7 @@ ttf-mscorefonts-installer Installer for Microsoft TrueType core fonts
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/06/26/print-to-clipboard-in-putty/" data-id="x2v1eqzkwwhgsn8w" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/06/26/print-to-clipboard-in-putty/" data-id="fxpydbo0y848avlk" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/06/26/print-to-clipboard-in-putty/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -454,7 +504,7 @@ ttf-mscorefonts-installer Installer for Microsoft TrueType core fonts
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/06/26/extending-the-habari-sidebar/" data-id="g9jj7p2su53nacqk" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/06/26/extending-the-habari-sidebar/" data-id="707eyppch5v03a60" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/06/26/extending-the-habari-sidebar/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -518,7 +568,7 @@ $ svn checkout http://svn.habariproject.org/habari-extras/plugins/code_escape/tr
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/06/24/code-in-habari/" data-id="b0a0w1hxrq6dxz2z" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/06/24/code-in-habari/" data-id="53oxdjzi8v4hjv8w" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/06/24/code-in-habari/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -564,58 +614,9 @@ $ svn checkout http://svn.habariproject.org/habari-extras/plugins/code_escape/tr
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/06/24/filter-habari-pages-by-tags/" data-id="dfae276yk8stvocb" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/06/24/filter-habari-pages-by-tags/" data-id="wfq028q8o47qjgmj" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/06/24/filter-habari-pages-by-tags/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/">blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/habari/">habari</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-upgrade-to-habari-trunk" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2010/06/22/upgrade-to-habari-trunk/" class="article-date">
-  <time datetime="2010-06-21T15:33:34.000Z" itemprop="datePublished">Jun 22 2010</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Software/">Software</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2010/06/22/upgrade-to-habari-trunk/">Upgrade to Habari Trunk</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>To upgrade Habari to the latest development snapshot, read <a href="http://wiki.habariproject.org/en/Upgrading" target="_blank" rel="external">this</a>. Be mindful of the format changes mentioned in Upgrade Notes <a href="http://wiki.habariproject.org/en/Release_0.7" target="_blank" rel="external">here</a>.</p>
-<p>Move your existing set of plug-ins (at <code>user/plugins/</code>) to <code>user/plugins_prev/</code> for safe-keeping.</p>
-<p>Issue the following command from a MySQL shell to deactivate all active plug-ins:</p>
-<p><code>mysql&gt; DELETE from habari__options WHERE name = &quot;active_plugins&quot;;</code></p>
-<p>To update the plug-ins, you will need to search <a href="http://habariproject.org/dist/plugins/" target="_blank" rel="external">Habari’s plug-ins index</a> for replacement versions <code>0.7.x.y</code> or <code>trunk</code>.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/06/22/upgrade-to-habari-trunk/" data-id="25742jomogsf5261" class="article-share-link">Share</a>
-      
-        <a href="http://ootput.github.io/2010/06/22/upgrade-to-habari-trunk/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/">blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/habari/">habari</a></li></ul>
@@ -640,7 +641,7 @@ $ svn checkout http://svn.habariproject.org/habari-extras/plugins/code_escape/tr
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Health/">Health</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Photography/">Photography</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Random-Musings/">Random Musings</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Software/">Software</a><span class="category-list-count">102</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Health/">Health</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Photography/">Photography</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Random-Musings/">Random Musings</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Software/">Software</a><span class="category-list-count">103</span></li></ul>
     </div>
   </div>
 
@@ -650,6 +651,10 @@ $ svn checkout http://svn.habariproject.org/habari-extras/plugins/code_escape/tr
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2015/03/23/Ebay-probably-earns-Interest/">Ebay probably earns Interest</a>
+          </li>
         
           <li>
             <a href="/2015/01/28/Soundcloud-on-Hexo/">Soundcloud on Hexo</a>
@@ -665,10 +670,6 @@ $ svn checkout http://svn.habariproject.org/habari-extras/plugins/code_escape/tr
         
           <li>
             <a href="/2015/01/23/Automatically-tweet-new-Hexo-entry-via-IFTTT/">Automatically tweet new Hexo entry via IFTTT</a>
-          </li>
-        
-          <li>
-            <a href="/2015/01/19/Plex-Home-Theatre-on-Debian-Wheezy/">Plex Home Theatre on Debian Wheezy</a>
           </li>
         
       </ul>
@@ -689,7 +690,7 @@ $ svn checkout http://svn.habariproject.org/habari-extras/plugins/code_escape/tr
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">May 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">April 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">December 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">June 2012</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">May 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10/">October 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/09/">September 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06/">June 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07/">July 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06/">June 2010</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/04/">April 2010</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03/">March 2010</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02/">February 2010</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11/">November 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03/">March 2007</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02/">February 2007</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">May 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">April 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">December 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">June 2012</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">May 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10/">October 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/09/">September 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06/">June 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07/">July 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06/">June 2010</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/04/">April 2010</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03/">March 2010</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02/">February 2010</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11/">November 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03/">March 2007</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02/">February 2007</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
