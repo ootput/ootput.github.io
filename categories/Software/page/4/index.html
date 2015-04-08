@@ -85,6 +85,75 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-disable-mouse-acceleration-in-xorg" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2012/03/03/disable-mouse-acceleration-in-xorg/" class="article-date">
+  <time datetime="2012-03-03T05:31:26.000Z" itemprop="datePublished">Mar 3 2012</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Software/">Software</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/03/03/disable-mouse-acceleration-in-xorg/">Disable Mouse Acceleration in Xorg</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/bd46cbd14e407cc58b4093c648dbc7aeb5f79026.png" class="img-thumbnail"></p>
+<p>You will first need to identify the device number of the mouse you’d like to configure:</p>
+<p><code>$ xinput list</code></p>
+<pre>Logitech USB Gaming Mouse   id=10    [slave  pointer  (2)]</pre>
+
+<ul>
+<li>which is shown in this example as <em>10</em>. To list the properties of the mouse:</li>
+</ul>
+<p><code>$ xinput list-props 10</code></p>
+<pre>
+Device 'Logitech USB Gaming Mouse':
+    ...
+    Device Accel Profile (252):     0
+</pre>
+
+<p>The value given determines how the driver handles the acceleration:</p>
+<blockquote>
+<p>-1: none no velocity-dependent pointer acceleration or deceleration. If constant deceleration is also unused, motion processing is suppressed, saving some cycles.</p>
+<p>0: classic (the default) similar to old behaviour, but more predictable Xorg Wiki - Development/Documentation/PointerAcceleration</p>
+</blockquote>
+<p>Setting this property to <code>-1</code> it will disable mouse acceleration entirely.</p>
+<p><code>$ xinput set-prop 10 252 -1</code></p>
+<p>After confirming that the above command works, you can create a shell script to be executed at boot. You may choose to replace the index numbers, eg. <code>10</code> and <code>252</code> with the more meaningful property names <code>&quot;Logitech USB Gaming Mouse&quot;</code> and <code>&quot;Device Accel Profile&quot;</code> respectively.</p>
+<p>My <code>$HOME/bin/macceloff.sh</code> script contains:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="shebang">#!/bin/bash</span></div><div class="line"></div><div class="line">sleep <span class="number">05</span></div><div class="line">xinput <span class="keyword">set</span>-prop <span class="string">"Logitech USB Gaming Mouse"</span> <span class="string">"Device Accel Profile"</span> -<span class="number">1</span></div><div class="line"><span class="keyword">exit</span> <span class="number">0</span></div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ootput.github.io/2012/03/03/disable-mouse-acceleration-in-xorg/" data-id="lpmxb3j7pi7bi2hs" class="article-share-link">Share</a>
+      
+        <a href="http://ootput.github.io/2012/03/03/disable-mouse-acceleration-in-xorg/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/xorg/">xorg</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-parse-usr-ports-updating-for-relevant-issues" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2012/01/19/parse-usr-ports-updating-for-relevant-issues/" class="article-date">
@@ -639,54 +708,6 @@ reboot</code></p>
 
 
   
-    <article id="post-on-chyrps-revival" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2011/10/08/on-chyrps-revival/" class="article-date">
-  <time datetime="2011-10-08T01:19:00.000Z" itemprop="datePublished">Oct 8 2011</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Software/">Software</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2011/10/08/on-chyrps-revival/">On Chyrp&#39;s Revival</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>I completely missed the boat on this one, but apparently, ten months ago, <a href="http://chyrp.net/2010/12/06/chyrp-is-back/" target="_blank" rel="external">Chyrp came back</a>.</p>
-<p>Provided the project persists and progresses, I might consider taking another look at the platform that I had once loved. In the meantime, I’ll stick with Habari - which I have grown accustomed to. I know that Chyrp is a very young product, but it’s sudden termination was simply <a href="http://ootput.github.io/2010/06/02/official-chyrp-development-halted/" target="_blank" rel="external">too much to bear</a> - I honestly can’t get my hopes up again.</p>
-<p>Truth be told, I’m actually very pleased to hear that the product was restarted - it would have been a shame to have let such a promising piece of software go to waste. Even Chyrps website’s design was delicious:<br><img src="/images/73cc94a01d85099bbd8c2354c3fe85270785ea75.jpg" alt="7180191615_fd16650d0b"></p>
-<p>I wish the team the best of luck with all of <a href="http://chyrp.net/2011/08/12/open-source-awards-2011-nominations-the-release-of-chyrp-211/" target="_blank" rel="external">their endeavours</a>.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2011/10/08/on-chyrps-revival/" data-id="po7jl4cx2emb73do" class="article-share-link">Share</a>
-      
-        <a href="http://ootput.github.io/2011/10/08/on-chyrps-revival/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/">blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/chyrp/">chyrp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/habari/">habari</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/categories/Software/page/3/">&laquo; Prev</a><a class="page-number" href="/categories/Software/">1</a><a class="page-number" href="/categories/Software/page/2/">2</a><a class="page-number" href="/categories/Software/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/categories/Software/page/5/">5</a><a class="page-number" href="/categories/Software/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/categories/Software/page/11/">11</a><a class="extend next" rel="next" href="/categories/Software/page/5/">Next &raquo;</a>
@@ -700,7 +721,7 @@ reboot</code></p>
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Health/">Health</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Photography/">Photography</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Random-Musings/">Random Musings</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Software/">Software</a><span class="category-list-count">102</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Health/">Health</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Photography/">Photography</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Random-Musings/">Random Musings</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Software/">Software</a><span class="category-list-count">103</span></li></ul>
     </div>
   </div>
 
@@ -710,6 +731,10 @@ reboot</code></p>
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2015/04/08/Fixed-Search-in-Hexo/">Fixed Search in Hexo</a>
+          </li>
         
           <li>
             <a href="/2015/03/23/why-ebay-will-never-go-broke/">Why eBay will never go broke</a>
@@ -727,10 +752,6 @@ reboot</code></p>
             <a href="/2015/01/25/Add-Reddit-Share-button-to-Hexo-s-Landscape-theme/">Add Reddit Share button to Hexo&#39;s Landscape theme</a>
           </li>
         
-          <li>
-            <a href="/2015/01/23/Automatically-tweet-new-Hexo-entry-via-IFTTT/">Automatically tweet new Hexo entry via IFTTT</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -740,7 +761,7 @@ reboot</code></p>
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ebay/" style="font-size: 10.00px;">Ebay</a><a href="/tags/Exercise/" style="font-size: 11.11px;">Exercise</a><a href="/tags/Fasting/" style="font-size: 10.00px;">Fasting</a><a href="/tags/Kettlebells/" style="font-size: 10.00px;">Kettlebells</a><a href="/tags/Soundcloud/" style="font-size: 10.00px;">Soundcloud</a><a href="/tags/Windows/" style="font-size: 10.00px;">Windows</a><a href="/tags/alsa/" style="font-size: 10.00px;">alsa</a><a href="/tags/android/" style="font-size: 10.00px;">android</a><a href="/tags/apple/" style="font-size: 10.00px;">apple</a><a href="/tags/blog/" style="font-size: 20.00px;">blog</a><a href="/tags/canon/" style="font-size: 10.00px;">canon</a><a href="/tags/chess/" style="font-size: 10.00px;">chess</a><a href="/tags/chromium/" style="font-size: 11.11px;">chromium</a><a href="/tags/chyrp/" style="font-size: 14.44px;">chyrp</a><a href="/tags/clone/" style="font-size: 11.11px;">clone</a><a href="/tags/couchpotato/" style="font-size: 10.00px;">couchpotato</a><a href="/tags/crunchbang/" style="font-size: 10.00px;">crunchbang</a><a href="/tags/ddwrt/" style="font-size: 10.00px;">ddwrt</a><a href="/tags/debian/" style="font-size: 16.67px;">debian</a><a href="/tags/dslr/" style="font-size: 10.00px;">dslr</a><a href="/tags/emacs/" style="font-size: 11.11px;">emacs</a><a href="/tags/erc/" style="font-size: 10.00px;">erc</a><a href="/tags/fedora/" style="font-size: 15.56px;">fedora</a><a href="/tags/filebot/" style="font-size: 11.11px;">filebot</a><a href="/tags/flash/" style="font-size: 11.11px;">flash</a><a href="/tags/flickr/" style="font-size: 10.00px;">flickr</a><a href="/tags/freebsd/" style="font-size: 18.89px;">freebsd</a><a href="/tags/git/" style="font-size: 10.00px;">git</a><a href="/tags/github/" style="font-size: 13.33px;">github</a><a href="/tags/gmail/" style="font-size: 10.00px;">gmail</a><a href="/tags/habari/" style="font-size: 17.78px;">habari</a><a href="/tags/hexo/" style="font-size: 12.22px;">hexo</a><a href="/tags/ifttt/" style="font-size: 10.00px;">ifttt</a><a href="/tags/ion3/" style="font-size: 10.00px;">ion3</a><a href="/tags/ios/" style="font-size: 10.00px;">ios</a><a href="/tags/irssi/" style="font-size: 10.00px;">irssi</a><a href="/tags/itunes/" style="font-size: 10.00px;">itunes</a><a href="/tags/java/" style="font-size: 11.11px;">java</a><a href="/tags/kvm/" style="font-size: 10.00px;">kvm</a><a href="/tags/lens/" style="font-size: 10.00px;">lens</a>
+      <a href="/tags/Ebay/" style="font-size: 10.00px;">Ebay</a><a href="/tags/Exercise/" style="font-size: 11.25px;">Exercise</a><a href="/tags/Fasting/" style="font-size: 10.00px;">Fasting</a><a href="/tags/Kettlebells/" style="font-size: 10.00px;">Kettlebells</a><a href="/tags/Soundcloud/" style="font-size: 10.00px;">Soundcloud</a><a href="/tags/Windows/" style="font-size: 10.00px;">Windows</a><a href="/tags/alsa/" style="font-size: 10.00px;">alsa</a><a href="/tags/android/" style="font-size: 10.00px;">android</a><a href="/tags/apple/" style="font-size: 10.00px;">apple</a><a href="/tags/blog/" style="font-size: 20.00px;">blog</a><a href="/tags/canon/" style="font-size: 10.00px;">canon</a><a href="/tags/chess/" style="font-size: 10.00px;">chess</a><a href="/tags/chromium/" style="font-size: 11.25px;">chromium</a><a href="/tags/chyrp/" style="font-size: 13.75px;">chyrp</a><a href="/tags/clone/" style="font-size: 11.25px;">clone</a><a href="/tags/couchpotato/" style="font-size: 10.00px;">couchpotato</a><a href="/tags/crunchbang/" style="font-size: 10.00px;">crunchbang</a><a href="/tags/ddwrt/" style="font-size: 10.00px;">ddwrt</a><a href="/tags/debian/" style="font-size: 16.25px;">debian</a><a href="/tags/dslr/" style="font-size: 10.00px;">dslr</a><a href="/tags/emacs/" style="font-size: 11.25px;">emacs</a><a href="/tags/erc/" style="font-size: 10.00px;">erc</a><a href="/tags/fedora/" style="font-size: 15.00px;">fedora</a><a href="/tags/filebot/" style="font-size: 11.25px;">filebot</a><a href="/tags/flash/" style="font-size: 11.25px;">flash</a><a href="/tags/flickr/" style="font-size: 10.00px;">flickr</a><a href="/tags/freebsd/" style="font-size: 18.75px;">freebsd</a><a href="/tags/git/" style="font-size: 10.00px;">git</a><a href="/tags/github/" style="font-size: 12.50px;">github</a><a href="/tags/gmail/" style="font-size: 10.00px;">gmail</a><a href="/tags/habari/" style="font-size: 17.50px;">habari</a><a href="/tags/hexo/" style="font-size: 12.50px;">hexo</a><a href="/tags/ifttt/" style="font-size: 10.00px;">ifttt</a><a href="/tags/ion3/" style="font-size: 10.00px;">ion3</a><a href="/tags/ios/" style="font-size: 10.00px;">ios</a><a href="/tags/irssi/" style="font-size: 10.00px;">irssi</a><a href="/tags/itunes/" style="font-size: 10.00px;">itunes</a><a href="/tags/java/" style="font-size: 11.25px;">java</a><a href="/tags/kvm/" style="font-size: 10.00px;">kvm</a><a href="/tags/lens/" style="font-size: 10.00px;">lens</a>
     </div>
   </div>
 
@@ -749,7 +770,7 @@ reboot</code></p>
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">May 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">April 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">December 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">June 2012</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">May 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10/">October 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/09/">September 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06/">June 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07/">July 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06/">June 2010</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/04/">April 2010</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03/">March 2010</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02/">February 2010</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11/">November 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03/">March 2007</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02/">February 2007</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">May 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">April 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">December 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">June 2012</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">May 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10/">October 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/09/">September 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06/">June 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07/">July 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06/">June 2010</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/04/">April 2010</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03/">March 2010</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02/">February 2010</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11/">November 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03/">March 2007</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02/">February 2007</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
