@@ -114,9 +114,11 @@ ga('send', 'pageview');
       
         <p>I have been struggling to get search to work on my hexo-generated blog.</p>
 <p>I initially thought it was due to a poorly implemented theme, but as jamiehumphries correctly suggests, Hexo’s core required a fix.</p>
-<p>This fix was discussed <a href="https://github.com/hexojs/hexo/issues/1185" target="_blank" rel="external">here</a>, and the following diff illustrates the change needed:</p>
-<script src="https://gist.github.com/4c19e20103e6fb80ffe7.js?file="></script>
+<p>This very simple fix was discussed <a href="https://github.com/hexojs/hexo/issues/1185" target="_blank" rel="external">here</a>, and the following diff illustrates the change needed:</p>
+<script src="https://gist.github.com/4c19e20103e6fb80ffe7.js"></script>
 
+<p>The diff can be applied to form.js at (on FreeBSD global installation) /usr/local/lib/node_modules/hexo/lib/plugins/helper</p>
+<p>Also, see <a href="https://github.com/hexojs/hexo/pull/1186/files" target="_blank" rel="external">here</a> for further necessary patches.</p>
 
       
     </div>
