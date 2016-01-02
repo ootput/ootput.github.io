@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://ootput.github.io/"/>
-  <updated>2015-05-31T01:13:16.199Z</updated>
+  <updated>2016-01-02T09:35:43.398Z</updated>
   <id>http://ootput.github.io/</id>
   
   <author>
@@ -85,44 +85,6 @@
       <category term="blog" scheme="http://ootput.github.io/tags/blog/"/>
     
       <category term="Software" scheme="http://ootput.github.io/categories/Software/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Day 1 of the Rest of my Life]]></title>
-    <link href="http://ootput.github.io/2015/01/27/Day-1-of-the-Rest-of-my-Life/"/>
-    <id>http://ootput.github.io/2015/01/27/Day-1-of-the-Rest-of-my-Life/</id>
-    <published>2015-01-27T00:53:00.000Z</published>
-    <updated>2015-01-27T09:39:05.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="*Tue_27_Jan_15:14:43_2015">*Tue 27 Jan 15:14:43 2015</h2>
-<p><img src="/images/Kettlebells.png" class="img-thumbnail"></p>
-<p>My kettlebell complex for today:</p>
-<p>Single-handedly:</p>
-<ul>
-<li>Swing</li>
-<li>Snatch</li>
-<li>Clean</li>
-<li>Squat</li>
-<li>Press</li>
-<li>Windmill</li>
-</ul>
-<p>Use alternated hand for one set</p>
-<p>1 min break between sets for 10 sets</p>
-<p>… and I’m thoroughly exhausted by the end of the session.</p>
-<p>My progression will involve an increase in reps per exercise, for a maximum of 5 reps - but only after successfully reducing rest times to 30 seconds. Once 5 reps per exercise can be performed with ease at 30 second rest, I will increase the weight per bell and reset rep count and break times.</p>
-<p>This should prove to be a fantastic way to get back into shape after years of lethargy.</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="*Tue_27_Jan_15:14:43_2015">*Tue 27 Jan 15:14:43 2015</h2>
-<p><img src="/images/Kettlebells.png" class="img-thumbnail"></p>
-<p>My ket]]>
-    </summary>
-    
-      <category term="Exercise" scheme="http://ootput.github.io/tags/Exercise/"/>
-    
-      <category term="Kettlebells" scheme="http://ootput.github.io/tags/Kettlebells/"/>
-    
-      <category term="Health" scheme="http://ootput.github.io/categories/Health/"/>
     
   </entry>
   
@@ -261,409 +223,6 @@
       <category term="git" scheme="http://ootput.github.io/tags/git/"/>
     
       <category term="Software" scheme="http://ootput.github.io/categories/Software/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Health Schedule and Intermittent Fasting]]></title>
-    <link href="http://ootput.github.io/2015/01/01/Health-Schedule-and-Intermittent-Fasting/"/>
-    <id>http://ootput.github.io/2015/01/01/Health-Schedule-and-Intermittent-Fasting/</id>
-    <published>2015-01-01T10:25:11.000Z</published>
-    <updated>2015-02-04T06:31:50.000Z</updated>
-    <content type="html"><![CDATA[<p>This is an intro page to an exercise plan that I’ve put into effect. While others may reap some benefits in reading it, it was created entirely for selfish reasons.</p>
-<p>Follow-up posts can be found <a href="/categories/Health/">here</a>.</p>
-<h2 id="Thur_01_Jan_21:27:06_2015">Thur 01 Jan 21:27:06 2015</h2>
-<p>Today I completed my first 24 hr fast - from 5:30pm last night without food, till the 5:30pm dinner I had tonight.</p>
-<p>I have taken the first step towards a diet plan that will allow me to lose 27 kilos (from a morbidly obese 92kg) to a healthy 65kg in the planned 5 months ahead. My birthday will arrive in late June, and I will treat myself to a huge helping of cake if I reach my goal.</p>
-<p>To aid in my 5-kilo-a-month-fat-loss plan, I have incorporated elements of both <a href="http://www.leangains.com/2010/04/leangains-guide.html" target="_blank" rel="external">LeanGains</a> and <a href="http://bradpilon.com/introduction-to-intermittent-fasting/" target="_blank" rel="external">Eat-Stop-Eat</a>, whereby I will follow LeanGains during the week while I workout, and perform Eat-Stop-Eat-style fasting between Thursday night and Saturday morning (for 40 consecutive hours). While Eat-Stop-Eat only recommends 1-2 sessions of 24hr fasts MAXIMUM, I have personally found the 40 hr fast to be more rewarding upon its completion. Also, Fridays are traditionally the worst days for me at work, so its easier to overlook food while buried deep in paperwork.</p>
-<p>My weekday training sessions will coincide with lunchtime at work, and the first meal of the day will be a post-workout protein shake. Dinner will be my 2nd and last meal of the day, and will provide most of my macros.</p>
-<p>My Yoga sessions are designed to help me mentally prepare for the 40 hour fast, as well as to aid in recuperation during the weekend.</p>
-<table>
-<thead>
-<tr>
-<th>Life Schedule</th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Time</td>
-<td>Monday</td>
-<td>Tuesday</td>
-<td>Wednesday</td>
-<td>Thursday</td>
-<td>Friday</td>
-<td>Saturday</td>
-<td>Sunday</td>
-</tr>
-<tr>
-<td>05:00 am</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>(FAST)</td>
-<td>(FAST)</td>
-<td></td>
-</tr>
-<tr>
-<td>05:30 am</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>06:00 am</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>06:30 am</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>Yoga</td>
-<td>Yoga</td>
-</tr>
-<tr>
-<td>07:00 am</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>07:30 am</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>(FAST)</td>
-<td></td>
-</tr>
-<tr>
-<td>08:00 am</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>08:30 am</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>09:00 am</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>09:30 am</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>10:00 am</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>10:30 am</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>Eat</td>
-<td>Eat</td>
-</tr>
-<tr>
-<td>11:00 am</td>
-<td>Kettle Bells</td>
-<td>Body Weight</td>
-<td>Kettle Bells</td>
-<td>Body Weight</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>11:30 am</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>12:00 pm</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>12:30 pm</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>01:00 pm</td>
-<td>Eat</td>
-<td>Eat</td>
-<td>Eat</td>
-<td>Eat</td>
-<td></td>
-<td>Eat</td>
-<td>Eat</td>
-</tr>
-<tr>
-<td>01:30 pm</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>02:00 pm</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>02:30 pm</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>03:00 pm</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>03:30 pm</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>04:00 pm</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>04:30 pm</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>05:00 pm</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>05:30 pm</td>
-<td>Eat</td>
-<td>Eat</td>
-<td>Eat</td>
-<td>Eat</td>
-<td></td>
-<td>Eat</td>
-<td>Eat</td>
-</tr>
-<tr>
-<td>06:00 pm</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>06:30 pm</td>
-<td></td>
-<td></td>
-<td></td>
-<td>(FAST)</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>07:00 pm</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>07:30 pm</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>08:00 pm</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Yoga</td>
-<td>Yoga</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>08:30 pm</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>09:00 pm</td>
-<td>SLEEP</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>09:30 pm</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>Expect progress updates in the Health category.</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>This is an intro page to an exercise plan that I’ve put into effect. While others may reap some benefits in reading it, it was created en]]>
-    </summary>
-    
-      <category term="Fasting" scheme="http://ootput.github.io/tags/Fasting/"/>
-    
-      <category term="Exercise" scheme="http://ootput.github.io/tags/Exercise/"/>
-    
-      <category term="Health" scheme="http://ootput.github.io/categories/Health/"/>
     
   </entry>
   
@@ -1272,6 +831,56 @@ esac</code></p>
       <category term="ports" scheme="http://ootput.github.io/tags/ports/"/>
     
       <category term="Software" scheme="http://ootput.github.io/categories/Software/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Relocate iOS Backups]]></title>
+    <link href="http://ootput.github.io/2012/12/11/relocate-ios-backups/"/>
+    <id>http://ootput.github.io/2012/12/11/relocate-ios-backups/</id>
+    <published>2012-12-10T14:08:58.000Z</published>
+    <updated>2014-11-25T20:09:30.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="/images/e16b2fc9fe80c58e1da9441a5ad675bcb2953fcf.png" class="img-thumbnail"></p>
+<p>There are currently 3 different iPhones and 2 different iPads in my household that need updating - from iOS versions 3.x, 4.x, and 5.x. In order to make the transition to iOS version 6.0.1 (current), I first have to back up each device via iTunes. Unfortunately, my meagre 60GB SSD system drive will not suffice. I have decided to use <a href="http://support.microsoft.com/kb/205524" target="_blank" rel="external">NTFS’ <code>junction</code> function</a> to link directories on separate hard drives. I had to move <code>%APPDATA%\Apple Computer</code> from my system drive to a separate <code>D:\</code>, using cmd.exe:</p>
+<p><code>move &quot;%APPDATA%\Apple Computer&quot; D:\</code></p>
+<p>then issue the following command in cmd.exe (as admin):</p>
+<p><code>mklink /J &quot;%APPDATA%\Apple Computer&quot; &quot;D:\Apple Computer&quot;</code></p>
+<p>For the curious, <code>%APPDATA%</code> contains the full path to the Application Data folder of the logged-in user, e.g., <code>C:\Users\ootput\AppData\Roaming</code></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="/images/e16b2fc9fe80c58e1da9441a5ad675bcb2953fcf.png" class="img-thumbnail"></p>
+<p>There are currently 3 different iPhones and]]>
+    </summary>
+    
+      <category term="apple" scheme="http://ootput.github.io/tags/apple/"/>
+    
+      <category term="ios" scheme="http://ootput.github.io/tags/ios/"/>
+    
+      <category term="Software" scheme="http://ootput.github.io/categories/Software/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[NES Nostalgia]]></title>
+    <link href="http://ootput.github.io/2012/07/23/nes-nostalgia/"/>
+    <id>http://ootput.github.io/2012/07/23/nes-nostalgia/</id>
+    <published>2012-07-23T02:53:47.000Z</published>
+    <updated>2014-11-24T23:18:35.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="/images/5cd1299343eb332066db11696f3710a460030757.png" alt="" title="NintendoLogo"></p>
+<p>A throwback to the NES days of old, this video has recently become a favourite of mine. It features <em>Anamanaguchi - Jetpack Blues, Sunset Hues</em>,</p>
+<blockquote>
+<p>Anamanaguchi is a chiptune indie rock band from New York City that “makes loud, fast music with a hacked NES from 1985.” Akin to other chiptune artists, Anamanaguchi creates music using synthesizers, albeit unconventional ones: namely a hacked NES and Game Boy.</p>
+</blockquote>
+<div class="video-container"><iframe src="//www.youtube.com/embed/m1l5Y1UQN4w" frameborder="0" allowfullscreen></iframe></div>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="/images/5cd1299343eb332066db11696f3710a460030757.png" alt="" title="NintendoLogo"></p>
+<p>A throwback to the NES days of old, t]]>
+    </summary>
+    
+      <category term="youtube" scheme="http://ootput.github.io/tags/youtube/"/>
+    
+      <category term="Random Musings" scheme="http://ootput.github.io/categories/Random-Musings/"/>
     
   </entry>
   
