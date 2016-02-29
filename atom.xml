@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://ootput.github.io/"/>
-  <updated>2016-01-02T09:35:43.398Z</updated>
+  <updated>2016-02-29T10:15:09.303Z</updated>
   <id>http://ootput.github.io/</id>
   
   <author>
@@ -13,6 +13,27 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Set Firefox GTK2 Theme]]></title>
+    <link href="http://ootput.github.io/2016/02/29/Set-Firefox-GTK2-Theme/"/>
+    <id>http://ootput.github.io/2016/02/29/Set-Firefox-GTK2-Theme/</id>
+    <published>2016-02-29T10:11:35.000Z</published>
+    <updated>2016-02-29T10:14:51.000Z</updated>
+    <content type="html"><![CDATA[<p>A quick tip to set a default gtk2 theme for firefox menus/radios/buttons (for improved readability)</p>
+<p>Edit ~/.local/share/applications/firefox.desktop to have the following lines where required:</p>
+<p><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">...</span></div><div class="line">Exec=env GTK_THEME=mist firefox %u</div><div class="line">Exec=env GTK_THEME=mist firefox -new-tab about:newtab</div><div class="line">Exec=env GTK_THEME=mist firefox -new-window</div><div class="line">Exec=env GTK_THEME=mist firefox -private-window</div><div class="line"><span class="keyword">...</span></div></pre></td></tr></table></figure><br>[/code]</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>A quick tip to set a default gtk2 theme for firefox menus/radios/buttons (for improved readability)</p>
+<p>Edit ~/.local/share/applicatio]]>
+    </summary>
+    
+      <category term="firefox" scheme="http://ootput.github.io/tags/firefox/"/>
+    
+      <category term="Software" scheme="http://ootput.github.io/categories/Software/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Fixed Search in Hexo]]></title>
@@ -857,30 +878,6 @@ esac</code></p>
       <category term="ios" scheme="http://ootput.github.io/tags/ios/"/>
     
       <category term="Software" scheme="http://ootput.github.io/categories/Software/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[NES Nostalgia]]></title>
-    <link href="http://ootput.github.io/2012/07/23/nes-nostalgia/"/>
-    <id>http://ootput.github.io/2012/07/23/nes-nostalgia/</id>
-    <published>2012-07-23T02:53:47.000Z</published>
-    <updated>2014-11-24T23:18:35.000Z</updated>
-    <content type="html"><![CDATA[<p><img src="/images/5cd1299343eb332066db11696f3710a460030757.png" alt="" title="NintendoLogo"></p>
-<p>A throwback to the NES days of old, this video has recently become a favourite of mine. It features <em>Anamanaguchi - Jetpack Blues, Sunset Hues</em>,</p>
-<blockquote>
-<p>Anamanaguchi is a chiptune indie rock band from New York City that “makes loud, fast music with a hacked NES from 1985.” Akin to other chiptune artists, Anamanaguchi creates music using synthesizers, albeit unconventional ones: namely a hacked NES and Game Boy.</p>
-</blockquote>
-<div class="video-container"><iframe src="//www.youtube.com/embed/m1l5Y1UQN4w" frameborder="0" allowfullscreen></iframe></div>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p><img src="/images/5cd1299343eb332066db11696f3710a460030757.png" alt="" title="NintendoLogo"></p>
-<p>A throwback to the NES days of old, t]]>
-    </summary>
-    
-      <category term="youtube" scheme="http://ootput.github.io/tags/youtube/"/>
-    
-      <category term="Random Musings" scheme="http://ootput.github.io/categories/Random-Musings/"/>
     
   </entry>
   
