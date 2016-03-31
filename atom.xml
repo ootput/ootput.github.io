@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://ootput.github.io/"/>
-  <updated>2016-03-31T07:07:44.392Z</updated>
+  <updated>2016-03-31T07:10:49.606Z</updated>
   <id>http://ootput.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://ootput.github.io/2016/03/31/Finding-missing-libraries-after-removing-orphaned-packages-in-FreeBSD/"/>
     <id>http://ootput.github.io/2016/03/31/Finding-missing-libraries-after-removing-orphaned-packages-in-FreeBSD/</id>
     <published>2016-03-31T04:00:06.000Z</published>
-    <updated>2016-03-31T07:07:24.000Z</updated>
+    <updated>2016-03-31T07:10:39.000Z</updated>
     <content type="html"><![CDATA[<p>So I cunningly removed ‘orphaned packages’ in an effort to reclaim much needed space on my system root, only to find that a certain daemon (CouchPotato) failed to run. There could have other consequences of this ‘mindless sweep’, but I had yet to encounter those.</p>
 <p>To remedy this, I did:</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="preprocessor"># pkg check -d</span></div></pre></td></tr></table></figure>
@@ -39,7 +39,7 @@
     <![CDATA[<p>So I cunningly removed ‘orphaned packages’ in an effort to reclaim much needed space on my system root, only to find that a certain daemo]]>
     </summary>
     
-      <category term="FreeBSD" scheme="http://ootput.github.io/tags/FreeBSD/"/>
+      <category term="freebsd" scheme="http://ootput.github.io/tags/freebsd/"/>
     
       <category term="Software" scheme="http://ootput.github.io/categories/Software/"/>
     
