@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://ootput.github.io/"/>
-  <updated>2016-04-01T05:12:39.286Z</updated>
+  <updated>2016-04-01T05:27:51.964Z</updated>
   <id>http://ootput.github.io/</id>
   
   <author>
@@ -45,11 +45,11 @@
   </entry>
   
   <entry>
-    <title><![CDATA[Finding missing libraries after removing _orphaned_ packages in FreeBSD]]></title>
+    <title><![CDATA[Fixing broken port dependencies based on missing files]]></title>
     <link href="http://ootput.github.io/2016/03/31/Fixing-broken-port-dependencies-based-on-missing-files/"/>
     <id>http://ootput.github.io/2016/03/31/Fixing-broken-port-dependencies-based-on-missing-files/</id>
     <published>2016-03-31T04:00:06.000Z</published>
-    <updated>2016-03-31T07:10:39.000Z</updated>
+    <updated>2016-04-01T05:27:40.000Z</updated>
     <content type="html"><![CDATA[<p>So I cunningly removed ‘orphaned packages’ in an effort to reclaim much needed space on my system root, only to find that a certain daemon (CouchPotato) failed to run. There could have other consequences of this ‘mindless sweep’, but I had yet to encounter those.</p>
 <p>To remedy this, I did:</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="preprocessor"># pkg check -d</span></div></pre></td></tr></table></figure>
