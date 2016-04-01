@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://ootput.github.io/"/>
-  <updated>2016-03-31T07:10:49.606Z</updated>
+  <updated>2016-04-01T04:52:57.408Z</updated>
   <id>http://ootput.github.io/</id>
   
   <author>
@@ -13,6 +13,36 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Revisiting Health]]></title>
+    <link href="http://ootput.github.io/2016/04/01/Revisiting-Health/"/>
+    <id>http://ootput.github.io/2016/04/01/Revisiting-Health/</id>
+    <published>2016-04-01T03:51:22.000Z</published>
+    <updated>2016-04-01T04:52:36.000Z</updated>
+    <content type="html"><![CDATA[<p>I’ve decided to post updates on my physical exercise routines and progress. </p>
+<p>I’ve been dabbling with both kettlebells and barbells for the past year with great results, but in an effort to stay focused, and to properly measure my progress, I have decided to log my routines.</p>
+<p>Since I haven’t found a definitive resource for a hybrid program of calisthenics, kettlebells, and barbells, I will have to experiment on my own to see what works for me. Granted, there are already a plethora of MMA-inspired workouts touching upon two or more of aforementioned prerequisites, none seem to go into great detail in how to properly periodize for maximum gain, and minimal conflicts.</p>
+<p>My main issue with a hybridized program is that a specific body part can easily be overtrained. For instance, say I’d do handstand pushups (I’m not entirely there yet…) one day, and then kettlebell snatches the next, I would definitely be overtraining my delts. Trying to further incorporate strict military presses into my routine would be disastrous. </p>
+<p>In any given week, there are five workout days to implement all three systems, and so I have decided to focus on each system for two weeks at length - creating a six-week-cycle. The general rules for progress in said systems are as follows:</p>
+<ul>
+<li>With barbells, one must train at least twice a week per body part for any gains to be made, and I have found this to be true based on personal results.</li>
+<li>Kettlebells can be trained everyday apparently, but I find this to be illogical, and I’d factor in at least two days of rest between sessions. With full body kettlebell circuits, this would also create a four-day allocation for KBs.</li>
+<li>Exclusive calisthenics can be performed everyday. </li>
+</ul>
+<p>There has yet to be a definitive book/blog/article on how to approach all three systems effectively, and I’d invest in that knowledge-bank were it to exist. While I understand that results and effective training methodologies vary from one individual to the next, I’m saddened that there hasn’t been extensive research into the field. A lot of mixed-martial-arts coaching advocate use of all three methods, but only to address strength, and are used in a limited amount as other attributes are given priority to win a fight. As I don’t plan on participating in the game that is UFC-or-other-tournament any time soon, and as my training is mostly strength based, I have to discard 80% of said coaching ideas.</p>
+<p>Strength was my focus for the past year as I was an avid intermittent-fast-er. In order to maintain my lean muscle mass, strength-based training were a must. In order for me to obtain a lean look, my workouts weren’t geared toward hypertrophy, so low rep ranges worked quite well for me. The kettlebells were introduced to get me down to an even leaner body mass. I became addicted to making strength gains.</p>
+<p>Sure, there are definite advantages to how MMA-artists train given how well-rounded they appear to be, but they must make great sacrifices (in terms of maximum potential of each attribute) in order to stay well rounded. Martial artists have loftier goals, and have to outwit and outperform each other, but their training methods are designed for the worst-case-scenario in meeting opponents who emphasise different fighting aspects. </p>
+<p>My goals are much simpler, with my primary goal being raw-strength (hence barbell compound lifting,) and the side-affects of calisthenics and kettlebell training in developing other physical attributes are more than welcome to accompany any strength-gains gains.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>I’ve decided to post updates on my physical exercise routines and progress. </p>
+<p>I’ve been dabbling with both kettlebells and barbells]]>
+    </summary>
+    
+      <category term="Health" scheme="http://ootput.github.io/categories/Health/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Finding missing libraries after removing _orphaned_ packages in FreeBSD]]></title>
@@ -852,36 +882,6 @@ esac</code></p>
       <category term="pulseaudio" scheme="http://ootput.github.io/tags/pulseaudio/"/>
     
       <category term="x220" scheme="http://ootput.github.io/tags/x220/"/>
-    
-      <category term="Software" scheme="http://ootput.github.io/categories/Software/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Address Merged Ports]]></title>
-    <link href="http://ootput.github.io/2013/03/26/address-merged-ports/"/>
-    <id>http://ootput.github.io/2013/03/26/address-merged-ports/</id>
-    <published>2013-03-25T23:44:32.000Z</published>
-    <updated>2014-11-25T20:07:59.000Z</updated>
-    <content type="html"><![CDATA[<p>My most recent <code># portmaster -Da</code> revealed a package conflict: py-setuptools was merged with py-distribute.</p>
-<p>From FreshPorts:</p>
-<blockquote>
-<p>2013-03-05<br>Affects: users of devel/py-setuptools (i.e you)<br>Author: rm@FreeBSD.org<br>Reason: devel/py-setuptools was replaced with devel/py-distribute. py-setuptools port will be removed shortly.</p>
-</blockquote>
-<p>To fix this:<br><code># portmaster -o devel/py-distribute devel/py-setuptools</code></p>
-<p>From <code>man 8 portmaster</code>:</p>
-<blockquote>
-<p>-o <em>new port dir in /usr/ports</em> <em>installed port</em>:replace the installed port with a port from a different origin</p>
-</blockquote>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>My most recent <code># portmaster -Da</code> revealed a package conflict: py-setuptools was merged with py-distribute.</p>
-<p>From FreshP]]>
-    </summary>
-    
-      <category term="freebsd" scheme="http://ootput.github.io/tags/freebsd/"/>
-    
-      <category term="ports" scheme="http://ootput.github.io/tags/ports/"/>
     
       <category term="Software" scheme="http://ootput.github.io/categories/Software/"/>
     

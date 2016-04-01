@@ -85,6 +85,62 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-logitech-g5-in-fedora-12" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2010/04/11/logitech-g5-in-fedora-12/" class="article-date">
+  <time datetime="2010-04-11T01:43:55.000Z" itemprop="datePublished">Apr 11 2010</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Software/">Software</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2010/04/11/logitech-g5-in-fedora-12/">Logitech G5 in Fedora 12</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>In order to get the G5’s side buttons and 3rd button’s left/right tilt functional in both Firefox and Nautilus, in <code>/etc/X11/xorg.conf</code>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">Section <span class="string">"ServerLayout"</span></div><div class="line">   <span class="comment">#...</span></div><div class="line">   InputDevice <span class="string">"Configured Mouse"</span> <span class="string">"Pointer"</span></div><div class="line">EndSection</div><div class="line"></div><div class="line">Section <span class="string">"InputDevice"</span></div><div class="line">   Identifier <span class="string">"Configured Mouse"</span></div><div class="line">   Driver <span class="string">"evdev"</span></div><div class="line">   Option <span class="string">"CorePointer"</span></div><div class="line">   Option <span class="string">"Name"</span> <span class="string">"Logitech USB Gaming Mouse"</span></div><div class="line">   Option <span class="string">"ZAxisMapping"</span> <span class="string">"4 5 6 7"</span></div><div class="line">   Option <span class="string">"Emulate3Buttons"</span> <span class="string">"false"</span></div><div class="line">EndSection</div></pre></td></tr></table></figure>
+
+
+<p><em>NB</em>: F12 does not ship with a <code>/etc/X11/xorg.conf</code> file by default; see <a href="https://fedoraproject.org/wiki/How_to_create_xorg.conf" target="_blank" rel="external">Fedora’s guide</a> on how to create one.</p>
+<p>Additionally, you need to modify <code>$HOME/.Xmodmap</code> to show:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="attribute"></span></div><div class="line">pointer =<span class="string"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20</span></div></pre></td></tr></table></figure>
+
+
+<p>Also, after:</p>
+<p><code># yum install xbindkeys xdotool</code></p>
+<p>.. in <code>$HOME/.xbindkeysrc</code>, have:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"># Nautilu<span class="variable">s:Back</span></div><div class="line"><span class="string">"xdotool key alt+Left"</span></div><div class="line">  <span class="variable">b:8</span></div><div class="line"></div><div class="line"># Nautilu<span class="variable">s:Forward</span></div><div class="line"><span class="string">"xdotool key alt+Right"</span></div><div class="line">  <span class="variable">b:9</span></div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ootput.github.io/2010/04/11/logitech-g5-in-fedora-12/" data-id="9myc9zp6sdmqbbs6" class="article-share-link">Share</a>
+      
+        <a href="http://ootput.github.io/2010/04/11/logitech-g5-in-fedora-12/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/fedora/">fedora</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-upload-github-gists" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2010/04/08/upload-github-gists/" class="article-date">
@@ -126,7 +182,7 @@ the quick brown fox jumps over the lazy dog
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/04/08/upload-github-gists/" data-id="auuq58twsnbgwmlm" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/04/08/upload-github-gists/" data-id="0pwdk3qkgtw2bw2k" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/04/08/upload-github-gists/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -178,7 +234,7 @@ the quick brown fox jumps over the lazy dog
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/04/08/delete-github-repo-via-curl/" data-id="qbljxxl81m49mpwz" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/04/08/delete-github-repo-via-curl/" data-id="3ftizapvv2ue1a5e" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/04/08/delete-github-repo-via-curl/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -229,7 +285,7 @@ the quick brown fox jumps over the lazy dog
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/04/06/code-in-chyrp/" data-id="whk9lyxk9pnupnu8" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/04/06/code-in-chyrp/" data-id="3u5osgl5zb2kvrxi" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/04/06/code-in-chyrp/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -282,7 +338,7 @@ the quick brown fox jumps over the lazy dog
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/04/06/farewell-nanoblogger/" data-id="dq9zzx9146a053i2" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/04/06/farewell-nanoblogger/" data-id="4hi5ui03meklzoff" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/04/06/farewell-nanoblogger/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -343,7 +399,7 @@ the quick brown fox jumps over the lazy dog
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/04/06/readernaut-on-chyrp/" data-id="ndummd0gcc28be7s" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/04/06/readernaut-on-chyrp/" data-id="zbr4cfu789qkjrwj" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/04/06/readernaut-on-chyrp/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -393,7 +449,7 @@ the quick brown fox jumps over the lazy dog
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/04/06/backup-and-restore-mysql-database-s/" data-id="fy3fh8uxigb3ccfn" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/04/06/backup-and-restore-mysql-database-s/" data-id="v9nwdbhfcqnmkoar" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/04/06/backup-and-restore-mysql-database-s/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -444,7 +500,7 @@ the quick brown fox jumps over the lazy dog
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/04/04/backup-of-chyrp/" data-id="1xknkii2uhpybfx4" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/04/04/backup-of-chyrp/" data-id="56vfdkp2tmx6pxio" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/04/04/backup-of-chyrp/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -491,7 +547,7 @@ the quick brown fox jumps over the lazy dog
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/04/04/themes-in-chyrp/" data-id="69kr92p5a7460lpg" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/04/04/themes-in-chyrp/" data-id="zfuq0rjh3evf54w4" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/04/04/themes-in-chyrp/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -543,105 +599,12 @@ the quick brown fox jumps over the lazy dog
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/04/04/thoughts-on-chyrp/" data-id="z8i8kyppnj2543hk" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2010/04/04/thoughts-on-chyrp/" data-id="bxgw3o6hse4qpzz7" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2010/04/04/thoughts-on-chyrp/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/">blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/chyrp/">chyrp</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-binary-patches-for-openbsd-46" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2010/04/02/binary-patches-for-openbsd-46/" class="article-date">
-  <time datetime="2010-04-01T18:17:13.000Z" itemprop="datePublished">Apr 2 2010</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Software/">Software</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2010/04/02/binary-patches-for-openbsd-46/">Binary Patches for OpenBSD 4.6</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>To track stable, you don’t necessarily need to work with cvs snapshots. Ideally, you’d fetch all relevant patches for your architecture and OpenBSD version from <a href="http://openbsd.org/errata46.html" target="_blank" rel="external">here</a> and cobble together those patches with <a href="http://openbsdbinpatch.sourceforge.net/" target="_blank" rel="external">binpatch</a></p>
-<p>This also requires that you fetch architecture-independant <code>src.tar.gz</code> and <code>sys.tar.gz</code> from <a href="ftp://ftp.openbsd.org/pub/OpenBSD/4.6/" target="_blank" rel="external">here</a>, and all installation-set tarballs from <a href="ftp://ftp.openbsd.org/pub/OpenBSD/4.6/i386/" target="_blank" rel="external">here</a>.</p>
-<p>From the project description file, the tree structure is then:</p>
-<ul>
-<li><p>binpatch-1.1.0/</p>
-</li>
-<li><p>Makefile</p>
-</li>
-<li>bsd.binpatch.mk</li>
-<li>distfiles/<ul>
-<li>i386/</li>
-<li>src.tar.gz</li>
-<li>sys.tar.gz</li>
-</ul>
-</li>
-<li>packages/</li>
-<li>patches/<ul>
-<li>common/</li>
-<li>i386/</li>
-</ul>
-</li>
-<li>pkg/<ul>
-<li><em>(e.g. PLIST-i386-001)</em></li>
-</ul>
-</li>
-<li>work-binpatch-4.6/<ul>
-<li>fake/</li>
-<li>obj/</li>
-<li>src/</li>
-</ul>
-</li>
-</ul>
-<p>The following changes to <code>Makefile</code> were made to suit patches for OpenBSD 4.6:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">### Last Updated: June 3rd 2010</span></div><div class="line"></div><div class="line"><span class="comment"># List of patches for all architectures</span></div><div class="line">PATCH_COMMON=<span class="number">001</span>_<span class="built_in">bind</span> <span class="number">003</span>_getsockopt <span class="number">004</span>_openssl <span class="number">005</span>_ptrace <span class="number">006</span>_openssl <span class="number">007</span>_ftpd <span class="number">008</span>_kerberos <span class="number">009</span>_mpi <span class="number">010</span>_openssl <span class="number">011</span>_pfsync <span class="number">012</span>_trunklacp</div><div class="line"><span class="comment"># List of patches for i386 only</span></div><div class="line">PATCH_I386=<span class="number">002</span>_xmm</div><div class="line"><span class="comment">#...</span></div><div class="line"><span class="number">002</span>_xmm: _kernel</div><div class="line"><span class="number">003</span>_getsockopt: _kernel</div><div class="line"><span class="number">005</span>_ptrace: _kernel</div><div class="line"><span class="number">009</span>_mpi: _kernel</div><div class="line"><span class="number">011</span>_pfsync: _kernel</div><div class="line"><span class="number">012</span>_trunklacp: _kernel</div><div class="line"></div><div class="line"><span class="number">001</span>_<span class="built_in">bind</span>:</div><div class="line">        <span class="built_in">cd</span> <span class="variable">${WRKSRC}</span>/usr.sbin/<span class="built_in">bind</span> &amp;&amp; \</div><div class="line">        (<span class="variable">${_obj_wrp}</span>; <span class="variable">${_depend_wrp}</span>; <span class="variable">${_build_wrp}</span>)</div><div class="line"></div><div class="line"><span class="number">004</span>_openssl:</div><div class="line">        <span class="built_in">cd</span> <span class="variable">${WRKSRC}</span>/lib/libssl &amp;&amp; \</div><div class="line">        (<span class="variable">${_obj}</span>; <span class="variable">${_depend}</span>; <span class="variable">${_includes}</span>; <span class="variable">${_build}</span>) &amp;&amp; \</div><div class="line">        <span class="built_in">cd</span> <span class="variable">${WRKSRC}</span>/sbin &amp;&amp; \</div><div class="line">        (<span class="variable">${_obj}</span>; <span class="variable">${_depend}</span>; <span class="variable">${_build}</span>)</div><div class="line"></div><div class="line"><span class="number">006</span>_openssl:</div><div class="line">        <span class="built_in">cd</span> <span class="variable">${WRKSRC}</span>/lib/libssl &amp;&amp; \</div><div class="line">        (<span class="variable">${_obj}</span>; <span class="variable">${_depend}</span>; <span class="variable">${_includes}</span>; <span class="variable">${_build}</span>) &amp;&amp; \</div><div class="line">        <span class="built_in">cd</span> <span class="variable">${WRKSRC}</span>/sbin &amp;&amp; \</div><div class="line">        (<span class="variable">${_obj}</span>; <span class="variable">${_depend}</span>; <span class="variable">${_build}</span>)</div><div class="line"></div><div class="line"><span class="number">007</span>_ftpd:</div><div class="line">        <span class="built_in">cd</span> <span class="variable">${WRKSRC}</span>/libexec/ftpd &amp;&amp; \</div><div class="line">        (<span class="variable">${_depend}</span>; <span class="variable">${_build}</span>)</div><div class="line"></div><div class="line"><span class="number">008</span>_kerberos:</div><div class="line">        <span class="built_in">cd</span> <span class="variable">${WRKSRC}</span>/lib/libkrb5 &amp;&amp; \</div><div class="line">        (<span class="variable">${_obj}</span>; <span class="variable">${_depend}</span>; <span class="variable">${_build}</span>) &amp;&amp; \</div><div class="line">        <span class="built_in">cd</span> <span class="variable">${WRKSRC}</span>/kerberosV/libexec/kdc &amp;&amp; \</div><div class="line">        (<span class="variable">${_obj}</span>; <span class="variable">${_depend}</span>; <span class="variable">${_build}</span>)</div><div class="line"></div><div class="line"><span class="number">010</span>_openssl:</div><div class="line">        <span class="built_in">cd</span> <span class="variable">${WRKSRC}</span>/lib/libssl &amp;&amp; \</div><div class="line">        (<span class="variable">${_obj}</span>; <span class="variable">${_depend}</span>; <span class="variable">${_includes}</span>; <span class="variable">${_build}</span>) &amp;&amp; \</div><div class="line">        <span class="built_in">cd</span> <span class="variable">${WRKSRC}</span>/sbin &amp;&amp; \</div><div class="line">        (<span class="variable">${_obj}</span>; <span class="variable">${_depend}</span>; <span class="variable">${_build}</span>)</div></pre></td></tr></table></figure>
-
-
-<p>You’ll need to modify the above to include more recent patches i.e. patches dated later than June 3rd 2010.</p>
-<p>To patch the relevant files on your OpenBSD install, and to prepare packages (in <code>packages/</code>) for installation, as root:</p>
-<p><code># make PATCH=&quot;001&quot; build</code></p>
-<p><code># make PATCH=&quot;001&quot; plist</code></p>
-<p><code># make PATCH=&quot;001&quot; package</code></p>
-<p>To install the packages, do:</p>
-<p><code># make PATCH=&quot;001&quot; install</code></p>
-<p>I prefer to use the following script (documented <a href="http://openbsdbinpatch.sourceforge.net/#installation" target="_blank" rel="external">here</a>) to install packages:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="shebang">#!/bin/sh</span></div><div class="line">tar xzpf <span class="string">"<span class="variable">$1</span>"</span> -C /</div><div class="line">mkdir -p /var/db/patches/$(basename <span class="string">"<span class="variable">$1</span>"</span> .tgz)</div></pre></td></tr></table></figure>
-
-
-<p>.. or to query previously installed packages:</p>
-<p><code># ls /var/db/patches/</code></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2010/04/02/binary-patches-for-openbsd-46/" data-id="gjrwy5jgw1ral761" class="article-share-link">Share</a>
-      
-        <a href="http://ootput.github.io/2010/04/02/binary-patches-for-openbsd-46/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/openbsd/">openbsd</a></li></ul>
 
     </footer>
   </div>
@@ -663,7 +626,7 @@ the quick brown fox jumps over the lazy dog
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Photography/">Photography</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Random-Musings/">Random Musings</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Software/">Software</a><span class="category-list-count">105</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Health/">Health</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Photography/">Photography</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Random-Musings/">Random Musings</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Software/">Software</a><span class="category-list-count">105</span></li></ul>
     </div>
   </div>
 
@@ -673,6 +636,10 @@ the quick brown fox jumps over the lazy dog
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/04/01/Revisiting-Health/">Revisiting Health</a>
+          </li>
         
           <li>
             <a href="/2016/03/31/Finding-missing-libraries-after-removing-orphaned-packages-in-FreeBSD/">Finding missing libraries after removing _orphaned_ packages in FreeBSD</a>
@@ -688,10 +655,6 @@ the quick brown fox jumps over the lazy dog
         
           <li>
             <a href="/2015/03/23/why-ebay-will-never-go-broke/">Why eBay will never go broke</a>
-          </li>
-        
-          <li>
-            <a href="/2015/01/28/Soundcloud-on-Hexo/">Soundcloud on Hexo</a>
           </li>
         
       </ul>
@@ -712,7 +675,7 @@ the quick brown fox jumps over the lazy dog
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">May 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">April 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">December 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">June 2012</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">May 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10/">October 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/09/">September 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06/">June 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07/">July 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06/">June 2010</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/04/">April 2010</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03/">March 2010</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02/">February 2010</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11/">November 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03/">March 2007</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02/">February 2007</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">May 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">April 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">December 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">June 2012</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">May 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10/">October 2011</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/09/">September 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06/">June 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07/">July 2010</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06/">June 2010</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/04/">April 2010</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03/">March 2010</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02/">February 2010</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11/">November 2009</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03/">March 2007</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02/">February 2007</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
