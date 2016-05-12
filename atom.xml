@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://ootput.github.io/"/>
-  <updated>2016-05-12T08:08:04.581Z</updated>
+  <updated>2016-05-12T08:18:17.713Z</updated>
   <id>http://ootput.github.io/</id>
   
   <author>
@@ -43,9 +43,8 @@
     <link href="http://ootput.github.io/2016/04/01/Revisiting-Health/"/>
     <id>http://ootput.github.io/2016/04/01/Revisiting-Health/</id>
     <published>2016-04-01T03:51:22.000Z</published>
-    <updated>2016-04-01T05:12:25.000Z</updated>
-    <content type="html"><![CDATA[<p>I’ve decided to post updates on my physical exercise routines and progress. </p>
-<p>I’ve been dabbling with both kettlebells and barbells for the past year with great results, but in an effort to stay focused, and to properly measure my progress, I have decided to log my routines.</p>
+    <updated>2016-05-12T08:17:57.000Z</updated>
+    <content type="html"><![CDATA[<p>I’ve been dabbling with both kettlebells and barbells for the half year with great results.</p>
 <p>Since I haven’t found a definitive resource for a hybrid program of calisthenics, kettlebells, and barbells, I will have to experiment on my own to see what works for me. Granted, there are already a plethora of MMA-inspired workouts touching upon two or more of aforementioned prerequisites, none seem to go into great detail in how to properly periodize for maximum gain, and minimal conflicts.</p>
 <p>My main issue with a hybridized program is that a specific body part can easily be overtrained. For instance, say I’d do handstand pushups (I’m not entirely there yet…) one day, and then kettlebell snatches the next, I would definitely be overtraining my delts. Trying to further incorporate strict military presses into my routine would be disastrous. </p>
 <p>In any given week, there are five workout days to implement all three systems, and so I have decided to focus on each system for two weeks at length - creating a six-week-cycle. The general rules for progress in said systems are as follows:</p>
@@ -60,9 +59,11 @@
 <p>My goals are much simpler, with my primary goal being functional-strength (hence barbell compound lifting,) and the side-affects of calisthenics and kettlebell training in developing other physical attributes are more than welcome.</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>I’ve decided to post updates on my physical exercise routines and progress. </p>
-<p>I’ve been dabbling with both kettlebells and barbells]]>
+    <![CDATA[<p>I’ve been dabbling with both kettlebells and barbells for the half year with great results.</p>
+<p>Since I haven’t found a definitive res]]>
     </summary>
+    
+      <category term="exercise" scheme="http://ootput.github.io/tags/exercise/"/>
     
       <category term="Health" scheme="http://ootput.github.io/categories/Health/"/>
     
@@ -123,20 +124,20 @@
   
   <entry>
     <title><![CDATA[20 Months Past]]></title>
-    <link href="http://ootput.github.io/2015/10/27/20-months-past/"/>
-    <id>http://ootput.github.io/2015/10/27/20-months-past/</id>
-    <published>2015-10-27T06:23:38.000Z</published>
-    <updated>2016-05-12T08:05:01.000Z</updated>
+    <link href="http://ootput.github.io/2015/08/27/20-months-past/"/>
+    <id>http://ootput.github.io/2015/08/27/20-months-past/</id>
+    <published>2015-08-27T07:23:38.000Z</published>
+    <updated>2016-05-12T08:16:57.000Z</updated>
     <content type="html"><![CDATA[<p>Today’s pre-dinner weigh-in had me at  90.2 kg.</p>
 <p>My most recent photo:</p>
 <p><img src="/images/me-at-90k.jpg" class="img-code"></p>
 <p>From 110 to 90kg in 20 months meant I lost, on average, 1 kilo a month.</p>
-<p>Truthfully, I rapidly lost the most weight during first 6 months (the honeymoon phase). I’d lost 12 kilos, but my weight-loss methods were not sustainable. I would bulk up again during the winter months (June-onwards) and there was absolutely no consistency in my fat-loss.</p>
+<p>Truthfully, I rapidly lost the most weight during the first 6 months (the honeymoon phase). I’d lost 12 kilos, but my weight-loss methods were not sustainable. I would bulk up again during the winter months (June-onwards) and there was absolutely no consistency in my fat-loss.</p>
 <p>Looking back, those 2-hour-long 6-day-per-week sessions of the Upper/Cardio/Lower split variety really took its toll on me both physically and mentally.</p>
 <p>My sex-drive was non-existent, and I was constantly either moody, weary, or sleepy. I’m sure I put my wife through hell.</p>
 <p>I can now understand why a majority of gym-memberships in January barely survive beyond 3-months. Most obese people (myself included) tend to take an all-or-nothing approach when it comes to trying to lose fat. They give it their all on the treadmill, see no visible changes from one week to the next, then stop trying. </p>
 <p>Knowing this fact, I sought to perservere for 6 months through the gut-wrenching training. I was fortunate enough to implement enough resistance training to maintain my muscle mass during my weight fluctuations.</p>
-<p>I will now limit my sessions to 4 times a week for an hour at a time ex: Upper/Cardio/Lower/Cardio</p>
+<p>I will now limit my sessions to 4 times a week for an hour at a time, for example Push/Cardio/Pull/Cardio</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>Today’s pre-dinner weigh-in had me at  90.2 kg.</p>
