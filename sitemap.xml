@@ -3,7 +3,7 @@
   
   <url>
     <loc>http://ootput.github.io/2016/04/01/Revisiting-Health/</loc>
-    <lastmod>2016-05-12T08:26:04.000Z</lastmod>
+    <lastmod>2016-05-12T09:47:19.000Z</lastmod>
   </url>
   
   <url>
@@ -382,12 +382,12 @@
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2010/04/04/backup-of-chyrp/</loc>
+    <loc>http://ootput.github.io/2014/06/14/qos-on-vpn-client-tunnel-in-tomato/</loc>
     <lastmod>2014-11-25T03:10:23.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2014/06/14/qos-on-vpn-client-tunnel-in-tomato/</loc>
+    <loc>http://ootput.github.io/2010/04/04/backup-of-chyrp/</loc>
     <lastmod>2014-11-25T03:10:23.000Z</lastmod>
   </url>
   
@@ -512,12 +512,12 @@
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2010/07/01/non-free-and-contrib-packages-in-debian/</loc>
+    <loc>http://ootput.github.io/2013/08/02/share-osx-clipboard-with-emacs/</loc>
     <lastmod>2014-11-24T10:34:16.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2013/08/02/share-osx-clipboard-with-emacs/</loc>
+    <loc>http://ootput.github.io/2010/07/01/non-free-and-contrib-packages-in-debian/</loc>
     <lastmod>2014-11-24T10:34:16.000Z</lastmod>
   </url>
   
@@ -542,7 +542,7 @@
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2010/06/03/github-gists-in-habari/</loc>
+    <loc>http://ootput.github.io/2010/06/05/grub-config-in-fedora-13/</loc>
     <lastmod>2014-11-24T10:18:02.000Z</lastmod>
   </url>
   
@@ -552,7 +552,7 @@
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2010/04/12/fuse-mounts-in-fedora-12/</loc>
+    <loc>http://ootput.github.io/2010/04/06/code-in-chyrp/</loc>
     <lastmod>2014-11-24T10:18:02.000Z</lastmod>
   </url>
   
@@ -562,17 +562,12 @@
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2010/06/05/grub-config-in-fedora-13/</loc>
-    <lastmod>2014-11-24T10:18:02.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://ootput.github.io/2010/04/06/code-in-chyrp/</loc>
-    <lastmod>2014-11-24T10:18:02.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://ootput.github.io/2010/04/04/themes-in-chyrp/</loc>
+    <lastmod>2014-11-24T10:18:02.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ootput.github.io/2010/04/12/fuse-mounts-in-fedora-12/</loc>
     <lastmod>2014-11-24T10:18:02.000Z</lastmod>
   </url>
   
@@ -592,6 +587,11 @@
   </url>
   
   <url>
+    <loc>http://ootput.github.io/2013/05/24/royal-botanical-gardens-sydney/</loc>
+    <lastmod>2014-11-24T10:18:02.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://ootput.github.io/2010/06/10/lovely-flower/</loc>
     <lastmod>2014-11-24T10:18:02.000Z</lastmod>
   </url>
@@ -602,7 +602,7 @@
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2013/05/24/royal-botanical-gardens-sydney/</loc>
+    <loc>http://ootput.github.io/2010/06/03/github-gists-in-habari/</loc>
     <lastmod>2014-11-24T10:18:02.000Z</lastmod>
   </url>
   
