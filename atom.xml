@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://ootput.github.io/"/>
-  <updated>2016-05-12T07:04:09.102Z</updated>
+  <updated>2016-05-12T08:05:22.324Z</updated>
   <id>http://ootput.github.io/</id>
   
   <author>
@@ -118,6 +118,35 @@
       <category term="firefox" scheme="http://ootput.github.io/tags/firefox/"/>
     
       <category term="Software" scheme="http://ootput.github.io/categories/Software/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[20 Months Past]]></title>
+    <link href="http://ootput.github.io/2015/10/27/20-months-past/"/>
+    <id>http://ootput.github.io/2015/10/27/20-months-past/</id>
+    <published>2015-10-27T06:23:38.000Z</published>
+    <updated>2016-05-12T08:05:01.000Z</updated>
+    <content type="html"><![CDATA[<p>Today’s pre-dinner weigh-in had me at  90.2 kg.</p>
+<p>My most recent photo:</p>
+<p><img src="/images/me-at-90k.jpg" class="img-code"></p>
+<p>From 110 to 90kg in 20 months meant I lost, on average, 1 kilo a month.</p>
+<p>Truthfully, I rapidly lost the most weight during first 6 months (the honeymoon phase). I’d lost 12 kilos, but my weight-loss methods were not sustainable. I would bulk up again during the winter months (June-onwards) and there was absolutely no consistency in my fat-loss.</p>
+<p>Looking back, those 2-hour-long 6-day-per-week sessions of the Upper/Cardio/Lower split variety really took its toll on me both physically and mentally.</p>
+<p>My sex-drive was non-existent, and I was constantly either moody, weary, or sleepy. I’m sure I put my wife through hell.</p>
+<p>I can now understand why a majority of gym-memberships in January barely survive beyond 3-months. Most obese people (myself included) tend to take an all-or-nothing approach when it comes to trying to lose fat. They give it their all on the treadmill, see no visible changes from one week to the next, then stop trying. </p>
+<p>Knowing this fact, I sought to perservere for 6 months through the gut-wrenching training. I was fortunate enough to implement enough resistance training to maintain my muscle mass during my weight fluctuations.</p>
+<p>I will now limit my sessions to 4 times a week for an hour at a time ex: Upper/Cardio/Lower/Cardio</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Today’s pre-dinner weigh-in had me at  90.2 kg.</p>
+<p>My most recent photo:</p>
+<p><img src="/images/me-at-90k.jpg" class="img-code"></p]]>
+    </summary>
+    
+      <category term="exercise" scheme="http://ootput.github.io/tags/exercise/"/>
+    
+      <category term="Health" scheme="http://ootput.github.io/categories/Health/"/>
     
   </entry>
   
@@ -836,24 +865,6 @@ root# diskutil list
 ]]></content>
     <summary type="html">
     <![CDATA[<p><a href="http://www.flickr.com/photos/ootput/8789887813/" title="Sydney Opera House 2013 by ootput, on Flickr" target="_blank" rel="exter]]>
-    </summary>
-    
-      <category term="photography" scheme="http://ootput.github.io/tags/photography/"/>
-    
-      <category term="Photography" scheme="http://ootput.github.io/categories/Photography/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Auburn Botanical Gardens - Fauna Reserve]]></title>
-    <link href="http://ootput.github.io/2013/05/24/auburn-botanical-gardens/"/>
-    <id>http://ootput.github.io/2013/05/24/auburn-botanical-gardens/</id>
-    <published>2013-05-24T13:39:09.000Z</published>
-    <updated>2014-11-26T04:06:14.000Z</updated>
-    <content type="html"><![CDATA[<p><a href="http://www.flickr.com/photos/ootput/8800464350/" title="Auburn Botanical Gardens by ootput, on Flickr" target="_blank" rel="external"><img src="/images/bdda5ac6bced570fc377b3f1164bf10aed15a964.jpg" alt="Auburn Botanical Gardens"></a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p><a href="http://www.flickr.com/photos/ootput/8800464350/" title="Auburn Botanical Gardens by ootput, on Flickr" target="_blank" rel="exte]]>
     </summary>
     
       <category term="photography" scheme="http://ootput.github.io/tags/photography/"/>
