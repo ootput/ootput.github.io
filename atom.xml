@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://ootput.github.io/"/>
-  <updated>2016-04-01T05:27:51.964Z</updated>
+  <updated>2016-05-12T06:13:25.878Z</updated>
   <id>http://ootput.github.io/</id>
   
   <author>
@@ -518,6 +518,28 @@ Done
   </entry>
   
   <entry>
+    <title><![CDATA[2014 New Years Resolution]]></title>
+    <link href="http://ootput.github.io/2014/01/01/new-years-resolution-or-die/"/>
+    <id>http://ootput.github.io/2014/01/01/new-years-resolution-or-die/</id>
+    <published>2013-12-31T13:01:30.000Z</published>
+    <updated>2016-05-12T06:12:37.000Z</updated>
+    <content type="html"><![CDATA[<p>This year I chose to watch the fireworks display from the comfort of my own home. I didn’t really want to go out and celebrate, as I was utterly miserable. My wife had taken several candid photos of me the night prior while I was doing my own thing, and moments before the fireworks were lit I chanced upon those photos.</p>
+<p>Up until that moment, I had no idea how obese I had become. I knew I was getting chubby, but no one had taken a photo of me with my shirt off:</p>
+<p>Lo’ and behold, my jolly ol’ self at 5’9 110kg:</p>
+<p><img src="images/me-at-110k.png" alt=""></p>
+<p>Now, barely 2 minutes into the New Year, I have resolved to undo years of alcohol and food abuse. This year’s resolution is dedicated to my family - to have me around longer.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>This year I chose to watch the fireworks display from the comfort of my own home. I didn’t really want to go out and celebrate, as I was ]]>
+    </summary>
+    
+      <category term="exercise" scheme="http://ootput.github.io/tags/exercise/"/>
+    
+      <category term="Health" scheme="http://ootput.github.io/categories/Health/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Reset Audio on OSX]]></title>
     <link href="http://ootput.github.io/2013/10/20/reset-audio-on-osx/"/>
     <id>http://ootput.github.io/2013/10/20/reset-audio-on-osx/</id>
@@ -831,59 +853,6 @@ root# diskutil list
       <category term="photography" scheme="http://ootput.github.io/tags/photography/"/>
     
       <category term="Photography" scheme="http://ootput.github.io/categories/Photography/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[CrunchBang on Thinkpad X220]]></title>
-    <link href="http://ootput.github.io/2013/04/01/crunchbang-on-thinkpad-x220/"/>
-    <id>http://ootput.github.io/2013/04/01/crunchbang-on-thinkpad-x220/</id>
-    <published>2013-04-01T09:12:56.000Z</published>
-    <updated>2015-02-04T02:29:37.000Z</updated>
-    <content type="html"><![CDATA[<p><img src="/images/994b325fa9e398f2360e69ac598805f8e6fc1de3.png" class="img-thumbnail"></p>
-<p><em><a href="#purchase">Desktop Replacement</a></em><br><em> <a href="#hardware">Hardware Modifications</a></em><br><em> <a href="#bios">Upgrade BIOS From USB</a></em><br><em> <a href="#crunchbang">About CrunchBang</a></em><br><em> <a href="#system">System Modifications</a></em></p>
-<p><a id="purchase"></a><span style="color:#0000ff;">Desktop Replacement:</span></p>
-<p>It has been over two and a half years since my last Debian-related post so I thought it necessary to provide an update. I have since donated my desktop machine to a worthy cause in favour of the more-mobile Thinkpad platform. My semi-retired Debian desktop is now providing headache-free internet access at the local library, where one of the librarians had long been toying with the idea of using open source. The successful implementation of my machine prompted their acquisition of a further two Ubuntu machines.</p>
-<p>My new Thinkpad, on the other hand, has been running CrunchBang Linux (#!) for over a year and a half, and I could not be happier. Although not a pure Debian system, #! is still a lean derivative.</p>
-<p><a id="hardware"></a><span style="color:#0000ff;">Hardware Modifications:</span></p>
-<p>Hardware changes I’ve made so far include: installing an Intel 30GB 525s MLC mSATA SSD drive to act as my system drive; and running 2 x 4 GB Corsair PC3-10600 DDR3-1333 RAM in dual channel mode.</p>
-<p><a id="bios"></a><span style="color:#0000ff;">Upgrade BIOS From USB:</span></p>
-<p>After grabbing the latest BIOS-update bootable iso from the Lenovo support site, it is necessary to extract its [otherwise hidden] contents via a perl script called <a href="http://freecode.com/projects/geteltorito" target="_blank" rel="external"><code>geteltorito.pl</code></a>.</p>
-<p>To fetch the script:<br><code>$ wget &#39;http://userpages.uni-koblenz.de/~krienke/ftp/noarch/geteltorito/geteltorito.pl&#39;</code></p>
-<p>Then, extract the contents of the downloaded *.iso file to any new target file:<br><code>$ perl ./geteltorito.pl /path/to/_bios_update_cd.iso &gt; /path/to/_target_image_.img</code></p>
-<p>To write the image to your USB (located at /dev/sdX):<br><code>$ sudo dd if=/path/to/_target_image_.img of=/dev/sdX bs=512K</code></p>
-<p>Then hit F12 at bootup to choose the bootable medium.</p>
-<p><a id="crunchbang"></a><span style="color:#0000ff;">About CrunchBang:</span></p>
-<p>Out-of-the-box, #! does everything I need it to do on a laptop (wifi management; power-saving; keyboard accessibility-support,) at a fraction of the resources required were I to customize a larger/slimmer distribution to suit my needs. Were I to install Debian, I would have arrived at my ideal setup at a much later date.</p>
-<p>Crunchbang provides a superb arsenal of open-source productivity applications, and I found myself bored witless during post-install. It defaults to using Openbox - which is not exactly a tiling WM that I’m accustomed to using - but I have made peace with that by implementing split-panes in tmux which, considering the smaller LCD screen real-estate, works reasonably well.</p>
-<p>For work-purposes, I have implemented KVM + Qemu to manage a guest Windows XP OS - the guide I used can be found <a href="http://crunchbang.org/forums/viewtopic.php?id=21311" target="_blank" rel="external">here</a> - and I have been able to leverage the power of this fantastic little unit to conduct business.</p>
-<p><a id="system"></a><span style="color:#0000ff;">System Modifications:</span></p>
-<p>System changes I’ve made so far include: switching from grub2 to syslinux (see <a href="http://crunchbang.org/forums/viewtopic.php?id=25399" target="_blank" rel="external">here</a>); colourizing init feedback (see <a href="http://crunchbang.org/forums/viewtopic.php?id=19453" target="_blank" rel="external">here</a>); mounting system paths on the SSD drive with TRIM support (with <a href="http://crunchbang.org/forums/viewtopic.php?id=13129" target="_blank" rel="external"><code>fstab: -o discard</code></a>); enabling Thinkpad-specific battery savings (with <a href="http://linrunner.de/en/tlp/docs/tlp-linux-advanced-power-management.html" target="_blank" rel="external"><code>tlp</code></a> and <a href="http://www.thinkwiki.org/wiki/Tp_smapi" target="_blank" rel="external"><code>thinkpad-smapi</code></a>); relocating /var paths and browser profiles to tmpfs (with <a href="http://forums.debian.net/viewtopic.php?f=6&amp;t=96425" target="_blank" rel="external"><code>profile-sync-daemon</code></a>).</p>
-<p>To get wifi working again after a system suspend-resume event, my executable <code>/etc/pm/sleep.d/20_fix_wifi</code> contains:<br><code>case &quot;${1}&quot; in
-resume|thaw)
-rmmod iwlwifi &amp;&amp; modprobe iwlwifi
-;;
-esac</code></p>
-<p>Additionally, I had CrunchBang show verbose shutdown messages by modifying <code>/etc/slim.conf</code> to show:</p>
-<p><code>xserver_arguments         -nolisten tcp -novtswitch</code></p>
-<p>As my Crunchbang box is essentially a Debian Wheezy machine, I will henceforth address it as my debian box in all future blog entries.</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p><img src="/images/994b325fa9e398f2360e69ac598805f8e6fc1de3.png" class="img-thumbnail"></p>
-<p><em><a href="#purchase">Desktop Replacement]]>
-    </summary>
-    
-      <category term="crunchbang" scheme="http://ootput.github.io/tags/crunchbang/"/>
-    
-      <category term="debian" scheme="http://ootput.github.io/tags/debian/"/>
-    
-      <category term="kvm" scheme="http://ootput.github.io/tags/kvm/"/>
-    
-      <category term="pulseaudio" scheme="http://ootput.github.io/tags/pulseaudio/"/>
-    
-      <category term="x220" scheme="http://ootput.github.io/tags/x220/"/>
-    
-      <category term="Software" scheme="http://ootput.github.io/categories/Software/"/>
     
   </entry>
   
