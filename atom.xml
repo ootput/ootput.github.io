@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://ootput.github.io/"/>
-  <updated>2016-05-12T06:39:51.934Z</updated>
+  <updated>2016-05-12T06:56:19.407Z</updated>
   <id>http://ootput.github.io/</id>
   
   <author>
@@ -13,6 +13,30 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[health revisited]]></title>
+    <link href="http://ootput.github.io/2016/05/12/health-revisited/"/>
+    <id>http://ootput.github.io/2016/05/12/health-revisited/</id>
+    <published>2016-05-12T06:41:58.000Z</published>
+    <updated>2016-05-12T06:56:09.000Z</updated>
+    <content type="html"><![CDATA[<p>Well, my first six-week cycle is over. Thank God!</p>
+<p>Turns out, commiting two weeks at a time to the three systems does not produce satisfactory results - my training logs show reduced performance across the board</p>
+<p>It was almost as if segmenting my training as I did actually resulted in strength/power/agility regression.</p>
+<p>I can say, however, that the only positive result of my training was kinetic efficiency and improved balance.</p>
+<p>I will have to re-evaluate my training technique for the next month and a half, though most likely I will do a 3-day-split incorporating all three systems.</p>
+<p>Stay tuned.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Well, my first six-week cycle is over. Thank God!</p>
+<p>Turns out, commiting two weeks at a time to the three systems does not produce s]]>
+    </summary>
+    
+      <category term="exercise" scheme="http://ootput.github.io/tags/exercise/"/>
+    
+      <category term="Health" scheme="http://ootput.github.io/categories/Health/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Revisiting Health]]></title>
@@ -830,24 +854,6 @@ root# diskutil list
 ]]></content>
     <summary type="html">
     <![CDATA[<p><a href="http://www.flickr.com/photos/ootput/8800464350/" title="Auburn Botanical Gardens by ootput, on Flickr" target="_blank" rel="exte]]>
-    </summary>
-    
-      <category term="photography" scheme="http://ootput.github.io/tags/photography/"/>
-    
-      <category term="Photography" scheme="http://ootput.github.io/categories/Photography/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Royal Botanical Gardens, Sydney]]></title>
-    <link href="http://ootput.github.io/2013/05/24/royal-botanical-gardens-sydney/"/>
-    <id>http://ootput.github.io/2013/05/24/royal-botanical-gardens-sydney/</id>
-    <published>2013-05-24T13:38:20.000Z</published>
-    <updated>2014-11-24T10:18:02.000Z</updated>
-    <content type="html"><![CDATA[<p><a href="http://www.flickr.com/photos/ootput/8890036166/" title="Royal Botanical Gardens by ootput, on Flickr" target="_blank" rel="external"><img src="/images/8f5e4369844fabf1df0a21dda65b2a5b2092ebb7.jpg" alt="Royal Botanical Gardens"></a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p><a href="http://www.flickr.com/photos/ootput/8890036166/" title="Royal Botanical Gardens by ootput, on Flickr" target="_blank" rel="exter]]>
     </summary>
     
       <category term="photography" scheme="http://ootput.github.io/tags/photography/"/>
