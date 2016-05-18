@@ -368,7 +368,7 @@ body {
   text-decoration: none;
   color: #fff;
   font-weight: 300;
-  text-shadow: 4px 4px 8px #969696;
+  text-shadow: 4px 4px 9px #000;
 }
 #logo {
   font-size: 32px;
@@ -393,7 +393,7 @@ body {
   color: #fff;
   opacity: 0.8;
   text-decoration: none;
-  text-shadow: 4px 4px 8px #969696;
+  text-shadow: 4px 4px 9px #000;
   -webkit-transition: opacity 0.2s;
   -moz-transition: opacity 0.2s;
   -ms-transition: opacity 0.2s;
