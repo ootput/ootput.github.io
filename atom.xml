@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://ootput.github.io/"/>
-  <updated>2016-07-19T05:23:06.921Z</updated>
+  <updated>2016-07-19T05:35:23.316Z</updated>
   <id>http://ootput.github.io/</id>
   
   <author>
@@ -13,6 +13,31 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Push split workout]]></title>
+    <link href="http://ootput.github.io/2016/07/19/Push-split-workout/"/>
+    <id>http://ootput.github.io/2016/07/19/Push-split-workout/</id>
+    <published>2016-07-19T05:34:39.000Z</published>
+    <updated>2016-07-19T05:35:12.000Z</updated>
+    <content type="html"><![CDATA[<p>PUSH WORKOUT:</p>
+<p>1.INCLINE DUMBBELL PRESS<br>☻3 Work sets: 5, 6, 8 reps<br>☻1.5 min breaks b/w warmup sets - 7@40% 5@60% 3@80% of 1st set weight.<br>☻Your first work set will be for 5 repetitions.<br>☻You will then reduce the weight by 10%, rest 3 minutes and perform your second set for 6 reps.<br>☻You will then reduce the weight by 10% again, rest 3 minutes and perform your 3rd set for 8 reps. Repeat 8 reps at same weight for 2 more sets but with 2min breaks</p>
+<p>2.STANDING MILITARY PRESS<br>☻3 Work sets (with 3rd as Rest/Pause): 8-12 X 2, 8-12 + (to failure) + (to failure) + (to failure)<br>☻1.5 min breaks b/w warmup sets - 7@40% 5@60% 3@80% of 1st set weight.<br>☻8-12 reps per set for 3 sets with 2 min rest☻<br>☻After 3rd set (rest-pause) take 15s break before reps to failure; then repeat twice.☻</p>
+<p>3.PISTOL SQUATS<br>☻3 sets of 1-3 reps per leg. Do Left leg first!!<br>☻Progressions<br>☻1. Bodyweight Squat, Feet Shoulder Width, Full Range-of-Motion<br>☻2. Bodyweight Squat, Feet Together, Full Range-of-Motion<br>☻3. Pistol Squat, Bottom Position Hold, Grab Onto Pole<br>☻4. Pistol Squat, Eccentric on One Leg, Concentric on Two Legs, Grab Onto Pole<br>☻5. Pistol Squat, to a Box<br>☻6. Pistol Squat, Assist with a Band (Around Hips)<br>☻7. Pistol Squat, Counterbalance With a Weight<br>:Use a 10-20lb weight (dumbbell, kettlebell, or weight plate) to counterbalance your hips as you perform a full pistol. Gradually progress to a lighter weight.<br>☻8. Pistol Squat, Stand on Box, Free Leg Vertical:<br>Stand on a box tall enough so that your free leg can remain vertical. Progress towards a lower box, thus increasing the amount of hip flexion in the free leg.<br>☻9. Pistol Squat, Elevate Heels<br>:tiny weight plate under your heels. This decreases the amount of ankle dorsiflexion needed to squat all the way down.<br>☻10. Pistol Squat</p>
+<p>4.SIDE LATERAL RAISES<br>☻8-12 reps per set for 3 sets with 2 min rest<br>☻After 3rd set (rest-pause) take 15s break before reps to failure; then repeat twice.</p>
+<p>5.TRICEPS PUSHDOWN - ROPE ATTACHMENT<br>☻6-10 reps per set for 3 sets with 2 min breaks</p>
+<p>6.VSITS, 7.PLANKS (described in Pull workout)</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>PUSH WORKOUT:</p>
+<p>1.INCLINE DUMBBELL PRESS<br>☻3 Work sets: 5, 6, 8 reps<br>☻1.5 min breaks b/w warmup sets - 7@40% 5@60% 3@80% of 1st]]>
+    </summary>
+    
+      <category term="Exercise" scheme="http://ootput.github.io/tags/Exercise/"/>
+    
+      <category term="Health" scheme="http://ootput.github.io/categories/Health/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Pull split workout]]></title>
@@ -859,32 +884,6 @@ root# diskutil list
     </summary>
     
       <category term="osx" scheme="http://ootput.github.io/tags/osx/"/>
-    
-      <category term="Software" scheme="http://ootput.github.io/categories/Software/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[OSX Lion on Thinkpad X220]]></title>
-    <link href="http://ootput.github.io/2013/07/20/osx-lion-on-thinkpad-x220/"/>
-    <id>http://ootput.github.io/2013/07/20/osx-lion-on-thinkpad-x220/</id>
-    <published>2013-07-20T13:28:11.000Z</published>
-    <updated>2014-11-25T10:51:19.000Z</updated>
-    <content type="html"><![CDATA[<p><img src="/images/8e5d2bcfdd1502d676cd34f000a8a3ac35bc4b2b.png" class="img-thumbnail"></p>
-<p>In all my years of computing, I’d never imagined the day where I would find myself working with an Apple OS. I’d always assumed - wrongly - that Mac systems were specifically targeted to cashed-up yuppies who didn’t know any better. I assumed that Windows was the only platform of choice to get things done, and that accumulating quality software designed for Windows was the primary goal of my technosexual existence. Of course, back then, in the days of raging hormones and teenage angst, I had made many incorrect assumptions.</p>
-<p>As I eventually found out, both Linux and BSD proved to be rock solid workhorses and viable alternatives to the Windows that I had so admired - and now, it seems I have also taken a strong liking to Apple’s OSX. Of course, any Apple evangelism on my part will be premature, as I have yet to grasp the inner workings of OSX. For now, let’s just say that I have OSX Lion successfully running on my Lenovo X220 (alongside CrunchBang Linux) courtesy of my wife’s Snow Leopard Disk, and <a href="http://forum.thinkpads.com/viewtopic.php?f=32&amp;t=102098&amp;start=0" title="X220 Hackintosh (lion) on MBR partition dual boot Windows 7" target="_blank" rel="external">this guide</a>, and that I enjoy every minute of using it. It is a very capable system, and a most welcome addition to my heterogeneous network. There were a few hiccups along the way (to be discussed later), but for the most part, the installation ran smoothly.</p>
-<p>Thus far, I’ve made many changes to the system to arrive at a more familiar desktop (again, to be discussed later). This is not to say that I have been spending most of my time tinkering with the defaults - in fact, like Crunchbang, OSX proves to be quite operational OOTB. I suppose that I have been spoiled somewhat with Crunchbang’s easy maintenance, that proceeding to use an even simpler system seemed to be a most natural step.</p>
-<p>My workflow has not been altered considerably, owing to the many ported software from Unix systems, and for this I am thankful. Running OSX - as opposed to any Linux distribution - does also have its perks: I am able to access a wider pool of quality commercial software for my media creation/management. As much as I admire the tenets of the Free Software movement, I’m not bound to it - nor am I vehemently opposed to commercial offerings. I have not compromised my integrity, and I like to think that I choose software on the basis of what’s right for the proverbial job.</p>
-<p>I will try to make as many posts regarding the transition as I can - both for X220 owners considering running a Hackintosh, or for other geeks who have risen above the stigma of Macintosh use and are willing to try.</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p><img src="/images/8e5d2bcfdd1502d676cd34f000a8a3ac35bc4b2b.png" class="img-thumbnail"></p>
-<p>In all my years of computing, I’d never ima]]>
-    </summary>
-    
-      <category term="osx" scheme="http://ootput.github.io/tags/osx/"/>
-    
-      <category term="x220" scheme="http://ootput.github.io/tags/x220/"/>
     
       <category term="Software" scheme="http://ootput.github.io/categories/Software/"/>
     
