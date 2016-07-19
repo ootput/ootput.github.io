@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://ootput.github.io/"/>
-  <updated>2016-05-18T02:06:56.604Z</updated>
+  <updated>2016-07-19T05:23:06.921Z</updated>
   <id>http://ootput.github.io/</id>
   
   <author>
@@ -13,6 +13,34 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Pull split workout]]></title>
+    <link href="http://ootput.github.io/2016/07/19/Pull-split-workout/"/>
+    <id>http://ootput.github.io/2016/07/19/Pull-split-workout/</id>
+    <published>2016-07-19T05:21:52.000Z</published>
+    <updated>2016-07-19T05:22:47.000Z</updated>
+    <content type="html"><![CDATA[<p>I’ve been getting a lot of emails on my body recomp protocol, so here it is:</p>
+<p>PULL WORKOUT:</p>
+<p>1.WEIGHTED PULL UPS<br>☻3 Work sets: 5, 6, 8 reps<br>☻1st warmup set == 1/4 of your expected working set weight (bodyweight + weight) for 7 reps.<br>☻2nd warmup set == 1/2 of your expected working set weight (bodyweight + weight) for 5 reps.<br>☻3rd warmup set == 3/4 of your expected working set weight (bodyweight + weight) for 3 reps.<br>☻1.5min break b/w each warmup set, and before 1st work set.<br>☻After each work set decrease the weight by 10%. For chin ups use your total weight (bodyweight + additional weight) when determining 10%.<br>☻3min break b/w work sets.</p>
+<p>2.SUMO DEADLIFT<br>☻3 Work sets: 5, 6, 8 reps<br>☻1st warmup set == 1/4 of your expected working set weight for 7 reps.<br>☻2nd warmup set == 1/2 of your expected working set weight for 5 reps.<br>☻3rd warmup set == 3/4 of your expected working set weight for 3 reps.<br>☻1.5min break b/w each warmup set, and before 1st work set.<br>☻Reduce weight by 10% between work sets with 3min rest between sets.</p>
+<p>3.BENT OVER LOW-PULLEY SIDE LATERAL<br>☻Target 8 - 12 reps for 3 sets with same weight with 2min breaks. Increase weight (2.5kg) when all 12 reps in 3 sets done with ease (don’t factor in rest-pause)<br>☻3rd set (rest-pause) take 15s break before reps to failure; then repeat twice.<br>☻Supinated grip throughout range.<br>☻Hold body parallel to ground (keep shoulders level) while bent at hips and knees</p>
+<p>4.FLEXOR INCLINE DUMBBELL CURLS<br>☻6-10 target reps for 3 sets with same weight with 2min breaks. Increase weight (2.5kg) when all 12 reps in 3 sets done with ease.<br>☻Use strict form</p>
+<p>5.ONE HANDED TOWEL HANG<br>☻Wrap towel around chin-up bar; bring both ends of towel together, and grip with one hand.<br>☻Aim for 1 min holds per side (time: 3 min per ‘rep’, for 2 reps), but stop when painful, and switch hands.<br>☻Keep track of timed holds<br>☻Perform two sets.<br>☻Rest 1 min between hands/sets.</p>
+<p>6.V-SIT<br>☻Aim for 1min while keep legs straight at 30-40’ angle</p>
+<p>7.PLANK<br>☻1st rep facing ground, 2nd facing left, 3rd facing right side.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>I’ve been getting a lot of emails on my body recomp protocol, so here it is:</p>
+<p>PULL WORKOUT:</p>
+<p>1.WEIGHTED PULL UPS<br>☻3 Work s]]>
+    </summary>
+    
+      <category term="Exercise" scheme="http://ootput.github.io/tags/Exercise/"/>
+    
+      <category term="Health" scheme="http://ootput.github.io/categories/Health/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Health Revisited]]></title>
@@ -859,24 +887,6 @@ root# diskutil list
       <category term="x220" scheme="http://ootput.github.io/tags/x220/"/>
     
       <category term="Software" scheme="http://ootput.github.io/categories/Software/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Sydney Opera House]]></title>
-    <link href="http://ootput.github.io/2013/05/24/sydney-opera-house/"/>
-    <id>http://ootput.github.io/2013/05/24/sydney-opera-house/</id>
-    <published>2013-05-24T13:39:38.000Z</published>
-    <updated>2014-11-26T03:24:07.000Z</updated>
-    <content type="html"><![CDATA[<p><a href="http://www.flickr.com/photos/ootput/8789887813/" title="Sydney Opera House 2013 by ootput, on Flickr" target="_blank" rel="external"><img src="/images/52255cbed8c439cb232b1f84a8e84115e61983bb.jpg" alt="Sydney Opera House 2013"></a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p><a href="http://www.flickr.com/photos/ootput/8789887813/" title="Sydney Opera House 2013 by ootput, on Flickr" target="_blank" rel="exter]]>
-    </summary>
-    
-      <category term="photography" scheme="http://ootput.github.io/tags/photography/"/>
-    
-      <category term="Photography" scheme="http://ootput.github.io/categories/Photography/"/>
     
   </entry>
   
