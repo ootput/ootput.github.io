@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://ootput.github.io/2016/07/20/Switching-to-LibreSSL/</loc>
+    <lastmod>2016-07-20T01:29:15.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://ootput.github.io/2016/07/19/Push-split-workout/</loc>
     <lastmod>2016-07-19T05:35:12.000Z</lastmod>
   </url>
@@ -382,22 +387,22 @@
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2010/04/08/upload-github-gists/</loc>
-    <lastmod>2014-11-25T03:10:41.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://ootput.github.io/2011/06/06/block-wine-applications-from-the-internet/</loc>
     <lastmod>2014-11-25T03:10:41.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2010/04/04/backup-of-chyrp/</loc>
-    <lastmod>2014-11-25T03:10:23.000Z</lastmod>
+    <loc>http://ootput.github.io/2010/04/08/upload-github-gists/</loc>
+    <lastmod>2014-11-25T03:10:41.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://ootput.github.io/2014/06/14/qos-on-vpn-client-tunnel-in-tomato/</loc>
+    <lastmod>2014-11-25T03:10:23.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ootput.github.io/2010/04/04/backup-of-chyrp/</loc>
     <lastmod>2014-11-25T03:10:23.000Z</lastmod>
   </url>
   
@@ -552,37 +557,22 @@
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2013/08/02/copy-and-paste-in-tmux-with-mouse/</loc>
-    <lastmod>2014-11-24T10:18:02.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://ootput.github.io/2010/06/02/official-chyrp-development-halted/</loc>
-    <lastmod>2014-11-24T10:18:02.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://ootput.github.io/2010/06/03/github-gists-in-habari/</loc>
-    <lastmod>2014-11-24T10:18:02.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://ootput.github.io/2010/04/04/themes-in-chyrp/</loc>
     <lastmod>2014-11-24T10:18:02.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2010/04/01/on-fedora-12/</loc>
+    <loc>http://ootput.github.io/2010/06/10/lovely-flower/</loc>
     <lastmod>2014-11-24T10:18:02.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2013/05/24/royal-botanical-gardens-sydney/</loc>
+    <loc>http://ootput.github.io/2013/08/02/copy-and-paste-in-tmux-with-mouse/</loc>
     <lastmod>2014-11-24T10:18:02.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2010/03/28/phpmysql-based-solution-for-blog/</loc>
+    <loc>http://ootput.github.io/2010/04/12/fuse-mounts-in-fedora-12/</loc>
     <lastmod>2014-11-24T10:18:02.000Z</lastmod>
   </url>
   
@@ -592,7 +582,27 @@
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2010/04/12/fuse-mounts-in-fedora-12/</loc>
+    <loc>http://ootput.github.io/2010/06/02/official-chyrp-development-halted/</loc>
+    <lastmod>2014-11-24T10:18:02.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ootput.github.io/2010/04/01/on-fedora-12/</loc>
+    <lastmod>2014-11-24T10:18:02.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ootput.github.io/2010/03/28/phpmysql-based-solution-for-blog/</loc>
+    <lastmod>2014-11-24T10:18:02.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ootput.github.io/2010/03/28/colored-ls-output-in-openbsd/</loc>
+    <lastmod>2014-11-24T10:18:02.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ootput.github.io/2013/05/24/royal-botanical-gardens-sydney/</loc>
     <lastmod>2014-11-24T10:18:02.000Z</lastmod>
   </url>
   
@@ -607,17 +617,12 @@
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2010/06/10/lovely-flower/</loc>
+    <loc>http://ootput.github.io/2010/06/03/github-gists-in-habari/</loc>
     <lastmod>2014-11-24T10:18:02.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://ootput.github.io/2007/02/11/hello-digital-world/</loc>
-    <lastmod>2014-11-24T10:18:02.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://ootput.github.io/2010/03/28/colored-ls-output-in-openbsd/</loc>
     <lastmod>2014-11-24T10:18:02.000Z</lastmod>
   </url>
   
