@@ -111,19 +111,23 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>In make.conf, have:<br>DEFAULT_VERSIONS+=  ssl=libressl</p>
+        <p>In make.conf, have:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">DEFAULT_VERSIONS+</span>=<span class="string">  ssl=libressl</span></div></pre></td></tr></table></figure>
+
 <p>Then, as root:</p>
-<h1 id="portmaster_-o_security/libressl_security/openssl">portmaster -o security/libressl security/openssl</h1>
-<h1 id="portmaster_-r_libressl">portmaster -r libressl</h1>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="preprocessor"># portmaster -o security/libressl security/openssl</span></div><div class="line"><span class="preprocessor"># portmaster -r libressl</span></div></pre></td></tr></table></figure>
+
 <p>You may need to manually update all packages that depend on<br>any of the libraries provided by LibreSSL (libssl, libcrypto and<br>libtls) since the versions of these libraries have changed. Normally,<br>you can obtain the list of dependent software by running the following<br>command:</p>
-<h1 id="pkg_info_-r_libressl">pkg info -r libressl</h1>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="preprocessor"># pkg info -r libressl</span></div></pre></td></tr></table></figure>
+
 <p>Then you should rebuild all ports depending on libressl to avoid dangling<br>shared library dependencies. Poudriere and pkg handle this correctly,<br>but portmaster requires the following to rebuild all<br>dependent ports.</p>
-<h1 id="portmaster_-r_libressl-1">portmaster -r libressl</h1>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="preprocessor"># portmaster -r libressl</span></div></pre></td></tr></table></figure>
+
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2016/07/20/Switching-to-LibreSSL/" data-id="svd1s8cjmrzivm1b" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2016/07/20/Switching-to-LibreSSL/" data-id="8qy476zdtt4tvc76" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2016/07/20/Switching-to-LibreSSL/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -174,7 +178,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2016/07/19/Push-split-workout/" data-id="lsg60vkrgwdtoyzt" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2016/07/19/Push-split-workout/" data-id="by9u4eme5y7zwwc7" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2016/07/19/Push-split-workout/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -227,7 +231,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2016/07/19/Pull-split-workout/" data-id="v0mz5gi1r45hpzpa" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2016/07/19/Pull-split-workout/" data-id="evc22boy1p0ouxc7" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2016/07/19/Pull-split-workout/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -280,7 +284,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2016/05/12/health-revisited/" data-id="729ep26juqoybgt8" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2016/05/12/health-revisited/" data-id="bptwmutr291aaff6" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2016/05/12/health-revisited/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -340,7 +344,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2016/04/01/Revisiting-Health/" data-id="45dsa74t4vmqh6a5" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2016/04/01/Revisiting-Health/" data-id="w8vlavnxwm09mz27" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2016/04/01/Revisiting-Health/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -398,7 +402,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2016/03/31/Fixing-broken-port-dependencies-based-on-missing-files/" data-id="cxxp9dd4xi59bird" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2016/03/31/Fixing-broken-port-dependencies-based-on-missing-files/" data-id="b4hy9jfsf5kmynq7" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2016/03/31/Fixing-broken-port-dependencies-based-on-missing-files/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -446,7 +450,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2016/02/29/Set-Firefox-GTK2-Theme/" data-id="y3n09jtukr5zcp4r" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2016/02/29/Set-Firefox-GTK2-Theme/" data-id="2hxl9f6lnq07nlcl" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2016/02/29/Set-Firefox-GTK2-Theme/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -500,7 +504,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2015/08/27/20-months-past/" data-id="xumy7pe09p6sd3kq" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2015/08/27/20-months-past/" data-id="5g94z4jrpvqr40er" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2015/08/27/20-months-past/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -551,7 +555,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2015/04/08/Fixed-Search-in-Hexo/" data-id="k8qcf09e4lp64fva" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2015/04/08/Fixed-Search-in-Hexo/" data-id="57binqxjvrfo2pid" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2015/04/08/Fixed-Search-in-Hexo/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -598,7 +602,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2015/03/23/why-ebay-will-never-go-broke/" data-id="n1q445y2sna4doez" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2015/03/23/why-ebay-will-never-go-broke/" data-id="dxni2xomo5zcbofq" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2015/03/23/why-ebay-will-never-go-broke/#disqus_thread" class="article-comment-link">Comments</a>
       

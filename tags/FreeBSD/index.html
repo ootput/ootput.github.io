@@ -111,19 +111,23 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>In make.conf, have:<br>DEFAULT_VERSIONS+=  ssl=libressl</p>
+        <p>In make.conf, have:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">DEFAULT_VERSIONS+</span>=<span class="string">  ssl=libressl</span></div></pre></td></tr></table></figure>
+
 <p>Then, as root:</p>
-<h1 id="portmaster_-o_security/libressl_security/openssl">portmaster -o security/libressl security/openssl</h1>
-<h1 id="portmaster_-r_libressl">portmaster -r libressl</h1>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="preprocessor"># portmaster -o security/libressl security/openssl</span></div><div class="line"><span class="preprocessor"># portmaster -r libressl</span></div></pre></td></tr></table></figure>
+
 <p>You may need to manually update all packages that depend on<br>any of the libraries provided by LibreSSL (libssl, libcrypto and<br>libtls) since the versions of these libraries have changed. Normally,<br>you can obtain the list of dependent software by running the following<br>command:</p>
-<h1 id="pkg_info_-r_libressl">pkg info -r libressl</h1>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="preprocessor"># pkg info -r libressl</span></div></pre></td></tr></table></figure>
+
 <p>Then you should rebuild all ports depending on libressl to avoid dangling<br>shared library dependencies. Poudriere and pkg handle this correctly,<br>but portmaster requires the following to rebuild all<br>dependent ports.</p>
-<h1 id="portmaster_-r_libressl-1">portmaster -r libressl</h1>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="preprocessor"># portmaster -r libressl</span></div></pre></td></tr></table></figure>
+
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2016/07/20/Switching-to-LibreSSL/" data-id="svd1s8cjmrzivm1b" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2016/07/20/Switching-to-LibreSSL/" data-id="8qy476zdtt4tvc76" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2016/07/20/Switching-to-LibreSSL/#disqus_thread" class="article-comment-link">Comments</a>
       
