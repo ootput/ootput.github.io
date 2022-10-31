@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>CouchPotato on FreeBSD | ootput burst!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="For CouchPotato in FreeBSD, firstly acquaint yourself with my previous blog entry on Sabnzbd+Sickbeard on FreeBSD, and then perform the following additional steps: At Step 3, fetch CouchPotato’s sou">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CouchPotato on FreeBSD">
+<meta property="og:url" content="http://ootput.github.io/2012/06/25/couchpotato-on-freebsd/index.html">
+<meta property="og:site_name" content="ootput burst!">
+<meta property="og:description" content="For CouchPotato in FreeBSD, firstly acquaint yourself with my previous blog entry on Sabnzbd+Sickbeard on FreeBSD, and then perform the following additional steps: At Step 3, fetch CouchPotato’s sou">
+<meta property="og:locale" content="en_GB">
+<meta property="og:image" content="http://ootput.github.io/images/541ad08b9521a01c437fea6ad11c2eb271c3f298.png">
+<meta property="article:published_time" content="2012-06-24T20:09:32.000Z">
+<meta property="article:modified_time" content="2022-10-31T01:47:24.457Z">
+<meta property="article:author" content="ootput">
+<meta property="article:tag" content="freebsd">
+<meta property="article:tag" content="couchpotato">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ootput.github.io/images/541ad08b9521a01c437fea6ad11c2eb271c3f298.png">
+  
+    <link rel="alternate" href="/atom.xml" title="ootput burst!" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">ootput burst!</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://ootput.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-couchpotato-on-freebsd" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2012/06/25/couchpotato-on-freebsd/" class="article-date">
+  <time class="dt-published" datetime="2012-06-24T20:09:32.000Z" itemprop="datePublished">Jun 25 2012</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Software/">Software</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      CouchPotato on FreeBSD
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <img src="/images/541ad08b9521a01c437fea6ad11c2eb271c3f298.png" class="img-thumbnail"/>
+
+<p>For <code>CouchPotato</code> in FreeBSD, firstly acquaint yourself with my previous <a href="http://ootput.github.io/2011/12/26/sabnzbd-and-sickbeard-on-freebsd/">blog entry on Sabnzbd+Sickbeard on FreeBSD</a>, and then perform the following additional steps:</p>
+<p>At <strong>Step 3</strong>, fetch CouchPotato’s source code:</p>
+<p><code># cd /usr/local &amp;&amp; git clone git://github.com/RuudBurger/CouchPotato.git couchpotato</code></p>
+<p>Also, it is advisable to change the permission and ownership of the CouchPotato folder:</p>
+<p><code># chown root:_sabnzbd /usr/local/couchpotato</code></p>
+<p><code># chmod g+w /usr/local/couchpotato</code></p>
+<p>At <strong>Step 4</strong>, add the following to &#x2F;etc&#x2F;rc.conf:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">couchpotato_enable=&quot;YES&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>.. and create <code>/usr/local/etc/rc.d/couchpotato</code> containing:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">#!/bin/sh</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># PROVIDE: couchpotato</span></span><br><span class="line"><span class="comment"># REQUIRE: DAEMON sabnzbd</span></span><br><span class="line"><span class="comment"># KEYWORD: shutdown</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Add the following lines to /etc/rc.conf.local or /etc/rc.conf</span></span><br><span class="line"><span class="comment"># to enable this service:</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># couchpotato_enable (bool):	Set to NO by default.</span></span><br><span class="line"><span class="comment">#			Set it to YES to enable it.</span></span><br><span class="line"><span class="comment"># couchpotato_user:  The user account Couch Potato daemon runs as what</span></span><br><span class="line"><span class="comment">#			you want it to be. It uses &#x27;_sabnzbd&#x27; user by</span></span><br><span class="line"><span class="comment">#			default. Do not sets it as empty or it will run</span></span><br><span class="line"><span class="comment">#			as root.</span></span><br><span class="line"><span class="comment"># couchpotato_dir:	Directory where Couch Potato lives.</span></span><br><span class="line"><span class="comment">#			Default: /usr/local/couchpotato</span></span><br><span class="line"><span class="comment"># couchpotato_chdir:  Change to this directory before running Couch Potato.</span></span><br><span class="line"><span class="comment">#     Default is same as couchpotato_dir.</span></span><br><span class="line"><span class="comment"># couchpotato_pid:  The name of the pidfile to create.</span></span><br><span class="line"><span class="comment">#     Default is couchpotato.pid in couchpotato_dir.</span></span><br><span class="line">PATH=<span class="string">&quot;/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin&quot;</span></span><br><span class="line"></span><br><span class="line">. /etc/rc.subr</span><br><span class="line"></span><br><span class="line">name=<span class="string">&quot;couchpotato&quot;</span></span><br><span class="line">rcvar=<span class="variable">$&#123;name&#125;</span>_enable</span><br><span class="line"></span><br><span class="line">load_rc_config <span class="variable">$&#123;name&#125;</span></span><br><span class="line"></span><br><span class="line">: <span class="variable">$&#123;couchpotato_enable:=&quot;NO&quot;&#125;</span></span><br><span class="line">: <span class="variable">$&#123;couchpotato_user:=&quot;_sabnzbd&quot;&#125;</span></span><br><span class="line">: <span class="variable">$&#123;couchpotato_dir:=&quot;/usr/local/couchpotato&quot;&#125;</span></span><br><span class="line">: <span class="variable">$&#123;couchpotato_chdir:=&quot;<span class="variable">$&#123;couchpotato_dir&#125;</span>&quot;&#125;</span></span><br><span class="line">: <span class="variable">$&#123;couchpotato_pid:=&quot;<span class="variable">$&#123;couchpotato_dir&#125;</span>/couchpotato.pid&quot;&#125;</span></span><br><span class="line"></span><br><span class="line">WGET=<span class="string">&quot;/usr/local/bin/wget&quot;</span> <span class="comment"># You need wget for this script to safely shutdown Couch Potato.</span></span><br><span class="line">HOST=<span class="string">&quot;127.0.0.1&quot;</span> <span class="comment"># Set Couch Potato address here.</span></span><br><span class="line">PORT=<span class="string">&quot;5000&quot;</span> <span class="comment"># Set Couch Potato port here.</span></span><br><span class="line">SBUSR=<span class="string">&quot;&quot;</span> <span class="comment"># Set Couch Potato username (if you use one) here.</span></span><br><span class="line">SBPWD=<span class="string">&quot;&quot;</span> <span class="comment"># Set Couch Potato password (if you use one) here.</span></span><br><span class="line"></span><br><span class="line">status_cmd=<span class="string">&quot;<span class="variable">$&#123;name&#125;</span>_status&quot;</span></span><br><span class="line">stop_cmd=<span class="string">&quot;<span class="variable">$&#123;name&#125;</span>_stop&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">command</span>=<span class="string">&quot;/usr/sbin/daemon&quot;</span></span><br><span class="line">command_args=<span class="string">&quot;-f -p <span class="variable">$&#123;couchpotato_pid&#125;</span> python <span class="variable">$&#123;couchpotato_dir&#125;</span>/CouchPotato.py <span class="variable">$&#123;couchpotato_flags&#125;</span> --quiet&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Check for wget and refuse to start without it.</span></span><br><span class="line"><span class="keyword">if</span> [ ! -x <span class="string">&quot;<span class="variable">$&#123;WGET&#125;</span>&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line">  warn <span class="string">&quot;Couchpotato not started: You need wget to safely shut down Couch Potato.&quot;</span></span><br><span class="line">  <span class="built_in">exit</span> 1</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Ensure user is root when running this script.</span></span><br><span class="line"><span class="keyword">if</span> [ `<span class="built_in">id</span> -u` != <span class="string">&quot;0&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;Oops, you should be root before running this!&quot;</span></span><br><span class="line">  <span class="built_in">exit</span> 1</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">verify_couchpotato_pid</span></span>() &#123;</span><br><span class="line">    <span class="comment"># Make sure the pid corresponds to the Couch Potato process.</span></span><br><span class="line">    pid=`<span class="built_in">cat</span> <span class="variable">$&#123;couchpotato_pid&#125;</span> 2&gt;/dev/null`</span><br><span class="line">    ps -p <span class="variable">$&#123;pid&#125;</span> | grep -q <span class="string">&quot;python <span class="variable">$&#123;couchpotato_dir&#125;</span>/CouchPotato.py&quot;</span></span><br><span class="line">    <span class="built_in">return</span> $?</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Try to stop Couch Potato cleanly by calling shutdown over http.</span></span><br><span class="line"><span class="function"><span class="title">couchpotato_stop</span></span>() &#123;</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;Stopping <span class="variable">$name</span>&quot;</span></span><br><span class="line">    verify_couchpotato_pid</span><br><span class="line">    <span class="variable">$&#123;WGET&#125;</span> -O - -q --user=<span class="variable">$&#123;SBUSR&#125;</span> --password=<span class="variable">$&#123;SBPWD&#125;</span> <span class="string">&quot;http://<span class="variable">$&#123;HOST&#125;</span>:<span class="variable">$&#123;PORT&#125;</span>/home/shutdown/?pid=<span class="variable">$&#123;pid&#125;</span>&quot;</span> &gt;/dev/null</span><br><span class="line">    <span class="keyword">if</span> [ -n <span class="string">&quot;<span class="variable">$&#123;pid&#125;</span>&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line">      wait_for_pids <span class="variable">$&#123;pid&#125;</span></span><br><span class="line">      <span class="built_in">echo</span> <span class="string">&quot;Stopped&quot;</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">couchpotato_status</span></span>() &#123;</span><br><span class="line">    verify_couchpotato_pid &amp;&amp; <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$name</span> is running as <span class="variable">$&#123;pid&#125;</span>&quot;</span> || <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$name</span> is not running&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">run_rc_command <span class="string">&quot;<span class="variable">$1</span>&quot;</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ootput.github.io/2012/06/25/couchpotato-on-freebsd/" data-id="cl9xawiba0073wfov30segggl" data-title="CouchPotato on FreeBSD" class="article-share-link">Share</a>
+      
+        <a href="http://ootput.github.io/2012/06/25/couchpotato-on-freebsd/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/couchpotato/" rel="tag">couchpotato</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/freebsd/" rel="tag">freebsd</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2012/07/23/nes-nostalgia/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          NES Nostalgia
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2012/06/18/ntfs-write-in-freebsd/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">NTFS-Write in FreeBSD</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Health/">Health</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Photography/">Photography</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Random-Musings/">Random Musings</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Software/">Software</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ebay/" rel="tag">Ebay</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Soundcloud/" rel="tag">Soundcloud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/alsa/" rel="tag">alsa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/" rel="tag">android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apple/" rel="tag">apple</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/canon/" rel="tag">canon</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chess/" rel="tag">chess</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chromium/" rel="tag">chromium</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chyrp/" rel="tag">chyrp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/clone/" rel="tag">clone</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/couchpotato/" rel="tag">couchpotato</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/crunchbang/" rel="tag">crunchbang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ddwrt/" rel="tag">ddwrt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debian/" rel="tag">debian</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dslr/" rel="tag">dslr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/emacs/" rel="tag">emacs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/erc/" rel="tag">erc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/exercise/" rel="tag">exercise</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fedora/" rel="tag">fedora</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/filebot/" rel="tag">filebot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/firefox/" rel="tag">firefox</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flash/" rel="tag">flash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flickr/" rel="tag">flickr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/freebsd/" rel="tag">freebsd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gmail/" rel="tag">gmail</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/habari/" rel="tag">habari</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ifttt/" rel="tag">ifttt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ion3/" rel="tag">ion3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ios/" rel="tag">ios</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/irssi/" rel="tag">irssi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/itunes/" rel="tag">itunes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kvm/" rel="tag">kvm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lens/" rel="tag">lens</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/metaseo/" rel="tag">metaseo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nanoblogger/" rel="tag">nanoblogger</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ntfs/" rel="tag">ntfs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nvidia/" rel="tag">nvidia</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openbsd/" rel="tag">openbsd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openvpn/" rel="tag">openvpn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/osx/" rel="tag">osx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/outlook/" rel="tag">outlook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/photography/" rel="tag">photography</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/plex/" rel="tag">plex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ports/" rel="tag">ports</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pulseaudio/" rel="tag">pulseaudio</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/putty/" rel="tag">putty</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pxe/" rel="tag">pxe</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/qos/" rel="tag">qos</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/reddit/" rel="tag">reddit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sabnzbd/" rel="tag">sabnzbd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/samba/" rel="tag">samba</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sasl/" rel="tag">sasl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sickbeard/" rel="tag">sickbeard</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssl/" rel="tag">ssl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/subtitles/" rel="tag">subtitles</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tmux/" rel="tag">tmux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tomato/" rel="tag">tomato</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/twitter/" rel="tag">twitter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/" rel="tag">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unix/" rel="tag">unix</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/" rel="tag">vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/weechat/" rel="tag">weechat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wheezy/" rel="tag">wheezy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows/" rel="tag">windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wine/" rel="tag">wine</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wordpress/" rel="tag">wordpress</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/x220/" rel="tag">x220</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xorg/" rel="tag">xorg</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/youtube/" rel="tag">youtube</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zfs/" rel="tag">zfs</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Ebay/" style="font-size: 10px;">Ebay</a> <a href="/tags/Soundcloud/" style="font-size: 10px;">Soundcloud</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/alsa/" style="font-size: 10px;">alsa</a> <a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/apple/" style="font-size: 10px;">apple</a> <a href="/tags/blog/" style="font-size: 20px;">blog</a> <a href="/tags/canon/" style="font-size: 10px;">canon</a> <a href="/tags/chess/" style="font-size: 10px;">chess</a> <a href="/tags/chromium/" style="font-size: 10.91px;">chromium</a> <a href="/tags/chyrp/" style="font-size: 15.45px;">chyrp</a> <a href="/tags/clone/" style="font-size: 10.91px;">clone</a> <a href="/tags/couchpotato/" style="font-size: 10px;">couchpotato</a> <a href="/tags/crunchbang/" style="font-size: 10px;">crunchbang</a> <a href="/tags/ddwrt/" style="font-size: 10px;">ddwrt</a> <a href="/tags/debian/" style="font-size: 17.27px;">debian</a> <a href="/tags/dslr/" style="font-size: 10px;">dslr</a> <a href="/tags/emacs/" style="font-size: 10.91px;">emacs</a> <a href="/tags/erc/" style="font-size: 10px;">erc</a> <a href="/tags/exercise/" style="font-size: 12.73px;">exercise</a> <a href="/tags/fedora/" style="font-size: 16.36px;">fedora</a> <a href="/tags/filebot/" style="font-size: 10.91px;">filebot</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/flash/" style="font-size: 10.91px;">flash</a> <a href="/tags/flickr/" style="font-size: 10px;">flickr</a> <a href="/tags/freebsd/" style="font-size: 19.09px;">freebsd</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 13.64px;">github</a> <a href="/tags/gmail/" style="font-size: 10px;">gmail</a> <a href="/tags/habari/" style="font-size: 18.18px;">habari</a> <a href="/tags/hexo/" style="font-size: 13.64px;">hexo</a> <a href="/tags/ifttt/" style="font-size: 10px;">ifttt</a> <a href="/tags/ion3/" style="font-size: 10px;">ion3</a> <a href="/tags/ios/" style="font-size: 10px;">ios</a> <a href="/tags/irssi/" style="font-size: 10px;">irssi</a> <a href="/tags/itunes/" style="font-size: 10px;">itunes</a> <a href="/tags/java/" style="font-size: 10.91px;">java</a> <a href="/tags/kvm/" style="font-size: 10px;">kvm</a> <a href="/tags/lens/" style="font-size: 10px;">lens</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/metaseo/" style="font-size: 10px;">metaseo</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nanoblogger/" style="font-size: 10.91px;">nanoblogger</a> <a href="/tags/ntfs/" style="font-size: 10px;">ntfs</a> <a href="/tags/nvidia/" style="font-size: 10px;">nvidia</a> <a href="/tags/openbsd/" style="font-size: 14.55px;">openbsd</a> <a href="/tags/openvpn/" style="font-size: 10px;">openvpn</a> <a href="/tags/osx/" style="font-size: 15.45px;">osx</a> <a href="/tags/outlook/" style="font-size: 10px;">outlook</a> <a href="/tags/photography/" style="font-size: 13.64px;">photography</a> <a href="/tags/plex/" style="font-size: 10px;">plex</a> <a href="/tags/ports/" style="font-size: 11.82px;">ports</a> <a href="/tags/pulseaudio/" style="font-size: 10px;">pulseaudio</a> <a href="/tags/putty/" style="font-size: 10px;">putty</a> <a href="/tags/pxe/" style="font-size: 10px;">pxe</a> <a href="/tags/qos/" style="font-size: 10px;">qos</a> <a href="/tags/reddit/" style="font-size: 10px;">reddit</a> <a href="/tags/sabnzbd/" style="font-size: 10px;">sabnzbd</a> <a href="/tags/samba/" style="font-size: 10px;">samba</a> <a href="/tags/sasl/" style="font-size: 10.91px;">sasl</a> <a href="/tags/sickbeard/" style="font-size: 10px;">sickbeard</a> <a href="/tags/ssl/" style="font-size: 12.73px;">ssl</a> <a href="/tags/subtitles/" style="font-size: 10px;">subtitles</a> <a href="/tags/tmux/" style="font-size: 10px;">tmux</a> <a href="/tags/tomato/" style="font-size: 10.91px;">tomato</a> <a href="/tags/twitter/" style="font-size: 10px;">twitter</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/unix/" style="font-size: 10.91px;">unix</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/weechat/" style="font-size: 10.91px;">weechat</a> <a href="/tags/wheezy/" style="font-size: 10px;">wheezy</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/wine/" style="font-size: 10px;">wine</a> <a href="/tags/wordpress/" style="font-size: 12.73px;">wordpress</a> <a href="/tags/x220/" style="font-size: 10.91px;">x220</a> <a href="/tags/xorg/" style="font-size: 10.91px;">xorg</a> <a href="/tags/youtube/" style="font-size: 10px;">youtube</a> <a href="/tags/zfs/" style="font-size: 10px;">zfs</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">May 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">April 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">December 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">June 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">May 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10/">October 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/09/">September 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06/">June 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07/">July 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06/">June 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/04/">April 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03/">March 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02/">February 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11/">November 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03/">March 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02/">February 2007</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/10/31/page/">page will this be deployed</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/12/health-revisited/">Health Revisited</a>
+          </li>
+        
+          <li>
+            <a href="/2016/04/01/Revisiting-Health/">Revisiting Health</a>
+          </li>
+        
+          <li>
+            <a href="/2016/03/31/Fixing-broken-port-dependencies-based-on-missing-files/">Fixing broken port dependencies based on missing files</a>
+          </li>
+        
+          <li>
+            <a href="/2016/02/29/Set-Firefox-GTK2-Theme/">Set Firefox GTK2 Theme</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 ootput<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'ootputburst';
+  
+  var disqus_url = 'http://ootput.github.io/2012/06/25/couchpotato-on-freebsd/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.async = true;
+    dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>CIFS on Debian Wheezy | ootput burst!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="I’ve reproduced this reported bug - https:&#x2F;&#x2F;bugs.debian.org&#x2F;cgi-bin&#x2F;bugreport.cgi?bug&#x3D;641894 - on my Waldorf machine, and have arrived at the following solution: As root, open the existing &#x2F;etc&amp;#">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CIFS on Debian Wheezy">
+<meta property="og:url" content="http://ootput.github.io/2014/12/11/CIFS-on-Wheezy/index.html">
+<meta property="og:site_name" content="ootput burst!">
+<meta property="og:description" content="I’ve reproduced this reported bug - https:&#x2F;&#x2F;bugs.debian.org&#x2F;cgi-bin&#x2F;bugreport.cgi?bug&#x3D;641894 - on my Waldorf machine, and have arrived at the following solution: As root, open the existing &#x2F;etc&amp;#">
+<meta property="og:locale" content="en_GB">
+<meta property="article:published_time" content="2014-12-11T11:42:36.000Z">
+<meta property="article:modified_time" content="2022-10-31T01:47:24.461Z">
+<meta property="article:author" content="ootput">
+<meta property="article:tag" content="debian">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="ootput burst!" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">ootput burst!</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://ootput.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-CIFS-on-Wheezy" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2014/12/11/CIFS-on-Wheezy/" class="article-date">
+  <time class="dt-published" datetime="2014-12-11T11:42:36.000Z" itemprop="datePublished">Dec 11 2014</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Software/">Software</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      CIFS on Debian Wheezy
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>I’ve reproduced this reported bug - <a target="_blank" rel="noopener" href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=641894">https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=641894</a> - on my Waldorf machine, and have arrived at the following solution:</p>
+<p>As root, open the existing &#x2F;etc&#x2F;fstab file and comment-out your existing CIFS mount(s)</p>
+<p>Unmount all existing cifs mounts:</p>
+<p><code># sudo umount -a -t cifs</code></p>
+<p>Install autofs:</p>
+<p><code># sudo aptitude install autofs</code></p>
+<p>Open (as root) new file &#x2F;etc&#x2F;auto.master:</p>
+<p><code># sudo vi /etc/auto.master</code></p>
+<p>If you want the mounted directories under &#x2F;data, add the following line:</p>
+<p><code>/data    /etc/auto.misc  --timeout  60   --ghost</code></p>
+<p>The “ghost” option ensures that even unmounted directories are always visible.  Remove this if you prefer to only see the directory when you enter the path to the mounted directory.</p>
+<p>Open (as root) new file &#x2F;etc&#x2F;auto.misc:</p>
+<p><code># sudo vi /etc/auto.misc</code></p>
+<p>Add line(s) at the end for your mount directories in a similar format to your &#x2F;etc&#x2F;fstab file:</p>
+<p><code>downloads1    -fstype=cifs,rw,username=ootput,password=&lt;cifs_pass&gt;,uid=1000,gid=1000   ://192.168.1.2/downloads2</code></p>
+<ul>
+<li>where ‘downloads1’ refers to a local mountpoint under &#x2F;data, and ‘downloads2’ to the remote cifs share, respectively.</li>
+</ul>
+<p>Start the autofs service:</p>
+<p><code># sudo service autofs restart</code></p>
+<p>Additionally, I enabled all SysRq functions to address stalled shutdown procedures by adding to &#x2F;etc&#x2F;sysctl.conf:</p>
+<p><code>kernel.sysrq=1</code></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ootput.github.io/2014/12/11/CIFS-on-Wheezy/" data-id="cl9xawibp008uwfov7dr2fnxl" data-title="CIFS on Debian Wheezy" class="article-share-link">Share</a>
+      
+        <a href="http://ootput.github.io/2014/12/11/CIFS-on-Wheezy/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/debian/" rel="tag">debian</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/12/29/Update-Flash-in-Debian-Wheezy/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Update Flash in Debian Wheezy
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/11/25/ootput-Burst-on-Github-via-Hexo/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">ootput Burst on Github via Hexo</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Health/">Health</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Photography/">Photography</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Random-Musings/">Random Musings</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Software/">Software</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ebay/" rel="tag">Ebay</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Soundcloud/" rel="tag">Soundcloud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/alsa/" rel="tag">alsa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/" rel="tag">android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apple/" rel="tag">apple</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/canon/" rel="tag">canon</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chess/" rel="tag">chess</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chromium/" rel="tag">chromium</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chyrp/" rel="tag">chyrp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/clone/" rel="tag">clone</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/couchpotato/" rel="tag">couchpotato</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/crunchbang/" rel="tag">crunchbang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ddwrt/" rel="tag">ddwrt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debian/" rel="tag">debian</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dslr/" rel="tag">dslr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/emacs/" rel="tag">emacs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/erc/" rel="tag">erc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/exercise/" rel="tag">exercise</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fedora/" rel="tag">fedora</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/filebot/" rel="tag">filebot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/firefox/" rel="tag">firefox</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flash/" rel="tag">flash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flickr/" rel="tag">flickr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/freebsd/" rel="tag">freebsd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gmail/" rel="tag">gmail</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/habari/" rel="tag">habari</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ifttt/" rel="tag">ifttt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ion3/" rel="tag">ion3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ios/" rel="tag">ios</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/irssi/" rel="tag">irssi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/itunes/" rel="tag">itunes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kvm/" rel="tag">kvm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lens/" rel="tag">lens</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/metaseo/" rel="tag">metaseo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nanoblogger/" rel="tag">nanoblogger</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ntfs/" rel="tag">ntfs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nvidia/" rel="tag">nvidia</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openbsd/" rel="tag">openbsd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openvpn/" rel="tag">openvpn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/osx/" rel="tag">osx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/outlook/" rel="tag">outlook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/photography/" rel="tag">photography</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/plex/" rel="tag">plex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ports/" rel="tag">ports</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pulseaudio/" rel="tag">pulseaudio</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/putty/" rel="tag">putty</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pxe/" rel="tag">pxe</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/qos/" rel="tag">qos</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/reddit/" rel="tag">reddit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sabnzbd/" rel="tag">sabnzbd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/samba/" rel="tag">samba</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sasl/" rel="tag">sasl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sickbeard/" rel="tag">sickbeard</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssl/" rel="tag">ssl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/subtitles/" rel="tag">subtitles</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tmux/" rel="tag">tmux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tomato/" rel="tag">tomato</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/twitter/" rel="tag">twitter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/" rel="tag">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unix/" rel="tag">unix</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/" rel="tag">vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/weechat/" rel="tag">weechat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wheezy/" rel="tag">wheezy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows/" rel="tag">windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wine/" rel="tag">wine</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wordpress/" rel="tag">wordpress</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/x220/" rel="tag">x220</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xorg/" rel="tag">xorg</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/youtube/" rel="tag">youtube</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zfs/" rel="tag">zfs</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Ebay/" style="font-size: 10px;">Ebay</a> <a href="/tags/Soundcloud/" style="font-size: 10px;">Soundcloud</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/alsa/" style="font-size: 10px;">alsa</a> <a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/apple/" style="font-size: 10px;">apple</a> <a href="/tags/blog/" style="font-size: 20px;">blog</a> <a href="/tags/canon/" style="font-size: 10px;">canon</a> <a href="/tags/chess/" style="font-size: 10px;">chess</a> <a href="/tags/chromium/" style="font-size: 10.91px;">chromium</a> <a href="/tags/chyrp/" style="font-size: 15.45px;">chyrp</a> <a href="/tags/clone/" style="font-size: 10.91px;">clone</a> <a href="/tags/couchpotato/" style="font-size: 10px;">couchpotato</a> <a href="/tags/crunchbang/" style="font-size: 10px;">crunchbang</a> <a href="/tags/ddwrt/" style="font-size: 10px;">ddwrt</a> <a href="/tags/debian/" style="font-size: 17.27px;">debian</a> <a href="/tags/dslr/" style="font-size: 10px;">dslr</a> <a href="/tags/emacs/" style="font-size: 10.91px;">emacs</a> <a href="/tags/erc/" style="font-size: 10px;">erc</a> <a href="/tags/exercise/" style="font-size: 12.73px;">exercise</a> <a href="/tags/fedora/" style="font-size: 16.36px;">fedora</a> <a href="/tags/filebot/" style="font-size: 10.91px;">filebot</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/flash/" style="font-size: 10.91px;">flash</a> <a href="/tags/flickr/" style="font-size: 10px;">flickr</a> <a href="/tags/freebsd/" style="font-size: 19.09px;">freebsd</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 13.64px;">github</a> <a href="/tags/gmail/" style="font-size: 10px;">gmail</a> <a href="/tags/habari/" style="font-size: 18.18px;">habari</a> <a href="/tags/hexo/" style="font-size: 13.64px;">hexo</a> <a href="/tags/ifttt/" style="font-size: 10px;">ifttt</a> <a href="/tags/ion3/" style="font-size: 10px;">ion3</a> <a href="/tags/ios/" style="font-size: 10px;">ios</a> <a href="/tags/irssi/" style="font-size: 10px;">irssi</a> <a href="/tags/itunes/" style="font-size: 10px;">itunes</a> <a href="/tags/java/" style="font-size: 10.91px;">java</a> <a href="/tags/kvm/" style="font-size: 10px;">kvm</a> <a href="/tags/lens/" style="font-size: 10px;">lens</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/metaseo/" style="font-size: 10px;">metaseo</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nanoblogger/" style="font-size: 10.91px;">nanoblogger</a> <a href="/tags/ntfs/" style="font-size: 10px;">ntfs</a> <a href="/tags/nvidia/" style="font-size: 10px;">nvidia</a> <a href="/tags/openbsd/" style="font-size: 14.55px;">openbsd</a> <a href="/tags/openvpn/" style="font-size: 10px;">openvpn</a> <a href="/tags/osx/" style="font-size: 15.45px;">osx</a> <a href="/tags/outlook/" style="font-size: 10px;">outlook</a> <a href="/tags/photography/" style="font-size: 13.64px;">photography</a> <a href="/tags/plex/" style="font-size: 10px;">plex</a> <a href="/tags/ports/" style="font-size: 11.82px;">ports</a> <a href="/tags/pulseaudio/" style="font-size: 10px;">pulseaudio</a> <a href="/tags/putty/" style="font-size: 10px;">putty</a> <a href="/tags/pxe/" style="font-size: 10px;">pxe</a> <a href="/tags/qos/" style="font-size: 10px;">qos</a> <a href="/tags/reddit/" style="font-size: 10px;">reddit</a> <a href="/tags/sabnzbd/" style="font-size: 10px;">sabnzbd</a> <a href="/tags/samba/" style="font-size: 10px;">samba</a> <a href="/tags/sasl/" style="font-size: 10.91px;">sasl</a> <a href="/tags/sickbeard/" style="font-size: 10px;">sickbeard</a> <a href="/tags/ssl/" style="font-size: 12.73px;">ssl</a> <a href="/tags/subtitles/" style="font-size: 10px;">subtitles</a> <a href="/tags/tmux/" style="font-size: 10px;">tmux</a> <a href="/tags/tomato/" style="font-size: 10.91px;">tomato</a> <a href="/tags/twitter/" style="font-size: 10px;">twitter</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/unix/" style="font-size: 10.91px;">unix</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/weechat/" style="font-size: 10.91px;">weechat</a> <a href="/tags/wheezy/" style="font-size: 10px;">wheezy</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/wine/" style="font-size: 10px;">wine</a> <a href="/tags/wordpress/" style="font-size: 12.73px;">wordpress</a> <a href="/tags/x220/" style="font-size: 10.91px;">x220</a> <a href="/tags/xorg/" style="font-size: 10.91px;">xorg</a> <a href="/tags/youtube/" style="font-size: 10px;">youtube</a> <a href="/tags/zfs/" style="font-size: 10px;">zfs</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">May 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">April 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">December 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">June 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">May 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10/">October 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/09/">September 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06/">June 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07/">July 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06/">June 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/04/">April 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03/">March 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02/">February 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11/">November 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03/">March 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02/">February 2007</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/10/31/page/">page will this be deployed</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/12/health-revisited/">Health Revisited</a>
+          </li>
+        
+          <li>
+            <a href="/2016/04/01/Revisiting-Health/">Revisiting Health</a>
+          </li>
+        
+          <li>
+            <a href="/2016/03/31/Fixing-broken-port-dependencies-based-on-missing-files/">Fixing broken port dependencies based on missing files</a>
+          </li>
+        
+          <li>
+            <a href="/2016/02/29/Set-Firefox-GTK2-Theme/">Set Firefox GTK2 Theme</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 ootput<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'ootputburst';
+  
+  var disqus_url = 'http://ootput.github.io/2014/12/11/CIFS-on-Wheezy/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.async = true;
+    dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

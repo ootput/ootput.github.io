@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>ootput burst!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="The Lively Meanderings of an Idle Mind">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ootput burst!">
+<meta property="og:url" content="http://ootput.github.io/page/11/index.html">
+<meta property="og:site_name" content="ootput burst!">
+<meta property="og:description" content="The Lively Meanderings of an Idle Mind">
+<meta property="og:locale" content="en_GB">
+<meta property="article:author" content="ootput">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="ootput burst!" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">ootput burst!</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://ootput.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-backup-and-restore-mysql-database-s" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2010/04/06/backup-and-restore-mysql-database-s/" class="article-date">
+  <time class="dt-published" datetime="2010-04-05T18:48:17.000Z" itemprop="datePublished">Apr 6 2010</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Software/">Software</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2010/04/06/backup-and-restore-mysql-database-s/">Backup and Restore MySQL Databases</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>To export a MySQL database into a dump file:</p>
+<p><code> $ mysqldump -u username -ppassword db_name &gt; db_name.sql</code></p>
+<p>(No, that’s not a typo; there is no space between <code>-p</code> and <code>password</code>.)</p>
+<p>Data, tables, structures and database of database_name will be backed up into a SQL text file named db_name.sql.</p>
+<p>To import a MySQL database, upload the dump file to the MySQL server, and use the following command to import the databases back into the MySQL server:</p>
+<p><code> $ mysql -u username -ppassword db_name &lt; db_name.sql</code></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ootput.github.io/2010/04/06/backup-and-restore-mysql-database-s/" data-id="cl9xawi9w001iwfov2u6ddjzm" data-title="Backup and Restore MySQL Databases" class="article-share-link">Share</a>
+      
+        <a href="http://ootput.github.io/2010/04/06/backup-and-restore-mysql-database-s/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-backup-of-chyrp" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2010/04/04/backup-of-chyrp/" class="article-date">
+  <time class="dt-published" datetime="2010-04-03T19:09:51.000Z" itemprop="datePublished">Apr 4 2010</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Software/">Software</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2010/04/04/backup-of-chyrp/">Backup of Chyrp</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>With NB, off-line backup was rather easy - essentially I was dealing with textual content from two sources that could be easily synchronized with basic shell tools.</p>
+<p>Chyrp, on the other hand, required that I duplicate both the MySQL database and the static content, and that I had a web browser handy to access the graphical markup tools provided.</p>
+<p>I had to dump the contents of the remote MySQL database to a local file, which could then be used to recreate the on-line database if ever the need arose. I created the following script for that purpose:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">#!/bin/sh</span></span><br><span class="line">MYSQLBACKUP=/home/<span class="variable">$USER</span>/.mysql_backup</span><br><span class="line">DB_NAME=dump.sql</span><br><span class="line">[ -f <span class="variable">$MYSQLBACKUP</span>/<span class="variable">$DB_NAME</span>.1 ] &amp;&amp; <span class="built_in">mv</span> -f <span class="variable">$MYSQLBACKUP</span>/<span class="variable">$DB_NAME</span>.1 <span class="variable">$MYSQLBACKUP</span>/<span class="variable">$DB_NAME</span>.2</span><br><span class="line">[ -f <span class="variable">$MYSQLBACKUP</span>/<span class="variable">$DB_NAME</span>.0 ] &amp;&amp; <span class="built_in">mv</span> -f <span class="variable">$MYSQLBACKUP</span>/<span class="variable">$DB_NAME</span>.0 <span class="variable">$MYSQLBACKUP</span>/<span class="variable">$DB_NAME</span>.1</span><br><span class="line">[ -f <span class="variable">$MYSQLBACKUP</span>/<span class="variable">$DB_NAME</span> ] &amp;&amp; <span class="built_in">mv</span> -f <span class="variable">$MYSQLBACKUP</span>/<span class="variable">$DB_NAME</span> <span class="variable">$MYSQLBACKUP</span>/<span class="variable">$DB_NAME</span>.0</span><br><span class="line">ssh USER@host mysqldump -h MYSQL.HOST -u USER -pPASSWORD DBNAME &gt; <span class="variable">$MYSQLBACKUP</span>/<span class="variable">$DB_NAME</span></span><br></pre></td></tr></table></figure>
+
+
+<p>With a rudimentary backup method in place, I could now completely migrate away from NanoBlogger.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ootput.github.io/2010/04/04/backup-of-chyrp/" data-id="cl9xawi9u0017wfov7s4dgb5x" data-title="Backup of Chyrp" class="article-share-link">Share</a>
+      
+        <a href="http://ootput.github.io/2010/04/04/backup-of-chyrp/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/chyrp/" rel="tag">chyrp</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-themes-in-chyrp" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2010/04/04/themes-in-chyrp/" class="article-date">
+  <time class="dt-published" datetime="2010-04-03T18:37:59.000Z" itemprop="datePublished">Apr 4 2010</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Software/">Software</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2010/04/04/themes-in-chyrp/">Themes in Chyrp</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><a target="_blank" rel="noopener" href="http://chyrp.net/extend/index/">This page</a> provides the links to modules&#x2F;themes&#x2F;feathers.</p>
+<p>Installation involves downloading the zip archive, and extracting its contents to a similarly-named directory under <code>themes/</code>. You’d then need to activate it via the admin panel.</p>
+<p>By the by, I was rather disappointed that the archives were only available as .zip archives. I’d much rather these archives be available in .tar.gz, or some other commonly used *nix format. To add insult to injury, several of the themes - gull and grackle - had .zip archives that produced errors when uncompressed with 7zip in Windows. These exact same archives extracted fine under OpenBSD.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ootput.github.io/2010/04/04/themes-in-chyrp/" data-id="cl9xawi9v001bwfovho28ba3g" data-title="Themes in Chyrp" class="article-share-link">Share</a>
+      
+        <a href="http://ootput.github.io/2010/04/04/themes-in-chyrp/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/chyrp/" rel="tag">chyrp</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-thoughts-on-chyrp" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2010/04/04/thoughts-on-chyrp/" class="article-date">
+  <time class="dt-published" datetime="2010-04-03T17:29:33.000Z" itemprop="datePublished">Apr 4 2010</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Software/">Software</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2010/04/04/thoughts-on-chyrp/">Thoughts on Chyrp</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <img src="/images/d71fed3db7806dd7c29cfc684fb538752659e5f7.png" class="img-thumbnail"/>
+
+<p>I recently found out about Chyrp from a co-worker, who had been alpha-testing it for a while now. She took some time out of her busy work day to advocate its usage. </p>
+<p>From Chyrp’s Homepage</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="http://chyrp.net/">Chyrp</a> is a blogging engine designed to be very lightweight while retaining functionality. It is powered by PHP and has very powerful theme and extension engines, so you can personalize it however you want. The code is well-documented, and it has a very strong structure that’s loosely based on the MVC design pattern.</p>
+</blockquote>
+<p>Upon installing Chyrp onto the <code>bur.st</code> host, I found it to be scalable; quick to deploy; fast to navigate; functional; aesthetically appealing; and very quick - something that <a href="http://ootput.github.io/2010/03/28/phpmysql-based-solution-for-blog/">couldn’t be said about NB</a>.</p>
+<p>One oversight made by developers of Chyrp was that, by default, noone was able to access any pages (!). As it turned out, the default <code>.htaccess</code> file that shipped with Chyrp-2.0, or even the git-version, did not have global-read permissions. This basically prevented the www-data system group from accessing the file, and in turn, this prevented all WWW users from viewing anything on the site. The issue was easily resolved by a <code>$ chmod +r .htacccess</code>.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ootput.github.io/2010/04/04/thoughts-on-chyrp/" data-id="cl9xawi9w001ewfov62g433sh" data-title="Thoughts on Chyrp" class="article-share-link">Share</a>
+      
+        <a href="http://ootput.github.io/2010/04/04/thoughts-on-chyrp/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/chyrp/" rel="tag">chyrp</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-binary-patches-for-openbsd-46" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2010/04/02/binary-patches-for-openbsd-46/" class="article-date">
+  <time class="dt-published" datetime="2010-04-01T18:17:13.000Z" itemprop="datePublished">Apr 2 2010</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Software/">Software</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2010/04/02/binary-patches-for-openbsd-46/">Binary Patches for OpenBSD 4.6</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>To track stable, you don’t necessarily need to work with cvs snapshots. Ideally, you’d fetch all relevant patches for your architecture and OpenBSD version from <a target="_blank" rel="noopener" href="http://openbsd.org/errata46.html">here</a> and cobble together those patches with <a target="_blank" rel="noopener" href="http://openbsdbinpatch.sourceforge.net/">binpatch</a></p>
+<p>This also requires that you fetch architecture-independant <code>src.tar.gz</code> and <code>sys.tar.gz</code> from <a href="ftp://ftp.openbsd.org/pub/OpenBSD/4.6/">here</a>, and all installation-set tarballs from <a href="ftp://ftp.openbsd.org/pub/OpenBSD/4.6/i386/">here</a>.</p>
+<p>From the project description file, the tree structure is then:</p>
+<ul>
+<li><p>binpatch-1.1.0&#x2F;</p>
+</li>
+<li><p>Makefile</p>
+</li>
+<li><p>bsd.binpatch.mk</p>
+</li>
+<li><p>distfiles&#x2F;</p>
+<ul>
+<li>i386&#x2F;</li>
+<li>src.tar.gz</li>
+<li>sys.tar.gz</li>
+</ul>
+</li>
+<li><p>packages&#x2F;</p>
+</li>
+<li><p>patches&#x2F;</p>
+<ul>
+<li>common&#x2F;</li>
+<li>i386&#x2F;</li>
+</ul>
+</li>
+<li><p>pkg&#x2F;</p>
+<ul>
+<li><em>(e.g. PLIST-i386-001)</em></li>
+</ul>
+</li>
+<li><p>work-binpatch-4.6&#x2F;</p>
+<ul>
+<li>fake&#x2F;</li>
+<li>obj&#x2F;</li>
+<li>src&#x2F;</li>
+</ul>
+</li>
+</ul>
+<p>The following changes to <code>Makefile</code> were made to suit patches for OpenBSD 4.6:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">### Last Updated: June 3rd 2010</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># List of patches for all architectures</span></span><br><span class="line">PATCH_COMMON=001_bind 003_getsockopt 004_openssl 005_ptrace 006_openssl 007_ftpd 008_kerberos 009_mpi 010_openssl 011_pfsync 012_trunklacp</span><br><span class="line"><span class="comment"># List of patches for i386 only</span></span><br><span class="line">PATCH_I386=002_xmm</span><br><span class="line"><span class="comment">#...</span></span><br><span class="line">002_xmm: _kernel</span><br><span class="line">003_getsockopt: _kernel</span><br><span class="line">005_ptrace: _kernel</span><br><span class="line">009_mpi: _kernel</span><br><span class="line">011_pfsync: _kernel</span><br><span class="line">012_trunklacp: _kernel</span><br><span class="line"></span><br><span class="line">001_bind:</span><br><span class="line">        <span class="built_in">cd</span> <span class="variable">$&#123;WRKSRC&#125;</span>/usr.sbin/bind &amp;&amp; \</span><br><span class="line">        (<span class="variable">$&#123;_obj_wrp&#125;</span>; <span class="variable">$&#123;_depend_wrp&#125;</span>; <span class="variable">$&#123;_build_wrp&#125;</span>)</span><br><span class="line"></span><br><span class="line">004_openssl:</span><br><span class="line">        <span class="built_in">cd</span> <span class="variable">$&#123;WRKSRC&#125;</span>/lib/libssl &amp;&amp; \</span><br><span class="line">        (<span class="variable">$&#123;_obj&#125;</span>; <span class="variable">$&#123;_depend&#125;</span>; <span class="variable">$&#123;_includes&#125;</span>; <span class="variable">$&#123;_build&#125;</span>) &amp;&amp; \</span><br><span class="line">        <span class="built_in">cd</span> <span class="variable">$&#123;WRKSRC&#125;</span>/sbin &amp;&amp; \</span><br><span class="line">        (<span class="variable">$&#123;_obj&#125;</span>; <span class="variable">$&#123;_depend&#125;</span>; <span class="variable">$&#123;_build&#125;</span>)</span><br><span class="line"></span><br><span class="line">006_openssl:</span><br><span class="line">        <span class="built_in">cd</span> <span class="variable">$&#123;WRKSRC&#125;</span>/lib/libssl &amp;&amp; \</span><br><span class="line">        (<span class="variable">$&#123;_obj&#125;</span>; <span class="variable">$&#123;_depend&#125;</span>; <span class="variable">$&#123;_includes&#125;</span>; <span class="variable">$&#123;_build&#125;</span>) &amp;&amp; \</span><br><span class="line">        <span class="built_in">cd</span> <span class="variable">$&#123;WRKSRC&#125;</span>/sbin &amp;&amp; \</span><br><span class="line">        (<span class="variable">$&#123;_obj&#125;</span>; <span class="variable">$&#123;_depend&#125;</span>; <span class="variable">$&#123;_build&#125;</span>)</span><br><span class="line"></span><br><span class="line">007_ftpd:</span><br><span class="line">        <span class="built_in">cd</span> <span class="variable">$&#123;WRKSRC&#125;</span>/libexec/ftpd &amp;&amp; \</span><br><span class="line">        (<span class="variable">$&#123;_depend&#125;</span>; <span class="variable">$&#123;_build&#125;</span>)</span><br><span class="line"></span><br><span class="line">008_kerberos:</span><br><span class="line">        <span class="built_in">cd</span> <span class="variable">$&#123;WRKSRC&#125;</span>/lib/libkrb5 &amp;&amp; \</span><br><span class="line">        (<span class="variable">$&#123;_obj&#125;</span>; <span class="variable">$&#123;_depend&#125;</span>; <span class="variable">$&#123;_build&#125;</span>) &amp;&amp; \</span><br><span class="line">        <span class="built_in">cd</span> <span class="variable">$&#123;WRKSRC&#125;</span>/kerberosV/libexec/kdc &amp;&amp; \</span><br><span class="line">        (<span class="variable">$&#123;_obj&#125;</span>; <span class="variable">$&#123;_depend&#125;</span>; <span class="variable">$&#123;_build&#125;</span>)</span><br><span class="line"></span><br><span class="line">010_openssl:</span><br><span class="line">        <span class="built_in">cd</span> <span class="variable">$&#123;WRKSRC&#125;</span>/lib/libssl &amp;&amp; \</span><br><span class="line">        (<span class="variable">$&#123;_obj&#125;</span>; <span class="variable">$&#123;_depend&#125;</span>; <span class="variable">$&#123;_includes&#125;</span>; <span class="variable">$&#123;_build&#125;</span>) &amp;&amp; \</span><br><span class="line">        <span class="built_in">cd</span> <span class="variable">$&#123;WRKSRC&#125;</span>/sbin &amp;&amp; \</span><br><span class="line">        (<span class="variable">$&#123;_obj&#125;</span>; <span class="variable">$&#123;_depend&#125;</span>; <span class="variable">$&#123;_build&#125;</span>)</span><br></pre></td></tr></table></figure>
+
+
+<p>You’ll need to modify the above to include more recent patches i.e. patches dated later than June 3rd 2010.</p>
+<p>To patch the relevant files on your OpenBSD install, and to prepare packages (in <code>packages/</code>) for installation, as root:</p>
+<p><code># make PATCH=&quot;001&quot; build</code></p>
+<p><code># make PATCH=&quot;001&quot; plist</code></p>
+<p><code># make PATCH=&quot;001&quot; package</code></p>
+<p>To install the packages, do:</p>
+<p><code># make PATCH=&quot;001&quot; install</code></p>
+<p>I prefer to use the following script (documented <a target="_blank" rel="noopener" href="http://openbsdbinpatch.sourceforge.net/#installation">here</a>) to install packages:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">#!/bin/sh</span></span><br><span class="line">tar xzpf <span class="string">&quot;<span class="variable">$1</span>&quot;</span> -C /</span><br><span class="line"><span class="built_in">mkdir</span> -p /var/db/patches/$(<span class="built_in">basename</span> <span class="string">&quot;<span class="variable">$1</span>&quot;</span> .tgz)</span><br></pre></td></tr></table></figure>
+
+
+<p>.. or to query previously installed packages:</p>
+<p><code># ls /var/db/patches/</code></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ootput.github.io/2010/04/02/binary-patches-for-openbsd-46/" data-id="cl9xawi9u0015wfov5mhp0h6r" data-title="Binary Patches for OpenBSD 4.6" class="article-share-link">Share</a>
+      
+        <a href="http://ootput.github.io/2010/04/02/binary-patches-for-openbsd-46/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/openbsd/" rel="tag">openbsd</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-on-fedora-12" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2010/04/01/on-fedora-12/" class="article-date">
+  <time class="dt-published" datetime="2010-04-01T04:22:56.000Z" itemprop="datePublished">Apr 1 2010</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Software/">Software</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2010/04/01/on-fedora-12/">On Fedora 12</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>My girlfriend’s Sony VAIO laptop has been nothing short of a nightmare to maintain. It ran Windows Vista - the Windows M.E. for the Facebook generation - and was indubitably doomed to fail from the OEM.</p>
+<p>After addressing one technical problem too many, I decided to do away with Vista on the laptop altogether, and to install a basic Linux distribution. Fedora’s DVD seemed to provide all the tools my partner would ever need in her lifetime of computer-interaction, and so it came to pass that F12 was introduced to the household.</p>
+<p>![7180173935_d1b0be84a9](&#x2F;images&#x2F;ae9ccea53f5bf95b2d5f01457a4a8864530513e2.jpg)</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ootput.github.io/2010/04/01/on-fedora-12/" data-id="cl9xawi9t0013wfovayib1k44" data-title="On Fedora 12" class="article-share-link">Share</a>
+      
+        <a href="http://ootput.github.io/2010/04/01/on-fedora-12/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/fedora/" rel="tag">fedora</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-phpmysql-based-solution-for-blog" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2010/03/28/phpmysql-based-solution-for-blog/" class="article-date">
+  <time class="dt-published" datetime="2010-03-27T20:14:22.000Z" itemprop="datePublished">Mar 28 2010</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Software/">Software</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2010/03/28/phpmysql-based-solution-for-blog/">PHP/MySQL-based Solution for Blog</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>While I’ve found NanoBlogger to be extremely intuitive and easy to deploy, I’ve come to the realization that bash and co. simply don’t scale well with lots of entries, and that they aren’t nearly as effective as other database-querying solutions.</p>
+<p>On one of my sites in particular, <code>$ nb update all</code> took all of 10 minutes to complete - this was with a ‘quick’ 2-line hack of the display template. Pitiful performance for something I once thought was lean and mean - though I should have known that from the start.</p>
+<p>I’m also entertaining the idea of using a perl-based CMS called BlazeBlogger. It’s reportedly very fast at serving static files, and as it is based on Perl, does not require a database. From <a target="_blank" rel="noopener" href="http://blaze.blackened.cz/about/">BlazeBlogger’s About page</a>:</p>
+<blockquote>
+<p>BlazeBlogger is a simple to use but capable CMS for the command line. Being written in Perl as a cross-platform application, and producing static content without the need of database servers or server-side scripting, it is literally a CMS without boundaries suitable for a wide variety of web presentations, from a personal weblog to a project page, or even a company website.</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ootput.github.io/2010/03/28/phpmysql-based-solution-for-blog/" data-id="cl9xawi9t000zwfov9v6u097j" data-title="PHP/MySQL-based Solution for Blog" class="article-share-link">Share</a>
+      
+        <a href="http://ootput.github.io/2010/03/28/phpmysql-based-solution-for-blog/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nanoblogger/" rel="tag">nanoblogger</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-colored-ls-output-in-openbsd" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2010/03/28/colored-ls-output-in-openbsd/" class="article-date">
+  <time class="dt-published" datetime="2010-03-27T19:22:26.000Z" itemprop="datePublished">Mar 28 2010</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Software/">Software</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2010/03/28/colored-ls-output-in-openbsd/">Colored `ls` Output in OpenBSD</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>After <code># pkg_add -iv fileutils</code> , in <code>$HOME/.profile</code>, include:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">eval</span> $(/usr/local/bin/gdircolors -b)</span><br><span class="line"><span class="built_in">alias</span> <span class="built_in">ls</span>=<span class="string">&#x27;/usr/local/bin/gls --color=always&#x27;</span></span><br></pre></td></tr></table></figure>
+
+
+<p>![7189012683_8bc11b04b1](&#x2F;images&#x2F;d28cd73be625b7a7aee60e81f6ad8419f89eda74.jpg)</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ootput.github.io/2010/03/28/colored-ls-output-in-openbsd/" data-id="cl9xawi9s000wwfovdjmh0nyw" data-title="Colored `ls` Output in OpenBSD" class="article-share-link">Share</a>
+      
+        <a href="http://ootput.github.io/2010/03/28/colored-ls-output-in-openbsd/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/openbsd/" rel="tag">openbsd</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-dns-o-matic-server-config-for-dd-wrt" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2010/03/26/dns-o-matic-server-config-for-dd-wrt/" class="article-date">
+  <time class="dt-published" datetime="2010-03-25T21:07:34.000Z" itemprop="datePublished">Mar 26 2010</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Software/">Software</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2010/03/26/dns-o-matic-server-config-for-dd-wrt/">DNS-O-Matic Server Config for DD-WRT</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <img src="/images/d0244f429b981e6f4e4a7f15ec03f5e62c5e4bd7.jpg" class="img-thumbnail"/>
+
+<p>DD-WRT uses <a target="_blank" rel="noopener" href="http://www.inatech.eu/inadyn/">inadyn</a>, and the settings for <a target="_blank" rel="noopener" href="http://www.dnsomatic.com/">DNS-o-matic</a> are:<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">DDNS Service: Custom</span><br><span class="line">DYNDNS Server: updates.dnsomatic.com</span><br><span class="line">Username:</span><br><span class="line">Password:</span><br><span class="line">Hostname: all.dnsomatic.com</span><br><span class="line">URL: /nic/update?</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ootput.github.io/2010/03/26/dns-o-matic-server-config-for-dd-wrt/" data-id="cl9xawi9r000twfovfl397aou" data-title="DNS-O-Matic Server Config for DD-WRT" class="article-share-link">Share</a>
+      
+        <a href="http://ootput.github.io/2010/03/26/dns-o-matic-server-config-for-dd-wrt/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ddwrt/" rel="tag">ddwrt</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-firmware-for-pgt-4-and-bwi-4-in-openbsd" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2010/03/23/firmware-for-pgt-4-and-bwi-4-in-openbsd/" class="article-date">
+  <time class="dt-published" datetime="2010-03-22T16:18:27.000Z" itemprop="datePublished">Mar 23 2010</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Software/">Software</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2010/03/23/firmware-for-pgt-4-and-bwi-4-in-openbsd/">Firmware  for pgt(4) and bwi(4) in OpenBSD</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><a target="_blank" rel="noopener" href="http://www.openbsd.org/">OpenBSD</a> does not provide closed firmware in their installation sets; You must manually install the required firmware packages. As root:</p>
+<p><code># pkg_add -ivvv http://www.nazgul.ch/bwi/bwi-firmware-1.4.tgz</code></p>
+<p><code># pkg_add -ivvv http://www.nazgul.ch/pgt/pgt-firmware-1.2.tgz</code></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ootput.github.io/2010/03/23/firmware-for-pgt-4-and-bwi-4-in-openbsd/" data-id="cl9xawi9p000nwfov8nbid74l" data-title="Firmware  for pgt(4) and bwi(4) in OpenBSD" class="article-share-link">Share</a>
+      
+        <a href="http://ootput.github.io/2010/03/23/firmware-for-pgt-4-and-bwi-4-in-openbsd/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/openbsd/" rel="tag">openbsd</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/10/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/12/">Next &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Health/">Health</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Photography/">Photography</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Random-Musings/">Random Musings</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Software/">Software</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ebay/" rel="tag">Ebay</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Soundcloud/" rel="tag">Soundcloud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/alsa/" rel="tag">alsa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/" rel="tag">android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apple/" rel="tag">apple</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/canon/" rel="tag">canon</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chess/" rel="tag">chess</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chromium/" rel="tag">chromium</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chyrp/" rel="tag">chyrp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/clone/" rel="tag">clone</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/couchpotato/" rel="tag">couchpotato</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/crunchbang/" rel="tag">crunchbang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ddwrt/" rel="tag">ddwrt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debian/" rel="tag">debian</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dslr/" rel="tag">dslr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/emacs/" rel="tag">emacs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/erc/" rel="tag">erc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/exercise/" rel="tag">exercise</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fedora/" rel="tag">fedora</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/filebot/" rel="tag">filebot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/firefox/" rel="tag">firefox</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flash/" rel="tag">flash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flickr/" rel="tag">flickr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/freebsd/" rel="tag">freebsd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gmail/" rel="tag">gmail</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/habari/" rel="tag">habari</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ifttt/" rel="tag">ifttt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ion3/" rel="tag">ion3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ios/" rel="tag">ios</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/irssi/" rel="tag">irssi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/itunes/" rel="tag">itunes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kvm/" rel="tag">kvm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lens/" rel="tag">lens</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/metaseo/" rel="tag">metaseo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nanoblogger/" rel="tag">nanoblogger</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ntfs/" rel="tag">ntfs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nvidia/" rel="tag">nvidia</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openbsd/" rel="tag">openbsd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openvpn/" rel="tag">openvpn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/osx/" rel="tag">osx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/outlook/" rel="tag">outlook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/photography/" rel="tag">photography</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/plex/" rel="tag">plex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ports/" rel="tag">ports</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pulseaudio/" rel="tag">pulseaudio</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/putty/" rel="tag">putty</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pxe/" rel="tag">pxe</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/qos/" rel="tag">qos</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/reddit/" rel="tag">reddit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sabnzbd/" rel="tag">sabnzbd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/samba/" rel="tag">samba</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sasl/" rel="tag">sasl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sickbeard/" rel="tag">sickbeard</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssl/" rel="tag">ssl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/subtitles/" rel="tag">subtitles</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tmux/" rel="tag">tmux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tomato/" rel="tag">tomato</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/twitter/" rel="tag">twitter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/" rel="tag">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unix/" rel="tag">unix</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/" rel="tag">vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/weechat/" rel="tag">weechat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wheezy/" rel="tag">wheezy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows/" rel="tag">windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wine/" rel="tag">wine</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wordpress/" rel="tag">wordpress</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/x220/" rel="tag">x220</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xorg/" rel="tag">xorg</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/youtube/" rel="tag">youtube</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zfs/" rel="tag">zfs</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Ebay/" style="font-size: 10px;">Ebay</a> <a href="/tags/Soundcloud/" style="font-size: 10px;">Soundcloud</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/alsa/" style="font-size: 10px;">alsa</a> <a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/apple/" style="font-size: 10px;">apple</a> <a href="/tags/blog/" style="font-size: 20px;">blog</a> <a href="/tags/canon/" style="font-size: 10px;">canon</a> <a href="/tags/chess/" style="font-size: 10px;">chess</a> <a href="/tags/chromium/" style="font-size: 10.91px;">chromium</a> <a href="/tags/chyrp/" style="font-size: 15.45px;">chyrp</a> <a href="/tags/clone/" style="font-size: 10.91px;">clone</a> <a href="/tags/couchpotato/" style="font-size: 10px;">couchpotato</a> <a href="/tags/crunchbang/" style="font-size: 10px;">crunchbang</a> <a href="/tags/ddwrt/" style="font-size: 10px;">ddwrt</a> <a href="/tags/debian/" style="font-size: 17.27px;">debian</a> <a href="/tags/dslr/" style="font-size: 10px;">dslr</a> <a href="/tags/emacs/" style="font-size: 10.91px;">emacs</a> <a href="/tags/erc/" style="font-size: 10px;">erc</a> <a href="/tags/exercise/" style="font-size: 12.73px;">exercise</a> <a href="/tags/fedora/" style="font-size: 16.36px;">fedora</a> <a href="/tags/filebot/" style="font-size: 10.91px;">filebot</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/flash/" style="font-size: 10.91px;">flash</a> <a href="/tags/flickr/" style="font-size: 10px;">flickr</a> <a href="/tags/freebsd/" style="font-size: 19.09px;">freebsd</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 13.64px;">github</a> <a href="/tags/gmail/" style="font-size: 10px;">gmail</a> <a href="/tags/habari/" style="font-size: 18.18px;">habari</a> <a href="/tags/hexo/" style="font-size: 13.64px;">hexo</a> <a href="/tags/ifttt/" style="font-size: 10px;">ifttt</a> <a href="/tags/ion3/" style="font-size: 10px;">ion3</a> <a href="/tags/ios/" style="font-size: 10px;">ios</a> <a href="/tags/irssi/" style="font-size: 10px;">irssi</a> <a href="/tags/itunes/" style="font-size: 10px;">itunes</a> <a href="/tags/java/" style="font-size: 10.91px;">java</a> <a href="/tags/kvm/" style="font-size: 10px;">kvm</a> <a href="/tags/lens/" style="font-size: 10px;">lens</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/metaseo/" style="font-size: 10px;">metaseo</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nanoblogger/" style="font-size: 10.91px;">nanoblogger</a> <a href="/tags/ntfs/" style="font-size: 10px;">ntfs</a> <a href="/tags/nvidia/" style="font-size: 10px;">nvidia</a> <a href="/tags/openbsd/" style="font-size: 14.55px;">openbsd</a> <a href="/tags/openvpn/" style="font-size: 10px;">openvpn</a> <a href="/tags/osx/" style="font-size: 15.45px;">osx</a> <a href="/tags/outlook/" style="font-size: 10px;">outlook</a> <a href="/tags/photography/" style="font-size: 13.64px;">photography</a> <a href="/tags/plex/" style="font-size: 10px;">plex</a> <a href="/tags/ports/" style="font-size: 11.82px;">ports</a> <a href="/tags/pulseaudio/" style="font-size: 10px;">pulseaudio</a> <a href="/tags/putty/" style="font-size: 10px;">putty</a> <a href="/tags/pxe/" style="font-size: 10px;">pxe</a> <a href="/tags/qos/" style="font-size: 10px;">qos</a> <a href="/tags/reddit/" style="font-size: 10px;">reddit</a> <a href="/tags/sabnzbd/" style="font-size: 10px;">sabnzbd</a> <a href="/tags/samba/" style="font-size: 10px;">samba</a> <a href="/tags/sasl/" style="font-size: 10.91px;">sasl</a> <a href="/tags/sickbeard/" style="font-size: 10px;">sickbeard</a> <a href="/tags/ssl/" style="font-size: 12.73px;">ssl</a> <a href="/tags/subtitles/" style="font-size: 10px;">subtitles</a> <a href="/tags/tmux/" style="font-size: 10px;">tmux</a> <a href="/tags/tomato/" style="font-size: 10.91px;">tomato</a> <a href="/tags/twitter/" style="font-size: 10px;">twitter</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/unix/" style="font-size: 10.91px;">unix</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/weechat/" style="font-size: 10.91px;">weechat</a> <a href="/tags/wheezy/" style="font-size: 10px;">wheezy</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/wine/" style="font-size: 10px;">wine</a> <a href="/tags/wordpress/" style="font-size: 12.73px;">wordpress</a> <a href="/tags/x220/" style="font-size: 10.91px;">x220</a> <a href="/tags/xorg/" style="font-size: 10.91px;">xorg</a> <a href="/tags/youtube/" style="font-size: 10px;">youtube</a> <a href="/tags/zfs/" style="font-size: 10px;">zfs</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">May 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">April 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">December 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/07/">July 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">June 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">May 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10/">October 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/09/">September 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06/">June 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/07/">July 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06/">June 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/04/">April 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03/">March 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02/">February 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11/">November 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03/">March 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02/">February 2007</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/10/31/page/">page will this be deployed</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/12/health-revisited/">Health Revisited</a>
+          </li>
+        
+          <li>
+            <a href="/2016/04/01/Revisiting-Health/">Revisiting Health</a>
+          </li>
+        
+          <li>
+            <a href="/2016/03/31/Fixing-broken-port-dependencies-based-on-missing-files/">Fixing broken port dependencies based on missing files</a>
+          </li>
+        
+          <li>
+            <a href="/2016/02/29/Set-Firefox-GTK2-Theme/">Set Firefox GTK2 Theme</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 ootput<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'ootputburst';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.async = true;
+    dsq.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
