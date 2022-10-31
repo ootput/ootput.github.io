@@ -40,7 +40,7 @@
 <link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
 
   
-<meta name="generator" content="Hexo 6.3.0"></head>
+<!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-tag-google-photos-album@1.2.0/css/google_photos_album.css" integrity="sha256-+fmg1peSAbhT32GtVA2D9f1zAjN3v6lX+9Y14jKmYBs=" crossorigin="anonymous"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
   <div id="container">
@@ -133,7 +133,7 @@ Device 'Logitech USB Gaming Mouse':
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2012/03/03/disable-mouse-acceleration-in-xorg/" data-id="cl9xawib2006gwfovafdg3llm" data-title="Disable Mouse Acceleration in Xorg" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2012/03/03/disable-mouse-acceleration-in-xorg/" data-id="cl9xbcfy5006g9lov92lgh2nw" data-title="Disable Mouse Acceleration in Xorg" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2012/03/03/disable-mouse-acceleration-in-xorg/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -303,5 +303,32 @@ Device 'Logitech USB Gaming Mouse':
 
 
   </div>
-</body>
+<!-- hexo injector body_end start --><script>
+function addLoadEvent(func) {
+  const oldonload = window.onload;
+  if (typeof window.onload !== 'function') {
+    window.onload = func;
+  } else {
+    window.onload = () => {
+      oldonload();
+      func();
+    };
+  }
+}
+  addLoadEvent(() => {
+    try {
+      if (window.innerWidth < Number('768')) {
+        return;
+      }
+      const imgs = Array.from(document.body.querySelectorAll('.google-photos-album-images a'));
+      imgs.push(...Array.from(document.body.querySelectorAll('a.google-photos-album-image')));
+      for (const anchor of imgs) {
+        anchor.href = anchor.href.replace(/=s720\-no/i, '=s1920-no');
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  });
+</script>
+<!-- hexo injector body_end end --></body>
 </html>

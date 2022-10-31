@@ -6,12 +6,12 @@
   
   <title>Address Merged Ports | ootput burst!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="My most recent # portmaster -Da revealed a package conflict: py-setuptools was merged with py-distribute. From FreshPorts:  2013-03-05Affects: users of devel&#x2F;py-setuptools (i.e you)Author: &amp;#114;">
+  <meta name="description" content="My most recent # portmaster -Da revealed a package conflict: py-setuptools was merged with py-distribute. From FreshPorts:  2013-03-05Affects: users of devel&#x2F;py-setuptools (i.e you)Author: &amp;#x72;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Address Merged Ports">
 <meta property="og:url" content="http://ootput.github.io/2013/03/26/address-merged-ports/index.html">
 <meta property="og:site_name" content="ootput burst!">
-<meta property="og:description" content="My most recent # portmaster -Da revealed a package conflict: py-setuptools was merged with py-distribute. From FreshPorts:  2013-03-05Affects: users of devel&#x2F;py-setuptools (i.e you)Author: &amp;#114;">
+<meta property="og:description" content="My most recent # portmaster -Da revealed a package conflict: py-setuptools was merged with py-distribute. From FreshPorts:  2013-03-05Affects: users of devel&#x2F;py-setuptools (i.e you)Author: &amp;#x72;">
 <meta property="og:locale" content="en_GB">
 <meta property="article:published_time" content="2013-03-25T23:44:32.000Z">
 <meta property="article:modified_time" content="2022-10-31T01:47:24.461Z">
@@ -38,7 +38,7 @@
 <link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
 
   
-<meta name="generator" content="Hexo 6.3.0"></head>
+<!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-tag-google-photos-album@1.2.0/css/google_photos_album.css" integrity="sha256-+fmg1peSAbhT32GtVA2D9f1zAjN3v6lX+9Y14jKmYBs=" crossorigin="anonymous"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
   <div id="container">
@@ -104,7 +104,7 @@
         <p>My most recent <code># portmaster -Da</code> revealed a package conflict: py-setuptools was merged with py-distribute.</p>
 <p>From FreshPorts:</p>
 <blockquote>
-<p>2013-03-05<br>Affects: users of devel&#x2F;py-setuptools (i.e you)<br>Author: <a href="mailto:&#114;&#109;&#64;&#70;&#x72;&#x65;&#101;&#66;&#83;&#68;&#x2e;&#x6f;&#x72;&#x67;">&#114;&#109;&#64;&#70;&#x72;&#x65;&#101;&#66;&#83;&#68;&#x2e;&#x6f;&#x72;&#x67;</a><br>Reason: devel&#x2F;py-setuptools was replaced with devel&#x2F;py-distribute. py-setuptools port will be removed shortly.</p>
+<p>2013-03-05<br>Affects: users of devel&#x2F;py-setuptools (i.e you)<br>Author: <a href="mailto:&#x72;&#x6d;&#x40;&#70;&#x72;&#x65;&#101;&#66;&#x53;&#x44;&#46;&#111;&#x72;&#103;">&#x72;&#x6d;&#x40;&#70;&#x72;&#x65;&#101;&#66;&#x53;&#x44;&#46;&#111;&#x72;&#103;</a><br>Reason: devel&#x2F;py-setuptools was replaced with devel&#x2F;py-distribute. py-setuptools port will be removed shortly.</p>
 </blockquote>
 <p>To fix this:<br><code># portmaster -o devel/py-distribute devel/py-setuptools</code></p>
 <p>From <code>man 8 portmaster</code>:</p>
@@ -115,7 +115,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ootput.github.io/2013/03/26/address-merged-ports/" data-id="cl9xawibb007bwfovejawbgex" data-title="Address Merged Ports" class="article-share-link">Share</a>
+      <a data-url="http://ootput.github.io/2013/03/26/address-merged-ports/" data-id="cl9xbcfyd007b9lovhikhgsr9" data-title="Address Merged Ports" class="article-share-link">Share</a>
       
         <a href="http://ootput.github.io/2013/03/26/address-merged-ports/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -285,5 +285,32 @@
 
 
   </div>
-</body>
+<!-- hexo injector body_end start --><script>
+function addLoadEvent(func) {
+  const oldonload = window.onload;
+  if (typeof window.onload !== 'function') {
+    window.onload = func;
+  } else {
+    window.onload = () => {
+      oldonload();
+      func();
+    };
+  }
+}
+  addLoadEvent(() => {
+    try {
+      if (window.innerWidth < Number('768')) {
+        return;
+      }
+      const imgs = Array.from(document.body.querySelectorAll('.google-photos-album-images a'));
+      imgs.push(...Array.from(document.body.querySelectorAll('a.google-photos-album-image')));
+      for (const anchor of imgs) {
+        anchor.href = anchor.href.replace(/=s720\-no/i, '=s1920-no');
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  });
+</script>
+<!-- hexo injector body_end end --></body>
 </html>
