@@ -866,7 +866,7 @@
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2010/04/01/on-fedora-12/</loc>
+    <loc>http://ootput.github.io/2010/03/28/phpmysql-based-solution-for-blog/</loc>
     
     <lastmod>2022-10-31</lastmod>
     
@@ -875,7 +875,7 @@
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2010/03/28/phpmysql-based-solution-for-blog/</loc>
+    <loc>http://ootput.github.io/2010/04/01/on-fedora-12/</loc>
     
     <lastmod>2022-10-31</lastmod>
     
@@ -1204,13 +1204,6 @@
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/fedora/</loc>
-    <lastmod>2022-11-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://ootput.github.io/tags/blog/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -1219,6 +1212,13 @@
   
   <url>
     <loc>http://ootput.github.io/tags/nanoblogger/</loc>
+    <lastmod>2022-11-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://ootput.github.io/tags/fedora/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
