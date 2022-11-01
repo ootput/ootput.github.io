@@ -317,7 +317,7 @@
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2016/02/29/Set-Firefox-GTK2-Theme/</loc>
+    <loc>http://ootput.github.io/2016/03/31/Fixing-broken-port-dependencies-based-on-missing-files/</loc>
     
     <lastmod>2022-10-31</lastmod>
     
@@ -326,7 +326,7 @@
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2016/03/31/Fixing-broken-port-dependencies-based-on-missing-files/</loc>
+    <loc>http://ootput.github.io/2016/02/29/Set-Firefox-GTK2-Theme/</loc>
     
     <lastmod>2022-10-31</lastmod>
     
@@ -1127,546 +1127,546 @@
 
   
   <url>
-    <loc>http://ootput.github.io/tags/ion3/</loc>
+    <loc>http://ootput.github.io/public/tags/ion3/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/debian/</loc>
+    <loc>http://ootput.github.io/public/tags/debian/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/alsa/</loc>
+    <loc>http://ootput.github.io/public/tags/alsa/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/freebsd/</loc>
+    <loc>http://ootput.github.io/public/tags/freebsd/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/openbsd/</loc>
+    <loc>http://ootput.github.io/public/tags/openbsd/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/emacs/</loc>
+    <loc>http://ootput.github.io/public/tags/emacs/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/erc/</loc>
+    <loc>http://ootput.github.io/public/tags/erc/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/ssl/</loc>
+    <loc>http://ootput.github.io/public/tags/ssl/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/clone/</loc>
+    <loc>http://ootput.github.io/public/tags/clone/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/vim/</loc>
+    <loc>http://ootput.github.io/public/tags/vim/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/ddwrt/</loc>
+    <loc>http://ootput.github.io/public/tags/ddwrt/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/blog/</loc>
+    <loc>http://ootput.github.io/public/tags/blog/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/nanoblogger/</loc>
+    <loc>http://ootput.github.io/public/tags/nanoblogger/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/fedora/</loc>
+    <loc>http://ootput.github.io/public/tags/fedora/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/chyrp/</loc>
+    <loc>http://ootput.github.io/public/tags/chyrp/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/mysql/</loc>
+    <loc>http://ootput.github.io/public/tags/mysql/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/github/</loc>
+    <loc>http://ootput.github.io/public/tags/github/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/habari/</loc>
+    <loc>http://ootput.github.io/public/tags/habari/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/tomato/</loc>
+    <loc>http://ootput.github.io/public/tags/tomato/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/canon/</loc>
+    <loc>http://ootput.github.io/public/tags/canon/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/dslr/</loc>
+    <loc>http://ootput.github.io/public/tags/dslr/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/lens/</loc>
+    <loc>http://ootput.github.io/public/tags/lens/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/irssi/</loc>
+    <loc>http://ootput.github.io/public/tags/irssi/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/sasl/</loc>
+    <loc>http://ootput.github.io/public/tags/sasl/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/photography/</loc>
+    <loc>http://ootput.github.io/public/tags/photography/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/putty/</loc>
+    <loc>http://ootput.github.io/public/tags/putty/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/unix/</loc>
+    <loc>http://ootput.github.io/public/tags/unix/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/pxe/</loc>
+    <loc>http://ootput.github.io/public/tags/pxe/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/wine/</loc>
+    <loc>http://ootput.github.io/public/tags/wine/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/weechat/</loc>
+    <loc>http://ootput.github.io/public/tags/weechat/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/samba/</loc>
+    <loc>http://ootput.github.io/public/tags/samba/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/ubuntu/</loc>
+    <loc>http://ootput.github.io/public/tags/ubuntu/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/metaseo/</loc>
+    <loc>http://ootput.github.io/public/tags/metaseo/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/nvidia/</loc>
+    <loc>http://ootput.github.io/public/tags/nvidia/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/xorg/</loc>
+    <loc>http://ootput.github.io/public/tags/xorg/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/chromium/</loc>
+    <loc>http://ootput.github.io/public/tags/chromium/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/flash/</loc>
+    <loc>http://ootput.github.io/public/tags/flash/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/java/</loc>
+    <loc>http://ootput.github.io/public/tags/java/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/sabnzbd/</loc>
+    <loc>http://ootput.github.io/public/tags/sabnzbd/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/sickbeard/</loc>
+    <loc>http://ootput.github.io/public/tags/sickbeard/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/zfs/</loc>
+    <loc>http://ootput.github.io/public/tags/zfs/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/ports/</loc>
+    <loc>http://ootput.github.io/public/tags/ports/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/linux/</loc>
+    <loc>http://ootput.github.io/public/tags/linux/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/gmail/</loc>
+    <loc>http://ootput.github.io/public/tags/gmail/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/outlook/</loc>
+    <loc>http://ootput.github.io/public/tags/outlook/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/wordpress/</loc>
+    <loc>http://ootput.github.io/public/tags/wordpress/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/flickr/</loc>
+    <loc>http://ootput.github.io/public/tags/flickr/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/ntfs/</loc>
+    <loc>http://ootput.github.io/public/tags/ntfs/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/couchpotato/</loc>
+    <loc>http://ootput.github.io/public/tags/couchpotato/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/youtube/</loc>
+    <loc>http://ootput.github.io/public/tags/youtube/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/apple/</loc>
+    <loc>http://ootput.github.io/public/tags/apple/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/ios/</loc>
+    <loc>http://ootput.github.io/public/tags/ios/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/crunchbang/</loc>
+    <loc>http://ootput.github.io/public/tags/crunchbang/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/kvm/</loc>
+    <loc>http://ootput.github.io/public/tags/kvm/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/pulseaudio/</loc>
+    <loc>http://ootput.github.io/public/tags/pulseaudio/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/x220/</loc>
+    <loc>http://ootput.github.io/public/tags/x220/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/osx/</loc>
+    <loc>http://ootput.github.io/public/tags/osx/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/chess/</loc>
+    <loc>http://ootput.github.io/public/tags/chess/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/itunes/</loc>
+    <loc>http://ootput.github.io/public/tags/itunes/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/tmux/</loc>
+    <loc>http://ootput.github.io/public/tags/tmux/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/android/</loc>
+    <loc>http://ootput.github.io/public/tags/android/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/exercise/</loc>
+    <loc>http://ootput.github.io/public/tags/exercise/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/openvpn/</loc>
+    <loc>http://ootput.github.io/public/tags/openvpn/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/qos/</loc>
+    <loc>http://ootput.github.io/public/tags/qos/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/Windows/</loc>
+    <loc>http://ootput.github.io/public/tags/Windows/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/hexo/</loc>
+    <loc>http://ootput.github.io/public/tags/hexo/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/filebot/</loc>
+    <loc>http://ootput.github.io/public/tags/filebot/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/subtitles/</loc>
+    <loc>http://ootput.github.io/public/tags/subtitles/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/windows/</loc>
+    <loc>http://ootput.github.io/public/tags/windows/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/git/</loc>
+    <loc>http://ootput.github.io/public/tags/git/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/plex/</loc>
+    <loc>http://ootput.github.io/public/tags/plex/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/wheezy/</loc>
+    <loc>http://ootput.github.io/public/tags/wheezy/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/twitter/</loc>
+    <loc>http://ootput.github.io/public/tags/twitter/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/ifttt/</loc>
+    <loc>http://ootput.github.io/public/tags/ifttt/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/reddit/</loc>
+    <loc>http://ootput.github.io/public/tags/reddit/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/Soundcloud/</loc>
+    <loc>http://ootput.github.io/public/tags/Soundcloud/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/Ebay/</loc>
+    <loc>http://ootput.github.io/public/tags/Ebay/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/firefox/</loc>
+    <loc>http://ootput.github.io/public/tags/firefox/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

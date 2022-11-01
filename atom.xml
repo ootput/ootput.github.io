@@ -52,7 +52,7 @@
     <category term="Health" scheme="http://ootput.github.io/categories/Health/"/>
     
     
-    <category term="exercise" scheme="http://ootput.github.io/tags/exercise/"/>
+    <category term="exercise" scheme="http://ootput.github.io/public/tags/exercise/"/>
     
   </entry>
   
@@ -77,7 +77,7 @@
     <category term="Health" scheme="http://ootput.github.io/categories/Health/"/>
     
     
-    <category term="exercise" scheme="http://ootput.github.io/tags/exercise/"/>
+    <category term="exercise" scheme="http://ootput.github.io/public/tags/exercise/"/>
     
   </entry>
   
@@ -101,7 +101,7 @@
     <category term="Software" scheme="http://ootput.github.io/categories/Software/"/>
     
     
-    <category term="freebsd" scheme="http://ootput.github.io/tags/freebsd/"/>
+    <category term="freebsd" scheme="http://ootput.github.io/public/tags/freebsd/"/>
     
   </entry>
   
@@ -126,7 +126,7 @@
     <category term="Software" scheme="http://ootput.github.io/categories/Software/"/>
     
     
-    <category term="firefox" scheme="http://ootput.github.io/tags/firefox/"/>
+    <category term="firefox" scheme="http://ootput.github.io/public/tags/firefox/"/>
     
   </entry>
   
@@ -154,7 +154,7 @@
     <category term="Health" scheme="http://ootput.github.io/categories/Health/"/>
     
     
-    <category term="exercise" scheme="http://ootput.github.io/tags/exercise/"/>
+    <category term="exercise" scheme="http://ootput.github.io/public/tags/exercise/"/>
     
   </entry>
   
@@ -179,9 +179,9 @@
     <category term="Software" scheme="http://ootput.github.io/categories/Software/"/>
     
     
-    <category term="blog" scheme="http://ootput.github.io/tags/blog/"/>
+    <category term="blog" scheme="http://ootput.github.io/public/tags/blog/"/>
     
-    <category term="hexo" scheme="http://ootput.github.io/tags/hexo/"/>
+    <category term="hexo" scheme="http://ootput.github.io/public/tags/hexo/"/>
     
   </entry>
   
@@ -206,7 +206,7 @@
     <category term="Random Musings" scheme="http://ootput.github.io/categories/Random-Musings/"/>
     
     
-    <category term="Ebay" scheme="http://ootput.github.io/tags/Ebay/"/>
+    <category term="Ebay" scheme="http://ootput.github.io/public/tags/Ebay/"/>
     
   </entry>
   
@@ -231,11 +231,11 @@
     <category term="Software" scheme="http://ootput.github.io/categories/Software/"/>
     
     
-    <category term="blog" scheme="http://ootput.github.io/tags/blog/"/>
+    <category term="blog" scheme="http://ootput.github.io/public/tags/blog/"/>
     
-    <category term="hexo" scheme="http://ootput.github.io/tags/hexo/"/>
+    <category term="hexo" scheme="http://ootput.github.io/public/tags/hexo/"/>
     
-    <category term="Soundcloud" scheme="http://ootput.github.io/tags/Soundcloud/"/>
+    <category term="Soundcloud" scheme="http://ootput.github.io/public/tags/Soundcloud/"/>
     
   </entry>
   
@@ -259,11 +259,11 @@
     <category term="Software" scheme="http://ootput.github.io/categories/Software/"/>
     
     
-    <category term="blog" scheme="http://ootput.github.io/tags/blog/"/>
+    <category term="blog" scheme="http://ootput.github.io/public/tags/blog/"/>
     
-    <category term="hexo" scheme="http://ootput.github.io/tags/hexo/"/>
+    <category term="hexo" scheme="http://ootput.github.io/public/tags/hexo/"/>
     
-    <category term="reddit" scheme="http://ootput.github.io/tags/reddit/"/>
+    <category term="reddit" scheme="http://ootput.github.io/public/tags/reddit/"/>
     
   </entry>
   
@@ -287,13 +287,13 @@
     <category term="Software" scheme="http://ootput.github.io/categories/Software/"/>
     
     
-    <category term="blog" scheme="http://ootput.github.io/tags/blog/"/>
+    <category term="blog" scheme="http://ootput.github.io/public/tags/blog/"/>
     
-    <category term="hexo" scheme="http://ootput.github.io/tags/hexo/"/>
+    <category term="hexo" scheme="http://ootput.github.io/public/tags/hexo/"/>
     
-    <category term="twitter" scheme="http://ootput.github.io/tags/twitter/"/>
+    <category term="twitter" scheme="http://ootput.github.io/public/tags/twitter/"/>
     
-    <category term="ifttt" scheme="http://ootput.github.io/tags/ifttt/"/>
+    <category term="ifttt" scheme="http://ootput.github.io/public/tags/ifttt/"/>
     
   </entry>
   
@@ -317,11 +317,11 @@
     <category term="Software" scheme="http://ootput.github.io/categories/Software/"/>
     
     
-    <category term="debian" scheme="http://ootput.github.io/tags/debian/"/>
+    <category term="debian" scheme="http://ootput.github.io/public/tags/debian/"/>
     
-    <category term="plex" scheme="http://ootput.github.io/tags/plex/"/>
+    <category term="plex" scheme="http://ootput.github.io/public/tags/plex/"/>
     
-    <category term="wheezy" scheme="http://ootput.github.io/tags/wheezy/"/>
+    <category term="wheezy" scheme="http://ootput.github.io/public/tags/wheezy/"/>
     
   </entry>
   
@@ -349,7 +349,7 @@
     <category term="Software" scheme="http://ootput.github.io/categories/Software/"/>
     
     
-    <category term="git" scheme="http://ootput.github.io/tags/git/"/>
+    <category term="git" scheme="http://ootput.github.io/public/tags/git/"/>
     
   </entry>
   
@@ -374,11 +374,11 @@
     <category term="Software" scheme="http://ootput.github.io/categories/Software/"/>
     
     
-    <category term="filebot" scheme="http://ootput.github.io/tags/filebot/"/>
+    <category term="filebot" scheme="http://ootput.github.io/public/tags/filebot/"/>
     
-    <category term="subtitles" scheme="http://ootput.github.io/tags/subtitles/"/>
+    <category term="subtitles" scheme="http://ootput.github.io/public/tags/subtitles/"/>
     
-    <category term="windows" scheme="http://ootput.github.io/tags/windows/"/>
+    <category term="windows" scheme="http://ootput.github.io/public/tags/windows/"/>
     
   </entry>
   
@@ -403,11 +403,11 @@
     <category term="Software" scheme="http://ootput.github.io/categories/Software/"/>
     
     
-    <category term="debian" scheme="http://ootput.github.io/tags/debian/"/>
+    <category term="debian" scheme="http://ootput.github.io/public/tags/debian/"/>
     
-    <category term="java" scheme="http://ootput.github.io/tags/java/"/>
+    <category term="java" scheme="http://ootput.github.io/public/tags/java/"/>
     
-    <category term="filebot" scheme="http://ootput.github.io/tags/filebot/"/>
+    <category term="filebot" scheme="http://ootput.github.io/public/tags/filebot/"/>
     
   </entry>
   
@@ -432,9 +432,9 @@
     <category term="Software" scheme="http://ootput.github.io/categories/Software/"/>
     
     
-    <category term="debian" scheme="http://ootput.github.io/tags/debian/"/>
+    <category term="debian" scheme="http://ootput.github.io/public/tags/debian/"/>
     
-    <category term="flash" scheme="http://ootput.github.io/tags/flash/"/>
+    <category term="flash" scheme="http://ootput.github.io/public/tags/flash/"/>
     
   </entry>
   
@@ -458,7 +458,7 @@
     <category term="Software" scheme="http://ootput.github.io/categories/Software/"/>
     
     
-    <category term="debian" scheme="http://ootput.github.io/tags/debian/"/>
+    <category term="debian" scheme="http://ootput.github.io/public/tags/debian/"/>
     
   </entry>
   
@@ -484,11 +484,11 @@
     <category term="Software" scheme="http://ootput.github.io/categories/Software/"/>
     
     
-    <category term="blog" scheme="http://ootput.github.io/tags/blog/"/>
+    <category term="blog" scheme="http://ootput.github.io/public/tags/blog/"/>
     
-    <category term="github" scheme="http://ootput.github.io/tags/github/"/>
+    <category term="github" scheme="http://ootput.github.io/public/tags/github/"/>
     
-    <category term="hexo" scheme="http://ootput.github.io/tags/hexo/"/>
+    <category term="hexo" scheme="http://ootput.github.io/public/tags/hexo/"/>
     
   </entry>
   
@@ -513,7 +513,7 @@
     <category term="Software" scheme="http://ootput.github.io/categories/Software/"/>
     
     
-    <category term="Windows" scheme="http://ootput.github.io/tags/Windows/"/>
+    <category term="Windows" scheme="http://ootput.github.io/public/tags/Windows/"/>
     
   </entry>
   
@@ -537,11 +537,11 @@
     <category term="Software" scheme="http://ootput.github.io/categories/Software/"/>
     
     
-    <category term="tomato" scheme="http://ootput.github.io/tags/tomato/"/>
+    <category term="tomato" scheme="http://ootput.github.io/public/tags/tomato/"/>
     
-    <category term="openvpn" scheme="http://ootput.github.io/tags/openvpn/"/>
+    <category term="openvpn" scheme="http://ootput.github.io/public/tags/openvpn/"/>
     
-    <category term="qos" scheme="http://ootput.github.io/tags/qos/"/>
+    <category term="qos" scheme="http://ootput.github.io/public/tags/qos/"/>
     
   </entry>
   
@@ -565,7 +565,7 @@
     <category term="Health" scheme="http://ootput.github.io/categories/Health/"/>
     
     
-    <category term="exercise" scheme="http://ootput.github.io/tags/exercise/"/>
+    <category term="exercise" scheme="http://ootput.github.io/public/tags/exercise/"/>
     
   </entry>
   
@@ -590,7 +590,7 @@
     <category term="Software" scheme="http://ootput.github.io/categories/Software/"/>
     
     
-    <category term="osx" scheme="http://ootput.github.io/tags/osx/"/>
+    <category term="osx" scheme="http://ootput.github.io/public/tags/osx/"/>
     
   </entry>
   
@@ -615,7 +615,7 @@
     <category term="Software" scheme="http://ootput.github.io/categories/Software/"/>
     
     
-    <category term="freebsd" scheme="http://ootput.github.io/tags/freebsd/"/>
+    <category term="freebsd" scheme="http://ootput.github.io/public/tags/freebsd/"/>
     
   </entry>
   
@@ -641,9 +641,9 @@
     <category term="Software" scheme="http://ootput.github.io/categories/Software/"/>
     
     
-    <category term="osx" scheme="http://ootput.github.io/tags/osx/"/>
+    <category term="osx" scheme="http://ootput.github.io/public/tags/osx/"/>
     
-    <category term="android" scheme="http://ootput.github.io/tags/android/"/>
+    <category term="android" scheme="http://ootput.github.io/public/tags/android/"/>
     
   </entry>
   
@@ -668,9 +668,9 @@
     <category term="Software" scheme="http://ootput.github.io/categories/Software/"/>
     
     
-    <category term="osx" scheme="http://ootput.github.io/tags/osx/"/>
+    <category term="osx" scheme="http://ootput.github.io/public/tags/osx/"/>
     
-    <category term="tmux" scheme="http://ootput.github.io/tags/tmux/"/>
+    <category term="tmux" scheme="http://ootput.github.io/public/tags/tmux/"/>
     
   </entry>
   
@@ -695,9 +695,9 @@
     <category term="Software" scheme="http://ootput.github.io/categories/Software/"/>
     
     
-    <category term="emacs" scheme="http://ootput.github.io/tags/emacs/"/>
+    <category term="emacs" scheme="http://ootput.github.io/public/tags/emacs/"/>
     
-    <category term="osx" scheme="http://ootput.github.io/tags/osx/"/>
+    <category term="osx" scheme="http://ootput.github.io/public/tags/osx/"/>
     
   </entry>
   
@@ -722,9 +722,9 @@
     <category term="Software" scheme="http://ootput.github.io/categories/Software/"/>
     
     
-    <category term="osx" scheme="http://ootput.github.io/tags/osx/"/>
+    <category term="osx" scheme="http://ootput.github.io/public/tags/osx/"/>
     
-    <category term="itunes" scheme="http://ootput.github.io/tags/itunes/"/>
+    <category term="itunes" scheme="http://ootput.github.io/public/tags/itunes/"/>
     
   </entry>
   
@@ -749,11 +749,11 @@
     <category term="Random Musings" scheme="http://ootput.github.io/categories/Random-Musings/"/>
     
     
-    <category term="blog" scheme="http://ootput.github.io/tags/blog/"/>
+    <category term="blog" scheme="http://ootput.github.io/public/tags/blog/"/>
     
-    <category term="wordpress" scheme="http://ootput.github.io/tags/wordpress/"/>
+    <category term="wordpress" scheme="http://ootput.github.io/public/tags/wordpress/"/>
     
-    <category term="chess" scheme="http://ootput.github.io/tags/chess/"/>
+    <category term="chess" scheme="http://ootput.github.io/public/tags/chess/"/>
     
   </entry>
   
@@ -779,7 +779,7 @@
     <category term="Software" scheme="http://ootput.github.io/categories/Software/"/>
     
     
-    <category term="osx" scheme="http://ootput.github.io/tags/osx/"/>
+    <category term="osx" scheme="http://ootput.github.io/public/tags/osx/"/>
     
   </entry>
   
@@ -805,9 +805,9 @@
     <category term="Software" scheme="http://ootput.github.io/categories/Software/"/>
     
     
-    <category term="x220" scheme="http://ootput.github.io/tags/x220/"/>
+    <category term="x220" scheme="http://ootput.github.io/public/tags/x220/"/>
     
-    <category term="osx" scheme="http://ootput.github.io/tags/osx/"/>
+    <category term="osx" scheme="http://ootput.github.io/public/tags/osx/"/>
     
   </entry>
   
