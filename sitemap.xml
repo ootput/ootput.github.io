@@ -758,7 +758,7 @@
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2007/03/09/ion3-look-ootput/</loc>
+    <loc>http://ootput.github.io/2009/11/01/debian-5-on-desktop/</loc>
     
     <lastmod>2022-10-31</lastmod>
     
@@ -767,7 +767,7 @@
   </url>
   
   <url>
-    <loc>http://ootput.github.io/2009/11/01/debian-5-on-desktop/</loc>
+    <loc>http://ootput.github.io/2007/03/09/ion3-look-ootput/</loc>
     
     <lastmod>2022-10-31</lastmod>
     
@@ -1127,14 +1127,14 @@
 
   
   <url>
-    <loc>http://ootput.github.io/tags/ion3/</loc>
+    <loc>http://ootput.github.io/tags/debian/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ootput.github.io/tags/debian/</loc>
+    <loc>http://ootput.github.io/tags/ion3/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
